@@ -10,6 +10,7 @@ public class StackAsLinkedList {
         {
             //Constructor here
             this.data = data;
+            this.next = null;
         }
     }
 
