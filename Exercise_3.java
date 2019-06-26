@@ -19,6 +19,7 @@ public class LinkedList {
         {
             //Write your code here
             this.data = d;
+            this.next = null;
         }
     }
 
