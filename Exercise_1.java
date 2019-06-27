@@ -5,30 +5,45 @@ class Stack {
   
     boolean isEmpty() 
     { 
+        return top <0;
         //Write your code here 
     } 
 
     Stack() 
     { 
+        this.top=-1;
         //Initialize your constructor 
     } 
   
     boolean push(int x) 
     { 
-        //Check for stack Overflow
+        if(top== a.length -1){
+            return false;
+        }
+        a[++top]=x;
+        return true;
         //Write your code here
     } 
   
     int pop() 
     { 
-        //If empty return 0 and print " Stack Underflow"
+        if(isEmpty()){
+            throw new RuntimeException("Stack is empty");
+        }
+        return a[top--];
         //Write your code here
     } 
   
     int peek() 
     { 
+         if(isEmpty()){
+            throw new RuntimeException("Stack is empty");
+        }
+        return a[top];
         //Write your code here
     } 
+
+  
 } 
   
 // Driver code 
