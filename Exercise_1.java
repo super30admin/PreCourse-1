@@ -1,5 +1,6 @@
 class Stack { 
-    static final int MAX = 1000; 
+    static final int MAX = 1000;
+    int i = 10;
     int top; 
     int a[] = new int[MAX]; // Maximum size of Stack 
   

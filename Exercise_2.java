@@ -1,6 +1,7 @@
 public class StackAsLinkedList { 
   
-    StackNode root; 
+    StackNode root;
+    int j;
   
     static class StackNode { 
         int data; 
