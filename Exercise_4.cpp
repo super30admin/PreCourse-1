@@ -9,11 +9,16 @@ struct Node {
     struct Node* left, *right; 
 }; 
   
-/* function to create a new node of tree and r 
-   eturns pointer */
+/* function to create a new node of tree and 
+   returns pointer */
 struct Node* newNode(int key) 
 { 
     //Your code here
+    Node* node = new Node();
+    node->key = key;
+    node->left = node->right = NULL;
+    return node;
+
 }; 
   
 /* Inorder traversal of a binary tree*/
@@ -30,11 +35,35 @@ void inorder(struct Node* temp)
 /*function to insert element in binary tree */
 void insert(struct Node* temp, int key) 
 { 
-  
+    queue<Node*> q;
+    q.push(temp);
+
     // Do level order traversal until we find 
     // an empty place.  
-    
-    //Your code here
+
+    while(!q.empty())
+    {
+        temp = q.front();
+        q.pop();
+
+        if(!temp->right)
+        {
+            temp->right = newNode(key);
+            break;
+        }
+
+        else
+            q.push(temp->right); 
+            
+        if(!temp->left)
+        {
+            temp->left = newNode(key);
+            break;
+        }
+            
+        else
+            q.push(temp->left);
+    } 
 } 
   
 // Driver code 
