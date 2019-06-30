@@ -63,8 +63,15 @@ import java.io.*;
             // Print the data at current node 
        
             // Go to next node 
+    	
     	int count = 0;
     	Node temp = list.head;
+    	
+    	if(temp==null)
+    	{
+    		System.out.println("No elements in the list");
+    		
+    	}
     	while(temp!=null)
     	{ 
     		System.out.println("List data at loaction "+ ++count +" "+temp.data);
@@ -81,12 +88,12 @@ import java.io.*;
         // 
         // ******INSERTION****** 
         // 
-  
+        printList(list); 
         // Insert the values 
         list = insert(list, 1); 
         list = insert(list, 2); 
         list = insert(list, 3); 
-        list = insert(list, 4); 
+        list = insert(list, 33); 
         list = insert(list, 5); 
   
         // Print the LinkedList 
