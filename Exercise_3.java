@@ -2,7 +2,7 @@ import java.io.*;
   
 // Java program to implement 
 // a Singly Linked List 
-public class LinkedList { 
+ class LinkedList { 
   
     Node head; // head of list 
   
@@ -17,35 +17,63 @@ public class LinkedList {
         // Constructor 
         Node(int d) 
         { 
-            //Write your code here 
+            //initializing
+        	this.data =  d;
+        	next = null;
         } 
     } 
   
     // Method to insert a new node 
     public static LinkedList insert(LinkedList list, int data) 
     { 
-        // Create a new node with given data 
-   
-        // If the Linked List is empty, 
-        // then make the new node as head 
+    	// Create a new node with given data 
+        Node new_node = new Node(data);
+        new_node.next = null;
         
-            // Else traverse till the last node 
-            // and insert the new_node there 
-
-            // Insert the new_node at last node 
-        // Return the list by head 
+     
+          // If the Linked List is empty, 
+          // then make the new node as head 
+         // Else traverse till the last node 
+              // and insert the new_node there 
         
+        if(list.head == null){
+          list.head = new_node;
+        }else{
+          Node last = list.head;
+          
+          while(last.next!=null){
+            last = last.next;
+          }
+          
+           // Insert the new_node at last node 
+          // Return the list by head 
+          
+          last.next = new_node;
+          
+        }
+        return list;
     } 
+        
+  
   
     // Method to print the LinkedList. 
     public static void printList(LinkedList list) 
     {  
+    	 // Traverse through the LinkedList 
+        Node currNode =list.head;
+         System.out.print("LinkedList: "); 
+           // Print the data at current node 
         // Traverse through the LinkedList 
+       while (currNode != null) { 
+           // Print the data at current node 
+           System.out.print(currNode.data + " "); 
+  
+           // Go to next node 
+           currNode = currNode.next; 
+       } 
+          
+   }
    
-            // Print the data at current node 
-       
-            // Go to next node 
-    } 
    
     // Driver code 
     public static void main(String[] args) 
