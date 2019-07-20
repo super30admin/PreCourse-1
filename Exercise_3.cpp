@@ -1,7 +1,7 @@
 #include <bits/stdc++.h> 
 using namespace std; 
   
-// A linked list node  
+// A linked list node (changes) 
 class Node  
 {  
     public: 
