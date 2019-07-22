@@ -1,5 +1,3 @@
-import java.io.*; 
-  
 // Java program to implement 
 // a Singly Linked List 
 public class LinkedList { 
@@ -12,12 +10,13 @@ public class LinkedList {
     static class Node { 
   
         int data; 
-        Node next; 
+        Node next = null; 
   
         // Constructor 
         Node(int d) 
         { 
             //Write your code here 
+            this.data = d;
         } 
     } 
   
@@ -25,15 +24,28 @@ public class LinkedList {
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data 
+        Node node = new Node(data);
    
         // If the Linked List is empty, 
         // then make the new node as head 
-        
-            // Else traverse till the last node 
-            // and insert the new_node there 
+        if(list.head == null) {
+            list.head = node;
+            return list;
+        }
 
-            // Insert the new_node at last node 
+        // Else traverse till the last node 
+        // and insert the new_node there 
+        Node temp = list.head;
+    
+        while(temp.next != null) {
+            temp = temp.next;
+        }
+
+        // Insert the new_node at last node 
+        temp.next = node;
+
         // Return the list by head 
+        return list;
         
     } 
   
@@ -41,10 +53,14 @@ public class LinkedList {
     public static void printList(LinkedList list) 
     {  
         // Traverse through the LinkedList 
-   
+        Node temp = list.head;
+        System.out.print("Stack elements: ");
+        while(temp != null) {
             // Print the data at current node 
-       
-            // Go to next node 
+            System.out.print(temp.data + " ");
+            // Go to next node
+            temp = temp.next;
+        }  
     } 
    
     // Driver code 
