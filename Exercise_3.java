@@ -18,6 +18,9 @@ public class LinkedList {
         Node(int d) 
         { 
             //Write your code here 
+        data = d; 
+        next = null; 
+
         } 
     } 
   
@@ -34,6 +37,30 @@ public class LinkedList {
 
             // Insert the new_node at last node 
         // Return the list by head 
+
+        Node node1 = new Node(data); 
+        node1.next = null; 
+
+        // If the Linked List is empty, 
+        // then make the new node as head 
+        if (list.head == null) { 
+        list.head = node1; 
+        } 
+        else { 
+        // Else traverse till the last node 
+        // and insert the new_node there 
+        Node last = list.head; 
+        while (last.next != null) { 
+        last = last.next; 
+         } 
+
+        // Insert the new_node at last node 
+        last.next = node1; 
+        } 
+
+        // Return the list by head 
+        return list; 
+
         
     } 
   
@@ -45,6 +72,16 @@ public class LinkedList {
             // Print the data at current node 
        
             // Go to next node 
+            // Traverse through the LinkedList 
+             // Print the data at current node 
+             // Go to next node 
+        Node currNode = list.head; 
+        System.out.print("LinkedList: "); 
+        while (currNode != null) { 
+            System.out.print(currNode.data + " "); 
+            currNode = currNode.next; 
+        } 
+
     } 
    
     // Driver code 
@@ -68,3 +105,4 @@ public class LinkedList {
         printList(list); 
     } 
 }
+
