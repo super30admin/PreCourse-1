@@ -1,7 +1,7 @@
 class Stack { 
 	static final int MAX = 1000; 
     int top; //Index of the top element
- // Declaring an array of size MAX. An int array declaration in Java initializes all the elements of the array to 0.
+    // Declaring an array of size MAX. An int array declaration in Java initializes all the elements of the array to 0.
     int a[] = new int[MAX]; 
   
     boolean isEmpty() 

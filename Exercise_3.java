@@ -2,7 +2,7 @@ import java.io.*;
   
 // Java program to implement 
 // a Singly Linked List 
-public class LinkedList { 
+class LinkedList {
   
     Node head; // head of list 
   
@@ -17,7 +17,9 @@ public class LinkedList {
         // Constructor 
         Node(int d) 
         { 
-            //Write your code here 
+            //Write your code here
+            this.data = d;
+            this.next = null;
         } 
     } 
   
@@ -25,24 +27,39 @@ public class LinkedList {
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data 
-   
+        Node newNode = new Node(data);
         // If the Linked List is empty, 
-        // then make the new node as head 
-        
-            // Else traverse till the last node 
-            // and insert the new_node there 
-
-            // Insert the new_node at last node 
+        // then make the new node as head
+        if(list.head == null){
+            list.head = newNode;
+            System.out.println("Inserted " + newNode.data + " in the beginning");
+        }
+        // Else traverse till the last node
+        // and insert the new_node there
+       else {
+            Node temp = list.head;
+            while(temp.next != null){
+                temp = temp.next;
+            }
+            temp.next = newNode;
+            System.out.println("Inserted " + newNode.data);
+        }
+        // Insert the new_node at last node
         // Return the list by head 
-        
+        return list;
     } 
   
     // Method to print the LinkedList. 
     public static void printList(LinkedList list) 
     {  
-        // Traverse through the LinkedList 
+        // Traverse through the LinkedList
+        Node n = list.head;
    
-            // Print the data at current node 
+            // Print the data at current node
+        while(n != null){
+            System.out.println("Printing " + n.data);
+            n = n.next;
+        }
        
             // Go to next node 
     } 
