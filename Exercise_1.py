@@ -6,8 +6,8 @@ class myStack:
      def push(self, item):
          
      def pop(self):
-        
-        
+          print("HELLO")
+
      def peek(self):
         
      def size(self):
