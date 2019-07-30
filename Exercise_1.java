@@ -39,7 +39,7 @@ class Stack {
         //If empty return 0 and print " Stack Underflow"
         //Write your code here
     		if(top < 0){
-    			System.out.println("The Stack is empty");
+    			System.out.println("Stack Underflow");
     			return 0;
     		}else {
     			int x = a[top--];
