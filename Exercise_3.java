@@ -17,7 +17,7 @@ public class LinkedList {
         // Constructor 
         Node(int d) 
         { 
-            //Write your code here 
+            this.data = d; 
         } 
     } 
   
@@ -34,6 +34,20 @@ public class LinkedList {
 
             // Insert the new_node at last node 
         // Return the list by head 
+
+        Node newNode = new Node(data);
+
+        if (list.head == null) {
+            list.head = newNode;
+        } else {
+            Node pointer = list.head;
+            while (pointer.next != null) {
+                pointer = pointer.next;
+            }
+            pointer.next = newNode;
+        }
+
+        return list;
         
     } 
   
@@ -45,6 +59,18 @@ public class LinkedList {
             // Print the data at current node 
        
             // Go to next node 
+
+            if (list.head == null) {
+                System.out.println("Enpty List");
+            } else {
+                Node pointer = list.head;
+                System.out.println(pointer.data);
+
+                while(pointer.next != null) {
+                    pointer = pointer.next;
+                    System.err.println(pointer.data);
+                }
+            }
     } 
    
     // Driver code 
