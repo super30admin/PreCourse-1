@@ -49,14 +49,9 @@ public class LinkedList {
     {  
        Node currNode = list.head; 
    
-        System.out.print("LinkedList: "); 
-   
-        // Traverse through the LinkedList 
-        while (currNode != null) { 
-            // Print the data at current node 
-            System.out.print(currNode.data + " "); 
-   
-            // Go to next node 
+        System.out.print("LinkedList:"); 
+      while (currNode != null) { 
+            System.out.print(currNode.data); 
             currNode = currNode.next; 
         } 
     } 
