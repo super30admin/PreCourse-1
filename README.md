@@ -13,9 +13,9 @@ Exercise_2 : Implement Stack using Linked List.
 <br> Approach:store elements in array in the manner of stack
 
 Exercise_3 : Implement Singly Linked List.
-<br>Time Complexity:
-<br>Space Complexity:
-<br> Approach:
+<br>Time Complexity:O(n)
+<br>Space Complexity:O(n)
+<br> Approach:Store element in linkedlist node and move to next node.
 
 Exercise_4 : Insert an element in a Binary Tree.
 <br>Time Complexity:
