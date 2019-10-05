@@ -18,8 +18,8 @@ Exercise_3 : Implement Singly Linked List.
 <br> Approach:Store element in linkedlist node and move to next node.
 
 Exercise_4 : Insert an element in a Binary Tree.
-<br>Time Complexity:
-<br>Space Complexity:
-<br> Approach:
+<br>Time Complexity:O(n) 
+<br>Space Complexity:O(n)
+<br> Approach:Store elements in queue and store to left and right to given element based on the input.
 
 <br>*After completing the project kindly submit a pull request*
