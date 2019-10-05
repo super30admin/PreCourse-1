@@ -32,7 +32,8 @@ public class GFG {
     /*function to insert element in binary tree */
     static void insert(Node temp, int key) 
     { 
-
+       Queue<Node> q = new LinkedList<Node>(); 
+        q.add(temp); 
       while (!q.isEmpty()) { 
             temp = q.peek(); 
             q.remove(); 
