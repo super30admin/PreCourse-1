@@ -1,18 +1,26 @@
 class myStack:
      def __init__(self):
+            self.stack=[]
          
-     def isEmpty(self):
+    def isEmpty(self):
+         return len(self.stack)==0
          
-     def push(self, item):
-         
-     def pop(self):
+    def push(self, item):
+        self.stack.append(item)
         
+    def pop(self):
+        return self.stack.pop()
+    
+    def peek(self):
+        return self.stack[-1]
         
-     def peek(self):
-        
-     def size(self):
+    def size(self):
+        return(len(self.stack))
          
-     def show(self):
+            
+    def show(self):
+        return self.stack
+         
          
 
 s = myStack()
