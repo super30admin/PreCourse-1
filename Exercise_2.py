@@ -5,11 +5,23 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.a= None #a is head of the linked list
         
     def push(self, data):
-        
+        if self.a == None:
+            self.a = Node(data)
+        else:
+            newnode = Node(data)
+            newnode.next= self.a
+            self.a = newnode
     def pop(self):
-        
+        if self.a == None:
+            return None
+        else:
+            pop_elem=self.a
+            self.a =pop_elem.next
+            pop_elem.next =None
+            return pop_elem.data
 a_stack = Stack()
 while True:
     print('push <value>')
@@ -27,4 +39,5 @@ while True:
         else:
             print('Popped value: ', int(popped))
     elif operation == 'quit':
+        print(a_stack.a.data)
         break
