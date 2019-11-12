@@ -9,6 +9,11 @@ class LinkedList:
 
 
     def create(self, data):
+        """
+        Create a new node with data as data
+        If head is none, point head to new node
+        Else point current to head, iterate till the last node and set the last node's next as new node
+        """
         node = Node(data)
         if self.head.data == None:
             self.head = node
@@ -20,6 +25,11 @@ class LinkedList:
 
 
     def insert(self, data, location):
+        """
+        Create a new node with data as data
+        If location is 0, point node.next to earlier head and change the head to new node
+        Else iterate till the location, set the new node's next as current node's next and point the current node's next to new node
+        """
         node = Node(data)
         if location == 0:
             node.next = self.head
@@ -33,6 +43,9 @@ class LinkedList:
 
 
     def traversal(self):
+        """
+        Set current at head and print while iterating till current is not none
+        """
         current = self.head
         while current:
             print(current.data)
@@ -40,6 +53,9 @@ class LinkedList:
 
 
     def search(self, value):
+        """
+        Iterate like traversal and check whether the node value is equal to target value
+        """
         current = self.head
         while current:
             if current.data == value:
@@ -49,6 +65,10 @@ class LinkedList:
 
 
     def deleteNode(self, location):
+        """
+        If location is 0, set the head to dead.next, garbage collector will remove the node because nothing points to it
+        Else iterate till the location and change the next value of the node to node's next.next
+        """
         if location == 0:
             self.head = self.head.next
         else:
