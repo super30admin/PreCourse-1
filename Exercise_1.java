@@ -18,7 +18,7 @@ class Stack {
 
 	boolean push(int x) throws Exception {
 		/* Check for stack Overflow */
-		if (top == MAX)
+		if (top == MAX-1)
 			throw new Exception("Stack Overflow");
 
 		top++;
