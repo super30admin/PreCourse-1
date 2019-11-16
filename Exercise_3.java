@@ -1,9 +1,7 @@
-import java.io.*; 
-  
-// Java program to implement 
-// a Singly Linked List 
+package precourse1;
+
 public class LinkedList { 
-  
+	  
     Node head; // head of list 
   
     // Linked list Node. 
@@ -16,14 +14,28 @@ public class LinkedList {
   
         // Constructor 
         Node(int d) 
-        { 
+        { data=d;
+          next=null;
             //Write your code here 
         } 
     } 
   
     // Method to insert a new node 
     public static LinkedList insert(LinkedList list, int data) 
-    { 
+    { 	Node temp = new Node(data);
+    	temp.next=null;
+    	
+    	if(list.head==null)
+    	{list.head= temp;
+    	}
+    	else
+    	{ Node temp1=list.head;
+    		while(temp1.next != null)
+    		{ temp1=temp1.next;
+    		}
+    		temp1.next=temp;
+    	}
+    	return list;
         // Create a new node with given data 
    
         // If the Linked List is empty, 
@@ -39,7 +51,12 @@ public class LinkedList {
   
     // Method to print the LinkedList. 
     public static void printList(LinkedList list) 
-    {  
+    { 	Node curr = list.head;
+    	while(curr != null)
+    	{
+    		System.out.print(curr.data);
+    		curr = curr.next;
+    	}
         // Traverse through the LinkedList 
    
             // Print the data at current node 
