@@ -1,3 +1,4 @@
+Time Complexity-Insertion-O(n)
 package com.company;
 import java.util.Queue;
 import java.util.LinkedList;
