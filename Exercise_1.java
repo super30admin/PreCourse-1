@@ -1,44 +1,88 @@
-class Stack { 
-    static final int MAX = 1000; 
-    int top; 
-    int a[] = new int[MAX]; // Maximum size of Stack 
-  
-    boolean isEmpty() 
-    { 
-        //Write your code here 
-    } 
+Time Complexity-Push-O(1)
+                Pop-O(1)
+                Peek-O(1)
+Space Complexity-O(n)
+class ArrayStack{
+private int[] stackArray;
+int top;
+int maxSize=4;
+private ArrayStack()
+{
+    stackArray=new int[maxSize];
+    top=-1;
+}
 
-    Stack() 
-    { 
-        //Initialize your constructor 
-    } 
-  
-    boolean push(int x) 
-    { 
-        //Check for stack Overflow
-        //Write your code here
-    } 
-  
-    int pop() 
-    { 
-        //If empty return 0 and print " Stack Underflow"
-        //Write your code here
-    } 
-  
-    int peek() 
-    { 
-        //Write your code here
-    } 
-} 
-  
-// Driver code 
-class Main { 
-    public static void main(String args[]) 
-    { 
-        Stack s = new Stack(); 
-        s.push(10); 
-        s.push(20); 
-        s.push(30); 
-        System.out.println(s.pop() + " Popped from stack"); 
-    } 
+private boolean isEmpty()
+{
+    return top<0;
+}
+
+private boolean push(int x)
+{
+    
+    if(top>=maxSize-1)
+    {
+     System.out.println("Stack size is full");
+     return false;
+    }
+    System.out.println("Element"+ x +" pushed succesfully");
+     stackArray[++top]=x;
+     return true;
+
+}
+
+private int pop()
+{
+    if(top<0)
+    {
+        System.out.println("No element to pop");
+        return -1;
+    }
+    else
+    {   
+        int popped=stackArray[top--];
+        System.out.println("Element popped out is :"+popped);
+        return popped;
+    }
+
+}
+
+private int peek()
+{
+    if(top<0){
+        System.out.println("No element to peek :");
+        return -1;
+    }
+    else{
+        System.out.println("Element peeked is :");
+        return ArrayStack[top];
+}
+}
+private void printStack()
+{
+    if(!isEmpty()){
+   for(int i=top;i>=0;i--)
+       System.out.print(stackArray[i] + " ");
+   }
+   else 
+     System.out.println("Empty Stack");
+}
+
+
+public static void main(String[] args) {
+    ArrayStack myStack= new ArrayStack();
+    myStack.push(3);
+    myStack.push(5);
+    myStack.push(6);
+    myStack.push(7);
+    myStack.push(7);
+    myStack.printStack();
+    myStack.pop();
+    myStack.pop();
+    myStack.pop();
+    myStack.pop();
+    myStack.pop();
+    System.out.println(myStack.isEmpty());
+    myStack.printStack();
+}
 }
