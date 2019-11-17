@@ -1,3 +1,7 @@
+Time Complexity-Push-O(1)
+		Pop-O(1)
+		Peek-O(1)
+Space Complexity-O(n)
 package com.company;
 
 public class StackLinkedList {
