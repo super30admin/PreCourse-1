@@ -9,3 +9,8 @@ C=Node(3)
 
 A.nextnode=B
 B.nextnode=C
+
+print(A.data)
+print(A.nextnode)
+print(B)
+print(C.data)
