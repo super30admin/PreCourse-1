@@ -10,15 +10,15 @@ class Stack:
     def __init__(self):
         self.head = None
         
-    def push(self, data):
+    def push(self, data):               
         if self.head == None:
             self.head = Node(data)
-        else:
+        else:                           #Newly Inserted data node becomes the head
             temp = Node(data)
             temp.next = self.head
             self.head = temp      
 
-    def pop(self):
+    def pop(self):                      #returns the value of the head node
         if self.head == None:
             return None
         else:
@@ -33,9 +33,9 @@ while True:
     print('push <value>')
     print('pop')
     print('quit')
-    do = input('What would you like to do? ').split()
+    do = input('What would you like to do? ').split()         #split() converts a string into a list splitting at the space
  
-    operation = do[0].strip().lower()
+    operation = do[0].strip().lower()                         #strip() removes empty spaces in the string                
 
     if operation == 'push':
         a_stack.push(int(do[1]))
