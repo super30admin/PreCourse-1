@@ -1,5 +1,5 @@
 
-# PreCourse_1: Exercise_3 : Implement Singly Linked List.
+# PreCourse_1: Exercise_3 : Implement a Singly Linked List.
 class Node:
     def __init__(self, initdata):
         self.data = initdata
