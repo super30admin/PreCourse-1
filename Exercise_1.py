@@ -12,7 +12,10 @@ class myStack:
         return self.items.pop()
 
     def peek(self):
-        return self.items[-1]
+        if len(self.items) == 0:
+            return "Stack is empty"
+        else:    
+            return self.items[-1]
 
     def size(self):
         return len(self.items)
@@ -37,3 +40,4 @@ print(s.show())
 print(s.isEmpty())
 print(s.pop())
 print(s.isEmpty())
+print(s.peek())
