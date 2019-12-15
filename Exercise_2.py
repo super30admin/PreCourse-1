@@ -2,13 +2,28 @@ class Node:
     def __init__(self, data):
        self.data = data
        self.next = None
- 
+
 class Stack:
     def __init__(self):
-        
+        self.head = None
     def push(self, data):
+        # Update head to point to the first Node in the Linked List
+        if self.head is None:
+            self.head = Node(data)
+        # Append the node to the beginning of the list [Time Complexity:  O(1)]  
+        else:
+            temp = Node(data)
+            temp.next = self.head
+            self.head = temp
         
     def pop(self):
+        # Return None when the stack is empty
+        if self.head is None:
+            return None
+        # Return the value of node that is on top of the stack i.e head, and then update the head   [Time complexity: O(1)] 
+        self.poppedValue = self.head.data
+        self.head = self.head.next
+        return self.poppedValue    
         
 a_stack = Stack()
 while True:
