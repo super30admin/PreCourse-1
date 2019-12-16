@@ -3,58 +3,83 @@ class Node:
         self.data = data
         self.next = None
 
+    def __str(self):
+        return self.data
+
 
 class LinkedList:
+
     def __init__(self):
-        self.root = None
+        '''
+           Time complexity: Constant O(1)
+           Space complexity: Constant O(1)
+        '''
+        self.size = 0
+        self.head = None
 
     def insert(self, data):
-        if not self.root:
-            self.root = Node(data)
-        else:
-            cur = self.root
-            while cur.next:
-                cur = cur.next
-            cur.next = Node(data)
-        self.printList()
+        '''
+            Time complexity: Constant O(1)
+            Space complexity: Constant O(1)
+        '''
+        node = Node(data)
+        if self.head:
+            node.next = self.head
+        self.head = node
+        self.size += 1
 
     def printList(self):
-        cur = self.root
-        while cur and cur.next:
-            print(cur.data, "->", end=" ")
+        '''
+            Time complexity: Linear O(n)
+            Space complexity: Constant O(1)
+        '''
+        cur = self.head
+        result = ''
+        while cur:
+            result += f'{cur.data} '
             cur = cur.next
-        if cur:
-            print(cur.data)
-        else:
-            print("Empty LinkedList!")
+        print(result) if result else print('Empty List!')
 
     def delete(self, data):
-        cur = self.root
-        prev = None
-        while cur and cur.data != data:
-            prev = cur
-            cur = cur.next
-        if prev:
-            prev.next = cur.next
-        elif cur and cur.data == data:
-            # Root node
-            self.root = self.root.next
-        else:
-            print("Not found")
-            return
-        self.printList()
+        '''
+            Time complexity: Linear O(n)
+            Space complexity: Constant O(1)
+        '''
+        if self.head:
+            if data == self.head.data:
+                self.head = self.head.next
+                self.size -= 1
+            else:
+                cur = self.head
+                prev = None
+                while cur:
+                    if cur.data == data:
+                        prev.next = cur.next
+                        del cur
+                        self.size -= 1
+                        return
+                    prev = cur
+                    cur = cur.next
 
 
 root = LinkedList()
-
+root.printList()
 root.insert(10)
 root.insert(20)
 root.insert(30)
+root.printList()
 root.delete(20)
+root.printList()
 root.delete(10)
+root.printList()
 root.delete(30)
+root.printList()
 root.insert(40)
 root.insert(50)
+root.printList()
 root.delete(50)
+root.printList()
 root.delete(40)
+root.printList()
 root.delete(4000)
+root.printList()
