@@ -1,52 +1,100 @@
-public class StackAsLinkedList { 
+Time Complexity-Push-O(1)
+		Pop-O(1)
+		Peek-O(1)
+Space Complexity-O(n)
+package com.company;
+
+public class StackLinkedList {
+    class Node
+    {
+        int key;
+        Node next;
+
+    }
+
+    Node top;
+    StackLinkedList()
+    {
+        this.top=null;
+    }
+
+    public boolean isEmpty()
+    {
+        return (top==null);
+    }
+
+    public void push(int x)
+    {
+        Node curr=new Node();
+        if(curr==null)
+        {
+           System.out.println("Heap Overflow");
+        }
+
+        curr.key=x;
+        curr.next=top;
+        top=curr;
+        System.out.println("Element pushed is"+ top.key);
+        return;
+
+    }
+
+    public int peek()
+    {
+        if(!isEmpty()) {
+            System.out.println("Element peeked is" + top.key);
+            return top.key;
+        }
+        else
+            return -1;
+    }
+
+    public int pop()
+    {
+        if(!isEmpty()) {
+            int val= top.key;
+            top=top.next;
+            System.out.println("Element popped is"+ val);
+            return val;
+        }
+        else{
+            System.out.println("Empty Stack");
+            return -1;
+        }
+
+    }
+
+    public void printStack()
+    {
+        if(!isEmpty())
+        {
+           Node temp= new Node();
+           temp=top;
+           while(temp!=null)
+           {
+               System.out.print(temp.key+" ");
+               temp=temp.next;
+           }
+        }
+        else
+            System.out.println("Empty Stack");
+
+    }
+
+
+    public static void main(String[] args) {
+	    StackLinkedList s=new StackLinkedList();
+	    s.push(10);
+	    s.push(8);
+	    s.push(12);
+	    s.pop();
+	    s.pop();
+	    s.pop();
+	    s.pop();
   
-    StackNode root; 
-  
-    static class StackNode { 
-        int data; 
-        StackNode next; 
-  
-        StackNode(int data) 
-        { 
-            //Constructor here 
-        } 
-    } 
-    
-	
-    public boolean isEmpty() 
-    { 
-        //Write your code here for the condition if stack is empty. 
-    } 
-  
-    public void push(int data) 
-    { 
-        //Write code to push data to the stack. 
-    } 
-  
-    public int pop() 
-    { 	
-	//If Stack Empty Return 0 and print "Stack Underflow"
-        //Write code to pop the topmost element of stack.
-	//Also return the popped element 
-    } 
-  
-    public int peek() 
-    { 
-        //Write code to just return the topmost element without removing it.
-    } 
-  
-	//Driver code
-    public static void main(String[] args) 
-    { 
-  
-        StackAsLinkedList sll = new StackAsLinkedList(); 
-  
-        sll.push(10); 
-        sll.push(20); 
-        sll.push(30); 
-  
-        System.out.println(sll.pop() + " popped from stack"); 
-  
-        System.out.println("Top element is " + sll.peek()); 
-    } 
-} 
+    }
+}
+
+
+
+
