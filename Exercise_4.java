@@ -32,7 +32,29 @@ public class GFG {
     /*function to insert element in binary tree */
     static void insert(Node temp, int key) 
     { 
-
+        System.out.println("in insert method");
+        Queue<Node> queue=new LinkedList<>();
+        queue.offer(temp);
+        while(!queue.isEmpty())
+        {
+            Node data=queue.remove();
+            if(data.left==null)
+            {
+                data.left=new Node(key);
+                break;
+            }
+            else
+            {
+                queue.offer(data.left);
+            }
+            if(data.right==null)
+            {
+                data.right=new Node(key);
+                break;
+            }
+            else
+                queue.offer(data.right);
+        }
         // Do level order traversal until we find 
         // an empty place and add the node.  
     } 
@@ -52,8 +74,11 @@ public class GFG {
        
         int key = 12; 
         insert(root, key); 
-       
+        key=10;
+        insert(root, key);
         System.out.print("\nInorder traversal after insertion:"); 
         inorder(root); 
     } 
 }
+
+// Don't know how to calculate complexity for recursions.
