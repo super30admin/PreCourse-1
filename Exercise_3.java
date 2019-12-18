@@ -103,3 +103,5 @@ public class LinkedList {
         printList(list); 
     } 
 }
+
+// Here, I am using 1 for loop, so time compexity is O(n). 

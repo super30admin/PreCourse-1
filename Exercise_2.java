@@ -116,3 +116,5 @@ public class StackAsLinkedList {
          System.out.println(sll.pop() + " popped from stack"); 
     } 
 } 
+
+// Time Complexity: Here, I am using 1 for loop 2 times, so time complexity is O(n), where n is number of elements.

@@ -86,3 +86,7 @@ class Stack {
         //Write your code here
     } 
 } 
+
+// Time Complexity: Here, I am not using any for loops, just inserting element at end of array and fetching from the end. So its O(1)
+
+// Space Complexity: Don't know how to calculate space complexity 
