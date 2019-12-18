@@ -1,5 +1,5 @@
-import java.util.LinkedList; 
-import java.util.Queue; 
+import java.util.Queue;
+
 public class GFG { 
        
     /* A binary tree node has key, pointer to  
@@ -32,9 +32,45 @@ public class GFG {
     /*function to insert element in binary tree */
     static void insert(Node temp, int key) 
     { 
+    	Queue<Node> q = new java.util.LinkedList<Node>();
+    	q.add(temp);
 
         // Do level order traversal until we find 
-        // an empty place and add the node.  
+        // an empty place and add the node.
+    	while(!q.isEmpty()) {
+    		temp = q.peek();
+    		q.remove();
+    		
+    		if(temp.left == null) {
+    			temp.left = new Node(key);
+    			break;
+    		} else {
+    			q.add(temp.left);
+    		}
+    		
+    		if(temp.right == null) {
+    			temp.right = new Node(key);
+    			break;
+    		} else {
+    			q.add(temp.right);
+    		}
+    	}
+    } 
+    
+    /*function to insert element in binary tree recursively - extra trial effort*/
+    static Node insertRecursive(Node temp, int key) 
+    { 
+    	if(temp == null) {
+    		return new Node(key);
+    	}
+    	if(key < temp.key) {
+    		temp.left = insertRecursive(temp.left, key);
+    	} else if(key > temp.key) {
+    		temp.right = insertRecursive(temp.right, key);
+    	} else {
+    		return temp;
+    	}
+    	return temp;
     } 
        
     // Driver code 
@@ -50,9 +86,15 @@ public class GFG {
         System.out.print( "Inorder traversal before insertion:"); 
         inorder(root); 
        
-        int key = 12; 
-        insert(root, key); 
-       
+        int key1 = 12; 
+        insert(root, key1); 
+
+        System.out.print("\nInorder traversal after insertion:"); 
+        inorder(root); 
+        
+        int key2 = 23; 
+        insertRecursive(root, key2); 
+
         System.out.print("\nInorder traversal after insertion:"); 
         inorder(root); 
     } 
