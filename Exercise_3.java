@@ -36,12 +36,12 @@ public class LinkedList {
         // Else traverse till the last node
         // and insert the new_node there
         else {
-            Node temp;
-            temp = list.head;
-            while (temp.next != null) {
-                temp = temp.next;
+            Node tempNode;
+            tempNode = list.head;
+            while (tempNode.next != null) {
+                tempNode = tempNode.next;
             }
-            temp.next = newNode;
+            tempNode.next = newNode;
         }
         return list;
 
@@ -54,17 +54,17 @@ public class LinkedList {
     // Method to print the LinkedList. 
     public static void printList(LinkedList list) 
     {
-        Node temp;
-        temp = list.head;
-        while (temp.next != null) {
+        Node tempNode;
+        tempNode = list.head;
+        while (tempNode.next != null) {
             // Print the data at current node
 
-            System.out.println(temp.data);
+            System.out.println(tempNode.data);
             // Go to next node
 
-            temp = temp.next;
+            tempNode = tempNode.next;
         }
-        System.out.println(temp.data);
+        System.out.println(tempNode.data);
     } 
    
     // Driver code 
