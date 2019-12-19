@@ -22,8 +22,9 @@ class Stack {
     boolean push(int x) 
     { 
         //Check for stack Overflow
-        top++;
+        
         if(top < MAX){
+	    top++;
             a[top] = x;
             return true;
         }else{
