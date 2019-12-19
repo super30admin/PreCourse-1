@@ -39,8 +39,9 @@ class Stack {
         //Check for stack Overflow
         //Write your code here
         //check if top is equal to MAX
-        if(top == MAX)
+        if(top == MAX-1)
         {
+            // top value from -1 to 999 this will work
             System.out.println("Stack Overflow");
             return false;
         }
