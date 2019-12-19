@@ -1,3 +1,10 @@
+/*
+Time Complexity - inorder() : O(n)
+                  insert() ; O(n)
+Space Complexity - O(n)
+*/
+
+
 import java.util.LinkedList; 
 import java.util.Queue; 
 public class GFG { 
@@ -32,14 +39,41 @@ public class GFG {
     /*function to insert element in binary tree */
     static void insert(Node temp, int key) 
     { 
+        //check if tree is empty
+        if(temp == null){
+            root = new Node(key);
+            return;
+        }
 
         // Do level order traversal until we find 
-        // an empty place and add the node.  
+        // an empty place and add the node 
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(temp);
+        while(!queue.isEmpty()){
+             Node node = queue.remove();
+            if(node.left != null)
+                queue.add(node.left);
+            else{
+                node.left = new Node(key);
+                return;
+            }
+
+          
+            if(node.right != null)
+                queue.add(node.right);
+            else{
+                node.right = new Node(key);
+                return;
+            }
+           
+        }
+         
     } 
        
     // Driver code 
     public static void main(String args[]) 
     { 
+        
         root = new Node(10); 
         root.left = new Node(11); 
         root.left.left = new Node(7); 
