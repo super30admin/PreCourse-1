@@ -34,9 +34,6 @@ public class BinaryTree {
     /* function to insert element in binary tree */
     static void insert(Node temp, int key) {
 
-        // Do level order traversal until we find
-        // an empty place and add the node.
-
         Queue<Node> q = new LinkedList<>();
         if (temp == null) {
             temp = new Node(key);
