@@ -1,6 +1,20 @@
+// Time Complexity :
+//      inorder() - O(n) - need to traverse the whole ll to insert a new node
+//      insert() - O(h+log(n))
+//      populateQueue() - O(h) - does level order traversal for h levels
+//      
+// Space Complexity :
+//      overall - O(n) - Use Queue to do level order tarversal
+//      insert() - O(1)
+//      insert() - O(1)
+//      populateQueue() - N/A
+// Did this code successfully run on Leetcode : N/A
+// Any problem you faced while coding this : No
+
+//Insert a node in a Binary Tree
 import java.util.LinkedList; 
 import java.util.Queue; 
-public class GFG { 
+class GFG { 
        
     /* A binary tree node has key, pointer to  
     left child and a pointer to right child */
@@ -16,7 +30,8 @@ public class GFG {
         } 
     } 
     static Node root; 
-    static Node temp = root; 
+    static Node temp = root;
+    static java.util.Queue<Node> lvlOdrQueue = new java.util.LinkedList<Node>(); 
       
     /* Inorder traversal of a binary tree*/
     static void inorder(Node temp) 
@@ -32,9 +47,66 @@ public class GFG {
     /*function to insert element in binary tree */
     static void insert(Node temp, int key) 
     { 
+        Node temp1 = temp;
 
         // Do level order traversal until we find 
-        // an empty place and add the node.  
+        // an empty place and add the node.
+        
+        populateQueue(temp1);
+
+        while(lvlOdrQueue.size() > 0)
+        {
+            Node t = lvlOdrQueue.remove();
+
+            if(t.left == null)
+            {
+                t.left = new Node(key);
+                break;
+            }
+            else if(t.right == null && t.left != null)
+            {
+                t.right = new Node(key);
+                break;
+            }
+        }
+        
+    }
+
+    public static void populateQueue(Node temp)
+    {
+        if(lvlOdrQueue.size() == 0)
+        {
+            lvlOdrQueue.offer(temp);
+            if(temp.left != null)
+                lvlOdrQueue.offer(temp.left);
+            if(temp.right != null)
+                lvlOdrQueue.offer(temp.right);
+
+            
+            if(temp.left != null)
+                populateQueue(temp.left);
+                
+            if(temp.right != null)
+                populateQueue(temp.right);
+        }
+        else
+        {
+            if(temp != null)
+            {
+                if(temp.left != null)
+                lvlOdrQueue.offer(temp.left);
+
+                if(temp.right != null)
+                    lvlOdrQueue.offer(temp.right);
+
+
+                if(temp.left != null)
+                    populateQueue(temp.left);
+                    
+                if(temp.right != null)
+                    populateQueue(temp.right);
+            }
+        }
     } 
        
     // Driver code 
@@ -51,7 +123,7 @@ public class GFG {
         inorder(root); 
        
         int key = 12; 
-        insert(root, key); 
+        insert(root, key);
        
         System.out.print("\nInorder traversal after insertion:"); 
         inorder(root); 
