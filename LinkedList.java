@@ -75,7 +75,33 @@ public class LinkedList {
     }
 
 
+    Node deleteElement(int val){
+        Node temp = head;
+        Node prev = head;
+
+        if(head.data == val){
+            head = head.next;
+            System.out.println(temp.data);
+            return head;
+        }
+
+        else{
+            while(temp != null){
+                if(temp.data == val){
+                    System.out.println(temp.data);
+                    prev.next = temp.next;
+                    return head;
+                }
+                prev = temp;
+                temp = temp.next;
+
+            }
+        }
+        System.out.println("Element not found");
+        return head;
+    }
     void display(){
+        System.out.println("Displaying the list");
         Node temp = head;
         while(temp.next != null){
             System.out.println(temp.data);
@@ -126,6 +152,11 @@ public class LinkedList {
         System.out.println("Delete at Tail List2");
         nll.deleteAtTail();
         nll.display();
+
+        System.out.println("Delete node for given element");
+        nll.deleteElement(20);
+        nll.display();
         }
+
 
     }
