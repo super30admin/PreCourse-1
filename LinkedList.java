@@ -1,8 +1,9 @@
-package com.company;
+package com.Exercise3;
 
 class Node{
     int data;
     Node next;
+
 }
 public class LinkedList {
 
@@ -15,11 +16,11 @@ public class LinkedList {
 
         return temp;
     }
-    Node insert(int data){
+    Node insertAtHead(int data){
 
         if(head == null){
-           Node temp = createNode(data);
-           head = temp;
+            Node temp = createNode(data);
+            head = temp;
         }
         else{
             Node temp = createNode(data);
@@ -30,6 +31,50 @@ public class LinkedList {
         return head;
     }
 
+    Node insertAtTail(int data){
+        if(head == null){
+            Node temp = createNode(data);
+            head = temp;
+        }
+
+        else{
+            Node cur = head;
+            while(cur.next != null){
+                cur = cur.next;
+            }
+            Node temp = createNode(data);
+            cur.next = temp;
+
+        }
+        return null;
+    }
+
+    Node deleteAtStart(){
+
+        Node temp = head;
+        head = head.next;
+        temp.next = null;
+
+        return head;
+
+    }
+
+    Node deleteAtTail(){
+        Node temp = head;
+        Node cur = head;
+
+        temp = temp.next;
+
+        while(temp.next != null){
+            temp = temp.next;
+            cur = cur.next;
+        }
+        cur.next = null;
+        temp = cur;
+        return temp;
+    }
+
+
     void display(){
         Node temp = head;
         while(temp.next != null){
@@ -39,18 +84,48 @@ public class LinkedList {
         System.out.println(temp.data);
     }
 
+
     public static void main(String[] args) {
 
         System.out.println("Singly Linked List");
         LinkedList ll = new LinkedList();
 
-        ll.insert(2);
-        ll.insert(4);
-        ll.insert(6);
-        ll.insert(8);
-        ll.insert(10);
+        System.out.println("Insertion at head");
+        ll.insertAtHead(2);
+        ll.insertAtHead(4);
+        ll.insertAtHead(6);
+        ll.insertAtHead(8);
+        ll.insertAtHead(10);
 
         ll.display();
-    }
 
-}
+        System.out.println("Insertion at tail");
+        LinkedList nll = new LinkedList();
+
+        nll.insertAtTail(10);
+        nll.insertAtTail(20);
+        nll.insertAtTail(30);
+        nll.insertAtTail(40);
+        nll.insertAtTail(50);
+
+        nll.display();
+
+        System.out.println("Delete at head List1");
+        ll.deleteAtStart();
+        ll.display();
+
+        System.out.println("Delete at Tail List1");
+        ll.deleteAtTail();
+        ll.display();
+
+
+        System.out.println("Delete at head List2");
+        nll.deleteAtStart();
+        nll.display();
+
+        System.out.println("Delete at Tail List2");
+        nll.deleteAtTail();
+        nll.display();
+        }
+
+    }

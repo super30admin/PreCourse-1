@@ -1,4 +1,4 @@
-package com.company;
+package com.Exercise1;
 
 public class StackArray {
 
@@ -21,16 +21,13 @@ public class StackArray {
         }
     }
 
-    void peek(){
+    int peek(){
+
         if(top == -1){
-            System.out.println("Stack underflow");
-        }
-        else if(top == MAX-1){
-            System.out.println("Stack overflow");
+            return -1;
         }
         else{
-
-            System.out.println(arr[top]);
+            return arr[top];
         }
     }
 
@@ -62,18 +59,25 @@ public class StackArray {
         StackArray sa = new StackArray();
 
         System.out.println("Is stack empty: "+sa.isEmpty());
+        System.out.println("Top:"+sa.peek());
 
-        System.out.println("Pushing elements to stack");
+        System.out.println("Pushing elements to the stack");
         sa.push(2);
+        System.out.println("Top:"+sa.peek());
         sa.push(4);
+        System.out.println("Top:"+sa.peek());
         sa.push(6);
+        System.out.println("Top:"+sa.peek());
         sa.push(8);
+        System.out.println("Top:"+sa.peek());
         sa.push(100);
+        System.out.println("Top:"+sa.peek());
 
+        System.out.println("After popping the elements:");
         System.out.println(sa.pop());
+        System.out.println("Top:"+sa.peek());
         System.out.println(sa.pop());
-
-        System.out.println("Is stack empty: "+sa.isEmpty());
+        System.out.println("Top:"+sa.peek());
 
     }
 }
