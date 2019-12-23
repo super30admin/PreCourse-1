@@ -1,5 +1,5 @@
-public class StackAsLinkedList { 
-  
+public class Exercise_2 { 
+	  
     StackNode root; 
   
     static class StackNode { 
@@ -8,42 +8,75 @@ public class StackAsLinkedList {
   
         StackNode(int data) 
         { 
+        	this.data=data;
             //Constructor here 
         } 
     } 
     
 	
     public boolean isEmpty() 
-    { 
-        //Write your code here for the condition if stack is empty. 
+    {
+    	//condition if stack is empty. 
+    	if (root==null)
+		   return true; 
+    	else
+    		return false;     
     } 
   
-    public void push(int data) 
-    { 
-        //Write code to push data to the stack. 
+    public void push(Exercise_2 sll, int data) 
+    {
+    	StackNode node =new StackNode(data);
+    	node.next=null;
+   
+        // If the Linked List is empty, 
+        // then make the new node as head 
+    	
+        if (sll.root==null){
+        	sll.root=node;
+        }
+        else{
+        StackNode currNode=sll.root;
+
+        	while(currNode.next!=null){
+        		currNode=currNode.next;
+        }
+    	currNode.next=node;
+        }
     } 
   
     public int pop() 
-    { 	
-	//If Stack Empty Return 0 and print "Stack Underflow"
+    {
+    	//If Stack Empty Return 0 and print "Stack Underflow"
         //Write code to pop the topmost element of stack.
 	//Also return the popped element 
+    	StackNode currNode=root;
+    	while (currNode.next.next!=null){
+    		currNode=currNode.next;
+    	}
+    	int x=currNode.next.data;
+    	currNode.next=null;
+		return x;
     } 
   
     public int peek() 
-    { 
-        //Write code to just return the topmost element without removing it.
+    {
+    	StackNode currNode=root;
+    	while (currNode.next.next!=null){
+    		currNode=currNode.next;
+    	}
+    	int x=currNode.next.data;
+    	return x;
     } 
   
-	//Driver code
+
     public static void main(String[] args) 
     { 
   
-        StackAsLinkedList sll = new StackAsLinkedList(); 
+    	Exercise_2 sll = new Exercise_2(); 
   
-        sll.push(10); 
-        sll.push(20); 
-        sll.push(30); 
+        sll.push(sll,10); 
+        sll.push(sll,20); 
+        sll.push(sll,30); 
   
         System.out.println(sll.pop() + " popped from stack"); 
   
