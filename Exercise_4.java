@@ -1,3 +1,18 @@
+/* Exercise_4 : Insert an element in a Binary Tree.
+*/
+
+// Time Complexity : O(n) as it has to traverse to the end of the linked list
+// Space Complexity : O(1)
+// Did this code successfully run on Leetcode :
+// Any problem you faced while coding this :
+
+
+// Your code here along with comments explaining your approach
+//we have to iterative level order traversal using queue.
+//case 1) if we find a node whose left child is empty, make new key as left child of node
+//case 2) else find a node whose right child is empty, make new key as right child of node
+//keep traversing tree until we find
+
 import java.util.LinkedList; 
 import java.util.Queue; 
 public class GFG { 
@@ -32,9 +47,30 @@ public class GFG {
     /*function to insert element in binary tree */
     static void insert(Node temp, int key) 
     { 
+        //initialising queue using linked list
+        Queue<Node> q = new LinkedList<Node>();
+        q.add(temp);
 
-        // Do level order traversal until we find 
-        // an empty place and add the node.  
+        // Do level order traversal until we find an empty place and add the node. 
+        //keep traversing until queue is not empty
+        while(!q.isEmpty()){
+            temp = q.peek();
+            q.remove();
+
+            if(temp.left == null){
+                temp.left = new Node(key);
+                break;
+            }
+            else
+                q.add(temp.left);
+            if(temp.right == null){
+                temp.right = new Node(key);
+                break;
+            }
+            else
+                q.add(temp.right);
+        }
+         
     } 
        
     // Driver code 
