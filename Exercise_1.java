@@ -34,13 +34,14 @@ class Stack {
     boolean push(int x) 
     { 
         //Checking for stack Overflow
-        if(top >= MAX - 1)){
+        if(top >= MAX - 1){
             System.out.println("Stack overflow");
             return false;
         }
         else{
-            a[top++] = x;
-            System.out.printl(x);
+            //here we are incrementing -1 to 0 first and then adding the element at 0th index
+            a[++top] = x;
+            System.out.println(x);
             return true;
         }
     } 
