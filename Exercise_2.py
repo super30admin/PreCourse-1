@@ -1,12 +1,12 @@
-// Time Complexity :
-// Space Complexity :
-// Did this code successfully run on Leetcode :
+// Time Complexity : push - O(n), pop - O(1)
+// Space Complexity : O(n)
+// Did this code successfully run on Leetcode : 
 // Any problem you faced while coding this :
 
 
 // Your code here along with comments explaining your approach
 
-class Node:
+class Node:# Declaring Node
     def __init__(self, data):
        self.data = data
        self.next = None
@@ -15,7 +15,7 @@ class Stack:
     def __init__(self):
         self.head = None
         
-    def push(self, data):
+    def push(self, data): #Inserting element to the end of list
         if self.head is None:
             self.head = Node(data)
         else:
@@ -23,7 +23,7 @@ class Stack:
             new_node.next = self.head
             self.head = new_node
         
-    def pop(self):
+    def pop(self): #Removing element
         if self.head is None:
             return None
         else:
