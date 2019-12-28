@@ -1,6 +1,6 @@
-// Time Complexity :
-// Space Complexity :
-// Did this code successfully run on Leetcode :
+// Time Complexity : push(), pop(), isEmpty() and peek() all take O(1) time
+// Space Complexity : O(n)
+// Did this code successfully run on Leetcode : Didn't run the code in leet code. As it is not available in leetcode
 // Any problem you faced while coding this :
 
 
@@ -10,25 +10,25 @@
 
 class myStack:
 
-     def __init__(self):
+     def __init__(self):#defining stack
          self.entry = []     
 
-     def isEmpty(self):
+     def isEmpty(self):#Check whether the stack is empty or not
          return self.entry == []
      
-     def push(self, item):
+     def push(self, item):#Adding elements to stack
          self.entry.append(item)
 
-     def pop(self):
+     def pop(self):#removing elements from stack
          return self.entry.pop()
 
-     def peek(self):
+     def peek(self):#for finding the top element in the stack
          return self.entry[len(self.entry)-1]
 
-     def size(self):
+     def size(self):#to find the size of the stack
          return len(self.entry)    
 
-     def show(self):
+     def show(self):#to display the elements in the stack
          return self.entry
 
 s = myStack()
