@@ -10,18 +10,18 @@ class Node:
 class LinkedList:
 
     def __init__(self):
-        '''
+        """
            Time complexity: Constant O(1)
            Space complexity: Constant O(1)
-        '''
+        """
         self.size = 0
         self.head = None
 
     def insert(self, data):
-        '''
+        """
             Time complexity: Constant O(1)
             Space complexity: Constant O(1)
-        '''
+        """
         node = Node(data)
         if self.head:
             node.next = self.head
@@ -29,10 +29,10 @@ class LinkedList:
         self.size += 1
 
     def printList(self):
-        '''
+        """
             Time complexity: Linear O(n)
             Space complexity: Constant O(1)
-        '''
+        """
         cur = self.head
         result = ''
         while cur:
@@ -41,10 +41,10 @@ class LinkedList:
         print(result) if result else print('Empty List!')
 
     def delete(self, data):
-        '''
+        """
             Time complexity: Linear O(n)
             Space complexity: Constant O(1)
-        '''
+        """
         if self.head:
             if data == self.head.data:
                 self.head = self.head.next

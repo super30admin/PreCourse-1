@@ -1,13 +1,13 @@
-'''
+"""
     Having difficulties with time and space complexities.
     Not sure if they are correct.
-'''
+"""
 
-class myStack:
-    '''
+class Stack:
+    """
         Time Complexity: Constant O(1)
         Space Complexity: Constant O(1)
-    '''
+    """
     def __init__(self):
         self.stack = []
 
@@ -19,14 +19,14 @@ class myStack:
         return len(self.stack) == 0
 
     '''
-        Time Complexity: Constant O(1)
-        Space Complexity: Constant O(1)
+        Time Complexity: Constant O(n)
+        Space Complexity: Constant O(n)
     '''
     def push(self, item):
         self.stack.append(item)
 
     '''
-        Time Complexity: Constant O(1)
+        Time Complexity: Constant O(n)
         Space Complexity: Constant O(1)
     '''
     def pop(self):
@@ -37,7 +37,7 @@ class myStack:
         return data
 
     '''
-        Time Complexity: Constant O(1)
+        Time Complexity: Constant O(n)
         Space Complexity: Constant O(1)
     '''
     def peek(self):
@@ -52,14 +52,14 @@ class myStack:
         return len(self.stack)
 
     '''
-        Time Complexity: Constant O(1)
+        Time Complexity: Constant O(n)
         Space Complexity: Constant O(1)
     '''
     def show(self):
         return self.stack
 
 
-s = myStack()
+s = Stack()
 print(f'Pop operation from empty stack : {s.pop()}')
 print(f'Show operation from empty stack : {s.show()}')
 print(f'Empty operation from empty stack : {s.isEmpty()}')

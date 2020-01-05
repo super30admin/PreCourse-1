@@ -10,7 +10,7 @@ def inorder(temp):
     """
         Inorder traversal of a binary tree
         Time Complexity - Linear O(n)
-        Space Complexity - Linear O(n)
+        Space Complexity - Linear O(h)
         'n' is the number of nodes
     """
     if not temp:
@@ -23,8 +23,7 @@ def inorder(temp):
 def insert(root, key):
     """
         function to insert element in binary tree
-        Time Complexity - O(h)
-        'h' is the height of the tree
+        Time Complexity - O(n)
         Space Complexity - Constant O(1)
     """
     node = Node(key)
@@ -51,6 +50,7 @@ def insert(root, key):
                 if not current:
                     parent.right = node
                     return
+
 
 # Driver code
 if __name__ == '__main__':

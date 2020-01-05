@@ -6,6 +6,7 @@ class Node:
     def __str__(self):
         return f'{self.data}'
 
+
 class Stack:
     '''
         Time Complexity: Constant O(1)
