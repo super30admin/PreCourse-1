@@ -11,8 +11,8 @@ public class GFG {
         // constructor 
         Node(int key){ 
             this.key = key; 
-            left = null; 
-            right = null; 
+            this.left = null; 
+            this.right = null; 
         } 
     } 
     static Node root; 
@@ -32,9 +32,28 @@ public class GFG {
     /*function to insert element in binary tree */
     static void insert(Node temp, int key) 
     { 
+        //Making node to add new key 
+        Node add = new Node(key) ; 
 
-        // Do level order traversal until we find 
-        // an empty place and add the node.  
+        //when the tree root is empty 
+        if (temp == null) {
+            temp = add ; 
+        }
+
+        //traversing to find the appropriate position to the add new key (add Node)
+        while (temp.left != null || temp.right != null) {
+            //when the new key is greater, we traverse down the right side of the tree. Similarly, when new key is smaller than the root key, we traverse down the left subtree
+            if (temp.key > key) {
+                temp = temp.left ; 
+            } else if (temp.key < key)
+            temp = temp.right ; 
+        }
+
+        //here we have reached the lead node, so we check if the add node has to be the right child or the left child  
+        if (temp.key > key) 
+            temp.left = add ; 
+        else
+            temp.right = add ;
     } 
        
     // Driver code 
