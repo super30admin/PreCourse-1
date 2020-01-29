@@ -1,3 +1,8 @@
+/*
+Time and space complexity:
+O(N) space for stack of size N
+isEmpty(), peek(), push() and pop(): O(1)
+*/
 public class StackAsLinkedList { 
   
     StackNode root; 

@@ -1,5 +1,9 @@
 /*
 Implement stack using array
+
+Time and space complexity:
+O(N) to store N values
+push,pop and peek: O(1) time
 */
 
 class Stack { 

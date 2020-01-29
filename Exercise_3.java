@@ -2,6 +2,9 @@ import java.io.*;
   
 // Java program to implement 
 // a Singly Linked List 
+/*
+O(1) time to insert node in a Linkedlist
+*/
 public class LinkedList { 
   
     Node head; // head of list 

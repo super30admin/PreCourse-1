@@ -3,7 +3,12 @@ import java.util.Queue;
 public class GFG { 
     //Insert an element in a Binary Tree.
     /* A binary tree node has key, pointer to  
-    left child and a pointer to right child */
+    left child and a pointer to right child 
+    
+    Insertion:
+    Time complexity: O(N) where N is total number of nodes in binary tree 
+    Space: O(N) for queue
+    */
     static class Node { 
         int key; 
         Node left, right; 
