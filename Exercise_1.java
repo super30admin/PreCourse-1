@@ -1,3 +1,11 @@
+/*
+Implement stack using array
+
+Time and space complexity:
+O(N) to store N values
+push,pop and peek: O(1) time
+*/
+
 class Stack { 
     static final int MAX = 1000; 
     int top; 
@@ -6,28 +14,46 @@ class Stack {
     boolean isEmpty() 
     { 
         //Write your code here 
+        return (top < 0);
     } 
 
     Stack() 
     { 
         //Initialize your constructor 
+        top = -1;
     } 
   
     boolean push(int x) 
     { 
         //Check for stack Overflow
-        //Write your code here
+        if(top == MAX-1)  {
+            System.out.println(" Stack Overflow"); 
+            return false;
+        }
+        a[++top] = x;
+        return true;
     } 
   
     int pop() 
     { 
         //If empty return 0 and print " Stack Underflow"
-        //Write your code here
+        if(top == -1) {
+            System.out.println(" Stack Underflow"); 
+            return 0;
+        }
+        int num = a[top];
+        //Decrement top so that next time element is pushed to stack, popped index is overriden with new value
+        top--;
+        return num;
+
     } 
   
     int peek() 
     { 
-        //Write your code here
+        //Peek doesnt have to check overflow, as already been done in push()
+        if(top == -1)
+            return 0;
+        return a[top];
     } 
 } 
   
