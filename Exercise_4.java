@@ -37,7 +37,7 @@ class GFG {
     {
         // Do level order traversal until we find 
         // an empty place and add the node.
-        Queue<Node> q = new LinkedList<Node>();
+        Queue<Node> q = new LinkedList<Node>(); // declaring a queue to store the nodes for level order traversal
         if(temp == null){
             root = new Node(key);
             return;
@@ -45,7 +45,7 @@ class GFG {
         else
             q.add(temp);
         while(!q.isEmpty()){
-            temp = q.poll();
+            temp = q.poll(); // removing the head of queue
 
             if(temp.left == null){
                 temp.left = new Node(key);
