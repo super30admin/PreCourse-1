@@ -23,7 +23,10 @@ class LinkedList {
         } 
     } 
   
-    // Method to insert a new node 
+    // Method to insert a new node
+    /*
+     * Time Complexity - O(n), Space Complexity - O(n)
+     */
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data
