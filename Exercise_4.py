@@ -8,12 +8,32 @@ class newNode():
           
 """ Inorder traversal of a binary tree"""
 def inorder(temp): 
-  
-    
-  
+
+    left = temp.left
+    right = temp.right
+
+    if left:
+        inorder(left)
+
+    print(temp.key)
+
+    if right:
+        inorder(right)
+
   
 """function to insert element in binary tree """
-def insert(temp,key): 
+def insert(temp,key):
+    curr = temp
+    while curr:
+        if curr.key <= key:
+            if not curr.left:
+                curr.left = newNode(key)
+            curr = curr.left
+        elif curr.key > key:
+            if not curr.right:
+                curr.right = newNode(key)
+            curr = curr.right
+
   
     
   

@@ -5,10 +5,28 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.head = Node('start')
         
     def push(self, data):
+        curr = self.head
+        while curr.next:
+            curr = curr.next
+
+        curr.next = Node(data)
         
     def pop(self):
+        if not self.head.next:
+            return 'Empty'
+
+        curr = self.head.next
+        prev = self.head
+
+        while curr.next:
+            curr = curr.next
+            prev = prev.next
+
+        prev.next = None
+
         
 a_stack = Stack()
 while True:
