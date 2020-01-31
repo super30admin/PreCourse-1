@@ -1,32 +1,47 @@
-class ListNode:
-    """
-    A node in a singly-linked list.
-    """
-    def __init__(self, data=None, next=None):
-    
-class SinglyLinkedList:
-    def __init__(self):
-        """
-        Create a new singly-linked list.
-        Takes O(1) time.
-        """
-        self.head = None
+class Node:
+    def __init__(self,val):
+        self.val = val
+        self.next = None
 
-    def append(self, data):
-        """
-        Insert a new element at the end of the list.
-        Takes O(n) time.
-        """
-        
-    def find(self, key):
-        """
-        Search for the first element with `data` matching
-        `key`. Return the element or `None` if not found.
-        Takes O(n) time.
-        """
-        
-    def remove(self, key):
-        """
-        Remove the first occurrence of `key` in the list.
-        Takes O(n) time.
-        """
+class Stack:
+    def __init__(self,head=None):
+        self.head = head
+
+    def push(self,val):
+        if self.head==None:
+            self.head = Node(val)
+        else:
+            newNode = Node(val)
+            newNode.next = self.head
+            self.head=newNode
+
+    def pop(self):
+        if self.head==None:
+            print("No more elements to pop")
+            return None
+        else:
+            node = self.head
+            self.head = self.head.next
+            return node
+
+    def print_p(self):
+        print("All the elements of stack:")
+        temp = self.head
+        while temp:
+            print(temp.val)
+            temp = temp.next
+
+
+if __name__=="__main__":
+    stack = Stack()
+    stack.push(2)
+    stack.push(3)
+    stack.push(4)
+    stack.push(5)
+    stack.print_p()
+    topElement = stack.pop()
+    print("Popped Element",topElement.val if topElement else "None")
+    topElement = stack.pop()
+    print("Popped Element",topElement.val if topElement else "None")
+    stack.push(18)
+    stack.print_p()
