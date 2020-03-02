@@ -6,6 +6,10 @@ class Stack {
     boolean isEmpty() 
     { 
         //Write your code here 
+        if(a.length==0)
+        return false;
+        else
+        return true;
     } 
 
     Stack() 
