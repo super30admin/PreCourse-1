@@ -23,7 +23,7 @@ public class GFG {
     { 
         if (temp == null) 
             return; 
-       
+        
         inorder(temp.left); 
         System.out.print(temp.key+" "); 
         inorder(temp.right); 
@@ -32,7 +32,25 @@ public class GFG {
     /*function to insert element in binary tree */
     static void insert(Node temp, int key) 
     { 
-
+        Queue<Node> NodeList = new LinkedList<Node>();
+        NodeList.add(temp);
+        
+        while (!NodeList.isEmpty()) { 
+            temp = NodeList.peek(); 
+            NodeList.remove(); 
+       
+            if (temp.left == null) { 
+                temp.left = new Node(key); 
+                break; 
+            } else
+                NodeList.add(temp.left); 
+       
+            if (temp.right == null) { 
+                temp.right = new Node(key); 
+                break; 
+            } else
+                NodeList.add(temp.right); 
+        } 
         // Do level order traversal until we find 
         // an empty place and add the node.  
     } 
