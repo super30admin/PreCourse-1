@@ -42,7 +42,7 @@ public class StackAsLinkedList {
         }
     } 
   
-    public int pop() 
+    public int pop()    
     { 	
 	//If Stack Empty Return 0 and print "Stack Underflow"
         //Write code to pop the topmost element of stack.

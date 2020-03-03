@@ -4,7 +4,7 @@ public class Stack {
     int top; 
     int a[] = new int[MAX]; // Maximum size of Stack 
   
-    boolean isEmpty() 
+    boolean isEmpty()   
     { 
         //Write your code here 
     	if(top < 0)

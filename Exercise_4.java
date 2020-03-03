@@ -62,7 +62,7 @@ public class GFG {
         // an empty place and add the node.  
     } 
        
-    // Driver code 
+    // Driver code    
     public static void main(String args[]) 
     { 
         root = new Node(10); 

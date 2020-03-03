@@ -54,7 +54,7 @@ public class LinkedList {
         
     } 
   
-    // Method to print the LinkedList. 
+    // Method to print the LinkedList.   
     public static void printList(LinkedList list) 
     {  
         // Traverse through the LinkedList 
