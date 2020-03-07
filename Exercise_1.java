@@ -5,30 +5,51 @@ class Stack {
   
     boolean isEmpty() 
     { 
-        //Write your code here 
+    	if(top == -1 || a.length == 0)
+    	{
+    		return true;
+    	}
+    	return false;
     } 
 
     Stack() 
     { 
-        //Initialize your constructor 
+         top = -1;
     } 
   
     boolean push(int x) 
     { 
-        //Check for stack Overflow
-        //Write your code here
+    	//checks for stack overflow
+    	if(top > a.length)
+    	{
+    		return false;
+    	}
+    	a[++top] = x;
+    	return true;
     } 
   
     int pop() 
     { 
-        //If empty return 0 and print " Stack Underflow"
-        //Write your code here
+    	if(top == -1 || a.length == 0)
+    	{
+    		System.out.println("stack underflow");
+    		return -1;
+    	}
+    	return a[top--];
+    	//just returning the stack top and decrementing stack top, not exactly deleting the item
     } 
   
     int peek() 
     { 
-        //Write your code here
+    	if(top == -1 || a.length == 0)
+    	{
+    		System.out.println("stack underflow");
+    		return -1;
+    	}
+    	return a[top];
     } 
+    
+    //stack resize in case of overflow
 } 
   
 // Driver code 
