@@ -74,5 +74,10 @@ class GFG {
        
         System.out.print("\nInorder traversal after insertion:"); 
         inorder(root); 
-    } 
+    }
+
+    /**
+     * Time Complexity - O(n) - traverse n element for insertion
+     * Space Complexity - O(n) - n elements
+     */
 }

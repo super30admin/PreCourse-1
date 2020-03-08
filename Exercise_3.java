@@ -81,5 +81,10 @@ class LinkedList {
   
         // Print the LinkedList 
         printList(list); 
-    } 
+    }
+
+    /**
+     * Time Complexity - O(n) - (Traverse n element for insertion)  --- insert()
+     * Space Complexity - O(n) - (n elements)
+     */
 }

@@ -59,5 +59,11 @@ class Main {
         s.push(20); 
         s.push(30); 
         System.out.println(s.pop() + " Popped from stack"); 
-    } 
+    }
+
+    /**
+     * Time Complexity - O(1) - for all operations
+     * Space Complexity - O(n) - Array Size of n
+     */
+
 }

@@ -66,5 +66,10 @@ class StackAsLinkedList {
         System.out.println(sll.pop() + " popped from stack"); 
   
         System.out.println("Top element is " + sll.peek()); 
-    } 
+    }
+
+    /**
+     * Time Complexity - O(1) - pop(), push(), peek(), isEmpty()
+     * Space Complexity - O(n) - n elements
+     */
 } 
