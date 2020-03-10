@@ -1,22 +1,32 @@
-class myStack:
-     def __init__(self):
-         
-     def isEmpty(self):
-         
-     def push(self, item):
-         
-     def pop(self):
+class stackarray:
+    
+    def __init__(self):
+        self.items = []
         
-        
-     def peek(self):
-        
-     def size(self):
-         
-     def show(self):
-         
+    def isEmpty(self):
+        return self.items==[]
 
-s = myStack()
+    def push(self,item):
+        self.items.append(item)
+
+    def pop(self):
+        return self.items.pop()
+
+    def peek(self):
+        return self.items[len(self.items)-1]
+
+    def size(self):
+        return len(self.items)
+
+    def show(self):
+        return self.items
+
+s=stackarray()
 s.push('1')
 s.push('2')
+s.push('3')
+s.push('4')
+print("POP")
 print(s.pop())
+print("STACK")
 print(s.show())
