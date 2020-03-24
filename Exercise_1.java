@@ -1,19 +1,19 @@
 class Stack { 
     static final int MAX = 1000; 
     int top; 
-    int a[] = new int[MAX]; // Maximum size of Stack 
+    int a[] ; // Maximum size of Stack
   
     boolean isEmpty() 
     { 
         if(top<0)
             return true;
-        else 
+        else
             return false;
-    } 
+    }
 
     Stack() 
     { 
-        //Initialize your constructor 
+        a= new int[MAX]; //Initialize your constructor
     } 
   
     boolean push(int x) 
@@ -37,19 +37,19 @@ class Stack {
         {
             System.out.println("Stack Underflow");
             return 0;
-            
+
         }
         else
         {
             top--;
             return a[top];
-            
+
         }
     } 
   
     int peek() 
     { 
-        
+
         return a[top];
     } 
 } 
