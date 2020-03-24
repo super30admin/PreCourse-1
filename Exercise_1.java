@@ -7,6 +7,8 @@ class Stack {
     { 
         if(top<0)
             return true;
+        else 
+            return false;
     } 
 
     Stack() 
@@ -23,6 +25,7 @@ class Stack {
         else
         {   top++;
             a[top]=x;
+            return true;
         }
     } 
   
@@ -32,18 +35,21 @@ class Stack {
         //Write your code here
         if(isEmpty())
         {
-            return 0;
             System.out.println("Stack Underflow");
+            return 0;
+            
         }
         else
         {
-            return a[top];
             top--;
+            return a[top];
+            
         }
     } 
   
     int peek() 
     { 
+        
         return a[top];
     } 
 } 
