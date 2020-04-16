@@ -1,5 +1,18 @@
 package s30;
 
+/**
+    1. isEmpty() => Time complexity is O(1)
+                    Space complexity is O(1)
+
+    2. push() => Time complexity is O(1)
+                 Space complexity is O(1)
+    
+    3. pop() => Time complexity is O(1)
+                Space complexity is O(1)
+
+    4. peek() => Time complexity is O(1)
+                 Space complexity is O(1)
+  */
 public class StackAsLinkedList { 
 	  
 	// considering root as a top here

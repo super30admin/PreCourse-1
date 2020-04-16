@@ -1,5 +1,11 @@
 import java.io.*; 
   
+/**
+    1. insert() => Time Complexity is O(n)
+                   Space Complexity is O(1)
+    2. printList() => Time Complexity is O(n)
+                  Space Complexity is O(1)
+ */
 // Java program to implement 
 // a Singly Linked List 
 public class LinkedList { 
@@ -23,7 +29,6 @@ public class LinkedList {
         } 
     } 
   
-    // Time Complexity is O(n)
     // Method to insert a new node 
     public static LinkedList insert(LinkedList list, int data) 
     { 
@@ -51,7 +56,6 @@ public class LinkedList {
         }
     } 
   
-    // Time Complexity is O(n)
     // Method to print the LinkedList. 
     public static void printList(LinkedList list) 
     {  

@@ -1,9 +1,21 @@
+/**
+    1. isEmpty() => Time complexity is O(1)
+                    Space complexity is O(1)
+
+    2. push() => Time complexity is O(1)
+                 Space complexity is O(1)
+    
+    3. pop() => Time complexity is O(1)
+                Space complexity is O(1)
+
+    4. peek() => Time complexity is O(1)
+                 Space complexity is O(1)
+  */
 class Stack { 
     static final int MAX = 1000; 
     int top; 
     int a[] = new int[MAX]; // Maximum size of Stack 
   
-    // Time Complexity = O(1)
     boolean isEmpty() 
     { 
         //Write your code here 
@@ -16,7 +28,6 @@ class Stack {
         //Initialize your constructor 
     } 
   
-    // Time Complexity = O(1)
     boolean push(int x) 
     { 
         //Check for stack Overflow
@@ -31,7 +42,6 @@ class Stack {
         
     } 
     
-    // Time Complexity = O(1)
     int pop() 
     { 
         //If empty return 0 and print " Stack Underflow"
@@ -47,7 +57,6 @@ class Stack {
         
     } 
   
-    // Time Complexity = O(1)
     int peek() 
     { 
         //Write your code here
