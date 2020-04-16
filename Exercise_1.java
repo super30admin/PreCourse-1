@@ -1,6 +1,10 @@
+//Time Complexity:O(1)
+//Space Complexity:O(1)
+
 class Stack { 
     static final int MAX = 1000; 
     int top; 
+	
     int a[] ; // Maximum size of Stack
   
     boolean isEmpty() 
