@@ -29,6 +29,8 @@ class GFG {
         inorder(temp.right); 
     } 
        
+    //Time complexity O(N)
+    //Space complexity O(N) -  size of queue
     /*function to insert element in binary tree */
     static void insert(Node temp, int key) 
     { 
