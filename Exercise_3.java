@@ -18,9 +18,12 @@ public class LinkedList {
         Node(int d) 
         { 
             //Write your code here 
+            this.data = d;
+            this.next = null;
         } 
     } 
   
+    // Time Complexity is O(n)
     // Method to insert a new node 
     public static LinkedList insert(LinkedList list, int data) 
     { 
@@ -34,9 +37,21 @@ public class LinkedList {
 
             // Insert the new_node at last node 
         // Return the list by head 
-        
+        Node temp = new Node(data);
+        if(list.head == null){
+            list.head = temp;
+            return list;
+        }else{
+            Node curr = list.head;
+            while(curr.next!=null){
+                curr = curr.next;
+            }
+            curr.next = temp;
+            return list;
+        }
     } 
   
+    // Time Complexity is O(n)
     // Method to print the LinkedList. 
     public static void printList(LinkedList list) 
     {  
@@ -44,7 +59,16 @@ public class LinkedList {
    
             // Print the data at current node 
        
-            // Go to next node 
+            // Go to next node
+        Node curr = list.head;
+        while(curr!=null){
+            if(curr.next == null){
+                System.out.print(curr.data);
+            }else{
+                System.out.print(curr.data+"->");
+            }
+            curr = curr.next;
+        }
     } 
    
     // Driver code 
