@@ -1,3 +1,12 @@
+/*
+
+insert method:
+Time complexity O(N)
+Space complexity O(N) -  size of queue
+
+*/
+
+
 import java.util.LinkedList; 
 import java.util.Queue; 
 class GFG { 
@@ -28,9 +37,7 @@ class GFG {
         System.out.print(temp.key+" "); 
         inorder(temp.right); 
     } 
-       
-    //Time complexity O(N)
-    //Space complexity O(N) -  size of queue
+      
     /*function to insert element in binary tree */
     static void insert(Node temp, int key) 
     { 

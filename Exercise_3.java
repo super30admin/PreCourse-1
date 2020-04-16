@@ -1,3 +1,15 @@
+/*
+
+insert method:
+Time complexity O(N)
+Space complexity O(1)
+
+printList:
+Time complexity O(N)
+Space complexity O(1)
+
+*/
+
 import java.io.*; 
   
 // Java program to implement 
@@ -27,8 +39,6 @@ class LinkedList {
         } 
     } 
   
-    //Time complexity O(N)
-    //Space complexity O(1)
     // Method to insert a new node 
     public static LinkedList insert(LinkedList list, int data) 
     { 
@@ -59,9 +69,7 @@ class LinkedList {
         
     } 
   
-    // Method to print the LinkedList. 
-    //Time complexity O(N)
-    //Space complexity O(1)
+    // Method to print the LinkedList.
     public static void printList(LinkedList list) 
     {  
         // Traverse through the LinkedList 
