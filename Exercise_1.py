@@ -1,5 +1,5 @@
-# Time Complexity:
-# Space Complexity:
+# Time Complexity: O(1)
+# Space Complexity: O(1)
 # Did this code successfully run on Leetcode: Not in Leetcode, Executed in PyCharm
 # Any problem you faced while coding this: Understanding time and space complexity
 class myStack:

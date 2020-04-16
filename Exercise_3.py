@@ -1,3 +1,7 @@
+# Time Complexity: O(n)
+# Space Complexity: O(1)
+# Did this code successfully run on Leetcode: Not in Leetcode, Executed in PyCharm
+# Any problem you faced while coding this: Understanding space complexity
 # Implement Singly Linked List
 class ListNode:
     """

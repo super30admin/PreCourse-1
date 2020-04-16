@@ -1,4 +1,8 @@
-# Python program to insert element in binary tree  
+# Time Complexity:
+# Space Complexity:
+# Did this code successfully run on Leetcode: Executed in PyCharm
+# Any problem you faced while coding this: Understanding time and space complexity
+# Python program to insert element in binary tree
 class newNode():
 
     def __init__(self, data):
