@@ -1,3 +1,7 @@
+/**
+    1. insert function => time complexity is O(n)
+                      => Space Complexity is O(n)
+ */
 import java.util.LinkedList; 
 import java.util.Queue; 
 public class GFG { 
@@ -35,6 +39,24 @@ public class GFG {
 
         // Do level order traversal until we find 
         // an empty place and add the node.  
+
+        Queue<Node> q = new LinkedList<>();
+        q.add(temp);
+        while(!q.isEmpty()){
+            Node curr = q.poll();
+            if(curr.left!=null){
+                q.add(curr.left);
+            }else{
+                curr.left = new Node(key);
+                return;
+            }
+            if(curr.right!=null){
+                q.add(curr.right);
+            }else{
+                curr.right = new Node(key);
+                return;
+            }
+        }
     } 
        
     // Driver code 
