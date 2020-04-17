@@ -1,4 +1,5 @@
 # Python program to insert element in binary tree
+#Time complexities would be depend on the number of nodes ie. O(n) where n is the number of nodes.
 class newNode():
   
     def __init__(self, data):
@@ -6,8 +7,8 @@ class newNode():
         self.left = None
         self.right = None
         self.key = data
-       
-#Time complexities would be depend on the number of nodes ie. O(n) where n is the number of nodes.
+
+
 """ Inorder traversal of a binary tree"""
 def inorder(temp):
   
