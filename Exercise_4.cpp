@@ -1,3 +1,7 @@
+/*Level Order Traversal
+Time Complexity - O(n)
+Space Complexity - O(n)*/
+
 #include <iostream> 
 #include <queue> 
 using namespace std; 
@@ -15,6 +19,11 @@ struct Node {
 struct Node* newNode(int key) 
 { 
     //Your code here
+    struct Node* Node = (struct Node*)malloc(sizeof(struct Node)); 
+    Node->key=key;
+    Node->left=NULL;
+    Node->right=NULL;
+    return Node;
 }; 
   
 /* Inorder traversal of a binary tree*/
@@ -25,7 +34,7 @@ void inorder(struct Node* temp)
   
     inorder(temp->left); 
     cout << temp->key << " "; 
-    inorder(temp->right); 
+    inorder(temp->right);
 } 
   
 /*function to insert element in binary tree */
@@ -33,9 +42,31 @@ void insert(struct Node* temp, int key)
 { 
   
     // Do level order traversal until we find 
-    // an empty place.  
-    
+    // an empty place.
     //Your code here
+    queue<Node*>q;
+    if(!temp)
+        return;
+    q.push(temp);
+    while(!q.empty())
+    {
+        Node * temp=q.front();
+        q.pop();
+        if(!temp->left)
+        {
+            temp->left=newNode(key);
+            break;
+        }
+        else
+            q.push(temp->left);
+        if(!temp->right)
+        {
+            temp->right=newNode(key);
+            break;
+        }
+        else
+            q.push(temp->right);
+    }
 } 
   
 // Driver code 
