@@ -3,13 +3,13 @@
  */
 class StackAsLinkedList {
     //this acts as a top
-    StackNode root;
+    ListNode root;
 
-    static class StackNode {
+    static class ListNode {
         int data;
-        StackNode next;
+        ListNode next;
 
-        StackNode(int data)
+        ListNode(int data)
         {
            this.data=data;
            next=null;
@@ -20,6 +20,8 @@ class StackAsLinkedList {
      * Method to check whether stack is empty or not
      * @return true when stack is empty else returns false
      */
+     //Time Complexity:o(1) because We just check whether root is null or not
+     // Space complexity:o(1):
     public boolean isEmpty()
     {
         return root==null;
@@ -29,10 +31,12 @@ class StackAsLinkedList {
      * Push the data into stack
      * @param data
      */
+    //Time Complexity:o(1) because we have just created one node here and added at top
+    // Space complexity:o(1):
     public void push(int data)
     {
         //Write code to push data to the stack.
-        StackNode node=new StackNode(data);
+        ListNode node=new ListNode(data);
         if (root != null) {
             node.next = root;
         }
@@ -44,6 +48,8 @@ class StackAsLinkedList {
      * pop/remove the top element from the stack
      * @return popped element
      */
+    //Time Complexity:o(1) because We just remove and return top value
+    // Space complexity:o(1):
     public int pop()
     {
 	//If Stack Empty Return 0 and print "Stack Underflow"
@@ -61,6 +67,8 @@ class StackAsLinkedList {
      * Return the top value from the stack
      * @return int value
      */
+    //Time Complexity:o(1) because We just return top value
+    // Space complexity:o(1):
     public int peek()
     {
         return root==null?0:root.data;

@@ -1,7 +1,8 @@
 import java.io.*;
 
-// Java program to implement
-// a Singly Linked List
+/**
+ * Java program to implement a Singly Linked List
+ */
  class LinkedList {
 
     Node head; // head of list
@@ -10,7 +11,6 @@ import java.io.*;
     // This inner class is made static
     // so that main() can access it
     static class Node {
-
         int data;
         Node next;
 
@@ -22,10 +22,17 @@ import java.io.*;
         }
     }
 
-    // Method to insert a new node
+    /**
+     * Method to insert a new node in the linkedlist
+     * @param list
+     * @param data
+     * @return
+     *
+     */
+     //Time Complexity:o(n) where n is linkedlist size
+     //Space complexity:o(1): as I am just adding one new node at the end
     public static LinkedList insert(LinkedList list, int data)
     {
-        // Create a new node with given data
         Node node=new Node(data);
 
         // If the Linked List is empty,
@@ -44,7 +51,12 @@ import java.io.*;
         return list;
     }
 
-    // Method to print the LinkedList.
+    /**
+     * Method to print the LinkedList.
+     */
+
+    //Time Complexity:o(n): As I am visting each node once
+    // Space complexity:o(1): as I am just printing the value, not storing anything
     public static void printList(LinkedList list)
     {
        Node curr=list.head;

@@ -2,37 +2,43 @@
  * Implement stack using Array
  */
 class Stack {
-    static final int MAX = 1000;
+    int stackSize;
     int top; 
     int a[];
 
     /**
      * Constructor
      */
-    Stack()
+    Stack(int size)
     {
+        stackSize=size;
         top=-1;
-        a = new int[MAX];
+        a = new int[stackSize];
     }
     /**
      * check whether stack is empty or not
      * @return true if stack is empty and false if not.
      */
+    //Time Complexity:o(1)
+    // Space complexity:o(1)
     boolean isEmpty() 
     {
         //if top is at -1 it means stack is empty
         return top==-1;
     }
 
+
     /**
      * Push the value x into stack and returns boolean value
      * @param x : int value
      * @return returns true if stack has a space and inserts value in a stack else returns false
      */
+    //Time Complexity:o(1)
+    // Space complexity:o(1)
     boolean push(int x) 
     {
         //There is a space available in the stack for new element
-        if(top+1<MAX){
+        if(top+1<stackSize){
             top++;
             a[top]=x;
             return true;
@@ -49,6 +55,8 @@ class Stack {
      * underflow and return 0. else remove the top value return it
      * @return
      */
+    //Time Complexity:o(1)
+    // Space complexity:o(1)
     int pop() 
     {
         //If stack is empty
@@ -65,6 +73,8 @@ class Stack {
      * Return the top value of the stack.If stack is empty return 0 else return top element
      * @return int value
      */
+    //Time Complexity:o(1)
+    // Space complexity:o(1)
     int peek() 
     {
         if(isEmpty()) {
@@ -80,7 +90,7 @@ class Stack {
  public class Exercise_1 {
     public static void main(String args[]) 
     { 
-        Stack s = new Stack();
+        Stack s = new Stack(100);
         System.out.println("Peek():"+s.peek());
         System.out.println("pop():"+s.pop());
         System.out.println("Stack Empty:"+s.isEmpty());
