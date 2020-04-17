@@ -1,3 +1,8 @@
+/** Insert an element in a Binary Tree.
+ * Time Complexity: O(no_of_elements_traversed)
+ * Space Complexity: O(1)
+ */
+
 import java.util.LinkedList; 
 import java.util.Queue; 
 public class GFG { 
@@ -32,7 +37,29 @@ public class GFG {
     /*function to insert element in binary tree */
     static void insert(Node temp, int key) 
     { 
-
+        if(temp==null) 
+        temp=new Node(key) ;
+        else{
+        Queue<Node> q=new LinkedList<>();
+        q.add(temp);
+        while(!q.isEmpty()){
+           Node n=q.poll();
+           if(n.left!=null){
+               q.add(n.left);
+           }
+           else {
+             n.left=new Node(key);
+             break;
+           }
+           if(n.right!=null){
+               q.add(n.right);
+           }
+           else{
+            n.right=new Node(key);
+            break;
+           }
+        }
+        }
         // Do level order traversal until we find 
         // an empty place and add the node.  
     } 

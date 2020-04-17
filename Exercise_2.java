@@ -1,3 +1,5 @@
+/* Implementation of stack as a linked list */
+/* Insertion and Deletion Complexity : O(1) */
 public class StackAsLinkedList { 
   
     StackNode root; 
@@ -8,6 +10,7 @@ public class StackAsLinkedList {
   
         StackNode(int data) 
         { 
+           this.data=data;
             //Constructor here 
         } 
     } 
@@ -15,16 +18,38 @@ public class StackAsLinkedList {
 	
     public boolean isEmpty() 
     { 
+        if(root==null) return true;
+        else
+            return false;
         //Write your code here for the condition if stack is empty. 
     } 
   
     public void push(int data) 
     { 
-        //Write code to push data to the stack. 
+        if(root==null){
+            root=new StackNode(data);
+        }
+        else{
+            StackNode n=new StackNode(data);
+            n.next=root;
+            root=n;
+        }
+        
     } 
   
     public int pop() 
     { 	
+        if(isEmpty()){
+            System.out.println("Stack Underflow");
+            return 0;
+        }
+        else
+        {
+            StackNode n=root;
+            root=root.next;
+            int x=n.data;
+            return x;
+        }
 	//If Stack Empty Return 0 and print "Stack Underflow"
         //Write code to pop the topmost element of stack.
 	//Also return the popped element 
@@ -33,6 +58,10 @@ public class StackAsLinkedList {
     public int peek() 
     { 
         //Write code to just return the topmost element without removing it.
+        if(!isEmpty()){
+            return root.data;
+        }
+        return -1;
     } 
   
 	//Driver code
