@@ -5,8 +5,8 @@ using namespace std;
 class StackNode { 
 public: 
     int data; 
-    StackNode* next; 
-}; 
+    StackNode* next;
+};
   
 StackNode* newNode(int data) 
 { 
@@ -18,22 +18,53 @@ StackNode* newNode(int data)
   
 int isEmpty(StackNode* root) 
 { 
-    //Your code here 
+    //Your code here
+	if(root==NULL)
+	{
+		//cout<<"Stack is empty"<<endl;
+		return 0;
+	}
+	else
+		return 1;
 } 
   
 void push(StackNode** root, int data) 
 { 
-    //Your code here 
-} 
+    //Your code here
+    StackNode* temp=new StackNode();
+    if(!temp)
+    {
+        cout<<"Stack overflow"<<endl;
+        return;
+    }
+    temp->data=data;
+    temp->next=(*root);
+    (*root)=temp;
+}
   
 int pop(StackNode** root) 
 { 
-    //Your code here 
+    //Your code here
+    if(!isEmpty(*root))
+    {
+        cout<<"Stack empty"<<endl;
+        return -1;
+    }
+    StackNode* temp;
+    temp=*root;
+    int x=(*root)->data;
+    (*root)=(*root)->next;
+    temp->next=NULL;
+    return x;
 } 
   
 int peek(StackNode* root) 
 { 
-    //Your code here 
+    //Your code here
+    if(isEmpty(root))
+    return root->data;
+    else
+    return -1;
 } 
   
 int main() 
@@ -49,4 +80,4 @@ int main()
     cout << "Top element is " << peek(root) << endl; 
   
     return 0; 
-} 
+}
