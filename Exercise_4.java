@@ -1,6 +1,15 @@
+/*
+
+insert method:
+Time complexity O(N)
+Space complexity O(N) -  size of queue
+
+*/
+
+
 import java.util.LinkedList; 
 import java.util.Queue; 
-public class GFG { 
+class GFG { 
        
     /* A binary tree node has key, pointer to  
     left child and a pointer to right child */
@@ -28,13 +37,34 @@ public class GFG {
         System.out.print(temp.key+" "); 
         inorder(temp.right); 
     } 
-       
+      
     /*function to insert element in binary tree */
     static void insert(Node temp, int key) 
     { 
 
         // Do level order traversal until we find 
-        // an empty place and add the node.  
+        // an empty place and add the node. 
+        Queue<Node> q = new LinkedList<>();
+        q.add(root);
+        Node n = new Node(key);
+
+        while(!q.isEmpty()) {
+            Node curr = q.poll();
+            if(curr.left != null) {
+                q.add(curr.left);
+            }
+            else {
+                curr.left = n;
+                break;
+            }
+            if(curr.right != null) {
+                q.add(curr.right);
+            }
+            else {
+                curr.right = n;
+                break;
+            }
+        }
     } 
        
     // Driver code 
