@@ -36,6 +36,7 @@ public class GFG {
         // Do level order traversal until we find 
         // an empty place and add the node. 
         Queue<Node> nodeq = new LinkedList<Node>();
+        if(temp==null) temp = Node(key);
         nodeq.add(temp);
         while(nodeq!=null){
             Node front = nodeq.remove();
