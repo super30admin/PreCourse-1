@@ -6,10 +6,10 @@ public class StackAsLinkedList {
         int data; 
         StackNode next; 
   
-        StackNode(int data) 
+        StackNode(int d) 
         { 
             //Constructor here
-            data = data;
+            data = d;
             next = null;
         } 
     } 
