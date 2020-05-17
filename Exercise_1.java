@@ -51,6 +51,11 @@ class Stack {
         }
         return a[top];
     } 
+    public void printStack() {
+        for (int i = 0; i <= top; i++) {
+          System.out.println(a[i]);
+        }
+      }
 } 
   
 // Driver code 
@@ -62,6 +67,7 @@ class Main {
         s.push(20); 
         s.push(30); 
         System.out.println(s.pop() + " Popped from stack");
+        s.printStack();
          
     } 
 }
