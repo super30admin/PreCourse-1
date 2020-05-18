@@ -1,33 +1,60 @@
+//Time Complexity:O(1)
+//Space Complexity:O(1)
+
 class Stack { 
     static final int MAX = 1000; 
     int top; 
-    int a[] = new int[MAX]; // Maximum size of Stack 
+	
+    int a[] ; // Maximum size of Stack
   
     boolean isEmpty() 
     { 
-        //Write your code here 
-    } 
+        if(top<0)
+            return true;
+        else
+            return false;
+    }
 
     Stack() 
     { 
-        //Initialize your constructor 
+        a= new int[MAX]; //Initialize your constructor
     } 
   
     boolean push(int x) 
     { 
         //Check for stack Overflow
         //Write your code here
+        if(top==MAX)
+            return false;
+        else
+        {   top++;
+            a[top]=x;
+            return true;
+        }
     } 
   
     int pop() 
     { 
         //If empty return 0 and print " Stack Underflow"
         //Write your code here
+        if(isEmpty())
+        {
+            System.out.println("Stack Underflow");
+            return 0;
+
+        }
+        else
+        {
+            top--;
+            return a[top];
+
+        }
     } 
   
     int peek() 
     { 
-        //Write your code here
+
+        return a[top];
     } 
 } 
   
