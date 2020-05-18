@@ -96,7 +96,7 @@ public class StackAsLinkedList {
     public static void main(String[] args) 
     { 
   
-    		StackAsLinkedList sll = newStackAsLinkedList(); 
+    		StackAsLinkedList sll = new StackAsLinkedList(); 
   
         sll.push(10); 
         sll.push(20); 
