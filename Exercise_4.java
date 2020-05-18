@@ -1,4 +1,10 @@
-import java.util.LinkedList; 
+// Time Complexity : All operations - o(h)
+// Space Complexity : O(n)
+// Did this code successfully run on Leetcode : Ran tests in the local
+// Any problem you faced while coding this :
+
+
+import java.util.LinkedList;
 import java.util.Queue; 
 public class GFG { 
        
@@ -33,8 +39,39 @@ public class GFG {
     static void insert(Node temp, int key) 
     { 
 
-        // Do level order traversal until we find 
-        // an empty place and add the node.  
+    	// Do level order traversal until we find 
+    	// an empty place and add the node.
+    	Node node = new Node(key);
+
+    	if(temp == null) {
+    		root = node;
+    	} else {
+    		Queue<Node> queue = new LinkedList<>();
+    		queue.add(temp);
+
+    		while(!queue.isEmpty()) {
+    			Node itr = queue.remove();
+
+    			if(itr.left == null || itr.right == null) {
+    				if(itr.left == null) {
+    					itr.left = node;
+    				} else {
+    					itr.right = node;
+    				}
+    				break;
+    			} else {
+    				if(itr.left != null) {
+    					queue.add(itr.left);
+    				}
+    				
+    				if(itr.right != null) {
+    					queue.add(itr.right);
+    				}
+    			}
+    		}
+    	}
+    	
+    	
     } 
        
     // Driver code 
