@@ -51,7 +51,7 @@ class Stack {
             return 0;
         }
         else {
-            return a[top-1];
+            return a[top--];
         }
     } 
 } 
