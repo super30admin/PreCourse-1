@@ -1,6 +1,13 @@
+// Time Complexity : O(n)
+// Space Complexity :O(n)
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : 
+// Your code here along with comments explaining your approach
+// Java program to implement 
+// a Singly Linked List 
 import java.util.LinkedList; 
 import java.util.Queue; 
-public class GFG { 
+class GFG { 
        
     /* A binary tree node has key, pointer to  
     left child and a pointer to right child */
@@ -35,6 +42,25 @@ public class GFG {
 
         // Do level order traversal until we find 
         // an empty place and add the node.  
+    	Queue<Node> queue = new LinkedList<>();
+        queue.add(temp);
+        while (!queue.isEmpty()) {
+            Node current = queue.poll();
+            if (current.left == null) {
+                // empty place found, insert it
+                current.left = new Node(key);
+                return;
+            } else {
+                queue.add(current.left);
+                if (current.right == null) {
+                    // empty place found, insert it
+                    current.right = new Node(key);
+                    return;
+                } else {
+                    queue.add(current.right);
+                }
+            }
+        }
     } 
        
     // Driver code 
@@ -47,13 +73,13 @@ public class GFG {
         root.right.left = new Node(15); 
         root.right.right = new Node(8); 
        
-        System.out.print( "Inorder traversal before insertion:"); 
+        System.out.print( "Inorder traversal before insertion: "); 
         inorder(root); 
        
         int key = 12; 
         insert(root, key); 
        
-        System.out.print("\nInorder traversal after insertion:"); 
+        System.out.print("\nInorder traversal after insertion: "); 
         inorder(root); 
     } 
 }
