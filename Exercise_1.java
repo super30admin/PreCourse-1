@@ -1,3 +1,9 @@
+// Time Complexity : 
+// Space Complexity :
+// Did this code successfully run on Leetcode :
+// Any problem you faced while coding this :
+
+
 class Stack { 
     static final int MAX = 1000; 
     int top; 
@@ -5,29 +11,55 @@ class Stack {
   
     boolean isEmpty() 
     { 
-        //Write your code here 
+        if (top < 0) {
+            return true; 
+        } 
+        else return false;  
     } 
 
     Stack() 
     { 
-        //Initialize your constructor 
+        top = -1; 
     } 
   
     boolean push(int x) 
     { 
-        //Check for stack Overflow
-        //Write your code here
+        if (top >= (MAX-1)) {
+            System.out.println("Stack is full!");
+            return false;            
+        }
+        else {
+            a[++top] = x; 
+            System.out.println("Added to stack : " +x);
+            return true;
+        }
     } 
   
     int pop() 
     { 
-        //If empty return 0 and print " Stack Underflow"
-        //Write your code here
+        if (top < 0) {
+            System.out.println("Stack is empty! No element to pop!");
+            return 0;
+        }
+        else {
+            int popped = a[top--];
+            return popped; 
+        }
     } 
   
     int peek() 
     { 
-        //Write your code here
+        if (top < 0) 
+            {
+            System.out.println("Stack is empty! No top element!");
+            return 0;
+            }
+        else 
+            {
+            int topElement = a[top];
+            System.out.println("Top element is : " +topElement);
+            return topElement;
+            }
     } 
 } 
   
