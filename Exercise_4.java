@@ -1,3 +1,10 @@
+// Time Complexity : O(n)
+// Space Complexity : O(2n)
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : Using queue for Binary Tree 
+
+
+
 import java.util.LinkedList; 
 import java.util.Queue; 
 public class GFG { 
@@ -9,6 +16,7 @@ public class GFG {
         Node left, right; 
           
         // constructor 
+        // Initialize class attributes
         Node(int key){ 
             this.key = key; 
             left = null; 
@@ -19,6 +27,7 @@ public class GFG {
     static Node temp = root; 
       
     /* Inorder traversal of a binary tree*/
+    // inorder : left child is visited first, then parent, then right child
     static void inorder(Node temp) 
     { 
         if (temp == null) 
@@ -34,7 +43,33 @@ public class GFG {
     { 
 
         // Do level order traversal until we find 
-        // an empty place and add the node.  
+        // an empty place and add the node. 
+        // Initialize queue to access tree nodes.
+         Queue<Node> queue = new LinkedList<Node>();
+        queue.add(temp); // add root to queue
+        
+        while(!queue.isEmpty()) {
+            temp = queue.peek(); // temp is initialized with the front element of queue
+            queue.remove(); // remove front element
+            
+            if(temp.left == null) { // check if temp (front element), has left child
+                temp.left = new Node(key); // if no left child, insert key here
+                break;
+            }
+            else 
+            {
+                queue.add(temp.left); // else add this node to queue
+            }
+            
+            if(temp.right == null) { // check if temp (front element), has right child
+                temp.right = new Node(key); // if no right child, insert key here
+                break;
+            }
+            else
+            {
+                queue.add(temp.right); // else add this node to queue
+            }
+        }
     } 
        
     // Driver code 

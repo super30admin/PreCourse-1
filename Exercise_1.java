@@ -1,7 +1,7 @@
-// Time Complexity : 
-// Space Complexity :
-// Did this code successfully run on Leetcode :
-// Any problem you faced while coding this :
+// Time Complexity : O(1)
+// Space Complexity : O(1)
+// Did this code successfully run on Leetcode : No, ran successfully on geeksforgeeks ide, ideone and codechef ide
+// Any problem you faced while coding this : To check when stack is full (while pushing element)
 
 
 class Stack { 
@@ -11,19 +11,26 @@ class Stack {
   
     boolean isEmpty() 
     { 
-        if (top < 0) {
+        // To check if stack is empty, check if top element exists  
+        // if not, then stack is empty
+        if (top < 0) {   
             return true; 
         } 
         else return false;  
     } 
 
     Stack() 
-    { 
+    {  
+        // Initialize class attributes, top value 
+        //(top doesn't have any element)
         top = -1; 
     } 
   
     boolean push(int x) 
     { 
+        // to insert/push element, check if array is full
+        // if array is full return Stack is full
+        // else, add element on top on stack and update top value
         if (top >= (MAX-1)) {
             System.out.println("Stack is full!");
             return false;            
@@ -37,6 +44,9 @@ class Stack {
   
     int pop() 
     { 
+        // To pop an element, check is stack is empty, 
+        // if yes return stack is empty (underflow)
+        // else, return the top element and remove the top element
         if (top < 0) {
             System.out.println("Stack is empty! No element to pop!");
             return 0;
@@ -49,6 +59,9 @@ class Stack {
   
     int peek() 
     { 
+        // To peek the top element, check is stack is empty, 
+        // if yes return stack is empty (underflow)
+        // else, return the top element
         if (top < 0) 
             {
             System.out.println("Stack is empty! No top element!");
