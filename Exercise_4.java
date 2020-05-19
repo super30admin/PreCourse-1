@@ -1,3 +1,8 @@
+
+// Did this code successfully run on Leetcode :  Problem not on Leetcode but working on eclipse
+// Any problem you faced while coding this : Unaware of concepts of level order traversal and insertion
+// Your code here along with comments explaining your approach
+
 import java.util.LinkedList; 
 import java.util.Queue; 
 public class GFG { 
@@ -35,6 +40,36 @@ public class GFG {
 
         // Do level order traversal until we find 
         // an empty place and add the node.  
+
+        Queue<Node> queue = new LinkedList<>(); // created a queue to traverse the tree
+        queue.add(temp); // adding the root temp into the queue
+
+        while(!queue.isEmpty()) // checking if queue is empty i.e the tree has been fully traversed and there are no nodes
+        {
+            temp = queue.peek(); // storing the front element of queue in temp
+            queue.remove(); // removing the front element
+            
+            if(temp.left!=null) // if there are left children to the element in temp
+                queue.add(temp.left); // add left child to queue
+            else
+            {
+                temp.left = new Node(key); // otherwise create a new node of key value and place at temp left child
+                break; // break as insertion done
+            }
+
+            if(temp.right!=null) // if there are right children to the element in temp
+                queue.add(temp.right); // add right child to queue
+            else
+            {
+                temp.right = new Node(key);// otherwise create a new node of key value and place at temp right child
+                break; // break as insertion done
+            }
+            
+        }
+        // Time Complexity : O(n)
+        // Space Complexity : O(n)
+
+
     } 
        
     // Driver code 
