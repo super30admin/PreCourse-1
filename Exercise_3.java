@@ -1,8 +1,15 @@
+// Time Complexity : O(n)
+// Space Complexity : O(n)
+// Did this code successfully run on Leetcode : No, ran successfully on geeksforgeeks ide, ideone and codechef ide
+// Any problem you faced while coding this : Accessing head in insert (static method)
+
+
+
 import java.io.*; 
   
 // Java program to implement 
 // a Singly Linked List 
-public class LinkedList { 
+class LinkedList { 
   
     Node head; // head of list 
   
@@ -17,7 +24,9 @@ public class LinkedList {
         // Constructor 
         Node(int d) 
         { 
-            //Write your code here 
+            // Initialize class attributes
+            data = d;
+            next = null; 
         } 
     } 
   
@@ -35,6 +44,20 @@ public class LinkedList {
             // Insert the new_node at last node 
         // Return the list by head 
         
+        Node new_node = new Node(data);
+        new_node.next = null;
+        if (list.head == null) {
+            list.head = new_node;
+            return list;
+        }
+       
+        Node last_node = list.head;
+        while (last_node.next != null) { // traverse till last node
+            last_node = last_node.next; 
+        }
+        last_node.next = new_node; // insert the new_end at the end
+        return list;
+        
     } 
   
     // Method to print the LinkedList. 
@@ -45,6 +68,12 @@ public class LinkedList {
             // Print the data at current node 
        
             // Go to next node 
+        Node print_node = list.head;
+        System.out.print("The elements in List are : ");
+        while(print_node!= null) { // traverse till end of node and print each node
+            System.out.print(print_node.data + " ");
+            print_node = print_node.next;
+        }
     } 
    
     // Driver code 
