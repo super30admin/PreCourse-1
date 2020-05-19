@@ -5,10 +5,34 @@ class Node:
  
 class Stack:
     def __init__(self):
-        
+        self.root = None
+        self.iterator = None
     def push(self, data):
-        
+        if self.root == None:
+            self.root = Node(data)
+            self.iterator = self.root
+            return True
+        else:
+            newNode = Node(data)
+            self.iterator.next = newNode
+            self.iterator = self.iterator.next
+            return True
     def pop(self):
+        if self.root == None:
+            return None
+        if self.iterator == self.root:
+            value = self.iterator.data
+            self.root = None
+            self.iterator = None
+            return value
+        else:
+            reach = self.root
+            while reach.next != None and reach.next != self.iterator:
+                reach = reach.next
+            value = reach.next.data
+            reach.next = None
+            self.iterator = reach
+            return value
         
 a_stack = Stack()
 while True:
