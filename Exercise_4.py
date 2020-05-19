@@ -1,4 +1,5 @@
-# Python program to insert element in binary tree  
+import queue
+# Python program to insert element in binary tree
 class newNode():  
   
     def __init__(self, data):  
@@ -7,14 +8,31 @@ class newNode():
         self.right = None
           
 """ Inorder traversal of a binary tree"""
-def inorder(temp): 
+def inorder(temp):
+    if(temp == None):
+        return
+    inorder(temp.left)
+    print(temp.key)
+    inorder(temp.right)
   
-    
-  
-  
+
 """function to insert element in binary tree """
-def insert(temp,key): 
-  
+def insert(temp,key):
+    q = queue.Queue()
+    q.put(temp)
+
+    while not q.empty():
+        node = q.get()
+        if node.left == None:
+            node.left = newNode(key)
+            break
+        elif node.right == None:
+            node.right = newNode(key)
+            break
+        else:
+            q.put(node.left)
+            q.put(node.right)
+
     
   
        
@@ -27,12 +45,11 @@ if __name__ == '__main__':
     root.right.left = newNode(15)  
     root.right.right = newNode(8)  
   
-    print("Inorder traversal before insertion:", end = " ") 
+    print("Inorder traversal before insertion:")
     inorder(root)  
   
     key = 12
     insert(root, key)  
   
-    print()  
-    print("Inorder traversal after insertion:", end = " ") 
-    inorder(root) 
+    print("Inorder traversal after insertion:")
+    inorder(root)
