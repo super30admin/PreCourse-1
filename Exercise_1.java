@@ -1,3 +1,8 @@
+// Time Complexity :O(1)
+// Space Complexity :O(1000)
+// Did this code successfully run on Leetcode : yes
+// Any problem you faced while coding this : No
+
 class Stack { 
     static final int MAX = 1000; 
     int top; 
