@@ -1,6 +1,7 @@
 import java.util.LinkedList; 
 import java.util.Queue; 
-public class GFG { 
+//import java.util.AbstractQueue;
+class GFG { 
        
     /* A binary tree node has key, pointer to  
     left child and a pointer to right child */
@@ -31,10 +32,34 @@ public class GFG {
        
     /*function to insert element in binary tree */
     static void insert(Node temp, int key) 
-    { 
-
-        // Do level order traversal until we find 
-        // an empty place and add the node.  
+    {   
+        Node n = new Node(key);
+        Queue q = new LinkedList(); //Using the queue for keepig the track of left and right nodes, so that we can traverse in a level wise
+        Node dummy = null;   //Using this dummy to mark that current level has reached end.
+        q.add(temp);
+        q.add(dummy);
+        while(q != null){   //queue contains all the viisted nodes in a level wise, so untill queue is not null, we will find a spot where we can insert.
+            Node x = (Node)q.poll();
+            if(x != dummy){   
+                if(x.left == null){  
+                    x.left = n;     
+                    break;           
+                }
+                else{
+                    q.add(x.left);
+                }
+                if(x.right == null){
+                    x.right = n;  
+                    break;              
+                }
+                else{
+                    q.add(x.right);
+                }
+            }
+            else{
+                q.add(dummy);   
+            }
+        }
     } 
        
     // Driver code 
@@ -57,3 +82,11 @@ public class GFG {
         inorder(root); 
     } 
 }
+
+
+
+
+// Time Complexity : O(no. of nodes in the tree) for insert
+// Space Complexity : O(1) for insert
+// Did this code successfully run on Leetcode : 
+// Any problem you faced while coding this : Nothing

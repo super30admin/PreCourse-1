@@ -5,29 +5,53 @@ class Stack {
   
     boolean isEmpty() 
     { 
-        //Write your code here 
+        if(top == -1){
+            return true;
+        }
+        else{
+            return false;
+        }
     } 
 
     Stack() 
     { 
-        //Initialize your constructor 
+        int top = -1;
     } 
   
     boolean push(int x) 
     { 
-        //Check for stack Overflow
-        //Write your code here
+
+        if(top == (MAX-1)){     //As max index of array is size-1, taking that as condition for full
+            return false;
+        }
+        else{
+            top = top+1;        //incrementing the top index of array and assigning new element to its index.
+            a[top] = x;         
+            return true;
+        }
     } 
   
     int pop() 
     { 
-        //If empty return 0 and print " Stack Underflow"
-        //Write your code here
+        int x =0;
+        if(isEmpty()){
+            System.out.println("Stack Underflow");
+        }
+        else{
+            x = a[top];     //storing the topmost elemnt to return  
+            top = top-1;    //decrementing the index to pose that stack doesn't contain this element anymore.
+        }
+        return x;
     } 
   
     int peek() 
     { 
-        //Write your code here
+        int x = 0;
+        if(!(isEmpty())){
+            System.out.println("Stack Underflow");
+            x= a[top];  //storing the topmost elemnt to return 
+        }
+        return x;
     } 
 } 
   
@@ -42,3 +66,8 @@ class Main {
         System.out.println(s.pop() + " Popped from stack"); 
     } 
 }
+
+// Time Complexity : O(1) for all operations.
+// Space Complexity : O(MAX)
+// Did this code successfully run on Leetcode : 
+// Any problem you faced while coding this : Nothing
