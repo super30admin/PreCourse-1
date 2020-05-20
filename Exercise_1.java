@@ -1,3 +1,8 @@
+// Time Complexity : O(1)
+// Space Complexity : O(n)
+// Did this code successfully run on Leetcode :
+// Any problem you faced while coding this : No
+
 class Stack {
     static final int MAX = 1000;
     int top;
@@ -68,3 +73,4 @@ class Main {
         System.out.println(s.peek() + " Peeked from stack");
     }
 }
+ 
