@@ -5,10 +5,30 @@ class Node:
  
 class Stack:
     def __init__(self):
-        
+        self.head = Node('#')
     def push(self, data):
-        
+        """
+        Time Complexity = O(1)
+        Space Complexity = O(1)
+        """
+        if self.head.data == '#':
+            self.head.data = data
+        else:
+            temp = Node(data)
+            temp.next = self.head
+            self.head = temp
+
     def pop(self):
+        """
+        Time Complexity = O(1)
+        Space Complexity = O(1)
+        """
+        if self.head.next != None:
+            ans = self.head
+            temp = self.head.next
+            self.head.next = None
+            self.head = temp
+            return ans.data
         
 a_stack = Stack()
 while True:
