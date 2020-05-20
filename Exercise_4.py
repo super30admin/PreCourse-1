@@ -1,4 +1,5 @@
 # Python program to insert element in binary tree  
+from collections import deque
 class newNode():  
   
     def __init__(self, data):  
@@ -8,14 +9,38 @@ class newNode():
           
 """ Inorder traversal of a binary tree"""
 def inorder(temp): 
-  
-    
-  
-  
+	"""
+    	Time Complexity = O(n)
+    	Space Complexity = O(n) Considering recursive stack as an extra space else it is O(1)
+    """
+	if temp:
+		inorder(temp.left)
+		print(temp.key + " ")
+		inorder(temp.right)
+
+
 """function to insert element in binary tree """
-def insert(temp,key): 
-  
-    
+def insert(temp,key):
+	"""
+    	Time Complexity = O(n)
+    	Space Complexity = O(n)
+    """
+	if temp == None:
+		return newNode(key)
+	que = deque()
+	que.append(temp)
+	while que:
+		node = que(pop.left())
+		if not node.left:
+			node.left = newNode(key)
+			break
+
+		if not node.right:
+			node.right = newNode(key)
+			break
+		que.append(node.left)
+		que.append(node.right)
+	return temp
   
        
 # Driver code  
