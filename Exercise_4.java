@@ -1,6 +1,11 @@
+//Time Complexity: O(log n) -> as we half the probability of inserting
+                    //inserting a node by 2
+//Space Complexity: O(h) -> where h is the height of the tree
+
 import java.util.LinkedList; 
 import java.util.Queue; 
-public class GFG { 
+
+public class Exercise_4 { 
        
     /* A binary tree node has key, pointer to  
     left child and a pointer to right child */
@@ -32,11 +37,31 @@ public class GFG {
     /*function to insert element in binary tree */
     static void insert(Node temp, int key) 
     { 
-
-        // Do level order traversal until we find 
-        // an empty place and add the node.  
+        //using queue for maintaining level order
+        Queue<Node> q = new LinkedList<>();
+        q.add(temp);
+        //until an empty space is found to add the node
+        //traverse and add
+        while(!q.isEmpty()){
+            temp = q.peek();
+            q.remove();
+            //if no node in the left; insert new node to left
+            if(temp.left == null){
+                temp.left = new Node(key);
+                break;
+            } else {
+                q.add(temp.left);
+            }// else in right
+            if(temp.right == null){
+                temp.right = new Node(key);
+                break;
+            } else {
+                q.add(temp.right);
+            }
+        }
     } 
-       
+
+   
     // Driver code 
     public static void main(String args[]) 
     { 
