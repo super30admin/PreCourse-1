@@ -1,7 +1,7 @@
 // Time Complexity : O(n)
 // Space Complexity : O(n) n - total number of nodes in the tree
-// Did this code successfully run on Leetcode :
-// Any problem you faced while coding this : level order traversal coding
+// Did this code successfully run on Leetcode : Not available
+// Any problem you faced while coding this : Idea of using queue didnt occur 
 
 
 // Your code here along with comments explaining your approach
