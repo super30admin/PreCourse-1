@@ -1,6 +1,13 @@
+// Time Complexity : O(n)
+// Space Complexity : O(n) n - total number of nodes in the tree
+// Did this code successfully run on Leetcode :
+// Any problem you faced while coding this : level order traversal coding
+
+
+// Your code here along with comments explaining your approach
 import java.util.LinkedList; 
 import java.util.Queue; 
-public class GFG { 
+class GFG { 
        
     /* A binary tree node has key, pointer to  
     left child and a pointer to right child */
@@ -34,7 +41,37 @@ public class GFG {
     { 
 
         // Do level order traversal until we find 
-        // an empty place and add the node.  
+        // an empty place and add the node.
+		
+		Queue<Node> q=new LinkedList<Node>();
+		q.add(temp);
+		if(temp==null) // if the root was null, then we have to make a level 1 tree
+			{
+				temp=new Node(key); // making a level 1 tree by creating a new node
+				root=temp; // assign temp to root since temp changes to a new node now and we pass root in main (root is null)
+			}
+
+		while(q.peek()!=null) // check if top element of the queue is null // equal to q.isEmpty in this case
+		{
+			
+			temp=q.poll(); // remove the top element and store in queue
+			if(temp.left==null)
+			{
+				temp.left=new Node(key); // if temp.left is null then the first available place is found to insert the new key
+				break;
+			}
+			else
+				q.add(temp.left); // if temp.left is not null, add it to the queue to check for its children
+			if(temp.right==null)
+			{
+				temp.right=new Node(key); // if temp.right is null then the first available place is found to insert the new key
+				break;
+			}
+			else
+				q.add(temp.right);
+			
+		}
+				
     } 
        
     // Driver code 
@@ -45,7 +82,7 @@ public class GFG {
         root.left.left = new Node(7); 
         root.right = new Node(9); 
         root.right.left = new Node(15); 
-        root.right.right = new Node(8); 
+        root.right.right = new Node(8);  
        
         System.out.print( "Inorder traversal before insertion:"); 
         inorder(root); 
