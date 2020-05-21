@@ -11,7 +11,7 @@ class Stack {
     boolean isEmpty() 
     { 
         //Write your code here 
-        if(a.length<=0)  
+        if(top<1)  
         return true;
         else
         return false;
@@ -61,7 +61,10 @@ class Stack {
     int peek() 
     { 
         //Write your code here
+        if(!isEmpty())
         return a[top];
+        else
+        return 0;
     } 
 } 
   
@@ -74,5 +77,6 @@ class Main {
         s.push(20); 
         s.push(30); 
         System.out.println(s.pop() + " Popped from stack"); 
+        System.out.println(s.peek());
     } 
 }

@@ -64,7 +64,13 @@ public class StackAsLinkedList {
     public int peek() 
     { 
         //Write code to just return the topmost element without removing it.
-        return root.data;
+        if(!isEmpty())
+        {return root.data;}
+        else
+        {
+            return 0;
+        }
+        
     } 
   
 	//Driver code
