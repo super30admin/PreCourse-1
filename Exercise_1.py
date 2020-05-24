@@ -9,10 +9,16 @@ class myStack:
      def push(self, item):
           self.arr.append(item)
      def pop(self):
-          return self.arr.pop()
+          if len(arr) > 0:
+               return self.arr.pop()
+          else:
+               print("Empty Stack")
         
      def peek(self):
-          return self.arr[-1]
+          if len(arr) > 0:
+               return self.arr[-1]
+          else:
+               print("Empty Stack")
      def size(self):
           return len(self.arr)
      def show(self):
