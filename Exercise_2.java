@@ -1,4 +1,4 @@
-public class StackAsLinkedList { 
+public class Exercise_2{ 
   
     StackNode root; 
   
@@ -9,29 +9,52 @@ public class StackAsLinkedList {
         StackNode(int data) 
         { 
             //Constructor here 
+            this.data = data;
         } 
     } 
     
 	
     public boolean isEmpty() 
     { 
-        //Write your code here for the condition if stack is empty. 
+        return (root== null);
     } 
   
     public void push(int data) 
     { 
-        //Write code to push data to the stack. 
+        StackNode new_element = new StackNode(data);
+        if(root== null){
+            new_element.data=data;
+            new_element.next = null;
+            root = new_element;
+        }else{
+            new_element.data = data;
+            new_element.next = root;
+            root = new_element;
+        }
+     
     } 
   
     public int pop() 
     { 	
-	//If Stack Empty Return 0 and print "Stack Underflow"
-        //Write code to pop the topmost element of stack.
-	//Also return the popped element 
+	   if(root== null){
+           System.out.println("Underflow");
+           return 0;
+       }else{
+           int poppedElement = root.data;
+           root= root.next;
+           return poppedElement;
+       }
     } 
   
     public int peek() 
     { 
+        if(!isEmpty()){
+            return  root.data;
+        }else{
+            System.out.println("Underflow");
+            return -1;
+
+        }
         //Write code to just return the topmost element without removing it.
     } 
   
@@ -39,7 +62,7 @@ public class StackAsLinkedList {
     public static void main(String[] args) 
     { 
   
-        StackAsLinkedList sll = new StackAsLinkedList(); 
+        Exercise_2 sll = new Exercise_2(); 
   
         sll.push(10); 
         sll.push(20); 
@@ -50,3 +73,6 @@ public class StackAsLinkedList {
         System.out.println("Top element is " + sll.peek()); 
     } 
 } 
+
+//Time Complexity O(1)
+//Space Complexity 
