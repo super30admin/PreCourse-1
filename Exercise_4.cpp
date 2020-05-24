@@ -15,6 +15,11 @@ struct Node {
 struct Node* newNode(int key) 
 { 
     //Your code here
+    Node* result = new Node();
+    result->key  = key;
+    result->left = NULL;
+    result->right = NULL;
+    return result;
 }; 
   
 /* Inorder traversal of a binary tree*/
@@ -31,11 +36,32 @@ void inorder(struct Node* temp)
 /*function to insert element in binary tree */
 void insert(struct Node* temp, int key) 
 { 
-  
     // Do level order traversal until we find 
-    // an empty place.  
-    
-    //Your code here
+    // an empty place.
+    //Your code here  
+    std::queue<Node*> Q;
+    if(temp == NULL){
+        temp = newNode(key);    
+    }
+    Q.push(temp);
+    while(!Q.empty()){
+        Node* nd = Q.front();
+        Q.pop();
+        if(nd->left != NULL){
+            Q.push(nd->left);
+        }
+        else{
+            nd->left = newNode(key);
+            break;
+        }
+        if(nd->right != NULL){
+            Q.push(nd->right);
+        }
+        else{
+            nd->right = newNode(key);
+            break;
+        }
+    }
 } 
   
 // Driver code 
