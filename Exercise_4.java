@@ -78,3 +78,8 @@ public class GFG {
         inorder(root); 
     } 
 }
+
+//Time Complexity : insert - O(log(n))
+//Space Complexity : insert - O(n)
+//Did this code successfully run on Leetcode : problem not found in leetcode
+//Any problem you faced while coding this : Have done before, so no problem faced

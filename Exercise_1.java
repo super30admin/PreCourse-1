@@ -59,3 +59,8 @@ class Stack {
         System.out.println(s.pop() + " Popped from stack"); 
     } 
 }
+
+//Time Complexity : push,pop,peek - O(1)
+//Space Complexity : push,pop,peek - O(1)
+//Did this code successfully run on Leetcode : problem not found in leetcode
+//Any problem you faced while coding this : Did not find any problem

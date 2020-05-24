@@ -72,3 +72,8 @@
         System.out.println("Top element is " + sll.peek()); 
     } 
 } 
+
+//Time Complexity : push,pop,peek - O(1)
+//Space Complexity : push,pop,peek - O(1)
+//Did this code successfully run on Leetcode : problem not found in leetcode
+//Any problem you faced while coding this : Have done before, so no problem faced
