@@ -16,7 +16,8 @@ StackNode *newNode(int data)
     stackNode->next = NULL;
     return stackNode;
 }
-
+// Time Complexity : O(1)
+// Space Complexity : O(1)  
 int isEmpty(StackNode *root)
 {
     //Your code here
@@ -29,7 +30,8 @@ int isEmpty(StackNode *root)
         return false;
     }
 }
-
+// Time Complexity : O(N)
+// Space Complexity : O(1)  
 void push(StackNode **root, int data)
 {
     //Your code here
@@ -50,7 +52,8 @@ void push(StackNode **root, int data)
         
     }
 }
-
+// Time Complexity : O(N)
+// Space Complexity : O(1)  
 int pop(StackNode **root)
 {
     //Your code here
@@ -77,7 +80,8 @@ int pop(StackNode **root)
         }
     }
 }
-
+// Time Complexity : O(N)
+// Space Complexity : O(1)  
 int peek(StackNode *root)
 {
     //Your code here

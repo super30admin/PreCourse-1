@@ -12,6 +12,9 @@ class Node
 /* Given a reference (pointer to pointer) 
 to the head of a list and an int, inserts 
 a new node on the front of the list. */
+
+// Time Complexity : O(1)
+// Space Complexity : O(1)  
 void push(Node** head_ref, int new_data)  
 {  
     /* 1. allocate node */ 
@@ -26,6 +29,9 @@ void push(Node** head_ref, int new_data)
   
 /* Given a node prev_node, insert a new node after the given  
 prev_node */
+
+// Time Complexity : O(N)
+// Space Complexity : O(1)  
 void insertAfter(Node* prev_node, int new_data)  
 {  
     /*1. check if the given prev_node is NULL */ 
@@ -43,6 +49,9 @@ void insertAfter(Node* prev_node, int new_data)
   
 /* Given a reference (pointer to pointer) to the head  
 of a list and an int, appends a new node at the end */
+
+// Time Complexity : O(N)
+// Space Complexity : O(1)  
 void append(Node** head_ref, int new_data)  
 {  
     /* 1. allocate node */ 
@@ -70,7 +79,10 @@ void append(Node** head_ref, int new_data)
 }  
   
 // This function prints contents of 
-// linked list starting from head  
+// linked list starting from head
+
+// Time Complexity : O(N)
+// Space Complexity : O(1)  
 void printList(Node *node)  
 {  
     //Your code here

@@ -34,7 +34,9 @@ bool Stack::push(int x)
         return false;
     }
 } 
-  
+
+// Time Complexity : O(1)
+// Space Complexity : O(1)  
 int Stack::pop() 
 { 
     //Your code here
@@ -46,6 +48,9 @@ int Stack::pop()
     }
     return ret;
 } 
+
+// Time Complexity : O(1)
+// Space Complexity : O(1)  
 int Stack::peek() 
 { 
     //Your code here
@@ -57,7 +62,9 @@ int Stack::peek()
         return -1;
     }
 } 
-  
+
+// Time Complexity : O(1)
+// Space Complexity : O(1)    
 bool Stack::isEmpty() 
 { 
     //Your code here 
