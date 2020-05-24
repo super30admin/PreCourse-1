@@ -61,3 +61,7 @@ class Exercise_1 {
         System.out.println(s.pop() + " Popped from stack"); 
     } 
 }
+
+
+//Time Complexity O(1)
+//Space Complexity 

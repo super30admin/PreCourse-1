@@ -73,3 +73,6 @@ public class Exercise_2{
         System.out.println("Top element is " + sll.peek()); 
     } 
 } 
+
+//Time Complexity O(1)
+//Space Complexity 

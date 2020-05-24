@@ -87,3 +87,4 @@ public class Exercise_3 {
         printList(list);
     }
 }
+//TimeComplexity O(n)
