@@ -1,3 +1,10 @@
+/**
+ * Time Complexity:
+ * isEmpty() : O(1)
+ * push() : O(1)
+ * pop() : O(1)
+ * peek() : O(1)
+ *  */ 
 class Stack { 
     static final int MAX = 1000; 
     int top; 
@@ -5,29 +12,49 @@ class Stack {
   
     boolean isEmpty() 
     { 
-        //Write your code here 
+        if(a.length==0){
+            return true;
+        }
+        return false; 
     } 
 
     Stack() 
     { 
-        //Initialize your constructor 
+        top=-1;
     } 
   
     boolean push(int x) 
     { 
         //Check for stack Overflow
-        //Write your code here
+        if(top>MAX){
+            System.out.println("Cannot enter "+x+" as the stack is full");
+            return false;
+        }
+        else{
+            a[top+1]=x;
+            top++;
+            return true;
+        }
     } 
   
     int pop() 
     { 
         //If empty return 0 and print " Stack Underflow"
-        //Write your code here
+        if(isEmpty()){
+            System.out.println(" Stack Underflow");
+            return 0;
+        }
+        else{
+            int result = a[top];
+            top--;
+            return result;
+        }
+        
     } 
   
     int peek() 
     { 
-        //Write your code here
+        return a[top];
     } 
 } 
   

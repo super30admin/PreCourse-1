@@ -1,6 +1,12 @@
+/**
+ * Time Complexity:
+ * inorder() : O(n)
+ * insert() : O(h) where h=height of the tree
+ *  */ 
+
 import java.util.LinkedList; 
 import java.util.Queue; 
-public class GFG { 
+public class Exercise_4 {
        
     /* A binary tree node has key, pointer to  
     left child and a pointer to right child */
@@ -32,9 +38,28 @@ public class GFG {
     /*function to insert element in binary tree */
     static void insert(Node temp, int key) 
     { 
-
-        // Do level order traversal until we find 
-        // an empty place and add the node.  
+        Queue<Node> queue = new LinkedList();
+        queue.add(temp);
+        while(!queue.isEmpty()){
+            temp = queue.peek();
+            queue.remove();
+            if (temp.left == null){ 
+                temp.left = new Node(key); 
+                break; 
+            } 
+            else{
+                queue.add(temp.left);
+            }
+                 
+            if (temp.right == null){ 
+                temp.right = new Node(key); 
+                break; 
+            } 
+            else{
+                queue.add(temp.right);
+            }
+                
+        }   
     } 
        
     // Driver code 
