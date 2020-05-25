@@ -1,3 +1,7 @@
+// Time Complexity : O(n)
+// Space Complexity : O(n) where n is max nu,ber of elements in binary tree
+// Did this code successfully run on Leetcode : 
+// Any problem you faced while coding this : No
 import java.util.LinkedList; 
 import java.util.Queue; 
 public class GFG { 
@@ -35,6 +39,29 @@ public class GFG {
 
         // Do level order traversal until we find 
         // an empty place and add the node.  
+    	
+    	if (temp == null) {
+    		Node curr = new Node(key);
+    		return;
+    	}
+    	Queue<Node> q = new LinkedList();
+    	q.add(temp);
+    	while(!q.isEmpty()) {
+    		Node curr = q.poll();	    		
+    		if(curr.left == null) {
+    			curr.left = new Node(key);
+    			return;
+    		}
+    		else 
+    			q.add(curr.left); 
+    		if (curr.right == null)  {
+    			curr.right = new Node(key);
+    			return;
+    		}
+    		else
+    			q.add(curr.right); 			
+    			
+    	}
     } 
        
     // Driver code 
