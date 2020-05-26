@@ -1,4 +1,10 @@
-import java.io.*; 
+//Problem 3: Implement Singly LinkedList
+
+//Time Complexity : Takes O(n) time as we have to traverse the list and insert the element at the end. Same for printing the list as well.
+//Space Complexity : O(n) No of input elements in the List
+// Any problem you faced while coding this : No
+
+import java.io.*;
   
 // Java program to implement 
 // a Singly Linked List 

@@ -1,3 +1,9 @@
+//Problem 1: Implement Stack using Array
+
+//Time Complexity : O(1) for each action, Insiertion, Deletion, Peek..
+//Space Complexity : O(n) No of input elements to be pushed to stack
+// Any problem you faced while coding this : No
+
 class Stack {
     static final int MAX = 1000;
     int top;

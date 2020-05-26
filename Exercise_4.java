@@ -1,4 +1,10 @@
-import java.util.LinkedList; 
+//problem 4: Insert an element in binary tree
+
+//Time Complexity : For 1 element instertion it would take O(log n) as per the height of the tree.
+//Space Complexity: Space complexity would also be O(log n) as parent nodes as to be pushed to the queue to insert the new node.
+// Any problem you faced while coding this : No
+
+import java.util.LinkedList;
 import java.util.Queue; 
 public class GFG { 
        

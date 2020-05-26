@@ -1,3 +1,9 @@
+//Problem 2: Implement Stack using LinkedList
+
+//Time Complexity : O(1) for each action, Insiertion, Deletion, Peek..
+//Space Complexity : O(n) No of input elements to be pushed to stack
+// Any problem you faced while coding this : No
+
 public class StackAsLinkedList {
 
     StackNode root;
