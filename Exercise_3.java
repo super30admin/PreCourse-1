@@ -1,4 +1,10 @@
-import java.io.*; 
+//Problem 3: Implement Singly LinkedList
+
+//Time Complexity : Takes O(n) time as we have to traverse the list and insert the element at the end. Same for printing the list as well.
+//Space Complexity : O(n) No of input elements in the List
+// Any problem you faced while coding this : No
+
+import java.io.*;
   
 // Java program to implement 
 // a Singly Linked List 
@@ -17,7 +23,9 @@ public class LinkedList {
         // Constructor 
         Node(int d) 
         { 
-            //Write your code here 
+            //Write your code here
+            this.data = d;
+            this.next = null;
         } 
     } 
   
@@ -33,8 +41,18 @@ public class LinkedList {
             // and insert the new_node there 
 
             // Insert the new_node at last node 
-        // Return the list by head 
-        
+        // Return the list by head
+
+        Node newNode = new Node(data);
+        if(list.head == null)
+            list.head = newNode;
+        else {
+            Node temp = list.head;
+            while (temp.next != null)
+                temp = temp.next;
+            temp.next = newNode;
+        }
+        return list;
     } 
   
     // Method to print the LinkedList. 
@@ -44,7 +62,12 @@ public class LinkedList {
    
             // Print the data at current node 
        
-            // Go to next node 
+            // Go to next node
+        Node newNode = list.head;
+        while(newNode != null){
+            System.out.println(newNode.data);
+            newNode = newNode.next;
+        }
     } 
    
     // Driver code 
