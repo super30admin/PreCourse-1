@@ -15,7 +15,19 @@ class myStack:
             return("Removed",removed)
         else:
             return "Stack is Empty"
-        
+  '''Better way of implmenting pop operation, don't use del      
+     def pop(stack): 
+    if (isEmpty(stack)): 
+        return str(-maxsize -1) # return minus infinite 
+      
+    return stack.pop() 
+  
+# Function to return the top from stack without removing it 
+def peek(stack): 
+    if (isEmpty(stack)): 
+        return str(-maxsize -1) # return minus infinite 
+    return stack[len(stack) - 1] 
+'''
      def peek(self):
         if(not(self.isEmpty())):
             return(self.arr[-1])
