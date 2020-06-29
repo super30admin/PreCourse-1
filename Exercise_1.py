@@ -31,9 +31,11 @@ class myStack:
           return len(self.stk)
          
     def show(self):
-          return self.stk[:]         
+          return self.stk[:]
+        
 s = myStack()
 s.push('1')
 s.push('2')
 print(s.pop())
 print(s.show())
+
