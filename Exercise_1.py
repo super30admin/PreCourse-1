@@ -10,7 +10,7 @@ class myStack:
          
      def push(self, item):
           self.stack.append(item)
-         
+
      def pop(self):
           if self.isEmpty():
                print("ERROR: The stack is underflow (empty)")
