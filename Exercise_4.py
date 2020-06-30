@@ -1,3 +1,4 @@
+from collections import deque
 # Python program to insert element in binary tree  
 class newNode():  
   
@@ -8,13 +9,28 @@ class newNode():
           
 """ Inorder traversal of a binary tree"""
 def inorder(temp): 
-  
-    
-  
+    if not temp:
+        return
+    inorder(temp.left)
+    print(temp.key)
+    inorder(temp.right) 
+     
   
 """function to insert element in binary tree """
 def insert(temp,key): 
-  
+    queue = deque([temp])
+    while queue:
+    	node = queue.popleft()
+    	if not node.left:
+    		node.left = newNode(key)
+    		break
+    	else:
+    		queue.append(node.left)
+    	if not node.right:
+    		node.right = newNode(key)
+    		break
+    	else:
+    		queue.append(node.right)
     
   
        
