@@ -1,8 +1,9 @@
 import java.io.*; 
   
 // Java program to implement 
-// a Singly Linked List 
-public class LinkedList { 
+// a Singly Linked List
+/* Removed public to remove compilation error, of class and file name mismatch*/
+class LinkedList {
   
     Node head; // head of list 
   

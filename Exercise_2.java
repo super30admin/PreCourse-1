@@ -1,4 +1,5 @@
-public class StackAsLinkedList { 
+/* Removed public to remove compilation error, of class and file name mismatch*/
+class StackAsLinkedList {
   
     StackNode root; 
   

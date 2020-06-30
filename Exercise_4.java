@@ -1,6 +1,5 @@
-import java.util.LinkedList; 
-import java.util.Queue; 
-public class GFG { 
+/* Removed public to remove compilation error, of class and file name mismatch*/
+class GFG {
        
     /* A binary tree node has key, pointer to  
     left child and a pointer to right child */
