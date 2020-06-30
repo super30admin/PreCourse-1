@@ -1,3 +1,10 @@
+// Time Complexity :O(1)
+// Space Complexity :O(n)
+// Did this code successfully run on Leetcode : yes
+// Any problem you faced while coding this : None
+
+// Your code here along with comments explaining your approach
+
 class Stack { 
     static final int MAX = 1000; 
     int top; 
@@ -16,7 +23,6 @@ class Stack {
     { 
         //Initialize your constructor
         top = -1;
-
     } 
   
     boolean push(int x) 
@@ -71,3 +77,4 @@ class Main {
         System.out.println(s.pop() + " Popped from stack"); 
     } 
 }
+
