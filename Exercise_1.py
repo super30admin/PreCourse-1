@@ -36,6 +36,9 @@ class myStack:
 s = myStack()
 s.push('1')
 s.push('2')
+s.push('7')
+s.push('8')
+s.push('9')
 print(s.pop())
 print(s.show())
 

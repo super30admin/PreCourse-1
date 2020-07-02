@@ -1,14 +1,22 @@
-class Node:
-    def __init__(self, data):
-       self.data = data
-       self.next = None
- 
+
 class Stack:
+    class Node:
+       def __init__(self, data,next):
+          self.data = data
+          self.next = next
+
     def __init__(self):
-        
+        self.head=None
+
     def push(self, data):
+        self.head=self.Node(data,self.head)
         
     def pop(self):
+        if self.head is None:
+            raise IndexError
+        result=self.head.data
+        self.head=self.head.next
+        return result
         
 a_stack = Stack()
 while True:
