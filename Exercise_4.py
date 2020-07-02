@@ -1,3 +1,9 @@
+# Time Complexity : not sure
+# Space Complexity : not sure
+# Did this code successfully run on Leetcode : yes
+# Any problem you faced while coding this : had a hard time dealing with tree, I get stuck when I come across trees and linked list for basic things sometimes
+
+
 # Python program to insert element in binary tree
 class newNode():
     def __init__(self, data):
