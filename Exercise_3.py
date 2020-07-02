@@ -1,3 +1,9 @@
+# Time Complexity : O(n)
+# Space Complexity : O(n)
+# Did this code successfully run on Leetcode : yes
+# Any problem you faced while coding this : no
+
+
 class ListNode:
     """
     A node in a singly-linked list.
@@ -57,8 +63,3 @@ class SinglyLinkedList:
             else:
                 temp = temp.next
         pred.next = pred.next.next
-        
-
-
-    
-    
