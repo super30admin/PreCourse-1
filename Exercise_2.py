@@ -1,3 +1,11 @@
+# Time Complexity : O(1)
+# Space Complexity : O(n)
+# Did this code successfully run on Leetcode : yes
+# Any problem you faced while coding this : struggled with Linked List as I do not have good hands on Linked List, iteration is fine, but deletion, insertion gets
+# tricky for me sometimes
+
+
+
 class Node:
     def __init__(self, data):
         self.data = data
