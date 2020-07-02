@@ -1,3 +1,8 @@
+# Time Complexity : push: O(1), pop: O(1), show: O(n)
+# Space Complexity : O(n)
+# Did this code successfully run on Leetcode : yes
+# Any problem you faced while coding this : no
+
 class myStack:
     arr = []
     def __init__(self):
