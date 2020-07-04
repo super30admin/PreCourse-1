@@ -24,10 +24,23 @@ public class LinkedList {
     // Method to insert a new node 
     public static LinkedList insert(LinkedList list, int data) 
     { 
-        // Create a new node with given data 
+        // Create a new node with given data
+        Node curr = new Node(data);
    
         // If the Linked List is empty, 
-        // then make the new node as head 
+        // then make the new node as head
+        if(list.head==null){
+            list.head = curr;
+            return list;
+        }
+        else{
+            Node temp = list.head;
+            while(temp.next!=null){
+                temp = temp.next;
+            }
+            temp.next = curr;
+            return list;
+        }
         
             // Else traverse till the last node 
             // and insert the new_node there 
@@ -44,7 +57,12 @@ public class LinkedList {
    
             // Print the data at current node 
        
-            // Go to next node 
+            // Go to next node
+        Node ptr = list.head;
+        while(ptr!=null){
+            System.out.println(ptr.data);
+            ptr = ptr.next;
+        }
     } 
    
     // Driver code 
