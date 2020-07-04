@@ -1,3 +1,10 @@
+""" In the push() function, we create a new node named temp and attach this to the front of the linked list.
+This is done by pointing the temp.next pointer to the current head and changing the head to temp.
+The time complexity for this is O(1) since traversal through the Linked List is not required.
+The pop() function stores the current head's value in a temp variable.
+It then sets the head as the immediate next element after the current head and returns the temp variable.
+The time complexity for this is again O(1). """
+
 class Node:
     def __init__(self, data):
        self.data = data

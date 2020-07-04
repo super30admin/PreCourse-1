@@ -1,4 +1,10 @@
 # Python program to insert element in binary tree  
+""" The time complexity for the inorder traversal is O(n) where n is the number of tree nodes.
+The traversal first completes traversal of the left subtree then the root and then finally the right subtree.
+This order is followed in every subsequent subtree.
+The space complexity is O(h) since at any time, there are at most h calls to the inorder() function on the call stack.
+The insert() function basically performs a BFS and inserts a new node in the lowest possible level in the tree.
+The time complexity is O(n) and so is the space complexity. """
 from collections import deque
 class newNode():  
   

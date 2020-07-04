@@ -1,3 +1,13 @@
+""" The append function handles two cases: 1. The linkedlist is empty. 2. The linkedlist is not empty.
+The need for two cases is because the head is initialized to None and if the linkedlist is empty then head needs to be initialized
+to a node with the given value as data.
+If the linkedlist exists with other nodes then we need to traverse through the linkedlist and then append at the end of it.
+
+The find function traverses through the linkedlist and returns when the element is found.
+The remove function handles three cases: 1. The linkedlist is empty. 2. The element to be removed is the head. 3. The element is not the head.
+The time complexity is the same for all three function; It takes O(n) time where n is the number of elements in the LinkedList.
+The space complexity is O(n) with n being the number of elements in the linkedlist. """
+
 class ListNode:
     """
     A node in a singly-linked list.

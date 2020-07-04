@@ -1,3 +1,11 @@
+""" The stack is initialized as a empty array. 
+The isEmpty function is used to check if the stack has any elements.
+This will be useful in pop() and peek() functions.
+The push() function has a complexity of O(1) since it is simply appending.
+The pop() function has a complexity of O(1) as well since it simply pops the top most element.
+The peek() function has a complexity of O(1) as well since it returns the top of the stack without removing it.
+The space complexity remains to be O(n) where n is the total elements in the stack. """
+
 class myStack:
      def __init__(self):
         self.stack = []
@@ -8,19 +16,13 @@ class myStack:
         return False
          
      def push(self, item):
-        self.stack = [item] + self.stack
+        self.stack.append(item)
          
      def pop(self):
-        if(not self.isEmpty()):
-            top = self.stack[0]
-            self.stack = self.stack[1:]
-            return top
-        return None
+        return None if self.isEmpty() else self.stack.pop()
         
      def peek(self):
-        if(not self.isEmpty()):
-            return self.stack[0]
-        return None
+        return None if self.isEmpty() else self.stack[-1]
 
      def size(self):
         return len(self.stack)
