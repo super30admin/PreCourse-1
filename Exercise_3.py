@@ -47,34 +47,28 @@ class SinglyLinkedList:
         Remove the first occurrence of `key` in the list.
         Takes O(n) time.
         """
-        ptr=self.head
-        past=ListNode()
-        while True:
-            if ptr.data != key:
-                print(ptr.data)
-                print(past.data)
-                if ptr.next != None:
-                    if past.data == None:
-                        past.data=ptr.data
-                    else:
-                        past.next=ListNode(ptr.data)
-                        past=past.next
+        if self.length != 0:
+            current =self.head
+            prev = None
+            while True:
+                if current.data == key or current == None:
+                    break
+                else:
+                    prev = current
+                    current = current.next
 
-                    ptr=ptr.next
-                else:
-                    past.next=ptr.next
-                    self.head=past
-                    return self.head
+            if current == None:
+                print('value not found')
+            if prev == None:
+                self.head = current.next
+                self.length -= 1
             else:
-                print('inside removal')
-                print(past.data)
-                if past.data!= None:
-                    past.next = ptr.next
-                    self.head = past
-                    return self.head
-                else:
-                    self.head=ptr.next
-                    return self.head
+                prev.next = current.next
+                self.length -= 1
+
+        else:
+            print('empty list')
+
 
     def show(self):
         ptr=self.head
