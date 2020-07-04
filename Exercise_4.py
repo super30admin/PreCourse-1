@@ -1,3 +1,4 @@
+#!python3
 # Python program to insert element in binary tree  
 class newNode():  
   
@@ -8,13 +9,32 @@ class newNode():
           
 """ Inorder traversal of a binary tree"""
 def inorder(temp): 
-  
-    
+  if temp:
+      inorder(temp.left)
+      print(temp.key)
+      inorder(temp.right)    
   
   
 """function to insert element in binary tree """
-def insert(temp,key): 
+def insert(temp,key):
+    #print(temp) 
+    list = []  
+    list.append(temp)   
+    while (len(list)):  
+        temp = list[0]  
+        list.pop(0)  
   
+        if not temp.left: 
+            temp.left = newNode(key)  
+            break
+        else: 
+            list.append(temp.left)  
+  
+        if not temp.right: 
+            temp.right = newNode(key)  
+            break
+        else: 
+            list.append(temp.right)
     
   
        
