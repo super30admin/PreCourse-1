@@ -1,4 +1,5 @@
-public class StackAsLinkedList { 
+package com.s30;
+public class Exercise_2 { 
   
     StackNode root; 
   
@@ -8,18 +9,31 @@ public class StackAsLinkedList {
   
         StackNode(int data) 
         { 
-            //Constructor here 
+        	next.data = data;
         } 
     } 
     
 	
     public boolean isEmpty() 
     { 
+    	if(root == null)
+    		return false;
+    	else
+    		return true;
         //Write your code here for the condition if stack is empty. 
     } 
   
     public void push(int data) 
     { 
+    	if(root == null) {
+    	 root = new StackNode(data);
+        
+    	}
+    	else {
+    		StackNode tail = new StackNode(data);
+    		tail.next = root;
+    		root = tail;
+    	}
         //Write code to push data to the stack. 
     } 
   
@@ -28,10 +42,16 @@ public class StackAsLinkedList {
 	//If Stack Empty Return 0 and print "Stack Underflow"
         //Write code to pop the topmost element of stack.
 	//Also return the popped element 
+    	int data = root.data;
+    	root = root.next;
+    	return data;
+    	
+    	
     } 
   
     public int peek() 
     { 
+    	return root.data;
         //Write code to just return the topmost element without removing it.
     } 
   
@@ -39,7 +59,7 @@ public class StackAsLinkedList {
     public static void main(String[] args) 
     { 
   
-        StackAsLinkedList sll = new StackAsLinkedList(); 
+    	Exercise_2 sll = new Exercise_2(); 
   
         sll.push(10); 
         sll.push(20); 
