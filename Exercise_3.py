@@ -20,12 +20,14 @@ class SinglyLinkedList:
         Takes O(n) time.
         """
         if(self.head):
+            node = ListNode(data)
             current = self.head
             while current.next:
                 current=current.next
-            current.next = ListNode(data)
+            current.next = node
         else:
             self.head = ListNode(data)
+        return data
 
     def find(self, key):
         """
@@ -39,7 +41,7 @@ class SinglyLinkedList:
             current = self.head
             while current:
                 if current.data == key:
-                    return current
+                    return current.data
                 current = current.next
             return None
 
@@ -49,7 +51,7 @@ class SinglyLinkedList:
         Takes O(n) time.
         """
         if not self.head:
-            return
+            return None
         else:
             if(self.head.data == key):
                 self.head = self.head.next
@@ -59,6 +61,20 @@ class SinglyLinkedList:
                 while current:
                     if current.data == key:
                         temp = current.next
+                        return current.data
                     else:
                         current = current.next
                         temp = temp.next
+                return None
+
+# Driver code
+if __name__ == '__main__':
+    root = ListNode(10)
+    a = SinglyLinkedList()
+    print(a.append(100))
+    print(a.append(33))
+    print(a.append(22))
+    print(a.append(65))
+    print(a.find(1000))
+    print(a.find(100))
+    print(a.remove(33))
