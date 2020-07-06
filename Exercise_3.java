@@ -17,6 +17,8 @@ public class LinkedList {
         // Constructor 
         Node(int d) 
         { 
+            this.data = d;
+            this.next = null;
             //Write your code here 
         } 
     } 
