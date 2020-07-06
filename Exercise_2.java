@@ -24,31 +24,20 @@ class StackAsLinkedList {
             root = new StackNode(data);
             return;
         }
-        while (temp.next != null) {
-            temp = temp.next;
-        }
-        temp.next = new StackNode(data);
+        StackNode newNode = new StackNode(data);
+        newNode.next = root;
+        root = newNode;
     }
 
     public int pop() {
         //If Stack Empty Return 0 and print "Stack Underflow"
-        StackNode temp = root;
-        if (temp == null) {
+        if (root == null) {
             System.out.println("Stack Underflow");
             return 0;
         }
         //Write code to pop the topmost element of stack.
-        StackNode prev = null;
-        while (temp.next != null) {
-            prev = temp;
-            temp = temp.next;
-
-        }
-        int val = temp.data;
-        temp = null;
-        if (prev != null) {
-            prev.next = null;
-        }
+        int val = root.data;
+        root = root.next;
         return val;
     }
 
@@ -56,11 +45,7 @@ class StackAsLinkedList {
         //Write code to just return the topmost element without removing it.
         /*This method should return null, if stack is empty, even O can be one of the elements*/
         if (root == null) return 0;
-        StackNode temp = root;
-        while (temp.next != null) {
-            temp = temp.next;
-        }
-        return temp.data;
+        return root.data;
     }
 
     //Driver code

@@ -1,5 +1,5 @@
 class Stack {
-    static final int MAX = 1000;
+    static final int MAX = 3;
     int top;
     int a[] = new int[MAX]; // Maximum size of Stack 
 
@@ -18,24 +18,24 @@ class Stack {
             return false;
         }
 
-        a[++top] = x;
+        a[top++] = x;
         return true;
     }
 
     int pop() {
         //If empty return 0 and print " Stack Underflow"
-        if (top < 0) {
+        if (top-1 < 0) {
             System.out.println("Stack Underflow");
             return 0;
         }
-        int val = a[top];
-        a[top] = 0;
+        int val = a[top - 1];
+        a[top - 1] = 0;
         top--;
         return val;
     }
 
     int peek() {
-        return a[top];
+        return a[top - 1];
     }
 }
 
@@ -46,6 +46,9 @@ class Main {
         s.push(10);
         s.push(20);
         s.push(30);
+        s.peek();
         System.out.println(s.pop() + " Popped from stack");
+        s.pop();
+        s.pop();
     }
 }
