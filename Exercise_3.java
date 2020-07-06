@@ -17,6 +17,8 @@ public class LinkedList {
         // Constructor 
         Node(int d) 
         { 
+            this.data = d;
+            this.next = null;
             //Write your code here 
         } 
     } 
@@ -24,7 +26,25 @@ public class LinkedList {
     // Method to insert a new node 
     public static LinkedList insert(LinkedList list, int data) 
     { 
+
+        Node node = new Node(data);
+        head = list;
+       
         // Create a new node with given data 
+        if (head == null) {
+            head = node;
+            return head;
+        }
+        else{
+            Node n = head;
+        }
+
+        while(n && n.next != null) {
+            n = n.next;
+        }
+        n.next = node;
+
+        return head;
    
         // If the Linked List is empty, 
         // then make the new node as head 
@@ -40,7 +60,13 @@ public class LinkedList {
     // Method to print the LinkedList. 
     public static void printList(LinkedList list) 
     {  
+        Node node = head;
+        while(node.next!= null){
+            System.out.print(node.data);
+            node = node.next;
+        }
         // Traverse through the LinkedList 
+
    
             // Print the data at current node 
        
