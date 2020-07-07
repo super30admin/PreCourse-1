@@ -9,6 +9,11 @@ public class LinkedList {
     // Linked list Node. 
     // This inner class is made static 
     // so that main() can access it 
+
+    public LinkedList() {
+        head = null;
+    }
+
     static class Node { 
   
         int data; 
@@ -17,7 +22,9 @@ public class LinkedList {
         // Constructor 
         Node(int d) 
         { 
-            //Write your code here 
+            //Write your code here
+            this.data = d;
+            next = null; 
         } 
     } 
   
@@ -34,7 +41,20 @@ public class LinkedList {
 
             // Insert the new_node at last node 
         // Return the list by head 
+
+        Node item = new Node(data);
+        if(list.head == null) {
+            list.head = item;
+        } else {
+            Node itr = list.head;
+
+            while(itr.next != null) {
+                itr = itr.next;
+            }
+            itr.next = item;
+        }
         
+        return list;
     } 
   
     // Method to print the LinkedList. 
@@ -45,6 +65,14 @@ public class LinkedList {
             // Print the data at current node 
        
             // Go to next node 
+            Node itr = list.head;
+
+            while(itr != null) {
+                System.out.print(itr.data + " -> ");
+                itr = itr.next;
+            }
+
+            System.out.println("NULL");
     } 
    
     // Driver code 

@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Deque;
 import java.util.LinkedList; 
 import java.util.Queue; 
 public class GFG { 
@@ -34,7 +36,29 @@ public class GFG {
     { 
 
         // Do level order traversal until we find 
-        // an empty place and add the node.  
+        // an empty place and add the node. 
+        Queue<Node> myQueue = new LinkedList<Node>();
+        myQueue.add(temp);
+
+        while(!myQueue.isEmpty()) {
+            Node front = myQueue.poll();
+
+            if(front.left != null) {
+                myQueue.add(front.left);
+            } else {
+                Node newNode = new Node(key);
+                front.left = newNode;
+                return;
+            }
+
+            if(front.right != null) {
+                myQueue.add(front.right);
+            } else {
+                Node newNode = new Node(key);
+                front.right = newNode;
+                return;
+            }
+        }
     } 
        
     // Driver code 
