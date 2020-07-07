@@ -22,14 +22,14 @@ class Stack {
     boolean push(int x) 
     { 
         //Check for stack Overflow
-    	if(top > MAX-1) {
+    	if(top >= MAX-1) {
     		System.out.println("Stack Overflow");
-    		return true;
+    		return false;
     	}
         //Write your code here
     	else {
     		a[++top] = x;
-    		return false;
+    		return true;
     	}
     } 
   
