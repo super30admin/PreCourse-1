@@ -37,8 +37,7 @@ def insert(temp,key):
             queue.append(element.right)
 
 
-    
-  
+
        
 # Driver code  
 if __name__ == '__main__': 
