@@ -21,16 +21,28 @@ def insert(root, key):
         root = newNode(key)
         return root
     
-  
-       
+    ptr = root
+    while True:
+        if key < ptr.key:
+            if not ptr.left:
+                ptr.left = newNode(key)
+                break
+            ptr = ptr.left
+        
+        elif key > ptr.key:
+            if not ptr.right:
+                ptr.right = newNode(key)
+                break
+            ptr = ptr.right
+                 
 # Driver code  
 if __name__ == '__main__': 
     root = newNode(10)  
-    root.left = newNode(11)  
+    root.left = newNode(9)  
     root.left.left = newNode(7)  
-    root.right = newNode(9)  
+    root.right = newNode(16)  
     root.right.left = newNode(15)  
-    root.right.right = newNode(8)  
+    root.right.right = newNode(18)  
   
     print("Inorder traversal before insertion:", end = " ") 
     print(inorder(root))  
@@ -40,4 +52,4 @@ if __name__ == '__main__':
   
     print()  
     print("Inorder traversal after insertion:", end = " ") 
-    inorder(root) 
+    print(inorder(root)) 
