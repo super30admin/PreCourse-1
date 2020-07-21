@@ -1,20 +1,25 @@
 # Python program to insert element in binary tree  
 class newNode():  
-  
     def __init__(self, data):  
         self.key = data 
         self.left = None
         self.right = None
           
 """ Inorder traversal of a binary tree"""
-def inorder(temp): 
-  
-    
-  
-  
+def inorder(root): 
+    if root == None:
+        return []
+        
+    left = inorder(root.left)
+    right = inorder(root.right)
+
+    return left + [root.key] + right
+ 
 """function to insert element in binary tree """
-def insert(temp,key): 
-  
+def insert(root, key): 
+    if root == None:
+        root = newNode(key)
+        return root
     
   
        
@@ -28,7 +33,7 @@ if __name__ == '__main__':
     root.right.right = newNode(8)  
   
     print("Inorder traversal before insertion:", end = " ") 
-    inorder(root)  
+    print(inorder(root))  
   
     key = 12
     insert(root, key)  
