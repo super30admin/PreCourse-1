@@ -5,34 +5,58 @@ class Stack {
   
     boolean isEmpty() 
     { 
+        return (top<0);
         //Write your code here 
     } 
 
     Stack() 
     { 
+        top=-1;
         //Initialize your constructor 
     } 
   
     boolean push(int x) 
     { 
         //Check for stack Overflow
-        //Write your code here
+        if(top>=MAX-1){
+            System.out.println("Stack overflow");
+            return false;
+        }
+         //Write your code here
+        else{
+            a[++top]=x;
+            System.out.println(x+" pushed into stack");
+        return true; }   
     } 
-  
+
     int pop() 
     { 
         //If empty return 0 and print " Stack Underflow"
-        //Write your code here
+        if(isEmpty()){
+            System.out.println("Stack underflow");
+            return 0; 
+        }
+         //Write your code here
+        else{
+            return a[top--];
+        }
     } 
   
     int peek() 
     { 
-        //Write your code here
+         //Write your code here
+        if(isEmpty()){
+            System.out.println("Stack underflow");
+            return 0;
+        }
+        else{
+            return a[top];
+        }
     } 
 } 
   
 // Driver code 
-class Main { 
+class Exercise_1 { 
     public static void main(String args[]) 
     { 
         Stack s = new Stack(); 
