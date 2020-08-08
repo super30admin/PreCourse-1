@@ -31,21 +31,23 @@ class Stack {
             System.out.println("Stack Underflow"); 
             return 0; 
         } 
-        else { 
-            int x = a[top--]; 
-            return x; 
-        } 
+       
+        int x = a[top--]; 
+        return x;    
+         
     } 
   
     int peek() 
     { 
-        if (top == -1)
+        if (top == -1) { 
+            return 0; 
         } 
-        else { 
-            int x = a[top--]; 
-            return x; 
-        } 
-    } 
+        int x = a[top]; 
+        return x; 
+            
+    }
+    
+    
 } 
   
 // Driver code 
