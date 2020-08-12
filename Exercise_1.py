@@ -10,7 +10,8 @@ class myStack:
           self.res.append(item)
          
      def pop(self):
-        self.res.pop()
+        if self.res:
+          self.res.pop()
         
      def peek(self):
           if self.res:
