@@ -1,4 +1,5 @@
 #include <bits/stdc++.h> 
+
 using namespace std; 
   
 // A structure to represent a stack 
@@ -18,27 +19,64 @@ StackNode* newNode(int data)
   
 int isEmpty(StackNode* root) 
 { 
-    //Your code here 
+    return !root;
 } 
   
 void push(StackNode** root, int data) 
 { 
-    //Your code here 
+   try{  
+       StackNode* node=newNode(data);
+       if(*root==NULL){
+           *root=node;
+       }    
+       else{
+          StackNode* curr=*root;
+          while(curr->next!=NULL){
+              curr=curr->next;
+          }
+          curr->next=node;
+       }
+   }
+   catch (const std::bad_alloc& e) {
+        std::cout << "Allocation failed: " << e.what() << '\n';
+    }
 } 
   
 int pop(StackNode** root) 
 { 
-    //Your code here 
-} 
+    if(isEmpty(*root)){
+        cerr<<"Stack Underflow"<<endl;
+        return 0;
+    }
+    StackNode* curr=*root;
+    StackNode* prev=NULL;
+    while(curr->next!=NULL){
+        prev=curr;
+        curr=curr->next;
+    }
+    if((*root)->next!=NULL)
+        prev->next=NULL;
+    else *root=NULL;
+    return curr->data;
+}
+
   
 int peek(StackNode* root) 
-{ 
-    //Your code here 
+{
+    if(isEmpty(root)){
+        cerr<<"Stack Underflow"<<endl;
+        return 0;
+    }
+    StackNode* curr=root;
+    while(curr->next!=NULL){
+        curr=curr->next;
+    }
+    return curr->data;
 } 
   
 int main() 
 { 
-    StackNode* root = NULL; 
+   StackNode* root = NULL; 
   
     push(&root, 10); 
     push(&root, 20); 
@@ -50,3 +88,5 @@ int main()
   
     return 0; 
 } 
+
+
