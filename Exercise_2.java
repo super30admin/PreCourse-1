@@ -1,5 +1,6 @@
 public class Exercise_2 { 
   
+	
     StackNode root; 
   
     static class StackNode { 

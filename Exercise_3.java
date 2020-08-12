@@ -1,5 +1,6 @@
-import java.io.*;
+/*import java.io.*;
 
+  
   
 // Java program to implement 
 // a Singly Linked List 
@@ -54,10 +55,10 @@ public class Exercise_3 {
     public static void printList(Exercise_3 list) 
     {  
         // Traverse through the LinkedList 
-    	Node headNode= list.head;
+    //	Node headNode= list.head;
     		
             // Print the data at current node 
-    	while(headNode!=null) {
+    //	while(headNode!=null) {
     		System.out.println("List is : "+ headNode.data);
     		headNode=headNode.next;
     	}
@@ -69,14 +70,14 @@ public class Exercise_3 {
     public static void main(String[] args) 
     { 
         /* Start with the empty list. */
-       Exercise_3 list = new Exercise_3(); 
+ //      Exercise_3 list = new Exercise_3(); 
   
         
         // ******INSERTION****** 
         
   
         // Insert the values 
-        list = insert(list, 1); 
+/*        list = insert(list, 1); 
        list = insert(list, 2); 
       list = insert(list, 3); 
       list  = insert(list, 4); 
@@ -85,4 +86,4 @@ public class Exercise_3 {
    // Print the LinkedList 
      printList(list); 
    } 
- }
+ }*/
