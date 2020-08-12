@@ -1,6 +1,6 @@
 import java.util.LinkedList; 
 import java.util.Queue; 
-public class GFG { 
+class GFG { 
        
     /* A binary tree node has key, pointer to  
     left child and a pointer to right child */
@@ -25,16 +25,38 @@ public class GFG {
             return; 
        
         inorder(temp.left); 
-        System.out.print(temp.key+" "); 
+        System.out.print(temp.key + " "); 
         inorder(temp.right); 
     } 
        
     /*function to insert element in binary tree */
     static void insert(Node temp, int key) 
     { 
-
+        Node newNode = new Node(key);
         // Do level order traversal until we find 
-        // an empty place and add the node.  
+        // an empty place and add the node.
+        if (temp == null) {
+            root = newNode;
+        } else {
+            Queue<Node> q = new LinkedList<>();
+            q.offer(temp);
+            while (!q.isEmpty()) {
+                Node n = q.poll();
+                if (n.left == null) {
+                    n.left = newNode;
+                    return;
+                } else {
+                    q.offer(n.left);
+                }
+
+                if (n.right == null) {
+                    n.right = newNode;
+                    return;
+                } else {
+                    q.offer(n.right);
+                }
+            }
+        }
     } 
        
     // Driver code 
@@ -49,7 +71,7 @@ public class GFG {
        
         System.out.print( "Inorder traversal before insertion:"); 
         inorder(root); 
-       
+        
         int key = 12; 
         insert(root, key); 
        
