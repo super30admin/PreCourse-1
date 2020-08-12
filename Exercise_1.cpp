@@ -1,42 +1,71 @@
-#include <bits/stdc++.h> 
-  
+#include<bits/stdc++.h> 
+
 using namespace std; 
   
-#define MAX 1000 
+#define MAX 1000
   
 class Stack { 
-    int top; 
+    int length; 
+	int top; 
   
 public: 
     int a[MAX]; // Maximum size of Stack 
   
-    Stack() { //Constructor here } 
-    bool push(int x); 
-    int pop(); 
-    int peek(); 
-    bool isEmpty(); 
+    Stack() {length=0,top=0;} 
+		bool push(int x); 
+		int pop(); 
+		int peek(); 
+		bool isEmpty(); 
 }; 
   
 bool Stack::push(int x) 
 { 
-    //Your code here
-    //Check Stack overflow as well
+    try{
+    	if(length==MAX)
+    		throw overflow_error("Stack Overflow Exception");
+    	else{
+    		a[length]=x;
+    		length++;
+            top=x;
+    		return true;
+    	}
+    }
+    catch(overflow_error &e){
+        cerr<<e.what()<<endl;
+    }
+	
 } 
   
 int Stack::pop() 
 { 
-    //Your code here
-    //Check Stack Underflow as well 
-} 
+	
+	if(isEmpty()){
+        cerr<<"Stack Underflow"<<endl;
+        return 0;
+    }
+    int x=a[length-1];
+	length--;
+	if(length==0)
+	    top=0;
+	else
+	    top=a[length-1];
+	return x;
+}
+	
 int Stack::peek() 
 { 
-    //Your code here
-    //Check empty condition too
+    if(isEmpty()){
+        cerr<<"stack underflow"<<endl;
+        return 0;
+    }
+    return top;
 } 
   
 bool Stack::isEmpty() 
 { 
-    //Your code here 
+	if(length==0)
+		return true;
+	else return false;
 } 
   
 // Driver program to test above functions 
@@ -48,5 +77,5 @@ int main()
     s.push(30); 
     cout << s.pop() << " Popped from stack\n"; 
   
-    return 0; 
+    return 0;
 } 
