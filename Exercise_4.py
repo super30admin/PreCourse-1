@@ -1,3 +1,4 @@
+import collections
 # Python program to insert element in binary tree  
 class newNode():  
   
@@ -8,14 +9,34 @@ class newNode():
           
 """ Inorder traversal of a binary tree"""
 def inorder(temp): 
-  
+    if not temp:
+        return
     
-  
+    else:
+        inorder(temp.left)
+        print(temp.key)
+        inorder(temp.right)
+    
   
 """function to insert element in binary tree """
 def insert(temp,key): 
-  
-    
+    res = collections.deque()
+    res.append(temp)
+
+    while res:
+        val = res.popleft()
+        if val.left is None:
+            val.left = newNode(key)
+            break
+        else:
+            res.append(val.left)
+        
+        if val.right is None:
+            val.right = newNode(key)
+            break
+        else:
+            res.append(val.right)
+
   
        
 # Driver code  
