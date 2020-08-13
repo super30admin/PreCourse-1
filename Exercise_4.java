@@ -1,7 +1,7 @@
 import java.util.LinkedList; 
 import java.util.Queue; 
-public class GFG { 
-       
+class GFG { 
+    
     /* A binary tree node has key, pointer to  
     left child and a pointer to right child */
     static class Node { 
@@ -32,8 +32,31 @@ public class GFG {
     /*function to insert element in binary tree */
     static void insert(Node temp, int key) 
     { 
-
-        // Do level order traversal until we find 
+       Queue<Node> q = new LinkedList<>();
+      
+       if(temp != null)
+    	   q.add(temp);
+       
+       while(!q.isEmpty())
+       {
+    	   Node n = q.poll();
+    	   
+    	   if(n.left == null)
+    	   {
+    		   n.left = new Node(key);
+    		   break;
+    	   }else
+    		   q.add(n.left);
+    	   
+    	   if(n.right != null)
+    		   q.add(n.right);
+    	   else
+    	   {
+    		   n.right = new Node(key);
+    		   break;
+    	    }
+    	 }
+      // Do level order traversal until we find 
         // an empty place and add the node.  
     } 
        
