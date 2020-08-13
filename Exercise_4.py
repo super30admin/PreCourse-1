@@ -14,7 +14,28 @@ def inorder(temp):
   
 """function to insert element in binary tree """
 def insert(temp,key): 
-  
+  def insert(temp,key):
+    new_node = newNode(data)
+    if self.root == None:
+      self.root = new_node
+      return
+    else:
+      curr_node = self.root
+      while True:
+        if data < curr_node.data:
+          #Left
+          if curr_node.left == None:
+            curr_node.left = new_node
+            return 
+          else:
+            curr_node = curr_node.left
+        elif data > curr_node.data:
+            #Right
+            if curr_node.right == None:
+              curr_node.right = new_node
+              return
+            else:
+              curr_node = curr_node.right  
     
   
        
