@@ -5,10 +5,33 @@ class Node:
  
 class Stack:
     def __init__(self):
-        
+      self.head = None
+      self.tail = None
+      self.length = 0
+
     def push(self, data):
-        
+      new_node = Node(data)
+      if self.tail == None:
+        self.tail = new_node
+        self.head = self.tail
+        self.length = 1
+      else:
+        self.head.next = new_node
+        self.head = self.head.next
+        self.length += 1  
+
     def pop(self):
+      i = 1
+      curr_node = self.tail
+      while i != self.length-1:
+        curr_node = curr_node.next
+        i +=1
+      popped_value = curr_node.next
+      curr_node.next = None
+      self.head = curr_node
+      self.length -= 1
+      return popped_value.data 
+
         
 a_stack = Stack()
 while True:
