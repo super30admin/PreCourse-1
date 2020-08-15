@@ -34,7 +34,27 @@ public class GFG {
     { 
 
         // Do level order traversal until we find 
-        // an empty place and add the node.  
+        // an empty place and add the node.
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(temp);
+        // Node pollNode;
+        while(!queue.isEmpty()){
+            temp = queue.poll();
+            if(temp.left == null){
+                temp.left = new Node(key);
+                return;
+            }
+            else queue.add(temp.left);
+            if(temp.right == null){
+                temp.right = new Node(key);
+                return;
+            }
+            else{
+                queue.add(temp.right);
+            }
+            
+        } 
+
     } 
        
     // Driver code 
@@ -51,6 +71,18 @@ public class GFG {
         inorder(root); 
        
         int key = 12; 
+        insert(root, key); 
+       
+        System.out.print("\nInorder traversal after insertion:"); 
+        inorder(root); 
+
+        key = 13; 
+        insert(root, key); 
+       
+        System.out.print("\nInorder traversal after insertion:"); 
+        inorder(root);
+        
+        key = 20; 
         insert(root, key); 
        
         System.out.print("\nInorder traversal after insertion:"); 
