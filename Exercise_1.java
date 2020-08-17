@@ -5,7 +5,10 @@ class Stack {
   
     boolean isEmpty() 
     { 
-        //Write your code here 
+        if (top < 0) {
+		return true;
+	}
+	return false;
     } 
 
     Stack() 
