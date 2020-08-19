@@ -1,3 +1,11 @@
+// Time Complexity : push, pop, peek, isEmpty = O(1)
+// Space Complexity : push, pop, peek, isEmpty = O(1)
+// Did this code successfully run on Leetcode : yes
+// Any problem you faced while coding this : no
+
+
+// Your code here along with comments explaining your approach
+
 class Stack { 
     static final int MAX = 2; 
     int top; 
