@@ -5,9 +5,7 @@
 
 class StackAsLinkedList { 
   
-    StackNode root; 
-    StackNode cur;
-  
+    StackNode root;   
     static class StackNode { 
         int data; 
         StackNode next;
