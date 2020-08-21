@@ -1,10 +1,15 @@
-import java.io.*; 
+// Time Complexity : insert - O(1), delete - O(1)
+// Space Complexity : O(n)
+// Did this code successfully run on Leetcode : yes
+// Any problem you faced while coding this : no
+
+import java.util.*; 
   
 // Java program to implement 
 // a Singly Linked List 
-public class LinkedList { 
+class LinkedList { 
   
-    Node head; // head of list 
+    static Node head; // head of list 
   
     // Linked list Node. 
     // This inner class is made static 
@@ -18,34 +23,62 @@ public class LinkedList {
         Node(int d) 
         { 
             //Write your code here 
+            this.data = d;
+            this.next = null;
         } 
     } 
   
     // Method to insert a new node 
     public static LinkedList insert(LinkedList list, int data) 
     { 
-        // Create a new node with given data 
-   
-        // If the Linked List is empty, 
-        // then make the new node as head 
-        
-            // Else traverse till the last node 
-            // and insert the new_node there 
-
-            // Insert the new_node at last node 
-        // Return the list by head 
-        
+        Node newnode = new Node(data);
+        if(list.head==null){
+            head = newnode; 
+        }else{
+            Node temp = head;
+            while(temp.next!=null){
+                temp=temp.next;
+            }
+            temp.next=newnode;
+        }
+        return list;
     } 
   
     // Method to print the LinkedList. 
     public static void printList(LinkedList list) 
     {  
-        // Traverse through the LinkedList 
-   
-            // Print the data at current node 
-       
-            // Go to next node 
+        Node temp = head;
+        while(temp!=null){
+            System.out.println(temp.data);
+            temp=temp.next;
+        }
     } 
+
+    public static LinkedList deleteByKey(LinkedList list,int key){
+        Node cur = list.head;
+        Node prev=null;
+        
+        if(cur!=null && cur.data==key){
+            list.head=cur.next;
+            return list;
+        }
+            
+        while(cur!=null && cur.data!=key){
+                prev=cur;
+                cur=cur.next;
+        }
+        if(cur !=null ){
+            prev.next=cur.next;
+        }
+        
+        if(cur == null){
+            System.out.println("not found");
+        }
+
+        return list;
+        }
+    
+    
    
     // Driver code 
     public static void main(String[] args) 
@@ -63,6 +96,7 @@ public class LinkedList {
         list = insert(list, 3); 
         list = insert(list, 4); 
         list = insert(list, 5); 
+        deleteByKey(list,4);
   
         // Print the LinkedList 
         printList(list); 
