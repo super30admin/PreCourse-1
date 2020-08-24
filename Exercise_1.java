@@ -1,3 +1,19 @@
+/*
+ * Time Complexity: 
+ * 	- push() -> O (1)
+ * 	- pop() -> O (1)
+ * 	- peek() -> O (1)
+ * 	- isEmpty() -> O (1)
+ * 
+ * Space Complexity: O (1) -> Since, no extra space to store the stack elements
+ * 
+ * Did this code successfully run on leetcode: Yes
+ * 
+ * Any problem you faced while coding this: No
+ * 
+ */
+
+
 package com.s30.edu.precourse1;
 
 class Stack {
