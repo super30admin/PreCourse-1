@@ -12,10 +12,14 @@ class myStack:
           self.arr.append(item)
          
      def pop(self):
-        self.arr.pop()
+          if s.isEmpty():
+               return 'Nothing in the Stack'
+          return self.arr.pop()
         
      def peek(self):
-        return self.arr[-1]
+          if s.isEmpty():
+               return 'Nothing in stack'
+          return self.arr[-1]
 
      def size(self):
         return len(self.arr) 
@@ -27,5 +31,9 @@ s = myStack()
 s.push('1')
 s.push('2')
 s.push('100')
+s.pop()
+s.pop()
+s.pop()
+s.pop()
 print(s.show())
 print(s.peek())
