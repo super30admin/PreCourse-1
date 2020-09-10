@@ -1,4 +1,12 @@
 # Python program to insert element in binary tree  
+'''
+Author : Srinidhi Bhat Brahmavar
+
+'''
+'''
+Question: Tree Implementation 
+'''
+
 class newNode():  
   
     def __init__(self, data):  
@@ -7,16 +15,30 @@ class newNode():
         self.right = None
           
 """ Inorder traversal of a binary tree"""
-def inorder(temp): 
-  
-    
-  
-  
+def inorder(temp):
+    if temp:
+        inorder(temp.left)
+        print(temp.key)
+        inorder(temp.right)
+
 """function to insert element in binary tree """
-def insert(temp,key): 
-  
-    
-  
+def insert(temp,key):
+    qu = []
+    qu.append(temp)
+
+    while len(qu):
+        node = qu[0]
+        qu.pop(0)
+        if not node.left:
+            node.left = newNode(key)
+        elif node.left:
+            qu.append(node.left)
+
+        if not node.right:
+            node.right = newNode(key)
+        elif node.right:
+            qu.append(node.right)
+
        
 # Driver code  
 if __name__ == '__main__': 
