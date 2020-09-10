@@ -1,7 +1,7 @@
 //Time Complexity : O(1)
 //Space Complexity : O(n)
 //Did this code successfully run on Leetcode : haven't tried
-//Any problem you faced while coding this : On line 45 if I get newnode.next or root.next both gives same value, not sure why so?
+//Any problem you faced while coding this : On line 38 if I get newnode.next or root.next both gives same value, not sure why so?
 //											I am little confused about this, it would be great if you could tell me why?
 
 
