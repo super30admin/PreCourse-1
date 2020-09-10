@@ -32,7 +32,27 @@ public class GFG {
     /*function to insert element in binary tree */
     static void insert(Node temp, int key) 
     { 
+        //  we have used queue as its first FIFO so if the queue's element doesn't 
+        //have any of left or right child then insert to that or check till the end of queue by adding left to rigt and popping of the element
+            Queue<Node> q = new LinkedList<Node>();
+            q.add(temp);
 
+            while(!q.isEmpty()){
+                 temp  = q.peek();
+                q.remove();
+                if(temp.left == null){
+                    temp.left  = new Node(key);
+                    break;
+                }else
+                {q.add(temp.left); }
+       
+            if (temp.right == null) { 
+                temp.right = new Node(key); 
+                break; 
+            } else
+               { q.add(temp.right);}
+
+            }
         // Do level order traversal until we find 
         // an empty place and add the node.  
     } 
