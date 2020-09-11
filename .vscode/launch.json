@@ -1,0 +1,42 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Excercise_1<PreCourse_1_b486b7f1>",
+            "request": "launch",
+            "mainClass": "Excercise_1",
+            "projectName": "PreCourse_1_b486b7f1"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Excercise_4<PreCourse_1_b486b7f1>",
+            "request": "launch",
+            "mainClass": "Excercise_4",
+            "projectName": "PreCourse_1_b486b7f1"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-LinkedList<PreCourse_1_b486b7f1>",
+            "request": "launch",
+            "mainClass": "LinkedList",
+            "projectName": "PreCourse_1_b486b7f1"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-StackAsLinkedList<PreCourse_1_b486b7f1>",
+            "request": "launch",
+            "mainClass": "StackAsLinkedList",
+            "projectName": "PreCourse_1_b486b7f1"
+        }
+    ]
+}
