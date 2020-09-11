@@ -23,17 +23,16 @@ def insert(temp,key):
         return
     else:
         curr_node = temp
-        if curr_node.key<key:
-            if temp.right is None:
-                temp.right=new_node
-            else:
-                insert(temp.right,key)
+        if temp.right is None:
+            temp.right=new_node
+            return
+        elif temp.right is not None:
+            insert(temp.right,key)
+        elif temp.left is None:
+            temp.left = new_node
+            return
         else:
-            if temp.left is None:
-                temp.left = new_node
-                return
-            else:
-                insert(temp.left,key)
+            insert(temp.left,key)
 
 
     
@@ -52,7 +51,9 @@ if __name__ == '__main__':
     inorder(root)  
   
     key = 12
-    insert(root, key)  
+    insert(root, key)
+
+    insert(root,40)  
   
     print()  
     print("Inorder traversal after insertion:", end = " ") 
