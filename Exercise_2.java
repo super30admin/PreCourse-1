@@ -1,4 +1,7 @@
-public class StackAsLinkedList { 
+// Time Complexity: O(1) - No loops to run
+// Space Complexity: O(n) - where n is the number of elements in input to the list.
+
+public class StackAsLinkedList {
   
     StackNode root = null; 
   

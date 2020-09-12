@@ -1,4 +1,7 @@
-class Stack { 
+// Time Complexity: O(1) - No loops to run
+// Space Complexity: O(1) - If we don't consider the array created as needed output then it is O(MAX)
+
+class Stack {
     static final int MAX = 1000; 
     int top; 
     int a[] = new int[MAX]; // Maximum size of Stack 

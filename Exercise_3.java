@@ -1,4 +1,8 @@
-import java.io.*; 
+// Time Complexity: O(n) - n is number of elements and we have to traverse till the last to insert node and also for printing the list
+// Space Complexity: O(n) - we created a linkedlist if size n (input elements)
+
+
+import java.io.*;
   
 // Java program to implement 
 // a Singly Linked List 
