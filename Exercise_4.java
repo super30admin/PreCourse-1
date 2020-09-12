@@ -1,4 +1,8 @@
-import java.util.LinkedList; 
+// Time Complexity: O(n) - maximum height of the tree
+// Space Complexity: O(n) - number of elements in the tree
+
+
+import java.util.LinkedList;
 import java.util.Queue; 
 public class GFG { 
        
@@ -31,10 +35,27 @@ public class GFG {
        
     /*function to insert element in binary tree */
     static void insert(Node temp, int key) 
-    { 
+    {
+        Queue<Node> que = new LinkedList<Node>();
+        que.add(temp);
+        // Do level order traversal until we find
+        // an empty place and add the node.
+        while (!que.isEmpty()) {
+            temp = que.peek();
+            que.remove();
 
-        // Do level order traversal until we find 
-        // an empty place and add the node.  
+            if (temp.left == null) {
+                temp.left = new Node(key);
+                break;
+            } else
+                que.add(temp.left);
+
+            if (temp.right == null) {
+                temp.right = new Node(key);
+                break;
+            } else
+                que.add(temp.right);
+        }
     } 
        
     // Driver code 
