@@ -1,44 +1,72 @@
 class Stack { 
-    static final int MAX = 1000; 
+    static final int MAX = 1000; //const. time space O(1)
     int top; 
     int a[] = new int[MAX]; // Maximum size of Stack 
   
-    boolean isEmpty() 
+    boolean isEmpty() //const. time space O(1)
     { 
-        //Write your code here 
+    	 return (top < 0); 
     } 
 
-    Stack() 
+    Stack() //const. time space O(1)
     { 
-        //Initialize your constructor 
+        top = -1;
     } 
   
-    boolean push(int x) 
+    boolean push(int x) //time to push n elements O(n) space O(1)
     { 
         //Check for stack Overflow
-        //Write your code here
+    	 if(top == MAX-1)  
+         {  
+             System.out.println("Stack Overflow");  
+             return false;  
+         }  
+    	//Write your code here
+         else   
+         {  
+             top++;  
+             a[top]=x;   
+             return true;  
+         }  
     } 
   
-    int pop() 
+    int pop() //O(1)
     { 
         //If empty return 0 and print " Stack Underflow"
-        //Write your code here
+    	 if (top == -1)  
+         {  
+             System.out.println("Stack Underflow !!");  
+             return 0;  
+         }  
+    	//Write your code here
+         else   
+         {  
+             top--;   
+             System.out.println("Item popped");  
+             return a[top+1];  
+         } 
     } 
   
-    int peek() 
+    int peek() //O(1)
     { 
-        //Write your code here
+    	 if (top == -1)   
+    	    {  
+    		 System.out.println("Stack Underflow !!");
+    	        return 0;   
+    	    }  
+    	    else  
+    	    {  
+    	        return a [top];  
+    	    }  
     } 
-} 
   
 // Driver code 
-class Main { 
     public static void main(String args[]) 
     { 
-        Stack s = new Stack(); 
+        Stack s = new Stack();     
         s.push(10); 
         s.push(20); 
-        s.push(30); 
+        s.push(0); 
         System.out.println(s.pop() + " Popped from stack"); 
     } 
 }
