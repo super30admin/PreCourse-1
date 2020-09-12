@@ -1,12 +1,12 @@
 public class StackAsLinkedList { 
   
-    StackNode root; 
+    StackNode root; // constant take time and sapce complexcity of O(1)
   
     static class StackNode { 
-        int data; 
-        StackNode next; 
+        int data; //O(1)
+        StackNode next; //O(1)
   
-        StackNode(int data) 
+        StackNode(int data) //O(1)
         { 
              this.data = data;
         	 next = null;
@@ -30,7 +30,7 @@ public class StackAsLinkedList {
     	}
     } 
   
-    public void push(int data) 
+    public void push(int data) // time Commplexcity to push n elements O(n) and space O(1)
     { 
         //Write code to push data to the stack. 
     	StackNode oldHead = root;
@@ -54,7 +54,7 @@ public class StackAsLinkedList {
         
     } 
   
-    public int peek() 
+    public int peek() //time O(1) Space O(1)
     { 
         //Write code to just return the topmost element without removing it.
     	 { 
@@ -74,9 +74,9 @@ public class StackAsLinkedList {
   
         StackAsLinkedList sll = new StackAsLinkedList(); 
   
-        sll.push(10); 
-        sll.push(20); 
-        sll.push(30); 
+        sll.push(10); // time O(1) Space O(1)
+        sll.push(20); // same 
+        sll.push(30); //same
   
         System.out.println(sll.pop() + " popped from stack"); 
   

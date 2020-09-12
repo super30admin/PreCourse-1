@@ -1,7 +1,7 @@
  
 // Java program to implement 
 // a Singly Linked List 
-public class LinkedList { 
+public class LinkedList { //O(1)
   
     Node head; // head of list 
   
@@ -23,7 +23,8 @@ public class LinkedList {
     } 
   
     // Method to insert a new node 
-    public static LinkedList insert(LinkedList list, int data) 
+    public static LinkedList insert(LinkedList list, int data) // time O(n) where n is no. of elements 
+                                        //time to push n elements O(n) space O(1) space O(typesize * n)
     { 
         // Create a new node with given data 
         Node newnode = new Node(data); 
@@ -38,7 +39,7 @@ public class LinkedList {
             // Else traverse till the last node 
             // and insert the new_node there 
             Node last = list.head; 
-            while (last.next != null) { 
+            while (last.next != null) { // time O(n-1) sapce constant 
                 last = last.next; 
             } 
   
@@ -51,7 +52,7 @@ public class LinkedList {
     } 
   
     // Method to print the LinkedList. 
-    public static void printList(LinkedList list) 
+    public static void printList(LinkedList list) //time O(n) and space O(n)
     { 
         Node currentNode = list.head; 
    

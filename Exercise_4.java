@@ -19,7 +19,7 @@ public class GFG {
     static Node temp = root; 
       
     /* Inorder traversal of a binary tree*/
-    static void inorder(Node temp) 
+    static void inorder(Node temp) //every time size redce to half O log(n) and space constant
     { 
         if (temp == null) 
             return; 
@@ -30,7 +30,7 @@ public class GFG {
     } 
        
     /*function to insert element in binary tree */
-    static void insert(Node temp, int key) 
+    static void insert(Node temp, int key) // O(n) n is height of the tree and space constant
     { 
     	 Queue<Node> q = new LinkedList<Node>(); 
          q.add(temp); 

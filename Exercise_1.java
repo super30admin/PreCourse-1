@@ -1,19 +1,19 @@
 class Stack { 
-    static final int MAX = 1000; 
+    static final int MAX = 1000; //const. time space O(1)
     int top; 
     int a[] = new int[MAX]; // Maximum size of Stack 
   
-    boolean isEmpty() 
+    boolean isEmpty() //const. time space O(1)
     { 
     	 return (top < 0); 
     } 
 
-    Stack() 
+    Stack() //const. time space O(1)
     { 
         top = -1;
     } 
   
-    boolean push(int x) 
+    boolean push(int x) //time to push n elements O(n) space O(1)
     { 
         //Check for stack Overflow
     	 if(top == MAX-1)  
@@ -30,7 +30,7 @@ class Stack {
          }  
     } 
   
-    int pop() 
+    int pop() //O(1)
     { 
         //If empty return 0 and print " Stack Underflow"
     	 if (top == -1)  
@@ -47,7 +47,7 @@ class Stack {
          } 
     } 
   
-    int peek() 
+    int peek() //O(1)
     { 
     	 if (top == -1)   
     	    {  
