@@ -1,5 +1,15 @@
 import java.util.LinkedList; 
 import java.util.Queue; 
+
+// Time Complexity : O(log n)
+// Space Complexity : o(n)
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this :
+
+
+// Your code here along with comments explaining your approach
+
+
 public class GFG { 
        
     /* A binary tree node has key, pointer to  
@@ -33,11 +43,36 @@ public class GFG {
     static void insert(Node temp, int key) 
     { 
 
+        Queue<Node> q = new LinkedList<Node>();
+        q.add(temp);
         // Do level order traversal until we find 
+        while(!q.isEmpty())
+        {
+            temp=q.peek();
+            q.remove();
+             if(temp.left ==null)
+             {
+                 temp.left=new Node(key);
+                 break;
+             }
+             else
+             {
+                 q.add(temp.left);
+             }
+
+             if(temp.right ==null)
+             {
+                 temp.right = new Node(key);
+                 break;
+             }
+             else{
+                 q.add(temp.right);
+             }
+        }
         // an empty place and add the node.  
     } 
        
-    // Driver code 
+    // Driver code    
     public static void main(String args[]) 
     { 
         root = new Node(10); 
