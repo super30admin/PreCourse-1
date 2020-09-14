@@ -5,11 +5,41 @@ class Node:
  
 class Stack:
     def __init__(self):
-        
+        self.size = 0
+        self.top = None
+
+    def isEmpty(self):
+        return self.size==0
+
     def push(self, data):
-        
+        if(self.size==0):
+            self.top = Node(data)
+        else:
+            newNode = Node(data)
+            newNode.next = self.top
+            self.top = newNode
+        self.size += 1    
+
     def pop(self):
-        
+        if(self.size==0):
+            return None
+        else:
+            item = self.top
+            self.top = self.top.next
+            self.size -= 1    
+        return item.data
+
+    def peek(self):
+        if(self.size):
+            return self.top.data
+        else:
+            return None
+
+    def show(self):
+        cur_node = self.top
+        while(cur_node and cur_node.next):
+            print(cur_node.data)                
+
 a_stack = Stack()
 while True:
     print('push <value>')
