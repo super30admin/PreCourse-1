@@ -15,6 +15,9 @@ struct Node {
 struct Node* newNode(int key) 
 { 
     //Your code here
+    Node* newnode = new Node();
+    newnode->key=key;
+    newnode->left = newnode->right = NULL;
 }; 
   
 /* Inorder traversal of a binary tree*/
@@ -36,6 +39,33 @@ void insert(struct Node* temp, int key)
     // an empty place.  
     
     //Your code here
+    queue<Node*>q;
+    q.push(temp);
+    while(!q.empty())
+    {
+        Node* temp=q.front();
+        q.pop();
+        if(!temp->left)
+        {
+            temp->left=newNode(key);
+            break;
+        }
+        else
+        {
+            q.push(temp->left);
+        }
+        if(!temp->right)
+        {
+            temp->right=newNode(key);
+            break;
+        }
+        else
+        {
+            q.push(temp->right);
+        }
+        
+    }
+
 } 
   
 // Driver code 
