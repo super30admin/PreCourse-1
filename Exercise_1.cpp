@@ -10,7 +10,7 @@ class Stack {
 public: 
     int a[MAX]; // Maximum size of Stack 
   
-    Stack() { //Constructor here } 
+    Stack() { top=-1; } 
     bool push(int x); 
     int pop(); 
     int peek(); 
@@ -21,22 +21,52 @@ bool Stack::push(int x)
 { 
     //Your code here
     //Check Stack overflow as well
+    if(top >= MAX-1)
+    {
+        return false;
+    }
+    top++;
+    a[top]=x;
+    return true;
 } 
   
 int Stack::pop() 
 { 
     //Your code here
     //Check Stack Underflow as well 
+    if(top < 0)
+    {
+        return 0;
+    }
+    int x=a[top];
+    top--;
+    return x;
+
 } 
 int Stack::peek() 
 { 
     //Your code here
     //Check empty condition too
+    if(top < 0)
+    {
+        return 0;
+    }
+    int x=a[top];
+    return x;
 } 
   
 bool Stack::isEmpty() 
 { 
     //Your code here 
+    if(top < 0)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+    
 } 
   
 // Driver program to test above functions 
