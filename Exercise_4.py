@@ -7,13 +7,31 @@ class newNode():
         self.right = None
           
 """ Inorder traversal of a binary tree"""
-def inorder(temp): 
-  
-    
-  
-  
+def inorder(temp):
+    if temp:
+        inorder(temp.left)
+        print(temp.key, end=" ")
+        inorder(temp.right)
+
 """function to insert element in binary tree """
 def insert(temp,key): 
+    items = []
+    items.append(temp)
+
+    while items:
+        temp = items[0]
+        items.pop(0)
+
+        if not temp.left:
+            temp.left = newNode(key)
+            break
+        else:
+            items.append(temp.left)
+        
+        if not temp.right:
+            temp.right = newNode(key)
+        else:
+            items.append(temp.right)
   
     
   
