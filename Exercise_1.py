@@ -14,7 +14,7 @@ class myStack:
          if (self.isEmpty()):
              print("Stack Underflow")
          else:
-            print(self.s[len(self.s)-1])
+            return self.s[len(self.s)-1]
             self.s = self.s[:len(self.s)-1]#remove the element at top of stack pop(0)
 
 
@@ -28,7 +28,7 @@ class myStack:
          print(len(self.s))
 
      def show(self):
-         print(self.s)
+         return self.s
 
 
 s = myStack()
