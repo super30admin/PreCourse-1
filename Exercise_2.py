@@ -44,3 +44,6 @@ while True:
             print('Popped value: ', int(popped))
     elif operation == 'quit':
         break
+
+#Time complexity: O(N)
+#Space complexity: O(N)
