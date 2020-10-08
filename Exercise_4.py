@@ -1,3 +1,6 @@
+# Time Complexity: O(n)
+# Space Complexity: O(n)
+
 # Python program to insert element in binary tree  
 class newNode():  
   

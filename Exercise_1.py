@@ -1,17 +1,29 @@
+# Time Complexity: O(1)
+# Space Complexity: O(1)
+
 class myStack:
      def __init__(self):
           self.myStack = []
          
      def isEmpty(self):
+          """
+          Time Complexity: O(1)
+          """
           if len(self.myStack) == 0:
                return True
           else:
                return False
          
      def push(self, item):
+          """
+          Time Complexity: O(1)
+          """
           self.myStack.append(item)
          
      def pop(self):
+          """
+          Time Complexity: O(1)
+          """
           if len(self.myStack) == 0:
                return
           else:
