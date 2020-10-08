@@ -5,34 +5,53 @@ class Stack {
   
     boolean isEmpty() 
     { 
-        //Write your code here 
+        return (top == -1);
     } 
 
     Stack() 
-    { 
-        //Initialize your constructor 
+    {
+        this.top = -1;
     } 
   
     boolean push(int x) 
     { 
-        //Check for stack Overflow
-        //Write your code here
-    } 
+        if(top != MAX-1){
+            a[++top] = x;
+            System.out.println("Element "+ x + " got pushed to the stack");
+            return true;
+        }
+        else{
+            System.out.println("Stack overflow: Cannot push the element "+ x);
+            return false;
+        }
+    }
   
     int pop() 
     { 
-        //If empty return 0 and print " Stack Underflow"
-        //Write your code here
+       if(isEmpty()){
+           System.out.println("Stack underflow!");
+           return 0;
+       }
+       else{
+           int val = a[top];
+           top--;
+           return val;
+       }
     } 
   
     int peek() 
-    { 
-        //Write your code here
-    } 
-} 
+    {
+        if(isEmpty()){
+            System.out.println("Stack underflow!");
+        }
+        else{
+            return a[top];
+        }
+    }
+}
   
 // Driver code 
-class Main { 
+class Main {
     public static void main(String args[]) 
     { 
         Stack s = new Stack(); 
