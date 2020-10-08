@@ -5,11 +5,29 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.head = Node(float("inf"))
         
     def push(self, data):
+        curr = self.head
+        while curr.next != None:
+            curr = curr.next
+        new_node = Node(data)
+        curr.next = new_node
+        
+        return   
+        
         
     def pop(self):
-        
+        curr = self.head
+        while curr.next.next != None:
+            curr = curr.next
+        elem = curr.next.data
+        curr.next = None
+        return elem
+
+
+# Implement Stack using Linked List.
+
 a_stack = Stack()
 while True:
     print('push <value>')
