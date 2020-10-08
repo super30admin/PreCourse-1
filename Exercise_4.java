@@ -32,7 +32,31 @@ public class GFG {
     /*function to insert element in binary tree */
     static void insert(Node temp, int key) 
     { 
+        if(temp == null){
+            temp = new Node(key);
+        }
+        Queue<Node> queue = new LinkedList<Node>();
+        queue.add(temp);
+        while(!queue.isEmpty()){
+            temp = queue.peek();
+            queue.remove();
 
+            if(temp.left == null){
+                temp.left = new Node(key);
+                break;
+            }
+            else{
+                queue.add(temp.left);
+            }
+
+            if(temp.right == null){
+                temp.right = new Node(key);
+                break;
+            }
+            else{
+                queue.add(temp.right);
+            }
+        }
         // Do level order traversal until we find 
         // an empty place and add the node.  
     } 
