@@ -6,7 +6,7 @@ class Stack {
     boolean isEmpty()
     {
         //Write your code here
-        return top==-1 ? true : false;
+        return top==-1;
     }
 
     Stack()
