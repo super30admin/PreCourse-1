@@ -18,23 +18,15 @@ public class StackAsLinkedList {
     public boolean isEmpty()
     {
         //Write your code here for the condition if stack is empty.
-        return root == null;
+        return root == null ? true : false;
     }
 
     public void push(int data)
     {
         //Write code to push data to the stack.
         StackNode newStackNode = new StackNode(data);
-        if(root==null){
-            root = newStackNode;
-        }else {
-            StackNode head = root;
-            while(head.next!=null){
-                head = head.next;
-            }
-            head.next = newStackNode;
-        }
-
+        newStackNode.next = root;
+        root = newStackNode;
     }
 
     public int pop()
@@ -46,14 +38,8 @@ public class StackAsLinkedList {
             System.out.println("Stack Underflow" );
             return 0;
         } else {
-            StackNode head = root;
-            StackNode previous = null;
-            while (head.next!=null){
-                previous=head;
-                head=head.next;
-            }
-            int value = head.data;
-            previous.next=null;
+            int value = root.data;
+            root=root.next;
             return value;
         }
     }
@@ -65,11 +51,7 @@ public class StackAsLinkedList {
             System.out.println("Stack Underflow, empty stack" );
             return 0;
         } else {
-            StackNode head = root;
-            while(head.next!=null){
-                head=head.next;
-            }
-            return head.data;
+            return root.data;
         }
     }
 
