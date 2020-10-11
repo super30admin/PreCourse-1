@@ -1,9 +1,13 @@
-import java.util.LinkedList; 
+//insert an element in a binary tree
+//Time complexity: O(n)
+//Space complexity : O(n)
+
+import java.util.LinkedList;
 import java.util.Queue; 
 public class GFG { 
        
     /* A binary tree node has key, pointer to  
-    left child and a pointer to right child */
+    left child and s pointer to right child */
     static class Node { 
         int key; 
         Node left, right; 
@@ -31,10 +35,29 @@ public class GFG {
        
     /*function to insert element in binary tree */
     static void insert(Node temp, int key) 
-    { 
-
+    {
         // Do level order traversal until we find 
-        // an empty place and add the node.  
+        // an empty place and add the node.
+        Queue<Node> q = new LinkedList<>();
+        q.add(temp);
+
+        while(!q.isEmpty()){
+            temp = q.poll();
+
+            Node n = new Node(key);
+
+            if(temp.left == null){
+                temp.left = n;
+                break;
+            }else
+                q.add(temp.left);
+
+            if(temp.right == null){
+                temp.right = n;
+                break;
+            }else
+                q.add(temp.right);
+        } // end of while
     } 
        
     // Driver code 
