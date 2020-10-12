@@ -1,7 +1,49 @@
-import java.util.LinkedList; 
-import java.util.Queue; 
-public class GFG { 
-       
+import java.util.PriorityQueue;
+import java.util.Queue;
+
+class GFG {
+    static class MyQueue {
+        QueueNode head;
+        static class QueueNode { 
+            GFG.Node data; 
+            QueueNode next; 
+      
+            QueueNode(GFG.Node data) 
+            { 
+                //Constructor here 
+                this.data = data;
+                this.next = null;
+            } 
+        } 
+
+        MyQueue(GFG.Node n) {
+            this.head = new QueueNode(n);
+        }
+
+        boolean isEmpty() {
+            return this.head == null;
+        }
+
+        void add(GFG.Node n) {
+            QueueNode temp = this.head;
+            if (temp == null) {
+                this.head = new QueueNode(n);
+                return;
+            }
+            while(temp.next!= null) {
+                temp = temp.next;
+            }
+            temp.next = new QueueNode(n);
+        }
+
+        GFG.Node remove() {
+            if (this.head == null)
+                return null;
+            QueueNode temp = this.head;
+            this.head = this.head.next;
+            return temp.data;
+        }
+    }
     /* A binary tree node has key, pointer to  
     left child and a pointer to right child */
     static class Node { 
@@ -32,6 +74,28 @@ public class GFG {
     /*function to insert element in binary tree */
     static void insert(Node temp, int key) 
     { 
+        if (temp == null) {
+            temp = new Node(key);
+            return;
+        }
+        
+        MyQueue q = new MyQueue(temp);
+
+        while(!q.isEmpty()) {
+            Node curr = q.remove();
+            if (curr.left == null) {
+                curr.left = new Node(key);
+                return;
+            } else {
+                q.add(curr.left);
+            }
+            if (curr.right == null) {
+                curr.right = new Node(key);
+                return;
+            } else {
+                q.add(curr.right);
+            }
+        }
 
         // Do level order traversal until we find 
         // an empty place and add the node.  
