@@ -13,6 +13,7 @@ class myStack:
 
     def pop(self):
         self.L.pop()
+        self.size=self.size-1
 
     def peak(self):
         return self.L[len(self.L)-1]
