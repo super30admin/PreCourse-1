@@ -1,6 +1,12 @@
-import java.util.LinkedList; 
-import java.util.Queue; 
-public class GFG { 
+package S30.PreCourse_1;// Time Complexity :
+// Space Complexity :
+// Did this code successfully run on Leetcode :
+// Any problem you faced while coding this :
+
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.*;
+public class Exercise_4 {
        
     /* A binary tree node has key, pointer to  
     left child and a pointer to right child */
@@ -31,10 +37,29 @@ public class GFG {
        
     /*function to insert element in binary tree */
     static void insert(Node temp, int key) 
-    { 
+    {
+        // Do level order traversal until we find
+        // an empty place and add the node.
+        Queue<Node> queue = new ArrayDeque<Node>();
+        queue.offer(temp);
+        while(!queue.isEmpty()){
 
-        // Do level order traversal until we find 
-        // an empty place and add the node.  
+            Node current = queue.poll();
+            if(current.left == null){
+                current.left = new Node(key);
+                break;
+            }else{
+                queue.offer(current.left);
+            }
+
+            if(current.right == null){
+                current.right = new Node(key);
+                break;
+            }else{
+                queue.offer(current.right);
+            }
+        }
+
     } 
        
     // Driver code 
