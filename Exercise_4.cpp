@@ -15,6 +15,11 @@ struct Node {
 struct Node* newNode(int key) 
 { 
     //Your code here
+    Node* treeNode = new Node();
+    treeNode->key = key;
+    treeNode->right = NULL;
+    treeNode->left = NULL;
+    return treeNode;
 }; 
   
 /* Inorder traversal of a binary tree*/
@@ -27,6 +32,8 @@ void inorder(struct Node* temp)
     cout << temp->key << " "; 
     inorder(temp->right); 
 } 
+
+
   
 /*function to insert element in binary tree */
 void insert(struct Node* temp, int key) 
@@ -34,8 +41,34 @@ void insert(struct Node* temp, int key)
   
     // Do level order traversal until we find 
     // an empty place.  
-    
+
     //Your code here
+    queue <Node*> q1;
+    q1.push( temp);
+    Node* newitem = newNode(key);
+
+    Node* popped =NULL;
+    while(!q1.empty()){
+        popped = q1.front();
+        q1.pop();
+        if( popped->left ==NULL){
+            popped->left= newitem;
+            return;
+        }
+        else{
+        q1.push(popped->left);
+        }
+
+        if( popped->right ==NULL){
+            popped->right = newitem;
+            return;
+        } 
+        else{
+        q1.push(popped->right);
+        }
+    }
+
+    
 } 
   
 // Driver code 
