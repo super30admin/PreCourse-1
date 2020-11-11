@@ -15,6 +15,11 @@ struct Node {
 struct Node* newNode(int key) 
 { 
     //Your code here
+    struct Node* new_node = new Node();
+    //new_node = (struct Node*)malloc(sizeof(struct Node));
+    new_node->key = key;
+    new_node->left = new_node->right = NULL;
+    return new_node;
 }; 
   
 /* Inorder traversal of a binary tree*/
@@ -31,11 +36,37 @@ void inorder(struct Node* temp)
 /*function to insert element in binary tree */
 void insert(struct Node* temp, int key) 
 { 
+    if (temp == NULL) {
+        temp = newNode(key);
+        return;
+    }
   
     // Do level order traversal until we find 
     // an empty place.  
     
     //Your code here
+    queue<Node*> q;
+    q.push(temp);
+    while(!q.empty()){
+        Node* node_insert = q.front();
+        q.pop();
+        
+        if(node_insert->left!=NULL){
+            q.push(node_insert->left);
+        }
+        else{
+            node_insert->left = newNode(key);
+            return;
+        }
+        
+        if(node_insert->right!=NULL){
+            q.push(node_insert->right);
+        }
+        else{
+            node_insert->right = newNode(key);
+            return;
+        }
+    }
 } 
   
 // Driver code 
@@ -59,4 +90,4 @@ int main()
     inorder(root); 
   
     return 0; 
-} 
+}
