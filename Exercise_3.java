@@ -1,4 +1,6 @@
-import java.io.*; 
+import java.io.*;
+
+import jdk.javadoc.internal.doclets.formats.html.markup.Head; 
   
 // Java program to implement 
 // a Singly Linked List 
@@ -18,22 +20,44 @@ public class LinkedList {
         Node(int d) 
         { 
             //Write your code here 
+            this.data = d;
+            this.next = null;
         } 
     } 
+
+    public LinkedList(){
+        this.head = null;
+    }
   
     // Method to insert a new node 
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data 
+
+        Node newNode = new Node(data);
+        newNode.next = null;
    
         // If the Linked List is empty, 
         // then make the new node as head 
+        if(list.head == null){
+            list.head = newNode;
+        }
         
             // Else traverse till the last node 
             // and insert the new_node there 
-
             // Insert the new_node at last node 
+        else{
+            Node last = list.head;
+            while(last.next!=null){
+                last = last.next;
+            }
+            last.next = newNode;
+        }
+            
         // Return the list by head 
+
+        return list;
+
         
     } 
   
@@ -45,6 +69,12 @@ public class LinkedList {
             // Print the data at current node 
        
             // Go to next node 
+
+            Node curNode = list.head;
+            while(curNode!=null){
+                System.out.println(curNode.data);
+                curNode = curNode.next;
+            }
     } 
    
     // Driver code 
