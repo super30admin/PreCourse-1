@@ -8,14 +8,31 @@ class newNode():
           
 """ Inorder traversal of a binary tree"""
 def inorder(temp): 
+  tree = []
+    if temp:
+        tree = self.inorder(temp.left)
+        tree.append(temp.key)
+        tree = tree + self.inorder(temp.right)
+    return tree
   
     
   
   
 """function to insert element in binary tree """
 def insert(temp,key): 
-  
-    
+  if temp.data:
+        if key < temp.key:
+            if temp.left == None:
+                temp.left = newNode(key)
+            else:
+                temp.left.insert(key)
+        elif key > temp.key:
+            if temp.right == None:
+                temp.right = newNode(key)
+            else:
+                temp.right.insert(key)
+    else:
+        temp.key = key    
   
        
 # Driver code  
