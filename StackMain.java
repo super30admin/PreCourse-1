@@ -52,7 +52,7 @@ class Stack {
 } 
   
 // Driver code 
-class Main { 
+class StackMain { 
     public static void main(String args[]) 
     { 
         Stack s = new Stack(); 
