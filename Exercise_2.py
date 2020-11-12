@@ -5,10 +5,28 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.head = None
         
     def push(self, data):
+        if self.head == None:
+            self.head = data        
+        else:
+            temp = self.head
+            while temp.next != None:
+                temp = temp.next
+            temp.next = data 
+        print("New node has been inserted")
         
     def pop(self):
+        if self.head == None:
+            print("Stack is empty")
+            return
+        else:
+            temp = self.head
+            while temp.next.next != None:
+                temp = temp.next
+            temp.next = None
+            print("Node has been popped from the Stack")
         
 a_stack = Stack()
 while True:
