@@ -83,3 +83,8 @@ public class Exercise_4 {
 		inorder(root);
 	}
 }
+
+// Time Complexity
+// Searching: For searching element x, we have to traverse all elements (assuming we do breadth first traversal). Therefore, searching in binary tree has worst case complexity of O(n).
+// Insertion: For inserting element as left child of x, we have to traverse all elements. Therefore, insertion in binary tree has worst case complexity of O(n).
+// Deletion: For deletion of element x, we have to traverse all elements to find x (assuming we do breadth first traversal). Therefore, deletion in binary tree has worst case complexity of O(n).
