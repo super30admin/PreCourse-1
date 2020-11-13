@@ -67,7 +67,6 @@ public class Exercise_3 {
 		insert(curr, 3);
 		insert(curr, 4);
 		insert(curr, 5);
-
 		// Print the LinkedList
 		printList(curr);
 	}
