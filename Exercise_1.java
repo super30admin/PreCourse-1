@@ -60,3 +60,9 @@ class Stack {
 		return top == a.length - 1;
 	}
 }
+
+
+// Time Complexity 
+Push: O(1)
+Pop: O(1)
+Peek: O(1)
