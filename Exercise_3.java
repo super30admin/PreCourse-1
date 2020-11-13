@@ -71,3 +71,8 @@ public class Exercise_3 {
 		printList(curr);
 	}
 }
+
+// time Complexity 
+// Inserting: O(1), if done at the head, O(n) if anywhere else since we have to reach that position by traveseing the linkedlist linearly.
+// Deleting: O(1), if done at the head, O(n) if anywhere else since we have to reach that position by traveseing the linkedlist linearly.
+// Searching: O(n)
