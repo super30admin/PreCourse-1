@@ -63,6 +63,6 @@ class Stack {
 
 
 // Time Complexity 
-Push: O(1)
-Pop: O(1)
-Peek: O(1)
+// Push: O(1)
+// Pop: O(1)
+// Peek: O(1)
