@@ -1,3 +1,5 @@
+#Author: Henil Doshi
+
 # Python program to insert element in binary tree  
 class newNode():  
   
@@ -8,16 +10,33 @@ class newNode():
           
 """ Inorder traversal of a binary tree"""
 def inorder(temp): 
-  
-    
-  
+    if temp:
+        inorder(temp.left)
+        print(temp.key, end=" ")
+        inorder(temp.right)
   
 """function to insert element in binary tree """
-def insert(temp,key): 
+def insert(temp,key):
+    if not temp:
+        root = newNode(key)
+        return root
+
+    ls = []
+    ls.append(temp)
+    while len(ls) != 0:
+        element = ls.pop(0)
+        if element.left is None:
+            element.left = newNode(key)
+            break
+        else:
+            ls.append(element.left)
+
+        if element.right is None:
+            element.right = newNode(key)
+            break
+        else:
+            ls.append(element.right)
   
-    
-  
-       
 # Driver code  
 if __name__ == '__main__': 
     root = newNode(10)  
