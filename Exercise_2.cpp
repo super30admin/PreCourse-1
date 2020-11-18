@@ -1,3 +1,5 @@
+/* Implement Stack using Linked List */
+
 #include <iostream> 
 using namespace std; 
   
@@ -66,3 +68,11 @@ int main()
   
     return 0; 
 } 
+
+/*
+Time Complexities of Stack implementation using Linked List
+Push()    - O(1)
+pop()     - O(1)
+isEmpty() - O(1)
+peek()    - O(1)
+*/

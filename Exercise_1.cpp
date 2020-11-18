@@ -1,3 +1,5 @@
+/* Implement Stack using Array. */
+
 #include <iostream> 
   
 using namespace std; 
@@ -87,3 +89,11 @@ int main()
   
     return 0; 
 } 
+
+/*
+Time Complexities of Stack implementation using array
+Push()    - O(n)
+pop()     - O(1)
+isEmpty() - O(1)
+peek()    - O(1)
+*/
