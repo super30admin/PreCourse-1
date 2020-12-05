@@ -3,8 +3,11 @@ import java.io.*;
 // Java program to implement 
 // a Singly Linked List 
 public class LinkedList { 
-  
-    Node head; // head of list 
+
+    /*
+    making this node static so that in memory i can have it
+     */
+     Node head; // head of list
   
     // Linked list Node. 
     // This inner class is made static 
@@ -17,34 +20,53 @@ public class LinkedList {
         // Constructor 
         Node(int d) 
         { 
-            //Write your code here 
+            //Write your code here
+            this.data = d;
+            this.next = null;
         } 
     } 
   
     // Method to insert a new node 
     public static LinkedList insert(LinkedList list, int data) 
     { 
-        // Create a new node with given data 
+        // Create a new node with given data
+        Node newNode = new Node(data);
    
         // If the Linked List is empty, 
-        // then make the new node as head 
-        
-            // Else traverse till the last node 
-            // and insert the new_node there 
-
-            // Insert the new_node at last node 
-        // Return the list by head 
-        
+        // then make the new node as head
+        if (list.head == null){
+            newNode.next = list.head;
+        }
+        else{
+            // Else traverse till the last node
+            // and insert the new_node there
+            Node tail = list.head;
+            while(tail!=null){
+                tail = tail.next;
+            }
+            tail.next = newNode;
+        }
+        return list;
     } 
   
     // Method to print the LinkedList. 
     public static void printList(LinkedList list) 
-    {  
-        // Traverse through the LinkedList 
-   
-            // Print the data at current node 
-       
-            // Go to next node 
+    {
+        //check if the list is null
+        if (list.head == null){
+            System.out.println("The list does not have nodes in it. Stack Underflow");
+        }
+
+        else{
+            Node tail = list.head;
+            // Traverse through the LinkedList
+            while(tail!=null){
+                // Print the data at current node
+                System.out.println(tail.data);
+                // Go to next node
+                tail = tail.next;
+            }
+        }
     } 
    
     // Driver code 
