@@ -1,4 +1,5 @@
 # Python program to insert element in binary tree  
+#Exercise_4 : Insert an element in a Binary Tree.
 class newNode():  
   
     def __init__(self, data):  
