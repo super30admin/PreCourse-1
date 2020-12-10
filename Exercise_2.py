@@ -6,10 +6,24 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.head = None 
         
-    def push(self, data):
-        
+    def push(self, data):  #[] -> [1] -> [1 <- 2]
+        if not self.head:
+            self.head = Node(data)
+        else: 
+            node = Node(data)
+            node.next = self.head
+            self.head = node 
+            
     def pop(self):
+        if not self.head:
+            return None 
+        else:                   #[1 <- 2]
+            curr = self.head 
+            self.head = self.head.next 
+            curr.next = None 
+        return curr.data 
         
 a_stack = Stack()
 while True:
