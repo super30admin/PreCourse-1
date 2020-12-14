@@ -2,7 +2,7 @@ import java.io.*;
   
 // Java program to implement 
 // a Singly Linked List 
-public class LinkedList { 
+class LinkedList { 
   
     Node head; // head of list 
   
@@ -17,7 +17,8 @@ public class LinkedList {
         // Constructor 
         Node(int d) 
         { 
-            //Write your code here 
+            this.data = d;
+            next = null;
         } 
     } 
   
@@ -34,6 +35,19 @@ public class LinkedList {
 
             // Insert the new_node at last node 
         // Return the list by head 
+        Node node = new Node(data);
+        node.next = null;
+        if(list.head == null){
+            list.head = node;
+        }
+        else{
+            Node temp = list.head;
+            while(temp.next != null){
+                temp = temp.next;
+            }
+                temp.next = node;
+        }
+        return list;
         
     } 
   
@@ -45,6 +59,13 @@ public class LinkedList {
             // Print the data at current node 
        
             // Go to next node 
+            Node pointer = list.head;
+        while(pointer != null){
+            int data = pointer.data;
+            System.out.print(data+"----->");
+            pointer = pointer.next;
+        }
+        System.out.print("null");
     } 
    
     // Driver code 
