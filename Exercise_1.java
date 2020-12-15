@@ -39,7 +39,7 @@ class Stack {
         // Write your code here
         if (top < 0) {
             System.out.println("Stack Empty. No pop pssible");
-            return -1;
+            return 0;
         }
 
         return a[top--];
