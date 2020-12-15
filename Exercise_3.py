@@ -1,6 +1,6 @@
 # Code ran with driver code below
 # No issues coming up with this solution
-# Complexities given inline functions
+# Complexities given inline function
 
 class ListNode:
     """
