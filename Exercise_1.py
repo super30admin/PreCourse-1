@@ -1,6 +1,6 @@
 # Implement stack using array
-# Time Complexity --> O(1) for checking if stack is empty, pushing item, popping item, peeking item, size of stack 
-# Space Complexity --> O(1) for checking if stack is empty, pushing item, popping item, peeking item, size of stack
+# Time Complexity --> O(1) for checking if stack is empty, pushing item, popping item, peeking item, and size of stack 
+# Space Complexity --> O(1) for checking if stack is empty, pushing item, popping item, peeking item and size of stack
 # Code ran with driver code below
 # No issues coming up with this solution
 

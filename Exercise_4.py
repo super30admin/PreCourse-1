@@ -1,6 +1,6 @@
 # Python program to insert element in binary tree
 # Code ran with driver code below
-# No issues coming up with this solution
+# No issues coming up with this solution.
 
 class newNode():  
   
