@@ -1,3 +1,12 @@
+
+// Time Complexity : O(1) as there are no loops
+// Space Complexity : O(1000) as MAX is 1000
+// Did this code successfully run on Leetcode : I did not find this question in Leet Code
+// Any problem you faced while coding this : No I just followed few youtube videos for understadning
+
+
+// Your code here along with comments explaining your approach
+
 #include <bits/stdc++.h> 
   
 using namespace std; 
@@ -5,14 +14,14 @@ using namespace std;
 #define MAX 1000 
   
 class Stack { 
-    int top; 
+    int top;  // sets the top element index
   
 public: 
     int a[MAX]; // Maximum size of Stack 
   
     Stack()
      { 
-        top=-1; 
+        top=-1;  // initial stage
      } 
     bool push(int x); 
     int pop(); 
@@ -34,12 +43,12 @@ bool Stack::push(int x)
         cout << x << " is pushed element \n";
         return true;
     }
-    //Check Stack overflow as well
+    //Checked Stack overflow as well
 } 
   
 int Stack::pop() 
 { 
-    if(top < 0)
+    if(top < 0)   //underflow condition
     {
         cout<< "Stack underflow Case \n" ; 
         return 0;
@@ -53,13 +62,13 @@ int Stack::pop()
         
     }
      
-    //Check Stack Underflow as well 
+    //Checked Stack Underflow as well 
 } 
 
 
 int Stack::peek() 
 { 
-    if (top < 0)
+    if (top < 0) //empty condition
     {
         cout<< "Empty Stack";
         return 0;
@@ -70,8 +79,8 @@ int Stack::peek()
         cout << x << "is peeped element";
         return x;
     }
-     //Your code here
-    //Check empty condition too
+     
+    //Checked empty condition too
 } 
   
 bool Stack::isEmpty() 
@@ -84,7 +93,7 @@ bool Stack::isEmpty()
     {
         return false;
     }
-    //Your code here 
+     
 } 
   
 // Driver program to test above functions 
