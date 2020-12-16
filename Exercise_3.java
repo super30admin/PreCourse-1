@@ -39,15 +39,12 @@ class LinkedList {
             else{
             	Node dummy = list.head;
             	while(dummy.next!=null) {
-            	   // System.out.println("sdfghjnkm");
             		dummy = dummy.next;
             	}
             	dummy.next = temp; 
 
             // Insert the new_node at last node 
         // Return the list by head 
-    // 	LinkedList res_list = new LinkedList();
-    // 	res_list.head = dummy;
             }
         return list;
     } 
