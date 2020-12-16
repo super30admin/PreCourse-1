@@ -1,3 +1,4 @@
+#implementing stack
 class myStack:
      array=[]
      def __init__(self):
@@ -5,7 +6,6 @@ class myStack:
          
      def isEmpty(self):
           print(len(self.array)==0)
-
          
      def push(self, item):
           self.array.append(item)
