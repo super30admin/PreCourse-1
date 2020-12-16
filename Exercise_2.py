@@ -7,7 +7,7 @@ class Node:
 class Stack:
     def __init__(self):
         self.head = None 
-        
+    #O(1)
     def push(self, data):  #[] -> [1] -> [1 <- 2]
         if not self.head:
             self.head = Node(data)
@@ -15,7 +15,7 @@ class Stack:
             node = Node(data)
             node.next = self.head
             self.head = node 
-            
+    #O(1)
     def pop(self):
         if not self.head:
             return None 
