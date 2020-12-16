@@ -1,3 +1,4 @@
+#Exercise_2 : Implement Stack using Linked List.
 class Node:
     def __init__(self, data):
        self.data = data
@@ -5,10 +6,24 @@ class Node:
  
 class Stack:
     def __init__(self):
-        
-    def push(self, data):
-        
+        self.head = None 
+    #O(1)
+    def push(self, data):  #[] -> [1] -> [1 <- 2]
+        if not self.head:
+            self.head = Node(data)
+        else: 
+            node = Node(data)
+            node.next = self.head
+            self.head = node 
+    #O(1)
     def pop(self):
+        if not self.head:
+            return None 
+        else:                   #[1 <- 2]
+            curr = self.head 
+            self.head = self.head.next 
+            curr.next = None 
+        return curr.data 
         
 a_stack = Stack()
 while True:
