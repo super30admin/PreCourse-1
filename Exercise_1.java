@@ -24,6 +24,7 @@ class Stack {
         //Write your code here
         //if top is -1 then the stack is empty
         if(top == -1){
+            System.out.println("Stack is empty");
             return true;
         }
         return false;
@@ -39,7 +40,8 @@ class Stack {
             return false;
         }
         //Write your code here
-        a[top++] = x;
+        top++;
+        a[top] = x;
         return true;
     }
 
@@ -80,11 +82,17 @@ class Main {
         s.push(10);
         s.push(20); 
         s.push(30);
-        if(s.pop() != -1){
-            System.out.println(s.pop() + " Popped from stack");
-        }else{
-            System.out.println("stack is empty");
+        int popped = s.pop();
+        if(popped != -1){
+            System.out.println(popped + " from stack");
+        }else {
+            System.out.println("Stack is empty, please push elements");
         }
+//        if(s.pop() != -1){
+//            System.out.println(s.pop() + " Popped from stack");
+//        }else{
+//            System.out.println("stack is empty");
+//        }
 
     } 
 }
