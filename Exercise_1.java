@@ -61,13 +61,3 @@ class Main {
         System.out.println(s.pop() + " Popped from stack"); 
     } 
 }
-
-
-// Time Complexity : O(1), since we push and pop elements to and from the array using an index(top) of array directly
-// Space Complexity : O(N) - N is the no.of elements of stack
-// Did this code successfully run on Leetcode : I executed it on IntelliJ IDE and it ran fine
-// Any problem you faced while coding this : Not really
-
-
-// Your code here along with comments explaining your approach : self explanatory
-

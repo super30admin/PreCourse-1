@@ -35,33 +35,6 @@ public class GFG {
 
         // Do level order traversal until we find 
         // an empty place and add the node.  
-        Queue<Node> queue = new LinkedList();
-        Node nodeToBeInserted = new Node(key);
-        queue.add(temp);
-        while (!queue.isEmpty())
-        {
-            Node cur = queue.remove();
-            if (cur.left == null) {
-                cur.left = nodeToBeInserted;
-                return;
-            }
-            else {
-                queue.add(cur.left);
-            }
-            if (cur.left == null) {
-               cur.left = nodeToBeInserted;
-            }
-            else {
-              queue.add(cur.left);
-            }
-            if (cur.right == null) {
-                cur.right = nodeToBeInserted;
-                return;
-            }
-            else {
-                queue.add(cur.right);
-            }
-        }
     } 
        
     // Driver code 
@@ -84,12 +57,3 @@ public class GFG {
         inorder(root); 
     } 
 }
-
-// Time Complexity : O(N) - N - no.of elemets of binary tree
-// Space Complexity : O(N) - size of queue
-// Did this code successfully run on Leetcode : I executed it on IntelliJ IDE and it ran fine
-// Any problem you faced while coding this : Not really. My approach is very simple and naive. I could not think of any other logic. P
-                                            // Please let me know of a better solution
-
-
-// Your code here along with comments explaining your approach : self explanatory
