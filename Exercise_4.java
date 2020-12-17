@@ -35,6 +35,33 @@ public class GFG {
 
         // Do level order traversal until we find 
         // an empty place and add the node.  
+        Queue<Node> queue = new LinkedList();
+        Node nodeToBeInserted = new Node(key);
+        queue.add(temp);
+        while (!queue.isEmpty())
+        {
+            Node cur = queue.remove();
+            if (cur.left == null) {
+                cur.left = nodeToBeInserted;
+                return;
+            }
+            else {
+                queue.add(cur.left);
+            }
+            if (cur.left == null) {
+               cur.left = nodeToBeInserted;
+            }
+            else {
+              queue.add(cur.left);
+            }
+            if (cur.right == null) {
+                cur.right = nodeToBeInserted;
+                return;
+            }
+            else {
+                queue.add(cur.right);
+            }
+        }
     } 
        
     // Driver code 
