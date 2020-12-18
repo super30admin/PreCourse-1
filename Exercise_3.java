@@ -1,8 +1,22 @@
+// Time Complexity : O(N)
+// Space Complexity : O(N)
+// Did this code successfully run on Leetcode : Not Tried
+// Any problem you faced while coding this : No
+
+//Steps
+//1) insert
+     //a) Create a new node. 
+     //b) Check whether list.head is null or not. If it is null then assign new node to list.head, otherwise create a reference object pointing towards head.
+     //c) Then traverse that reference object till reference object.next is not null. After that stop the traversal and insert the new node on reference object.next
+     //d) Then return the list
+//2) printList
+     //a) Create a reference object pointing towards head and then traverse the list by moving the reference object.       
+
 import java.io.*; 
   
 // Java program to implement 
 // a Singly Linked List 
-public class LinkedList { 
+class LinkedList { 
   
     Node head; // head of list 
   
@@ -17,7 +31,8 @@ public class LinkedList {
         // Constructor 
         Node(int d) 
         { 
-            //Write your code here 
+            //Write your code here
+            this.data = d;
         } 
     } 
   
@@ -34,7 +49,19 @@ public class LinkedList {
 
             // Insert the new_node at last node 
         // Return the list by head 
-        
+        Node node = new Node(data);
+        if(list.head==null){
+            list.head = node;
+        }else{
+           Node curr =  list.head; 
+           while(curr.next!=null){
+               curr = curr.next;
+           }
+          
+           curr.next = node;
+           
+        }
+        return list;
     } 
   
     // Method to print the LinkedList. 
@@ -45,6 +72,12 @@ public class LinkedList {
             // Print the data at current node 
        
             // Go to next node 
+            Node curr = list.head;
+            while(curr!=null){
+                System.out.println(curr.data);
+                curr = curr.next;
+            }
+
     } 
    
     // Driver code 

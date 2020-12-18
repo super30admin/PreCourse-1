@@ -1,6 +1,15 @@
+// Time Complexity : O(N)
+// Space Complexity : O(N)
+// Did this code successfully run on Leetcode : Not Tried
+// Any problem you faced while coding this : No
+
+//Steps
+//1) insert
+     //a) As I have to do level order traversal, I used queue data structure and then added root to the queue.Further, I polled and inserted left and right of the tree until I found an empty node. Once I found the empty node I inserted the new node with the key and exited the queue traversal.     
+
 import java.util.LinkedList; 
 import java.util.Queue; 
-public class GFG { 
+class GFG { 
        
     /* A binary tree node has key, pointer to  
     left child and a pointer to right child */
@@ -31,10 +40,31 @@ public class GFG {
        
     /*function to insert element in binary tree */
     static void insert(Node temp, int key) 
-    { 
-
-        // Do level order traversal until we find 
+    {
+         // Do level order traversal until we find 
         // an empty place and add the node.  
+
+        Queue<Node> q = new LinkedList<>();
+        q.offer(temp);
+        
+        while(!q.isEmpty()){
+            Node curr = q.poll();
+
+            if(curr.left!=null){
+                q.offer(curr.left);
+            }else{
+                curr.left = new Node(key);
+                return;
+            }
+
+            if(curr.right!=null){
+                q.offer(curr.right);
+            }else{
+                curr.right = new Node(key);
+                return;
+            }
+        }
+       
     } 
        
     // Driver code 
