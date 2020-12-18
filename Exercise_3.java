@@ -1,8 +1,7 @@
-import java.io.*; 
-  
 // Java program to implement 
 // a Singly Linked List 
-public class LinkedList { 
+
+class LinkedList { 
   
     Node head; // head of list 
   
@@ -17,14 +16,20 @@ public class LinkedList {
         // Constructor 
         Node(int d) 
         { 
-            //Write your code here 
+            //Initializes data and next for a node
+            this.data = d;
+            this.next = null;
         } 
     } 
   
     // Method to insert a new node 
     public static LinkedList insert(LinkedList list, int data) 
     { 
-        // Create a new node with given data 
+        //Time Complexity: O(1) if there is no node or the last node is known, O(N) if there are N nodes in the list and
+        //we need to traverse to read the last node to append the new node
+
+        // Creates a new node with given data 
+        Node newNode = new Node(data);
    
         // If the Linked List is empty, 
         // then make the new node as head 
@@ -33,18 +38,39 @@ public class LinkedList {
             // and insert the new_node there 
 
             // Insert the new_node at last node 
-        // Return the list by head 
+        // Return the list by head
         
+        if(list.head == null)
+        {
+            list.head = newNode;
+        }  
+        else
+        {
+        Node tempNode = list.head;
+        while(tempNode.next != null)
+            tempNode = tempNode.next;
+        tempNode.next = newNode;
+        }
+        return list;
     } 
   
     // Method to print the LinkedList. 
     public static void printList(LinkedList list) 
     {  
+        //Time Complexity: O(N) where N is the number of nodes in the list
+
         // Traverse through the LinkedList 
    
             // Print the data at current node 
        
             // Go to next node 
+        
+        Node tempNode = list.head;
+        while(tempNode.next != null){
+            System.out.println(tempNode.data);
+            tempNode = tempNode.next;          
+        }
+        System.out.println(tempNode.data);
     } 
    
     // Driver code 
