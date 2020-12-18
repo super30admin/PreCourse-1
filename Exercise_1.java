@@ -67,5 +67,9 @@ class Main {
         s.push(20); 
         s.push(30); 
         System.out.println(s.pop() + " Popped from stack"); 
+        //System.out.println(s.peek());
+        //s.pop();
+        //s.pop();
+        //System.out.println(s.pop());
     } 
 }
