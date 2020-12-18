@@ -67,7 +67,7 @@ class LinkedList {
         
         Node tempNode = list.head;
         while(tempNode.next != null){
-            System.out.println(tempNode.data);
+            System.out.print(tempNode.data + " -->");
             tempNode = tempNode.next;          
         }
         System.out.println(tempNode.data);
