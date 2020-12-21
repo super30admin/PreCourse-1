@@ -21,34 +21,31 @@ class Node:
     def __init__(self, data):
         self.data = data
         self.next = None
-        self.prev = None
+
 
 
 class Stack:
     def __init__(self):
-        self.top = None
+        self.stack_head = None # self-note: this is the head of the stack, not the head of the linked list.
 
     def push(self, data):
-        if self.top is None:
-            self.top = Node(data)
+        if self.stack_head is None:
+            self.stack_head = Node(data)
         else:
             new_node = Node(data)
-            new_node.prev = self.top
-            self.top.next = new_node
-            self.top = self.top.next
+            new_node.next = self.stack_head
+            self.stack_head = new_node
+
+
+
 
 
     def pop(self):
-        if self.top is not None:
-            if self.top.prev is None:
-                temp = self.top.data
-                self.top = None
-                return temp
-            else:
-                temp = self.top.data
-                self.top.prev.next = None
-                self.top = self.top.prev
-                return temp
+        if self.stack_head is not None:
+            popped_elem = self.stack_head
+            self.stack_head = self.stack_head.next
+            return popped_elem.data
+
         else:
             return -1
 
