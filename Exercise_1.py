@@ -3,12 +3,14 @@ class myStack:
          self.array = []
          
      def isEmpty(self):
+        # O(1)    
          if len(self.array) == 0:
              return True
          else:
              return False
          
      def push(self, item):
+         # O(1)
          """
 
          :param item:
@@ -17,6 +19,7 @@ class myStack:
          self.array.append(item)
 
      def pop(self):
+         # O(n)
          """
          The top most element is removed and returned.
          If the stack is empty, will raise IndexError
@@ -29,6 +32,7 @@ class myStack:
          return element
 
      def peek(self):
+         # O(1)
          """
          peek is used to retrieve or fetch the first element of the Stack or the element present at the top of the Stack.
 
@@ -40,9 +44,11 @@ class myStack:
              return self.array[-1]
         
      def size(self):
+         # O(1)
          return len(self.array)
          
      def show(self):
+         # O(n)
          return self.array
 
 s = myStack()

@@ -8,6 +8,7 @@ class Stack:
         self.ll = None
         
     def push(self, data):
+        # O(1)
         if(self.ll == None):
             # create LL
             self.ll = Node(data)
@@ -18,6 +19,7 @@ class Stack:
             self.ll = node
 
     def pop(self):
+        # O(1)
         if(self.ll == None):
             return None
         val = self.ll.data

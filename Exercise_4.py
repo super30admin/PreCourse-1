@@ -8,6 +8,7 @@ class newNode():
           
 """ Inorder traversal of a binary tree"""
 def inorder(temp):
+    # O(n)
     # inorder is left - root - right
     if(temp == None):
         return
@@ -16,15 +17,12 @@ def inorder(temp):
     print(temp.key)
     inorder(temp.right)
   
-<<<<<<< HEAD
     
   
   
-=======
-      
->>>>>>> 71ea11da1192a8ec6ff5bb0918c37147a57511d8
 """function to insert element in binary tree """
 def insert(temp,key):
+    # O(n) as Time complexity of BFS is O()
     if(temp == None):
         return newNode(key)
     # going breadth first search manner, using queue
@@ -42,12 +40,9 @@ def insert(temp,key):
             element.right = newNode(key)
             return
 
-<<<<<<< HEAD
 
 
 
-=======
->>>>>>> 71ea11da1192a8ec6ff5bb0918c37147a57511d8
 # Driver code  
 if __name__ == '__main__': 
     root = newNode(10)  
