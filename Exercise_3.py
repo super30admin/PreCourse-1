@@ -38,6 +38,10 @@ class SinglyLinkedList:
             if(ll.data == key):
                 return ll
             ll = ll.next
+<<<<<<< HEAD
+=======
+        print("Element not Found")
+>>>>>>> 71ea11da1192a8ec6ff5bb0918c37147a57511d8
         return None
         
     def remove(self, key):
@@ -64,6 +68,10 @@ class SinglyLinkedList:
                 self.print()
                 return removed_node
             ll = ll.next
+<<<<<<< HEAD
+=======
+        print("Element Not Found to remove")
+>>>>>>> 71ea11da1192a8ec6ff5bb0918c37147a57511d8
         return None
     
     def print(self):
@@ -73,8 +81,11 @@ class SinglyLinkedList:
             ll = ll.next
         print("")
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 71ea11da1192a8ec6ff5bb0918c37147a57511d8
 linkedlist =  SinglyLinkedList()
 linkedlist.append(1)
 linkedlist.append(2)
@@ -85,4 +96,8 @@ linkedlist.remove(3)
 linkedlist.remove(4)
 linkedlist.remove(1)
 linkedlist.remove(7)
+<<<<<<< HEAD
 linkedlist.print()
+=======
+linkedlist.print()
+>>>>>>> 71ea11da1192a8ec6ff5bb0918c37147a57511d8
