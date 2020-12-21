@@ -5,19 +5,41 @@ class newNode():
         self.key = data 
         self.left = None
         self.right = None
-          
+from collections import deque         
 """ Inorder traversal of a binary tree"""
 def inorder(temp): 
-  
-    
+    #O(N)
+    #O(h)
+    if not temp:
+        return
+    inorder(temp.left)
+    print(temp.key,"  ")
+    inorder(temp.right)
   
   
 """function to insert element in binary tree """
-def insert(temp,key): 
-  
-    
-  
-       
+def insert(temp,key):
+    #O(N)
+    #O(N) 
+    if not temp:
+        return
+    q=deque()
+    q.append(temp)
+    while q:
+        cur=q.popleft()
+        if cur.left:
+            q.append(cur.left)
+        else:
+            added=newNode(key)
+            cur.left=added
+            break
+        if cur.right:
+            q.append(cur.right)
+        else:
+            added=newNode(key)
+            cur.right=added
+            break
+
 # Driver code  
 if __name__ == '__main__': 
     root = newNode(10)  
