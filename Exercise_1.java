@@ -1,5 +1,3 @@
-package Package1;
-
 class Stack {
 	static final int MAX = 1000;
 	int top;
@@ -48,7 +46,7 @@ class Stack {
 }
 
 // Driver code 
-public class Main {
+class Main {
 	public static void main(String args[]) {
 		Stack s = new Stack();
 		s.push(10);
