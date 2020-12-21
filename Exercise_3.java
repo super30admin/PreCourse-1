@@ -1,3 +1,6 @@
+//Time Complexity: O(N)
+//Space Complexity: O(N)
+
 import java.io.*; 
   
 // Java program to implement 
@@ -6,10 +9,7 @@ public class LinkedList {
   
     Node head; // head of list 
   
-    // Linked list Node. 
-    // This inner class is made static 
-    // so that main() can access it 
-    static class Node { 
+        static class Node { 
   
         int data; 
         Node next; 
@@ -18,6 +18,7 @@ public class LinkedList {
         Node(int d) 
         { 
             //Write your code here 
+        	this.data = d;
         } 
     } 
   
@@ -25,26 +26,35 @@ public class LinkedList {
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data 
-   
-        // If the Linked List is empty, 
-        // then make the new node as head 
+    	Node createNode = new Node(data);
+	    	if(list.head == null) {
+    		list.head = createNode;
+    	}
         
             // Else traverse till the last node 
             // and insert the new_node there 
-
-            // Insert the new_node at last node 
-        // Return the list by head 
-        
-    } 
+    		// Insert the new_node at last node
+    	else {
+    		Node tempNode = list.head;
+    		while(tempNode.next!=null) 
+    			tempNode = tempNode.next;
+    			tempNode.next = createNode;
+    	}
+    	// Return the list by head
+    	return list;
+ } 
   
     // Method to print the LinkedList. 
     public static void printList(LinkedList list) 
     {  
         // Traverse through the LinkedList 
-   
-            // Print the data at current node 
-       
-            // Go to next node 
+        // Print the data at current node 
+       // Go to next node
+    	Node traverseNode = list.head;
+    	while(traverseNode!=null) {
+    		System.out.println(traverseNode.data + " ");
+    		traverseNode = traverseNode.next;
+    	}
     } 
    
     // Driver code 
