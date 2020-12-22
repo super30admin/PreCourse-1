@@ -32,9 +32,29 @@ public class GFG {
     /*function to insert element in binary tree */
     static void insert(Node temp, int key) 
     { 
-
-        // Do level order traversal until we find 
-        // an empty place and add the node.  
+        Node newNode=new Node(key);
+        Node find=temp;
+        Node insert=null;
+        boolean left=true;
+        while(find!=null) {
+        	if(key<find.key) {
+        		left=true;
+        		insert=find;
+        		find=find.left;
+        	}else if(key>=find.key) {
+        		left=false;
+        		insert=find;
+        		find=find.right;
+        	}
+        }
+//        System.out.println(insert.key);
+//        System.out.println(left);
+        if(left) {
+        	insert.left=newNode;
+        }else {
+        	insert.right=newNode;
+        }
+        
     } 
        
     // Driver code 
@@ -52,6 +72,12 @@ public class GFG {
        
         int key = 12; 
         insert(root, key); 
+       
+        System.out.print("\nInorder traversal after insertion:"); 
+        inorder(root); 
+        
+        int key1 = 4; 
+        insert(root, key1); 
        
         System.out.print("\nInorder traversal after insertion:"); 
         inorder(root); 
