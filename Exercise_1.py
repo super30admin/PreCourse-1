@@ -13,11 +13,13 @@ class myStack:
     def pop(self):                                      # O(1)
         if self.isEmpty():
             raise Exception('Stack is Empty!')
+
         return self._storage.pop()
 
     def peek(self):                                     # O(1)
         if self.isEmpty():
             raise Exception('Stack is Empty!')
+        
         return self._storage[-1]
 
     def size(self):                                     # O(1)
