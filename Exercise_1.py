@@ -1,19 +1,30 @@
 class myStack:
-     def __init__(self):
-         
-     def isEmpty(self):
-         
-     def push(self, item):
-         
-     def pop(self):
-        
-        
-     def peek(self):
-        
-     def size(self):
-         
-     def show(self):
-         
+    def __init__(self):
+        self.isEmpty()
+        self.push()
+        self.pop()
+        self.peek()
+        self.size()
+        self.show()
+
+    def isEmpty(self):
+        print("1")
+
+    def push(self, item):
+        print("1")
+
+    def pop(self):
+        print("1")
+
+    def peek(self):
+        print("1")
+
+    def size(self):
+        print("1")
+
+    def show(self):
+        print("1")
+
 
 s = myStack()
 s.push('1')

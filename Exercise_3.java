@@ -1,5 +1,5 @@
 import java.io.*; 
-  
+//I was
 // Java program to implement 
 // a Singly Linked List 
 public class LinkedList { 
@@ -18,6 +18,8 @@ public class LinkedList {
         Node(int d) 
         { 
             //Write your code here 
+        	data = d;
+        	next = null;
         } 
     } 
   
@@ -34,7 +36,20 @@ public class LinkedList {
 
             // Insert the new_node at last node 
         // Return the list by head 
+        Node add_node = new Node(data);
+        add_node.next = null;
         
+        if(list.head != null) {
+        	Node end = list.head;
+        	while (end.next != null) {
+        		end = end.next;
+        	}
+        	end.next = add_node;
+        }
+        else {
+        	list.head = add_node;
+        }
+        return list;
     } 
   
     // Method to print the LinkedList. 
@@ -45,6 +60,16 @@ public class LinkedList {
             // Print the data at current node 
        
             // Go to next node 
+    	Node currentNode = list.head;
+    	
+    	System.out.println("THe LinkedList is: ");
+    	
+    	while (currentNode != null) {
+    		System.out.println(currentNode.data + "");
+    		
+    		currentNode = currentNode.next;
+    	}
+    	
     } 
    
     // Driver code 
