@@ -29,7 +29,7 @@ class Stack:
 
         else:
             None
-
+#edited
 
 a_stack = Stack()
 while True:
