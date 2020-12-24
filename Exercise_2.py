@@ -5,10 +5,28 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.ll = None
         
     def push(self, data):
-        
+        # O(1)
+        if(self.ll == None):
+            # create LL
+            self.ll = Node(data)
+        else:
+            # create reverse LL with head at last (LIFO manner)
+            node = Node(data)
+            node.next = self.ll
+            self.ll = node
+
     def pop(self):
+        # O(1)
+        if(self.ll == None):
+            return None
+        val = self.ll.data
+        self.ll = self.ll.next
+        return val
+
+
         
 a_stack = Stack()
 while True:

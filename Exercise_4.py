@@ -7,17 +7,42 @@ class newNode():
         self.right = None
           
 """ Inorder traversal of a binary tree"""
-def inorder(temp): 
+def inorder(temp):
+    # O(n)
+    # inorder is left - root - right
+    if(temp == None):
+        return
+    inorder(temp.left)
+    print("")
+    print(temp.key)
+    inorder(temp.right)
   
     
   
   
 """function to insert element in binary tree """
-def insert(temp,key): 
-  
-    
-  
-       
+def insert(temp,key):
+    # O(n) as Time complexity of BFS is O()
+    if(temp == None):
+        return newNode(key)
+    # going breadth first search manner, using queue
+    q = [temp]
+    while(len(q)>0):
+        element = q.pop(len(q)-1)
+        if(element.left != None):
+            q.insert(0,element.left)
+        else:
+            element.left = newNode(key)
+            return
+        if(element.right != None):
+            q.insert(0,element.right)
+        else:
+            element.right = newNode(key)
+            return
+
+
+
+
 # Driver code  
 if __name__ == '__main__': 
     root = newNode(10)  
