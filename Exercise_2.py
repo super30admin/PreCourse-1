@@ -8,9 +8,7 @@ class Stack:
     '''Stack implementation using a Linked List.'''
 
     def __init__(self):
-        self._DUMMMY = Node(None)
-        self._top = self._DUMMMY
-        self._bottom = self._DUMMMY
+        self._top = None
         self._size = 0
 
     def isEmpty(self):                                  # O(1)
@@ -18,20 +16,16 @@ class Stack:
 
     def push(self, item):                               # O(1)
         node = Node(item)
-        self._top.next = node
+        node.next = self._top
         self._top = node
         self._size += 1
 
-    def pop(self):                                      # O(n)
+    def pop(self):                                      # O(1)
         if self.isEmpty():
             raise Exception('Stack is Empty!')
 
         data = self._top.data
-        walk = self._bottom
-        while walk.next != self._top:
-            walk = walk.next
-        walk.next = None
-        self._top = walk
+        self._top = self._top.next
         self._size -= 1
         return data
 
@@ -43,11 +37,11 @@ class Stack:
 
     def show(self):
         store = []
-        walk = self._bottom.next
+        walk = self._top
         while walk is not None:
             store.append(walk.data)
             walk = walk.next
-        return '\n'.join(reversed([str(x) for x in store]))
+        return '\n'.join([str(x) for x in store])
 
 
 
