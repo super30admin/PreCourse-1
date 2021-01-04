@@ -1,7 +1,7 @@
 import java.util.LinkedList; 
 import java.util.Queue; 
-public class GFG { 
-       
+public class Exercise_4 { 
+
     /* A binary tree node has key, pointer to  
     left child and a pointer to right child */
     static class Node { 
@@ -28,15 +28,35 @@ public class GFG {
         System.out.print(temp.key+" "); 
         inorder(temp.right); 
     } 
-       
+
     /*function to insert element in binary tree */
-    static void insert(Node temp, int key) 
+    static void insert(Node root, int key) 
     { 
 
         // Do level order traversal until we find 
         // an empty place and add the node.  
+        // the following code will always give me perfect binary tree.
+        Queue<Node> queue = new LinkedList<Node>();
+        queue.add(root);
+        while(!queue.isEmpty()){
+            int size = queue.size();
+            while(size > 0){
+                Node curr = queue.poll();
+                if(curr.left == null){
+                    curr.left = new Node(key);
+                    return;
+                }
+                queue.add(curr.left);
+                if(curr.right == null){
+                    curr.right = new Node(key);
+                    return;
+                }
+                queue.add(curr.right);
+                size--;
+            }
+        }  
     } 
-       
+
     // Driver code 
     public static void main(String args[]) 
     { 
