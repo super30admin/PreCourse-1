@@ -1,18 +1,35 @@
 class myStack:
-     def __init__(self):
+    def __init__(self):
+    	self.arr=[]
          
-     def isEmpty(self):
+    def isEmpty(self):
+    	if len(self.arr)==0:
+    		return True
+    	else:
+    		return False
          
-     def push(self, item):
+    def push(self, item):
+    	self.arr.append(item)
          
-     def pop(self):
+    def pop(self):
+    	if len(self.arr)==0:
+    		print("Stack Underflow")
+    		return 0
+    	else:
+    		return self.arr.pop() 
         
+    def peek(self):
+    	if len(self.arr)==0:
+    		print("Empty Stack")
+    		return 0
+    	else:
+    		return self.arr[-1]
         
-     def peek(self):
-        
-     def size(self):
+    def size(self):
+    	return len(self.arr)
          
-     def show(self):
+    def show(self):
+    	return(self.arr)
          
 
 s = myStack()
