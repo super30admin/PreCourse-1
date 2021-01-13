@@ -35,7 +35,6 @@ def insert(temp,key):
             else:
                 lst.append(node.right)
 
-  
        
 # Driver code  
 if __name__ == '__main__': 
