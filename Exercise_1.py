@@ -24,7 +24,8 @@ class myStack:
     		return 0
     	else:
     		return self.arr[-1]
-        
+    
+    
     def size(self):
     	return len(self.arr)
          
