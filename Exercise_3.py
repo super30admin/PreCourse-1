@@ -86,6 +86,7 @@ while True:
 
     do = input('What would you like to do? ').split()
  
+
     operation = do[0].strip().lower()
     if operation == 'append':
         a.append(int(do[1]))
