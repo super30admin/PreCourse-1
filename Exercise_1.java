@@ -3,6 +3,7 @@ class Stack {
     int top;
     int a[]; // Maximum size of Stack
 
+
     boolean isEmpty() {
         //Write your code here
         if (top==-1)
