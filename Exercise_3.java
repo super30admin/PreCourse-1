@@ -2,7 +2,7 @@ import java.io.*;
   
 // Java program to implement 
 // a Singly Linked List 
-public class LinkedList { 
+ class LinkedList { 
   
     Node head; // head of list 
   
@@ -16,8 +16,11 @@ public class LinkedList {
   
         // Constructor 
         Node(int d) 
-        { 
-            //Write your code here 
+        { //Write your code here
+            //System.out.println("Inside Constructor");
+            this.data = d;
+            this.next = null;
+             
         } 
     } 
   
@@ -25,15 +28,35 @@ public class LinkedList {
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data 
-   
+        Node newNode = new Node(data);
+        
         // If the Linked List is empty, 
         // then make the new node as head 
-        
-            // Else traverse till the last node 
-            // and insert the new_node there 
+        if(list.head == null){
+            list.head = newNode;
+            
+        }
+          else{
+              Node previous = list.head;
+            while(previous.next != null){
+                previous = previous.next;
+                
+            }
+            // System.out.println("Compare these two: "); 
+            // System.out.println(last.data);
+            // System.out.println(list.head.data);
+            previous.next = newNode;
+            
 
+
+          }  // Else traverse till the last node 
+            // and insert the new_node there 
+            
+            
             // Insert the new_node at last node 
+            
         // Return the list by head 
+            return list;
         
     } 
   
@@ -41,6 +64,11 @@ public class LinkedList {
     public static void printList(LinkedList list) 
     {  
         // Traverse through the LinkedList 
+        System.out.println("The values of LinkedList are: ");
+        while(list.head != null){
+            System.out.print(list.head.data + " ");
+            list.head = list.head.next;
+        }
    
             // Print the data at current node 
        
@@ -63,7 +91,7 @@ public class LinkedList {
         list = insert(list, 3); 
         list = insert(list, 4); 
         list = insert(list, 5); 
-  
+
         // Print the LinkedList 
         printList(list); 
     } 
