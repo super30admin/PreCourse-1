@@ -1,3 +1,9 @@
+/*
+Complexities for insert operation
+Time: O(n)
+Space: O(h) where h is height of the tree.
+*/
+
 import java.util.LinkedList; 
 import java.util.Queue; 
 public class GFG { 
@@ -34,7 +40,27 @@ public class GFG {
     { 
 
         // Do level order traversal until we find 
-        // an empty place and add the node.  
+        // an empty place and add the node. 
+        if(temp == null) {
+            temp = new Node(key);
+        } else {
+            Queue<Node> q = new LinkedList<Node>();
+            q.add(temp);
+
+            while(!q.isEmpty()) {
+                Node currentNode = q.poll();
+                if(currentNode.left == null) {
+                    currentNode.left = new Node(key);
+                    return;
+                }
+                else if(currentNode.right == null) {
+                    currentNode.right = new Node(key);
+                    return;
+                }
+                q.add(currentNode.left);
+                q.add(currentNode.right);
+            }
+        } 
     } 
        
     // Driver code 
