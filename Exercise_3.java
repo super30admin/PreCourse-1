@@ -1,3 +1,8 @@
+/* Isert operation: complexity
+Time - O(n)
+Space - O(1)
+*/
+
 import java.io.*; 
   
 // Java program to implement 

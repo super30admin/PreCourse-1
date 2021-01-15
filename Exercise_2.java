@@ -1,3 +1,10 @@
+/* time Complexity
+
+Push/pop/peek  - O(n) [need to travese the list]
+
+Space complexity - O(1) for each operation 
+*/
+
 public class StackAsLinkedList { 
   
     StackNode root; 

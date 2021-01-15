@@ -1,3 +1,9 @@
+/*
+Complexities for insert operation
+Time: O(n)
+Space: O(h) where h is height of the tree.
+*/
+
 import java.util.LinkedList; 
 import java.util.Queue; 
 public class GFG { 

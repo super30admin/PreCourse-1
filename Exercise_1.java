@@ -1,3 +1,10 @@
+/*Time Complexities:
+Push/Peek/Pop - O(1)
+
+Space Complexity  -  O(1)
+*/
+
+
 class Stack { 
     static final int MAX = 1000; 
     int top; 
@@ -63,3 +70,4 @@ class Main {
         System.out.println(s.pop() + " Popped from stack"); 
     } 
 }
+
