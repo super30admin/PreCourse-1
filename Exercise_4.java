@@ -32,6 +32,7 @@ class GFG {
         inorder(temp.right);
     }
 
+    // O(n) S:O(n)
     /* function to insert element in binary tree */
     static void insert(Node temp, int key) {
 

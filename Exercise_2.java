@@ -13,11 +13,13 @@ class StackAsLinkedList {
         }
     }
 
+    // O(1)
     public boolean isEmpty() {
         // Write your code here for the condition if stack is empty.
         return root.equals(null);
     }
 
+    // O(n)
     public void push(int data) {
         // Write code to push data to the stack.
         StackNode top = root;
@@ -33,6 +35,7 @@ class StackAsLinkedList {
         }
     }
 
+    // O(n)
     public int pop() {
         // If Stack Empty Return 0 and print "Stack Underflow"
         // Write code to pop the topmost element of stack.
@@ -54,6 +57,7 @@ class StackAsLinkedList {
 
     }
 
+    // O(n)
     public int peek() {
         // Write code to just return the topmost element without removing it.
 

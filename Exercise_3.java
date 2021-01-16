@@ -22,6 +22,7 @@ class LinkedList {
         }
     }
 
+    // O(n) S:O(n)
     // Method to insert a new node
     public static LinkedList insert(LinkedList list, int data) {
         // Create a new node with given data
@@ -51,6 +52,7 @@ class LinkedList {
 
     }
 
+    // O(n) S:O(1)
     // Method to print the LinkedList.
     public static void printList(LinkedList list) {
         // Traverse through the LinkedList
