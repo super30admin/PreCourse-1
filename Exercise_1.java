@@ -1,33 +1,58 @@
-class Stack { 
+class Stack {
     static final int MAX = 1000; 
     int top; 
     int a[] = new int[MAX]; // Maximum size of Stack 
   
     boolean isEmpty() 
     { 
-        //Write your code here 
+        if(top < 0 ){
+            return true;
+        }
+        return false;
     } 
 
     Stack() 
     { 
-        //Initialize your constructor 
+        top = 0;
     } 
   
     boolean push(int x) 
-    { 
-        //Check for stack Overflow
-        //Write your code here
+    {
+        if(top < MAX)
+        {
+        	top ++;
+			a[top] = x;
+			System.out.println("Stack not full, value pushed: "+x);
+			return true;	    
+        }
+	
+		System.out.println("Stack overflow!");
+		return false;
     } 
   
     int pop() 
     { 
-        //If empty return 0 and print " Stack Underflow"
-        //Write your code here
+        if(isEmpty())
+        {
+            System.out.println("Stack underflow!");
+            return -1;
+        }
+
+        int val = a[top];
+		top --;
+        return val;
+
     } 
   
     int peek() 
     { 
-        //Write your code here
+        if(top>=0 && top<MAX)
+        	return a[top];
+		else
+        {
+			System.out.println("Index out of bounds!");
+			return -1;
+        }
     } 
 } 
   
@@ -39,6 +64,8 @@ class Main {
         s.push(10); 
         s.push(20); 
         s.push(30); 
-        System.out.println(s.pop() + " Popped from stack"); 
+        
+        System.out.println(s.pop() + " Popped from stack");
+        System.out.print(s.peek() + "At top of stack");
     } 
 }
