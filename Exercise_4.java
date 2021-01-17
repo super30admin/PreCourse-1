@@ -1,6 +1,7 @@
 import java.util.LinkedList; 
 import java.util.Queue; 
-public class GFG { 
+
+class GFG { 
        
     /* A binary tree node has key, pointer to  
     left child and a pointer to right child */
@@ -9,12 +10,100 @@ public class GFG {
         Node left, right; 
           
         // constructor 
-        Node(int key){ 
+        Node(int key)
+        { 
             this.key = key; 
             left = null; 
             right = null; 
         } 
     } 
+
+    static class QueueList {
+        QueueNode queueHead;
+
+        static  class QueueNode 
+        {
+            Node queueNodeData;
+            QueueNode queueNodeNext;
+
+            QueueNode (Node data) {
+                this.queueNodeData = data;
+                this.queueNodeNext = null;
+            }
+    	}
+
+    	public boolean isEmpty() {
+            if(queueHead == null) 
+            {
+                return true;
+            } 
+
+            else 
+            {
+                return false;
+            }
+        }
+
+        public void push (Node data) {
+            
+            //Write code to push data to the stack.
+            QueueNode node = new QueueNode(data);
+            if (! isEmpty()) 
+            {
+                QueueNode nextNode = this.queueHead;
+
+                while (nextNode.queueNodeNext != null) 
+                {
+                    nextNode = nextNode.queueNodeNext;
+                }
+                nextNode.queueNodeNext = node;
+            } 
+            else 
+            {
+                System.out.println("Stack is empty, adding at the beginning");
+                this.queueHead = node;
+            }
+        }
+
+        public Node pop() 
+        {
+            if (isEmpty()) {
+                System.out.println("Stack Underflow");
+                return null;
+            } 
+
+            else 
+            {
+                QueueNode nextNode = this.queueHead;
+                while (nextNode.queueNodeNext != null) {
+                    nextNode = nextNode.queueNodeNext;
+                }
+                Node value = nextNode.queueNodeData;
+                nextNode = null;
+                return value;
+            }
+        }
+
+        public Node peekQueue() 
+        {
+            //Write code to just return the topmost element without removing it.
+            if (isEmpty()) 
+            {
+                System.out.println("Stack Underflow");
+                return null;
+            } 
+
+            else 
+            {
+                QueueNode nextNode = this.queueHead;
+                while (nextNode.queueNodeNext != null) {
+                    nextNode = nextNode.queueNodeNext;
+                }
+                return nextNode.queueNodeData;
+            }
+        }
+    }
+
     static Node root; 
     static Node temp = root; 
       
@@ -35,6 +124,14 @@ public class GFG {
 
         // Do level order traversal until we find 
         // an empty place and add the node.  
+        QueueList queueList = new QueueList();
+
+        if (temp == null) {
+            root = new Node(key);
+            return;
+        }
+
+        queueList.push(temp);
     } 
        
     // Driver code 
