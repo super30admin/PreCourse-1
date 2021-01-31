@@ -30,11 +30,38 @@ public class GFG {
     } 
        
     /*function to insert element in binary tree */
+    //TC- O(n), SC - O(n)
     static void insert(Node temp, int key) 
     { 
+         if(temp==null){
+             temp = new Node(key);
+             return;
+         }   
 
-        // Do level order traversal until we find 
+        // Do level order traversal until we find
+        LinkedList<Node> queue = new LinkedList<>();
+        queue.offer(temp); 
         // an empty place and add the node.  
+
+        while(!queue.isEmpty()){
+            int size = queue.size();
+
+            for(int i=0; i<size; i++){
+                Node node = queue.poll();
+
+                if(node.left==null){
+                    node.left= new Node(key);
+                    return;
+                }
+                else if(node.right==null){
+                    node.right= new Node(key);
+                    return;
+                }
+
+                queue.offer(node.left); 
+                queue.offer(node.right); 
+            }
+        }
     } 
        
     // Driver code 
