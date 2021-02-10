@@ -35,20 +35,20 @@ void push(StackNode** root, int data)
   temp->data = data;
 
   if(*root == NULL)
-    *root = temp;
+    (*root) = temp;
   else{
       temp->next = *root;
       (*root) = temp;
   }
 
-  cout<<"Pushed "<<data<<" to stack\n";
+  //cout<<"Pushed "<<data<<" to stack\n";
 
 } 
   
 int pop(StackNode** root) 
 { 
   if (*root == NULL)
-    return 0;
+    return -1;
   
   StackNode *temp = *root;
   int popval = temp->data;
