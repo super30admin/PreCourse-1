@@ -29,6 +29,9 @@ void push(StackNode** root, int data)
 {  
 
   StackNode* temp = new StackNode;
+  if(temp == NULL)
+    return;
+  
   temp->data = data;
 
   if(*root == NULL)
