@@ -32,21 +32,7 @@ public class GFG {
     /*function to insert element in binary tree */
     static void insert(Node temp, int key) 
     { 
-    	Queue<Node> que = new LinkedList();
-    	que.add(temp);
-    	while(!que.isEmpty()) {
-			Node node = que.poll();
-			if(node.left != null) que.add(node.left);
-			else{
-				node.left = new Node(key);
-				return;
-			}
-			if(node.right != null) que.add(node.right);
-			else{
-				node.right = new Node(key);
-				return;
-    		}
-    	}
+
         // Do level order traversal until we find 
         // an empty place and add the node.  
     } 
@@ -69,6 +55,5 @@ public class GFG {
        
         System.out.print("\nInorder traversal after insertion:"); 
         inorder(root); 
-        
     } 
 }
