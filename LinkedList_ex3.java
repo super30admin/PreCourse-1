@@ -3,7 +3,7 @@ import java.util.List;
 
 // Java program to implement
 // a Singly Linked List
-public class LinkedList {
+public class LinkedList_ex3 {
 
     static class Node {
 
@@ -19,7 +19,7 @@ public class LinkedList {
     }
     Node head; // head of list
 
-    public LinkedList(){
+    public LinkedList_ex3(){
         this.head=null;
     }
 
@@ -27,7 +27,7 @@ public class LinkedList {
         return this.head;
     }
 
-    public static LinkedList insert(LinkedList list, int data)
+    public static LinkedList_ex3 insert(LinkedList_ex3 list, int data)
     {
 
         if(list.head == null){
@@ -53,7 +53,7 @@ public class LinkedList {
     }
 
     // Method to print the LinkedList.
-    public static void printList(LinkedList list)
+    public static void printList(LinkedList_ex3 list)
     {
         // Traverse through the LinkedList
         // Get the head node
@@ -74,7 +74,7 @@ public class LinkedList {
     public static void main(String[] args)
     {
         /* Start with the empty list. */
-        LinkedList list = new LinkedList();
+        LinkedList_ex3 list = new LinkedList_ex3();
 
         //
         // ******INSERTION******
