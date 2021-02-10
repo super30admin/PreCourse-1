@@ -16,6 +16,10 @@ void push(Node** head_ref, int new_data)
 {  
     /* 1. allocate node */ 
     Node* temp = new Node;  
+    
+    if(temp == NULL)
+      return;
+  
     /* 2. put in the data */  
     temp->data= new_data;
 
@@ -38,12 +42,13 @@ void insertAfter(Node* prev_node, int new_data)
 {  
     /*1. check if the given prev_node is NULL */ 
     if(prev_node == NULL){
-      cout<<"prevNode is null";
       return;
     }
 
     /* 2. allocate new node */ 
     Node* temp = new Node;  
+    if(temp == NULL)
+      return;
     /* 3. put in the data */ 
     temp->data= new_data;
 
