@@ -49,11 +49,9 @@ class Stack {
     	}
         return a[top];
         //Write your code here
-    } 
-} 
+    }
   
 // Driver code 
-class Main { 
     public static void main(String args[]) 
     { 
         Stack s = new Stack(); 
