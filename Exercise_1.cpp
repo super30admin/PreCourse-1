@@ -10,7 +10,10 @@ class Stack {
 public: 
     int a[MAX]; // Maximum size of Stack 
   
-    Stack() { //Constructor here } 
+    Stack() { 
+      //Constructor here 
+      top = -1;
+    } 
     bool push(int x); 
     int pop(); 
     int peek(); 
@@ -19,23 +22,45 @@ public:
   
 bool Stack::push(int x) 
 { 
+
+  if(top >= MAX)
+    return false;
+  
+  top += 1;
+  a[top] = x;
+  //cout<<"Push called";
+  return true;
     //Your code here
     //Check Stack overflow as well
 } 
   
 int Stack::pop() 
 { 
+  if(top < 0)
+    return 0;
+  
+  int popval = a[top];
+  top = top-1;
+  //cout<<"Pop called";
+  return popval;
     //Your code here
     //Check Stack Underflow as well 
 } 
 int Stack::peek() 
 { 
+  if(top < 0) return 0;
+
+  return a[top];
     //Your code here
     //Check empty condition too
 } 
   
 bool Stack::isEmpty() 
 { 
+  if(top < 0) return true;
+  else return false;
+  
+
     //Your code here 
 } 
   
@@ -47,6 +72,10 @@ int main()
     s.push(20); 
     s.push(30); 
     cout << s.pop() << " Popped from stack\n"; 
-  
+    cout<<s.peek();
+    cout << s.pop() << " Popped from stack\n"; 
+    cout<<s.peek();
+    cout << s.pop() << " Popped from stack\n"; 
+    cout<<s.peek();
     return 0; 
 } 
