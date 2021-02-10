@@ -33,8 +33,38 @@ public class GFG {
     static void insert(Node temp, int key) 
     { 
 
-        // Do level order traversal until we find 
-        // an empty place and add the node.  
+        // Do level order traversal until we find
+        // an empty place and add the node.
+
+        // Do a BFS to see where the node fits
+        if(temp == null) {
+            root = new Node(key);
+            return;
+        }
+
+        Queue<Node> treeQ= new LinkedList<>();
+        treeQ.add(temp);
+        while (!treeQ.isEmpty()){
+            int count = treeQ.size();
+            for(int i=0;i<count;i++){
+                Node currentNode = treeQ.remove();
+                if(currentNode.left == null) {
+                    currentNode.left = new Node(key);
+                    return;
+                }
+                else{
+                    treeQ.add(currentNode.left);
+                    }
+
+                if(currentNode.right == null){
+                    currentNode.right = new Node(key);
+                    return;
+                }
+                else
+                    treeQ.add(currentNode.right);
+
+            }
+        }
     } 
        
     // Driver code 
