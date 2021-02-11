@@ -3,12 +3,29 @@ class Node:
        self.data = data
        self.next = None
  
-class Stack:
+class Stack: #this is the class inside the class Node
     def __init__(self):
-        
+        self.head = Node('node')
+        self.size = 0
+    
+    def isEmpty():
+        if self.size==0:
+            return False
+
     def push(self, data):
+        n1 = Node(data)
+        n1.next = self.head.next
+        self.head.next=n1
+        self.size =+ 1
         
     def pop(self):
+        if not isEmpty:
+            self.head.next=self.head.next.next
+            self.size -= 1
+        else:
+            print("Stack is empty")
+
+
         
 a_stack = Stack()
 while True:
