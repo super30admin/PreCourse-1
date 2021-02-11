@@ -5,29 +5,67 @@ class Stack {
   
     boolean isEmpty() 
     { 
-        //Write your code here 
+        if(top == -1){
+            return true;
+        }
+        else{
+            return false;
+        }
     } 
 
     Stack() 
     { 
-        //Initialize your constructor 
+        top = -1;
+
+
     } 
   
     boolean push(int x) 
     { 
         //Check for stack Overflow
         //Write your code here
+        top++;
+        if(top<MAX)
+        {
+            a[top]=x;
+            System.out.printf("Element %d pushed to the Stack \n",x);
+            return true;
+        }
+        else{
+            System.out.println("%d cannot be pushed. Stack Overflow!"+x);
+            return false;
+        }
+
     } 
   
     int pop() 
     { 
         //If empty return 0 and print " Stack Underflow"
         //Write your code here
+        if(isEmpty())
+        {
+            System.out.println("Stack Underflow!");
+            return 0;
+        }
+        else
+        {
+            int El = a[top];
+            top--;
+            return El;
+
+        }
+
     } 
   
     int peek() 
     { 
-        //Write your code here
+        if(top > -1 && top < MAX){
+            return a[top];
+        }
+        else{
+            System.out.println("Cannot peek. Index is out of bounds!");
+            return -1;
+        }
     } 
 } 
   
@@ -39,6 +77,6 @@ class Main {
         s.push(10); 
         s.push(20); 
         s.push(30); 
-        System.out.println(s.pop() + " Popped from stack"); 
+        System.out.println(s.pop() + " Popped from stack");
     } 
 }
