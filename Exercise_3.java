@@ -1,8 +1,6 @@
-import java.io.*; 
-  
-// Java program to implement 
+// Java program to implement
 // a Singly Linked List 
-public class LinkedList { 
+public class Exercise_3 {
   
     Node head; // head of list 
   
@@ -17,41 +15,50 @@ public class LinkedList {
         // Constructor 
         Node(int d) 
         { 
-            //Write your code here 
+            this.data = d;
+            this.next = null;
         } 
     } 
   
     // Method to insert a new node 
-    public static LinkedList insert(LinkedList list, int data) 
+    public static Exercise_3 insert(Exercise_3 list, int data)
     { 
-        // Create a new node with given data 
+        // Create a new node with given data
+        Node node = new Node(data);
    
-        // If the Linked List is empty, 
-        // then make the new node as head 
-        
-            // Else traverse till the last node 
-            // and insert the new_node there 
-
-            // Insert the new_node at last node 
-        // Return the list by head 
-        
+        // If the Linked List is empty,
+        if(list.head == null){
+            // then make the new node as head
+            list.head = node;
+            return list;
+        }else{
+            // Else traverse till the last node
+            Node tmpNode = list.head;
+            while(tmpNode.next != null){
+                tmpNode = tmpNode.next;
+            }
+            // and insert the new_node there
+            tmpNode.next = node;
+            return list;
+        }
     } 
   
     // Method to print the LinkedList. 
-    public static void printList(LinkedList list) 
+    public static void printList(Exercise_3 list)
     {  
-        // Traverse through the LinkedList 
-   
-            // Print the data at current node 
-       
-            // Go to next node 
+        // Traverse through the LinkedList
+        Node node = list.head;
+        while(node != null){
+            System.out.println(node.data);
+            node = node.next;
+        }
     } 
    
     // Driver code 
     public static void main(String[] args) 
     { 
         /* Start with the empty list. */
-        LinkedList list = new LinkedList(); 
+        Exercise_3 list = new Exercise_3();
   
         // 
         // ******INSERTION****** 
@@ -68,3 +75,12 @@ public class LinkedList {
         printList(list); 
     } 
 }
+
+// Time Complexity : insert O(n) print O(n)
+// Space Complexity :O(1)
+// Did this code successfully run on Leetcode :Not attempted
+// Any problem you faced while coding this :No
+
+
+// Your code here along with comments explaining your approach
+// Iterate through the list and add node at the end.
