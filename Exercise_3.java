@@ -1,8 +1,9 @@
+package precourse1;
+
 import java.io.*; 
   
-// Java program to implement 
-// a Singly Linked List 
-public class LinkedList { 
+
+public class ImpSinglyLinkedList { 
   
     Node head; // head of list 
   
@@ -18,40 +19,52 @@ public class LinkedList {
         Node(int d) 
         { 
             //Write your code here 
+        	data = d;
+        	next = null;
         } 
     } 
   
     // Method to insert a new node 
-    public static LinkedList insert(LinkedList list, int data) 
+    public static ImpSinglyLinkedList insert(ImpSinglyLinkedList list, int data) 
     { 
         // Create a new node with given data 
-   
+    	Node newNode = new Node(data);
         // If the Linked List is empty, 
-        // then make the new node as head 
-        
-            // Else traverse till the last node 
-            // and insert the new_node there 
-
-            // Insert the new_node at last node 
-        // Return the list by head 
-        
+        // then make the new node as head
+    	if(list.head == null) {
+    		list.head = newNode;
+    	}else {
+    		// Else traverse till the last node 
+            // and insert the new_node there
+    		
+    		Node temp = list.head;
+    		while(temp.next != null) {
+    			temp = temp.next;
+    		}
+    		temp.next = newNode;
+    	} 
+    	return list;
     } 
   
     // Method to print the LinkedList. 
-    public static void printList(LinkedList list) 
+    public static void printList(ImpSinglyLinkedList list) 
     {  
         // Traverse through the LinkedList 
+    	Node temp = list.head;
    
-            // Print the data at current node 
-       
-            // Go to next node 
+            // Print the data at current node
+    	while(temp != null) {
+    		System.out.println(temp.data+" ");
+    		// Go to next node 
+    		temp = temp.next;
+    	}
     } 
    
     // Driver code 
     public static void main(String[] args) 
     { 
         /* Start with the empty list. */
-        LinkedList list = new LinkedList(); 
+    	ImpSinglyLinkedList list = new ImpSinglyLinkedList(); 
   
         // 
         // ******INSERTION****** 
