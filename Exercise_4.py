@@ -22,6 +22,7 @@ def insert(temp, key):
     if temp is None:
         temp = newNode(key)
     else:
+        # Compare incoming value with root
         if key > temp.key:
             if temp.right is None:
                 temp.right = newNode(key)
