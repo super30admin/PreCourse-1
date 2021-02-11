@@ -1,6 +1,8 @@
+package precourse1;
+
 import java.util.LinkedList; 
-import java.util.Queue; 
-public class GFG { 
+import java.util.*; 
+public class InsertEleInBinaryTree { 
        
     /* A binary tree node has key, pointer to  
     left child and a pointer to right child */
@@ -15,6 +17,9 @@ public class GFG {
             right = null; 
         } 
     } 
+    
+    
+    
     static Node root; 
     static Node temp = root; 
       
@@ -35,6 +40,32 @@ public class GFG {
 
         // Do level order traversal until we find 
         // an empty place and add the node.  
+    	Node newNode = new Node(key);
+    	Queue<Node> queue = new LinkedList<>();
+    	
+    	queue.add(temp);
+    	
+    	while(!queue.isEmpty()) {
+    		
+    		int size = queue.size();
+    		for(int i=0; i<size; i++) {
+    			Node remNode = queue.remove();
+    			if(remNode.left == null) {
+    				remNode.left = newNode;
+    				return;
+    			}else {
+    				queue.add(remNode.left);
+    			}
+    			if(remNode.right == null) {
+    				remNode.right = newNode;
+    				return;
+    			}else {
+    				queue.add(remNode.right);
+    			}
+    		}
+    	}
+    	
+    	
     } 
        
     // Driver code 
