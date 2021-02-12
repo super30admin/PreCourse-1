@@ -56,7 +56,8 @@ public class LinkedList {
         // 
         // ******INSERTION****** 
         // 
-  
+
+
         // Insert the values 
         list = insert(list, 1); 
         list = insert(list, 2); 
@@ -68,3 +69,4 @@ public class LinkedList {
         printList(list); 
     } 
 }
+
