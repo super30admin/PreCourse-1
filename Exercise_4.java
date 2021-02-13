@@ -1,6 +1,12 @@
-import java.util.LinkedList; 
-import java.util.Queue; 
-public class GFG { 
+import java.util.LinkedList;
+import java.util.Queue;
+
+// Time Complexity : O(n); n = #nodes
+// Space Complexity :O(n); n = #nodes
+// Did this code successfully run on Leetcode : Not found on leetcode
+// Any problem you faced while coding this : No
+
+class GFG {
        
     /* A binary tree node has key, pointer to  
     left child and a pointer to right child */
@@ -33,8 +39,38 @@ public class GFG {
     static void insert(Node temp, int key) 
     { 
 
-        // Do level order traversal until we find 
-        // an empty place and add the node.  
+        //if tree is empty
+        if (temp == null) {
+            Node node = new Node(key);
+            root = node;
+            return;
+        }
+
+        // Do level order traversal until we find
+        // an empty place and add the node.
+        Queue<Node> q = new LinkedList<>();
+        q.offer(temp);
+
+        while (!q.isEmpty()) {
+            Node t = q.poll();
+
+            if (t.left != null && t.right != null) {
+                q.offer(t.left);
+                q.offer(t.right);
+            }
+            else if (t.left == null && t.right != null) {
+                t.left = new Node(key);
+                break;
+            }
+            else if (t.right == null && t.left != null) {
+                t.right = new Node(key);
+                break;
+            }
+            else {
+                t.left = new Node(key);
+                break;
+            }
+        }
     } 
        
     // Driver code 
