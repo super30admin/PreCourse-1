@@ -2,18 +2,34 @@
 class newNode():  
   
     def __init__(self, data):  
-        self.key = data 
+        self.value = data 
         self.left = None
         self.right = None
           
 """ Inorder traversal of a binary tree"""
-def inorder(temp): 
-  
-    
+def inorder(root): 
+    if root:
+        inorder(root.left)
+        print(root.value)
+        inorder(root.right)
   
   
 """function to insert element in binary tree """
-def insert(temp,key): 
+def insert(root,key):
+    node = newNode(key)
+    if root is None:
+        root= node 
+    else:
+        if root.value < key:
+            if root.right is None:
+                root.right=node
+            else:
+                insert(root.right, key)
+        else:
+            if root.left is None:
+                root.left = node
+            else:
+                insert(root.left, key)
   
     
   
