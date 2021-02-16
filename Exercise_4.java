@@ -34,7 +34,27 @@ public class GFG {
     { 
 
         // Do level order traversal until we find 
-        // an empty place and add the node.  
+        // an empty place and add the node.
+        if(nodeQueue.size()==0)
+        {
+            return;
+        }
+        Node temp = (Node)nodeQueue.remove();
+        if(temp.left == null )
+        {
+            temp.left =  new Node(key);
+            return;
+
+        }else if(temp.right == null){
+            temp.right =  new Node(key);
+            return;
+        }
+        else{
+            nodeQueue.add(temp.left);
+            nodeQueue.add(temp.right);
+            insertHelper(nodeQueue,key);
+            return;
+        }
     } 
        
     // Driver code 
