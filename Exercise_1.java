@@ -1,6 +1,6 @@
 class Stack { 
     static final int MAX = 1000; 
-    public int top; 
+    int top; 
     int a[] = new int[MAX]; // Maximum size of Stack 
   
     boolean isEmpty() 
