@@ -5,7 +5,7 @@ class Stack {
   
     boolean isEmpty() 
     { 
-        //Write your code here
+        //Write your code her
         return top == -1;
     } 
 
