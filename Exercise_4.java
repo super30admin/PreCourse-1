@@ -1,6 +1,13 @@
+// Exercise_4 : Insert an element in a Binary Tree.
+
+// Time Complexity : O(N) afor insert and print
+// Space Complexity : O(N) as we need a N objects of Node class connected with each other
+// Did this code successfully run on Leetcode : Could not find it on leetcode. But ran successfully locally
+// Any problem you faced while coding this : Miswrote on line 50 - Insert New node at end. Also, getting confused in picturing curr and curr.next when using while loops
+
 import java.util.LinkedList; 
 import java.util.Queue; 
-public class GFG { 
+public class Exercise_4 { 
        
     /* A binary tree node has key, pointer to  
     left child and a pointer to right child */
@@ -35,6 +42,31 @@ public class GFG {
 
         // Do level order traversal until we find 
         // an empty place and add the node.  
+
+        Node n = new Node(key);
+        if(temp == null){
+            root = n;
+            return;
+        }
+
+        Queue<Node> q = new LinkedList<>();
+        q.add(temp);
+        while(!q.isEmpty()){
+            Node qTop = q.peek();
+            q.remove();
+
+            if(qTop.left == null){
+                qTop.left = new Node(key);
+                return;
+            }else q.add(qTop.left);
+
+            if(qTop.right == null){
+                qTop.right = new Node(key);
+                return;
+            }else q.add(qTop.right);
+        }
+
+
     } 
        
     // Driver code 

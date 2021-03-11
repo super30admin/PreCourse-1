@@ -1,4 +1,4 @@
-// Exercise_2 : Implement Singly Linked List.
+// Exercise_3 : Implement Singly Linked List.
 
 // Time Complexity : O(N) afor insert and print
 // Space Complexity : O(N) as we need a N objects of Node class connected with each other
