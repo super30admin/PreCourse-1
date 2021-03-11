@@ -1,3 +1,19 @@
+/*Time Complexity: The overall time complexity is O(1) for all he operations
+push() operation : Checking for overflow and inserting the item into the top of the stack(array) takes O(1) time.
+pop() operation : Checking for underflow and returning the poped item from stack(array) takes O(1) time.
+peek() operation :  looking and getting the top element from stack(array) takes O(1) time.
+hemce the overall time complexity is O(1).
+Space Complexity :  an array is used to represent the items in the stack and if there are n items that needs to be processed(push,pop or peek) in the stack then at
+maximum all n items will be either pushed, poped or peeked. Hence, the space complexity is O(n).
+
+Did this code successfully run on Leetcode :
+I could'nt find this problem in leetcode hence I executed in an IDE. At first when I ran this code I got error type not declared, then I include the public specifier
+ for the constructor after which it successfully executed.
+
+Any problem you faced while coding this :
+No
+*/
+ //Your code here along with comments explaining your approach
 class Stack {
     static final int MAX = 1000;
     int top;
@@ -34,7 +50,7 @@ class Stack {
 
     int pop() {
         //If empty return 0 and print " Stack Underflow"
-        if (top <= -1) {
+        if (isEmpty()) {
             System.out.print("Satck underflow");
             return 0;
         }
