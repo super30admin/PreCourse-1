@@ -9,11 +9,21 @@ class myStack:
         self.stack.append(item)
         
     def pop(self):
+<<<<<<< HEAD
         self.stack = self.stack[:-1]
         return self.stack[-1]
         # return self.stack.pop()
     
     def peek(self):
+=======
+        if self.isEmpty():
+            return None
+        return self.stack.pop()
+    
+    def peek(self):
+        if self.isEmpty():
+            return None
+>>>>>>> 17a8759 (Completed PreCourse1)
         return self.stack[-1]
     
     def size(self):
@@ -32,4 +42,10 @@ s.push('2')
 
 print(s.stack)
 print("pop", s.pop())
+<<<<<<< HEAD
 print("show", s.show())
+=======
+s.pop()
+print(s.peek())
+print("show", s.show())
+>>>>>>> 17a8759 (Completed PreCourse1)
