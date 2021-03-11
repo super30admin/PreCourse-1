@@ -2,7 +2,7 @@ import java.io.*;
   
 // Java program to implement 
 // a Singly Linked List 
-class LinkedList {
+public class LinkedList {
   
     Node head; // head of list 
   

@@ -1,6 +1,6 @@
 import java.util.LinkedList; 
 import java.util.Queue; 
- class GFG {
+ public class GFG {
        
     /* A binary tree node has key, pointer to  
     left child and a pointer to right child */
