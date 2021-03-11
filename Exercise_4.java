@@ -1,9 +1,9 @@
 // Exercise_4 : Insert an element in a Binary Tree.
 
-// Time Complexity : O(N) afor insert and print
-// Space Complexity : O(N) as we need a N objects of Node class connected with each other
+// Time Complexity : O(LogN) for insert as we are level traversing / breadth-first approach 
+// Space Complexity : O(N) queue size
 // Did this code successfully run on Leetcode : Could not find it on leetcode. But ran successfully locally
-// Any problem you faced while coding this : Miswrote on line 50 - Insert New node at end. Also, getting confused in picturing curr and curr.next when using while loops
+// Any problem you faced while coding this : Once got the idea of doing it by BFS, I knew I had to use Queue. So declaration of queue I'd to check, but I remembered the logic of BFS.
 
 import java.util.LinkedList; 
 import java.util.Queue; 
