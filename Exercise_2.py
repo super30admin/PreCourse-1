@@ -5,10 +5,31 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.head=None
         
     def push(self, data):
+        node = Node(data)
+        node.next = self.head
+        self.head = node
         
     def pop(self):
+       
+        tmp= self.head
+        if tmp:
+            
+            if self.head.next!=None:
+              self.head = self.head.next
+              pop = tmp.data
+              return pop
+            else:
+                self.head=None
+                return tmp.data
+                
+        else:
+            return None
+         
+        
+        
         
 a_stack = Stack()
 while True:
@@ -19,7 +40,7 @@ while True:
  
     operation = do[0].strip().lower()
     if operation == 'push':
-        a_stack.push(int(do[1]))
+        a_stack.push(1)
     elif operation == 'pop':
         popped = a_stack.pop()
         if popped is None:
