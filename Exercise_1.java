@@ -11,7 +11,7 @@ I could'nt find this problem in leetcode hence I executed in an IDE. At first wh
  for the constructor after which it successfully executed.
 
 Any problem you faced while coding this :
-No
+At the begining I was not sure as to what to initialize in the constructor
 */
  //Your code here along with comments explaining your approach
 class Stack {
@@ -64,7 +64,7 @@ class Stack {
 
     int peek() {
         //Write your code here
-        if (top <= -1) {
+        if (isEmpty()) {
             System.out.println("Stack is empty");
             return 0;
         } else {
