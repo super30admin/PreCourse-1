@@ -5,8 +5,6 @@ Space Complexity : As there is no extra space (any other data structure), the sp
  */
 // Did this code successfully run on Leetcode : yes
 // Any problem you faced while coding this : I felt difficult in understanding how to use the head pointer in the insert function.
-
-
 // Your code here along with comments explaining your approach
 
 import java.io.*;
