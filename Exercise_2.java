@@ -3,8 +3,7 @@ push() operation : inserting the item into the top of the stack(i.e at the head 
 pop() operation : Checking for underflow and returning the poped item from stack(i.e at the head of linkedlist) takes O(1) time.
 peek() operation :  looking and getting the top element from stack(i.e at the head of linkedlist) takes O(1) time.
 hemce the overall time complexity is O(1).
-Space Complexity :  LinkedList is used to represent the items in the stack and if there are n items that needs to be processed(push,pop or peek) in the
-stack then at maximum all n items will be either pushed, poped or peeked. Hence, the space complexity is O(n).
+Space Complexity :  As there is no extra space (any other data structure), the space complexity is O(1).
 
 Did this code successfully run on Leetcode :
 I could'nt find this problem in leetcode hence I executed in an IDE. At first when I ran this code I got error class for main not declared,
