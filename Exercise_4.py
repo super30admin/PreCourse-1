@@ -1,5 +1,5 @@
 
-'''for inser operation : Time Complexity : O(logN) 
+'''for insert operation : Time Complexity : O(logN) 
 Space Complexity :O(1)
 Did this code successfully run on Leetcode : did not find in leetcode
 Any problem you faced while coding this : No
