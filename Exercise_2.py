@@ -5,11 +5,23 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.head = None
         
     def push(self, data):
-        
+        if self.head == None:
+            self.head=Node(data)
+        else:
+            newnode = Node(data)
+            newnode.next = self.head
+            self.head = newnode
     def pop(self):
-        
+        if self.head == None:
+            return None
+        else:
+            popnode = self.head
+            self.head = self.head.next
+            popnode.next = None
+            return popnode.data
 a_stack = Stack()
 while True:
     print('push <value>')
@@ -28,3 +40,11 @@ while True:
             print('Popped value: ', int(popped))
     elif operation == 'quit':
         break
+# // Did this code successfully run on LeetCode?:
+# //         No did not find the problems. 
+
+# //     Problems faced while coding this:
+# //         Nope
+
+# //     Approach:
+# //        understood what is linked list, defined the stack, understood what each fucntions have to do and then coded them. 
