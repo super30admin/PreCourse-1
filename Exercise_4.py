@@ -1,3 +1,9 @@
+
+'''for inser operation : Time Complexity : O(logN) 
+Space Complexity :O(1)
+Did this code successfully run on Leetcode : did not find in leetcode
+Any problem you faced while coding this : No
+Your code here along with comments explaining your approach'''
 # Python program to insert element in binary tree  
 class newNode():  
   
