@@ -13,12 +13,12 @@ class Stack:
             self.head = Node(data)
             return
         else:
-            itr = self.head
-            while itr:
-                if itr.next is None:
-                    itr.next = Node(data)
+            iterator = self.head
+            while iterator:
+                if iterator.next is None:
+                    iterator.next = Node(data)
                     return
-                itr = itr.next
+                iterator = iterator.next
 
     def pop(self):
         if self.head is None:
@@ -26,7 +26,6 @@ class Stack:
             return
         else:
             itr = self.head
-            # curr = Node()
             prev = Node(None)
             while itr:
                 curr = itr

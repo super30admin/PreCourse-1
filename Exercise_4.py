@@ -1,5 +1,5 @@
 # Python program to insert element in binary tree  
-class newNode():
+class newNode:
 
     def __init__(self, data):
         self.key = data
@@ -27,8 +27,7 @@ def insert(temp, key):
         root = newNode(key)
         return root
 
-    curr_nodes = []
-    curr_nodes.append(temp)
+    curr_nodes = [temp]
     while len(curr_nodes):
         temp = curr_nodes[0]
         curr_nodes.pop(0)

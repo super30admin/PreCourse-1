@@ -1,30 +1,30 @@
 class myStack:
     def __init__(self):
-        self.s = []
+        self.stack = []
 
     def isEmpty(self):
-        if len(self.s) == 0:
+        if len(self.stack) == 0:
             return True
         return False
 
     def push(self, item):
-        self.s.append(item)
+        self.stack.append(item)
 
     def pop(self):
         if s.isEmpty():
             raise Exception('Cannot pop from empty stack!')
         else:
-            return self.s.pop()
+            return self.stack.pop()
 
     def peek(self):
-        return self.s[-1]
+        return self.stack[-1]
 
     def size(self):
-        return len(self.s)
+        return len(self.stack)
 
     def show(self):
         st = []
-        for i in self.s:
+        for i in self.stack:
             st.append(i)
         return st
 
