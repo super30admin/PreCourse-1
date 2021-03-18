@@ -27,8 +27,6 @@ def insert(temp,key):
     q = [] 
     q.append(temp) 
  
-    # Do level order traversal until we find 
-    # an empty place. 
     while (len(q)): 
         temp = q[0] 
         q.pop(0) 
