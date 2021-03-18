@@ -3,14 +3,26 @@ class Node:
        self.data = data
        self.next = None
  
-class Stack:
+class Stack():
     def __init__(self):
+        self.head = Node("head")
+        self.size =0
         
     def push(self, data):
+        node = Node(data)
+        node.next=self.head
+        self.head=node
+        self.size+=1
         
     def pop(self):
+        poppednode = self.head
+        self.head = self.head.next
+        poppednode.next = None
+        return poppednode.data
         
+
 a_stack = Stack()
+
 while True:
     print('push <value>')
     print('pop')
@@ -25,6 +37,6 @@ while True:
         if popped is None:
             print('Stack is empty.')
         else:
-            print('Popped value: ', int(popped))
+            print(int(popped))
     elif operation == 'quit':
         break
