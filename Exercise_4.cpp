@@ -10,19 +10,25 @@ struct Node {
     struct Node* left, *right; 
 }; 
   
-/* function to create a new node of tree and r 
-   eturns pointer */
+/* function to create a new node of tree and
+   return pointer */
 struct Node* newNode(int key) 
 { 
-    //Your code here
-}; 
+    Node *node = new Node();
+    node->key = key;
+    node->left = nullptr;
+    node->right = nullptr;
+
+    return node;
+} 
   
 /* Inorder traversal of a binary tree*/
 void inorder(struct Node* temp) 
 { 
-    if (!temp) 
+    if (!temp) { 
         return; 
-  
+    }
+
     inorder(temp->left); 
     cout << temp->key << " "; 
     inorder(temp->right); 
@@ -31,13 +37,29 @@ void inorder(struct Node* temp)
 /*function to insert element in binary tree */
 void insert(struct Node* temp, int key) 
 { 
-  
-    // Do level order traversal until we find 
-    // an empty place.  
-    
-    //Your code here
-} 
-  
+    queue<Node *> q;
+    q.push(temp);
+
+    while (!q.empty()) {
+        Node *front = q.front();
+        q.pop();
+
+        if (!front->left) {
+            front->left = newNode(key);
+            break;
+        } else {
+            q.push(front->left);
+        }
+
+        if (!front->right) {
+            front->right = newNode(key);
+            break;
+        } else {
+            q.push(front->right);
+        }
+    }
+}
+
 // Driver code 
 int main() 
 { 
@@ -50,13 +72,14 @@ int main()
   
     cout << "Inorder traversal before insertion:"; 
     inorder(root); 
-  
+ 
+    cout << endl; 
     int key = 12; 
     insert(root, key); 
   
-    cout << endl; 
     cout << "Inorder traversal after insertion:"; 
     inorder(root); 
+    cout << endl; 
   
     return 0; 
 } 

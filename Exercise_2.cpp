@@ -2,51 +2,83 @@
 using namespace std; 
   
 // A structure to represent a stack 
-class StackNode { 
-public: 
-    int data; 
-    StackNode* next; 
-}; 
-  
-StackNode* newNode(int data) 
+
+class Stack {
+
+private:
+    class Node { 
+
+    public: 
+        int data; 
+        Node* next; 
+    } *head;
+
+public:
+    Stack() : head(nullptr) {}
+    Node *newNode(int data);
+    int isEmpty() const ;
+    void push(int data);
+    int pop();
+    int peek() const;
+};
+ 
+Stack::Node* Stack::newNode(int data) 
 { 
-    StackNode* stackNode = new StackNode(); 
-    stackNode->data = data; 
-    stackNode->next = NULL; 
-    return stackNode; 
+    Node* node = new Node(); 
+    node->data = data; 
+    node->next = nullptr; 
+    return node; 
 } 
   
-int isEmpty(StackNode* root) 
+int Stack::isEmpty() const
 { 
-    //Your code here 
+    if (nullptr == head) {
+        return true;
+    }
+
+    return false;
 } 
   
-void push(StackNode** root, int data) 
+void Stack::push(int data) 
 { 
-    //Your code here 
+    Node *node = newNode(data);
+    node->next = head;
+    head = node;
 } 
   
-int pop(StackNode** root) 
+int Stack::pop() 
 { 
-    //Your code here 
+    if (nullptr == head) {
+        return -1;
+    }
+
+    int data = head->data;
+    Node *node = head;
+    head = head->next;
+    delete node;
+
+    return data;
 } 
   
-int peek(StackNode* root) 
+int Stack::peek() const
 { 
-    //Your code here 
-} 
+    if (nullptr == head) {
+        return -1;
+    }
+
+    return head->data;
+}
   
 int main() 
 { 
-    StackNode* root = NULL; 
+    Stack stack; 
   
-    push(&root, 10); 
-    push(&root, 20); 
-    push(&root, 30); 
+    stack.push(10); 
+    stack.push(20); 
+    stack.push(30); 
   
-    cout << pop(&root) << " popped from stack\n"; 
-  
-    cout << "Top element is " << peek(root) << endl; 
+    cout << stack.pop() << " popped from stack\n"; 
+    cout << "Top element is " << stack.peek() << endl; 
   
     return 0; 
 } 
