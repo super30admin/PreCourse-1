@@ -19,21 +19,49 @@ StackNode* newNode(int data)
 int isEmpty(StackNode* root) 
 { 
     //Your code here 
+    if(root == NULL){
+        return 1;
+    }
+    else{
+        return 0;
+    }
 } 
   
 void push(StackNode** root, int data) 
 { 
     //Your code here 
+    StackNode* newNode = new StackNode();
+    newNode->data = data;
+    newNode->next = *root;
+    *root = newNode;
+    cout<<newNode->data<<" has been pused to stack"<<endl;
 } 
   
 int pop(StackNode** root) 
 { 
-    //Your code here 
+    //Your code here
+    if(!isEmpty(*root)){
+        StackNode *rem, *current = *root;
+        rem = current;
+        *root = current->next;
+        rem->next = NULL;
+        return rem->data;
+    }
+    else{
+        return 0;
+    }
 } 
   
 int peek(StackNode* root) 
 { 
-    //Your code here 
+    //Your code here
+    if(!isEmpty(root)){
+        StackNode* current = root;
+        return current->data;    
+    }
+    else{
+        return 0;
+    }
 } 
   
 int main() 
@@ -47,6 +75,13 @@ int main()
     cout << pop(&root) << " popped from stack\n"; 
   
     cout << "Top element is " << peek(root) << endl; 
+    
+    if(isEmpty(root)){
+        cout<<"The stack is empty"<<endl;
+    }
+    else{
+        cout<<"The stack is not empty"<<endl;
+    }
   
     return 0; 
 } 
