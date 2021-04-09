@@ -1,6 +1,10 @@
 import java.util.LinkedList; 
-import java.util.Queue; 
-public class GFG { 
+import java.util.Queue;
+
+//import org.graalvm.compiler.graph.Node;
+
+//import org.graalvm.compiler.nodes.extended.GetClassNode; 
+class GFG { 
        
     /* A binary tree node has key, pointer to  
     left child and a pointer to right child */
@@ -28,13 +32,39 @@ public class GFG {
         System.out.print(temp.key+" "); 
         inorder(temp.right); 
     } 
-       
+    
+    static Node getVacantNode(Node root)
+    {
+        LinkedList<Node> queue = new LinkedList<Node>();
+        queue.add(root);
+        while(!queue.isEmpty())
+        {   
+            Node curr = queue.removeFirst();
+            if(curr.left==null || curr.right==null)
+            {
+                return curr;
+            }
+            queue.add(curr.left);
+            queue.add(curr.right);
+        }
+        return null;
+    }
     /*function to insert element in binary tree */
-    static void insert(Node temp, int key) 
-    { 
-
+    static void insert(Node temp, int key)
+    {
         // Do level order traversal until we find 
-        // an empty place and add the node.  
+        // an empty place and add the node.
+        Node newNodeAdded=new Node(12);
+        if(temp==null){
+            temp = newNodeAdded;
+        }
+        Node locationNode = getVacantNode(root);
+        if(locationNode.left==null){
+            locationNode.left = newNodeAdded;
+            return;
+        }
+        locationNode.right = newNodeAdded;
+          
     } 
        
     // Driver code 
