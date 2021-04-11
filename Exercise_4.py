@@ -8,16 +8,37 @@ class newNode():
           
 """ Inorder traversal of a binary tree"""
 def inorder(temp): 
-  
-    
-  
+    if temp == None:
+        return
+    inorder(temp.left)
+    print(temp.key, end = " ")
+    inorder(temp.right)
   
 """function to insert element in binary tree """
 def insert(temp,key): 
-  
-    
-  
-       
+    if temp == None:
+        temp = newNode(key)
+        return temp
+    queue=[]
+    queue.append(temp)
+    while len(queue)!= 0:
+        
+        ele = queue[0]
+        queue.pop(0)
+
+        if ele.left == None:
+            ele.left = newNode(key)
+            return
+        else:
+            queue.append(ele.left)
+        if ele.right == None:
+           
+            ele.right = newNode(key)
+            return
+        else:
+            queue.append(ele.right)
+        
+
 # Driver code  
 if __name__ == '__main__': 
     root = newNode(10)  
