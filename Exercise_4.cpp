@@ -14,7 +14,11 @@ struct Node {
    eturns pointer */
 struct Node* newNode(int key) 
 { 
-    //Your code here
+    struct Node* temp
+        = (struct Node*)malloc(sizeof(struct Node));
+    temp->key = key;
+    temp->left = NULL;
+    temp->right = NULL;
 }; 
   
 /* Inorder traversal of a binary tree*/
@@ -36,6 +40,24 @@ void insert(struct Node* temp, int key)
     // an empty place.  
     
     //Your code here
+    struct Node* node = newNode(key);
+    queue<Node*> q;
+    q.push(temp);
+    while(!q.empty()){
+        Node *t = q.front();
+        q.pop();
+        if (t->left) q.push(t->left);
+        else{
+            t->left = node;
+            return;
+        } 
+        if (t->right) q.push(t->right);
+        else{
+            t->right = node;
+            return;
+        }
+        
+    }
 } 
   
 // Driver code 
@@ -50,7 +72,8 @@ int main()
   
     cout << "Inorder traversal before insertion:"; 
     inorder(root); 
-  
+    
+    
     int key = 12; 
     insert(root, key); 
   
