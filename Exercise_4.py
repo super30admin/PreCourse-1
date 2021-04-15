@@ -65,3 +65,24 @@ if __name__ == '__main__':
     print("")
     print("Inorder traversal after insertion:", " ")
     inorder(root) 
+'''
+Output - 
+('Inorder traversal before insertion:', ' ')
+7
+11
+10
+15
+9
+8
+
+('Inorder traversal after insertion:', ' ')
+7
+11
+12
+10
+15
+9
+8
+
+
+'''
