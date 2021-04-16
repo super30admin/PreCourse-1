@@ -6,6 +6,7 @@ class Stack {
     boolean isEmpty() 
     { 
         //Write your code here 
+        // This is sample change
     } 
 
     Stack() 
