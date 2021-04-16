@@ -1,3 +1,10 @@
+"""
+inorder traversal : traverse Left nodes, print(root.key) , traverse right nodes
+
+insert: traverse to the leftmost leaf node and then insert.
+
+"""
+
 # Python program to insert element in binary tree  
 class newNode():  
   
@@ -8,12 +15,25 @@ class newNode():
           
 """ Inorder traversal of a binary tree"""
 def inorder(temp): 
+    if temp: 
+        inorder(temp.left)
+        print(temp.key)
+        inorder(temp.right)
   
     
   
   
 """function to insert element in binary tree """
 def insert(temp,key): 
+    if temp:
+        val = insert(temp.left,key)
+        if val:
+            temp.left = val
+    else:
+        temp = newNode(key)
+        return temp
+
+
   
     
   
@@ -32,7 +52,6 @@ if __name__ == '__main__':
   
     key = 12
     insert(root, key)  
-  
-    print()  
+   
     print("Inorder traversal after insertion:", end = " ") 
     inorder(root) 
