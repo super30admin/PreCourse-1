@@ -116,6 +116,10 @@ public class LinkedList {
 
         // Print the LinkedList 
         printList(list);
+        
+        //
+        // ******DELETION******
+        //
 
         deleteByPosition(list,0);
 
