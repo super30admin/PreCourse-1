@@ -3,6 +3,8 @@ class ListNode:
     A node in a singly-linked list.
     """
     def __init__(self, data=None, next=None):
+        self.data=data
+        self.next=None
     
 class SinglyLinkedList:
     def __init__(self):
