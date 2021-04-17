@@ -1,3 +1,7 @@
+// Time Complexity : All the operations (isEmpty(), push(), pop() and peek()) take O(1) time as it is performed on the top element
+// Space Complexity : O(n) considering n elements
+// Any problem you faced while coding this : No
+
 public class StackAsLinkedList {
 
     StackNode root;
@@ -11,6 +15,7 @@ public class StackAsLinkedList {
             this.data = data;
         }
     }
+
     public boolean isEmpty() {
         if (root == null) {
             return true;
@@ -24,7 +29,7 @@ public class StackAsLinkedList {
         if(root == null) {
             root = nodeToPush;
         } else {
-            // Pushing the new node at the start of the LinkedList
+            // Pushing the new node at the start of the LinkedList by using tempNode
             StackNode tempNode = root;
             root = nodeToPush;
             nodeToPush.next = tempNode;
@@ -33,10 +38,10 @@ public class StackAsLinkedList {
     }
 
     public int pop() {
-        //If Stack Empty Return 0 and print "Stack Underflow"
-        //Write code to pop the topmost element of stack.
-        //Also return the popped element
-        int poppedElement = Integer.MIN_VALUE;
+        // If Stack Empty Return 0 and print "Stack Underflow"
+        // Popping the topmost element of stack if stack is not empty
+        // Returned the popped element
+        int poppedElement = 0;
         if (root == null) {
             System.out.println("Stack is Empty");
         } else {
@@ -48,12 +53,13 @@ public class StackAsLinkedList {
 
     public int peek()
     {
-        //Write code to just return the topmost element without removing it.
+        // Return the topmost element without removing it if the stack is not empty
         if(root == null) {
             System.out.println("Stack is empty");
             return Integer.MIN_VALUE;
-        } else
+        } else {
             return root.data;
+        }
     }
 
     //Driver code

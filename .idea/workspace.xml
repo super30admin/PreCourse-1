@@ -2,34 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90de88b0-9a78-4944-99b2-f322f9daf369" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PreCourse-1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/StackAsLinkedList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/PreCourse-1/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/PreCourse-1/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/PreCourse-1/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/PreCourse-1/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/PreCourse-1/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/PreCourse-1/PreCourse-1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/PreCourse-1/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/PreCourse-1/Stack.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/PreCourse-1/StackAsLinkedList$StackNode.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/PreCourse-1/StackAsLinkedList.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_1.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/Stack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_1.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_2.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_3.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_3.java" beforeDir="false" afterPath="$PROJECT_DIR$/Exercise_3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_3.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_4.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise_4.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stack.java" beforeDir="false" afterPath="$PROJECT_DIR$/Stack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StackAsLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/StackAsLinkedList.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

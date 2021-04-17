@@ -1,3 +1,7 @@
+// Time Complexity : All the operations (isEmpty(), push(), pop() and peek()) take O(1) time as there is no loop
+// Space Complexity : O(1) as the array size is fixed
+// Any problem you faced while coding this : No
+
 class Stack {
     static final int MAX = 1000;
     int top;
@@ -5,19 +9,20 @@ class Stack {
 
     Stack()
     {
-        // Top initialization before
+        // Top initialization (without having any element in stack)
         top = -1;
     }
 
     boolean isEmpty()
     {
+        //Checks and returns true or false depending on top value
         return (top < 0);
     }
 
     boolean push(int x)
     {
         //Check for stack Overflow
-        // If top is pointing to last element in array or beyond it
+        // If top is pointing to last element in array or beyond it then Stack Overflow for Push otherwise Push element
         if(top >= (MAX -1)) {
             System.out.println("Stack Overflow");
             return false;
@@ -30,7 +35,7 @@ class Stack {
 
     int pop()
     {
-        //If empty return 0 and print "Stack Underflow"
+        //If empty return 0 and print "Stack Underflow" otherwise pop element
         if(top < 0) {
             System.out.println("Stack Underflow");
             return 0;
@@ -42,6 +47,7 @@ class Stack {
 
     int peek()
     {
+        // If empty then Stack underflow otherwise return top element without removing it
         if(top < 0) {
             System.out.println("Stack Underflow");
             return 0;
