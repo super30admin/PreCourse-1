@@ -61,5 +61,11 @@ class Main {
         s.push(20);
         s.push(30);
         System.out.println(s.pop() + " Popped from stack");
+        System.out.println(s.peek() + " Peeked from stack");
+        // To show that the peeked element is not removed from stack
+        System.out.println(s.pop() + " Popped from stack");
+        System.out.println("Is stack empty? :" + s.isEmpty());
+        System.out.println(s.pop() + " Popped from stack");
+        System.out.println("Is stack empty? :" + s.isEmpty());
     }
 }
