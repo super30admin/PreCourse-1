@@ -1,4 +1,8 @@
-import java.util.LinkedList; 
+// Time Complexity : Average case insertion is O(log n) where n is the number of nodes in a tree, in worst case it is O(n)
+// Space Complexity : O(n) considering n nodes
+// Any problem you faced while coding this : No
+
+import java.util.LinkedList;
 import java.util.Queue; 
 public class GFG { 
        

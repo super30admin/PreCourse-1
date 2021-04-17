@@ -1,3 +1,7 @@
+// Time Complexity : To access O(n), to insert and delete O(1)
+// Space Complexity : O(n) considering n elements
+// Any problem you faced while coding this : No
+
 import java.io.*;
 
 // Java program to implement 
@@ -116,6 +120,10 @@ public class LinkedList {
 
         // Print the LinkedList 
         printList(list);
+
+        //
+        // ******DELETION******
+        //
 
         deleteByPosition(list,0);
 

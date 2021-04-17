@@ -1,7 +1,6 @@
 // Time Complexity : All the operations (isEmpty(), push(), pop() and peek()) take O(1) time as it is performed on the top element
 // Space Complexity : O(n) considering n elements
 // Any problem you faced while coding this : No
-
 public class StackAsLinkedList {
 
     StackNode root;
