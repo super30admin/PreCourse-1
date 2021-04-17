@@ -120,6 +120,7 @@ public class LinkedList {
 
         // Print the LinkedList 
         printList(list);
+       
 
         //
         // ******DELETION******
