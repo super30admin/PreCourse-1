@@ -1,8 +1,15 @@
+// Time Complexity : insertion O(1), printList O(n)
+// Space Complexity :
+// Did this code successfully run on Leetcode :
+// Any problem you faced while coding this :
+
+
+// Your code here along with comments explaining your approach
 import java.io.*; 
   
 // Java program to implement 
 // a Singly Linked List 
-public class LinkedList { 
+class LinkedList { 
   
     Node head; // head of list 
   
@@ -17,7 +24,8 @@ public class LinkedList {
         // Constructor 
         Node(int d) 
         { 
-            //Write your code here 
+            this.data = d;
+            this.next = null;
         } 
     } 
   
@@ -35,6 +43,19 @@ public class LinkedList {
             // Insert the new_node at last node 
         // Return the list by head 
         
+        Node newNode = new Node(data);
+                
+        if(list.head == null) {
+            list.head = newNode;
+        } else {
+               Node traverser = list.head;
+               
+               while(traverser.next != null) {
+               traverser = traverser.next;
+               }
+             traverser.next = newNode;
+       } 
+        return list;
     } 
   
     // Method to print the LinkedList. 
@@ -45,6 +66,13 @@ public class LinkedList {
             // Print the data at current node 
        
             // Go to next node 
+            Node traverser = list.head;
+             
+            while(traverser.next != null) {
+                System.out.println(traverser.data);
+                traverser = traverser.next;
+            }
+            System.out.println(traverser.data);
     } 
    
     // Driver code 
