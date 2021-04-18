@@ -1,6 +1,6 @@
 import java.util.LinkedList; 
 import java.util.Queue; 
-public class GFG { 
+ class GFG { 
        
     /* A binary tree node has key, pointer to  
     left child and a pointer to right child */
@@ -34,7 +34,30 @@ public class GFG {
     { 
 
         // Do level order traversal until we find 
-        // an empty place and add the node.  
+        // an empty place and add the node.
+        Queue<Node> Q = new LinkedList<>();
+        if(temp != null) Q.add(temp);
+        while(!Q.isEmpty())
+        {
+                Node temp1 = Q.poll();
+                if(temp1.left != null) 
+                {
+                   Q.add(temp1.left);
+                }
+                else{
+                    temp1.left = new Node(key);
+                    break;
+                }
+                if(temp1.right != null)
+                {
+                    Q.add(temp1.right);
+                } 
+                else
+                {
+                    temp1.right = new Node(key);
+                    break;
+                }
+        } 
     } 
        
     // Driver code 
