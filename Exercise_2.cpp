@@ -3,9 +3,9 @@ using namespace std;
   
 // A structure to represent a stack 
 class StackNode { 
-public: 
-    int data; 
-    StackNode* next; 
+    public: 
+        int data; 
+        StackNode* next; 
 }; 
   
 StackNode* newNode(int data) 
@@ -18,22 +18,45 @@ StackNode* newNode(int data)
   
 int isEmpty(StackNode* root) 
 { 
-    //Your code here 
+    //Your code here
+    if (root!= nullptr)
+    {
+        return true;
+    }
+    return false;
+
 } 
   
 void push(StackNode** root, int data) 
 { 
-    //Your code here 
+    //Your code here
+   StackNode* temp = newNode(data);
+   temp->data = data;
+   temp->next = *root;
+   *root =temp; 
+
 } 
   
 int pop(StackNode** root) 
 { 
-    //Your code here 
+    //Your code here
+     int temp = (*root)->data;
+     if(root==nullptr) return false;
+     StackNode* temp_root;
+    temp_root= *root;
+     *root = (*root)->next;
+     delete temp_root;
+     return temp;
 } 
   
 int peek(StackNode* root) 
 { 
-    //Your code here 
+    //Your code here
+    if(root!=nullptr){
+        int temp = root->data;
+        return temp;  
+    } 
+    return false;
 } 
   
 int main() 

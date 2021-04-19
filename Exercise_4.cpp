@@ -7,20 +7,26 @@ using namespace std;
 and a pointer to right child */
 struct Node { 
     int key; 
-    struct Node* left, *right; 
+    Node* left, *right; 
 }; 
   
 /* function to create a new node of tree and r 
    eturns pointer */
-struct Node* newNode(int key) 
+Node* newNode(int key) 
 { 
     //Your code here
+    Node* new_node = new Node();
+    
+    new_node->key = key;
+    new_node->left= nullptr;
+    new_node->right= nullptr;
+    return new_node;
 }; 
   
 /* Inorder traversal of a binary tree*/
-void inorder(struct Node* temp) 
+void inorder(Node* temp) 
 { 
-    if (!temp) 
+    if (temp==nullptr) 
         return; 
   
     inorder(temp->left); 
@@ -29,13 +35,46 @@ void inorder(struct Node* temp)
 } 
   
 /*function to insert element in binary tree */
-void insert(struct Node* temp, int key) 
+void insert(Node* root, int key) 
 { 
   
     // Do level order traversal until we find 
     // an empty place.  
     
     //Your code here
+    if (root==nullptr)
+    {
+        /* code */
+        root= newNode(key);
+        //return root;
+    }
+
+    queue<Node*> q;
+    q.push(root);
+    while(!q.empty()){
+        Node * temp = q.front();
+        q.pop();
+        if (temp->left !=nullptr)
+        {
+           q.push(temp->left);
+        }
+        else{
+            temp->left = newNode(key);
+            return; 
+        }
+        if (temp->right!= nullptr)
+        {
+           q.push(temp->right);
+        }
+        else
+        {
+            temp->right= newNode(key);
+            return;
+        }
+        
+        
+    }
+    
 } 
   
 // Driver code 
