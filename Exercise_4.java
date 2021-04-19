@@ -1,5 +1,8 @@
-import java.util.LinkedList; 
+//Time Complexity worst case O(n)
+package Default;
 import java.util.Queue; 
+import java.util.LinkedList;
+
 public class GFG { 
        
     /* A binary tree node has key, pointer to  
@@ -34,7 +37,41 @@ public class GFG {
     { 
 
         // Do level order traversal until we find 
-        // an empty place and add the node.  
+        // an empty place and add the node.
+    	
+    	
+    	if(temp == null) {
+    		
+    		temp = new Node(key);
+    		return;
+    	}
+    	
+    	Queue<Node> q = new LinkedList<Node>();
+    	q.add(temp);
+    	
+    	while(!q.isEmpty()) {
+    		
+    		Node temp1 = q.remove();
+    		
+    		if(temp1.left == null) {
+    			
+    		Node temp3 = new Node(key);
+    		temp1.left = temp3;
+    		break;
+    			
+    		}
+    		else q.add(temp1.left);
+    		
+    		if(temp1.right == null) {
+    			
+        		Node temp3 = new Node(key);
+        		temp1.right = temp3;
+        		break;
+        			
+        		}
+        		else q.add(temp1.right);
+    	}
+    	
     } 
        
     // Driver code 
