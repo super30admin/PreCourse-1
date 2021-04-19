@@ -28,6 +28,7 @@ class Stack {
         if(top>=MAX-1)
         {
             System.out.println("Stack Overflow");
+            return false;
         }
         //Write your code here
         else
