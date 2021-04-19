@@ -1,6 +1,12 @@
+// Time Complexity :    O(n)
+// Space Complexity :   O(n)
+// Did this code successfully run on Leetcode : Not found on leetcode
+// Any problem you faced while coding this : No
+
+
 import java.util.LinkedList; 
 import java.util.Queue; 
-public class GFG { 
+public class Exercise_4 { 
        
     /* A binary tree node has key, pointer to  
     left child and a pointer to right child */
@@ -35,6 +41,33 @@ public class GFG {
 
         // Do level order traversal until we find 
         // an empty place and add the node.  
+        Queue<Node> queue=new LinkedList<>();
+        if(temp==null){
+            Node newnode = new Node(key);
+            temp=newnode;
+            return;
+        }
+        queue.add(temp);
+        while(!queue.isEmpty()){              
+
+            Node curr =queue.peek();         
+            queue.remove(curr);
+            if(curr.left==null){           
+
+                Node newNode = new Node(key);
+                curr.left=newNode;
+                return;
+            }
+            queue.add(curr.left);        
+
+            if(curr.right==null) {     
+
+                Node newNode = new Node(key);
+                curr.right = newNode;
+                return;
+            }
+            queue.add(curr.right);      
+        }
     } 
        
     // Driver code 
