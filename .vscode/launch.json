@@ -5,6 +5,20 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "Launch LinkedList",
+            "request": "launch",
+            "mainClass": "LinkedList",
+            "projectName": "PreCourse-1_acefd54a"
+        },
+        {
+            "type": "java",
+            "name": "Launch StackAsLinkedList",
+            "request": "launch",
+            "mainClass": "StackAsLinkedList",
+            "projectName": "PreCourse-1_acefd54a"
+        },
+        {
             "type": "pwa-chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
