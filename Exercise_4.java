@@ -1,6 +1,12 @@
 import java.util.LinkedList; 
 import java.util.Queue; 
-public class GFG { 
+
+// Time Complexity : O(n) 
+// Space Complexity :  O(n), n-> no of elements in tree
+// Any problem you faced while coding this : could not think of using queues for level order traversal
+
+
+class GFG { 
        
     /* A binary tree node has key, pointer to  
     left child and a pointer to right child */
@@ -32,9 +38,58 @@ public class GFG {
     /*function to insert element in binary tree */
     static void insert(Node temp, int key) 
     { 
+        if (temp == null) {
+            root = new Node(key);
+            return;
+        }
+        Queue<Node> q = new LinkedList<Node>();
+        q.add(temp); //add top root first, to enter loop
+
+        while (!q.isEmpty()) {
+            temp = q.peek(); 
+            q.remove(); // dequeue 
+ 
+            if (temp.left == null) {
+                temp.left = new Node(key); // if child not present add node and break
+                break;
+            }
+            else
+                q.add(temp.left); // enqueue if child present
+ 
+            if (temp.right == null) {
+                temp.right = new Node(key); // if child not present add node and break
+                break;
+            }
+            else
+                q.add(temp.right); // enqueue if child present
+        }
 
         // Do level order traversal until we find 
         // an empty place and add the node.  
+        
+      /*  if(temp.key<key)
+        {
+            if(temp.right!=null)
+            {
+                insert(temp.right,key);
+            }
+            else{
+                temp.right= new Node(key);
+                return;
+            }
+            
+        }
+        else if(temp.key>key){
+
+             if(temp.left!=null)
+            {
+                insert(temp.left,key);
+            }
+            else{
+                temp.left= new Node(key);
+                return;
+            }
+        } // code to insert in a bst*/
     } 
        
     // Driver code 
