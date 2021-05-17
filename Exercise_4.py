@@ -1,3 +1,9 @@
+'''===== Submission Details ======
+Student Name: Pavan Kumar K. N.
+Email       : pavan1011@gmail.com
+S30 SlackID : RN32MAY2021
+================================='''
+
 # Python program to insert element in binary tree  
 class newNode():  
   
@@ -7,13 +13,28 @@ class newNode():
         self.right = None
           
 """ Inorder traversal of a binary tree"""
-def inorder(temp): 
-  
+def inorder(temp):
+    if temp:
+        inorder(temp.left);
+        print(temp.key)
+        inorder(temp.right); 
     
   
   
 """function to insert element in binary tree """
-def insert(temp,key): 
+def insert(temp,key):
+    if temp is None:
+        return newNode(key) 
+    else:
+        if key == temp.key:
+            return temp
+        elif key < temp.key:
+            insert(temp.left, key)
+        else:
+            insert(temp.right, key)
+
+    return temp
+
   
     
   
