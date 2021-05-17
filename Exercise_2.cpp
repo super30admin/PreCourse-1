@@ -19,21 +19,42 @@ StackNode* newNode(int data)
 int isEmpty(StackNode* root) 
 { 
     //Your code here 
+    if(root == NULL) {
+        return 1;
+    }
+    return 0;
 } 
   
 void push(StackNode** root, int data) 
 { 
     //Your code here 
+    StackNode* temp = newNode(data);
+    temp->next = *root;
+    *root = temp;
 } 
   
 int pop(StackNode** root) 
 { 
     //Your code here 
+    int retVal = -1; //In case stack is empty
+    StackNode* temp;
+    if(*root != NULL) {
+        temp = *root;
+        retVal = temp->data;
+        *root = (*root)->next;
+        free(temp);
+    }
+    return retVal;
 } 
   
 int peek(StackNode* root) 
 { 
     //Your code here 
+    int retVal = -1; //In case stack is empty
+    if(root != NULL) {
+        retVal = root->data;
+    }
+    return retVal;
 } 
   
 int main() 
