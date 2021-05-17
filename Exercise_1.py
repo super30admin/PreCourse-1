@@ -21,6 +21,7 @@ class myStack:
      def show(self):
           if self.size() == 0:
                print("Show: Empty Stack")
+          # for printing stack from top to bottom
           return self.arr[::-1]
          
 
