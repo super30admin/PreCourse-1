@@ -3,7 +3,7 @@ class myStack:
           self.arr = []
          
      def isEmpty(self):
-          return len(self.size()) == 0
+          return self.size() == 0
      def push(self, item):
          self.arr.append(item)
      def pop(self):
@@ -19,7 +19,7 @@ class myStack:
           return len(self.arr)
          
      def show(self):
-          if self.size == 0:
+          if self.size() == 0:
                print("Show: Empty Stack")
           return self.arr[::-1]
          
