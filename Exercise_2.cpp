@@ -1,3 +1,9 @@
+/*===== Submission Details ======
+Student Name: Pavan Kumar K. N.
+Email       : pavan1011@gmail.com
+S30 SlackID : RN32MAY2021
+=================================
+*/
 #include <bits/stdc++.h> 
 using namespace std; 
   
@@ -18,22 +24,51 @@ StackNode* newNode(int data)
   
 int isEmpty(StackNode* root) 
 { 
-    //Your code here 
+    return !root; 
 } 
   
 void push(StackNode** root, int data) 
 { 
-    //Your code here 
+    StackNode* stackNode = new StackNode();
+    stackNode->data = data;
+    stackNode->next = *root;
+    *root = stackNode;
+    cout << "Pushed " << data << " to stack. \n";
 } 
   
 int pop(StackNode** root) 
-{ 
-    //Your code here 
+{
+    if (isEmpty(*root))
+    {
+        cout<<"Stack Underflow! Cannot pop from stack.\n";
+        return 0;
+    }
+    else
+    {
+        StackNode* tempNode = *root;
+        *root = (*root)->next;
+
+        int poppedData = tempNode->data;
+        free(tempNode);
+
+        return poppedData;
+
+    }
+
 } 
   
 int peek(StackNode* root) 
 { 
-    //Your code here 
+    if (isEmpty(root))
+    {
+        cout<<"Stack Underflow! Cannot pop from stack.\n";
+        return 0;
+    }
+    else
+    {
+        return root->data;
+    }
+
 } 
   
 int main() 
@@ -49,4 +84,4 @@ int main()
     cout << "Top element is " << peek(root) << endl; 
   
     return 0; 
-} 
+}
