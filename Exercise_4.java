@@ -1,4 +1,4 @@
-// Time Complexity : O(h)
+// Time Complexity : O(h) where h is the height of the tree
 // Space Complexity : O(1)
 
 import java.util.LinkedList; 
