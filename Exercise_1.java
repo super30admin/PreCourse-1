@@ -54,9 +54,8 @@ class Stack {
         return retVal;
     }
 }
-/*
-// Driver code
-class Main {
+
+class Exercise_1 {
     public static void main(String args[])
     {
         Stack s = new Stack();
@@ -66,4 +65,3 @@ class Main {
         System.out.println(s.pop() + " Popped from stack");
     }
 }
- */
