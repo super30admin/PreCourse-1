@@ -1,3 +1,6 @@
+// Time Complexity : O(1)
+// Space Complexity : O(1)
+
 class Stack { 
     static final int MAX = 1000; 
     int top; 
@@ -34,7 +37,7 @@ class Stack {
             System.out.println("Stack Underflow");
             return 0;
         } else {
-            return a[top];
+            return a[top--];
         }
     } 
   
