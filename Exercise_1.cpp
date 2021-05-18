@@ -11,7 +11,7 @@ public:
     int a[MAX]; // Maximum size of Stack 
   
     Stack() { //Constructor here
-        top=0;
+        top = 0;
     } 
     bool push(int x); 
     int pop(); 
@@ -21,8 +21,6 @@ public:
   
 bool Stack::push(int x) 
 { 
-    //Your code here
-    //Check Stack overflow as well
     bool stat = false;
     if(top < MAX) {
         a[top] = x;
@@ -35,8 +33,6 @@ bool Stack::push(int x)
   
 int Stack::pop() 
 { 
-    //Your code here
-    //Check Stack Underflow as well 
     int retVal = -1; //Assumption is that -1 will be returned incase of underflow
     if(top != 0) {
         top--;
@@ -46,8 +42,6 @@ int Stack::pop()
 } 
 int Stack::peek() 
 { 
-    //Your code here
-    //Check empty condition too
     int retVal = -1; //Assumption is that -1 will be returned incase of empty stack
     if(top != -1) {
         retVal = a[top - 1];
