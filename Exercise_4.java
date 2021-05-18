@@ -1,5 +1,7 @@
-import java.util.LinkedList; 
-import java.util.Queue; 
+// Time Complexity : The TC for insertion operation is O(h) where h is the height of the binary tree
+// Space Complexity : The SC for insertion is O(1)
+import java.util.LinkedList;
+import java.util.Queue;
 public class GFG { 
        
     /* A binary tree node has key, pointer to  

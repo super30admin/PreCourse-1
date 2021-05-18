@@ -1,4 +1,6 @@
-public class StackAsLinkedList { 
+//Time Complexity : push(), pop(), isEmpty(), peek() have time complexity of O(1).
+//Space Complexity : push(), pop(), isEmpty(), peek() have space complexity of O(1).
+public class StackAsLinkedList {
   
     StackNode root; 
   

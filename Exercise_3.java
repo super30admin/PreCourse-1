@@ -1,5 +1,7 @@
 import java.io.*; 
-  
+
+//Time Complexity : For insertion operation the TC is O(n)
+//Space Complexity :  For insertion operation the Space Complexity is O(1)
 // Java program to implement 
 // a Singly Linked List 
 public class LinkedList { 

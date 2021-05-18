@@ -1,4 +1,7 @@
-class Stack { 
+//Time Complexity : push(), pop(), isEmpty(), peek() have time complexity of O(1).
+//Space Complexity : push(), pop(), isEmpty(), peek() have space complexity of O(1).
+
+class Stack {
     static final int MAX = 1000; 
     int top; 
     int a[] = new int[MAX]; // Maximum size of Stack 
