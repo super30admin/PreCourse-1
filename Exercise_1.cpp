@@ -1,3 +1,4 @@
+#include<iostream>
 #include <bits/stdc++.h> 
   
 using namespace std; 
@@ -10,7 +11,9 @@ class Stack {
 public: 
     int a[MAX]; // Maximum size of Stack 
   
-    Stack() { //Constructor here } 
+    Stack() { //Constructor here 
+        top = -1;
+    } 
     bool push(int x); 
     int pop(); 
     int peek(); 
@@ -19,24 +22,63 @@ public:
   
 bool Stack::push(int x) 
 { 
-    //Your code here
-    //Check Stack overflow as well
+    //Stack Full condition
+    if(top == MAX-1)
+    {
+        cout << "Stack Full!" << endl;
+
+        return false;
+    }
+
+    //Increment top and insert value x
+    top++;
+
+    a[top] = x;
+
+    return true;
 } 
   
 int Stack::pop() 
 { 
-    //Your code here
-    //Check Stack Underflow as well 
+    if(top == -1)
+    {
+        cout << "Stack Empty!" << endl;
+    }
+
+    //Get top value and decrement top
+
+    int ret_num = a[top];
+
+    top--;
+
+    return ret_num;
 } 
 int Stack::peek() 
 { 
-    //Your code here
-    //Check empty condition too
+    if(top == -1)
+    {
+        cout << "Empty Stack!" << endl;
+        return -1;
+    }
+    else
+    {
+        //Return the Top-most element
+        return a[top];
+    }
 } 
   
 bool Stack::isEmpty() 
 { 
-    //Your code here 
+    //Empty Stack condition
+    if(top == -1)
+    {
+        return true;
+    }
+    //Non-Empty Stack condition
+    else
+    {
+        return false;
+    }
 } 
   
 // Driver program to test above functions 
@@ -50,3 +92,11 @@ int main()
   
     return 0; 
 } 
+
+/**
+ * @brief Comments on Space and Time Complexity
+ * Time - An Array will have O(1) access time for all operations.
+ * 
+ * Space - The Space occupied will depend on the Max number of elements.
+ * 
+ */
