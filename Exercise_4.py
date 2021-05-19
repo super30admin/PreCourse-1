@@ -8,6 +8,10 @@ class newNode():
           
 """ Inorder traversal of a binary tree"""
 def inorder(temp):
+    '''
+    Time Complexity: O(n)
+    Space Complexity: O(n)
+    '''
     stack = []
     res = []
     curr = root
@@ -27,7 +31,11 @@ def inorder(temp):
     return res
   
 """function to insert element in binary tree """
-def insert(temp,key): 
+def insert(temp,key):
+    '''
+    Time Complexity: O(n)
+    Space Complexity: O(1)
+    '''
     # base case
     if not temp: return newNode(key)
 

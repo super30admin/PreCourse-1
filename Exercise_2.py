@@ -8,7 +8,11 @@ class Stack:
         self.head = None
 
     def push(self, data):
-        ''' pushes a node onto the list'''
+        '''
+        pushes a node onto the list
+        Time Complexity: O(1)
+        Space Complexity: O(1)
+        '''
         if self.head == None:
             self.head = Node(data)
         else:
@@ -17,7 +21,11 @@ class Stack:
             self.head = next_node
 
     def pop(self):
-        ''' pops the node and returns data value of popped node'''
+        '''
+        pops the node and returns data value of popped node
+        Time Complexity: O(1)
+        Space Complexity: O(1)
+        '''
         if self.head is None:
             return None
         else:
