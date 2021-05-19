@@ -1,7 +1,7 @@
 import java.util.LinkedList; 
 import java.util.Queue; 
 public class GFG { 
-    
+       
     /* A binary tree node has key, pointer to  
     left child and a pointer to right child */
     static class Node { 
@@ -32,7 +32,6 @@ public class GFG {
     /*function to insert element in binary tree */
     static void insert(Node temp, int key) 
     { 
-
         if (temp == null) {
             root = new Node(key);
             return;
