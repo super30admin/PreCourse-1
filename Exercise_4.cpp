@@ -1,3 +1,5 @@
+//Time Complexity: O(n) for inorder traversal as we traverse only once over all nodes, O(n) for inserting as we need to traverse the queue, O(1) for newNode
+//Space Complexity: O(h) where h is the height of the tree as those many call stacks will be made, O(n) for insertion if we consider the queue 
 #include <iostream> 
 #include <queue> 
 using namespace std; 
@@ -14,7 +16,11 @@ struct Node {
    eturns pointer */
 struct Node* newNode(int key) 
 { 
-    //Your code here
+    struct Node *new_node = (struct Node *)malloc(sizeof(struct Node*));
+    new_node->key = key;
+    new_node->left = NULL;
+    new_node->right = NULL;
+    return new_node;
 }; 
   
 /* Inorder traversal of a binary tree*/
@@ -30,12 +36,36 @@ void inorder(struct Node* temp)
   
 /*function to insert element in binary tree */
 void insert(struct Node* temp, int key) 
-{ 
-  
-    // Do level order traversal until we find 
-    // an empty place.  
-    
-    //Your code here
+{   
+    if(temp == NULL){
+        temp = newNode(key);
+    }
+    else{
+        queue<Node*> q1;
+        q1.push(temp);
+
+        while(!q1.empty()){
+        // Do level order traversal until we find 
+        // an empty place.
+            struct Node *ptr = q1.front();
+            q1.pop();
+            if(ptr->left){
+            q1.push(ptr->left);
+            }  
+            else{
+                ptr->left = newNode(key);
+                break;
+            }
+
+            if(ptr->right){
+                q1.push(ptr->right);
+            }
+            else{
+                ptr->right = newNode(key);
+                break;
+            }
+        }
+    }
 } 
   
 // Driver code 
