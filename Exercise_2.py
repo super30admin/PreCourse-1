@@ -10,12 +10,14 @@ class Stack:
     def push(self, data):
         if self.head is None :
             self.head = Node(data)
+
         else:
 
             temp = Node(data)
             #temp.data = data
             temp.next = self.head
             self.head = temp
+
         
     def pop(self):
         if self.head is None:
@@ -24,6 +26,7 @@ class Stack:
         else :
             temp = self.head.data
             self.head = self.head.next
+
             return temp
         
 a_stack = Stack()
