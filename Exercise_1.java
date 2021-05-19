@@ -6,28 +6,59 @@ class Stack {
     boolean isEmpty() 
     { 
         //Write your code here 
+        if(top == -1) 
+            return true;
+        return false;
     } 
 
     Stack() 
     { 
         //Initialize your constructor 
+        top = -1;
     } 
   
     boolean push(int x) 
     { 
         //Check for stack Overflow
         //Write your code here
+        if(top < MAX-1){
+            top++;
+            a[top] = x;
+            return true;
+        }
+        return false;
     } 
   
     int pop() 
     { 
         //If empty return 0 and print " Stack Underflow"
         //Write your code here
-    } 
+        if(isEmpty()){
+            System.out.println("Stack Underflow");
+            return 0;
+        } else {
+            int element = a[0];
+            shiftElements();
+            return element;
+        }  
+    }
+    
+    void shiftElements(){
+        for(int i=0; i<top; i++){
+            a[i] = a[i+1];
+        } 
+        a[top] = -1;
+        top--;
+    }
   
     int peek() 
     { 
         //Write your code here
+        if(isEmpty()) {
+            System.out.println("Stack empty");
+            return 0;
+        };
+        return a[top];
     } 
 } 
   
