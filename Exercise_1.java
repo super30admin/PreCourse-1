@@ -1,11 +1,11 @@
 class Stack { 
     static final int MAX = 1000; 
-    int top; 
+    int top = -1; 
     int a[] = new int[MAX]; // Maximum size of Stack 
   
     boolean isEmpty() 
     { 
-        //Write your code here 
+        return (top == -1);
     } 
 
     Stack() 
@@ -15,19 +15,37 @@ class Stack {
   
     boolean push(int x) 
     { 
-        //Check for stack Overflow
-        //Write your code here
+        if(!(MAX - 1 == top)){
+            top++;
+            a[top] = x;
+            return true;
+        }
+        else { 
+            System.out.println("Stack Overflow!");
+            return false;
+        } 
+            
     } 
   
     int pop() 
     { 
-        //If empty return 0 and print " Stack Underflow"
-        //Write your code here
+        if(!isEmpty()){
+            int topIndex = top;
+            top--;
+            return a[topIndex];
+        }
+        else {
+            System.out.println("Stack underflow!");
+            return 0;
+        }
     } 
   
     int peek() 
     { 
-        //Write your code here
+        if(!isEmpty())
+            return a[top];
+        else
+            return -1; 
     } 
 } 
   
