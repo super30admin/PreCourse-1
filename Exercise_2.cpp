@@ -67,7 +67,7 @@ int peek(StackNode* root)
     else{
         cout<<"stack is empty\n";
         exit(1);
-        //return -1;
+      //I can return -1, but didn't make sense if values in stack can be negative
     }
 } 
   
