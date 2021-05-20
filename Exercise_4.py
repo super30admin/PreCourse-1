@@ -26,17 +26,19 @@ def insert(temp,key):
         temp = q.popleft()
         if not temp.left:
             temp.left = newNode(key)
+            break
         else:
             q.append(temp.left)
         if not temp.right:
             temp.right = newNode(key)
+            break
         else:
             q.append(temp.right)
-  
-    
-  
-       
-# Driver code  
+
+
+
+
+# Driver code
 if __name__ == '__main__': 
     root = newNode(10)  
     root.left = newNode(11)  
@@ -55,8 +57,14 @@ if __name__ == '__main__':
     inorder(root)  
   
     key = 12
-    insert(root, key)  
-  
-    print()  
+    insert(root, key)
+
+    #     10
+    #   /    \
+    #  11     9
+    #  / \    / \
+    # 7  12  15  8
+
+    print()
     print("Inorder traversal after insertion:", end = " ") 
     inorder(root) 
