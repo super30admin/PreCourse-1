@@ -1,3 +1,4 @@
+//Could not do this, tried googling but just not sure how to do it
 public class StackAsLinkedList { 
   
     StackNode root; 
@@ -7,8 +8,10 @@ public class StackAsLinkedList {
         StackNode next; 
   
         StackNode(int data) 
-        { 
+        {        	
             //Constructor here 
+        	root.data = data;
+        	root.next = null;
         } 
     } 
     
@@ -16,11 +19,21 @@ public class StackAsLinkedList {
     public boolean isEmpty() 
     { 
         //Write your code here for the condition if stack is empty. 
+    	return next == null;
     } 
   
     public void push(int data) 
     { 
         //Write code to push data to the stack. 
+    	StackNode node = new StackNode();
+    	if (node == null)
+    	{
+    		System.out.println("Stack is full");
+    		return;
+    	}
+    	
+    	node.data = data;
+    	node.next = root;
     } 
   
     public int pop() 
