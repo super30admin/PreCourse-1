@@ -15,6 +15,7 @@ struct Node {
 struct Node* newNode(int key) 
 { 
     //Your code here
+  //this one was a pain considering level order traversal
     Node* newNode = new Node();
     if (!newNode) {
         cout << "Error\n";
