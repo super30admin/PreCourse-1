@@ -1,3 +1,5 @@
+//had to google some things but was able to figure out
+
 import java.io.*; 
   
 // Java program to implement 
@@ -18,6 +20,8 @@ public class LinkedList {
         Node(int d) 
         { 
             //Write your code here 
+        	data = d;
+        	next = null;
         } 
     } 
   
@@ -25,6 +29,8 @@ public class LinkedList {
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data 
+    	Node newNode = new Node(data);
+    	newNode.next = null;
    
         // If the Linked List is empty, 
         // then make the new node as head 
@@ -34,7 +40,20 @@ public class LinkedList {
 
             // Insert the new_node at last node 
         // Return the list by head 
+    	
+    	
+    	if (list.head == null) {
+    		list.head = newNode;
+    	} else {
+    		Node last = list.head;
+    		while (last.next != null) {
+    			last = last.next;
+    		}
+    		last.next = newNode;
+    	}
         
+    	
+    	return list;
     } 
   
     // Method to print the LinkedList. 
@@ -44,7 +63,14 @@ public class LinkedList {
    
             // Print the data at current node 
        
-            // Go to next node 
+            // Go to next node '
+    	System.out.println("The linkedlist contains --> ");
+    	Node tracker = list.head;    	
+    	while (tracker != null) {
+    		System.out.println(tracker.data + ", ");
+    		tracker = tracker.next;
+    	}
+    	
     } 
    
     // Driver code 
