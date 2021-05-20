@@ -31,7 +31,22 @@ public class GFG {
        
     /*function to insert element in binary tree */
     static void insert(Node temp, int key) 
-    { 
+    {
+
+        if(temp.left == null){
+            temp.left.key = key;
+        }
+        else if(temp.right == null){
+            temp.right.key = key;
+        }
+        else{
+            insert(temp.left,key);
+            insert(temp.right,key);
+        }
+        /* For this particular task I could not think of  the optimal solution and the approach for it, after doing some research I see that using queue is one way for it,
+        Because I did not want to blindly look at it and implement it here I will take some time to learn more about trees and then understand it properly
+         */
+
 
         // Do level order traversal until we find 
         // an empty place and add the node.  
