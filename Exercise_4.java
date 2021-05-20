@@ -34,8 +34,46 @@ public class GFG {
     { 
 
         // Do level order traversal until we find 
-        // an empty place and add the node.  
-    } 
+        // an empty place and add the node. 
+        
+        if(root == null)
+        {
+            root = new Node(key);
+            
+        }
+        else
+        { 
+            //Creating a queue to perform level order traversal
+            
+            Queue<Node> queue = new LinkedList<Node>();
+             queue.add(temp);
+ 
+        // Checking whether left or right child is empty and then insert node
+        // Time complexity O(n) - since we are traversing the queue 
+         // Space complexity O(n) - creating a seperate queue
+        while (!queue.isEmpty()) {
+            temp = queue.peek();
+            queue.remove();
+
+         // Checking whether left node is null. If yes then insert the node there
+            if (temp.left == null) {
+
+                temp.left = new Node(key);
+                break;
+            }
+            else
+                queue.add(temp.left);
+        // Checking whether right node is null. If yes then insert the node there
+            if (temp.right == null) {
+                temp.right = new Node(key);
+                break;
+            }
+            else
+                queue.add(temp.right);
+        }
+    }
+        }
+    
        
     // Driver code 
     public static void main(String args[]) 
