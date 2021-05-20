@@ -6,7 +6,6 @@ using namespace std;
   
 class Stack { 
     int top; 
-  //could be count variable, don't need top as a value anyways (ala top as is, just stack[top])
 public: 
     int a[MAX]; // Maximum size of Stack 
   
