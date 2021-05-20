@@ -14,6 +14,11 @@ struct Node {
    eturns pointer */
 struct Node* newNode(int key) 
 { 
+    Node *newN = new Node();
+    newN->key = key;
+    newN->left = NULL;
+    newN->right = NULL;
+    return newN;
     //Your code here
 }; 
   
@@ -36,6 +41,26 @@ void insert(struct Node* temp, int key)
     // an empty place.  
     
     //Your code here
+    struct Node* newN = newNode(key);
+    queue<struct Node *> tempQ;
+    tempQ.push(temp);
+    while(!tempQ.empty()){
+        struct Node *currN = tempQ.front();
+        if(currN->left!=NULL){
+            tempQ.push(currN->left);
+        } else {
+            currN->left = newN;
+            return;
+        }
+
+        if(currN->right!=NULL){
+            tempQ.push(currN->right);
+        } else {
+            currN->right = newN;
+            return;
+        }
+        tempQ.pop();
+    }
 } 
   
 // Driver code 
