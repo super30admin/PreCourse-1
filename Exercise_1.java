@@ -1,33 +1,64 @@
-class Stack { 
+// Time Complexity : O(1) for push and pop
+// Space Complexity : O(n) where n is the capacity of stack.
+
+class Stack {
     static final int MAX = 1000; 
     int top; 
     int a[] = new int[MAX]; // Maximum size of Stack 
   
     boolean isEmpty() 
     { 
-        //Write your code here 
+        return top==-1;
     } 
 
     Stack() 
-    { 
-        //Initialize your constructor 
+    {
+        top=-1;
+        a=new int[MAX];
+
     } 
   
     boolean push(int x) 
-    { 
-        //Check for stack Overflow
-        //Write your code here
+    {
+        if(top < MAX-1)
+        {
+            a[++top]=x;
+            return true;
+        }
+        else
+        {
+            System.out.println("Stack overflow");
+            return false;
+        }
     } 
   
     int pop() 
-    { 
-        //If empty return 0 and print " Stack Underflow"
-        //Write your code here
+    {
+        if(top==-1)
+        {
+            System.out.println("Stack underflow");
+            return 0;
+        }
+        else
+        {
+            int element=a[top];
+            a[top--]=0;
+
+            return element;
+        }
+
     } 
   
     int peek() 
-    { 
-        //Write your code here
+    {
+        if(top!=-1)
+            return a[top];
+        else
+        {
+            System.out.println("Stack Underflow");
+            return 0;
+        }
+
     } 
 } 
   
