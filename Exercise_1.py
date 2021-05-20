@@ -13,7 +13,7 @@ class myStack:
          return len(self.list)
      def show(self):
           return self.list
-         
+
 
 if __name__ == '__main__':
      s = myStack()
