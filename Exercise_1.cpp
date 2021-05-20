@@ -10,7 +10,10 @@ class Stack {
 public: 
     int a[MAX]; // Maximum size of Stack 
   
-    Stack() { //Constructor here } 
+    Stack() { //Constructor here 
+        top = -1;
+    } 
+
     bool push(int x); 
     int pop(); 
     int peek(); 
@@ -19,24 +22,37 @@ public:
   
 bool Stack::push(int x) 
 { 
-    //Your code here
-    //Check Stack overflow as well
+    if(top < MAX-1)
+    {
+        a[++top] = x;
+        return true;
+    }
+    cout << "Max stack limit reached, failed to add" << endl;
+    return false;
 } 
   
 int Stack::pop() 
 { 
-    //Your code here
-    //Check Stack Underflow as well 
-} 
+    int ret = 0;
+    if(!Stack::isEmpty())
+    { 
+        ret = a[top];
+        top--;
+    }
+    return ret;
+}
+
 int Stack::peek() 
 { 
-    //Your code here
-    //Check empty condition too
+    if(!Stack::isEmpty()){
+        return a[top];
+    }
+    return 0;
 } 
   
 bool Stack::isEmpty() 
 { 
-    //Your code here 
+  return (top < 0);
 } 
   
 // Driver program to test above functions 
