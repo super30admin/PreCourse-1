@@ -1,3 +1,8 @@
+// Time Complexity : O(n) for doing level order traversal and finding empty node 
+// Space Complexity : O(n) for storing the tree in a separate queue
+// Did this code successfully run on Leetcode : No
+// Any problem you faced while coding this : No
+
 import java.util.LinkedList; 
 import java.util.Queue; 
 public class GFG { 
@@ -32,9 +37,35 @@ public class GFG {
     /*function to insert element in binary tree */
     static void insert(Node temp, int key) 
     { 
-
         // Do level order traversal until we find 
         // an empty place and add the node.  
+        Node tmpNode = temp;
+        if(tmpNode == null){
+            temp = new Node(key);
+        }
+        else{
+            Queue<Node> q = new LinkedList<>();
+            q.add(tmpNode);
+            while(!q.isEmpty()){
+                Node current = q.remove();
+                if(current.left == null){
+                    current.left = new Node(key);
+                    break;
+                }
+                else{
+                    q.add(current.left);
+                }
+
+                if(current.right == null){
+                    current.right = new Node(key);
+                    break;
+                }
+                else{
+                    q.add(current.right);
+                }
+            }
+        }
+       
     } 
        
     // Driver code 

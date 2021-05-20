@@ -1,3 +1,13 @@
+// Time Complexity : O(1)
+// Space Complexity : O(1)
+// Did this code successfully run on Leetcode : No
+// Any problem you faced while coding this : No
+
+/* Explanation: Store Stack element in a array by keeping track of last index using a variable (top here)
+   To push new element - increment top and place the element in new index
+   To pop - As last inserted would be stored in top, decrement top index or set array element to 0
+   To peek - return array element at index top */
+
 class Stack { 
     static final int MAX = 1000; 
     int top; 
@@ -5,29 +15,49 @@ class Stack {
   
     boolean isEmpty() 
     { 
-        //Write your code here 
+        return (top == -1);
     } 
 
     Stack() 
     { 
-        //Initialize your constructor 
+        top = -1;
     } 
   
     boolean push(int x) 
     { 
-        //Check for stack Overflow
-        //Write your code here
+        if(MAX == top+1)
+        {
+            System.out.println(" Stack Overflow");
+            return false;
+        }
+        else{
+
+            a[++top] = x;
+            return true; 
+
+        }
     } 
   
     int pop() 
     { 
-        //If empty return 0 and print " Stack Underflow"
-        //Write your code here
+        if(isEmpty()){
+            System.out.println("Stack Underflow");
+            return 0;
+        }
+        else{
+            return a[top--];
+        }
+
     } 
   
     int peek() 
     { 
-        //Write your code here
+        if(isEmpty()){
+            return 0;
+        }
+        else{
+            return a[top];
+        }
     } 
 } 
   
