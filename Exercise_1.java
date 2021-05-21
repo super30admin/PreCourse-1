@@ -1,3 +1,12 @@
+/*
+The time complexity of isEmpty, Push, Peek, Pop Operation in the stack is O(1)
+Space Complexity: O(1)
+
+## Push an element in stack - first check if stack is full (if top > Max size of array), if not then increment top and add new element to that index
+## Pop - Check if array has an element to pop, if yes, then remove the element on last index (by decrementing the top)
+## Peek - Simply return the element on the top index
+## To check if the stack is empty - check if top is -1, which means that stack is empty
+*/
 class Stack { 
     static final int MAX = 1000; 
     int top; 

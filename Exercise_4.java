@@ -1,5 +1,10 @@
+/*
+Time Complexity: O(n)
+Space Complexity: O(n)
+*/
 import java.util.LinkedList; 
 import java.util.Queue; 
+
 class GFG { 
        
     /* A binary tree node has key, pointer to  
@@ -32,7 +37,7 @@ class GFG {
     /*function to insert element in binary tree */
     static void insert(Node temp, int key) 
     { 
-
+        //if the tree is empty, make the new node as root node to start with
         if (temp == null) {
             root = new Node(key);
         } else {
@@ -43,7 +48,8 @@ class GFG {
 
         while (!q.isEmpty()) {
             temp = q.poll(); // get the top element from queue and remove it
-            //visit the node check left and right for empty 
+            
+            //visit the node check left for empty 
             if(temp.left == null) {
                 temp.left = new Node(key);
                 //break so that it doesnt add new node to last level nodes
@@ -52,8 +58,10 @@ class GFG {
                 q.add(temp.left);
             }
 
+            //visit the node check right for empty 
             if (temp.right == null) {
                 temp.right = new Node(key);
+                //break so that it doesnt add new node to last level nodes
                 break;
             } else {
                 q.add(temp.right);

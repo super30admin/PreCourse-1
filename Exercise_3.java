@@ -1,4 +1,6 @@
-import java.io.*; 
+/*
+Time and Space Complexity: O(n)
+*/ 
   
 // Java program to implement 
 // a Singly Linked List 
@@ -33,7 +35,7 @@ class LinkedList {
         // then make the new node as head 
         if (list.head == null) {
             list.head = newNode;
-            return list;
+            return list; // return the list
         }
 
         // Else traverse till the last node 

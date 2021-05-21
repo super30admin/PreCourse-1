@@ -1,3 +1,12 @@
+/*
+The time complexity of isEmpty, Push, Peek, Pop Operation in the stack is O(1)
+Space Complexity: O(1)
+
+## Push an element in stack - first check if stack is empty, if yes add the node as root node, if not then store the current root, replace root to point to new node and point the next of the root to the previous node
+## Pop - Check if stack has an element to pop, if yes, then remove the element on last index then point the root to the next node
+## Peek - Simply return the element on the root.data
+## To check if the stack is empty - check if root is null, which means that stack is empty
+*/
 class StackAsLinkedList { 
   
     StackNode root; 
