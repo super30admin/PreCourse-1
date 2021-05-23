@@ -1,30 +1,95 @@
+
+
 class Node:
-    def __init__(self, data):
-       self.data = data
-       self.next = None
- 
+     
+    
+    def __init__(self,data):
+        self.data = data
+        self.next = None
+     
 class Stack:
+     
+   
     def __init__(self):
-        
-    def push(self, data):
-        
-    def pop(self):
-        
-a_stack = Stack()
-while True:
-    print('push <value>')
-    print('pop')
-    print('quit')
-    do = input('What would you like to do? ').split()
- 
-    operation = do[0].strip().lower()
-    if operation == 'push':
-        a_stack.push(int(do[1]))
-    elif operation == 'pop':
-        popped = a_stack.pop()
-        if popped is None:
-            print('Stack is empty.')
+        self.head = None
+     
+  
+    def isempty(self):
+        if self.head == None:
+            return True
         else:
-            print('Popped value: ', int(popped))
-    elif operation == 'quit':
-        break
+            return False
+     
+   
+    def push(self,data):
+         
+        if self.head == None:
+            self.head=Node(data)
+             
+        else:
+            newnode = Node(data)
+            newnode.next = self.head
+            self.head = newnode
+     
+    
+    def pop(self):
+         
+        if self.isempty():
+            return None
+             
+        else:
+           
+           
+            poppednode = self.head
+            self.head = self.head.next
+            poppednode.next = None
+            return poppednode.data
+     
+   
+    def peek(self):
+         
+        if self.isempty():
+            return None
+             
+        else:
+            return self.head.data
+     
+   
+    def display(self):
+         
+        iternode = self.head
+        if self.isempty():
+            print("Stack Underflow")
+         
+        else:
+             
+            while(iternode != None):
+                 
+                print(iternode.data,"->",end = " ")
+                iternode = iternode.next
+            return
+         
+
+MyStack = Stack()
+ 
+MyStack.push(11)
+MyStack.push(22)
+MyStack.push(33)
+MyStack.push(44)
+ 
+
+MyStack.display()
+ 
+
+print("\nTop element is ",MyStack.peek())
+ 
+
+MyStack.pop()
+MyStack.pop()
+ 
+
+MyStack.display()
+ 
+
+print("\nTop element is ", MyStack.peek())
+
