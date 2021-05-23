@@ -1,3 +1,5 @@
+// Time Complexity to insert a single element : O(n)
+// Space Complexity to insert a single element : O(1) 
 import java.util.LinkedList; 
 import java.util.Queue; 
 class GFG { 
