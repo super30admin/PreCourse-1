@@ -28,6 +28,7 @@ class Stack {
     int peek() 
     { 
         //Write your code here
+        // Simple comment to test
     } 
 } 
   
