@@ -18,7 +18,7 @@ public class StackAsLinkedList {
 	return root == null;
     } 
   
-    public void push(int data) 
+    public void push(int data)  // Time Complexity: O(1)
     { 
 	StackNode newNode = new StackNode(data);
 	 if (root == null) {
@@ -30,7 +30,7 @@ public class StackAsLinkedList {
         }
     } 
   
-    public int pop() 
+    public int pop() // Time Complexity: O(1)
     { 	
 	//If Stack Empty Return 0 and print "Stack Underflow"
         //Write code to pop the topmost element of stack.
@@ -44,7 +44,7 @@ public class StackAsLinkedList {
 	 return x;
     } 
   
-    public int peek() 
+    public int peek() // Time Complexity: O(1)
     { 
         if (root == null) {
             return -1;
