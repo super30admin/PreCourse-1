@@ -14,7 +14,7 @@ class Stack {
         top = -1;
     } 
   
-    boolean push(int x) 
+    boolean push(int x)  // Time Complexity: O(1)
     { 
         if (top >= MAX - 1) {
             System.out.println("Stack Overflow");
@@ -25,7 +25,7 @@ class Stack {
         return true;
     } 
   
-    int pop() 
+    int pop() // Time Complexity: O(1)
     { 
         if (isEmpty()){
             System.out.println("Stack Underflow");
