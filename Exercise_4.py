@@ -1,4 +1,11 @@
-# Python program to insert element in binary tree  
+# Author: Ritika Chadha
+# Exercise_4 : Insert an element in a Binary Tree
+
+# Time Complexity: 
+# Space Complexity: 
+# Did this code successfully run on Leetcode: No
+# Any problem you faced while coding this: Yes
+
 class newNode():  
   
     def __init__(self, data):  
@@ -18,7 +25,8 @@ def insert(temp,key):
     
   
        
-# Driver code  
+# Driver code 
+
 if __name__ == '__main__': 
     root = newNode(10)  
     root.left = newNode(11)  
