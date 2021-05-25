@@ -30,11 +30,34 @@ public class GFG {
     } 
        
     /*function to insert element in binary tree */
-    static void insert(Node temp, int key) 
+    static void insert(Node temp, int key)      // Time Complexity: O(N)
     { 
+        if (temp == null) {
+            root = new Node(key);
+            return;
+        }
+           
+        Queue<Node> q = new LinkedList<Node>();
+        q.add(temp);
+ 
 
-        // Do level order traversal until we find 
-        // an empty place and add the node.  
+        while (!q.isEmpty()) {
+            Node curr = q.remove();
+ 
+            if (curr.left == null) {
+                curr.left = new Node(key);
+                break;
+            }
+            else
+                q.add(curr.left);
+ 
+            if (curr.right == null) {
+                curr.right = new Node(key);
+                break;
+            }
+            else
+                q.add(curr.right);
+        } 
     } 
        
     // Driver code 
