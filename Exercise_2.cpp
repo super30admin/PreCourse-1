@@ -1,4 +1,6 @@
-#include <bits/stdc++.h> 
+/* Implement Stack using Linked List */
+
+#include <iostream> 
 using namespace std; 
   
 // A structure to represent a stack 
@@ -19,21 +21,37 @@ StackNode* newNode(int data)
 int isEmpty(StackNode* root) 
 { 
     //Your code here 
+    return !root;
 } 
   
 void push(StackNode** root, int data) 
 { 
     //Your code here 
+    StackNode* stackNode = newNode (data);
+    stackNode->next = *root;
+    *root = stackNode;
+    cout << data << "Pushed to stack " << endl;
+
 } 
   
 int pop(StackNode** root) 
 { 
     //Your code here 
+    if (isEmpty(*root))
+        return 0;
+
+    StackNode* temp = *root;
+    *root = (*root)->next;
+    int poppedData = temp->data;
+    free(temp);    
 } 
   
 int peek(StackNode* root) 
 { 
-    //Your code here 
+    //Your code here
+    if (isEmpty (root))
+        return 0;
+    return root->data; 
 } 
   
 int main() 
@@ -50,3 +68,11 @@ int main()
   
     return 0; 
 } 
+
+/*
+Time Complexities of Stack implementation using Linked List
+Push()    - O(1)
+pop()     - O(1)
+isEmpty() - O(1)
+peek()    - O(1)
+*/
