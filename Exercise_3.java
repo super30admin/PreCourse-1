@@ -1,3 +1,14 @@
+// Time Complexity : Insert: O(1) print: O(n)
+// Space Complexity :Insert: O(1) print: O(n)
+// Did this code successfully run on Leetcode :yes
+// Any problem you faced while coding this : no
+
+/**
+ * 1. Create a node class to hold data and next node.
+ * 2. Hold pointer to first element in the list to print data.
+ * 
+ */
+ 
 // Java program to implement 
 // a Singly Linked List 
 class LinkedList {

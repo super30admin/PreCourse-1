@@ -1,4 +1,13 @@
+// Time Complexity : O(1)
+// Space Complexity :O(1)
+// Did this code successfully run on Leetcode :yes
+// Any problem you faced while coding this : no
 
+/**
+ * 1. Initializa an array with max size
+ * 2. Maintain a pointer for top to do LIFO for stack
+ * 
+ */
 class Stack {
 	static final int MAX = 1000;
 	int top;

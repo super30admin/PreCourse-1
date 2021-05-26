@@ -1,3 +1,14 @@
+// Time Complexity : O(1)
+// Space Complexity :O(1)
+// Did this code successfully run on Leetcode :yes
+// Any problem you faced while coding this : no
+
+/**
+ * 1. Create a node class to hold data and next node.
+ * 2. Hold pointer to last element as rot to do stack LIFO
+ * 
+ */
+ 
 class StackAsLinkedList {
 
 	StackNode root;

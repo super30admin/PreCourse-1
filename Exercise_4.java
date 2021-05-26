@@ -1,3 +1,8 @@
+// Time Complexity : Insert: O(log n)
+// Space Complexity :Insert: O(n)
+// Did this code successfully run on Leetcode :yes
+// Any problem you faced while coding this : no
+
 /**
  * 1. Use Queue to track the visited elements in the level order
  * 2. Poll an element from queue and check left or right us empty
