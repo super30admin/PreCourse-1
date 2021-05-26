@@ -1,5 +1,5 @@
 // Time Complexity : Insert: O(1) print: O(n)
-// Space Complexity :Insert: O(1) print: O(n)
+// Space Complexity : O(n)
 // Did this code successfully run on Leetcode :yes
 // Any problem you faced while coding this : no
 
