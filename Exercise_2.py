@@ -15,11 +15,24 @@ class Node:
 class Stack:
     
     def __init__(self):
-        self.node = Node()
+        self.head = None
         
     def push(self, data):
+        if not self.head:
+            self.head = Node(data)
+        else:
+            node = Node(data)
+            node.next = self.head
+            self.head = node
+        
         
     def pop(self):
+        if self.head:
+            val = self.head.data
+            self.head = self.head.next
+            return val
+        return None
+      
         
 a_stack = Stack()
 
