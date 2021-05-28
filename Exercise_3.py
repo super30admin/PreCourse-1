@@ -28,7 +28,6 @@ class SinglyLinkedList:
         while(temp.next):
             temp=temp.next
         temp.next = n
-
         
     def find(self, key):
         """
