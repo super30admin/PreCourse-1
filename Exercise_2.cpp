@@ -19,21 +19,32 @@ StackNode* newNode(int data)
 int isEmpty(StackNode* root) 
 { 
     //Your code here 
+    if(root==nullptr)
+    {
+        return 1;
+    }
+
 } 
   
 void push(StackNode** root, int data) 
 { 
-    //Your code here 
+    StackNode *temp=newNode(data);
+    temp->next=(*root);
+    (*root)=temp;
+     
+
 } 
   
 int pop(StackNode** root) 
 { 
-    //Your code here 
+    StackNode *temp=(*root);
+    (*root)=temp->next;
+    delete (temp);
 } 
   
 int peek(StackNode* root) 
 { 
-    //Your code here 
+    return root->data;
 } 
   
 int main() 

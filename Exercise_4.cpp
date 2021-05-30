@@ -14,7 +14,11 @@ struct Node {
    eturns pointer */
 struct Node* newNode(int key) 
 { 
-    //Your code here
+    Node *newNode=new Node();
+    newNode->key=key;
+    newNode->left=nullptr;
+    newNode->right=nullptr;
+    return newNode;
 }; 
   
 /* Inorder traversal of a binary tree*/
@@ -33,7 +37,40 @@ void insert(struct Node* temp, int key)
 { 
   
     // Do level order traversal until we find 
-    // an empty place.  
+    // an empty place. 
+    if(temp==nullptr)
+    return;
+    Node *placeToInsert=nullptr;
+    queue<Node *> q;
+    q.push(temp);
+
+    while(!q.empty())
+    {
+       Node *temp=q.front();
+       if(temp->left!=nullptr)
+       {
+           q.push(temp->left);  
+       }
+       else
+       {
+           temp->left=newNode(key);
+           break;
+       }
+       if(temp->right!=nullptr)
+       {
+           q.push(temp->right);
+           
+
+       }
+       else
+       {
+           temp->right=newNode(key);
+           break;
+       }
+       q.pop();
+    }
+    
+    
     
     //Your code here
 } 
