@@ -1,18 +1,38 @@
 class myStack:
      def __init__(self):
-         
+         self.store=[0]*20
+         self.maxSize=20
+         self.top=0
      def isEmpty(self):
+         if self.top==0:
+             return True
+         return False
          
      def push(self, item):
+         if self.top==self.maxSize:
+             return "Stack Overflow."
+         else:
+            self.store[self.top]=item
+            self.top+=1
+            return "Item Added successfully."
          
      def pop(self):
-        
+        if not self.isEmpty():
+            val=self.store[self.top-1]
+            self.top-=1
+            return val
+        return None
         
      def peek(self):
+         if not self.isEmpty():
+             return self.store[-1]
+         return None
         
      def size(self):
+         return self.top
          
      def show(self):
+         print(self.store[:self.top])
          
 
 s = myStack()
