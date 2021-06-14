@@ -75,3 +75,8 @@ print(s_SinglyLinkedList.find(2))
 s_SinglyLinkedList.remove(1)
 print(s_SinglyLinkedList.find(1))
 print(s_SinglyLinkedList.find(3))
+"""
+Time complexity for append-(O(1))
+Time complexity for remove/find(O(n))- n is length of stack
+Space complexity- without the linkedlist space O(1)-with linkedlist space o(n)
+"""
