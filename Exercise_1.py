@@ -40,3 +40,9 @@ s.push('1')
 s.push('2')
 print(s.pop())
 print(s.show())
+
+"""
+Time complexity for push/Pop/Peek/Size-(O(1))
+Time complexity for show(O(n))- n is length of stack
+Space complexity- without the stack space, O(1)
+"""
