@@ -37,3 +37,8 @@ while True:
             print('Popped value: ', int(popped))
     elif operation == 'quit':
         break
+"""
+Time complexity for push/Pop-(O(1))
+Space complexity- without the linkedlist space, O(1)-with linkedlist O(n)
+"""
+
