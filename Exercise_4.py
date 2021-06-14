@@ -50,3 +50,8 @@ if __name__ == '__main__':
     print()  
     print("Inorder traversal after insertion:", end = " ")
     inorder(root)
+    
+"""
+Time complexity for inorder of BST is height of tree- O(h)- h is height
+Space complexity of a binary search tree is O (n)-n number of nodes of tree 
+"""
