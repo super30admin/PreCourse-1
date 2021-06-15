@@ -8,12 +8,40 @@ class newNode():
           
 """ Inorder traversal of a binary tree"""
 def inorder(temp): 
+    if (not temp):
+      return
+    inorder(temp.left)
+    print(temp.key, " ")
+    inorder(temp.right)
   
     
   
   
 """function to insert element in binary tree """
 def insert(temp,key): 
+    if not temp:
+      root = newNode(key)
+      return
+
+    queue = []
+    queue.append(temp)
+
+  # Level Order traversal to find an emtpy node
+    while(len(queue)):
+        temp = queue[0]
+        queue.pop()
+
+        if not temp.left:
+            temp.left = newNode(key)
+            break
+        else:
+            queue.append(temp.left)
+
+        if not temp.right:
+            temp.right = newNode(key)
+            break
+        else:
+            queue.append(temp.right)
   
     
   
