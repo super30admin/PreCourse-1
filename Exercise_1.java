@@ -1,33 +1,55 @@
-class Stack { 
+// Time Complexity : O(n) to insert
+// Space Complexity : O(n) -> n is the number of tree nodes
+// Did this code successfully run on Leetcode :
+// Any problem you faced while coding this : No
+class Stack {
     static final int MAX = 1000; 
     int top; 
     int a[] = new int[MAX]; // Maximum size of Stack 
   
     boolean isEmpty() 
-    { 
-        //Write your code here 
-    } 
+    {
+        return top < 0;
+    }
 
     Stack() 
-    { 
-        //Initialize your constructor 
-    } 
+    {
+        //constructor initialization
+        top = -1;
+    }
   
     boolean push(int x) 
-    { 
-        //Check for stack Overflow
-        //Write your code here
+    {
+        if(top >= (MAX-1)) {
+            System.out.println("Stack Overflow");
+            return false;
+        } else {
+            a[++top] = x;
+            System.out.println(x + " Pushed into stack successfully");
+            return true;
+        }
     } 
   
     int pop() 
     { 
-        //If empty return 0 and print " Stack Underflow"
-        //Write your code here
+        if(top < 0) {
+            System.out.println("Stack Underflow");
+            return 0;
+        } else {
+            int topElement = a[top--];
+            return topElement;
+        }
     } 
   
     int peek() 
-    { 
-        //Write your code here
+    {
+        if(top < 0) {
+            System.out.println("Stack Underflow");
+            return 0;
+        } else {
+            int topElement = a[top];
+            return topElement;
+        }
     } 
 } 
   
