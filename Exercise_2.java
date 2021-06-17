@@ -5,7 +5,6 @@ class StackAsLinkedList {
     static class StackNode {
         int data;
         StackNode next;
-
         StackNode(int data)
         {
             //Constructor here
@@ -39,17 +38,17 @@ class StackAsLinkedList {
 
     public int pop()
     {
-	//If Stack Empty Return 0 and print "Stack Underflow"
-        //Write code to pop the topmost element of stack.
-	//Also return the popped element
         int temp;
+        //If Stack Empty Return 0 and print "Stack Underflow"
         if(root == null ){
             System.out.println("Stack Underflow");
             return 0;
         } else {
+            //code to pop the topmost element of stack.
             temp = root.data;
             root = root.next;
         }
+        //Also return the popped element
         return temp;
     }
 
@@ -67,7 +66,6 @@ class StackAsLinkedList {
 	//Driver code
     public static void main(String[] args)
     {
-
         StackAsLinkedList sll = new StackAsLinkedList();
 
         sll.push(10);

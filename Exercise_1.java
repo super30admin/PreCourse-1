@@ -5,7 +5,7 @@ class Stack {
   
     boolean isEmpty() 
     { 
-        //Write your code here
+
         if(top==-1){
             return true;
         }
@@ -21,7 +21,7 @@ class Stack {
     boolean push(int x) 
     { 
         //Check for stack Overflow
-        //Write your code here
+
         if(top<MAX){
             a[++top] = x;
             return true;
@@ -34,7 +34,6 @@ class Stack {
     int pop() 
     { 
         //If empty return 0 and print " Stack Underflow"
-        //Write your code here
         if(top == -1) {
             System.out.println("Stack Underflow");
             return 0;
