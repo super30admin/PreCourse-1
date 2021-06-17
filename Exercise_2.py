@@ -5,10 +5,29 @@ class Node:
  
 class Stack:
     def __init__(self):
-        
+        """
+        Initialize a head node with None
+        """
+        self.head = None
+    
     def push(self, data):
+        """
+        Function to perform push operation
+        Takes O(1) time.
+        """
+        self.add_node = Node(data)
+        self.add_node.next = self.head
+        self.head = self.add_node
         
     def pop(self):
+        """
+        Function to perform pop operation
+        Takes O(1) time.
+        """
+        if self.head:
+            self.popped = self.head
+            self.head = self.popped.next
+            return self.popped.data
         
 a_stack = Stack()
 while True:
