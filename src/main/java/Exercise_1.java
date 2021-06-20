@@ -4,6 +4,7 @@ class Stack {
     int a[] = new int[MAX]; // Maximum size of Stack 
 
     boolean isEmpty() {
+        //if stack has any elements return false or else true
         if (top >= 0) {
             return false;
         } else {
@@ -17,6 +18,7 @@ class Stack {
     }
 
     boolean push(int x) {
+        //push to stack if top is less then size of the stack
         if (top < MAX - 1) {
             a[++top] = x;
             System.out.println("pushed element : " + x);
@@ -29,6 +31,7 @@ class Stack {
 
     int pop() {
         //If empty return 0 and print " Stack Underflow"
+        //pop if there is one ore more elements in the stack
         if (top > -1) {
             int pop = a[top];
             top--;
@@ -42,6 +45,7 @@ class Stack {
     }
 
     int peek() {
+        //peek if stack has any values in it
         if (top > -1) {
             System.out.println("peeked element : " + a[top]);
             return a[top];
@@ -63,4 +67,6 @@ class Main {
         System.out.println(s.pop() + " Popped from stack");
         s.peek();
     }
+    //Time Complexity: O(1)
+    //Space Complexity: O(n)
 }

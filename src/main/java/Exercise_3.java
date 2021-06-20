@@ -18,7 +18,8 @@ class LinkedList {
         }
     }
 
-    // Method to insert a new node 
+    // Method to insert a new node
+    //elements are inserted to the end of the list
     public static LinkedList insert(LinkedList list, int data) {
         // Create a new node with given data 
         Node sampleNode = new Node(data);
@@ -74,4 +75,6 @@ class LinkedList {
         // Print the LinkedList 
         printList(list);
     }
+    //Time Complexity: O(n) as we need to traverse till the end of the list to insert a new node
+    //Space Complexity: O(n)
 }

@@ -17,6 +17,7 @@ class StackAsLinkedList {
     }
 
     public void push(int data) {
+        //create a new node and its pointer for every input
         StackNode node = new StackNode(0);
         node.data = data;
         node.next = root;
@@ -29,6 +30,7 @@ class StackAsLinkedList {
         if (root == null)
             System.out.println("stack underflow");
         //Write code to pop the topmost element of stack.
+        //pops the root and makes the next element of the list as the root
         int pop = root.data;
         root = (root).next;
         //Also return the popped element
@@ -37,6 +39,7 @@ class StackAsLinkedList {
 
     public int peek() {
         //Write code to just return the topmost element without removing it.
+        //just returns the root's value without removing it
         if (root != null)
             return root.data;
         else return 0;
@@ -55,4 +58,6 @@ class StackAsLinkedList {
 
         System.out.println("Top element is " + sll.peek());
     }
+    //Time Complexity: O(1)
+    //Space Complexity: O(n)
 } 
