@@ -1,5 +1,6 @@
-import java.util.LinkedList; 
-import java.util.Queue; 
+//Exercise_4 : Insert an element in a Binary Tree.
+//import java.util.LinkedList; 
+//import java.util.Queue; 
 public class GFG { 
        
     /* A binary tree node has key, pointer to  
@@ -32,9 +33,50 @@ public class GFG {
     /*function to insert element in binary tree */
     static void insert(Node temp, int key) 
     { 
-
         // Do level order traversal until we find 
         // an empty place and add the node.  
+        Node ptr;
+        temp=new Node(key);
+        if(root==null)
+        {
+            root=temp;
+        }
+        else
+        {
+            ptr=root;
+            while(ptr!=null)
+            {
+                if(key>ptr.key)
+                {
+                    if(ptr.right==null)
+                    {
+                        ptr.right=temp;
+                        break;
+                    }
+                    else
+                    {
+                        ptr=ptr.right;
+                    }
+                }
+                else if(key<ptr.key)
+                {
+                    if(ptr.left==null)
+                    {
+                        ptr.left=temp;
+                        break;
+                    }
+                    else
+                    {
+                        ptr=ptr.left;
+                    }
+                }
+                else
+                {
+                    System.out.println("Duplicate value not allowed");
+                    break;
+                }
+            }
+        }
     } 
        
     // Driver code 
