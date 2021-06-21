@@ -31,10 +31,14 @@ public class GFG {
        
     /*function to insert element in binary tree */
     static void insert(Node temp, int key) 
-    { 
+    {
 
         // Do level order traversal until we find 
-        // an empty place and add the node.  
+        // an empty place and add the node. 
+        
+       //ToDo: I did watch through videos on Binary Tree and understood three basic Traversal -PreOrder, InOrder & PostOrder.
+        //Just briefly understood what level order traversal mean,but did not get time to try hands on.Once i get grip of it i will attempt this excercise
+ 
     } 
        
     // Driver code 
