@@ -1,15 +1,29 @@
+'''
+Implement Stack using Singly-Linked List
+'''
 class Node:
-    def __init__(self, data):
+    def __init__(self, data = None):
        self.data = data
        self.next = None
  
 class Stack:
     def __init__(self):
-        
+        self.head = Node()
+        self.cur = self.head
+
     def push(self, data):
-        
+        top = Node(data)
+        top.next = self.cur
+        self.cur = top
+
     def pop(self):
-        
+        # Stack Underflow condition
+        if self.cur == self.head:
+            return
+        item = self.cur.data
+        self.cur = self.cur.next
+        return item
+
 a_stack = Stack()
 while True:
     print('push <value>')
@@ -28,3 +42,5 @@ while True:
             print('Popped value: ', int(popped))
     elif operation == 'quit':
         break
+    else:
+        print('Please select a valid operation')
