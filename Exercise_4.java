@@ -4,6 +4,13 @@ public class GFG {
        
     /* A binary tree node has key, pointer to  
     left child and a pointer to right child */
+    /* 
+        Space complexity: O(N) Worst case scenario: Length of queue would 
+            be same as number of elements in given tree(N).
+            For node object/given key node to be created it is constant O(1).
+            So overall worst case space complexity is O(N).
+        Time complexity: O(N) N is total number of nodes.
+    */
     static class Node { 
         int key; 
         Node left, right; 
@@ -32,9 +39,42 @@ public class GFG {
     /*function to insert element in binary tree */
     static void insert(Node temp, int key) 
     { 
-
+        
+        if(temp==null){
+            System.out.println("\nRoot is null, creating new.");
+            root = new Node(key);
+            return;
+        }
+        
+        Queue<Node> queue = new LinkedList<Node>();
+        queue.add(temp);
         // Do level order traversal until we find 
-        // an empty place and add the node.  
+        // an empty place and add the node. 
+            System.out.println("\nRoot is not null.");
+            // while(queue!=null){
+            while(!queue.isEmpty()){
+                temp = queue.peek();
+                System.out.println("Node: "+temp.key);
+                queue.remove();
+                if(temp.left==null) {
+                    temp.left = new Node(key);
+                    System.out.println("Inserting "+key+" to left of "+temp.key);
+                    return;
+                } else{
+                    queue.add(temp.left);
+                }
+                //Handling right node
+                if(temp.right==null) {
+                    temp.right = new Node(key);
+                    System.out.println("Inserting "+key+" to left of "+temp.key);
+                    return;
+                } else{
+                    queue.add(temp.right);
+                }
+                
+            }   
+        
+        
     } 
        
     // Driver code 
@@ -55,5 +95,6 @@ public class GFG {
        
         System.out.print("\nInorder traversal after insertion:"); 
         inorder(root); 
+        
     } 
 }
