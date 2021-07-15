@@ -12,13 +12,22 @@ struct Node {
   
 /* function to create a new node of tree and r 
    eturns pointer */
-struct Node* newNode(int key) 
+Node* newNode(int key) 
 { 
     //Your code here
+    Node *new_node = new Node();
+    if(!new_node)
+    {
+        cout<<"Memory Error"<<endl;
+        return NULL;
+    }
+    new_node->key = key;
+    new_node->left = new_node->right = NULL;
+    return new_node;
 }; 
   
 /* Inorder traversal of a binary tree*/
-void inorder(struct Node* temp) 
+void inorder(Node* temp) 
 { 
     if (!temp) 
         return; 
@@ -29,19 +38,48 @@ void inorder(struct Node* temp)
 } 
   
 /*function to insert element in binary tree */
-void insert(struct Node* temp, int key) 
+Node* insert(Node* temp, int key) 
 { 
-  
+    if(temp == NULL)
+    {
+        temp = newNode(key);
+        return temp;
+    }
     // Do level order traversal until we find 
     // an empty place.  
-    
+    queue <Node*> q;
     //Your code here
+    q.push(temp);
+    while(!q.empty())
+    {
+        struct Node* n = q.front();
+        q.pop();
+        if(n->left != NULL)
+        {
+            q.push(n->left);
+        }
+        else
+        {
+            n->left = newNode(key);
+            return temp;
+        }
+        
+        if(n->right != NULL)
+        {
+            q.push(n->right);
+        }
+        else
+        {
+            n->right = newNode(key);
+            return temp;
+        }
+    }
 } 
   
 // Driver code 
 int main() 
 { 
-    struct Node* root = newNode(10); 
+    Node* root = newNode(10); 
     root->left = newNode(11); 
     root->left->left = newNode(7); 
     root->right = newNode(9); 
