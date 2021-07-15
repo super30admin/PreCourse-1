@@ -4,7 +4,7 @@ import java.io.*;
 // a Singly Linked List 
 public class LinkedList { 
   
-    Node head; // head of list 
+     Node head; // head of list 
   
     // Linked list Node. 
     // This inner class is made static 
@@ -17,6 +17,8 @@ public class LinkedList {
         // Constructor 
         Node(int d) 
         { 
+            this.data =d;
+            
             //Write your code here 
         } 
     } 
@@ -24,6 +26,27 @@ public class LinkedList {
     // Method to insert a new node 
     public static LinkedList insert(LinkedList list, int data) 
     { 
+
+
+        Node node = new Node(data);
+        if(list.head ==null)
+        {
+           // LinkedList lst = new LinkedList(data);
+            list.head =node;
+            
+        }
+        else
+        {
+            Node current = list.head;
+            while(current.next!=null)
+            {
+                current=current.next;
+            }
+            current.next = node;
+
+
+        }
+
         // Create a new node with given data 
    
         // If the Linked List is empty, 
@@ -35,11 +58,22 @@ public class LinkedList {
             // Insert the new_node at last node 
         // Return the list by head 
         
+
+        return list;
     } 
   
     // Method to print the LinkedList. 
     public static void printList(LinkedList list) 
     {  
+        Node current = list.head;
+
+        while(current!=null)
+        {
+
+            System.out.println(current.data);
+            current=current.next;
+        }
+
         // Traverse through the LinkedList 
    
             // Print the data at current node 
