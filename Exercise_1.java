@@ -1,4 +1,8 @@
 class Stack { 
+	/*
+	 * Space complexity: O(n) worst case scenario total n elements would need space.
+	 * Time complexity: O(1) All access operations performed from top index
+	 * */
     static final int MAX = 1000; 
     int top; 
     int a[] = new int[MAX]; // Maximum size of Stack 
