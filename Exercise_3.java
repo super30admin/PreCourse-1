@@ -3,7 +3,11 @@ import java.io.*;
 // Java program to implement 
 // a Singly Linked List 
 public class LinkedList { 
-  
+	
+	/*
+	 * Space complexity: O(n) Total n elements would need space for insert(s).
+	 * Time complexity: O(n) Worst case traverse until the last node in StackAsLinkedList and insert element.
+	 * */
     Node head; // head of list 
   
     // Linked list Node. 
