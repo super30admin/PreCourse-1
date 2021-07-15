@@ -1,4 +1,8 @@
 public class StackAsLinkedList { 
+	/*
+	 * Space complexity: O(n) worst case scenario total n elements would need space.
+	 * Time complexity: O(1) All access operations performed from top/root index
+	 * */
   
     StackNode root; 
     // StackNode top;
