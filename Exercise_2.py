@@ -5,26 +5,60 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.top = None
+        self.head = None
         
     def push(self, data):
+       
+        listnode = Node(data)
+        if self.top :
+            self.top.next = listnode
+        self.top = listnode
+        if not self.head:
+            self.head = listnode
+            
+
         
     def pop(self):
+        temp = self.head
+        if not self.top:
+            return None
+
+        prevnode = None
+        while temp.next:
+            prevnode = temp
+            temp = temp.next
+
+        temp1 = self.top.data
+        if not prevnode:
+            self.head = None
+            self.top = None
+        else:
+            prevnode.next = None
+            self.top = prevnode
+        return temp1
+
+
+    def show(self):
+        temp = self.head
+        while temp:
+            print(temp.data)
+            temp = temp.next
+
+
+
+
         
 a_stack = Stack()
-while True:
-    print('push <value>')
-    print('pop')
-    print('quit')
-    do = input('What would you like to do? ').split()
- 
-    operation = do[0].strip().lower()
-    if operation == 'push':
-        a_stack.push(int(do[1]))
-    elif operation == 'pop':
-        popped = a_stack.pop()
-        if popped is None:
-            print('Stack is empty.')
-        else:
-            print('Popped value: ', int(popped))
-    elif operation == 'quit':
-        break
+print(a_stack.pop())
+a_stack.push(10)
+a_stack.push(12)
+
+
+a_stack.push(13)
+a_stack.push(14)
+#print(a_stack.pop())
+
+a_stack.show()
+
+
