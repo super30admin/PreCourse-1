@@ -18,6 +18,7 @@ public class LinkedList {
         Node(int d) 
         { 
             this.data =d;
+            
             //Write your code here 
         } 
     } 
