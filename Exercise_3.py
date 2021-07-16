@@ -17,7 +17,12 @@ class SinglyLinkedList:
         """
         self.head = ListNode()
         self.tail = self.head
-
+    
+     '''
+     append()
+     Time complexity:  O(1)
+     Space complexity: O(1)
+     '''
     def append(self, data):
         """
         Insert a new element at the end of the list.
@@ -25,7 +30,12 @@ class SinglyLinkedList:
         """
         self.tail.next = ListNode(data)
         self.tail = self.tail.next
-        
+
+     '''
+     find()
+     Time complexity:  O(N)
+     Space complexity: O(1)
+     '''        
     def find(self, key):
         """
         Search for the first element with `data` matching
@@ -38,7 +48,12 @@ class SinglyLinkedList:
                 return cur
             cur = cur.next
         return
-        
+
+     '''
+     remove()
+     Time complexity:  O(N)
+     Space complexity: O(1)
+     '''
     def remove(self, key):
         """
         Remove the first occurrence of `key` in the list.
