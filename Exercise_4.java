@@ -1,3 +1,8 @@
+// Time Complexity : O(1) - Insert , O(N) 
+// Space Complexity : O(N) - N: Number of items in Tree.
+// Did this code successfully run on Leetcode : 
+// Any problem you faced while coding this : No
+
 import java.util.LinkedList; 
 import java.util.Queue; 
 public class GFG { 
@@ -32,9 +37,27 @@ public class GFG {
     /*function to insert element in binary tree */
     static void insert(Node temp, int key) 
     { 
-
         // Do level order traversal until we find 
         // an empty place and add the node.  
+        Node newNode = new Node(key);
+
+        Queue q = new LinkedList();
+
+        q.add(temp);
+
+        while(!q.isEmpty()){
+            Node  n = (Node)q.remove();
+            if(n.left == null){
+                n.left = newNode;
+                return;
+            }else if(n.right == null){
+                n.right = newNode;
+                return;
+            }else{
+                q.add(n.left);
+                q.add(n.right);
+            }
+        }
     } 
        
     // Driver code 
@@ -57,3 +80,7 @@ public class GFG {
         inorder(root); 
     } 
 }
+
+//             10
+//        11        9
+//     7         15     8
