@@ -4,7 +4,12 @@ class newNode():
         self.key = data 
         self.left = None
         self.right = None
-          
+
+ '''
+ inorder()
+ Time complexity:  O(V), V: number of vertices
+ Space complexity: O(V)
+ '''          
 """ Inorder traversal of a binary tree"""
 def inorder(temp): 
     stack = [temp]
@@ -20,7 +25,11 @@ def inorder(temp):
             root = cur.right
     print(*inorder_traversal)
         
-
+ '''
+ insert(): Breadth-First Search 
+ Time complexity:  O(V), V: number of vertices
+ Space complexity: O(V)
+ '''
 """function to insert element in binary tree """
 def insert(temp, key): 
     q = [temp]
