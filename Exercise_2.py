@@ -6,10 +6,17 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.st=[]
         
     def push(self, data):
+        self.st.append(data)
         
     def pop(self):
+        if self.st:
+            temp=self.st[-1]
+            del self.st[-1]
+            return temp
+        return "Stack is empty."
         
 a_stack = Stack()
 while True:
