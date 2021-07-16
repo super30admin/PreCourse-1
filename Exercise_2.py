@@ -10,12 +10,22 @@ class Stack:
     def __init__(self):
         self.head = Node()
         self.cur = self.head
-
+   
+     '''
+     push()
+     Time complexity:  O(1)
+     Space complexity: O(1)
+     '''
     def push(self, data):
         top = Node(data)
         top.next = self.cur
         self.cur = top
 
+     '''
+     pop()
+     Time complexity:  O(1)
+     Space complexity: O(1)
+     '''
     def pop(self):
         # Stack Underflow condition
         if self.cur == self.head:
