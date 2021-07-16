@@ -2,32 +2,69 @@ class Stack {
     static final int MAX = 1000; 
     int top; 
     int a[] = new int[MAX]; // Maximum size of Stack 
-  
+
+    //stack is empty when stack size is 0.
     boolean isEmpty() 
     { 
-        //Write your code here 
+        //Write your code here
+        return (top < 0);
     } 
 
     Stack() 
     { 
-        //Initialize your constructor 
+        //Initialize your constructor
+        top = -1;
     } 
   
     boolean push(int x) 
     { 
         //Check for stack Overflow
-        //Write your code here
+        /**
+         * -If the pointer is at the top of stack then there is no element after that.
+         * - Stack is full in this case
+         */
+        if (top >= (MAX-1)) {
+            System.out.println("stack overflow");
+            return false;
+        }
+        /**
+         * if stack is empty then increase the pointer and push an element above that.
+         */
+        else {
+            top++;
+            a[top] = x;
+            System.out.println("pushed element"+x+" into stack.");
+            return true;
+        }
     } 
   
     int pop() 
     { 
         //If empty return 0 and print " Stack Underflow"
-        //Write your code here
+        //check if the stack is empty. If stack is empty return 0.
+        if (top < 0) {
+            System.out.println("stack underflow");
+            return 0;
+        }
+        //else decrease the pointer and return the element
+        else {
+            top--;
+            int x = a[top];
+            return x;
+        }
     } 
-  
+
+    //print or check the element stack has its pointer on.
     int peek() 
-    { 
-        //Write your code here
+    {
+        if (top < 0) {
+            System.out.println("Stack Underflow");
+            return 0;
+        }
+        else {
+            int x = a[top];
+            return x;
+        }
     } 
 } 
   
