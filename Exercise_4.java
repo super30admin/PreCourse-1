@@ -8,7 +8,7 @@ public class GFG {
         int key; 
         Node left, right; 
           
-        // constructor 
+        // constructor
         Node(int key){ 
             this.key = key; 
             left = null; 
@@ -16,6 +16,7 @@ public class GFG {
         } 
     } 
     static Node root; 
+    //assign value of root to variable temp
     static Node temp = root; 
       
     /* Inorder traversal of a binary tree*/
@@ -23,7 +24,7 @@ public class GFG {
     { 
         if (temp == null) 
             return; 
-       
+        //recursive method of inorder traversal
         inorder(temp.left); 
         System.out.print(temp.key+" "); 
         inorder(temp.right); 
@@ -32,9 +33,38 @@ public class GFG {
     /*function to insert element in binary tree */
     static void insert(Node temp, int key) 
     { 
-
+        if (temp == null)
+        {
+            return;
+        }
+        Queue <Node> q1 = new LinkedList<Node>();
+        q1.add(temp);
         // Do level order traversal until we find 
-        // an empty place and add the node.  
+        // an empty place and add the node.
+        
+        while (q1 != null)
+        {
+            temp=q1.peek();
+            q1.remove();
+            if (temp.left == null)
+            {
+                temp.left= new Node(key);
+                break;
+            }
+            else
+            {
+                q1.add(temp.left);
+            }
+            if (temp.right == null)
+            {
+                temp.right= new Node(key);
+                break;
+            }
+            else
+            {
+                q1.add(temp.right);
+            }
+        }
     } 
        
     // Driver code 
@@ -57,3 +87,4 @@ public class GFG {
         inorder(root); 
     } 
 }
+

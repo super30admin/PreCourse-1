@@ -1,3 +1,5 @@
+import java.util.*;
+
 class Stack { 
     static final int MAX = 1000; 
     int top; 
@@ -5,34 +7,65 @@ class Stack {
   
     boolean isEmpty() 
     { 
-        //Write your code here 
+        return (top < 0);
     } 
 
     Stack() 
     { 
         //Initialize your constructor 
+        top=-1;
     } 
   
     boolean push(int x) 
-    { 
-        //Check for stack Overflow
-        //Write your code here
-    } 
+    {
+        //check for stack overflow
+        if (top < MAX)
+        {
+            top++;
+            a[top]=x;
+            return true;
+        }
+        else
+        {
+            System.out.println("Stack Overflow");
+            return false;
+        }
+    }
   
     int pop() 
     { 
-        //If empty return 0 and print " Stack Underflow"
-        //Write your code here
+        //check for stack underflow
+        if (top > -1)
+        {
+            int num=a[top];
+            top--;
+            return num;
+            
+        }
+        else
+        {
+            System.out.println("Stack underflow");
+            return 0;
+        }
     } 
   
     int peek() 
     { 
-        //Write your code here
+        if (top > 0)
+        {
+            int element=a[top];
+            return element;
+        }
+        else
+        {
+            System.out.println("stack underflow");
+            return 0;
+        }
     } 
 } 
   
 // Driver code 
-class Main { 
+public class Main { 
     public static void main(String args[]) 
     { 
         Stack s = new Stack(); 
@@ -42,3 +75,4 @@ class Main {
         System.out.println(s.pop() + " Popped from stack"); 
     } 
 }
+
