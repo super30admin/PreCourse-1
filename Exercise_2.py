@@ -1,4 +1,3 @@
-
 class Node:
     def __init__(self, data):
        self.data = data
@@ -6,11 +5,47 @@ class Node:
  
 class Stack:
     def __init__(self):
-        
+        self.top = None
+        self.start = None
+
     def push(self, data):
-        
+        new_node = Node(data)
+        # Assuming no overflow error.
+        if self.start is None:
+            self.start = self.top = new_node
+        else:
+            temp = self.start
+            while temp.next is not None:
+                temp = temp.next
+            temp.next = new_node
+            self.top = new_node
+
     def pop(self):
-        
+        if self.start is None: # Stack Empty
+            raise IndexError("Underflow Error. Stack is empty.")
+        elif self.start.next is None:   # One element left in stack
+            self.start = None
+        else: # Iterate and delete
+            temp = self.start
+            previous = None
+            while temp.next is not None:
+                previous = temp
+                temp = temp.next
+            previous.next = None
+            print(f"deleted: {temp.data}")
+            return temp.data
+
+    def print(self):
+        '''print Function definition. '''
+        temp = self.start
+        if temp is None:
+            print("Stack is Empty.")
+            return
+        while temp.next is not None:
+            print(temp.data, end='->')
+            temp = temp.next
+        print(temp.data, end='<-TOP\n')
+
 a_stack = Stack()
 while True:
     #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
