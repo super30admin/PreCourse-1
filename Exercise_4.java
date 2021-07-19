@@ -73,7 +73,7 @@ import java.util.Queue;
         root.right.right = new Node(8); 
        
         System.out.print( "Inorder traversal before insertion:"); 
-        inorder(root); 
+        inorder(root);
        
         int key = 12; 
         insert(root, key); 
