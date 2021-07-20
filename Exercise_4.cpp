@@ -15,6 +15,12 @@ struct Node {
 struct Node* newNode(int key) 
 { 
     //Your code here
+    Node* t = new Node;
+    if(t==NULL)return NULL;
+    t->key = key;
+    t->left = NULL;
+    t->right = NULL;
+    return t;
 }; 
   
 /* Inorder traversal of a binary tree*/
@@ -31,9 +37,29 @@ void inorder(struct Node* temp)
 /*function to insert element in binary tree */
 void insert(struct Node* temp, int key) 
 { 
-  
+    
     // Do level order traversal until we find 
     // an empty place.  
+    if(temp == NULL){
+    temp = newNode(key);
+    return;
+    }
+    queue<Node*>q;
+    q.push(temp);
+    while(!q.empty()){
+    Node* t = q.front();q.pop();
+    if(t->left)q.push(t->left);
+    else{
+    t->left = newNode(key);
+    return;
+    }
+    if(t->right)q.push(t->right);
+    else{
+    t->right = newNode(key);
+    return;
+    }
+    }
+
     
     //Your code here
 } 
