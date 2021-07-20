@@ -1,15 +1,40 @@
 
 class Node:
     def __init__(self, data):
-       self.data = data
-       self.next = None
- 
+        self.data = data
+        self.next = None
+
+
 class Stack:
     def __init__(self):
-        
+        self.root=None;
+
     def push(self, data):
-        
+        newNode=Node(data)
+        if self.root == None:
+            self.root=newNode;
+        else:
+            temp=self.root
+            while temp.next!=None:
+                temp=temp.next
+            temp.next=newNode;
+
     def pop(self):
+        if self.root==None:
+            print('Stack Underflow')
+            return 0;
+        if self.root.next==None:
+            tempValue=self.root.data
+            self.root=None
+            return tempValue
+        temp=self.root;
+        prev=None
+        while temp.next!=None:
+            prev=temp
+            temp=temp.next
+        value=prev.next.data
+        prev.next=None
+        return value
         
 a_stack = Stack()
 while True:
