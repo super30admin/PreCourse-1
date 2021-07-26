@@ -1,5 +1,5 @@
-using System.Collections.Generic;
-
+    using System.Collections.Generic;
+//Resubmitting as first pull request was not considered
 public class GFG { 
        
     /* A binary tree node has key, pointer to  
@@ -35,7 +35,33 @@ public class GFG {
 
         // Do level order traversal until we find 
         // an empty place and add the node.  
-        //I have sought internet help. But it is not clear for me.
+        if (temp == null) {
+            root = new Node(key);
+            return;
+        }
+        Queue<Node> q = new Queue<Node>();
+        q.Enqueue(temp);
+ 
+        // Do level order traversal until we find
+        // an empty place and add the node.
+        while (q.Count != 0) {
+            temp = q.Peek();
+            q.Dequeue();
+ 
+            if (temp.left == null) {
+                temp.left = new Node(key);
+                break;
+            }
+            else
+                q.Enqueue(temp.left);
+ 
+            if (temp.right == null) {
+                temp.right = new Node(key);
+                break;
+            }
+            else
+                q.Enqueue(temp.right);
+        }
     } 
        
     // Driver code 
