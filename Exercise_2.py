@@ -1,6 +1,7 @@
 
 class Node:
     def __init__(self, data):
+       self.previous = None
        self.data = data
        self.next = None
  
@@ -18,8 +19,9 @@ class Stack:
 
         if(self.head == None):
 
+            # self.previous = None by default
             self.head = Node(data)
-            print(self.head)
+            return self.head.data
 
         else:
 
@@ -28,19 +30,25 @@ class Stack:
                 temp = Node(data)
 
                 self.last = temp
-
+                self.last.previous = self.head
                 self.head.next = self.last
 
+                print('Previous address: ',self.last.previous)
                 print('Last address: ',self.last)
                 print('Head next address: ',self.head.next)
+
+                return self.last.data
 
             else:
 
                 temp = Node(data)
-
+                temp_previous_address = self.last
                 self.last.next = temp
-
                 self.last = temp
+                self.last.previous = temp_previous_address
+
+                return self.last.data
+
         
     def pop(self):
 
@@ -58,37 +66,22 @@ class Stack:
 
             self.head = None
 
-            print('Exe..')
-
             return return_element
 
-        temp_address = self.head.next
+        i = self.head.next
 
-        temp_count = self.count
+        while(i!= None):
 
-        print('----------------')
+            if(i.next == None):
 
-        for i in range(self.count):
+                temp_removed_data = i.data
+                i = i.previous
+                i.next = None
+                return temp_removed_data
 
-            print(i)
+            else:
 
-            if(i == self.count-2):
-
-                temp_next_address = temp_address.next
-
-                temp_address.next = None
-
-                return temp_next_address
-
-            elif(temp_address.next != 0):
-
-                temp_count = temp_count - 1
-
-                print('Data: ',temp_address.data)
-
-                temp_address = temp_address.next
-
-        print('This should not return')
+                i = i.next
 
 
     def traverse(self):
@@ -103,6 +96,19 @@ class Stack:
             print('Data: ', i.data)
 
             i = i.next
+
+    def traverse_back(self):
+
+        i = self.last
+
+        print(i.data)
+        print(i.next)
+        
+        while(i != None):
+
+            print('Data: ', i.data)
+
+            i = i.previous
         
 a_stack = Stack()
 while True:
@@ -125,5 +131,7 @@ while True:
     elif operation == 'quit':
         break
     elif operation == 'traverse':
-        print('Exe..')
         a_stack.traverse()
+    elif operation == 'traverse_back':
+        print('Exe..')
+        a_stack.traverse_back()
