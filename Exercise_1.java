@@ -73,9 +73,7 @@ class Stack {
     /*public static void main(String args[]) 
     { 
         Stack s = new Stack(); 
-       // s.push(10); 
-       // s.push(20); 
-        //s.push(30); 
+       
         for (int i=0;i<4;i++){
         	int value = new Random().nextInt(1000);
         	
@@ -84,6 +82,7 @@ class Stack {
         	System.out.println(s.pop() + " Popped from stack"); 
         	
          }
+        System.out.println(s.isEmpty() + " List is empty");
         System.out.println(s.pop() + " Popped from stack");
         
         
@@ -92,7 +91,7 @@ class Stack {
   
 // Driver code 
 class Main { 
-    public static void main(String args[]) 
+	 public static void main(String args[]) 
     { 
         Stack s = new Stack(); 
         s.push(10); 
@@ -102,3 +101,4 @@ class Main {
         System.out.println(s.pop() + " Popped from stack"); 
     }
 }
+
