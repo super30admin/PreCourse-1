@@ -2,9 +2,10 @@ import java.io.*;
   
 // Java program to implement 
 // a Singly Linked List 
-public class LinkedList { 
+class LinkedList { 
   
-    Node head; // head of list 
+    static Node head; // head of list 
+    static Node current; //Pointer to the current node
   
     // Linked list Node. 
     // This inner class is made static 
@@ -17,34 +18,56 @@ public class LinkedList {
         // Constructor 
         Node(int d) 
         { 
-            //Write your code here 
+            this.data = d;
+            this.next = null;
         } 
     } 
   
     // Method to insert a new node 
     public static LinkedList insert(LinkedList list, int data) 
     { 
-        // Create a new node with given data 
-   
-        // If the Linked List is empty, 
-        // then make the new node as head 
         
-            // Else traverse till the last node 
-            // and insert the new_node there 
-
-            // Insert the new_node at last node 
-        // Return the list by head 
-        
+    	head = list.head;
+    	current = head;
+    	
+    	if (head == null) {
+    		Node temp = new Node(data);
+    		head = temp;
+    		list.head = head;
+    		return list;
+    	}
+    	
+    	
+    	//Inserting at the headend of the list
+    	/*temp.next = head.next;
+    	head = temp;*/
+    	
+    	
+    	// Inserting at the tailend of the list
+    	while(current.next != null)
+    	{
+    		current = current.next;
+    	}
+    	Node temp = new Node(data);
+    	current.next = temp;
+    	
+    	list.head = head;
+    	return list;
+  
     } 
   
     // Method to print the LinkedList. 
     public static void printList(LinkedList list) 
     {  
-        // Traverse through the LinkedList 
+    	head = list.head;
+    	current= head;
+    	while(current != null) 
+    	{
+    		System.out.println("Element is "+ current.data);
+    		current= current.next;
+    		
+    	}
    
-            // Print the data at current node 
-       
-            // Go to next node 
     } 
    
     // Driver code 
