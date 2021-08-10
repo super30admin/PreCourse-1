@@ -3,21 +3,31 @@ class Node:
     def __init__(self, data):
        self.data = data
        self.next = None
- 
+    
 class Stack:
     def __init__(self):
-        self.array = []
-
+        self.top = None   
+        
     def push(self, data):
-        self.array.append(data)
-        print(self.array)
+        
+        #if stack is empty
+        if self.top == None:
+            self.top = Node(data)
+        #if stack is not empty
+        else:            
+            new_node = Node(data)
+            new_node.next = self.top
+            self.top = new_node
+                
     
     def pop(self):
         #pop if stack not empty
-        if len(self.array) > 0:
-            popped = self.array[-1]
-            self.array = self.array[:-1]
+        if self.top != None:
+            popped = self.top.data
+            self.top = self.top.next
             return popped
+        else:
+            return None
     
 a_stack = Stack()
 while True:
