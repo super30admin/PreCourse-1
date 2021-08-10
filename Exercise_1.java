@@ -12,7 +12,7 @@ class Stack {
     Stack() 
     { 
         //Initialize your constructor 
-        top=-1;
+        top=-1; 
     } 
   
     boolean push(int x) 
