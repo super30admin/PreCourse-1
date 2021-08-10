@@ -1,15 +1,31 @@
+# Time Complexity: O(1) as we're only moving a pointer
+# Space Complexity: O(1)
+# Did this code successfully run on Leetcode: I did not find this exact question on Leetcode
+# Any problem you faced while coding this: No
 
 class Node:
-    def __init__(self, data):
+    def __init__(self, data=None):
        self.data = data
        self.next = None
  
 class Stack:
     def __init__(self):
+        self.head = Node()
         
     def push(self, data):
+        if self.head is None:
+            self.head = data
+        else:
+            newnode = Node(data)
+            newnode.next = self.head
+            self.head = newnode
+
         
     def pop(self):
+        temp = self.head
+        self.head = self.head.next
+        temp.next = None
+        return temp.data
         
 a_stack = Stack()
 while True:
