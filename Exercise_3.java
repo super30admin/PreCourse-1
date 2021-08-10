@@ -1,11 +1,11 @@
 import java.io.*; 
   
 // Java program to implement 
-// a Singly Linked List 
-public class LinkedList { 
+// a Singly Linked List
+ class LinkedList {
   
-    Node head; // head of list 
-  
+     Node head ; //head of list
+     Node tail; //tail of the list
     // Linked list Node. 
     // This inner class is made static 
     // so that main() can access it 
@@ -17,15 +17,27 @@ public class LinkedList {
         // Constructor 
         Node(int d) 
         { 
-            //Write your code here 
+            //Write your code here
+            this.data = d;
+            this.next=null;
         } 
     } 
   
     // Method to insert a new node 
-    public static LinkedList insert(LinkedList list, int data) 
+    public static LinkedList insert(LinkedList list, int data)
     { 
-        // Create a new node with given data 
-   
+        // Create a new node with given data
+
+        Node dummy = new Node(data);
+
+        if(list.head == null){
+
+            list.head = dummy;
+            list.tail =dummy;
+        }else{
+          list.tail.next =dummy;
+          list.tail = dummy;
+        }
         // If the Linked List is empty, 
         // then make the new node as head 
         
@@ -33,7 +45,8 @@ public class LinkedList {
             // and insert the new_node there 
 
             // Insert the new_node at last node 
-        // Return the list by head 
+        // Return the list by head
+        return list;
         
     } 
   
@@ -44,7 +57,12 @@ public class LinkedList {
    
             // Print the data at current node 
        
-            // Go to next node 
+            // Go to next node
+        Node current = list.head;
+        while(current.next !=null){
+            System.out.println("Linked List: "+current.data);
+            current=current.next;
+        }
     } 
    
     // Driver code 
