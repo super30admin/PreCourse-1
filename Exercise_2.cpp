@@ -16,30 +16,45 @@ StackNode* newNode(int data)
     return stackNode; 
 } 
   
-int isEmpty(StackNode* root) 
+bool isEmpty(StackNode* root) 
 { 
-    //Your code here 
+    if(root == NULL) return true;
+    return false; 
 } 
   
 void push(StackNode** root, int data) 
 { 
-    //Your code here 
+    //Your code here
+    if(*root == NULL)
+    {
+        *root = newNode(data);
+        return;
+    }
+    StackNode* temp = *root;
+    *root = newNode(data);
+    (*root)->next = temp;
 } 
   
 int pop(StackNode** root) 
 { 
-    //Your code here 
+    //Your code here
+    if(root == NULL) return 0;
+    StackNode* temp = *root;
+    int x = temp->data;
+    *root = temp->next;
+    delete temp;
+    return x;
 } 
   
 int peek(StackNode* root) 
-{ 
-    //Your code here 
+{
+    if(root == NULL) return 0; 
+    return root->data;
 } 
   
 int main() 
 { 
     StackNode* root = NULL; 
-  
     push(&root, 10); 
     push(&root, 20); 
     push(&root, 30); 
