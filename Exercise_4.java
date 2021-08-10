@@ -21,31 +21,25 @@ public class GFG {
     /* Inorder traversal of a binary tree*/
     static void inorder(Node temp) 
     { 
-        if (temp == null) 
-            return; 
-       
-        inorder(temp.left); 
-        System.out.print(temp.key+" "); 
-        inorder(temp.right); 
+      
     } 
        
     /*function to insert element in binary tree */
-    static void insert(Node temp, int key) 
+    static void insert(int key) 
     { 
 
-        // Do level order traversal until we find 
-        // an empty place and add the node.  
+       
     } 
        
     // Driver code 
     public static void main(String args[]) 
     { 
         root = new Node(10); 
-        root.left = new Node(11); 
-        root.left.left = new Node(7); 
-        root.right = new Node(9); 
-        root.right.left = new Node(15); 
-        root.right.right = new Node(8); 
+        root.left = new Node(5); 
+        root.left.left = new Node(2); 
+        root.right = new Node(15); 
+        root.right.left = new Node(11); 
+        root.right.right = new Node(20); 
        
         System.out.print( "Inorder traversal before insertion:"); 
         inorder(root); 
