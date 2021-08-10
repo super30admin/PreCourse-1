@@ -1,44 +1,68 @@
-class Stack { 
-    static final int MAX = 1000; 
-    int top; 
-    int a[] = new int[MAX]; // Maximum size of Stack 
-  
-    boolean isEmpty() 
-    { 
-        //Write your code here 
-    } 
+class Stack
+{
+    static final int MAX = 1000;
+    int a[] = new int[MAX]; // Maximum size of Stack
+    int idx;
 
-    Stack() 
-    { 
-        //Initialize your constructor 
-    } 
-  
-    boolean push(int x) 
-    { 
-        //Check for stack Overflow
-        //Write your code here
-    } 
-  
-    int pop() 
-    { 
-        //If empty return 0 and print " Stack Underflow"
-        //Write your code here
-    } 
-  
-    int peek() 
-    { 
-        //Write your code here
-    } 
-} 
-  
-// Driver code 
-class Main { 
-    public static void main(String args[]) 
-    { 
-        Stack s = new Stack(); 
-        s.push(10); 
-        s.push(20); 
-        s.push(30); 
-        System.out.println(s.pop() + " Popped from stack"); 
-    } 
+    boolean isEmpty()
+    {
+        return a.length == 0;
+    }
+
+    Stack()
+    {
+        idx = 0;
+    }
+
+    boolean push(int x)
+    {
+        if (idx == MAX)
+        {
+            return false;
+        }
+        else
+        {
+            a[idx++] = x;
+            return true;
+        }
+    }
+
+    int pop()
+    {
+        int ele = 0;
+        if (idx == 0)
+            return 0;
+        else
+        {
+            ele = a[--idx];
+            a[idx] = 0;
+        }
+        return ele;
+    }
+
+    int peek()
+    {
+        int ele = 0;
+        if (idx == 0)
+            return 0;
+        else
+        {
+            ele = a[--idx];
+            idx++;
+        }
+        return ele;
+    }
+}
+
+class Main
+{
+
+    public static void main(String args[])
+    {
+        Stack s = new Stack();
+        s.push(20);
+        int a = s.pop();
+        int q = s.peek();
+
+    }
 }
