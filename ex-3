@@ -1,0 +1,81 @@
+
+class Node {
+
+    int data;
+    Node next;
+
+    // Constructor
+    Node(int d) {
+        this.data = d;
+        this.next = null;
+    }
+
+    Node()
+    {
+        this.data=-1;
+        this.next = null;
+    }
+}
+
+public class Linkedlist {
+
+    // head of list
+    Node head;
+
+    public Linkedlist(Node start){
+        head = start;
+    }
+    // Method to insert a new node
+    public void insert(int data) {
+        // Create a new node with given data
+        Node newNode = new Node(data);
+        newNode.next = null;
+
+        Node last = head;
+        while (last.next != null)
+            last = last.next;
+        // Insert the new_node at last node
+        last.next = newNode;
+
+        // Return the list by head
+
+    }
+
+    // Method to print the LinkedList.
+    public void printList() {
+        Node curr = head.next;
+
+
+        // Traverse through the LinkedList
+        while (curr != null) {
+            // Print the data at current node
+            System.out.print(curr.data + " ");
+
+            // Go to next node
+            curr = curr.next;
+        }
+    }
+}
+public class precourse{
+
+ public static void main(String[] args)
+    {
+
+        Node head = new Node();
+        Linkedlist list = new Linkedlist(head);
+
+        //
+        // ******INSERTION******
+        //
+
+        // Insert the values
+        list.insert(1);
+        list.insert(2);
+        list.insert( 3);
+        list.insert(4);
+        list.insert(5);
+
+        // Print the LinkedList
+        list.printList();
+    }
+}
