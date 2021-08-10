@@ -21,7 +21,7 @@ if __name__ == '__main__':
     root.left = newNode(6)  
     root.left.left = newNode(2)  
     root.right = newNode(15)  
-    root.right.left = newNode(12)  
+    root.right.left = newNode(11)  
     root.right.right = newNode(20)  
   
     print("Inorder traversal before insertion:", end = " ") 
