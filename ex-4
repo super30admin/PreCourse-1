@@ -1,0 +1,122 @@
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+class TreeNode {
+    int key;
+    TreeNode left, right;
+
+    // constructor
+    TreeNode(int key) {
+        this.key = key;
+        left = null;
+        right = null;
+    }
+}
+
+public class GFG {
+
+    /* A binary tree node has key, pointer to
+    left child and a pointer to right child */
+
+
+    TreeNode root;
+
+    public GFG(TreeNode start)
+    {
+        root = start;
+    }
+
+    /* Inorder traversal of a binary tree*/
+    void inorder(TreeNode temp) {
+        if (temp == null)
+            return;
+
+        inorder(temp.left);
+        System.out.print(temp.key + " ");
+        inorder(temp.right);
+    }
+
+    /* Preorder traversal of a binary tree*/
+    void preorder(TreeNode temp) {
+        if (temp == null)
+            return;
+
+        System.out.print(temp.key + " ");
+        preorder(temp.left);
+        preorder(temp.right);
+    }
+
+    /* Postorder traversal of a binary tree*/
+    void postorder(TreeNode temp) {
+        if (temp == null)
+            return;
+
+        preorder(temp.left);
+        preorder(temp.right);
+        System.out.print(temp.key + " ");
+    }
+
+    /*function to insert element in binary tree */
+    void insert(int key) {
+        TreeNode temp = root;
+        if (temp == null) {
+            root = new TreeNode(key);
+            return;
+        }
+        Queue<TreeNode> q = new LinkedList<TreeNode>();
+        q.add(temp);
+
+        // Do level order traversal until we find
+        // an empty place.
+        while (!q.isEmpty()) {
+            temp = q.poll();
+
+            if (temp.left == null) {
+                temp.left = new TreeNode(key);
+                break;
+            } else
+                q.add(temp.left);
+
+            if (temp.right == null) {
+                temp.right = new TreeNode(key);
+                break;
+            } else
+                q.add(temp.right);
+        }
+    }
+}
+public class precourse{
+
+public static void main(String args[])
+    {
+        TreeNode root = new TreeNode(10);
+        root.left = new TreeNode(11);
+        root.left.left = new TreeNode(7);
+        root.right = new TreeNode(9);
+        root.right.left = new TreeNode(15);
+        root.right.right = new TreeNode(8);
+
+        GFG gfg = new GFG(root);
+
+        System.out.print( "\nPreorder traversal before insertion:");
+        gfg.preorder(root);
+        System.out.print( "\nInorder traversal before insertion:");
+        gfg.inorder(root);
+        System.out.print( "\nPostorder traversal before insertion:");
+        gfg.postorder(root);
+
+        System.out.println("\n-------------------");
+        int key = 12;
+        gfg.insert(key);
+
+        System.out.print( "Preorder traversal after insertion:");
+        gfg.preorder(root);
+        System.out.print("\nInorder traversal after insertion:");
+        gfg.inorder(root);
+        System.out.print("\nPostorder traversal after insertion:");
+        gfg.postorder(root);
+
+
+    }
+ }
