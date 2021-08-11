@@ -1,5 +1,7 @@
-import java.util.LinkedList; 
-import java.util.Queue; 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 class GFG {
        
     /* A binary tree node has key, pointer to  
@@ -34,7 +36,31 @@ class GFG {
     { 
 
         // Do level order traversal until we find 
-        // an empty place and add the node.  
+        // an empty place and add the node.
+       if(temp == null){
+           Node current = new Node(key);
+       }else{
+           List<Node> list = new ArrayList<Node>();
+           list.add(temp);
+
+           while(!list.isEmpty()){
+               temp = list.get(0);
+               list.remove(temp);
+                   if(temp.left == null){
+                       temp.left = new Node(key);
+                       break;
+                   }else{
+                       list.add(temp.left);
+                   }
+                   if(temp.right == null){
+                       temp.right = new Node(key);
+                       break;
+                   }else{
+                       list.add(temp.right);
+                   }
+           }
+       }
+
     } 
        
     // Driver code 
