@@ -24,7 +24,7 @@ from collections import deque
 """function to insert element in binary tree """
 def insert(temp,key):
     if not temp:
-        return Node(key)
+        return newNode(key)
     q = deque([temp])
     insertNode = newNode(key)
     while q:
