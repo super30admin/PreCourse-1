@@ -1,4 +1,4 @@
-public class Stack {
+public class Stack { 
 
     static final int MAX = 5;
     int top;
