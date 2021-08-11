@@ -2,7 +2,7 @@ import java.io.*;
   
 // Java program to implement 
 // a Singly Linked List 
-public class LinkedList { 
+class LinkedList {
   
     Node head; // head of list 
   
@@ -17,7 +17,9 @@ public class LinkedList {
         // Constructor 
         Node(int d) 
         { 
-            //Write your code here 
+            //Write your code here
+            data = d;
+            next = null;
         } 
     } 
   
@@ -25,26 +27,33 @@ public class LinkedList {
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data 
-   
+        Node n = new Node(data);
+        n.next = null;
         // If the Linked List is empty, 
-        // then make the new node as head 
-        
-            // Else traverse till the last node 
-            // and insert the new_node there 
+        // then make the new node as head
+        if (list.head == null){
+            list.head = n;
+        } else {
+            Node lastNode = list.head;
+            while (lastNode.next != null){
+                lastNode = lastNode.next;
+            }
+            lastNode.next = n;
+        }
 
-            // Insert the new_node at last node 
-        // Return the list by head 
-        
+        return list;
     } 
   
     // Method to print the LinkedList. 
     public static void printList(LinkedList list) 
-    {  
+    {
+        Node lastNode = list.head;
         // Traverse through the LinkedList 
-   
-            // Print the data at current node 
-       
-            // Go to next node 
+        while (lastNode.next != null){
+            System.out.println(lastNode.data + " ");
+            lastNode = lastNode.next;
+        }
+        System.out.println(lastNode.data);
     } 
    
     // Driver code 
@@ -62,8 +71,8 @@ public class LinkedList {
         list = insert(list, 2); 
         list = insert(list, 3); 
         list = insert(list, 4); 
-        list = insert(list, 5); 
-  
+        list = insert(list, 5);
+
         // Print the LinkedList 
         printList(list); 
     } 
