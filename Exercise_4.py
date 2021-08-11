@@ -7,14 +7,40 @@ class newNode():
         self.right = None
           
 """ Inorder traversal of a binary tree"""
-def inorder(temp): 
-  
+
+def inorder(temp):
+    inorder_traversal = []
+    def _inorder(temp):
+        if not temp:
+            return
+        _inorder(temp.left)
+        inorder_traversal.append(temp.key)
+        _inorder(temp.right)
+    _inorder(temp)
+    print(inorder_traversal)
     
-  
-  
+
+from collections import deque
 """function to insert element in binary tree """
-def insert(temp,key): 
-  
+def insert(temp,key):
+    if not temp:
+        return Node(key)
+    q = deque([temp])
+    insertNode = newNode(key)
+    while q:
+        node = q.popleft()
+        if not node:
+            return
+        if not node.left:
+            node.left = insertNode
+            break
+        q.append(node.left)
+        if not node.right:
+            node.right = insertNode
+            break
+        q.append(node.right)
+        
+
     
   
        
