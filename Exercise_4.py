@@ -8,6 +8,12 @@ class newNode():
           
 """ Inorder traversal of a binary tree"""
 def inorder(temp): 
+    
+    if temp==None:
+        return
+    inorder(temp.left)
+    print(temp.key)
+    inorder(temp.right)
   
     
   
@@ -16,6 +22,7 @@ def inorder(temp):
 def insert(temp,key): 
   
     
+
   
        
 # Driver code  
