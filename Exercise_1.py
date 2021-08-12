@@ -31,4 +31,3 @@ s.push('1')
 s.push('2')
 print(s.pop())
 print(s.show())
-
