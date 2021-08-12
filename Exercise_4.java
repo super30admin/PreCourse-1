@@ -1,6 +1,10 @@
+// Time complexity: 
+// INSERT - O(LOGN)
+// SUCCESS in Leetcode
+
 import java.util.LinkedList; 
 import java.util.Queue; 
-public class GFG { 
+class GFG { 
        
     /* A binary tree node has key, pointer to  
     left child and a pointer to right child */
@@ -32,9 +36,21 @@ public class GFG {
     /*function to insert element in binary tree */
     static void insert(Node temp, int key) 
     { 
-
         // Do level order traversal until we find 
-        // an empty place and add the node.  
+        // an empty place and add the node. 
+         if (key < temp.key) {
+             if (temp.left == null) {
+                 temp.left = new Node(key);
+                return;
+             }
+             insert(temp.left, key);
+         } else if (key > temp.key) {
+            if (temp.right == null) {
+                temp.right = new Node(key);
+               return;
+            }
+             insert(temp.right, key);
+         }
     } 
        
     // Driver code 
