@@ -1,4 +1,5 @@
- class StackAsLinkedList { 
+// Time complexity: O(1)
+class StackAsLinkedList { 
   
     StackNode root; 
   

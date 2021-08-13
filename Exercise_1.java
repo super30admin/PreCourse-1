@@ -1,12 +1,14 @@
 // Exercise_1 : Implement Stack using Array.
+
 class Stack { 
     static final int MAX = 1000; 
     int top; 
     int a[] = new int[MAX]; // Maximum size of Stack 
   
+    //Time Complexity - O(1)
     boolean isEmpty() 
     { 
-        //Write your code here
+
         return this.top == -1;
 
     } 
@@ -17,6 +19,7 @@ class Stack {
         this.top = -1; 
     } 
   
+    //Time Complexity - O(1)
     boolean push(int x) 
     { 
         //Check for stack Overflow
@@ -29,6 +32,7 @@ class Stack {
         return true;
     } 
   
+    //Time Complexity - O(1)
     int pop() 
     { 
         //If empty return 0 and print " Stack Underflow"
@@ -42,7 +46,8 @@ class Stack {
         return temp;
 
     } 
-  
+    
+    //Time Complexity - O(1)
     int peek() 
     { 
         //Write your code here
