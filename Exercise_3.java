@@ -23,7 +23,9 @@ public class LinkedList {
         } 
     } 
   
-    // Method to insert a new node 
+    // Method to insert a new node
+    //Time complexity O(n)
+    //Space complexity O(1)
     public static LinkedList insert(LinkedList list, int data)
     { 
         // Create a new node with given data 
@@ -46,7 +48,9 @@ public class LinkedList {
         return list;
     } 
   
-    // Method to print the LinkedList. 
+    // Method to print the LinkedList.
+    //Time complexity O(1)
+    //Space complexity O(1)
     public static void printList(LinkedList list) 
     {  
         // Traverse through the LinkedList 

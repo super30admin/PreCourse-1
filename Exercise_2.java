@@ -13,13 +13,15 @@ public class StackAsLinkedList {
         }
     }
 
-
+    //Time complexity O(1)
+    //Space complexity O(1)
     public boolean isEmpty()
     {
         //Write your code here for the condition if stack is empty.
         return root==null?true:false;
     }
-
+    //Time complexity O(1)
+    //Space complexity O(1)
     public void push(int data)
     {
         //Write code to push data to the stack.
@@ -27,7 +29,8 @@ public class StackAsLinkedList {
         t.next=root;
         root=t;
     }
-
+    //Time complexity O(1)
+    //Space complexity O(1)
     public int pop()
     {
         //If Stack Empty Return 0 and print "Stack Underflow"
@@ -43,7 +46,8 @@ public class StackAsLinkedList {
         return v;
 
     }
-
+    //Time complexity O(1)
+    //Space complexity O(1)
     public int peek()
     {
         //Write code to just return the topmost element without removing it.

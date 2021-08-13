@@ -20,6 +20,8 @@ public class GFG {
     static Node temp = root;
 
     /* Inorder traversal of a binary tree*/
+    //Time complexity O(n)
+    //Space complexity O(1)
     static void inorder(Node temp)
     {
         if (temp == null)
@@ -31,6 +33,8 @@ public class GFG {
     }
 
     /*function to insert element in binary tree */
+    //Time complexity is O(n) where n is the no. of nodes in Binary tree
+    //space complexity is O(n) where n is the no. of node in Binary tree
     static void insert(Node temp, int key)
     {
 

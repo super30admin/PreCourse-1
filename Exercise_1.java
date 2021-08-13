@@ -2,7 +2,8 @@ class Stack {
     static final int MAX = 1000;
     int top;
     int a[] = new int[MAX]; // Maximum size of Stack
-
+    //Time complexity O(1)
+    //Space complexity O(1)
     boolean isEmpty()
     {
         //Write your code here
@@ -14,7 +15,8 @@ class Stack {
         //Initialize your constructor
         top=0;
     }
-
+    //Time complexity O(1)
+    //Space complexity O(1)
     boolean push(int x)
     {
         //Check for stack Overflow
@@ -24,7 +26,8 @@ class Stack {
         a[top++]=x;
         return true;
     }
-
+    //Time complexity O(1)
+    //Space complexity O(1)
     int pop()
     {
         //If empty return 0 and print " Stack Underflow"
@@ -33,7 +36,8 @@ class Stack {
             return -1;
         return a[--top];
     }
-
+    //Time complexity O(1)
+    //Space complexity O(1)
     int peek()
     {
         //Write your code here
