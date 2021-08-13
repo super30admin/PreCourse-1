@@ -4,7 +4,9 @@ using namespace std;
   
 #define MAX 1000 
   
-class Stack { 
+class Stack {
+  //Please read sample.java file before starting.
+  //Kindly include Time and Space complexity at top of each file
     int top; 
   
 public: 
