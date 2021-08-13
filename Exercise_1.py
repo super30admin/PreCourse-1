@@ -2,6 +2,7 @@ class myStack:
      def __init__(self):
           """
           Initialising stack as an empty array
+          TC: O(1)
           """
           self.stack = list()
          
@@ -11,6 +12,7 @@ class myStack:
           --------
           returns:
           bool: true if stack is empty else returns false
+          TC: O(1)
           """
           if not self.stack:
                return True
@@ -25,6 +27,7 @@ class myStack:
           --------
           returns:
           None
+          TC: O(1)
           """
           self.stack.append(item)
          
@@ -37,6 +40,7 @@ class myStack:
           ---------
           returns:
           item: last element that was inserted
+          TC: O(1)
           """        
           if self.isEmpty():
                return
@@ -53,6 +57,7 @@ class myStack:
           ---------
           returns:
           item: last element that was inserted
+          TC: O(1)
           """
           if self.isEmpty:
                return 
@@ -68,6 +73,7 @@ class myStack:
           --------
           returns:
           length: length (size) of stack
+          TC: O(1)
           """
           length = len(self.stack)
           return length
@@ -81,6 +87,7 @@ class myStack:
           --------
           returns:
           stack_arr : left to right shows top to bottom
+          TC: O(1)
           """ 
           stack_arr = self.stack[::-1]
           return stack_arr

@@ -10,6 +10,17 @@ class Stack:
 
         
     def push(self, data):
+        '''
+        Pushes element on top of stack
+        ---------
+        arguments:
+        data: int - value to push
+        ---------
+        returns:
+        None
+        TC: O(1)
+        SC: O(1)
+        '''
         temp = Node(data)
         temp.next = self.head
         self.head = temp
@@ -17,6 +28,17 @@ class Stack:
 
         
     def pop(self):
+        '''
+        Pop element from stack
+        --------
+        arguments:
+        None
+        ---------
+        returns:
+        value: int - value at top popped from stack
+        TC: O(1)
+        SC: O(1)
+        '''
         if not self.head:
             return None
         value = self.head.data
