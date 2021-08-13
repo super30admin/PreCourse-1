@@ -20,6 +20,7 @@ class Stack {
     } 
   
     //Time Complexity - O(1)
+    //space complexity - O(1)
     boolean push(int x) 
     { 
         //Check for stack Overflow
@@ -33,6 +34,7 @@ class Stack {
     } 
   
     //Time Complexity - O(1)
+    
     int pop() 
     { 
         //If empty return 0 and print " Stack Underflow"

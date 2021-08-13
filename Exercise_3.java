@@ -23,6 +23,8 @@
     } 
   
     // Method to insert a new node 
+    //Time complexity: O(1)
+    //space complexity: O(1)
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data 
