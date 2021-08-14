@@ -1,10 +1,16 @@
-class Stack { 
+// Time Complexity : O(1)
+// Space Complexity : O(n)
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : No
+
+class Stack {
     static final int MAX = 1000; 
     int top; 
     int a[] = new int[MAX]; // Maximum size of Stack 
   
     boolean isEmpty() 
     {
+        // Return true if there are no elements present in the stack
         if(top < 0) {
             return true;
         }
@@ -15,6 +21,7 @@ class Stack {
 
     Stack() 
     {
+        // Initialize empty stack
         top = -1;
     } 
   
@@ -25,6 +32,7 @@ class Stack {
             System.out.println("Stack Overflow");
             return false;
         } else {
+            // Increment top and insert the new element
             top++;
             a[top] = x;
             System.out.println("Pushed "+ x +" into the stack.");
@@ -39,6 +47,7 @@ class Stack {
             System.out.println("Stack underflow");
             return 0;
         } else {
+            // Decrement top
             int n = a[top];
             top --;
             return n;
@@ -46,7 +55,8 @@ class Stack {
     } 
   
     int peek() 
-    { 
+    {
+        // Check for empty stack else return the last inserted element
         if(isEmpty()){
             System.out.println("Stack is empty");
             return 0;

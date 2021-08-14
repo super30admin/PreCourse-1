@@ -1,4 +1,9 @@
-import java.io.*; 
+// Time Complexity : O(n)
+// Space Complexity : O(n)
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : No
+
+import java.io.*;
   
 // Java program to implement 
 // a Singly Linked List 
@@ -16,10 +21,9 @@ class LinkedList {
   
         // Constructor 
         Node(int d) 
-        { 
-            //Write your code here
-            data = d;
-            next = null;
+        {
+            data = d; // value
+            next = null; // reference to next element in the linked list
         } 
     } 
   
@@ -34,6 +38,7 @@ class LinkedList {
         if (list.head == null){
             list.head = n;
         } else {
+            // traverse till the last element and reference the new element being inserted
             Node lastNode = list.head;
             while (lastNode.next != null){
                 lastNode = lastNode.next;

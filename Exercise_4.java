@@ -1,3 +1,8 @@
+// Time Complexity : O(n)
+// Space Complexity : O(n)
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : No
+
 import java.util.LinkedList;
 import java.util.Queue;
 class GFG {
@@ -10,9 +15,9 @@ class GFG {
 
         // constructor
         Node(int key){
-            this.key = key;
-            left = null;
-            right = null;
+            this.key = key; // value
+            left = null; // reference to left element
+            right = null; // reference to right element
         }
     }
     static Node root;
@@ -24,9 +29,9 @@ class GFG {
         if (temp == null)
             return;
 
-        inorder(temp.left);
+        inorder(temp.left); // recursive call for left referenced elements
         System.out.print(temp.key+" ");
-        inorder(temp.right);
+        inorder(temp.right); // recursive call for right referenced elements
     }
 
     /*function to insert element in binary tree */
