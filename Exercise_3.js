@@ -14,6 +14,7 @@ class LinkedList {
 
 
     //Inserts value at the end
+    // O(1)
     push(val) {
         let newNode = new Node(val);
         if (!this.head) {
@@ -30,6 +31,7 @@ class LinkedList {
 
 
     //     Removes element from the end
+    // O(1)
     pop() {
         if (!this.head) return undefined;
         let currentNode = this.head;
@@ -50,6 +52,7 @@ class LinkedList {
     }
 
     //     Find if the value exists in the list
+    // O(n)
     find(val) {
         if (!this.head) return null;
 
@@ -65,6 +68,7 @@ class LinkedList {
 
 
     //     Print all the values in the list
+    // O(n)
     printList() {
         let currentNode = this.head;
         let list = [];

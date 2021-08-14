@@ -9,17 +9,20 @@ class Stack {
     }
 
     //Adds the element at the end of the array
+    // O(1)
     push(element) {
         return !!this.stack.push(element);
     }
 
     //Removes the last element from the end of the array
+    //O(1)
     pop() {
         if (this.stack.length === 0) return null;
         return this.stack.pop();
     }
 
     //Returns the last element of the array without popping
+    //O(1)
     peek() {
         let lastIndex = this.stack.length - 1;
         return this.stack[lastIndex];

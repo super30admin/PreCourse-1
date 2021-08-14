@@ -17,6 +17,7 @@ class StackAsLinkedList {
     }
 
     //Adds the element at head of the list
+    // O(1)
     push(val) {
         let newNode = new Node(val);
         if (!this.top) {
@@ -33,6 +34,7 @@ class StackAsLinkedList {
     }
 
     // Removes the last added element fromt the head
+    // O(1)
     pop() {
         if (!this.top) return null;
         if (this.top === this.end) this.end = null;
@@ -45,6 +47,7 @@ class StackAsLinkedList {
     }
 
     //Returns the last added value without popping
+    // O(1)
     peek() {
         return this.top.val;
     }
