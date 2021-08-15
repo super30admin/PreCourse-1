@@ -1,5 +1,25 @@
 """
 Using LIFO for stack implementation in list
+Time Complexity- Initializing O(1)
+isempty- O(1)
+pushing- O(n)
+Popping- O(1)
+Time complexity of len- O(1)
+Time Complexity of show- O(n)
+Space Complexity-
+Initializing O(1)
+isempty- O(1)
+pushing - O(n) since the size should grow linearly with the number of elements we add
+Popping- O(1)
+Space complexity of size- O(1)
+Space Complexity of show/print should be- O(1) since array is already defined we are just printing it
+Explanation-
+For initialzation we will declare an empty array, and for checking if the array is empty or not
+we will just check if the array has any element or not, for pushing we will use append object of list, 
+for popping we will just use pop object of the list class already defined in the  class, for peeking we will
+retrieve the last element of the array, for checking the size we will return the length of the list; for showing
+we will print all the elements of the array
+
 """
 class myStack:
 

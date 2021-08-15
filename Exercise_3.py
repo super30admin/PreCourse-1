@@ -1,3 +1,21 @@
+ """
+   Singly linked list implementation
+   Time Complexity initialization of listnode and singly linked list O(1)
+   Inserting takes O(n) time since we have to traverse all array
+   Finding takes O(n) time
+   Removing takes O(n) time
+
+   Space complexity:
+   initialization O(1)
+   appending O(n)
+   finding O(1)
+   removing O(1)
+   printing O(1)
+
+   Explanation is mentioned in every function below. 
+
+"""
+
 class ListNode:
     """
     A node in a singly-linked list.

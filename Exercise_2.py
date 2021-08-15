@@ -1,5 +1,17 @@
 """
 Using LinkedList to implement Stack LIFO
+Time Complexity-Initialization of node - O(1)
+Initialization of stack - O(1)
+Pushing an element to the end of singly linked list should take O(n) since we have to traverse all the array
+Popping an element from the end of array should also take O(n) since we have to traverse the last of array
+
+Space Complexity-
+Initilization node and stack O(1) since initialy the node and stack is empty. But i have a doubt about it could you please clear
+Pushing should take space complexity O(n) since the list size linearly increase with elements
+Popping space complexity should be O(1) since space is already declared.
+
+Explanation is mentioned in the functions below
+
 """
 
 class Node:
