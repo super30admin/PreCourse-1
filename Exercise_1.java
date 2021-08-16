@@ -1,3 +1,5 @@
+//Time complexity:  O(1)
+//Space complexity: O(N)
 class Stack { 
     //Please read sample.java file before starting.
   //Kindly include Time and Space complexity at top of each file
@@ -7,29 +9,57 @@ class Stack {
   
     boolean isEmpty() 
     { 
-        //Write your code here 
+        //If the value of the top is less than 0, it means that the stack is empty
+        if(top < 0) {
+            return true;
+        }
+        else{
+            return false;
+        }
+
     } 
 
     Stack() 
     { 
-        //Initialize your constructor 
+        top = -1;
     } 
   
     boolean push(int x) 
     { 
         //Check for stack Overflow
-        //Write your code here
+        //If the value of top pointer is greater than value of MAX, the stack is full and if we try to insert it should say stack overflow.
+        if(top > MAX) {
+            System.out.println("Stack Overflow");
+            return false;
+        }
+        else {
+            a[++top] = x;
+            return true;
+        }
     } 
   
     int pop() 
     { 
         //If empty return 0 and print " Stack Underflow"
-        //Write your code here
+        if(top < 0) {
+            System.out.println("Stack Underflow");
+            return 0;
+        }
+        else{
+            return a[top--];
+        }
     } 
   
+    //Peek function will return the value at the top of the stack
     int peek() 
     { 
-        //Write your code here
+        if(top < 0) {
+            System.out.println("Stack Underflow");
+            return 0;
+        }
+        else{
+            return a[top];
+        }
     } 
 } 
   
@@ -42,5 +72,7 @@ class Main {
         s.push(20); 
         s.push(30); 
         System.out.println(s.pop() + " Popped from stack"); 
+        System.out.println(s.peek() + " is at the top of the stack"); 
+        System.out.println("Stack Empty: " + s.isEmpty());
     } 
 }
