@@ -10,6 +10,7 @@ public class StackAsLinkedList {
         { 
             //Constructor here 
             int i=10;
+            float j=10.1;
         } 
     } 
     
