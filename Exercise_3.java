@@ -1,4 +1,4 @@
-/ Java program to implement
+// Java program to implement
 // a Singly Linked List 
 class LinkedList {
 
