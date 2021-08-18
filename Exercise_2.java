@@ -9,6 +9,8 @@ public class StackAsLinkedList {
         StackNode(int data) 
         { 
             //Constructor here 
+            int i=10;
+            float j=10.1;
         } 
     } 
     
