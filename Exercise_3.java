@@ -1,4 +1,7 @@
-package precourse1;
+// Time Complexity : O(N)
+// Space Complexity :O(N)
+// Did this code successfully run on Leetcode :No
+// Any problem you faced while coding this :No
 
 import java.io.*; 
 
@@ -27,16 +30,6 @@ public class LinkedList {
  // Method to insert a new node 
  public static LinkedList insert(LinkedList list, int data) 
  { 
-     // Create a new node with given data 
-
-     // If the Linked List is empty, 
-     // then make the new node as head 
-     
-         // Else traverse till the last node 
-         // and insert the new_node there 
-
-         // Insert the new_node at last node 
-     // Return the list by head
 	 Node newNode = new Node(data);
 	 if(list.head == null) {
 		 list.head = newNode;
@@ -54,12 +47,7 @@ public class LinkedList {
 
  // Method to print the LinkedList. 
  public static void printList(LinkedList list) 
- {  
-     // Traverse through the LinkedList
-
-         // Print the data at current node 
-    
-         // Go to next node 
+ {   
 	 Node current = list.head;
 	 while (current != null) {
 		 System.out.println(current.data);
