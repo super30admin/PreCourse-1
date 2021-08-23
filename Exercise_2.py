@@ -1,3 +1,20 @@
+"""
+Problem: Implement Stack Using LinkedList
+
+Time Complexity:
+    * __init__  : O(1)
+    * push      : O(1)
+    * pop       : O(1)
+
+Space Complexity:
+    * __init__  : O(1)
+    * push      : O(1)
+    * pop       : O(1)
+
+Pass on LeetCode: N/A
+Problems Occurred: N/A
+"""
+
 
 class Node:
     def __init__(self, data):
@@ -6,10 +23,20 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.head = Node(None)
         
     def push(self, data):
+        node = Node(data)
+        node.next = self.head 
+        self.head = node 
+
         
     def pop(self):
+        data = self.head.data
+        if self.head.next:
+            self.head = self.head.next
+        return data
+
         
 a_stack = Stack()
 while True:
