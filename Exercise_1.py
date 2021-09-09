@@ -18,10 +18,10 @@ class myStack:
         self.stack.append(item)
 
     def pop(self):
-        self.stack.pop()
+        return self.stack.pop()
 
     def peek(self):
-        return self.stack[len(self.stack) - 1]
+        return self.stack[-1]
 
     def size(self):
         return len(self.stack)
@@ -33,5 +33,7 @@ class myStack:
 s = myStack()
 s.push("1")
 s.push("2")
+print(s.show())
+s.peek()
 print(s.pop())
 print(s.show())
