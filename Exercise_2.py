@@ -1,3 +1,5 @@
+#  Time Complexity : O(1)
+#  Space Complexity : O(n)
 
 class Node:
     def __init__(self, data):

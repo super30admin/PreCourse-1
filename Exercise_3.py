@@ -1,5 +1,6 @@
 # from Exercise_2 import Node
-
+#  Time Complexity for insertion, finding and removing: O(n)
+#  Space Complexity : O(n)
 class ListNode:
     """
     A node in a singly-linked list.
