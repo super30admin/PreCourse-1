@@ -1,17 +1,35 @@
-
 class Node:
     def __init__(self, data):
-       self.data = data
-       self.next = None
- 
+        self.data = data
+        self.next = None
+        
 class Stack:
     def __init__(self):
+        self.__head = None
+        self.__count = 0
         
     def push(self, data):
+        new_node = Node(data)
+        new_node.next = self.__head
+        self.__head = new_node
+        self.__count += 1
+        return
         
     def pop(self):
+        if self.__head == None:
+            print("Empty List!")
+            return
+        
+        popped = self.__head.data
+        self.__head = self.__head.next
+        self.__count -= 1
+        return popped
+        
+        
         
 a_stack = Stack()
+
+
 while True:
     #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
     print('push <value>')
