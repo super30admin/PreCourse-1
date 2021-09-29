@@ -1,8 +1,8 @@
-import java.io.*; 
+import java.io.*;
   
 // Java program to implement 
-// a Singly Linked List 
-public class LinkedList { 
+// a Singly Linked List
+ class LinkedList {
   
     Node head; // head of list 
   
@@ -49,8 +49,7 @@ public class LinkedList {
    
     // Driver code 
     public static void main(String[] args) 
-    { 
-        /* Start with the empty list. */
+    {
         LinkedList list = new LinkedList(); 
   
         // 
