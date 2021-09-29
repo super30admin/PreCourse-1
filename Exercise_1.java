@@ -1,8 +1,14 @@
-package s30_intro;
 
 class Stack { 
     //Please read sample.java file before starting.
   //Kindly include Time and Space complexity at top of each file
+    // Time Complexity
+    // push- O(1)
+    // pop - O(1)
+    // Peek - O(1)
+    // Space Complexity - O(n)
+
+
     static final int MAX = 10; 
     int top; 
     int a[] = new int[MAX]; // Maximum size of Stack 

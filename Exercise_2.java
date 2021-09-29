@@ -1,8 +1,11 @@
-package s30_intro;
 
 public class Precourselinkedlist 
 {
-
+    // Time Complexity
+    // push- O(n)
+    // pop - O(n)
+    // Peek - O(n)
+    // Space Complexity - O(n)
 
 	StackNode root; 
 	

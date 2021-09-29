@@ -1,4 +1,3 @@
-package s30_intro;
 import java.io.*; 
 
 
@@ -9,6 +8,9 @@ public class Precoursell2 {
     // Linked list Node. 
     // This inner class is made static 
     // so that main() can access it 
+    // Time Complexity
+        // insert - O(n)
+    // Space Complexity - O(n)
     static class Node { 
   
         int data; 
