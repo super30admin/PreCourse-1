@@ -1,6 +1,13 @@
 class Stack { 
     //Please read sample.java file before starting.
   //Kindly include Time and Space complexity at top of each file
+    // Time Complexity : O(n)
+// Space Complexity : O(n)
+// Did this code successfully run on Leetcode :
+// Any problem you faced while coding this : no
+
+
+    // Your code here along with comments explaining your approach
     static final int MAX = 1000; 
     int top; 
     int a[] = new int[MAX]; // Maximum size of Stack 
@@ -20,7 +27,7 @@ class Stack {
     boolean push(int x) 
     { 
         //Check for stack Overflow
-        if (top>MAX-1){
+        if (top==MAX-1){
             return false;
         }
 
