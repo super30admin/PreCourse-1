@@ -1,4 +1,5 @@
-#include <bits/stdc++.h> 
+#include <iostream>
+#include <cassert>
 using namespace std; 
   
 // A structure to represent a stack 
@@ -18,22 +19,40 @@ StackNode* newNode(int data)
   
 int isEmpty(StackNode* root) 
 { 
-    //Your code here 
+    return (root == NULL);
 } 
   
 void push(StackNode** root, int data) 
 { 
-    //Your code here 
+    if (root == NULL) {
+        *root = newNode(data);
+    }
+    else {
+        StackNode* temp = new StackNode(); 
+        temp -> data = data;
+        temp -> next = *root; //insert at root of list
+        *root = temp;
+    }
 } 
   
 int pop(StackNode** root) 
 { 
-    //Your code here 
-} 
+    assert(!isEmpty(*root));
+   
+    StackNode* temp = new StackNode;
+    temp = *root; 
+    *root = temp -> next; //root points to second item
+    delete temp;          //deallocate front item
+    return temp -> data;
+}
   
 int peek(StackNode* root) 
 { 
-    //Your code here 
+    if (!(root == NULL))
+        return root -> data;
+    else 
+        cout << "Stack is empty ";   
+        return -1;
 } 
   
 int main() 
@@ -47,6 +66,6 @@ int main()
     cout << pop(&root) << " popped from stack\n"; 
   
     cout << "Top element is " << peek(root) << endl; 
-  
+    
     return 0; 
 } 
