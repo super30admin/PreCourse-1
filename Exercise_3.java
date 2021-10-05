@@ -1,5 +1,4 @@
 // Time complexity of insert in O(n) and traverse also is O(n);
-// Program ran successfully on Leetcode
 // No Problems faced while coding this
 
 import java.io.*; 
