@@ -2,7 +2,7 @@ import java.io.*;
 
 // Java program to implement
 // a Singly Linked List
-public class LinkedList{
+public class LinkedList {
     // Time Complexity : O(n)
 // Space Complexity : O(n)
 // Did this code successfully run on Leetcode :
@@ -24,7 +24,8 @@ public class LinkedList{
         Node(int d)
         {
             //Write your code here
-            this.data = data;
+            this.data = d;
+            this.next=null;
         }
     }
 
@@ -39,17 +40,18 @@ public class LinkedList{
         if (list.head == null){
             list.head = newNode;
         }
-
+        else {
             // Else traverse till the last node
             // and insert the new_node there
-        Node current = list.head;
-        while(current.next != null){
-            current = current.next;
-        }
-        current.next = newNode;
+            Node current = list.head;
+            while (current.next != null) {
+                current = current.next;
+            }
+            current.next = newNode;
 
             // Insert the new_node at last node
-        // Return the list by head
+            // Return the list by head}
+        }
         return list;
     }
 
@@ -59,12 +61,12 @@ public class LinkedList{
         // Traverse through the LinkedList
         Node current = list.head;
 
-            // Print the data at current node
-       while (current!=null){
-           System.out.println(current.data);
-           current = current.next;
-       }
-            // Go to next node
+        // Print the data at current node
+        while (current!=null){
+            System.out.println(current.data);
+            current = current.next;
+        }
+        // Go to next node
     }
 
     // Driver code
