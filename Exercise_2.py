@@ -1,3 +1,5 @@
+#The space complexity is the length of linked list going to be created
+# The time complecity is O(1) for all operations
 
 class Node:
     def __init__(self, data):
@@ -6,10 +8,23 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.head=None
         
     def push(self, data):
-        
+        if self.head==None:
+            self.head=Node(data)
+        else:
+            a=Node(data)
+            a.next=self.head
+            self.head=a
     def pop(self):
+        if self.head!=None:
+            a=self.head
+            self.head=a.next
+            a.next=None
+            return a.data
+        else:
+            return "Stack Underflow"
         
 a_stack = Stack()
 while True:
