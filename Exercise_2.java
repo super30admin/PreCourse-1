@@ -1,6 +1,11 @@
+
+// Time Complexity : O(1)
+// Space Complexity : O(n)
+// Did this code successfully run on Leetcode : 
+// Any problem you faced while coding this : no
 public class StackAsLinkedList { 
   
-    StackNode root; 
+    StackNode root;
   
     static class StackNode { 
         int data; 
@@ -8,30 +13,45 @@ public class StackAsLinkedList {
   
         StackNode(int data) 
         { 
-            //Constructor here 
+            this.data = data; 
         } 
     } 
     
 	
     public boolean isEmpty() 
     { 
+        return root == null;
         //Write your code here for the condition if stack is empty. 
     } 
   
     public void push(int data) 
-    { 
+    {
+        StackNode newNode;
+        newNode.data = data;
+        newNode.next = root;
+        root = newNode;
         //Write code to push data to the stack. 
     } 
   
     public int pop() 
     { 	
-	//If Stack Empty Return 0 and print "Stack Underflow"
-        //Write code to pop the topmost element of stack.
-	//Also return the popped element 
+        int x = 0;
+        if ( ! isEmpty())
+        {
+            x = root.data;
+            root = root.next;
+        }
+        else 
+            System.out.println("Stack underflow")
+
+        return x;
     } 
   
     public int peek() 
     { 
+        if ( ! isEmpty())
+            return root.data;
+        return 0;
         //Write code to just return the topmost element without removing it.
     } 
   
@@ -49,4 +69,5 @@ public class StackAsLinkedList {
   
         System.out.println("Top element is " + sll.peek()); 
     } 
-} 
+}
+

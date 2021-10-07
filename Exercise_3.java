@@ -1,3 +1,8 @@
+// Time Complexity : O(n)
+// Space Complexity : O(n)
+// Did this code successfully run on Leetcode : yes
+// Any problem you faced while coding this :
+
 import java.io.*; 
   
 // Java program to implement 
@@ -17,13 +22,27 @@ public class LinkedList {
         // Constructor 
         Node(int d) 
         { 
-            //Write your code here 
+            this.data = d;
         } 
     } 
   
     // Method to insert a new node 
     public static LinkedList insert(LinkedList list, int data) 
     { 
+        if(list.head == null)
+        {
+            Node new_node = new Node(data);
+            list.head = new_node;
+        }
+        else{
+            Node current = list.head;
+            while(current.next != null)
+                current = current.next;
+            Node new_node = new Node(data);
+            current.next = new_node;
+        }
+
+        return list;
         // Create a new node with given data 
    
         // If the Linked List is empty, 
@@ -45,6 +64,13 @@ public class LinkedList {
             // Print the data at current node 
        
             // Go to next node 
+        Node current = list.head;
+        while (current!=null)
+        {
+            System.out.print(current.data + "->");
+            current = current.next;
+        }
+        System.out.print("NULL");
     } 
    
     // Driver code 
