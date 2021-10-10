@@ -1,3 +1,4 @@
+//Time Complexity: O(n)
 import java.io.*; 
   
 // Java program to implement 
@@ -17,7 +18,8 @@ public class LinkedList {
         // Constructor 
         Node(int d) 
         { 
-            //Write your code here 
+            data = d;
+            next = null;
         } 
     } 
   
@@ -25,26 +27,40 @@ public class LinkedList {
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data 
-   
+        Node newNode = new Node(data);
+        newNode.next = null;
         // If the Linked List is empty, 
         // then make the new node as head 
-        
+        if(list.head == null){
+          list.head = newNode;
+        }
             // Else traverse till the last node 
             // and insert the new_node there 
-
+          else{
+            Node tail = list.head;
+            while(tail.next != null){
+              tail = tail.next;
+            }
+            tail.next = newNode;
+          }
             // Insert the new_node at last node 
         // Return the list by head 
-        
+        return list;    
     } 
   
     // Method to print the LinkedList. 
     public static void printList(LinkedList list) 
     {  
         // Traverse through the LinkedList 
-   
-            // Print the data at current node 
-       
-            // Go to next node 
+        Node current = list.head;
+            // Traverse through the LinkedList
+        System.out.print("LinkedList: ");
+        // Print the data at current node  
+        while(current != null){
+          // Go to next node 
+          System.out.print(current.data + " ");
+          current = current.next;
+        }
     } 
    
     // Driver code 
