@@ -1,10 +1,14 @@
-import java.io.*; 
+// Time Complexity : O(n)
+// Space Complexity : O(n)
+
+
+import java.io.*;
   
 // Java program to implement 
 // a Singly Linked List 
-public class LinkedList { 
+class LinkedList {
   
-    Node head; // head of list 
+    static Node head; // head of list
   
     // Linked list Node. 
     // This inner class is made static 
@@ -17,7 +21,8 @@ public class LinkedList {
         // Constructor 
         Node(int d) 
         { 
-            //Write your code here 
+            this.data = d;
+            this.next = null;
         } 
     } 
   
@@ -34,17 +39,27 @@ public class LinkedList {
 
             // Insert the new_node at last node 
         // Return the list by head 
-        
+        if(list.head==null){
+            list.head = new Node(data);
+        }
+        else{
+            Node crawler = list.head;
+            while(crawler.next!=null)
+                crawler = crawler.next;
+            crawler.next = new Node(data);
+        }
+        return list;
     } 
   
     // Method to print the LinkedList. 
     public static void printList(LinkedList list) 
-    {  
-        // Traverse through the LinkedList 
-   
-            // Print the data at current node 
-       
-            // Go to next node 
+    {
+        Node crawler = list.head;
+        while(crawler!=null) {
+            System.out.println(crawler.data);
+            crawler = crawler.next;
+        }
+
     } 
    
     // Driver code 
