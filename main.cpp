@@ -1,67 +1,75 @@
 #include <iostream>
-#define MAX 1000
 using namespace std;
 
-class Stack {
-    int top;
-
+// A structure to represent a stack
+class StackNode {
 public:
-    int a[MAX]; // Maximum size of Stack // 10,20,30
-    int index = 0;//2
-    int size = 0;//2
-    Stack() {
-    }
-        bool push(int x);
-        int pop();
-        int peek();
-        bool isEmpty();
-    };
+    int data;
+    StackNode* next;
 
-    bool Stack::push(int x) {
-        if (size >= MAX) {
-           cout<<"The Stack is full, we cannot insert";
-            return false;
-        }
-            a[index] = x;
-            index++;
-            size++;
-            return true;
-    }
-    int Stack::pop() {
-        int val = -1;
-        if(isEmpty()) {
-            cout<<"The Stack is already empty, there is nothing to remove ";
-        }else {
-            val = a[index-1];
-            a[index-1] = 0;
-            index--;
-            size--;
-        }
-        return val;
-    }
+};
 
-    int Stack::peek() {
-        if (isEmpty()) {
-            cout << "The Stack is already empty, there is nothing to show ";
-            return -1;
-        }
-            return a[index - 1];
-
-    }
-
-    bool Stack::isEmpty() {
-        if(size == 0){
-            return true;
-        }
-        return false;
-    }
-
-int main() {
-        cout << "OM SAI RAM" << endl;
-        class Stack s;
-        s.push(10);
-        s.push(20);
-        s.push(30);
-        cout << s.pop() << " Popped from stack\n";
-        return 0;
+StackNode* newNode(int data)
+{
+    StackNode* stackNode = new StackNode();
+    stackNode->data = data;
+    stackNode->next = NULL;
+    return stackNode;
 }
+
+int isEmpty(StackNode* root)
+{
+    if(root == NULL ){
+        return 1;
+    }
+    return 0;
+}
+
+void push(StackNode** root, int data)
+{
+   if(*root == NULL){
+       StackNode* stackNode1 = newNode(data);
+       *root = stackNode1;
+       return;
+   }else{
+       StackNode* stackNode2 = newNode(data);
+       stackNode2->next = *root;
+       *root =  stackNode2;
+   }
+}
+
+int pop(StackNode** root)
+{
+    if(*root == NULL){
+        return -1;
+    }
+    int val = (*root)->data;
+    StackNode* stackNode1 = *root;
+    *root = (*root)->next;
+    stackNode1 = NULL;
+    return val;
+}
+
+int peek(StackNode* root)
+{
+   if(root == NULL){
+      return -1;
+   }
+   return root->data;
+}
+
+int main()
+{
+    StackNode* root = NULL;
+
+    push(&root, 10);
+    push(&root, 20);
+    push(&root, 30);
+
+    cout << pop(&root) << " popped from stack\n";
+
+    cout << "Top element is " << peek(root) << endl;
+
+    return 0;
+}
+
