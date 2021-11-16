@@ -1,75 +1,93 @@
 #include <iostream>
 using namespace std;
 
-// A structure to represent a stack
-class StackNode {
+// A linked list node (changes)
+class Node
+{
 public:
     int data;
-    StackNode* next;
-
+    Node *next;
 };
 
-StackNode* newNode(int data)
+/* Given a reference (pointer to pointer)
+to the head of a list and an int, inserts
+a new node on the front of the list. */
+void push(Node** head_ref, int new_data)
 {
-    StackNode* stackNode = new StackNode();
-    stackNode->data = data;
-    stackNode->next = NULL;
-    return stackNode;
+
+    Node * node = new Node();
+    node->data = new_data;
+    node->next = *head_ref;
+    *head_ref = node;
 }
 
-int isEmpty(StackNode* root)
+/* Given a node prev_node, insert a new node after the given
+prev_node */
+void insertAfter(Node* prev_node, int new_data)
 {
-    if(root == NULL ){
-        return 1;
+    /*1. check if the given prev_node is NULL */
+      if(prev_node == NULL){
+          cout<<"The previous node is empty";
+          return;
+      }
+      Node * node = new Node();
+      node->data = new_data;
+      node->next = prev_node->next;
+      prev_node->next = node;
+
+}
+
+/* Given a reference (pointer to pointer) to the head
+of a list and an int, appends a new node at the end */
+void append(Node** head_ref, int new_data)
+{
+    /* 1. allocate node */
+    Node * node = new Node();
+    node->data = new_data;
+    node->next = NULL;
+    /* 2. put in the data */
+
+    /* 3. This new node is going to be
+    the last node, so make next of
+    it as NULL*/
+     Node * tempHead = *head_ref;
+     if(tempHead == NULL){
+         *head_ref = node;
+         return;
+     }
+    while (tempHead->next != NULL){
+        tempHead = tempHead->next;
     }
-    return 0;
+    tempHead->next = node;
+    /* 4. If the Linked List is empty,
+    then make the new node as head */
+
+    /* 5. Else traverse till the last node */
+
+    /* 6. Change the next of last node */
 }
 
-void push(StackNode** root, int data)
+// This function prints contents of
+// linked list starting from head
+void printList(Node *node)
 {
-   if(*root == NULL){
-       StackNode* stackNode1 = newNode(data);
-       *root = stackNode1;
-       return;
-   }else{
-       StackNode* stackNode2 = newNode(data);
-       stackNode2->next = *root;
-       *root =  stackNode2;
-   }
-}
-
-int pop(StackNode** root)
-{
-    if(*root == NULL){
-        return -1;
+    while(node != NULL){
+        cout<<node->data<<" ";
+        node = node->next;
     }
-    int val = (*root)->data;
-    StackNode* stackNode1 = *root;
-    *root = (*root)->next;
-    stackNode1 = NULL;
-    return val;
 }
 
-int peek(StackNode* root)
-{
-   if(root == NULL){
-      return -1;
-   }
-   return root->data;
-}
-
+/* Driver code*/
 int main()
 {
-    StackNode* root = NULL;
-
-    push(&root, 10);
-    push(&root, 20);
-    push(&root, 30);
-
-    cout << pop(&root) << " popped from stack\n";
-
-    cout << "Top element is " << peek(root) << endl;
-
+    Node* head = NULL;
+    append(&head, 6);
+    push(&head, 7);
+    push(&head, 1);
+    append(&head, 4);
+    insertAfter(head->next, 8);
+    cout<<"Created Linked list is: ";
+    printList(head);
     return 0;
 }
 
