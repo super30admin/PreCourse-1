@@ -1,6 +1,10 @@
 class Stack { 
     //Please read sample.java file before starting.
   //Kindly include Time and Space complexity at top of each file
+	
+	//Space Complexity : O(n)
+	// Time complexity : O(1)
+	.
     static final int MAX = 1000; 
     int top; 
     int a[] = new int[MAX]; // Maximum size of Stack 
@@ -8,28 +12,49 @@ class Stack {
     boolean isEmpty() 
     { 
         //Write your code here 
+    	 return a.length==0;
     } 
 
     Stack() 
     { 
         //Initialize your constructor 
+    	   this.top=0;
     } 
   
     boolean push(int x) 
     { 
         //Check for stack Overflow
         //Write your code here
+    	if(this.top>=MAX){
+            System.out.println("Stack OverFlow");
+            return false;
+          }
+          a[this.top]=x;
+          this.top++;
+          return true;
     } 
   
-    int pop() 
+    int pop()
     { 
         //If empty return 0 and print " Stack Underflow"
         //Write your code here
+    	   if(this.top==0){
+               System.out.println("Stack Underflow");
+           }
+           int x = a[top-1];
+           System.out.println("op"+x);
+           this.top--;
+           return x;
     } 
   
     int peek() 
     { 
         //Write your code here
+    	  if(this.top==0){
+              System.out.println("Stack Underflow");
+          }
+          return a[top-1];
+         
     } 
 } 
   
@@ -42,5 +67,7 @@ class Main {
         s.push(20); 
         s.push(30); 
         System.out.println(s.pop() + " Popped from stack"); 
+       
     } 
+    
 }
