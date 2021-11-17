@@ -7,7 +7,7 @@ public class StackAsLinkedList {
 	   int value;
 	   Node next;
    }
-        StackNode() 
+        StackAsLinkedList() 
         { 
             head =null;
         } 
