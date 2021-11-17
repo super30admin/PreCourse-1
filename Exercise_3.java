@@ -2,7 +2,8 @@ import java.io.*;
   
 // Java program to implement 
 // a Singly Linked List 
-public class LinkedList { 
+
+ class LinkedList { 
   
     Node head; // head of list 
   
@@ -18,10 +19,13 @@ public class LinkedList {
         Node(int d) 
         { 
             //Write your code here 
+            data = d;
         } 
     } 
   
-    // Method to insert a new node 
+    // Method to insert a new node
+    // Time Complexity = O(n)
+    // Space Complexity= O(1)
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data 
@@ -34,10 +38,24 @@ public class LinkedList {
 
             // Insert the new_node at last node 
         // Return the list by head 
+        if(list.head ==null){
+            Node new_node = new Node(data);
+            list.head = new_node;
+        }
+        else{
+            Node list_copy = list.head;
+            while(list_copy.next!=null){
+                list_copy= list_copy.next;
+            }
+            list_copy.next = new Node(data);
+        }
+        return list;
         
     } 
   
     // Method to print the LinkedList. 
+    // Time Complexity = O(n)
+    // Space Complexity = O(1)
     public static void printList(LinkedList list) 
     {  
         // Traverse through the LinkedList 
@@ -45,6 +63,11 @@ public class LinkedList {
             // Print the data at current node 
        
             // Go to next node 
+            Node copy = list.head;
+            while(copy!=null){
+                System.out.println(copy.data);
+                copy = copy.next;
+            }
     } 
    
     // Driver code 
