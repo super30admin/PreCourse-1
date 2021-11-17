@@ -1,3 +1,7 @@
+//Time Complexity : Insert Operation : O(n), as we need to traverse to end the of list to add new element.
+//Time Complexity : Print list : O(n), as we need to traverse the entire list to print them.
+//Space Complexity: O(n), considering each node stores data and next pointer, for storing n nodes we need O(n) order space
+
 import java.io.*;
 
 // Java program to implement
@@ -27,13 +31,11 @@ public class LinkedList {
     {
         // Create a new node with given data
         Node temp = new Node(data);
-        // If the Linked List is empty,
-        // then make the new node as head
+        // If the Linked List is empty, make the new node as head
         if(list.head == null){
             temp = head;
         }
-        // Else traverse till the last node
-        // and insert the new_node there
+        // Else traverse till the last node and insert the new_node there
         else {
             Node traverse = list.head;
             while(traverse.next != null)
