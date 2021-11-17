@@ -1,3 +1,7 @@
+# // Time Complexity : O(1)
+# // Space Complexity :O(1)
+
+
 class Node:
     def __init__(self, data):
         self.data = data
@@ -22,7 +26,7 @@ class Stack:
     def prin(self):
         x = self.head
         while (x.value != None):
-            Print(x.value + '-> ')
+            print(x.value + '-> ')
             x.next = x.next
 
 
