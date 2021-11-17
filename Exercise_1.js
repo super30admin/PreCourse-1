@@ -1,5 +1,5 @@
 // Time Complexity: O(1) - constant time
-// Space Complexity: O(n) - based on how many items we add to the stack
+// Space Complexity: O(1) - constant time
 // Did this code successfully run on Leetcode: N/A
 // Any problem you faced while coding this: No
 
