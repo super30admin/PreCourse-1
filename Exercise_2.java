@@ -1,3 +1,18 @@
+//Push
+// Time Complexity : O(1)
+// Space Complexity : O(1)
+
+//Pop
+// Time Complexity : O(1)
+// Space Complexity : O(1)
+
+//Peek
+// Time Complexity : O(1)
+// Space Complexity : O(1)
+
+//Peek
+// Time Complexity : O(1)
+// Space Complexity : O(1)
 public class StackAsLinkedList { 
   
     StackNode root; 
