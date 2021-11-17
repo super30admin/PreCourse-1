@@ -1,7 +1,7 @@
 import java.io.*; 
 
 
-// Time Complexity : O(1)
+// Time Complexity : O(N)
 // Space Complexity : O(N)
 // Did this code successfully run on Leetcode : YES
 // Any problem you faced while coding this : NO
