@@ -1,5 +1,6 @@
 import com.code.linkedlist.Node;
-
+//space complexity o(n) n is number of nodes
+//time complexity o(1)
 public class StackAsLinkedList {
   
     StackNode root; 

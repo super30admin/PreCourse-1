@@ -1,5 +1,7 @@
 import java.io.*; 
-  
+//time complexity-for insert o(n)
+//time complextty for print o(n)
+//space complexity o(n)  
 // Java program to implement 
 // a Singly Linked List 
 public class LinkedList { 
