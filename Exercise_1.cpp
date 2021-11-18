@@ -1,44 +1,61 @@
-#include <bits/stdc++.h> 
-  
+// Time Complexity : O(1) for all operations
+// Space Complexity : O(N) for storing data
+// Did this code successfully run on Leetcode : NA
+// Any problem you faced while coding this : None
+
+
+#include <bits/stdc++.h>  
 using namespace std; 
   
 #define MAX 1000 
   
-class Stack {
-  //Please read sample.java file before starting.
-  //Kindly include Time and Space complexity at top of each file
+class Stack 
+{
     int top; 
   
 public: 
     int a[MAX]; // Maximum size of Stack 
   
-    Stack() { //Constructor here } 
+    Stack();
+
     bool push(int x); 
     int pop(); 
     int peek(); 
     bool isEmpty(); 
 }; 
+
+Stack::Stack()
+{
+    top = -1;
+}
   
 bool Stack::push(int x) 
 { 
-    //Your code here
-    //Check Stack overflow as well
+    if (a[top] == a[MAX])
+        return 0;
+    a[++top] = x;
+    return 1;
+    
 } 
   
 int Stack::pop() 
 { 
-    //Your code here
-    //Check Stack Underflow as well 
+    if (!isEmpty())
+        return a[top--];
+       
+    return -1;
 } 
 int Stack::peek() 
 { 
-    //Your code here
-    //Check empty condition too
+    if (!isEmpty())
+        return a[top];
+
+    return -1;
 } 
   
 bool Stack::isEmpty() 
 { 
-    //Your code here 
+    return top == -1;
 } 
   
 // Driver program to test above functions 

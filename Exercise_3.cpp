@@ -1,3 +1,9 @@
+// Time Complexity : O(N) for append, insertAfter and print operations and O(1) for push
+// Space Complexity :O(N) for storing data
+// Did this code successfully run on Leetcode : NA
+// Any problem you faced while coding this : None
+
+
 #include <bits/stdc++.h> 
 using namespace std; 
   
@@ -9,63 +15,75 @@ class Node
     Node *next;  
 };  
   
-/* Given a reference (pointer to pointer) 
-to the head of a list and an int, inserts 
-a new node on the front of the list. */
+
 void push(Node** head_ref, int new_data)  
 {  
-    /* 1. allocate node */ 
-  
-    /* 2. put in the data */  
-  
-    /* 3. Make next of new node as head */ 
-  
-    /* 4. move the head to point to the new node */
+    Node* newnode = new Node();
+    newnode->data = new_data;
+
+    Node* head = *(head_ref);
+
+    newnode->next = head;
+    head = newnode;
+
+    *head_ref = head;
+
 }  
   
-/* Given a node prev_node, insert a new node after the given  
-prev_node */
+
 void insertAfter(Node* prev_node, int new_data)  
 {  
-    /*1. check if the given prev_node is NULL */ 
-  
-    /* 2. allocate new node */ 
-  
-    /* 3. put in the data */ 
-  
-    /* 4. Make next of new node as next of prev_node */
-  
-    /* 5. move the next of prev_node as new_node */ 
+    if (prev_node)
+    {
+        Node* newnode = new Node();
+        if (newnode)
+        {
+            newnode->data = new_data;
+            newnode->next = prev_node->next;
+            prev_node->next = newnode;
+        }
+    }
 }  
   
-/* Given a reference (pointer to pointer) to the head  
-of a list and an int, appends a new node at the end */
-void append(Node** head_ref, int new_data)  
-{  
-    /* 1. allocate node */ 
+
+void append(Node** head_ref, int new_data)
+{
+	Node* newnode = new Node();
+	if (newnode)
+	{
+		newnode->data = new_data;
+		newnode->next = nullptr;
+
+        if (*head_ref == nullptr)
+            *head_ref = newnode;
+
+        else
+        {
+            Node* head = *(head_ref);
+
+            while (head->next != nullptr)
+            {
+                head = head->next;
+            }
+
+            head->next = newnode;
+
+        }
+	}
+}
   
-    /* 2. put in the data */ 
-  
-    /* 3. This new node is going to be  
-    the last node, so make next of  
-    it as NULL*/  
-  
-    /* 4. If the Linked List is empty, 
-    then make the new node as head */
-  
-    /* 5. Else traverse till the last node */
-  
-    /* 6. Change the next of last node */ 
-}  
-  
-// This function prints contents of 
-// linked list starting from head  
+
 void printList(Node *node)  
 {  
-    //Your code here
+    while (node)
+    {
+        int data = node->data;
+        cout << data << endl;
+        node = node->next;
+    }
 }  
   
-/* Driver code*/
+
 int main()  
 {  
     Node* head = NULL;   
