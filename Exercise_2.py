@@ -1,4 +1,5 @@
-
+# Time Complexity : Individual push and pop operation will take constant amount of time
+# Space Complexity :
 class Node:
     def __init__(self, data):
        self.data = data
@@ -6,11 +7,23 @@ class Node:
  
 class Stack:
     def __init__(self):
-        
+        '''Initially top is not addressing to any node. top variable will always point to the top/latest Stack element'''
+        self.top = None
+
     def push(self, data):
-        
+        '''1. Create a new node
+           2. Assign the node.data = input data
+           3. Assign node.next = Previous node's address
+           4. Assign address of that newly created node to top'''
+        node = Node(data)
+        node.next = self.top
+        self.top = node
+
     def pop(self):
-        
+        '''pop the first node of the Linked List'''
+        self.top = self.top.next
+        return self.top.data
+
 a_stack = Stack()
 while True:
     #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
