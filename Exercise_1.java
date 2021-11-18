@@ -1,7 +1,7 @@
 class Stack {
     //Please read sample.java file before starting.
   //Time complexity for push operation: Constant time, Pop Operation: Constant time, Peek Opertion:Constant time
-  //Space Complexity:
+  //Space Complexity:  Constant time  as we are using an array of 1000 capacity to maintain our stack.
     static final int MAX = 1000;
     int top;
     int a[] = new int[MAX]; // Maximum size of Stack

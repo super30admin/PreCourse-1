@@ -1,6 +1,6 @@
 // Time Complexity : for push operation : constant time, for pop operation: constant time, peek : constant time, for isEmpty : constant time
-//spac complexity: O(n) ,n being the number of elements stored in the stack. As we are storing each element in a node and node has data to store element and a pointer to next Node
-//considering each node takes constant space storage, for storing n elements we need O(n) order space. 
+//Space complexity: O(n) ,n being the number of elements stored in the stack. As we are storing each element in a node and node has data to store element and a pointer to next Node
+//considering each node takes constant space storage, for storing n elements we need O(n) order space.
 
 public class StackAsLinkedList {
 
