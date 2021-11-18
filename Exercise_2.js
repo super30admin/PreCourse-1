@@ -10,6 +10,9 @@
 // peek: O(1)
 // isEmpty: O(1)
 
+// Did this code successfully run on Leetcode: N/A
+// Any problem you faced while coding this: None.
+
 class Node {
   constructor(data) {
     this.data = data;
