@@ -1,6 +1,9 @@
 #include <bits/stdc++.h> 
 using namespace std; 
-  
+
+// Time Complexity for below operations : O(1)
+// Space Complexity for stack : O(n)
+
 // A structure to represent a stack 
 class StackNode { 
 public: 
@@ -15,25 +18,52 @@ StackNode* newNode(int data)
     stackNode->next = NULL; 
     return stackNode; 
 } 
+
+// Time Complexity : O(1)
+// Space Complexity : O(1)
   
 int isEmpty(StackNode* root) 
 { 
     //Your code here 
+    if (root == NULL)
+        return true;
+    
+    return false;
 } 
-  
+
+// Time Complexity : O(1)
+// Space Complexity : O(1)
 void push(StackNode** root, int data) 
 { 
     //Your code here 
+    
+    StackNode* node = newNode(data);
+    node->next = *root;
+    *root = node;
 } 
-  
+
+// Time Complexity : O(1)
+// Space Complexity : O(1)
 int pop(StackNode** root) 
 { 
     //Your code here 
+    StackNode* temp = *root;
+    int data = temp->data;
+
+    *root = (*root)->next;
+    delete temp;
+    return data;
 } 
-  
+
+// Time Complexity : O(1)
+// Space Complexity : O(1)
 int peek(StackNode* root) 
 { 
     //Your code here 
+    if (isEmpty(root))
+        return -1;
+
+    return root->data;
 } 
   
 int main() 
