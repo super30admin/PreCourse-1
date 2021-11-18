@@ -1,3 +1,18 @@
+// Time Complexity:
+// Append: O(n)
+// insertAt: O(n)
+// removeFrom: O(n)
+// printList: O(n)
+
+// Space Complexity:
+// Append: O(1)
+// insertAt: O(1)
+// removeFrom: O(1)
+// printList: O(1)
+
+// Did this code successfully run on Leetcode: N/A
+// Any problem you faced while coding this: Yes. I have trouble wrapping my mind around the currentNode.next concept
+
 class Node {
   constructor(data, next = null) {
     this.data = data;
