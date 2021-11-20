@@ -1,3 +1,5 @@
+//Time Complexity:O(n)
+//Space Complexity : O(n)
 import java.io.*; 
   
 // Java program to implement 
