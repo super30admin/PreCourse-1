@@ -33,6 +33,10 @@ int isEmpty(StackNode* root)
 
 // Time Complexity : O(1)
 // Space Complexity : O(1)
+
+// Create new node with given data value. Assign it's next pointer to root of list. 
+// Reassign root of list to new node.
+
 void push(StackNode** root, int data) 
 { 
     //Your code here 
@@ -44,6 +48,8 @@ void push(StackNode** root, int data)
 
 // Time Complexity : O(1)
 // Space Complexity : O(1)
+
+// Free the memory location pointed by root and move root to next element of list.
 int pop(StackNode** root) 
 { 
     //Your code here 

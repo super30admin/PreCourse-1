@@ -27,6 +27,8 @@ public:
 // Time Complexity : O(1)
 // Space Complexity : O(1)
 
+// Increment top variable and assign provided data value to top index.
+
 bool Stack::push(int x) 
 {
     //Your code here
@@ -41,6 +43,8 @@ bool Stack::push(int x)
 
 // Time Complexity : O(1)
 // Space Complexity : O(1)
+
+// Return value present at top index and decrement top.
 
 int Stack::pop() 
 { 
