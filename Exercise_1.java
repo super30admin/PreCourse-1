@@ -8,7 +8,7 @@ class Stack {
 
 */
 
-    static final int MAX = 3; 
+    static final int MAX = 1000; 
     int top; 
     int a[] = new int[MAX]; // Maximum size of Stack 
   
@@ -70,12 +70,6 @@ class Main {
         s.push(20); 
         s.push(30); 
         s.push(40);
-        System.out.println(s.peek() + " Peek from stack");
-        System.out.println(s.pop() + " Popped from stack"); 
-        System.out.println(s.pop() + " Popped from stack");
-        System.out.println(s.pop() + " Popped from stack");
-        System.out.println(s.pop() + " Popped from stack");
-        System.out.println(s.peek() + " Peekd from stack");
-        
+        System.out.println(s.pop() + " Popped from stack");               
     } 
 }
