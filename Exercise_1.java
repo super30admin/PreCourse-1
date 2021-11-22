@@ -28,7 +28,7 @@ class Stack {
 // Time Complexity :O(1)
 // Space Complexity :O(N)
     boolean push(int x) 
-    { 
+    {
         //Check for stack Overflow
         //Write your code here
         if(top==MAX-1){
