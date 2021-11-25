@@ -1,6 +1,10 @@
-public class StackAsLinkedList { 
+import java.util.EmptyStackException;
+
+class StackAsLinkedList { 
   
     StackNode root; 
+    private StackNode top;
+    private int size;
   
     static class StackNode { 
         int data; 
@@ -8,36 +12,51 @@ public class StackAsLinkedList {
   
         StackNode(int data) 
         { 
-            //Constructor here 
+            this.data = data;
+            this.next = null;
         } 
     } 
     
 	
     public boolean isEmpty() 
     { 
-        //Write your code here for the condition if stack is empty. 
+        return size == 0;
     } 
   
     public void push(int data) 
     { 
-        //Write code to push data to the stack. 
+        StackNode tempNode = new StackNode(data);
+        tempNode.next = top;
+        top = tempNode;
+        size++;
+        System.out.println( data + " is pushed to stack");
     } 
   
-    public int pop() 
-    { 	
-	//If Stack Empty Return 0 and print "Stack Underflow"
-        //Write code to pop the topmost element of stack.
-	//Also return the popped element 
+    public int pop(){ 	
+        if (isEmpty()){
+            System.out.println("No element can be popped");
+            throw new EmptyStackException();
+    }
+        int result = top.data;
+        top = top.next;
+        size--;
+        return result;
     } 
   
     public int peek() 
     { 
-        //Write code to just return the topmost element without removing it.
+        if (isEmpty()){
+            System.out.println("No element found");
+            throw new EmptyStackException();
+            
+        }
+        return top.data;
     } 
-  
+}
 	//Driver code
-    public static void main(String[] args) 
-    { 
+
+    class Main1{
+    public static void main(String[] args){ 
   
         StackAsLinkedList sll = new StackAsLinkedList(); 
   
@@ -45,7 +64,7 @@ public class StackAsLinkedList {
         sll.push(20); 
         sll.push(30); 
   
-        System.out.println(sll.pop() + " popped from stack"); 
+        // System.out.println(sll.pop() + " popped from stack"); 
   
         System.out.println("Top element is " + sll.peek()); 
     } 
