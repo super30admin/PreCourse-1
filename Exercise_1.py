@@ -22,6 +22,8 @@ class myStack:
     self.stack.append(item) # append item to the end of the list.
       
   def pop(self):
+    if(len(self.stack) == 0):
+      return "List is Empty. pop() operation cannot be executed"
     return self.stack.pop(-1) # Remove the last appended element.
  
   def peek(self):
