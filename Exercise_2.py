@@ -1,4 +1,18 @@
+'''
 
+Time Complexity : 
+  push - O(1)
+  pop - O(1)
+
+Space Complexity : O(N) - All functions has O(1) Space Complexity
+
+Did this code successfully run on Leetcode : Yes
+
+Your code here along with comments explaining your approach:
+
+Used in-built python list and its functions for purposes of stack.
+
+'''
 class Node:
     def __init__(self, data):
        self.data = data
@@ -6,10 +20,25 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.top = None
         
     def push(self, data):
+        if not self.top:
+            self.top = Node(data)
+        else:
+            newtop = Node(data)
+            newtop.next = self.top
+            self.top = newtop
         
     def pop(self):
+        if not self.top:
+            return None
+        temptop = self.top
+        retval = temptop.data
+        self.top = self.top.next
+        del temptop
+        return retval
+        
         
 a_stack = Stack()
 while True:
