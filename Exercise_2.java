@@ -1,11 +1,10 @@
 /* Time Complexity : O(1) for isEmpty(), push() and peek() operation.
                      O(N) for pop() operation where N is the max size of stack data  
- Space Complexity : O(N) where N is max size of stack.
- Did this code successfully run on Leetcode :
- Any problem you faced while coding this : Yes. I faced problem in pop ooperation 
+   Space Complexity : O(N) where N is max size of stack.
+   Any problem you faced while coding this : Yes. I faced problem in pop ooperation 
                                         in finding second to last element to remove from the stack
 */
-public class StackAsLinkedList { 
+class StackAsLinkedList { 
   
     StackNode root; 
     StackNode tail;
