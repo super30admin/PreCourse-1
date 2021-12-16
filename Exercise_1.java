@@ -1,37 +1,63 @@
-class Stack { 
+public class Stack { 
     //Please read sample.java file before starting.
   //Kindly include Time and Space complexity at top of each file
-    static final int MAX = 1000; 
+    
     int top; 
-    int a[] = new int[MAX]; // Maximum size of Stack 
+    int a[100]; 
   
     boolean isEmpty() 
     { 
-        //Write your code here 
+        return (top==-1);
     } 
 
-    Stack() 
+    public Stack() 
     { 
-        //Initialize your constructor 
+        a= new int[100];
+	    top=-1;
     } 
   
-    boolean push(int x) 
+     boolean push(int x) 
     { 
-        //Check for stack Overflow
-        //Write your code here
+       
+        if(size()==a.length){
+            System.out.println("Cant push more elements");
+            return false;
+        }else{
+            top++;
+            a[top]=x;
+            return true;
+        }
     } 
   
-    int pop() 
+     int pop() 
     { 
-        //If empty return 0 and print " Stack Underflow"
-        //Write your code here
+       
+        if(size()==0){
+            System.out.println("Stack Underflow");
+            return 0;
+        }else{
+            int tp=a[top];
+            top--;
+            return tp;
+        }
+        
     } 
   
-    int peek() 
+     int peek() 
     { 
-        //Write your code here
+        
+        if(size()==0){
+            System.out.println("No element");
+            return 0;
+        }else{
+            return a[top];
+        }
     } 
-} 
+
+     int size() {
+		return top+1;
+	}
+}
   
 // Driver code 
 class Main { 
