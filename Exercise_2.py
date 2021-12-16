@@ -6,10 +6,32 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.head = None
+    
+    #we need this while popping
+    def empty(self):
+        if self.head == None:
+            return True
+        return False
         
     def push(self, data):
+        if self.head is None:
+            self.head = Node(data)
+        else:
+            Newnode = Node(data)
+            Newnode.next = self.head
+            self.head = Newnode
         
     def pop(self):
+        if self.empty():
+            return
+        else:
+        #happens only on the top of the stack so remove item at the end of the linked list
+            poppedItem = self.head
+            self.head = self.head.next
+            poppedItem.next = None
+            return poppedItem.data
+
         
 a_stack = Stack()
 while True:
