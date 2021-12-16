@@ -27,9 +27,9 @@ public void printElements(){
     public boolean isEmpty()
     {
         if(root==null){
-            return false;
+            return true;
         }
-        return true;
+        return false;
         //Write your code here for the condition if stack is empty.
     }
 
@@ -120,9 +120,10 @@ if (root.next!=null){
         System.out.println(sll.pop() + " popped from stack 3 ");
 
 sll.push(76);
-
         System.out.println(sll.pop() + " popped from stack");
-
+        System.out.println("is empty = "+sll.isEmpty());
+        System.out.println(sll.pop() + " popped from stack");
+        System.out.println("is empty = "+sll.isEmpty());
         System.out.println("Top element is " + sll.peek());
     }
 }
