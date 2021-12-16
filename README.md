@@ -9,3 +9,5 @@ Exercise_2 : Implement Stack using Linked List.
 Exercise_3 : Implement Singly Linked List.
 
 *After completing the project kindly submit a pull request*
+
+Precourse 1 already done for previous batch
