@@ -13,7 +13,8 @@ class Stack:
         if self.head == None:
             return True
         return False
-        
+
+      #pushing is similar to adding on top so its O(1)  
     def push(self, data):
         if self.head is None:
             self.head = Node(data)
@@ -21,7 +22,8 @@ class Stack:
             Newnode = Node(data)
             Newnode.next = self.head
             self.head = Newnode
-        
+
+    #pop is O(1) as well.  
     def pop(self):
         if self.empty():
             return
