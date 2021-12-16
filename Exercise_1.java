@@ -1,3 +1,13 @@
+// Time Complexity : For Push: O(1), Pop : O(1), Peek: O(1)
+// Space Complexity : O(n)
+// Did this code successfully run on Leetcode :N/A
+// Any problem you faced while coding this :No problem faced
+
+
+// Your code here along with comments explaining your approach
+
+import java.util.Arrays;
+
 class Stack { 
     //Please read sample.java file before starting.
   //Kindly include Time and Space complexity at top of each file
@@ -7,40 +17,70 @@ class Stack {
   
     boolean isEmpty() 
     { 
-        //Write your code here 
+    	return top==-1;
     } 
 
     Stack() 
     { 
-        //Initialize your constructor 
+        top =-1;
     } 
   
     boolean push(int x) 
     { 
-        //Check for stack Overflow
-        //Write your code here
+        if(top == MAX-1) {
+        	System.out.println("Stack is full");
+        	return false;
+        }else {
+        	a[++top] = x;
+        	return true;
+        }
     } 
   
     int pop() 
     { 
-        //If empty return 0 and print " Stack Underflow"
-        //Write your code here
+        if(isEmpty()) {
+        	System.out.println("Stack is Empty");
+        	return -1;
+        }else {
+        	return a[top--];
+        }
     } 
   
     int peek() 
     { 
-        //Write your code here
-    } 
+        if(isEmpty()) {
+        	System.out.println("Stack is Empty");
+        	return -1;
+        }else {
+        	return a[top];
+        }
+    }
+
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		for(int i =0;i<top+1; i++) {
+			sb.append(a[i]+ " ");
+		}
+		return sb.toString();
+	}
+    
+    
 } 
   
 // Driver code 
 class Main { 
     public static void main(String args[]) 
     { 
-        Stack s = new Stack(); 
+    	Stack s = new Stack(); 
         s.push(10); 
         s.push(20); 
         s.push(30); 
+        s.pop();
+        s.push(40);
         System.out.println(s.pop() + " Popped from stack"); 
+        s.push(50);
+        System.out.println(s.pop() + " Popped from stack"); 
+        System.out.println(s.toString());
     } 
 }
