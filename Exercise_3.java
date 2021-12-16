@@ -1,10 +1,13 @@
-import java.io.*; 
+/*********** Not Sure about space complexity *******/
+
+
+// import java.io.*; 
   
 // Java program to implement 
 // a Singly Linked List 
-public class LinkedList { 
+class LinkedList { 
   
-    Node head; // head of list 
+    Node head ; // head of list 
   
     // Linked list Node. 
     // This inner class is made static 
@@ -18,39 +21,46 @@ public class LinkedList {
         Node(int d) 
         { 
             //Write your code here 
+            this.data = d;
+            this.next= null;
+
         } 
     } 
   
     // Method to insert a new node 
-    public static LinkedList insert(LinkedList list, int data) 
-    { 
-        // Create a new node with given data 
-   
-        // If the Linked List is empty, 
-        // then make the new node as head 
-        
-            // Else traverse till the last node 
-            // and insert the new_node there 
-
-            // Insert the new_node at last node 
-        // Return the list by head 
+    public static LinkedList insert(LinkedList list, int data)          // **** Time Complexity O(n) ***********
+    {   
+        Node newNode = new Node(data);  // Create a new node with given data 
+        Node trav = list.head;
+        if (list.head == null) {         // If the Linked List is empty,
+            list.head = newNode;        // then make the new node as head
+        }
+        else{
+            while(trav.next!=null){        // Else traverse till the last node 
+                trav = trav.next;
+            }
+            trav.next = newNode;           // and insert the new_node there 
+                                          // Insert the new_node at last node 
+        } 
+        return list;                        // Return the list by head    
         
     } 
   
     // Method to print the LinkedList. 
-    public static void printList(LinkedList list) 
+    public static void printList(LinkedList list)                       // **** Time Complexity O(n) ***********
     {  
-        // Traverse through the LinkedList 
-   
-            // Print the data at current node 
-       
-            // Go to next node 
+        Node trav = list.head;      
+        while(trav != null){                        // Traverse through the LinkedList 
+                System.out.println(trav.data);      // Print the data at current node 
+                trav= trav.next;                    // Go to next node 
+        }      
     } 
-   
+
+
     // Driver code 
     public static void main(String[] args) 
     { 
-        /* Start with the empty list. */
+            /* Start with the empty list. */
         LinkedList list = new LinkedList(); 
   
         // 
