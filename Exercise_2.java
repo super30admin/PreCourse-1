@@ -1,3 +1,9 @@
+//time complexity : push,pop,peek -> O(1)
+//space complexity : O(n), n is max size of linkedList
+//Approach : I will take an empty singly linkedlist and root pointing to the top of a stack.
+//          For push op, i'll insert new element before root and make it as new root. For pop op, i'll remove element pointing at root and increment root to next pointer index
+//          for peek op,i'll return data in root
+
 public class StackAsLinkedList { 
   
     StackNode root; 
@@ -8,31 +14,43 @@ public class StackAsLinkedList {
   
         StackNode(int data) 
         { 
-            //Constructor here 
+            this.data = data;
         } 
     } 
     
 	
     public boolean isEmpty() 
     { 
-        //Write your code here for the condition if stack is empty. 
+        return (root == null);
     } 
   
     public void push(int data) 
     { 
-        //Write code to push data to the stack. 
+        if(root == null){
+            root = new StackNode(data);
+        }else{
+            StackNode temp = new StackNode(data);
+            temp.next = root;
+            root = temp;
+        }
     } 
   
     public int pop() 
     { 	
-	//If Stack Empty Return 0 and print "Stack Underflow"
-        //Write code to pop the topmost element of stack.
-	//Also return the popped element 
+        if(root == null){
+            System.out.println("Stack Underflow");
+            return 0;
+        }
+        int poppedElement = root.data;
+        root = root.next;
+        return poppedElement;
     } 
   
     public int peek() 
     { 
-        //Write code to just return the topmost element without removing it.
+        if(root == null)
+            return 0;
+        return root.data;
     } 
   
 	//Driver code
