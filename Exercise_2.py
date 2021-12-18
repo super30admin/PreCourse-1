@@ -1,4 +1,14 @@
-
+# Time Complexity : don't know how to calculate it in real program
+# Space Complexity : don't know
+# Did this code successfully run on Leetcode : Yes and No. 
+# successfully run on local device: Yes.
+# Any problem you faced while coding this :
+# EOF error at input in leet code. When i put input stdin section in leetcode website
+# it takes the input and gives accurate output, but when since the input is called in 
+# infinite loop (while true) and i only gave limited number of inputs in each line
+# after all inputs are used there'll be no other input left and program will be stuck
+# waiting for input forever. That's where EOF error comes at rescue and terminates the 
+# snippet
 class Node:
     def __init__(self, data):
        self.data = data
