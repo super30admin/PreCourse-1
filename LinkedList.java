@@ -1,3 +1,9 @@
+// Time Complexity : Insert(Push) - O(n), Delete(Pop) - O(1),
+// Space Complexity : O(n)
+// Did this code successfully run on Leetcode : Did not found problem
+// Any problem you faced while coding this : no
+
+
 // Java program to implement
 // a Singly Linked List
 public class LinkedList {

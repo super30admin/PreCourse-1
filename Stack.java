@@ -1,8 +1,7 @@
 // Time Complexity : Insert(Push) - O(1), Delete(Pop) - O(1),
 // Space Complexity : O(Max)
 // Did this code successfully run on Leetcode : Did not found problem
-// Any problem you faced while coding this : yes, I had to run and build individual file.
-// How do I build complete project and run single files
+// Any problem you faced while coding this : no
 
 class Stack {
     static final int MAX = 3;
