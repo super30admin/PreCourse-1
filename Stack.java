@@ -55,10 +55,9 @@ class Stack {
         //Write your code here
         return a[top]; //returning the top of stack 
     } 
-} 
+
   
 // Driver code 
-class Main { 
     public static void main(String args[]) 
     { 
         Stack s = new Stack(); 
