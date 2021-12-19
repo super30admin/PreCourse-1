@@ -5,7 +5,9 @@
 
 
 // Your code here along with comments explaining your approach
-public class StackAsLinkedList{ 
+
+//Implementing stack using linked list
+public class Exercise_2{ 
   
     StackNode root; 
   
@@ -66,7 +68,7 @@ public class StackAsLinkedList{
     public static void main(String[] args) 
     { 
   
-        StackAsLinkedList sll = new StackAsLinkedList(); 
+        Exercise_2 sll = new Exercise_2(); 
   
         sll.push(10); 
         sll.push(20); 
