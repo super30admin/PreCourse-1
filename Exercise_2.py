@@ -1,4 +1,4 @@
-
+#O(1) to add, remove key
 class Node:
     def __init__(self, data):
        self.data = data
