@@ -1,52 +1,44 @@
-public class StackAsLinkedList { 
-  
-    StackNode root; 
-  
-    static class StackNode { 
-        int data; 
-        StackNode next; 
-  
-        StackNode(int data) 
-        { 
-            //Constructor here 
-        } 
-    } 
-    
+ppublic class Llist {
+	Node head;
 	
-    public boolean isEmpty() 
-    { 
-        //Write your code here for the condition if stack is empty. 
-    } 
+	public void insert(int data) {
+		Node n = new Node();
+		n.Data = data;
+		n.next = null;
+		if(head==null) {
+			head =n;
+		}
+		else {
+			Node nn = head;
+			while(nn.next!=null) {
+				nn = nn.next;
+			}
+			nn.next = n;
+		}
+		
+		}
+	public void show () {
+		Node node = head;
+		while(node.next!=null) {
+			
+			System.out.println(node.Data);
+			node = node.next;
+		}
+		System.out.println(node.Data);
+		//System.out.println(node.Data);
+	}
+
+//     public static void main(String[] args) 
+//     { 
   
-    public void push(int data) 
-    { 
-        //Write code to push data to the stack. 
-    } 
+//         StackAsLinkedList sll = new StackAsLinkedList(); 
   
-    public int pop() 
-    { 	
-	//If Stack Empty Return 0 and print "Stack Underflow"
-        //Write code to pop the topmost element of stack.
-	//Also return the popped element 
-    } 
+//         sll.push(10); 
+//         sll.push(20); 
+//         sll.push(30); 
   
-    public int peek() 
-    { 
-        //Write code to just return the topmost element without removing it.
-    } 
+//         System.out.println(sll.pop() + " popped from stack"); 
   
-	//Driver code
-    public static void main(String[] args) 
-    { 
-  
-        StackAsLinkedList sll = new StackAsLinkedList(); 
-  
-        sll.push(10); 
-        sll.push(20); 
-        sll.push(30); 
-  
-        System.out.println(sll.pop() + " popped from stack"); 
-  
-        System.out.println("Top element is " + sll.peek()); 
-    } 
-} 
+//         System.out.println("Top element is " + sll.peek()); 
+//     } 
+// } 
