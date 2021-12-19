@@ -38,7 +38,6 @@ public class StackAsLinkedList{
         }
         root = node;
     } 
-  
     public int pop() 
     { 	
 	//If Stack Empty Return 0 and print "Stack Underflow"
