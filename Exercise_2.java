@@ -1,4 +1,13 @@
-ppublic class Llist {
+// This is node class for both problem2&3
+// public class Node {
+// 	int Data;
+	
+// 	Node next;
+
+// }
+//node class ends
+
+public class Llist {
 	Node head;
 	
 	public void insert(int data) {

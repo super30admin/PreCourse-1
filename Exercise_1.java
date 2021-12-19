@@ -1,3 +1,5 @@
+//I haven't seen the template before starting the work so i thought of changing it but i got confused so i am just submitting the work what i hae done in my local 
+//i have note to if you want i will submit.
 //Time complexity O(1)
 // Space Complexity 
 class Stack { 
