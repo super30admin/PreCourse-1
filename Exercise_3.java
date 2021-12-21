@@ -1,3 +1,7 @@
+// Time Complexity : O(n) Reason: because we to traverse the list till the last node and then change the next to last node to the new node
+// Space Complexity : O(n)  Reason: we can push() and pop() through the array everytime while traversing through the link
+// Did this code successfully run on Leetcode : No
+// Any problem you faced while coding this : Could not solve the problem on my own, took help from google
 import java.io.*; 
   
 // Java program to implement 
