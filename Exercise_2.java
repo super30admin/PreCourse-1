@@ -1,4 +1,4 @@
-public class StackAsLinkedList {
+class StackAsLinkedList {
 
     StackNode root;
 
