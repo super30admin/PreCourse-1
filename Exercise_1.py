@@ -1,3 +1,22 @@
+# Time Complexity :
+# O(1)
+
+# Space Complexity :
+# O(N): N is size of stack
+
+# Did this code successfully run on Leetcode :
+# yes
+
+# // Any problem you faced while coding this :
+# No
+
+# Your code here along with comments explaining your approach
+# i have maintained a array which acts like a stack and a count variable. On every push an element is appended 
+# to this array and count is incremented by 1 and on every pop last element is popped out from the array and
+# count variable is decremented by 1. I have maintained count variable as it will help us to do all operations
+# in (1) time complexity.
+
+
 class myStack:
     def __init__(self):
             self.__data = list()
@@ -26,7 +45,7 @@ class myStack:
         return self.__data[-1]
         
     def size(self):
-        return len(self.__data)
+        return self.__count
          
     def show(self):
         if self.isEmpty():
