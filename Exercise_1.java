@@ -1,35 +1,74 @@
+/*Exercise_1 : Implement Stack using Array.
+*/
+
+// Time Complexity : push takes O(1), peek takes O(1) and pop takes O(1)
+// Space Complexity : doesn't have to save pointers so O(1)
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : No
+
+
+// Your code here along with comments explaining your approach
+// Space complexity- better than linkedlist
+// Approach: Stack follows LIFO(Last in first out order)
+// it contains following operations:
+// a. push- adds an item in stack(condition-stack is full-Stack overflow)
+// b. pop-removes item from stack(condition-stack is empty-Stack underflow)
+// c. peek- returning top element of stack
+// d. isEmpty- return true if stack is empty else false
+
 class Stack { 
-    //Please read sample.java file before starting.
-  //Kindly include Time and Space complexity at top of each file
     static final int MAX = 1000; 
     int top; 
     int a[] = new int[MAX]; // Maximum size of Stack 
   
     boolean isEmpty() 
     { 
-        //Write your code here 
+        return (top<0);
     } 
 
     Stack() 
     { 
-        //Initialize your constructor 
+        top = -1;
     } 
   
     boolean push(int x) 
     { 
-        //Check for stack Overflow
-        //Write your code here
+        //check for stack overflow
+        if(top >= MAX - 1){
+            System.out.println("Stack overflow");
+            return false;
+        }
+        else {
+            //we will increment -1 to 0 first and then add element at 0th index
+            a[++top] = x;
+            System.out.println(x);
+            return true;
+        }
     } 
   
     int pop() 
     { 
         //If empty return 0 and print " Stack Underflow"
-        //Write your code here
+        if(top < 0){
+            System.out.println("Stack Underflow");
+            return 0;
+        }
+        else {
+            int x = a[top--];
+            return x;
+        }
     } 
   
     int peek() 
     { 
-        //Write your code here
+        if(top < 0){
+            System.out.println("Stack Underflow");
+            return 0;
+        }
+        else {
+            int x = a[top];
+            return x;
+        }
     } 
 } 
   
