@@ -1,4 +1,4 @@
-# Time Complexity : O(n) for push 
+# Time Complexity : O(1) for push and pop
 # Space Complexity : O(n)
 # Did this code successfully run on Leetcode : not a problem on leetcode
 # Any problem you faced while coding this : no
@@ -11,23 +11,24 @@ class Node:
 class Stack:
     def __init__(self):
         self.head = None
-        
+    
     def push(self, data):
-        node = Node(data)
         if self.head == None:
-            self.head = node
-            return
-        
-        temp = self.head()
-        while (temp.next):
-            temp = temp.next
-        temp.next = node
+            self.head = Node(data)
+        else:
+            temp = Node(data)
+            temp.next = self.head
+            self.head = temp
 
     def pop(self):
-        temp = self.head()
-        while temp.next:
-            temp = temp.next
-        del temp
+        if self.head == None:
+            return
+        else:
+            temp = self.head
+            self.head = temp.next
+            popped = temp.data
+            temp = None
+            return popped
         
         
 a_stack = Stack()
