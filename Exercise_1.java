@@ -3,7 +3,6 @@
   Space Complexity: O(n) n - the size of the array created.
  */
 
-package PreCourse-1
 import java.util.*;
 class Stack {
     static final int MAX = 1000;
