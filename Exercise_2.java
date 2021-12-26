@@ -1,7 +1,8 @@
 /*Implementation of Stack using Linked List.
   Time Complexity: O(n) for push, pop and peek elements.
   Space Complexity: O(n) to store the n nodes.
- */
+*/
+
 import java.util.*;
 class StackAsLinkedList {
     StackNode root;

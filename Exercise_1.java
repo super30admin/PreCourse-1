@@ -1,7 +1,7 @@
 /*Implementation of Stack using an array.
   Time Complexity: O(1) for push, pop and peek methods.
   Space Complexity: O(n) n - the size of the array created.
- */
+*/
 
 import java.util.*;
 class Stack {
