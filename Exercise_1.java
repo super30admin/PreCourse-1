@@ -9,9 +9,8 @@ class Stack {
     boolean isEmpty() {
         return (top == -1);
     }
-
+        
     Stack() {
-        //Initialize your constructor 
         top = -1;
     }
 
