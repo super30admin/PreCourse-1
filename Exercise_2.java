@@ -1,3 +1,6 @@
+ //Time Complexity is O(1).
+ //Space Complexity is O(n)
+
 public class StackAsLinkedList { 
   
     StackNode head;
