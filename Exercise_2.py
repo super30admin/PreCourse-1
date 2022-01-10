@@ -1,5 +1,5 @@
-# Time Complexity : don't know how to calculate it in real program
-# Space Complexity : don't know
+# Time Complexity : everything is O(N)
+# Space Complexity : push O(N) else: O(1)
 # Did this code successfully run on Leetcode : Yes and No. 
 # successfully run on local device: Yes.
 # Any problem you faced while coding this :
@@ -15,14 +15,38 @@ class Node:
        self.next = None
  
 class Stack:
-    def __init__(self):
-        self.stack = []
+    def __init__(self): 
+        self.head = None
+        self.counter = 0
+        
     def push(self, data):
-        self.stack.append(data)
+        # self.stack.append(data)
+        newNode = Node(data)
+        if self.head == None:
+            self.head = newNode
+            self.counter += 1
+        else:
+            curr = self.head
+            while(curr.next != None):
+                curr = curr.next
+            curr.next = newNode
+            self.counter += 1
+        
     def pop(self):
-        self.stack.pop()
-    def show(self):
-        return self.stack # return syntax is necessary
+        if self.counter == 0:
+            print("stack is empty therefore pop operation is invalid")
+        else:
+            curr = self.head
+            popVal = 0
+            for i in range(self.counter):
+                if i == self.counter - 2:
+                    popVal =  curr.next.data
+                    curr.next.data = None
+                    curr.next = None
+                    self.counter -= 1
+                else:
+                    curr = curr.next
+        return popVal
         
 a_stack = Stack()
 while True:
@@ -30,9 +54,7 @@ while True:
     print('push <value>')
     print('pop')
     print('quit')
-    print("show")
     do = input('What would you like to do? ').split()
-    print("do-input", do)
     #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
     operation = do[0].strip().lower()
     if operation == 'push':
@@ -44,7 +66,5 @@ while True:
             print('Stack is empty.')
         else:
             print('Popped value: ', int(popped))
-    elif operation == "show":
-        print(a_stack.show())
     elif operation == 'quit':
         break
