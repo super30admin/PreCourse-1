@@ -30,6 +30,7 @@ class Stack {
     int peek() 
     { 
         //Write your code here
+        //checking first commit
     } 
 } 
   
