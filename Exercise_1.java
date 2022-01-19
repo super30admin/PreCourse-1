@@ -1,7 +1,12 @@
-class Stack {
-    //Please read sample.java file before starting.
-    //Kindly include Time and Space complexity at top of each file
-    static final int MAX = 2;
+class Stack_Custom {
+    // Time Complexity : O(1) for push, pop, peek
+    // Space Complexity : MAX_SIZE_OF_ARRAY + temp variables
+    // Did this code successfully run on Leetcode : Yes
+    // Any problem you faced while coding this : While compiling on leetcode, I faced error /** Line -26: error: Stack is already defined in this compilation unit [in Exercise_1.java]
+    //import java.util.Stack; **/; so renamed the stack class since it is predefined class
+
+
+    static final int MAX = 1000;
     int top;
     int defaultEmptyValue = -1;
     int a[] = new int[MAX]; // Maximum size of Stack
@@ -11,7 +16,7 @@ class Stack {
         return (top == defaultEmptyValue);
     }
 
-    Stack() {
+    Stack_Custom() {
         //Initialize your constructor
         top = defaultEmptyValue; // Initializing top with -1
         System.out.println("Stack initialized isEmpty : " + isEmpty() + " with Stack Size " + a.length);
@@ -19,7 +24,7 @@ class Stack {
 
     boolean push(int x) {
         //Check for stack Overflow
-        int stackLength = a.length -1;
+        int stackLength = a.length - 1;
         if (top < stackLength) {
             top = top + 1;
             a[top] = x;
@@ -43,7 +48,7 @@ class Stack {
     }
 
     int peek() {
-        //Write your code here
+        //If stack not empty then returning the top element
         if (isEmpty()) {
             System.out.println("Stack is empty");
             return 0;
@@ -56,7 +61,7 @@ class Stack {
 // Driver code 
 class Exercise_1 {
     public static void main(String args[]) {
-        Stack s = new Stack();
+        Stack_Custom s = new Stack_Custom();
         s.push(10);
         s.push(20);
         s.push(30);

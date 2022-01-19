@@ -1,8 +1,11 @@
-import java.io.*;
-
-// Java program to implement 
+// Java program to implement
 // a Singly Linked List 
-class LinkedList {
+class LinkedList_Custom {
+    // Time Complexity : O(N)
+    // Space Complexity : N*SizeOf(Node) + temp variables
+    // Did this code successfully run on Leetcode : Yes
+    // Any problem you faced while coding this : While determining complexity; ERROR while compiling on Leetcode /* LinkedList is already defined in this compilation unit [in LinkedList.java]
+    //import java.util.LinkedList;*/ - renamed LinkedList
 
     Node head; // head of list 
 
@@ -23,7 +26,7 @@ class LinkedList {
     }
 
     // Method to insert a new node 
-    public static LinkedList insert(LinkedList list, int data) {
+    public static LinkedList_Custom insert(LinkedList_Custom list, int data) {
 
         // Create a new node with given data
         Node new_node = new Node(data);
@@ -32,7 +35,7 @@ class LinkedList {
         // then make the new node as head
         if (list.head == null) {
             System.out.println("New Node with value " + data + " created at First");
-            list = new LinkedList();
+            list = new LinkedList_Custom();
             list.head = new_node;
         } else {
             // Else traverse till the last node
@@ -51,7 +54,7 @@ class LinkedList {
     }
 
     // Method to print the LinkedList. 
-    public static void printList(LinkedList list) {
+    public static void printList(LinkedList_Custom list) {
         System.out.print(" Printing  list : ");
         if (list.head != null) {
             Node temp = list.head;
@@ -64,14 +67,12 @@ class LinkedList {
             }
             System.out.println("END");
         }
-
-
     }
 
     // Driver code 
     public static void main(String[] args) {
         /* Start with the empty list. */
-        LinkedList list = new LinkedList();
+        LinkedList_Custom list = new LinkedList_Custom();
 
         // 
         // ******INSERTION****** 

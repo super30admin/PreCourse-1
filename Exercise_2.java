@@ -1,5 +1,10 @@
 class StackAsLinkedList {
 
+    // Time Complexity : O(1) and O(N) for printStack
+    // Space Complexity : N*SizeOf(StackNode) + temp variables
+    // Did this code successfully run on Leetcode : Yes
+    // Any problem you faced while coding this : While determining complexity
+    // Your code here along with comments explaining your approach
     StackNode root;
 
     static class StackNode {
@@ -16,6 +21,7 @@ class StackAsLinkedList {
 
     public boolean isEmpty() {
         //Write your code here for the condition if stack is empty.
+        // if root pointing null, then no node added
         return root == null;
     }
 
@@ -52,6 +58,7 @@ class StackAsLinkedList {
         if (isEmpty()) {
             System.out.println("No elements present, root found NULL");
         } else {
+            // The top here is root, so returning the data in root node
             return root.data;
         }
         return 0;
@@ -60,18 +67,17 @@ class StackAsLinkedList {
     public void printStack() {
         StackNode temp = root;
         while (temp != null) {
-            while (temp != null) {
-                // Print the data at current node
-                System.out.print(temp.data + "->");
-                // Go to next node
-                temp = temp.next;
-            }
-            System.out.println("END");
+            // Print the data at current node
+            System.out.print(temp.data + "->");
+            // Go to next node
+            temp = temp.next;
         }
+        System.out.println("END");
     }
 
     //Driver code
     public static void main(String[] args) {
+
 
         StackAsLinkedList sll = new StackAsLinkedList();
 
@@ -87,4 +93,4 @@ class StackAsLinkedList {
 
         System.out.println("Top element is " + sll.peek());
     }
-} 
+}
