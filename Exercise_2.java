@@ -1,5 +1,8 @@
 public class StackAsLinkedList {
-
+    // The space and time complexity to push and pop is O(1)
+    // Generally if there are N elements in an array the space and time complexity
+    // to push and pop will be O(N)
+    // To peek an element the time complexity will be O(1)
     StackNode root;
 
     static class StackNode {

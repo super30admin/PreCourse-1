@@ -1,7 +1,7 @@
 import java.io.*;
 
-// Java program to implement 
-// a Singly Linked List 
+// The space and time complexity to push and print is O(N) where N is the numner of elements
+
 public class LinkedList {
 
     Node head; // head of list

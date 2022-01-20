@@ -1,6 +1,8 @@
 class Stack {
-    // Please read sample.java file before starting.
-    // Kindly include Time and Space complexity at top of each file
+    // The space and time complexity to push and pop is O(1)
+    // Generally if there are N elements in an array the space and time complexity
+    // to push and pop will be O(N)
+    // To peek an element the time complexity will be O(1)
     static final int MAX = 1000;
     int top;
     int a[] = new int[MAX]; // Maximum size of Stack
