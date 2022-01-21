@@ -1,6 +1,12 @@
 // Time Complexity : O(n) for insert and print functions
 // Space Complexity : O(n) for storing the list, head is constant space pointer
 
+// Explanation:
+// Head is of Node type which marks the head of the Linked List.
+// Head is initialized. 
+// Insert: The Node node is initialized with input data. If head == null, list is empty, head = node. Else list is traversed till the last node and the input node is inserted at the end.
+// PrintList: If head is null, list is empty. Else list is traversed till the end by taking Node current and inside every loop current = current.next until current.next != null and logging out the current.data. 
+
 // Java program to implement 
 // a Singly Linked List 
 public class Exercise_3 {

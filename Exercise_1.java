@@ -1,6 +1,12 @@
 // Time Complexity : O(1) for all the functions 
 // Space Complexity : O(n), array of the length of inputs and top is constant space
 
+// Explanation: 
+// Created an array, a, with size as max. Int variable top takes care of the index I need to insert at. 
+// Push: if top is greater than MAX, there isn't anymore space. If top is smaller than Max, the value is added at the top index in the a and top is incremented by 1.
+// Pop: If top == -1, Stack is empty, else a[top] is returned and top is decremented by 1.
+// Peek: If top == -1, Stack is empty, else a[top] is returned.
+
 class Stack {
     static final int MAX = 1000;
     int top;

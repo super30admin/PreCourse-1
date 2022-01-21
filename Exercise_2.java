@@ -1,6 +1,12 @@
 // Time Complexity : O(1) for all the functions
 // Space Complexity : O(n), storing the values in LinkedList and root pointer is constant space
 
+// Explanation: 
+// Created a LinkedList with head as root.
+// Push: A node is created of StackNode type. If the root is null, the root = node, else node is inserted at the end of the list (current.next) = node.
+// Pop: if root == null, stack is empty, else root is removed and root.next is made the new root.
+// Peek: if root == null, stack is empty, else root.data is returned.
+
 public class Exercise_2 {
 
     StackNode root;
