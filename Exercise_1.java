@@ -1,11 +1,12 @@
-// Time Complexity: 1
-// Space Complexity: n
-// Yes, this code ran successfully on Leetcode Playground
+// Operation:          push   pop    peek
+// Time Complexity:     1      1      1
+// Space Complexity:    n      n      n
+// Yes, this code ran successfully
 // No, I didn't face any problem in this problem
 
 class Stack {
     //Please read sample.java file before starting.
-  //Kindly include Time and Space complexity at top of each file
+    //Kindly include Time and Space complexity at top of each file
     static final int MAX = 1000;
     int top;
     int a[] = new int[MAX]; // Maximum size of Stack
@@ -14,14 +15,14 @@ class Stack {
     { 
         //Write your code here
         if(top > -1)        // Stack is not Empty
-            return true ;
-        else
-            return false ;  // Stack is Empty
+            return false ;
+        return true ;      // Stack is Empty
     } 
 
     Stack() 
     { 
         //Initialize your constructor
+        top = -1 ;          // Initializing top to -1
     } 
   
     boolean push(int x) 
@@ -61,7 +62,13 @@ class Stack {
     int peek() 
     { 
         //Write your code here
-        return a[top] ;     // returning top element
+        if(!isEmpty())
+            return a[top] ;     // returning top element
+        else
+        {
+            System.out.println("Stack is Empty");   // Stack is Empty
+            return -1;
+        }
     } 
 } 
   
@@ -71,8 +78,9 @@ class Main {
     { 
         Stack s = new Stack(); 
         s.push(10); 
-        s.push(20); 
-        s.push(30); 
-        System.out.println(s.pop() + " Popped from stack");
+        s.push(20);
+        s.push(30);
+        System.out.println(s.pop() + " popped from stack");
+        System.out.println("Top Element is "+s.peek());
     } 
 }

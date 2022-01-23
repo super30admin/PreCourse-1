@@ -1,4 +1,10 @@
-public class StackAsLinkedList {
+// Operation:          push   pop    peek
+// Time Complexity:     1      1      1
+// Space Complexity:    1      1      1
+// Yes, this code ran successfully
+// No, I didn't face any problem in this problem
+
+class StackAsLinkedList {
 
     StackNode root;
     StackNode top;
@@ -64,7 +70,7 @@ public class StackAsLinkedList {
 
 }
 
-class Exercise_2
+public class Exercise_2
 {
 	//Driver code
     public static void main(String[] args)
