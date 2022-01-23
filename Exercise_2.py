@@ -1,3 +1,7 @@
+#Time Complexity : O(n)
+#Space Complexity : O(1)
+#This code is running perfectly as desired
+#I had to look again for the Linked List concepts
 
 class Node:
     def __init__(self, data):
@@ -6,10 +10,26 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.head = None #initializing the head of the list
         
-    def push(self, data):
+    def push(self, item):
+        data = Node(item)
+        temp = self.head
+        if temp is None:  # checking whether LinkedList has any elements in it or not, Is No, assigning data to it
+            self.head = data
+        else:
+            while temp.next is not None:  # traversing to the end of linkedlist
+                temp = temp.next
+            temp.next = data  # linking the data to the lst node
         
     def pop(self):
+        temp = self.head
+        while temp.next is not None: #traversing the linked list till the end
+            prev = temp
+            temp = temp.next
+        prev.next = None #assigning the 2nd last as the last node of the list
+        return temp.data
+
         
 a_stack = Stack()
 while True:
