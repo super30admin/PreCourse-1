@@ -1,3 +1,6 @@
+// Time Complexity : O(1) for all functions
+// Space Complexity : O(1) for all functions
+
 #include <bits/stdc++.h> 
 using namespace std; 
   
@@ -18,22 +21,35 @@ StackNode* newNode(int data)
   
 int isEmpty(StackNode* root) 
 { 
-    //Your code here 
+    return !root; 
 } 
   
 void push(StackNode** root, int data) 
 { 
-    //Your code here 
+    StackNode* stackNode = newNode(data);
+    stackNode->next = *root;
+    *root = stackNode;
+    cout << data << " pushed to stack\n";
 } 
   
 int pop(StackNode** root) 
 { 
-    //Your code here 
+    if (isEmpty(*root))
+        return INT_MIN;
+    StackNode* temp = *root;
+    *root = (*root)->next;
+    int x = temp->data;
+    free(temp);
+ 
+    return x; 
 } 
   
 int peek(StackNode* root) 
 { 
-    //Your code here 
+    if (isEmpty(root))
+        return INT_MIN;
+
+    return root->data; 
 } 
   
 int main() 
