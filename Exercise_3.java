@@ -1,8 +1,27 @@
-import java.io.*; 
-  
+/*
+ Time Complexity :
+ 1. insert operation: O(1)
+ 2. printList: O(N)
+ */
+
+/*
+ Space Complexity: Space complexity for all the operations will be O(1)
+ */
+
+// Did this code successfully run on Leetcode :N/A
+// Any problem you faced while coding this : I updated the LinkedList class as class instead of Public class to make it run
+
+/*
+    Linked List implementation,
+    1. Inserting element at the end of the given LinkedList list
+    2. Creating a new node and setting its data to the inserting data value and next pointer to null
+ */
+
+import java.io.*;
+
 // Java program to implement 
 // a Singly Linked List 
-public class LinkedList { 
+class LinkedList {
   
     Node head; // head of list 
   
@@ -17,7 +36,9 @@ public class LinkedList {
         // Constructor 
         Node(int d) 
         { 
-            //Write your code here 
+            //Write your code here
+            this.data = d;
+            this.next = null;
         } 
     } 
   
@@ -25,28 +46,39 @@ public class LinkedList {
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data 
-   
+        Node newNode = new Node(data);
+        newNode.next = null;
         // If the Linked List is empty, 
         // then make the new node as head 
-        
-            // Else traverse till the last node 
-            // and insert the new_node there 
-
-            // Insert the new_node at last node 
-        // Return the list by head 
-        
+        if(list.head == null){
+            list.head = newNode;
+        }
+        else{
+            // Else traverse till the last node
+            // and insert the new_node there
+            Node endNode = list.head;
+            while(endNode.next!= null){
+                endNode = endNode.next;
+            }
+            // Insert the new_node at last node
+            endNode.next = newNode;
+        }
+        // Return the list by head
+        return list;
     } 
   
     // Method to print the LinkedList. 
-    public static void printList(LinkedList list) 
-    {  
+    public static void printList(LinkedList list) {
+        Node saveNode = list.head;
         // Traverse through the LinkedList 
-   
-            // Print the data at current node 
-       
-            // Go to next node 
-    } 
-   
+        while(saveNode!= null){
+            // Print the data at current node
+            System.out.println("Linked List data: "+ saveNode.data);
+            // Go to next node
+            saveNode = saveNode.next;
+        }
+    }
+
     // Driver code 
     public static void main(String[] args) 
     { 
