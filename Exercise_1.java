@@ -9,20 +9,20 @@ class Stack {
     //Kindly include Time and Space complexity at top of each file
     static final int MAX = 1000;
     int top;
-    int a[] = new int[MAX]; // Maximum size of Stack
+    int a[] = new int[MAX];                         // Maximum size of Stack
   
     boolean isEmpty() 
-    { 
+    {
         //Write your code here
-        if(top > -1)        // Stack is not Empty
+        if(top > -1)                                // Stack is not Empty
             return false ;
-        return true ;      // Stack is Empty
+        return true ;                               // Stack is Empty
     } 
 
     Stack() 
     { 
         //Initialize your constructor
-        top = -1 ;          // Initializing top to -1
+        top = -1 ;                                  // Initializing top to -1
     } 
   
     boolean push(int x) 
@@ -30,12 +30,12 @@ class Stack {
         //Check for stack Overflow
         //Write your code here
         top++ ;
-        if(top > MAX)       // Stack is full
+        if(top > MAX)                               // Stack is full
         {
             top-- ;
             return false ;
         }
-        else                // Stack is not full
+        else                                        // Stack is not full
         {
             a[top] = x ;
             return true;
@@ -46,12 +46,12 @@ class Stack {
     { 
         //If empty return 0 and print " Stack Underflow"
         //Write your code here
-        if(top < 0)         // Stack is Empty
+        if(top < 0)                                 // Stack is Empty
         {
             System.out.println(" Stack Underflow");
             return 0 ;
         }
-        else                // Stack is not Empty
+        else                                        // Stack is not Empty
         {
             int temp = a[top] ;
             top-- ;
@@ -63,7 +63,7 @@ class Stack {
     { 
         //Write your code here
         if(!isEmpty())
-            return a[top] ;     // returning top element
+            return a[top] ;                         // returning top element
         else
         {
             System.out.println("Stack is Empty");   // Stack is Empty

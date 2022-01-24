@@ -6,6 +6,7 @@
 
 import java.io.*;
 
+
 // Java program to implement
 // a Singly Linked List
 class LinkedList {
@@ -23,7 +24,7 @@ class LinkedList {
         // Constructor
         Node(int d) {
             //Write your code here
-            this.data = d;             // Initializing Node
+            this.data = d;                              // Initializing Node
             next = null;
         }
     }
@@ -41,12 +42,12 @@ class LinkedList {
         // Insert the new_node at last node
         // Return the list by head
 
-        Node node = new Node(data) ;        // creating node with data
+        Node node = new Node(data) ;                    // creating node with data
         Node cur = list.head ;
 
-        if(list.head == null)               // LinkedList is Empty
+        if(list.head == null)                           // LinkedList is Empty
             list.head = node ;
-        else                                // LinkedList is not Empty
+        else                                            // LinkedList is not Empty
         {
             while(cur.next != null)
                 cur = cur.next ;

@@ -15,7 +15,7 @@ class StackAsLinkedList {
 
         StackNode(int data) {
             //Constructor here
-            this.data = data;          // Initializing Node
+            this.data = data;                            // Initializing Node
             next = null;
         }
     }
@@ -37,9 +37,9 @@ class StackAsLinkedList {
             System.out.println("Stack Overflow");
             return;
         }
-        root.data = data;                              // Stack is not Full
+        root.data = data;                               // Stack is not Full
         root.next = top;
-        top = root;                                    // setting up top after push operation
+        top = root;                                     // setting up top after push operation
     }
 
     public int pop() {
@@ -51,7 +51,7 @@ class StackAsLinkedList {
             System.out.println("Stack Underflow");
             return -1;
         }
-        StackNode popped = new StackNode(-1);     // setting up top after pop operation
+        StackNode popped = new StackNode(-1);       // setting up top after pop operation
         popped = top;
         top = (top).next;
         return popped.data;
@@ -59,9 +59,9 @@ class StackAsLinkedList {
 
     public int peek() {
         //Write code to just return the topmost element without removing it.
-        if (!isEmpty())                  // Stack is not Empty
+        if (!isEmpty())                                   // Stack is not Empty
             return top.data;
-        else                            // Stack is empty
+        else                                              // Stack is empty
         {
             System.out.println("Stack Underflow");
             return -1;
