@@ -1,15 +1,31 @@
-
 class Node:
     def __init__(self, data):
-       self.data = data
-       self.next = None
+        self.data = data
+        self.next = None
  
 class Stack:
     def __init__(self):
-        
+        self.head = Node(-1)
+        self.prev = self.head
+        self.curr = self.head
+    # Time: O(1)  
     def push(self, data):
+        temp = Node(data)
+        self.curr.next = temp
+        if self.prev != self.curr:
+            self.prev = self.curr
+        self.curr = temp
         
+    # Time: O(1)    
     def pop(self):
+        if self.curr == self.head:
+            return None
+        else:
+            ret = self.curr.data
+            self.prev.next = None
+            self.curr = self.prev
+            return ret
+            
         
 a_stack = Stack()
 while True:
