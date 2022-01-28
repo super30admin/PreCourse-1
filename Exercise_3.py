@@ -10,14 +10,14 @@ class SinglyLinkedList:
     def __init__(self):
         """
         Create a new singly-linked list.
-        Takes O(1) time.
+        Takes O(1) time and O(1) space.
         """
         self.head = None
         
     def append(self, data):
         """
         Insert a new element at the end of the list.
-        Takes O(n) time.
+        Takes O(n) time and O(n) space.
         """
         if self.head == None:
             self.head = ListNode(data)
@@ -32,7 +32,7 @@ class SinglyLinkedList:
         """
         Search for the first element with `data` matching
         `key`. Return the element or `None` if not found.
-        Takes O(n) time.
+        Takes O(n) time and O(n) space.
         """
         if self.head == None:
             return ("Linkedlist is empty")
@@ -47,7 +47,7 @@ class SinglyLinkedList:
     def remove(self, key):
         """
         Remove the first occurrence of `key` in the list.
-        Takes O(n) time.
+        Takes O(n) time and O(n) space.
         """
         current = self.head
         if current == None:
