@@ -1,3 +1,8 @@
+# Time Complexity: O(1)
+# Space Complexity: O(n)
+# Did this code successfully run on Leetcode?: Ran succesfully on code editor
+# Any problem you faced while coding this: No
+
 
 class Node:
     def __init__(self, data):
