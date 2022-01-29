@@ -24,11 +24,11 @@ class LinkedList {
     // Method to insert a new node
     public static LinkedList insert(LinkedList list, int data)
     {
-        Node node = new Node(data)
+        Node node = new Node(data);
         if (list.head == null) {
-            list.head = node        
+            list.head = node  ;
         } else {
-            Node temp = list.head
+            Node temp = list.head;
                
             while(temp.next != null) {
                 temp = temp.next;
@@ -46,8 +46,8 @@ class LinkedList {
     // Method to print the LinkedList.
     public static void printList(LinkedList list)
     {
-        Node temp = head
-        while (temp == null)
+        Node temp = list.head;
+        while (temp != null)
         {
             System.out.println(temp.data);
             temp = temp.next;
