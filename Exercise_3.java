@@ -4,6 +4,11 @@ import java.io.*;
 // a Singly Linked List 
 public class LinkedList {
 
+// Time Complexity : insert: O(1), Search O(1), Delete: (n)
+// Space Complexity : O(n)
+// Did this code successfully run on Leetcode : NA
+// Any problem you faced while coding this : No
+
     Node head; // head of list 
 
     // Linked list Node. 

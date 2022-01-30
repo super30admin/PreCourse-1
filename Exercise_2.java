@@ -1,4 +1,8 @@
 public class StackAsLinkedList {
+// Time Complexity : Push: O(1), Pop(1), Peek O(1)
+// Space Complexity : O(n)
+// Did this code successfully run on Leetcode : NA
+// Any problem you faced while coding this : No
 
     StackNode root;
 
