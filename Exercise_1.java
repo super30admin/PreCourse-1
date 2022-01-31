@@ -71,3 +71,8 @@ class Main {
         System.out.println(s.peek() + " is the peek from stack");
     } 
 }
+
+
+ /* time complexity to push and pop is O(1)
+       space complexity 0(1)
+     */

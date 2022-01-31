@@ -87,3 +87,8 @@ class Exercise_2 {
         System.out.println("Top element is " + sll.peek());
     }
 }
+
+/*
+ time complexity to push and pop is O(1)
+ space complexity 0(1)
+ */

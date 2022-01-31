@@ -77,3 +77,6 @@ class LinkedList {
         printList(list);
     }
 }
+    /* time complexity to push and pop is O(n)
+       space complexity 0(1)
+     */
