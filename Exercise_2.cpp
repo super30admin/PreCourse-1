@@ -1,3 +1,5 @@
+// Time Complexity : O(1) (for push and pop from front)
+// Space Complexity : O(n)
 #include <bits/stdc++.h> 
 using namespace std; 
   
@@ -17,23 +19,40 @@ StackNode* newNode(int data)
 } 
   
 int isEmpty(StackNode* root) 
-{ 
-    //Your code here 
+{
+    // Returns true if Linked List is Empty 
+    return (root == NULL);
 } 
   
 void push(StackNode** root, int data) 
-{ 
-    //Your code here 
+{
+    //Append new node at the front
+    StackNode* temp = newNode(data);
+    temp->next = *root;
+    *root = temp;
 } 
   
 int pop(StackNode** root) 
 { 
-    //Your code here 
+    StackNode* temp = *root;
+    // Empty Stack
+    if(isEmpty(head)) return -1;
+
+    // Extract the node data from front
+    *root = (*root)->next;
+    int x = temp->data;
+    free(temp);
+    return x;
 } 
   
 int peek(StackNode* root) 
 { 
-    //Your code here 
+    // Empty Stack
+    if(isEmpty(root)) return -1; 
+
+    while (root->next!=NULL)
+        root = root->next;
+    return root->data;
 } 
   
 int main() 
