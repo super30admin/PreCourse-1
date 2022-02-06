@@ -8,7 +8,7 @@ public class StackAsLinkedList {
   
         StackNode(int data) 
         { 
-            //Constructor here 
+            this.data = 10;
         } 
     } 
     
