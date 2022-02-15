@@ -1,54 +1,69 @@
-#include <bits/stdc++.h> 
-  
-using namespace std; 
-  
-#define MAX 1000 
-  
-class Stack {
-  //Please read sample.java file before starting.
-  //Kindly include Time and Space complexity at top of each file
-    int top; 
-  
-public: 
-    int a[MAX]; // Maximum size of Stack 
-  
-    Stack() { //Constructor here } 
-    bool push(int x); 
-    int pop(); 
-    int peek(); 
-    bool isEmpty(); 
-}; 
-  
-bool Stack::push(int x) 
-{ 
-    //Your code here
-    //Check Stack overflow as well
-} 
-  
-int Stack::pop() 
-{ 
-    //Your code here
-    //Check Stack Underflow as well 
-} 
-int Stack::peek() 
-{ 
-    //Your code here
-    //Check empty condition too
-} 
-  
-bool Stack::isEmpty() 
-{ 
-    //Your code here 
-} 
-  
-// Driver program to test above functions 
-int main() 
-{ 
-    class Stack s; 
-    s.push(10); 
-    s.push(20); 
-    s.push(30); 
-    cout << s.pop() << " Popped from stack\n"; 
-  
-    return 0; 
-} 
+#include<iostream>
+using namespace std;
+
+#define n 1000
+
+class stack{
+
+    int top;
+
+    public:
+
+    int arr[n];
+
+    stack(){
+        top=-1;
+        for (int i=0; i<n; i++){
+            arr[i]=0;
+        }
+    }
+
+
+
+    bool push(int x){
+        if (top==n-1){
+            cout<<x<<" could not be pushed due to Stack overflow"<<endl;
+            return top==n;
+        }
+        top++;
+        arr[top]=x;
+        return arr[top]==x;
+    }
+
+    int pop(){
+        if (top==-1){
+            cout<<"No element is present"<<endl;
+            return -1;
+        }
+        top--;
+        return arr[top+1];
+    }
+
+    int peek(){
+        if (top==-1){
+            cout<<"No elements are present"<<endl;
+            return -1;
+        }
+        return arr[top];
+    }
+
+    bool isEmpty(){
+        return top==-1;
+    }
+};
+
+int main(){
+
+    stack st;
+    st.push(1);
+    st.push(2);
+    st.push(3);
+    cout<<st.peek()<<endl;
+    st.pop();
+    cout<<st.peek()<<endl;
+    st.pop();
+    st.pop();
+    cout<<st.isEmpty()<<endl;
+
+    return 0;
+}
