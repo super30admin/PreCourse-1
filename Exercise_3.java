@@ -1,11 +1,40 @@
 import java.io.*; 
   
+// Time Complexity :
+/*
+Insert() operation : O(1)
+PrintList() operation : O(n)
+*/
+
+
+// Space Complexity :
+/*
+Insert() operation : O(1)
+PrintList() operation : O(1)
+*/
+
+// Did this code successfully run on Leetcode : N/A
+// Any problem you faced while coding this : No
+
+// Your code here along with comments explaining your approach
+
+/*
+Initialised the constructor of Node class
+For insert() : If head = null // Make new node as head, otherwise traverse through a  the nodes towards the end of list and insert new node
+For printList() : Traverse from head node to end of the list and print data of each node
+*/
+
+
+
 // Java program to implement 
 // a Singly Linked List 
-public class LinkedList { 
+ class LinkedList { 
   
     Node head; // head of list 
-  
+    
+    LinkedList(){
+        head = null;
+    }
     // Linked list Node. 
     // This inner class is made static 
     // so that main() can access it 
@@ -18,6 +47,8 @@ public class LinkedList {
         Node(int d) 
         { 
             //Write your code here 
+            this.data = d;
+            this.next = null;
         } 
     } 
   
@@ -25,26 +56,47 @@ public class LinkedList {
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data 
-   
+        
+        Node node = new Node(data);
         // If the Linked List is empty, 
         // then make the new node as head 
         
-            // Else traverse till the last node 
-            // and insert the new_node there 
+        if(list.head == null){
+            list.head = node;
+        }
+        else{   // Else traverse till the last node 
+                // and insert the new_node there 
+            Node temp = list.head;
 
+            while(temp.next != null){
+                temp = temp.next;
+            }
+        
             // Insert the new_node at last node 
-        // Return the list by head 
+            // Return the list by head 
+            
+            temp.next = node;
+        }
+        
+        return list;
         
     } 
   
     // Method to print the LinkedList. 
     public static void printList(LinkedList list) 
     {  
+        if(list.head == null){
+            return;
+        }
+
+        Node temp = list.head;
         // Traverse through the LinkedList 
-   
+        while(temp != null){
+            System.out.println(temp.data);
             // Print the data at current node 
-       
+            temp = temp.next;
             // Go to next node 
+        }
     } 
    
     // Driver code 
@@ -68,3 +120,5 @@ public class LinkedList {
         printList(list); 
     } 
 }
+
+
