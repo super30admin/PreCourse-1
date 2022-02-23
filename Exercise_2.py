@@ -25,7 +25,6 @@ class Stack:
 a_stack = Stack()
 while True:
     #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
-    print(a_stack)
     print('push <value>')
     print('pop')
     print('quit')
