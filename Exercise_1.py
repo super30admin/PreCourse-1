@@ -48,8 +48,8 @@ print(s.peek())
 '''
 Time Complexity :
   isEmpty : O(1)
-  push    : O(N)
-  pop     : O(1)
+  push    : It is list append  : Average case O(1) and worst case Amortized O(1) refer https://wiki.python.org/moin/TimeComplexity
+  pop     : It is list pop last element :   Average case O(1) and worst is amortized O(1)
   peek    : O(1)
   size    : O(1)
   show    : O(N)

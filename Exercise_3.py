@@ -28,7 +28,7 @@ class SinglyLinkedList:
     def __init__(self,data=None):
         """
         Create a new singly-linked list.
-        Takes O(1) time.
+        Takes O(1) time. 
         """
         '''
             Head would be initialized if an instnace is passed with a data
@@ -39,10 +39,10 @@ class SinglyLinkedList:
             self.head=ListNode(data)
         
 
-    def append(self, data):
+    def append(self, data) -> None :
         """
         Insert a new element at the end of the list.
-        Takes O(n) time.
+        Takes O(n) time.  N is number of elements in LinkedList
         """
         '''
         1. HEAD is None
@@ -61,7 +61,7 @@ class SinglyLinkedList:
         """
         Search for the first element with `data` matching
         `key`. Return the element or `None` if not found.
-        Takes O(n) time.
+        Takes O(N) time.  N is number of elements in LinkedList
         """
         '''
             1. HEAD is None
@@ -86,7 +86,7 @@ class SinglyLinkedList:
     def remove(self, key):
         """
         Remove the first occurrence of `key` in the list.
-        Takes O(n) time.
+        Takes O(N) time, N is number of elements in LinkedList
         """
 
         '''
