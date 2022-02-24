@@ -1,3 +1,6 @@
+# Time complexity O(n)
+# Space complexity O(n)
+
 from ast import While
 from email import header
 
