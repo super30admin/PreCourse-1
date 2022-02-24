@@ -1,0 +1,23 @@
+#Implement stack using arrays
+
+stack_arr = []
+i = 1
+num = int(input("Input the no of elements you want to enter into the stack : "))
+
+while i<=num:
+    element = input("Enter the stack element value :")
+    stack_arr.append(element)
+    i=i+1
+
+print('\n')
+print("The stack elements are printed as below")
+
+print(stack_arr)
+print('\n')
+
+print("Popping elements from the stack by LIFO order : ")
+
+while len(stack_arr):
+    popped_element = stack_arr.pop()
+    print(popped_element)
+    
