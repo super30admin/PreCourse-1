@@ -1,4 +1,9 @@
-class Stack { 
+// Time Complexity : O(1) for both push and pop operations
+// Space Complexity :   O(1) space complexity, only variables are used
+// Did this code successfully run on Leetcode : yes
+// Any problem you faced while coding this : No
+
+class stack { 
     //Please read sample.java file before starting.
   //Kindly include Time and Space complexity at top of each file
     static final int MAX = 1000; 
@@ -13,7 +18,7 @@ class Stack {
         return false;
     } 
 
-    Stack() 
+    stack() 
     { 
         //Initialize your constructor 
         top = -1;
@@ -63,7 +68,7 @@ class Stack {
 class Main { 
     public static void main(String args[]) 
     { 
-        Stack s = new Stack(); 
+        stack s = new stack(); 
         s.push(10); 
         s.push(20); 
         s.push(30); 

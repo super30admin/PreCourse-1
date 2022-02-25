@@ -1,3 +1,7 @@
+// Time Complexity : O(n) for both insert and print operations
+// Space Complexity :   O(1) space complexity, only variables are used
+// Did this code successfully run on Leetcode : yes
+// Any problem you faced while coding this : I didn't understand why list is passed and returned
 import java.io.*; 
   
 // Java program to implement 

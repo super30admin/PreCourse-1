@@ -1,3 +1,7 @@
+// Time Complexity : O(n) for both push and pop operations
+// Space Complexity :   O(1) space complexity, only variables are used
+// Did this code successfully run on Leetcode : yes
+// Any problem you faced while coding this : No
 class StackAsLinkedList { 
   
     StackNode root; 
