@@ -8,6 +8,9 @@ type ListNode struct {
   Next *ListNode
 }
 
+// time : o(n) worse case
+// could become o(1) if we maintained a tail ref ( then insert would be tail.Next = newNode; tail = newNode )
+// space: o(1)
 func insert(head *ListNode, val int) *ListNode {
   if head == nil {
     head = &ListNode{Val: val}
@@ -21,6 +24,9 @@ func insert(head *ListNode, val int) *ListNode {
   current.Next = &ListNode{Val: val}
   return head
 }
+
+// time: o(n)
+// space: o(1)
 func printList(s *ListNode) {
 	if s == nil {
 		return
