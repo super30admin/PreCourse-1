@@ -13,16 +13,19 @@ type Stack struct {
 	head *StackNode
 }
 
+// time and space: o(1)
 func NewStack() *Stack {
 	return &Stack{
 		head: nil,
 	}
 }
 
+// time and space: o(1)
 func (s *Stack) isEmpty() bool {
 	return s.head == nil
 }
 
+// time and space: o(1)
 func (s *Stack) Push(x int) {
 	newHead := &StackNode{Val: x}
 	if s.head == nil {
@@ -33,6 +36,7 @@ func (s *Stack) Push(x int) {
 	s.head = newHead
 }
 
+// time and space: o(1)
 func (s *Stack) Pop() int {
 	if s.isEmpty() {
 		panic("Stack is empty, nothing to pop....")
@@ -44,6 +48,7 @@ func (s *Stack) Pop() int {
 	return out
 }
 
+// time and space: o(1)
 func (s *Stack) Peek() int {
 	if s.isEmpty() {
 		panic("Stack is empty, nothing to pop....")
@@ -51,6 +56,8 @@ func (s *Stack) Peek() int {
 	return s.head.Val
 }
 
+// time : o(n) [ n is the number of nodes in LL ] 
+// space: o(1)
 func (s *Stack) printStack() {
 	if s.head == nil {
 		return
