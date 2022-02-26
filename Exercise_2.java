@@ -1,4 +1,4 @@
-public class StackAsLinkedList { 
+public class Exercise_2 { 
   
     StackNode root; 
   
@@ -32,6 +32,8 @@ public class StackAsLinkedList {
   
     public int peek() 
     { 
+        
+        
         //Write code to just return the topmost element without removing it.
     } 
   
@@ -39,7 +41,7 @@ public class StackAsLinkedList {
     public static void main(String[] args) 
     { 
   
-        StackAsLinkedList sll = new StackAsLinkedList(); 
+        Exercise_2 sll = new Exercise_2(); 
   
         sll.push(10); 
         sll.push(20); 
