@@ -1,57 +1,79 @@
-import java.io.*; 
-  
+/*
+Time Complexity : O(n) since everything is done after traversing the entire arraylist.
+Space Complexity : O(n) since we create memory when stacknode is added
+
+Did this code successfully run on Leetcode :
+Finished in 70 ms
+[ 1, 2, 3, 4, 5 ]
+
+Any problem you faced while coding this :
+None.
+
+Your code here along with comments explaining your approach :
+Brute Force Straight forward approach.
+*/
+
 // Java program to implement 
 // a Singly Linked List 
-public class LinkedList { 
+class CustomLinkedList { 
   
-    Node head; // head of list 
+    private CustomNode head; // head of list 
   
     // Linked list Node. 
     // This inner class is made static 
     // so that main() can access it 
-    static class Node { 
+    static class CustomNode { 
   
         int data; 
-        Node next; 
+        CustomNode next; 
   
         // Constructor 
-        Node(int d) 
+        CustomNode(int d) 
         { 
-            //Write your code here 
+            this.data = d;
+            this.next = null;
         } 
     } 
   
     // Method to insert a new node 
-    public static LinkedList insert(LinkedList list, int data) 
+    public static CustomLinkedList insert(CustomLinkedList list, int data) 
     { 
-        // Create a new node with given data 
-   
-        // If the Linked List is empty, 
-        // then make the new node as head 
-        
-            // Else traverse till the last node 
-            // and insert the new_node there 
-
-            // Insert the new_node at last node 
-        // Return the list by head 
-        
+        if(list.head == null){
+            list.head = new CustomNode(data);
+        } else {
+            CustomNode current = list.head;
+            while(current.next != null){
+                current = current.next;
+            }
+            current.next = new CustomNode(data);
+        }
+        return list;
     } 
   
     // Method to print the LinkedList. 
-    public static void printList(LinkedList list) 
+    public static void printList(CustomLinkedList list) 
     {  
-        // Traverse through the LinkedList 
-   
-            // Print the data at current node 
-       
-            // Go to next node 
+        StringBuilder printStr = new StringBuilder("[ ");
+        String print="";
+        if(list.head != null){
+            CustomNode current = list.head;
+            while(current.next != null){
+                printStr.append(current.data).append(", ");
+                current = current.next;
+            }
+            printStr.append(current.data).append(", ");
+            if(printStr.length()!= 2)
+                print = printStr.substring(0, printStr.length()-2);
+            print+=" ]";
+        }
+        System.out.println(print);
     } 
    
     // Driver code 
     public static void main(String[] args) 
     { 
         /* Start with the empty list. */
-        LinkedList list = new LinkedList(); 
+        CustomLinkedList list = new CustomLinkedList(); 
   
         // 
         // ******INSERTION****** 
