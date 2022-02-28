@@ -41,7 +41,7 @@ class Stack {
 
             a[++top] = x; // adding element to the stack ++top will increment the index and then store the
                           // x value in array
-            System.out.println(x + "Pushed into the Stack");
+            System.out.println(x + " Pushed into the Stack");
             return true;
 
         }
@@ -91,9 +91,9 @@ class Main {
         s.push(10);
         s.push(20);
         s.push(30);
-        System.out.println("Top Element of Stack" + s.peek());
+        System.out.println("Top Element of Stack " + s.peek());
         System.out.println(s.pop() + " Popped from stack");
-        System.out.println("Stack is isEmpty or not" + s.isEmpty());
+        System.out.println("Stack is isEmpty print fasle or print true " + s.isEmpty());
         s.push(40);
     }
 }
