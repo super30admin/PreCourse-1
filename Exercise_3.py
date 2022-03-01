@@ -1,32 +1,35 @@
-class ListNode:
-    """
-    A node in a singly-linked list.
-    """
-    def __init__(self, data=None, next=None):
-    
-class SinglyLinkedList:
-    def __init__(self):
-        """
-        Create a new singly-linked list.
-        Takes O(1) time.
-        """
-        self.head = None
+# Brute Force - Two Pass Solution
 
-    def append(self, data):
-        """
-        Insert a new element at the end of the list.
-        Takes O(n) time.
-        """
+#Time Complexity - O(n)
+#Space Complexity - O(1)
+
+class Solution:
+    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        curr = head
+        size = 0
+        while curr:
+            size += 1
+            curr = curr.next
         
-    def find(self, key):
-        """
-        Search for the first element with `data` matching
-        `key`. Return the element or `None` if not found.
-        Takes O(n) time.
-        """
+        middle = size // 2
+        curr = head
+        print(curr)
+        for i in range(middle):
+            curr = curr.next
+        return curr
+    
+# Two Pointer - One Pass Solution
+
+#Fast pointer runs twice as fast than slow pointer, which will land slow to the middle when fast reaches the end.
+#Time Complexity - O(n)
+#Space Complexity - O(1)
+
+
+class Solution:
+    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        slow = fast = head
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+        return slow
         
-    def remove(self, key):
-        """
-        Remove the first occurrence of `key` in the list.
-        Takes O(n) time.
-        """
