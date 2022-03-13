@@ -2,6 +2,7 @@
 # Space Complexity : O(n)
 # Did this code successfully run on Leetcode : No
 # Any problem you faced while coding this : No
+
 class myStack:
   #Please read sample.java file before starting.
   #Kindly include Time and Space complexity at top of each file
@@ -9,7 +10,7 @@ class myStack:
      def __init__(self):
        self.stack = [] 
        self.size = 0
-       
+
      def isEmpty(self):
        return self.stack == []
 
