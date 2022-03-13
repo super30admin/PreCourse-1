@@ -1,3 +1,9 @@
+
+# Time Complexity : 0(n) 
+# Space Complexity : O(n)
+# Did this code successfully run on Leetcode : No
+# Any problem you faced while coding this : No
+
 class ListNode:
     """
     A node in a singly-linked list.
