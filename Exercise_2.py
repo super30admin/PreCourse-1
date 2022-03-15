@@ -6,12 +6,26 @@ class Node:
  
 class Stack:
     def __init__(self):
-        
-    def push(self, data):
-        
+        self.root = None
+
     def pop(self):
+        popped = None
+        if self.root:
+            popped = self.root.data
+            self.root = self.root.next
+        return popped
+    
+    
+    def push(self, data):
+        if self.root:
+            node = Node(data)
+            node.next = self.root
+            self.root = node
+        else:
+            self.root = Node(data)
         
 a_stack = Stack()
+
 while True:
     #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
     print('push <value>')
