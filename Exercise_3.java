@@ -1,5 +1,17 @@
 import java.io.*;
 
+// Time Complexity :
+// isEmpty() - O(1)
+// push() - O(1)
+// pop() - O(n)
+// peek() - O(1)
+
+// Space Complexity :
+// isEmpty() - O(1)
+// push() - O(m) where m is the node being added
+// pop() - O(1)
+// peek() - O(1)
+
 // Java program to implement
 // a Singly Linked List 
 class LinkedList {
