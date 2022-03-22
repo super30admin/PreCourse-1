@@ -1,7 +1,7 @@
 class Stack { 
-// Time Complexity :
+// Time Complexity : O(1)
 // Space Complexity : O(n)
-// Did this code successfully run on Leetcode :
+// Did this code successfully run on Leetcode : Didn't run on leetcode playground as Stack is already defined in import. Changing class name to Stack1 solved it on leetcode.
 // Any problem you faced while coding this :
 
 
