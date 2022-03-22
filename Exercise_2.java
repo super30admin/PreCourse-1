@@ -1,3 +1,14 @@
+// Time Complexity :
+// isEmpty() - O(1)
+// push() - O(1)
+// pop() - O(n)
+// peek() - O(1)
+
+// Space Complexity :
+// isEmpty() - O(1)
+// push() - O(m) where m is the node being added
+// pop() - O(1)
+// peek() - O(1)
 class StackAsLinkedList {
   
     StackNode root;
@@ -65,8 +76,19 @@ class StackAsLinkedList {
     { 
         //Write code to just return the topmost element without removing it.
         return top != null ? top.data : 0;
-    } 
-  
+    }
+
+    public void showStackElements() {
+        StackNode temp = root;
+        System.out.print("\nroot:-> ");
+        while(temp != null) {
+            System.out.print(temp.data + " -> ");
+            temp = temp.next;
+        }
+        System.out.print("top");
+        System.out.println("\n");
+    }
+
 	//Driver code
     public static void main(String[] args) 
     { 
@@ -77,12 +99,18 @@ class StackAsLinkedList {
         sll.push(20); 
         sll.push(30);
         sll.push(40);
+        sll.showStackElements();
 
         System.out.println(sll.pop() + " popped from stack");
+        sll.showStackElements();
         System.out.println(sll.pop() + " popped from stack");
+        sll.showStackElements();
         System.out.println(sll.pop() + " popped from stack");
+        sll.showStackElements();
         System.out.println(sll.pop() + " popped from stack");
+        sll.showStackElements();
         System.out.println(sll.pop() + " popped from stack");
+        sll.showStackElements();
 
         System.out.println("Top element is " + sll.peek()); 
     } 
