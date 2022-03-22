@@ -1,4 +1,10 @@
 
+# // Time Complexity : O(1)
+# // Space Complexity : O(1)
+# // Did this code successfully run on Leetcode :yes
+# // Any problem you faced while coding this :No
+
+
 class Node:
     def __init__(self, data):
        self.data = data
@@ -6,10 +12,20 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.top = None #initialize the top of the stack as None
         
     def push(self, data):
-        
+        node = Node(data)
+        node.next = self.top #connect the new node with the previous node
+        self.top = node     #settng the top node to the new node
+
     def pop(self):
+        if self.top == None:
+            return None
+        else:
+            node_to_pop = self.top
+            self.top = self.top.next # set the top node to the one below the previous top
+            return node_to_pop.data     #returning the data of the popped node
         
 a_stack = Stack()
 while True:
