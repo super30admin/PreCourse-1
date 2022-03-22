@@ -1,6 +1,16 @@
-public class StackAsLinkedList { 
+// Time Complexity : O(1)
+// Space Complexity : O(n)
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : While running on Visual Studio I had to rename class name same as file name.
+
+
+// Your code here along with comments explaining your approach : Each new node becomes the root and stores the previous node in the next field.
+
+
+
+public class Exercise_2 { 
   
-    StackNode root; 
+    StackNode root = null; 
   
     static class StackNode { 
         int data; 
@@ -9,18 +19,27 @@ public class StackAsLinkedList {
         StackNode(int data) 
         { 
             //Constructor here 
+            this.data = data;
         } 
     } 
     
 	
     public boolean isEmpty() 
     { 
-        //Write your code here for the condition if stack is empty. 
+        return (root == null);
+        
     } 
   
     public void push(int data) 
     { 
-        //Write code to push data to the stack. 
+        StackNode node = new StackNode(data);
+        if(isEmpty()){
+            root = node;
+            node.next = null;
+        }else{
+            node.next = root;
+            root = node;
+        }
     } 
   
     public int pop() 
@@ -28,18 +47,35 @@ public class StackAsLinkedList {
 	//If Stack Empty Return 0 and print "Stack Underflow"
         //Write code to pop the topmost element of stack.
 	//Also return the popped element 
+        if(isEmpty()){
+            System.out.println("Stack Underflow");
+            return 0;
+        }else{
+            int data = root.data;
+            root = root.next;
+            return data;
+        }
+
     } 
   
     public int peek() 
     { 
         //Write code to just return the topmost element without removing it.
+        if(isEmpty()){
+            System.out.println("Stack Underflow");
+            return 0;
+        }else{
+            return root.data;
+            
+        }
     } 
   
 	//Driver code
+
     public static void main(String[] args) 
     { 
   
-        StackAsLinkedList sll = new StackAsLinkedList(); 
+        Exercise_2 sll = new Exercise_2(); 
   
         sll.push(10); 
         sll.push(20); 
@@ -49,4 +85,6 @@ public class StackAsLinkedList {
   
         System.out.println("Top element is " + sll.peek()); 
     } 
+
+    
 } 
