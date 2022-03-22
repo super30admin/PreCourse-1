@@ -1,4 +1,4 @@
-public class StackAsLinkedList { 
+class StackAsLinkedList {
   
     StackNode root; 
   
@@ -14,7 +14,8 @@ public class StackAsLinkedList {
     
 	
     public boolean isEmpty() 
-    { 
+    {
+        return true;
         //Write your code here for the condition if stack is empty. 
     } 
   
@@ -24,14 +25,16 @@ public class StackAsLinkedList {
     } 
   
     public int pop() 
-    { 	
+    {
+        return 0;
 	//If Stack Empty Return 0 and print "Stack Underflow"
         //Write code to pop the topmost element of stack.
 	//Also return the popped element 
     } 
   
     public int peek() 
-    { 
+    {
+        return 0;
         //Write code to just return the topmost element without removing it.
     } 
   

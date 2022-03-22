@@ -2,7 +2,7 @@ import java.io.*;
   
 // Java program to implement 
 // a Singly Linked List 
-public class LinkedList { 
+class LinkedList {
   
     Node head; // head of list 
   
@@ -34,7 +34,7 @@ public class LinkedList {
 
             // Insert the new_node at last node 
         // Return the list by head 
-        
+        return new LinkedList();
     } 
   
     // Method to print the LinkedList. 
