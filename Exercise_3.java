@@ -8,7 +8,7 @@ import java.io.*;
 
 // Space Complexity :
 // isEmpty() - O(1)
-// push() - O(m) where m is the node being added
+// push() - O(1)
 // pop() - O(1)
 // peek() - O(1)
 
