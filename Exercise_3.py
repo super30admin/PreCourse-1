@@ -12,7 +12,6 @@ class ListNode:
 
 
 class SinglyLinkedList:
-
     def __init__(self):
         """
         Create a new singly-linked list.
@@ -27,8 +26,7 @@ class SinglyLinkedList:
         Takes O(n) time.
         Takes O(1) space.
         """
-        # creating a node
-        new_node = ListNode(data=data, next=None)
+        new_node = ListNode(data)
         # if no list exists , make the new node the head of the list
         if not self.head:
             self.head = new_node
@@ -36,12 +34,9 @@ class SinglyLinkedList:
         else:
             current = self.head
             # loop until the end of the list
-            while current and current.next:
+            while current.next:
                 current = current.next
             current.next = new_node
-            # new node becomes the tail - hence next ptr becomes none
-            new_node.next = None
-        return self.head
 
     def find(self, key):
         """
@@ -50,42 +45,43 @@ class SinglyLinkedList:
         Takes O(n) time.
         Takes O(1) space.
         """
-        # loop through the list and return the node if key matches the node's data
+        if not self.head:
+            return None
         current = self.head
+        # loop through the list and return the node if key matches the node's data
         while current:
             if current.data == key:
                 return current
             current = current.next
+
         return None
 
     def remove(self, key):
         """
         Remove the first occurrence of `key` in the list.
-        Takes O(n) time.
+         Takes O(n) time.
         Takes O(1) space.
         """
-        current = self.head
-        prev = self.head
-
         # if there is no list return None
-        if current is None:
+        if not self.head:
             return None
-
+        current = self.head
+        prev = current
         # if the head's data is equal to key make head's next as head
-        if self.head.data == key:
-            self.head = self.head.next
-            return self.head
-
+        if current.data == key:
+            self.head = current.next
+            del(current)
+            return key
         # loop until the first occurence is found
         while current:
             if current.data == key:
                 # if key is found, del and point the prev to current's next
                 prev.next = current.next
-                del current
+                del(current)
                 return self.head
             prev = current
             current = current.next
-        return self.head
+        return None
 
     def print(self):
         # print all the node's data
@@ -119,4 +115,8 @@ s.print()
 
 s.remove(3)
 print("Printing after removing 3:")
+s.print()
+
+s.remove(6)
+print("Printing after removing 6:")
 s.print()

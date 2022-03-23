@@ -1,9 +1,7 @@
 # Time Complexity : O(1)
 # Space Complexity : O(n)
-# Did this code successfully run on Leetcode : ran on VS code
+# Did this code successfully run on Leetcode : Ran it on VS code
 # Any problem you faced while coding this : No
-#  I first implemented pushing and popping from end of the list. Tested and it worked fine.
-#  Later thought pushing and popping from the start made more sense and was more modular and efficient to implement
 
 class Node:
     def __init__(self, data):
@@ -16,32 +14,31 @@ class Stack:
         self.head = None
 
     def push(self, data):
-        # creating the node
         new_node = Node(data)
         # if there is no elements in the stack
         # mark the new_node as head and next as none
         if not self.head:
             self.head = new_node
-            self.head.next = None
-        # mark the new_node as head and next as current_head
+        # make the new node as the head
         else:
-            current_head = self.head
-            new_node.next = current_head
+            new_node.next = self.head
             self.head = new_node
+        return True
 
     def pop(self):
         # if there are no elements to pop
-        if self.head is None:
+        if not self.head:
             return None
         # remove the head , make head.next as new head
         # return
-        current_head = self.head
+        pop_node = self.head
+        val = pop_node.data
         self.head = self.head.next
-        return current_head.data
+        del(pop_node)
+        return val
 
 
 a_stack = Stack()
-
 while True:
     # Give input as string if getting an EOF error. Give input like "push 10" or "pop"
     print('push <value>')
