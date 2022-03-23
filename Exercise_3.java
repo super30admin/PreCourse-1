@@ -1,3 +1,8 @@
+/**
+ * Time complexity is O(n) for insert() and printList()
+ * Space complexity is O(n)
+ */
+
 import java.io.*; 
   
 // Java program to implement 
@@ -18,6 +23,8 @@ public class LinkedList {
         Node(int d) 
         { 
             //Write your code here 
+            this.data = d;
+            this.next = null;
         } 
     } 
   
@@ -34,7 +41,20 @@ public class LinkedList {
 
             // Insert the new_node at last node 
         // Return the list by head 
-        
+        Node newNode = new Node(data);
+        newNode.next = null;
+
+        if (list.head == null) {
+            list.head = newNode;
+        } else {
+            Node curNode = list.head;
+            while (curNode.next != null) {
+                curNode = curNode.next;
+            }
+            curNode.next = newNode;
+        }
+
+        return list;
     } 
   
     // Method to print the LinkedList. 
@@ -45,6 +65,13 @@ public class LinkedList {
             // Print the data at current node 
        
             // Go to next node 
+
+        Node curNode = list.head;
+
+        while (curNode != null) {
+            System.out.println(curNode.data);
+            curNode = curNode.next;
+        }
     } 
    
     // Driver code 
