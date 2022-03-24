@@ -1,4 +1,4 @@
-
+# Time Complexity : O(1)
 class Node:
     def __init__(self, data):
        self.data = data
@@ -6,11 +6,26 @@ class Node:
  
 class Stack:
     def __init__(self):
+        # Initailize with none
+        self.head = None
         
     def push(self, data):
-        
+        #adding node to start of list
+        if self.head is None:
+            self.head = Node(data)
+        else:
+            new_ele = Node(data)
+            new_ele.next = self.head
+            self.head = new_ele
     def pop(self):
-        
+        # Pop the top element and make the next element the top
+        if self.head is None:
+            return None
+        else:
+            popped = self.head.data
+            self.head = self.head.next
+            return popped
+
 a_stack = Stack()
 while True:
     #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
