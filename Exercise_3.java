@@ -1,3 +1,8 @@
+// Time Complexity : O(n)
+// Space Complexity : O(n)
+// Did this code successfully run on Leetcode :
+// Any problem you faced while coding this : No
+
 import java.io.*; 
   
 // Java program to implement 
@@ -17,7 +22,8 @@ public class LinkedList {
         // Constructor 
         Node(int d) 
         { 
-            //Write your code here 
+            this.data = d;
+            this.next = null;
         } 
     } 
   
@@ -25,26 +31,36 @@ public class LinkedList {
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data 
+        Node newNode = new Node(data);
+        newNode.next = null;
    
         // If the Linked List is empty, 
-        // then make the new node as head 
-        
-            // Else traverse till the last node 
-            // and insert the new_node there 
-
-            // Insert the new_node at last node 
+        // then make the new node as head
+        if(list.head == null) {
+            list.head = newNode;
+        } 
+        // Else traverse till the last node 
+        // and insert the new_node there 
+        else {
+            Node tempNode = list.head;
+            while(tempNode.next != null) {
+                tempNode = tempNode.next;
+            }
+            tempNode.next = newNode;
+        }
+        // Insert the new_node at last node 
         // Return the list by head 
-        
+      return list;  
     } 
   
     // Method to print the LinkedList. 
     public static void printList(LinkedList list) 
     {  
-        // Traverse through the LinkedList 
-   
-            // Print the data at current node 
-       
-            // Go to next node 
+        Node tempNode = list.head;
+        while(tempNode != null) {
+            System.out.println(tempNode.data);
+            tempNode = tempNode.next;
+        }
     } 
    
     // Driver code 
@@ -57,14 +73,14 @@ public class LinkedList {
         // ******INSERTION****** 
         // 
   
-        // Insert the values 
+        // Insert the values - O(n)
         list = insert(list, 1); 
         list = insert(list, 2); 
         list = insert(list, 3); 
         list = insert(list, 4); 
         list = insert(list, 5); 
   
-        // Print the LinkedList 
+        // Print the LinkedList - o(n)
         printList(list); 
     } 
 }
