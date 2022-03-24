@@ -19,7 +19,7 @@ class SinglyLinkedList:
         Insert a new element at the end of the list.
         Takes O(n) time.
         """
-        if self.head = None:
+        if self.head == None:
             self.head = ListNode(data)
         else:
             addd = ListNode(data)
