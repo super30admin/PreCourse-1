@@ -19,21 +19,45 @@ StackNode* newNode(int data)
 int isEmpty(StackNode* root) 
 { 
     //Your code here 
+    return !root;
 } 
   
 void push(StackNode** root, int data) 
 { 
     //Your code here 
+    
+     StackNode* stackNode =  newNode(data); 
+     stackNode->next = *root;
+     *root = stackNode;
+     
 } 
   
 int pop(StackNode** root) 
 { 
     //Your code here 
+    if(isEmpty(*root))
+     return INT_MIN;
+   
+    StackNode* temp =  *root;
+    
+    *root = (*root)->next;
+    int data = temp->data;
+    free(temp);
+    return data;
+    
 } 
   
 int peek(StackNode* root) 
 { 
     //Your code here 
+    if(isEmpty(root)){
+    	
+    	return INT_MIN;
+    	
+    } else {
+    	return root->data;
+    }
+    
 } 
   
 int main() 
@@ -49,4 +73,4 @@ int main()
     cout << "Top element is " << peek(root) << endl; 
   
     return 0; 
-} 
+}
