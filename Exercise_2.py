@@ -1,15 +1,34 @@
-
+""" 
+Time Complexity : O(1) for push and pop
+Space Complexity :O(n) for maintaining a list
+Did this code successfully run on Leetcode :Yes
+Any problem you faced while coding this :No
+"""
 class Node:
     def __init__(self, data):
        self.data = data
        self.next = None
- 
+
 class Stack:
     def __init__(self):
-        
-    def push(self, data):
-        
+        self.top = None
+
+    def push(self,data):
+        if self.top == None:
+            self.top= Node(data)
+        else:
+            newnode = Node(data)
+            newnode.next = self.top
+            self.top = newnode
+
     def pop(self):
+        if self.top == None:
+            return "Stack is empty"
+        else:
+            poppednode = self.top
+            self.top = self.top.next
+            poppednode.next= None
+            return poppednode.data
         
 a_stack = Stack()
 while True:
