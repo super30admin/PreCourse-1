@@ -1,8 +1,9 @@
-import java.io.*; 
+//Space Time Complexity : O(N) (this is worst case but depends on situation)
+import java.io.*;
   
 // Java program to implement 
 // a Singly Linked List 
-public class LinkedList { 
+class LinkedList {
   
     Node head; // head of list 
   
@@ -17,40 +18,63 @@ public class LinkedList {
         // Constructor 
         Node(int d) 
         { 
-            //Write your code here 
+            //Write your code here
+            this.data = d;
+            this.next = null;
         } 
     } 
-  
+
+    boolean isEmpty(){
+        if(head==null)
+            return true;
+        else
+            return false;
+    }
+
     // Method to insert a new node 
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data 
-   
+            Node n = new Node(data);
         // If the Linked List is empty, 
         // then make the new node as head 
-        
-            // Else traverse till the last node 
-            // and insert the new_node there 
+            if(list.isEmpty())
+                list.head = n;
+            else
+            {
+                Node currentNode = list.head;
+                // Else traverse till the last node
+                while(currentNode.next!=null)
+                    currentNode = currentNode.next;
 
+                // and insert the new_node there
+                currentNode.next = n;
+            }
             // Insert the new_node at last node 
         // Return the list by head 
-        
+        return list;
     } 
   
     // Method to print the LinkedList. 
     public static void printList(LinkedList list) 
     {  
         // Traverse through the LinkedList 
-   
+        Node n = list.head;
             // Print the data at current node 
-       
-            // Go to next node 
+       while(n!=null) {
+           System.out.print(n.data);
+           // Go to next node
+           if(n.next!=null)
+               System.out.print("->");
+           n = n.next;
+       }
     } 
    
-    // Driver code 
+    // Driver code
+
     public static void main(String[] args) 
     { 
-        /* Start with the empty list. */
+        /* Start with the empty list.*/
         LinkedList list = new LinkedList(); 
   
         // 
@@ -66,5 +90,6 @@ public class LinkedList {
   
         // Print the LinkedList 
         printList(list); 
-    } 
+    }
+
 }
