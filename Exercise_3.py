@@ -21,7 +21,7 @@ class SinglyLinkedList:
         Create a new singly-linked list.
         Takes O(1) time.
         """
-        self.head = ListNode()
+        self.head = None
 
     # Time complexity:O(n)
     def append(self, data):
@@ -33,7 +33,7 @@ class SinglyLinkedList:
         # check if the linked list is empty
         if self.head is None:
             self.head=newNode
-            # return self.head
+            return 
         #move the pointer till the end to add new node with data
         tail=self.head
         while tail.next:
