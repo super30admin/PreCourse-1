@@ -21,7 +21,7 @@ class SinglyLinkedList:
         Create a new singly-linked list.
         Takes O(1) time.
         """
-        self.head = ListNode()
+        self.head = None
 
     # Time complexity:O(n)
     def append(self, data):
@@ -33,6 +33,7 @@ class SinglyLinkedList:
         # check if the linked list is empty
         if self.head is None:
             self.head=newNode
+            return
             # return self.head
         #move the pointer till the end to add new node with data
         tail=self.head
@@ -40,6 +41,7 @@ class SinglyLinkedList:
             tail=tail.next
         tail.next=newNode
         # return self.head
+        # return
 
 
 
@@ -84,28 +86,28 @@ class SinglyLinkedList:
             prev=pointer
             pointer=pointer.next
     
-    # def printing(self):
-    #     p=self.head
-    #     while p:
-    #         print(p.val)
-    #         p=p.next
-    #     return
+    def printing(self):
+        p=self.head
+        while p:
+            print(p.val)
+            p=p.next
+        return
 
 
 
 
-# x=SinglyLinkedList()
-# x.append(5)
-# x.append(6)
-# x.append(7)
-# x.append(8)
-# x.append(9)
-# x.append(10)
-# # print(x.printing())
-# # print(x.find(5).val)
-# # print(x.find(6).val)
+x=SinglyLinkedList()
+x.append(5)
+x.append(6)
+x.append(7)
+x.append(8)
+x.append(9)
+x.append(10)
+print(x.printing())
+# print(x.find(5).val)
+# print(x.find(6).val)
 # print(x.remove(6))
 # print(x.remove(10))
 # print(x.remove(5))
 # print(x.printing())
-# # print(x.find(5).val)
+# print(x.find(5).val)
