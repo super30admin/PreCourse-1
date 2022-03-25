@@ -34,7 +34,7 @@ class SinglyLinkedList:
         if self.head is None:
             self.head=newNode
             return
-            # return self.head
+
         #move the pointer till the end to add new node with data
         tail=self.head
         while tail.next:
