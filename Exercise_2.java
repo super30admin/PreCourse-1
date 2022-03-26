@@ -3,6 +3,7 @@ public class StackAsLinkedList {
     StackNode root; 
   
     static class StackNode { 
+        // define variable
         int data; 
         StackNode next; 
   
