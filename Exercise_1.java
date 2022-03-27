@@ -14,11 +14,13 @@ class Stack {
 
     Stack() 
     { 
+        //Initialize your constructor 
         this.top = -1;
     } 
   
     boolean push(int x) 
     { 
+        //Check for stack Overflow
         if(top+1 ==MAX){
             return false;
         }
@@ -30,8 +32,9 @@ class Stack {
   
     int pop() 
     { 
+        //If empty return 0 and print " Stack Underflow"
         if(isEmpty()){
-            System.out.println("stack empty");
+            System.out.println("Stack Underflow");
         }
         return a[top--];
     } 
