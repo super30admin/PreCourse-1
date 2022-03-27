@@ -5,7 +5,8 @@
  */
 class LinkedList {
   
-    Node head; // head of list 
+    Node head; // head of list
+    Node tail; // To maintain the end of the list
   
     // Linked list Node. 
     // This inner class is made static 
@@ -36,16 +37,19 @@ class LinkedList {
         // then make the new node as head
         if(list.head == null){
             list.head = newNode;
+            list.tail = newNode;
         }
         else{
             // Else traverse till the last node
             // and insert the new_node there
             //Insert the new_node at last node
-            Node last = list.head;
+            /*Node last = list.head;
             while(last.next != null){
                 last = last.next;
             }
-            last.next = newNode;
+            last.next = newNode;*/
+            list.tail.next = newNode;
+            list.tail = newNode;
         }
         // Return the list by head
         return list;
