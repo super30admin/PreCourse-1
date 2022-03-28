@@ -9,6 +9,7 @@ public:
     StackNode* next; 
 }; 
   
+  //time complexity is o(1) and space is some extra pointer varibale
 StackNode* newNode(int data) 
 { 
     StackNode* stackNode = new StackNode(); 
@@ -17,12 +18,14 @@ StackNode* newNode(int data)
     return stackNode; 
 } 
   
+  //time  and space complexity is o(1)
 int isEmpty(StackNode* root) 
 { 
     //Your code here 
     return !root;
 } 
   
+  //time complexity is o(1)
 void push(StackNode** root, int data) 
 { 
     //Your code here 
@@ -33,6 +36,7 @@ void push(StackNode** root, int data)
      
 } 
   
+   //time complexity is o(1) and space is some extra pointer varibale
 int pop(StackNode** root) 
 { 
     //Your code here 
@@ -48,6 +52,7 @@ int pop(StackNode** root)
     
 } 
   
+  //time complexity is o(1)
 int peek(StackNode* root) 
 { 
     //Your code here 
