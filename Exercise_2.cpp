@@ -1,3 +1,4 @@
+//time complexity is o(1) for every function and space is dynamic array and some pointer will take extre memory.
 #include <bits/stdc++.h> 
 using namespace std; 
   
