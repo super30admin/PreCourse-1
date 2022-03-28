@@ -1,3 +1,5 @@
+# Time Complexity: O(1)
+# Space Complexity: O(n)
 
 class Node:
     def __init__(self, data):
@@ -6,10 +8,24 @@ class Node:
  
 class Stack:
     def __init__(self):
+        # Initializing the head of the linked list.
+        self.head = Node(None)
         
     def push(self, data):
-        
+        if self.head == None:
+            self.head = Node(data)      # Creates head node if it is popped already. 
+        else:
+            node = Node(data)           # Creates a new node
+            node.next = self.head       # Points the new node to the head of the entire stack.
+            self.head = node            # Make the new node as the head of the stack.
+
     def pop(self):
+        if self.head == None:
+            return None
+        else:
+            value = self.head.data
+            self.head = self.head.next
+            return value
         
 a_stack = Stack()
 while True:
