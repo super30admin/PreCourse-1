@@ -1,3 +1,9 @@
+// Time Complexity :    insert operation: O(1) print operation: O(n)
+// Space Complexity :   O(n) to store n elements
+// Did this code successfully run on Leetcode : yes
+// Any problem you faced while coding this : had some trouble understanding linkedlist head, how in some cases we assign head to variable 
+// so that we don't lose it while here head is already part of LinkedList class ? 
+
 import java.io.*; 
   
 // Java program to implement 
@@ -9,7 +15,7 @@ import java.io.*;
     // Linked list Node. 
     // This inner class is made static 
     // so that main() can access it 
-    static class Node { 
+    static class Node {     
   
         int data; 
         Node next; 
