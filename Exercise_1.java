@@ -1,3 +1,11 @@
+// Time Complexity : push operation: O(n) , stack is full then we need to transfer contents to a bigger stack ( need a bigger array )
+//                   pop operation: O(1)
+//                   peek operation: O(1)
+// Space Complexity : O(n)
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : No
+
+
 class Stack { 
     //Please read sample.java file before starting.
   //Kindly include Time and Space complexity at top of each file
@@ -29,16 +37,14 @@ class Stack {
         //Check for stack Overflow
          //Write your code here
         
-        if (this.top == MAX) {   // we would reach this condition when a[Max - 1] is filled since we do ++top
+        if (this.top == MAX - 1) {   // we would reach this condition when a[Max - 1] is filled since we do ++top
             System.out.println("Stack Overflow"); 
             return false;
         }
         else {
             a[++top] = x; // increment top then Push element 
             return true;
-        }
-       
-        
+        }       
         
     } 
   
