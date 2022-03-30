@@ -3,7 +3,7 @@
 
 // Your code here along with comments explaining your approach
 
-public class MyStack { 
+public class Stack { 
     //Please read sample.java file before starting.
   //Kindly include Time and Space complexity at top of each file
     static final int MAX = 1000; 
@@ -18,7 +18,7 @@ public class MyStack {
         return false; 
     } 
 
-    MyStack() 
+    Stack() 
     { 
         //Initialize your constructor
         a = new int[MAX];
@@ -56,7 +56,7 @@ public class MyStack {
   // Driver code 
    public static void main(String args[]) 
     { 
-        MyStack s = new MyStack(); 
+        Stack s = new Stack(); 
         s.push(10); 
         s.push(20); 
         s.push(30); 
