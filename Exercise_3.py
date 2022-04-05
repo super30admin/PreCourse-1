@@ -1,3 +1,20 @@
+# Exercise_3 : Implement Singly Linked List.
+
+# // Time Complexity :
+  # push : 
+  # pop : output 
+  # peek
+  # size
+  # show 
+# // Space Complexity : O(n)
+# // Did this code successfully run on Leetcode : No leetcode handle given 
+# // Any problem you faced while coding this : 
+
+
+# // Your code here along with comments explaining your approach
+
+
+
 class ListNode:
     """
     A node in a singly-linked list.
