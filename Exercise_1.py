@@ -2,11 +2,7 @@
 
 
 # // Time Complexity :
-  # push :
-  # pop : output
-  # peek :  returns the value of the top ("front") of the collection without removing the element from the collection.
-  # size
-  # show
+  # show --?
 # // Space Complexity : O(n)
 # // Did this code successfully run on Leetcode : No leetcode handle given
 # // Any problem you faced while coding this :
@@ -38,7 +34,7 @@ class myStack:
 
     def push(self, item):
       """
-      Add an element to the top of the stack 
+      Add an element to the top of the stack. O(1)  -- amortized
       """
       if len(self.stack_array)==0:
         self.isEmpty = False
@@ -54,7 +50,9 @@ class myStack:
         return 
       print(self.stack_array[len(self.stack_array)-1]  )
       self.stack_array.remove(self.stack_array[len(self.stack_array)-1])
-
+      if len(self.stack_array)==0:
+        self.isEmpty = True
+      
     def peek(self):
       """
       print the top most value; Dont change the state of the stack
