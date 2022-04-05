@@ -12,7 +12,7 @@
 # push - check if array is full; trigger increase in length; add to the end of the array
 # pop - check if empty, if not remove from the end of the array
 
-from ctypes import pointer
+# from ctypes import pointer
 
 
 class myStack:
