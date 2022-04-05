@@ -67,6 +67,6 @@ while True:
         if popped is None:
             print('Stack is empty.')
         else:
-            print('Popped value: ', popped)
+            print('Popped value: ', int(popped) )
     elif operation == 'quit':
         break

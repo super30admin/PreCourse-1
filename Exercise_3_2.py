@@ -72,8 +72,11 @@ class SinglyLinkedList:
             if curr == None:
                 print("Nothing to find")
                 return None    
-        print(curr.data)
-        return curr
+            
+        if curr.data==key:
+            return curr
+        print("Not found")
+        return None 
 
 
     def remove(self, key):
@@ -94,12 +97,17 @@ class SinglyLinkedList:
             if curr == None:
                 print("Nothing to remove")
                 return None                 
-        return_node = curr ; print(return_node.data)
-        if prev!=None:
-            prev.next = curr.next 
-        else:
-            self.head = None  
-        return return_node 
+            
+        if curr.data==key:
+            return_node = curr ; print(return_node.data)
+            if prev!=None:
+                prev.next = curr.next 
+                return return_node 
+            else:
+                # print(curr == self.head)
+                self.head = None 
+        print("Nothing to remove")
+        return None 
 
 
 
