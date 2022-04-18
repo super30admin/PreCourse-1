@@ -1,4 +1,22 @@
+'''
+Approach
 
+1. Push():
+    Create an object of class node Perform check of length
+    If new node, then pt head and tail to the new node and update the length
+    If not, then update the tail.next ptr to the new node. Once done, update the tail ptr to new node
+    Time Complexity: 0(1) as we are just updating the ptr
+
+2. Pop():
+    Ignore the boundary case, self explanatory
+    Iterate the current linked-list to pt to tail-1 node
+    Afterwards update the references i.e currentNode.next = None
+    and afterwards tail = currentNode
+
+Time Complexity: 0(n) because we are iterating the list 1 time to reach tail-1 node
+
+Didn't check on leet-code. Don't have problem link
+'''
 class Node:
     def __init__(self, data):
        self.data = data
