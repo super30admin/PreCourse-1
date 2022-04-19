@@ -17,8 +17,8 @@ public class Exercise_3 {
         // Constructor
         Node(int d) {
             // Write your code here
-            data = d;
-            next = null;
+            this.data = d;
+            this.next = null;
 
         }
     }
