@@ -18,6 +18,7 @@ public class Exercise_3 {
         Node(int d) {
             // Write your code here
             data = d;
+            next = null;
 
         }
     }
@@ -25,25 +26,45 @@ public class Exercise_3 {
     // Method to insert a new node
     public static Exercise_3 insert(Exercise_3 list, int data) {
         // Create a new node with given data
+        Node newNode = new Node(data);
+        newNode.next = null;
 
         // If the Linked List is empty,
-        // then make the new node as head
-
+        if (list.head == null) {
+            // then make the new node as head
+            list.head = newNode;
+        }
         // Else traverse till the last node
         // and insert the new_node there
+        else {
+            Node lastNode = list.head;
+            while (lastNode.next != null) {
+                lastNode = lastNode.next;
+            }
+            // Insert the new_node at last node
+            lastNode.next = newNode;
+        }
 
-        // Insert the new_node at last node
         // Return the list by head
-
+        return list;
     }
 
     // Method to print the LinkedList.
     public static void printList(Exercise_3 list) {
         // Traverse through the LinkedList
 
-        // Print the data at current node
+        Node tempNode = list.head;
 
-        // Go to next node
+        System.out.print("LinkedList: ");
+        while (tempNode != null) {
+
+            // Print the data at current node
+            System.out.print(tempNode.data + "-->");
+            // Go to next node
+            tempNode = tempNode.next;
+        }
+
+        System.out.print("null");
     }
 
     // Driver code
