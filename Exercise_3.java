@@ -3,6 +3,12 @@ import java.io.*;
 // Java program to implement
 // a Singly Linked List
 public class Exercise_3 {
+    /*
+     * Time complexity for insert is O(1) is its empty and is first node, in worst
+     * case O(n) and space is also O(1).
+     * Time complexity for printing is again O(n) as there is full traversal of
+     * LinkedList.
+     */
 
     Node head; // head of list
 

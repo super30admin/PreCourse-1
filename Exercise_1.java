@@ -1,6 +1,11 @@
 class Exercise_1 {
     // Please read sample.java file before starting.
     // Kindly include Time and Space complexity at top of each file
+    /*
+     * Time complexity for push is O(1) and space is also O(1).
+     * Time complexity for pop is O(1).
+     * * Time complexity for peek is O(1).
+     */
     static final int MAX = 1000;
     int top;
     int a[] = new int[MAX]; // Maximum size of Stack

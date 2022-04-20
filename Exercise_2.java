@@ -1,4 +1,10 @@
 public class Exercise_2 {// StackAsLinkedList
+    // Kindly include Time and Space complexity at top of each file
+    /*
+     * Time complexity for push is O(1) and space is also O(1).
+     * Time complexity for pop is O(1).
+     * * Time complexity for peek is O(1).
+     */
 
     static StackNode top; // this is like head.
 
