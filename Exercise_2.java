@@ -1,3 +1,6 @@
+// TC - O(1) for push, pop and peek
+// SC - O(n) where n - no of elements in list
+
 package Stacks;
 
 public class StackAsLinkedList {
