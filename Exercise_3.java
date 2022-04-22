@@ -1,3 +1,6 @@
+// TC - O(n) for insert and printList
+// SC - O(n) where n - no of elements
+
 package LinkedList;
 
 import java.io.*;
