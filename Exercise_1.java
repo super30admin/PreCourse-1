@@ -4,7 +4,8 @@ class Stack {
     static final int MAX = 1000; 
     int top; 
     int a[] = new int[MAX]; // Maximum size of Stack 
-  
+
+    // time complexity O(1)
     boolean isEmpty() 
     { 
         //Write your code here 
@@ -21,7 +22,7 @@ class Stack {
         //Initialize your constructor 
         this.top = -1;
     } 
-  
+    // time complexity O(1)
     boolean push(int x) 
     { 
         //Check for stack Overflow
@@ -35,7 +36,7 @@ class Stack {
             return true;
         }
     } 
-  
+    // time complexity O(1)
     int pop() 
     { 
         //If empty return 0 and print " Stack Underflow"
@@ -48,10 +49,11 @@ class Stack {
             return this.a[this.top--];
         }
     } 
-  
+    // Time complexity O(1)
     int peek() 
     { 
         //Write your code here
+        // popping and pushing for peek
         int top_value = this.pop();
         if(top_value == 0){
             return 0;

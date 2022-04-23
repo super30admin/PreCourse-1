@@ -24,6 +24,7 @@ public class LinkedList {
     } 
   
     // Method to insert a new node 
+    // Time complexity O(N)
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data 
@@ -36,6 +37,7 @@ public class LinkedList {
 
             // Insert the new_node at last node 
         // Return the list by head 
+        // adding data at the tail
         Node new_node = new Node(data);
         if(list.head == null){
             list.head = new_node;
