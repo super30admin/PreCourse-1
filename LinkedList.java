@@ -1,5 +1,6 @@
  
-  
+//time complexity: printlist is O(n) , insert is O(1)  
+//space complexity: O(n)
 // Java program to implement 
 // a Singly Linked List 
 public class LinkedList { 

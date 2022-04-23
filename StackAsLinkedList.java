@@ -1,3 +1,5 @@
+//time complexity: push is O(1), pop is O(1), peek O(1)
+//space complexity: O(n)
 public class StackAsLinkedList { 
   
     StackNode root; 
