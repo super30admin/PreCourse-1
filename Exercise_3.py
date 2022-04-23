@@ -14,6 +14,7 @@ class SinglyLinkedList:
         """
         Create a new singly-linked list.
         Takes O(1) time.
+        Takes O(1) space.
         """
         self.head = None
 
@@ -21,6 +22,7 @@ class SinglyLinkedList:
         """
         Insert a new element at the end of the list.
         Takes O(n) time.
+        Takes O(1) space.
         """
         if self.head is None:
             self.head = ListNode(data)
@@ -35,6 +37,7 @@ class SinglyLinkedList:
         Search for the first element with `data` matching
         `key`. Return the element or `None` if not found.
         Takes O(n) time.
+        Takes O(1) space.
         """
         if self.head is None:
             return None
@@ -50,6 +53,7 @@ class SinglyLinkedList:
         """
         Remove the first occurrence of `key` in the list.
         Takes O(n) time.
+        Takes O(1) space.
         """
         if self.head is None:
             return None

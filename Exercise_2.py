@@ -1,14 +1,20 @@
 
 class Node:
     def __init__(self, data):
+    #Time Complexity - O(1)
+    #Space Complexity - O(1)
        self.data = data
        self.next = None
  
 class Stack:
     def __init__(self):
+    #Time Complexity - O(1)
+    #Space Complexity - O(1)
         self.top = None
 
     def push(self, data):
+    #Time Complexity - O(1)
+    #Space Complexity - O(1)
         if self.top is None:
             self.top = Node(data)
         else:
@@ -17,6 +23,8 @@ class Stack:
             self.top = a
 
     def pop(self):
+    #Time Complexity - O(1)
+    #Space Complexity - O(1)
         if self.top is None:
             print("LL is empty")
         else:
