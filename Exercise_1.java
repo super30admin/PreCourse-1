@@ -1,13 +1,14 @@
 class Stack { 
     //Please read sample.java file before starting.
-  //Kindly include Time and Space complexity at top of each file
+  //Time Comlexity= O(n)
+  //Space Complexity= O(1)
     static final int MAX = 1000; 
     int top; 
     int a[] = new int[MAX]; // Maximum size of Stack 
   
     boolean isEmpty() 
     { 
-        return (top<0);//Write your code here 
+        return (top<0);
     } 
 
     Stack() 
@@ -25,7 +26,7 @@ class Stack {
             a[++top] = x;
             System.out.println(x + " pushed into stack");
             return true;
-        }//Write your code here
+        }
     } 
   
     int pop() 
@@ -43,7 +44,7 @@ class Stack {
     int peek() 
     { 
         if (top < 0) {
-            System.out.println("Stack Underflow"); //Write your code here
+            System.out.println("Stack Underflow");
             return 0;
         }
         else {
@@ -51,11 +52,6 @@ class Stack {
             return x;
         } 
     } 
-    void print(){
-        for(int i = top;i>-1;i--){
-          System.out.print(" "+ a[i]);
-        }
-    }
 } 
   
 // Driver code 
