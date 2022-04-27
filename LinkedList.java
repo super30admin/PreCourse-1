@@ -1,5 +1,9 @@
-import java.io.*; 
-  
+/*
+Time Complexity: insert() -> O(n)  // to add at the end of linkedlist
+                 printList() -> O(n) // iterate over all the list nodes    
+
+Space Complexity: O(1) // No extra space needed to add new node or print list 
+*/
 // Java program to implement 
 // a Singly Linked List 
 public class LinkedList { 
@@ -18,6 +22,8 @@ public class LinkedList {
         Node(int d) 
         { 
             //Write your code here 
+            this.data = d;
+            this.next = null;
         } 
     } 
   
@@ -25,25 +31,37 @@ public class LinkedList {
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data 
-   
+        Node newNode = new Node(data);
+
         // If the Linked List is empty, 
         // then make the new node as head 
-        
-            // Else traverse till the last node 
-            // and insert the new_node there 
-
+        if(list.head == null){
+            list.head = newNode;
+        }
+        // Else traverse till the last node 
+        // and insert the new_node there 
+        else{
+            Node node = list.head;
+            while(node.next != null){
+                node = node.next;
+            }
+            node.next = newNode;
+        }
             // Insert the new_node at last node 
         // Return the list by head 
-        
+        return list;
     } 
   
     // Method to print the LinkedList. 
     public static void printList(LinkedList list) 
     {  
         // Traverse through the LinkedList 
-   
-            // Print the data at current node 
-       
+        Node node = list.head;
+        while(node != null){
+            System.out.println(node.data);
+            node = node.next;
+        }
+            // Print the data at current node       
             // Go to next node 
     } 
    
