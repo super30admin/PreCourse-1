@@ -1,15 +1,45 @@
-
+#Time complexity: Pop , Push , Peek all in O(1)
+#Space complexity: O(N)
 class Node:
     def __init__(self, data):
        self.data = data
        self.next = None
  
 class Stack:
+    top=0
     def __init__(self):
+        self.head=None
+
+    def isempty(self):
+        return self.head == None
+         
         
     def push(self, data):
+        if not self.head:
+            self.head=Node(data)
+        else:
+            new=Node(data)
+            new.next=self.head
+            self.head= new
+        self.top+=1
+       
         
     def pop(self):
+        if self.isempty():
+            return None
+        delnode=self.head
+        self.head=self.head.next
+        delnode.next=None
+        return delnode.data
+
+    def peek(self):
+        if self.isempty():
+            return ('Stack is empty.')
+        else:
+            return (f"Top Element in stack:{self.head.data}")
+        
+
+
         
 a_stack = Stack()
 while True:
