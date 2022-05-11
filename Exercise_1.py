@@ -1,3 +1,8 @@
+# // Time Complexity : o(1)
+# // Space Complexity : o(size)
+# // Any problem you faced while coding this : nope
+
+
 class myStack:
    # Please read sample.java file before starting.
    # Kindly include Time and Space complexity at top of each file

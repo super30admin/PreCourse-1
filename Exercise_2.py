@@ -3,7 +3,13 @@ class Node:
     def __init__(self, data):
        self.data = data
        self.next = None
- 
+
+
+#  time Complexity :
+#   push - o(1) since we are adding at the head always
+#   pop - o(1)
+#  space Complexity:
+#  do we need to consider the space of the list node? is so then size of stack O(size)
 class Stack:
     def __init__(self):
         self.head = Node("dummyHead")
