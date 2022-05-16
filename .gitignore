@@ -1,3 +1,8 @@
 *.java
 *.cpp
-.idea/*
+.idea/.gitignore
+.idea/PreCourse-1.iml
+.idea/inspectionProfiles/profiles_settings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
