@@ -5,32 +5,47 @@ class Stack {
     int top; 
     int a[] = new int[MAX]; // Maximum size of Stack 
   
-    boolean isEmpty() 
-    { 
-        //Write your code here 
-    } 
+   public boolean isEmpty() {
+        return (top <= 0);
+    }
 
-    Stack() 
-    { 
-        //Initialize your constructor 
-    } 
-  
-    boolean push(int x) 
-    { 
-        //Check for stack Overflow
-        //Write your code here
-    } 
-  
-    int pop() 
-    { 
+    public boolean isFull() {
+        return (top == MAX);
+    }
+
+    
+    Stack() {
+        this.a = new int[MAX];
+        this.top = -1;//Initialize your constructor
+    }
+
+    void push(int x) {
+        if (!isFull()) {
+            a[++top] = x;
+         }
+      }
+
+    public int pop() {
+        if (!this.isEmpty()) {
+            int removedElement = top;
+            top = top - 1;
+            return a[removedElement];
+        } else {
+            System.out.println("Stack Underflow");
+            return 0;
+        }
+
         //If empty return 0 and print " Stack Underflow"
         //Write your code here
-    } 
-  
-    int peek() 
-    { 
-        //Write your code here
-    } 
+    }
+
+    public int peek() {
+        if (!isEmpty())
+            return a[top];
+        else
+            return -1;
+
+    }
 } 
   
 // Driver code 
