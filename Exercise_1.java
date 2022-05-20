@@ -1,3 +1,7 @@
+//Time complexity of push = O(1), TC of pop = O(1)
+//Space Complexity of push = O(1), SC of pop = O(1)
+
+
 class Stack { 
     //Please read sample.java file before starting.
   //Kindly include Time and Space complexity at top of each file
