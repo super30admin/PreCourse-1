@@ -1,3 +1,8 @@
+
+//Time complexity of push = O(1), TC of pop = O(1)
+//Space Complexity of push = O(1), SC of pop = O(1)
+
+
 public class StackAsLinkedList { 
   private StackNode root;
 
