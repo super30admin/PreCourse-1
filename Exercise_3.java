@@ -1,3 +1,5 @@
+//TC of insertion at head = O(1), TC of insertion other than head = O(n)
+
 import java.io.*; 
   
 // Java program to implement 
