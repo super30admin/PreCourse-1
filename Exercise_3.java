@@ -16,6 +16,7 @@ public class LinkedList {
         Node next;
 
         // Constructor
+
         Node(int d) {
             // Write your code here
             data = d;
