@@ -28,7 +28,7 @@ class SinglyLinkedList:
             self.head=newNode
             return
         last=self.head
-        while last.next:
+        while last.next!=None:
             last=last.next
         last.next=newNode
         print("the newly added and last itme ", last.data)
