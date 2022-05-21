@@ -1,3 +1,6 @@
+//Time complexity:0(1)
+//Spcace complexity:
+
 import java.io.*; 
   
 // Java program to implement 
