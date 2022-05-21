@@ -42,6 +42,8 @@ class Stack {
     }
 
     int peek() {
+        // If empty return 0 and print " Stack Underflow"
+        if(isEmpty()) return 0;
         return a[top];
     }
 
@@ -54,9 +56,11 @@ class Stack {
 class Main {
     public static void main(String args[]) {
         Stack s = new Stack();
+        s.peek();
         s.push(10);
         s.push(20);
         s.push(30);
+        s.peek();
         System.out.println(s.pop() + " Popped from stack");
     }
 }
