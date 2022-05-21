@@ -1,5 +1,5 @@
-# Time Complexity : O(1) Maintain a reference to top of stack lets us add and delete elements in constant time
-# Space Complexity : O(N) where N is the number of elements in stack
+# Time Complexity : O(N) All the operations on linkedlist takes O(N) time to append, find and remove
+# Space Complexity : O(N) where N is the number of elements in linkedlist
 
 class ListNode:
     """
