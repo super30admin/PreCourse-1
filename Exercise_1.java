@@ -2,8 +2,13 @@ import java.util.Arrays;
 
 // Time Complexity :
 // Space Complexity :
-// Did this code successfully run on Leetcode :
+// adventages and disadventages of arrays
+// adventages and disadventages of stacks
+// when to use arrarys
+// when to use stacks
+// when to use stack array
 // Any problem you faced while coding this :
+// Notes: 
 class Stack {
     static final int MAX = 1000;
     int top;
@@ -34,7 +39,7 @@ class Stack {
 
     int pop() {
         // If empty return 0 and print " Stack Underflow"
-        if(isEmpty()){
+        if (isEmpty()) {
             System.out.println("Stack Underflow");
             return 0;
         }
@@ -43,11 +48,12 @@ class Stack {
 
     int peek() {
         // If empty return 0 and print " Stack Underflow"
-        if(isEmpty()) return 0;
+        if (isEmpty())
+            return 0;
         return a[top];
     }
 
-    void print(){
+    void print() {
         System.out.println(Arrays.toString(a));
     }
 }
@@ -56,12 +62,12 @@ class Stack {
 class Main {
     public static void main(String args[]) {
         Stack s = new Stack();
-        System.out.println(s.peek() + " peek value from stack"); 
+        System.out.println(s.peek() + " peek value from stack");
         s.push(10);
         s.push(20);
         s.push(30);
-        System.out.println(s.peek() + " peek value from stack"); 
+        System.out.println(s.peek() + " peek value from stack");
         System.out.println(s.pop() + " Popped from stack");
-        System.out.println(s.peek() + " peek value from stack"); 
+        System.out.println(s.peek() + " peek value from stack");
     }
 }
