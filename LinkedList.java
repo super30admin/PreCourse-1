@@ -1,3 +1,8 @@
+// Time Complexity : O(N)
+// Space Complexity : O(1)
+
+// Any problem you faced while coding this : I had to rename the file as LinkedList else it was throuwing an error
+
 import java.io.*;
 import java.util.*;
 
@@ -28,6 +33,7 @@ public class LinkedList {
         // Create a new node with given data
 
         Node node = new Node(data);
+        node.next = null;
 
         // If the Linked List is empty,
         // then make the new node as head
@@ -38,10 +44,11 @@ public class LinkedList {
         // Else traverse till the last node
         // and insert the new_node there
         else {
-            while (list.head != null) {
-                list.head = list.head.next;
+            Node last = list.head;
+            while (last.next != null) {
+                last = last.next;
             }
-            list.head = node;
+            last.next = node;
         }
 
         // Insert the new_node at last node
