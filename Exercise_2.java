@@ -1,5 +1,5 @@
-time complexity : o(1);
-space complexity:
+//time complexity : o(1);
+//space complexity:
 
 class Node
 {
