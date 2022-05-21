@@ -1,3 +1,5 @@
+//Time complexity- 0(n)
+//space complexity- As we are using a array of constant size 0(1)
 class Stack { 
     //Please read sample.java file before starting.
   //Kindly include Time and Space complexity at top of each file
