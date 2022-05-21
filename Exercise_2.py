@@ -1,4 +1,5 @@
-
+#Space complexity O(n); n is the size of the stack
+#Time complexity O(1) for both the operations
 class Node:
     def __init__(self, data):
        self.data = data
