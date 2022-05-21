@@ -34,20 +34,17 @@ public class LinkedList {
         {
           list.head=nnode;
         }
-      
-            // Else traverse till the last node 
-            // and insert the new_node there 
-      else
-      {
-          Node last = list.head;
-          while (last.next != null) 
-          {
-            last = last.next;
-          }
+        else
+        {
+            Node last = list.head;
+            while (last.next != null) 
+            {
+              last = last.next;
+            }
 
-            // Insert the new_node at last node 
-          last.next = nnode;
-      }
+              // Insert the new_node at last node 
+            last.next = nnode;
+        }
         // Return the list by head 
       return list;
         
