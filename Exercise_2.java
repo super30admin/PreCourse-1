@@ -1,3 +1,6 @@
+time complexity : o(1);
+space complexity:
+
 class Node
 {
     int data;  
