@@ -27,7 +27,10 @@ class myStack:
 
     # TC - O(1), SC - O(1)
     def peek(self):
-        return self.arr[-1]
+        if self.size() > 0:
+            return self.arr[-1]
+        else:
+            return ValueError('ERROR: cannot peek an empty stack.')
 
     # TC - O(N), SC - O(1)
     def size(self):
