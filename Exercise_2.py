@@ -20,7 +20,7 @@ class Stack:
         else:
             #  find the last node and append a new node to it
             curr = self.head
-            while curr.next:
+            while curr and curr.next:
                 curr = curr.next
             newNode = Node(data)
             curr.next = newNode
