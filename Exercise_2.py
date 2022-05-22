@@ -1,3 +1,7 @@
+# Time Complexity : o(1)
+# Space Complexity : O(n)
+# Did this code successfully run on Leetcode : Yes
+# Any problem you faced while coding this : No
 
 class Node:
     def __init__(self, data):
@@ -6,10 +10,27 @@ class Node:
  
 class Stack:
     def __init__(self):
-        
+        self.head = None # initializing head of the LinkedList
+
+
     def push(self, data):
-        
+
+        if self.head is None: 
+            self.head = Node(data) # if LinkedList is empty then adding node as head
+        else:
+            new_node = Node(data) 
+            new_node.next = self.head # adding new node at thr beginning of the linkedlist
+            self.head = new_node
+ 
+
     def pop(self):
+        if self.head is None:
+            return "Already empty"
+        else:
+            popped = self.head.data
+            self.head = self.head.next
+            return popped
+ 
         
 a_stack = Stack()
 while True:
@@ -30,3 +51,6 @@ while True:
             print('Popped value: ', int(popped))
     elif operation == 'quit':
         break
+
+
+
