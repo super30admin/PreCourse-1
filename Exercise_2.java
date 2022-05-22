@@ -30,8 +30,8 @@ public class StackAsLinkedList {
     { 	
 	if (isEmpty()) 
     	{
-			System.out.println("Stack is empty");
-			return 0;
+		System.out.println("Stack is empty");
+		return 0;
 	}
 	int value = root.data;
 	root = root.next; 
