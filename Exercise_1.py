@@ -1,6 +1,7 @@
 """
 Leetcode: NA
 TC/SC - refer below
+Challenge - pop on empty stack
 """
 class myStack:
     # Please read sample.java file before starting.
