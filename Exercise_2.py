@@ -22,7 +22,6 @@ class Stack:
         else:
             poppednode = self.head
             self.head = self.head.next
-            poppednode.next = None
             return poppednode.data
         
 a_stack = Stack()
