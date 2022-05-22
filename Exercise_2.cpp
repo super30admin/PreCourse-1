@@ -1,7 +1,12 @@
+/*Hi, I would like to apologize for not having solved the linked list programs,
+    as it has been quite a long time since I revised Data Structures, and I cannot solve this
+    program myself without external help */
+
+
+
 #include <bits/stdc++.h> 
 using namespace std; 
   
-// A structure to represent a stack 
 class StackNode { 
 public: 
     int data; 
