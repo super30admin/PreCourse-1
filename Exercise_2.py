@@ -19,11 +19,11 @@ class Stack:
             self.head = Node(data)
         else:
             #  find the last node and append a new node to it
-            temp = self.head
-            while temp.next:
-                temp = temp.next
+            curr = self.head
+            while curr.next:
+                curr = curr.next
             newNode = Node(data)
-            temp.next = newNode
+            curr.next = newNode
 
     # TC - O(N), SC - O(1)
     def pop(self):
@@ -40,26 +40,26 @@ class Stack:
         # More than two elements in linked list stack - use prev and current node pivots to perform logic -
         # returning last node nad deleting from the list
         else:
-            prev, temp = None, self.head
+            prev, curr = None, self.head
 
-            # temp should be the last node and prev should be second last
-            while temp.next:
-                prev = temp
-                temp = temp.next
+            # curr should be the last node and prev should be second last
+            while curr.next:
+                prev = curr
+                curr = curr.next
 
             if prev:
                 prev.next = None
 
-            return temp.data
+            return curr.data
 
 #   print LL
     def show(self):
         res = []
-        temp = self.head
+        curr = self.head
 
-        while temp:
-            res.append(temp.data)
-            temp = temp.next
+        while curr:
+            res.append(curr.data)
+            curr = curr.next
 
         print(res)
 
