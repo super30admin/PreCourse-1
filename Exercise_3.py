@@ -79,15 +79,12 @@ class SinglyLinkedList:
     
 mySinglyLinkedList = SinglyLinkedList()
 print("Inserting")
-print(mySinglyLinkedList.append(5))
-print(mySinglyLinkedList.append(15))
+print(mySinglyLinkedList.append(3))
+print(mySinglyLinkedList.append(7))
 print(mySinglyLinkedList.append(25))
-
 mySinglyLinkedList.show()
 
 print(mySinglyLinkedList.find(25))
-
 print(mySinglyLinkedList.remove(25))
-
 mySinglyLinkedList.show()
 
