@@ -1,7 +1,5 @@
 import java.util.Arrays;
 
-// Time Complexity :
-// Space Complexity :
 // adventages and disadventages of arrays
 // adventages and disadventages of stacks
 // when to use arrarys
@@ -26,6 +24,8 @@ class Stack {
         return top == MAX - 1;
     }
 
+    // Time Complexity :O(1)
+    // Space Complexity :O(1)
     boolean push(int x) {
         // Check for stack Overflow
         if (isFull()) {
@@ -37,6 +37,8 @@ class Stack {
 
     }
 
+    // Time Complexity :O(1)
+    // Space Complexity :O(1)
     int pop() {
         // If empty return 0 and print " Stack Underflow"
         if (isEmpty()) {
@@ -46,6 +48,8 @@ class Stack {
         return a[top--];
     }
 
+    // Time Complexity :O(1)
+    // Space Complexity :O(1)
     int peek() {
         // If empty return 0 and print " Stack Underflow"
         if (isEmpty())

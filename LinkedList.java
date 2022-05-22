@@ -20,6 +20,8 @@ public class LinkedList {
         }
     }
 
+    // Time Complexity :O(n)
+    // Space Complexity :O(1)
     // Method to insert a new node
     public static LinkedList insert(LinkedList list, int data) {
         // Create a new node with given data
@@ -44,27 +46,29 @@ public class LinkedList {
 
     }
 
+    // Time Complexity :O(n)
+    // Space Complexity :O(1)
     // Method to delete a valuse from the list
     public static LinkedList delete(LinkedList list, int data) {
         if (list.head == null) {
             System.out.println("List is empty");
             return list;
         }
-        if(list.head.next == null){
-            if(list.head.data == data){
+        if (list.head.next == null) {
+            if (list.head.data == data) {
                 list.head = null;
-                System.out.println("removed "+data+ ", not List is empty");
+                System.out.println("removed " + data + ", not List is empty");
                 return new LinkedList();
             }
             return list;
         }
         Node current = list.head;
         Node previous = null;
-        while(current.next != null){
-            if(current.data == data){
+        while (current.next != null) {
+            if (current.data == data) {
                 previous.next = current.next;
                 break;
-            } else{
+            } else {
                 previous = current;
                 current = current.next;
             }
@@ -72,6 +76,8 @@ public class LinkedList {
         return list;
     }
 
+    // Time Complexity :O(n)
+    // Space Complexity :O(1)
     // Method to print the LinkedList.
     public static void printList(LinkedList list) {
         // Traverse through the LinkedList

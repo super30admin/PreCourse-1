@@ -25,6 +25,8 @@ class StackAsLinkedList {
         return root == null;
     }
 
+    // Time Complexity :O(1)
+    // Space Complexity :O(1)
     public void push(int data) {
         // Write code to push data to the stack.
         StackNode node = new StackNode(data);
@@ -32,6 +34,8 @@ class StackAsLinkedList {
         root = node;
     }
 
+    // Time Complexity :O(1)
+    // Space Complexity :O(1)
     public int pop() {
         // If Stack Empty Return 0 and print "Stack Underflow"
         if (isEmpty()) {
@@ -45,9 +49,11 @@ class StackAsLinkedList {
         return top.data;
     }
 
+    // Time Complexity :O(1)
+    // Space Complexity :O(1)
     public int peek() {
         // Write code to just return the topmost element without removing it.
-        if(isEmpty()){
+        if (isEmpty()) {
             System.out.println("Stack Underflow");
             return 0;
         }
