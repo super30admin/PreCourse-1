@@ -15,25 +15,46 @@ StackNode* newNode(int data)
     stackNode->next = NULL; 
     return stackNode; 
 } 
+
+StackNode* top=NULL;
   
 int isEmpty(StackNode* root) 
 { 
-    //Your code here 
+       if(top==NULL){
+      return true;
+    }
+  return false;
 } 
   
 void push(StackNode** root, int data) 
 { 
-    //Your code here 
+  StackNode* stackNode = new StackNode(); 
+  stackNode -> data = data; 
+  stackNode -> next = top; 
+  top = stackNode;
 } 
   
 int pop(StackNode** root) 
 { 
-    //Your code here 
+   StackNode* temp = top;
+  int data;
+  if(top==NULL){
+    cout << "is Empty";
+  }else{
+    data = temp->data;
+    temp =top;
+    top=top->next;
+    free(temp);
+  }
+  return data;
 } 
   
 int peek(StackNode* root) 
 { 
-    //Your code here 
+     if (top!= NULL)
+        return top->data;
+    else
+        exit(1);
 } 
   
 int main() 

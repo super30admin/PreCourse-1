@@ -21,6 +21,12 @@ void push(Node** head_ref, int new_data)
     /* 3. Make next of new node as head */ 
   
     /* 4. move the head to point to the new node */
+    Node* new_node = new Node();
+    new_node->data = new_data;
+ 
+    new_node->next = (*head_ref);
+ 
+    (*head_ref) = new_node;
 }  
   
 /* Given a node prev_node, insert a new node after the given  
@@ -36,6 +42,14 @@ void insertAfter(Node* prev_node, int new_data)
     /* 4. Make next of new node as next of prev_node */
   
     /* 5. move the next of prev_node as new_node */ 
+      if (prev_node == NULL) {
+        cout << "Previous Node is Null";
+    }else{
+      Node* new_node = new Node();
+      new_node->data = new_data;
+      new_node->next = prev_node->next;
+      prev_node->next = new_node;
+    }
 }  
   
 /* Given a reference (pointer to pointer) to the head  
@@ -56,13 +70,36 @@ void append(Node** head_ref, int new_data)
     /* 5. Else traverse till the last node */
   
     /* 6. Change the next of last node */ 
+ Node* new_node = new Node();
+    Node *last = *head_ref;
+   
+    new_node->data = new_data; 
+    new_node->next = NULL; 
+   
+    if (*head_ref == NULL) 
+    { 
+        *head_ref = new_node; 
+        return; 
+    } 
+   
+    while (last->next != NULL)
+    {
+        last = last->next; 
+    }
+   
+    last->next = new_node; 
+    return; 
 }  
   
 // This function prints contents of 
 // linked list starting from head  
 void printList(Node *node)  
 {  
-    //Your code here
+      while (node != NULL)
+    {
+        cout<<" "<<node->data;
+        node = node->next;
+    }
 }  
   
 /* Driver code*/
