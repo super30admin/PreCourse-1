@@ -17,16 +17,38 @@ class SinglyLinkedList:
         Insert a new element at the end of the list.
         Takes O(n) time.
         """
-        
+        if self.head == None:
+            self.head = ListNode(data)
+        else:
+            curr = self.head
+            while curr.next :
+                curr = curr.next
+            curr.next = ListNode(data)
+
     def find(self, key):
         """
         Search for the first element with `data` matching
         `key`. Return the element or `None` if not found.
         Takes O(n) time.
         """
+        curr = self.head
+
+        while curr:
+            if curr.data == key:
+                return curr
+            curr = curr.next
+        
+        return None
         
     def remove(self, key):
         """
         Remove the first occurrence of `key` in the list.
         Takes O(n) time.
         """
+        curr = self.head   
+        while curr:
+            if curr.data == key:
+                curr.data = curr.next.data if curr.next else None
+                curr.next = curr.next.next if curr.next else None
+                return
+        return
