@@ -2,20 +2,16 @@
 //time complexity : o(1);
 //space complexity:
 
-// Java program to Implement a stack
-// using singly linked list
-// import package
-import static java.lang.System.exit;
-
-// Create Stack Using Linked list
 class StackUsingLinkedlist {
 
 	// A linked list node
-	private class Node {
-        int data; 
+	private class Node 
+	{
+        	int data; 
 		Node next;
 	}
 	Node top;
+	
 	// Constructor
 	StackUsingLinkedlist()
 	{
