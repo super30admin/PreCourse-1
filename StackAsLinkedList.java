@@ -1,6 +1,7 @@
-public class StackAsLinkedList { 
+public class StackAsLinkedList {
   
-    StackNode root; 
+    StackNode root;
+
   
     static class StackNode { 
         int data; 
@@ -8,31 +9,48 @@ public class StackAsLinkedList {
   
         StackNode(int data) 
         { 
-            //Constructor here 
+            this.data=data;//Constructor here
+            this.next=null;
         } 
     } 
     
 	
     public boolean isEmpty() 
     { 
-        //Write your code here for the condition if stack is empty. 
+       return root == null; //Write your code here for the condition if stack is empty.
+
     } 
   
-    public void push(int data) 
-    { 
-        //Write code to push data to the stack. 
+    public void push(int data)
+    {
+        StackNode temp = new StackNode(data);
+        StackNode n=root;
+        if (root==null) {root=temp;}
+        else {temp.next=root;
+        root=temp;
+        }
+
+        //Write code to push data to the stack.
     } 
   
     public int pop() 
     { 	
 	//If Stack Empty Return 0 and print "Stack Underflow"
         //Write code to pop the topmost element of stack.
-	//Also return the popped element 
-    } 
+        StackNode n= root;
+	if(root==null) return 0;//Also return the popped element
+        else {
+            root=root.next;
+            return n.data;
+    }
+
+
+    }
   
     public int peek() 
-    { 
-        //Write code to just return the topmost element without removing it.
+    {
+        return root.data;
+       //Write code to just return the topmost element without removing it.
     } 
   
 	//Driver code
@@ -43,10 +61,13 @@ public class StackAsLinkedList {
   
         sll.push(10); 
         sll.push(20); 
-        sll.push(30); 
+        sll.push(30);
+        sll.pop();
+        System.out.println(sll.isEmpty());
+
   
-        System.out.println(sll.pop() + " popped from stack"); 
+        System.out.println(sll.pop() + " popped from stack");
   
-        System.out.println("Top element is " + sll.peek()); 
+        System.out.println("Top element is " + sll.peek());
     } 
 } 
