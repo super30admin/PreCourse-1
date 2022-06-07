@@ -9,6 +9,8 @@ class Stack:
         self.head = None
 
     def push(self, data):
+        # Space to push O(1) for new node
+        # Time is O(n)
         n = Node(data)
         if not self.head:
             self.head = n
@@ -17,6 +19,8 @@ class Stack:
             self.head = n
 
     def pop(self):
+        # Time is O(1)
+        # space is O(1)
         if self.head:
             d = self.head.data
             self.head = self.head.next
