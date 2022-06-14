@@ -1,3 +1,5 @@
+ //   tc:O(1)
+//   sc:SIZE OF LIST
 #include <bits/stdc++.h> 
 using namespace std; 
   
@@ -8,6 +10,8 @@ public:
     StackNode* next; 
 }; 
   
+
+
 StackNode* newNode(int data) 
 { 
     StackNode* stackNode = new StackNode(); 
@@ -16,24 +20,34 @@ StackNode* newNode(int data)
     return stackNode; 
 } 
   
+  StackNode* top=NULL;
 int isEmpty(StackNode* root) 
 { 
-    //Your code here 
+    if(top==NULL)return true;
+    return false;
 } 
   
 void push(StackNode** root, int data) 
 { 
-    //Your code here 
+    StackNode *new_node=new StackNode();
+    new_node->data = data;
+    new_node->next=top;
+    top=new_node;
+
+
 } 
   
 int pop(StackNode** root) 
 { 
-    //Your code here 
+StackNode *ptr=top;
+top=top->next;
+delete(ptr);
 } 
-  
+ 
 int peek(StackNode* root) 
 { 
-    //Your code here 
+    if(top)cout<<top->data;
+    else cout<<"no element"; 
 } 
   
 int main() 
