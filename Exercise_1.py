@@ -41,35 +41,6 @@ class myStack:
       return self.stack
 
 
-# Driver Code
-if __name__ == '__main__':
-   s = myStack()
-
-   s.push(1)
-   print('element pushed: 1')  # Inserting 1 in the stack
-   s.push(2)  # Inserting 2 in the stack
-   print('element pushed: 2')
-   s.push(3)  # Inserting 3 in the stack
-   print('element pushed: 3')
-   print(s)
-   print('size is', s.size())
-   print('Top element is', s.peek())
-   print(s.show())
-
-   print('element removed:', s.pop())  # removing the top element (2)
-   s.pop()  # removing the top element (1)
-
-   print('Top element is', s.peek())
-   print('The stack size is', s.size())
-
-   s.pop()  # removing the top element (3)
-
-   # check if the stack is empty
-   if s.isEmpty():
-      print('The stack is empty')
-   else:
-      print('The stack is not empty')
-
 s = myStack()
 s.push('1')
 s.push('2')
