@@ -1,3 +1,8 @@
+// Time Complexity: O(n) for insert and printList operation
+// Space Complexity: O(n)
+// Did this code successfully run on Leetcode :
+// Any problem you faced while coding this :  n
+
 import java.io.*; 
   
 // Java program to implement 
@@ -17,7 +22,8 @@ public class LinkedList {
         // Constructor 
         Node(int d) 
         { 
-            //Write your code here 
+            //Write your code here
+			this.data = d;
         } 
     } 
   
@@ -25,15 +31,30 @@ public class LinkedList {
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data 
-   
-        // If the Linked List is empty, 
-        // then make the new node as head 
-        
-            // Else traverse till the last node 
-            // and insert the new_node there 
+           Node newNode = new Node(data);
 
-            // Insert the new_node at last node 
+        // If the Linked List is empty, 
+        // then make the new node as head
+        // Insert the new_node at last node 
+		
+		 if(list.head == null){
+            list.head = newNode;
+        }
+        
+        // Else traverse till the last node 
+        // and insert the new_node there 
+		else{
+			Node current = list.head;
+	
+			while(current.next != null){
+				current = current.next;
+			}
+			current.next = newNode;
+        }
+
         // Return the list by head 
+		return list;
+
         
     } 
   
@@ -41,10 +62,20 @@ public class LinkedList {
     public static void printList(LinkedList list) 
     {  
         // Traverse through the LinkedList 
-   
+		Node current = null;
+
+        if(list != null){
+            current = list.head; 
+        }
+
+        while(current != null){
+
             // Print the data at current node 
-       
+            System.out.println(current.data);
+
             // Go to next node 
+            current = current.next;
+        }
     } 
    
     // Driver code 
