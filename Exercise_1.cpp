@@ -1,18 +1,29 @@
-#include <bits/stdc++.h> 
+#include <bits/stdc++.h>
   
 using namespace std; 
   
 #define MAX 1000 
-  
+
+// Time complexity to push: O(1)
+// Time complexity to pop: O(1)
+// Space complexity: O(MAX)
+// tried out the code in vscode
+
 class Stack {
-  //Please read sample.java file before starting.
-  //Kindly include Time and Space complexity at top of each file
+  
     int top; 
   
 public: 
     int a[MAX]; // Maximum size of Stack 
   
-    Stack() { //Constructor here } 
+    Stack() 
+    { 
+
+    //Constructor here
+    
+    top=-1; //initialising top with -1 since it is zero based indexing
+     
+    } 
     bool push(int x); 
     int pop(); 
     int peek(); 
@@ -21,24 +32,42 @@ public:
   
 bool Stack::push(int x) 
 { 
-    //Your code here
-    //Check Stack overflow as well
+    if(top==MAX-1)
+    {
+        cout<<"Stack Overflow"; // if array reaches capacity then top==Max-1
+        return false;
+    }
+
+    a[++top]=x; // initially top =-1 therefor top++ for the first element to push
+    return true;
 } 
   
 int Stack::pop() 
 { 
-    //Your code here
-    //Check Stack Underflow as well 
+    if(top==-1)
+    {
+        cout<<"Stack Underflow";
+        return -1;
+    }
+
+    int temp = a[top];
+    top--;
+    return temp;
 } 
 int Stack::peek() 
 { 
-    //Your code here
-    //Check empty condition too
+    if(top==-1)
+    {
+        cout<<"Stack Underflow";
+        return -1;
+    }
+
+    return a[top];
 } 
   
 bool Stack::isEmpty() 
 { 
-    //Your code here 
+    return top==-1;
 } 
   
 // Driver program to test above functions 

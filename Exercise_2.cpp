@@ -1,6 +1,10 @@
 #include <bits/stdc++.h> 
-using namespace std; 
-  
+using namespace std;
+
+// Time complexity: O(1)
+// Space complexity: O(N)
+// tried the code in vscode
+
 // A structure to represent a stack 
 class StackNode { 
 public: 
@@ -17,23 +21,34 @@ StackNode* newNode(int data)
 } 
   
 int isEmpty(StackNode* root) 
-{ 
-    //Your code here 
+{
+    return root == NULL; 
 } 
   
 void push(StackNode** root, int data) 
-{ 
-    //Your code here 
+{
+    StackNode* temp = newNode(data);
+    temp->next = *root;
+    *root = temp;
 } 
   
 int pop(StackNode** root) 
 { 
-    //Your code here 
+    if(!*root)
+    {return -1;}
+    StackNode *popped = *root;
+    *root = popped->next;
+    int deleted = popped->data;
+    popped->next= NULL;
+    delete popped;
+    return deleted;
 } 
   
 int peek(StackNode* root) 
 { 
-    //Your code here 
+    if(root)
+    {return root->data;}
+    return -1;
 } 
   
 int main() 
