@@ -1,3 +1,8 @@
+# Time complexity for :
+   # push operation = O(n)
+   # pop operation = O(1)
+
+# Space complexity = O(n)
 
 class Node:
     def __init__(self, data):
