@@ -4,6 +4,7 @@
 // Any problem you faced while coding this : N/A
 class StackNode {
     int data;
+    //Creating a doubly linked list
     StackNode next;
     StackNode prev;
     //Implementing it through doubly linkedList.
@@ -37,7 +38,7 @@ public class StackAsLinkedList {
 
     public boolean isEmpty() {
         //Write your code here for the condition if stack is empty.
-        if(root == null){ // comparing whether
+        if(root == null){ // comparing whether the root is null or not
             return true;
         }
         return false;
@@ -45,27 +46,27 @@ public class StackAsLinkedList {
 
     public void push(int data) {
         //Write code to push data to the stack.
-        StackNode newNode = new StackNode(data);
-        StackNode currNode = root;
-        if (root == null) {
+        StackNode newNode = new StackNode(data); // creating node with input data
+        StackNode currNode = root; //creating other node to work on, so we don't lose the head node.
+        if (root == null) { // if root is null then put the given value in head node
             root = newNode;
         } else {
-            while (currNode.next != null) {
+            while (currNode.next != null) { // to traverse to the last node and then insert node there
                 currNode = currNode.next;
             }
-            newNode.prev = currNode;
+            newNode.prev = currNode; // connecting the last and new node.
             currNode.next = newNode;
         }
     }
 
     public int pop() {
         //If Stack Empty Return 0 and print "Stack Underflow"
-        StackNode currNode = root;
-        while(currNode.next != null){
+        StackNode currNode = root; // for reference
+        while(currNode.next != null){ //traversing to the last node
             currNode = currNode.next;
         }
-        int result = currNode.data;
-        currNode.prev.next = null;
+        int result = currNode.data; //storing value in int for returning result
+        currNode.prev.next = null; // deleting the last node
         return result;
     }
 
@@ -73,23 +74,11 @@ public class StackAsLinkedList {
         //Write code to just return the topmost element without removing it.
         StackNode currNode = root;
         while(currNode.next != null){
-            currNode = currNode.next;
+            currNode = currNode.next; //traversing the nodes
         }
         int result = currNode.data;
-        return result;
+        return result; //returning the last value.
     }
 }
-  
-//	//Driver code
-//    class Main2 {
-//        public static void main(String[] args) {
-//
-//            StackAsLinkedList sll = new StackAsLinkedList();
-//            sll.push(10);
-//            sll.push(20);
-//            sll.push(30);
-//            System.out.println(sll.pop() + " popped from stack");
-//            System.out.println("Top element is " + sll.peek());
-//        }
-//    }
+
 

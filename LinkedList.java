@@ -32,18 +32,18 @@ public class LinkedList {
     {
         // Create a new node with given data
         Node node = new Node(data);
-        Node headNode = list.head;
+        Node headNode = list.head; // creating reference node so that we can return list.head at last
         // If the Linked List is empty, 
         // then make the new node as head
         if(list.head == null){
-            list.head = node;
+            list.head = node; // if current head is null then assign input data in list.head
         }else{
             // Else traverse till the last node
             // and insert the new_node there
             while(headNode.next != null){
-                headNode = headNode.next;
+                headNode = headNode.next; //traverse to the last node
             }
-            headNode.next = node;            // Insert the new_node at last node
+            headNode.next = node; // Insert the new_node at last node
         }
         return list;
         // Return the list by head 
@@ -56,7 +56,7 @@ public class LinkedList {
         // Traverse through the LinkedList
             Node traversingNode = list.head;
         System.out.println("Excercise 3: Linked List: ");
-            while(traversingNode.next != null){
+            while(traversingNode.next != null){ //traverse the nodes
                 System.out.println(traversingNode.data);
                 traversingNode = traversingNode.next;
             }
@@ -64,26 +64,4 @@ public class LinkedList {
 
             // Go to next node
     }
-   
-    // Driver code
-//    class Main3 {
-//        public static void main(String[] args) {
-//            /* Start with the empty list. */
-//            LinkedList list = new LinkedList();
-//
-//            //
-//            // ******INSERTION******
-//            //
-//
-//            // Insert the values
-//            list = insert(list, 1);
-//            list = insert(list, 2);
-//            list = insert(list, 3);
-//            list = insert(list, 4);
-//            list = insert(list, 5);
-//
-//            // Print the LinkedList
-//            printList(list);
-//        }
-//    }
 }

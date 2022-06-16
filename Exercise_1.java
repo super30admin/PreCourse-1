@@ -1,7 +1,7 @@
 // Time Complexity : O(1)
 // Space Complexity : O(N)
-// Did this code successfully run on Leetcode :
-// Any problem you faced while coding this : N/A
+// Did this code successfully run on Leetcode : N/A
+// Any problem you faced while coding this : Incorrect structure of java files
 class Stack {
     //Please read sample.java file before starting.
   //Kindly include Time and Space complexity at top of each file
@@ -22,16 +22,16 @@ class Stack {
     Stack() 
     { 
         //Initialize your constructor
-        top=-1;
+        top=-1; // initializing with this value as the array index starts from 0.
     } 
   
     boolean push(int x) 
     { 
         //Check for stack Overflow
-        if(top + 1 > MAX){
+        if(top + 1 > MAX){ // if the stack is completely filled than stackoverflow
             System.out.println("Stack Overflow!");
             return false;
-        }else{        //Write your code here
+        }else{        //else increase the counter and insert the element in the stack
             top++;
             a[top] = x;
             return true;
@@ -41,11 +41,11 @@ class Stack {
     int pop() 
     { 
         //If empty return 0 and print " Stack Underflow"
-        if(top < 0){
+        if(top < 0){ //if there is no element in the stack then show stack underflow error
             System.out.println("Stack Underflow");
             return 0;
         }
-        //Write your code here
+        //else remove the element on the top
         int x = a[top];
         a[top]=0;
         top--;
@@ -58,15 +58,4 @@ class Stack {
         return a[top];
     } 
 } 
-  
-// Driver code 
-//class Main1 {
-//    public static void main(String args[])
-//    {
-//        Stack s = new Stack();
-//        s.push(10);
-//        s.push(20);
-//        s.push(30);
-//        System.out.println(s.pop() + " Popped from stack");
-//    }
-//}
+
