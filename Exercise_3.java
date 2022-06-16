@@ -1,4 +1,3 @@
-//push(), pop(), isEmpty() and peek() all take O(1) time
 import java.io.*; 
   
 // Java program to implement 
