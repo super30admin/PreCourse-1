@@ -1,11 +1,11 @@
-class myStack:
-
-   # Time complexity for :
+# Time complexity for :
    # push operation = O(1)
    # pop operation = O(1)
    # peek operation = O(1)
 
    # Space complexity = O(n)
+   
+class myStack:
 
    def __init__(self):
       self.stack = []
