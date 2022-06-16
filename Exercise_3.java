@@ -1,86 +1,91 @@
-
+//push(), pop(), isEmpty() and peek() all take O(1) time
+import java.io.*; 
+  
+// Java program to implement 
+// a Singly Linked List 
 public class LinkedList { 
   
-    StackNode root; 
+    Node head; // head of list 
   
-    static class StackNode { 
+    // Linked list Node. 
+    // This inner class is made static 
+    // so that main() can access it 
+    static class Node { 
+  
         int data; 
-        StackNode next; 
+        Node next; 
   
-        StackNode(int data) 
+        // Constructor 
+        Node(int d) 
         { 
-            //Constructor here 
-            this.data = data;
-
+            //Write your code here 
+            this.data = d;
+            this.next = null;
         } 
     } 
-    
-	
-    public boolean isEmpty() 
+  
+    // Method to insert a new node 
+    public static LinkedList insert(LinkedList list, int data) 
     { 
-        //Write your code here for the condition if stack is empty. 
-        if(root == null){
-            return true;
+        // Create a new node with given data 
+        Node newNode = new Node(data);
+        // If the Linked List is empty, 
+        // then make the new node as head 
+        if(list.head == null){
+            list.head = newNode;
         }
-        else return false;
+        
+            // Else traverse till the last node 
+            // and insert the new_node there 
+        else{
+            Node temp = list.head;
+            while(temp.next!=null){
+                temp = temp.next;
+            }
+              // Insert the new_node at last node 
+            temp.next = newNode;
+        }
+          
+        // Return the list by head 
+        return list;
+        
     } 
   
-    public void push(int data) 
-    { 
-        //Write code to push data to the stack. 
-        StackNode newNode = new StackNode(data);
+    // Method to print the LinkedList. 
+    public static void printList(LinkedList list) 
+    {  
 
-        if(isEmpty()){
-            root = newNode;
+        Node temp = list.head;
+        // Traverse through the LinkedList 
+        while(temp!=null){
+             // Print the data at current node 
+            System.out.println(temp.data+" ");
+            // Go to next node 
+            temp = temp.next;
         }
-        else{
-            StackNode temp = root;
-            root=newNode;
-            newNode.next = temp;
-        }
-        System.out.println("Successfully pushed "+data+" into the stack");
+           
+       
+            
     } 
-  
-    public int pop() 
-    { 	
-	//If Stack Empty Return 0 and print "Stack Underflow"
-        //Write code to pop the topmost element of stack.
-	//Also return the popped element 
-        int res = Integer.MIN_VALUE;
-        if(isEmpty()){
-            System.out.println("Stack Underflow");
-        }
-        else{
-            res = root.data;
-            root = root.next;
-            return res;
-        }
-        return res;
-    } 
-  
-    public int peek() 
-    { 
-        //Write code to just return the topmost element without removing it.
-        if(!isEmpty()){
-            return root.data;
-        }
-        System.out.println("Stack Underflow");
-        return Integer.MIN_VALUE;
-    } 
-  
-	//Driver code
+   
+    // Driver code 
     public static void main(String[] args) 
     { 
+        /* Start with the empty list. */
+        LinkedList list = new LinkedList(); 
   
-        StackAsLinkedList sll = new StackAsLinkedList(); 
+        // 
+        // ******INSERTION****** 
+        // 
   
-        sll.push(10); 
-        sll.push(20); 
-        sll.push(30); 
+        // Insert the values 
+        list = insert(list, 1); 
+        list = insert(list, 2); 
+        list = insert(list, 3); 
+        list = insert(list, 4); 
+        list = insert(list, 5); 
   
-        System.out.println(sll.pop() + " popped from stack"); 
-  
-        System.out.println("Top element is " + sll.peek()); 
+        // Print the LinkedList 
+        printList(list); 
     } 
-} 
-
+}
