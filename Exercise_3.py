@@ -1,5 +1,3 @@
-from email import header
-from locale import currency
 
 # time complexity : append, find, remove- O(n)
 # space complexity: O(n) for n appends
