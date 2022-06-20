@@ -19,11 +19,12 @@ class SinglyLinkedList:
         if(self.head == None):
             self.head = new_node
             self.head.next = None
-        temp = self.head
-        while(temp.next!=None):
-            temp = temp.next
-        temp.next = new_node
-        print(temp.next.data)
+        else:
+            temp = self.head
+            while(temp.next!=None):
+                temp = temp.next
+            temp.next = new_node
+            temp.next.next = None
         return True
         
             
@@ -35,7 +36,8 @@ class SinglyLinkedList:
         Takes O(n) time.
         """
         temp = self.head
-        while(temp.next!=None):
+        while(temp!=None):
+            print(temp.data)
             if(temp.data == key):
                 return temp
             temp = temp.next
@@ -54,7 +56,7 @@ class SinglyLinkedList:
             if(self.head.next.data == key):
                 self.head = self.head.next
             temp = self.head
-            while(temp.next.next!=None):
+            while(temp.next!=None):
                 if(temp.next.data == key):
                     print(temp.next.data)
                     temp.next = temp.next.next
@@ -64,6 +66,8 @@ class SinglyLinkedList:
 s =  SinglyLinkedList()
 s.append(5)
 s.append(6)
+print(s.find(6))
+s.remove(6)
 
         
         
