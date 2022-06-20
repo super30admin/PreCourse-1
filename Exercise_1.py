@@ -5,34 +5,36 @@ class myStack:
       self.stack=[]
 
      def isEmpty(self):
-      if len(self.stack)==0:
+      if self.size()==0:
         return True
       else:
         return False
          
      def push(self, item):
       self.stack.append(item)
+      
          
      def pop(self):
-      if len(self.stack)!=0:
-        self.stack.pop()
+      if self.size()!=0:
+        return self.stack.pop()
       else:
-        print("Stack Empty")
+        return 0
         
      def peek(self):
-      if len(self.stack)!=0:
-        print(self.stack[-1])
+      if self.size()!=0:
+        return self.stack[-1]
       else:
-        print("Stack Empty")
+        return 0
         
      def size(self):
       if len(self.stack)!=0:
-        print(len(self.stack))
+        return len(self.stack)
       else:
-        print("0")
+        return 0
          
      def show(self):
-      print(self.stack)
+      
+      return self.stack
          
 
 s = myStack()
