@@ -1,5 +1,8 @@
 import java.io.*;
 
+// Time Complexity :: O(1)
+// Space Complexity :: O(1) :: As we are not using any extra space for performing ops
+
 // Java program to implement
 // a Singly Linked List
 public class LinkedList {
