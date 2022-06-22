@@ -1,126 +1,93 @@
-// Java program to Implement a stack
-// using singly linked list
-// import package
-import static java.lang.System.exit;
+import java.io.*;
 
-// Create Stack Using Linked list
-class StackUsingLinkedlist {
+// Java program to implement
+// a Singly Linked List
+public class LinkedList {
 
-	// A linked list node
-	private class Node {
+	Node head; // head of list
 
-		int data; // integer data
-		Node link; // reference variable Node type
-	}
-	// create global top reference variable global
-	Node top;
-	// Constructor
-	StackUsingLinkedlist()
-	{
-		this.top = null;
-	}
+	// Linked list Node.
+	// This inner class is made static
+	// so that main() can access it
+	static class Node {
 
-	// Utility function to add an element x in the stack
-	public void push(int x) // insert at the beginning
-	{
-		// create new node temp and allocate memory
-		Node temp = new Node();
+		int data;
+		Node next;
 
-		// check if stack (heap) is full. Then inserting an
-		// element would lead to stack overflow
-		if (temp == null) {
-			System.out.print("\nHeap Overflow");
-			return;
+		// Constructor
+		Node(int d)
+		{
+			data = d;
+			next = null;
 		}
-
-		// initialize data into temp data field
-		temp.data = x;
-
-		// put top reference into temp link
-		temp.link = top;
-
-		// update top reference
-		top = temp;
 	}
 
-	// Utility function to check if the stack is empty or not
-	public boolean isEmpty()
+	// Method to insert a new node
+	public static LinkedList insert(LinkedList list, int data)
 	{
-		return top == null;
-	}
+		// Create a new node with given data
+		Node new_node = new Node(data);
+		new_node.next = null;
 
-	// Utility function to return top element in a stack
-	public int peek()
-	{
-		// check for empty stack
-		if (!isEmpty()) {
-			return top.data;
+		// If the Linked List is empty,
+		// then make the new node as head
+		if (list.head == null) {
+			list.head = new_node;
 		}
 		else {
-			System.out.println("Stack is empty");
-			return -1;
-		}
-	}
-
-	// Utility function to pop top element from the stack
-	public void pop() // remove at the beginning
-	{
-		// check for stack underflow
-		if (top == null) {
-			System.out.print("\nStack Underflow");
-			return;
-		}
-
-		// update the top pointer to point to the next node
-		top = (top).link;
-	}
-
-	public void display()
-	{
-		// check for stack underflow
-		if (top == null) {
-			System.out.printf("\nStack Underflow");
-			exit(1);
-		}
-		else {
-			Node temp = top;
-			while (temp != null) {
-
-				// print node data
-				System.out.printf("%d->", temp.data);
-
-				// assign temp link to temp
-				temp = temp.link;
+			// Else traverse till the last node
+			// and insert the new_node there
+			Node last = list.head;
+			while (last.next != null) {
+				last = last.next;
 			}
+
+			// Insert the new_node at last node
+			last.next = new_node;
+		}
+
+		// Return the list by head
+		return list;
+	}
+
+	// Method to print the LinkedList.
+	public static void printList(LinkedList list)
+	{
+		Node currNode = list.head;
+	
+		System.out.print("LinkedList: ");
+	
+		// Traverse through the LinkedList
+		while (currNode != null) {
+			// Print the data at current node
+			System.out.print(currNode.data + " ");
+	
+			// Go to next node
+			currNode = currNode.next;
 		}
 	}
-}
-// main class
-public class GFG {
+	
+	// Driver code
 	public static void main(String[] args)
 	{
-		// create Object of Implementing class
-		StackUsingLinkedlist obj = new StackUsingLinkedlist();
-		// insert Stack value
-		obj.push(11);
-		obj.push(22);
-		obj.push(33);
-		obj.push(44);
+		/* Start with the empty list. */
+		LinkedList list = new LinkedList();
 
-		// print Stack elements
-		obj.display();
+		//
+		// ******INSERTION******
+		//
 
-		// print Top element of Stack
-		System.out.printf("\nTop element is %d\n", obj.peek());
+		// Insert the values
+		list = insert(list, 1);
+		list = insert(list, 2);
+		list = insert(list, 3);
+		list = insert(list, 4);
+		list = insert(list, 5);
+		list = insert(list, 6);
+		list = insert(list, 7);
+		list = insert(list, 8);
 
-		// Delete top element of Stack
-		obj.pop();
-		obj.pop();
-
-		// print Stack elements
-		obj.display();
-
-		// print Top element of Stack
-		System.out.printf("\nTop element is %d\n", obj.peek());
+		// Print the LinkedList
+		printList(list);
 	}
 }
