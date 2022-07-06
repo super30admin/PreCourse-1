@@ -46,6 +46,8 @@ class SinglyLinkedList:
         if self.head is None:
             return None
 
+        # Creating a Temporary Node
+
         temp = self.head
 
         while temp is not None:
@@ -68,6 +70,7 @@ class SinglyLinkedList:
             self.head = self.head.next
 
         else:
+            # Creating a Temporary Node
             temp = self.head
             while temp.next is not None:
 
@@ -78,6 +81,7 @@ class SinglyLinkedList:
                     temp = temp.next
 
     def print(self):
+        # Creating a Temporary Node
         temp = self.head
 
         while temp is not None:
