@@ -10,6 +10,10 @@ class Stack:
     def push(self, data):
         
     def pop(self):
+
+    def peek(self):
+
+    def isEmpty(self):
         
 a_stack = Stack()
 while True:
