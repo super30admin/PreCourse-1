@@ -14,13 +14,14 @@ class newNode():
 def inorder(temp):
     if temp:
         inorder(temp.left)
-        print(temp.key, end=' ')
+        print(temp.key)
         inorder(temp.right)
     else:
         return
 
 
 """function to insert element in binary tree """
+# inserted in the level order from left to right to the first empty tree
 
 
 def insert(temp, key):
