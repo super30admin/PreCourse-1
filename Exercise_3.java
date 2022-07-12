@@ -1,8 +1,12 @@
 import java.io.*; 
   
 // Java program to implement 
-// a Singly Linked List 
-public class LinkedList { 
+// a Singly Linked List
+
+//Time complexity: O(n)
+//Space complexity : O(n)
+
+public class LinkedList {
   
     Node head; // head of list 
   
@@ -17,24 +21,35 @@ public class LinkedList {
         // Constructor 
         Node(int d) 
         { 
-            //Write your code here 
+            //Write your code here
+            this.data = d;
+            this.next = null;
         } 
     } 
   
     // Method to insert a new node 
     public static LinkedList insert(LinkedList list, int data) 
     { 
-        // Create a new node with given data 
+        // Create a new node with given data
+        Node newNode = new Node(data);
    
         // If the Linked List is empty, 
-        // then make the new node as head 
-        
-            // Else traverse till the last node 
-            // and insert the new_node there 
-
-            // Insert the new_node at last node 
-        // Return the list by head 
-        
+        // then make the new node as head
+        if(list.head == null) {
+            list.head = newNode;
+        }
+        else {
+            // Else traverse till the last node
+            // and insert the new_node there
+            // Insert the new_node at last node
+            // Return the list by head
+            Node currNode = list.head;
+            while (currNode != null) {
+                currNode = currNode.next;
+            }
+            currNode.next = newNode;
+        }
+        return list;
     } 
   
     // Method to print the LinkedList. 
@@ -44,7 +59,16 @@ public class LinkedList {
    
             // Print the data at current node 
        
-            // Go to next node 
+            // Go to next node
+        if(list.head == null) {
+            System.out.println("List is empty, no elements to print");
+        }
+        Node currNode = list.head;
+        while(currNode != null) {
+            System.out.print(currNode.data + " -> ");
+            currNode = currNode.next;
+        }
+        System.out.println();
     } 
    
     // Driver code 
