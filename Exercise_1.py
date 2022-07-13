@@ -9,16 +9,20 @@ class myStack:
          
      def pop(self):
         
-        
      def peek(self):
         
      def size(self):
          
      def show(self):
          
-
+# Default Test Case
 s = myStack()
 s.push('1')
 s.push('2')
 print(s.pop())
 print(s.show())
+
+#######################Additional Test Cases##########################
+#(1) Empty Stack Pop
+s = myStack()
+print(s.pop())
