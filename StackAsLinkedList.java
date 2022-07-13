@@ -50,8 +50,9 @@ public class StackAsLinkedList {
     		return 0;
     	}
     	else {
+    	int res = root.data;
     	root = root.next;
-    	return root.data;
+    	return res;
     		
     		}
     	
