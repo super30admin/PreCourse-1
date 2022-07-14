@@ -14,7 +14,7 @@ class Stack {
 
 	boolean isEmpty() {
 		// Write your code here
-		// Checking if array is empty with the help of "top" pointer
+		// Checking if array is empty with the help of "top" pointer 
 		return top == -1;
 	}
 
