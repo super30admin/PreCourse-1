@@ -1,6 +1,6 @@
 import java.io.*; 
-//Time Complexity :  O(1)
-// Space Complexity :   O(n)
+//Time Complexity :  O(1) for each operation
+// Space Complexity :   O(n) LL occupied memory
 // Did this code successfully run on Leetcode : Yes
 // Any problem you faced while coding this :
 // Java program to implement 
@@ -71,7 +71,7 @@ class LinkedList {
                 temp = temp.next;
 
             }
-            
+
     } 
    
     // Driver code 

@@ -1,5 +1,5 @@
-// Time Complexity :  O(n)
-// Space Complexity :   O(1)
+// Time Complexity :  O(1) for each operation
+// Space Complexity :   O(n) stack occupied memory
 // Did this code successfully run on Leetcode : Yes
 // Any problem you faced while coding this :
 // Your code here along with comments explaining your approach
@@ -48,10 +48,10 @@ class Stack {
         return 0;
     }
         else if(top>0)
-        {
+        {   int res = a[top];
             System.out.println("removed element is"+ a[top]);
             top--;
-            return a[top+1];
+            return res;
         }
         return -1;
     } 
