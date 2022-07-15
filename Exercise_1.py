@@ -12,16 +12,22 @@ class myStack:
         return "Stack: " + str(self._a)
 
     def isEmpty(self) -> bool:
+        # Time Complexity : O(1)
+        # Space Complexity : O(1)
         if self._top == -1:
             return True
         return False
 
     def isFull(self) -> bool:
+        # Time Complexity : O(1)
+        # Space Complexity : O(1)
         if self._size == self._top + 1:
             return True
         return False
 
     def push(self, item: str) -> (bool, str):
+        # Time Complexity : O(1)
+        # Space Complexity : O(1)
         if self.isFull():
             return False, f"Push Operation: Stack Overflow, item {item} is not pushed onto the stack"
         self._a.append(item)
@@ -29,30 +35,38 @@ class myStack:
         return True, item
 
     def pop(self) -> (bool, str):
+        # Time Complexity : O(1)
+        # Space Complexity : O(1)
         if self.isEmpty():
             return False, f"Pop Operation: Stack Underflow, Nothing Popped out of the stack"
         self._top -= 1
         return True, self._a.pop(self._top+1)
 
     def peek(self) -> (bool, str):
+        # Time Complexity : O(1)
+        # Space Complexity : O(1)
         if self.isEmpty():
             return False, f"Peek Operation: Stack Empty"
         return True, self._a[self._top]
 
     def size(self) -> int:
+        # Time Complexity : O(1)
+        # Space Complexity : O(1)
         if self.isEmpty():
             return 0
         return self._top+1
 
     def show(self):
+        # Time Complexity : O(1)
+        # Space Complexity : O(1)
         if self.isEmpty():
             print("Stack Empty, Nothing to show")
             return
-        print(self._a)
+        print("Stack: "+str(self._a))
 
 
 if __name__ == "__main__":
-    s = myStack(3)
+    s = myStack(4)
     s.push('1')
     s.push('2')
     print(s.size())
@@ -60,5 +74,4 @@ if __name__ == "__main__":
     print(s.push('4'))
     print(s.size())
     print(s.peek())
-    print(s.pop())
-    s.show()
+    print(s)
