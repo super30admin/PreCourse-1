@@ -1,35 +1,59 @@
+// Excercise - 1
+// Time Complexity : O(1) as we are returning everything in constant time
+// Space Complexity : O(k) where k is the max length of array
+// Did this code successfully run on Leetcode : yes
+// Any problem you faced while coding this : no
+
+
+// Your code here along with comments explaining your approach
 class Stack { 
-    //Please read sample.java file before starting.
-  //Kindly include Time and Space complexity at top of each file
     static final int MAX = 1000; 
     int top; 
     int a[] = new int[MAX]; // Maximum size of Stack 
   
     boolean isEmpty() 
     { 
-        //Write your code here 
+        if(top == -1)
+            return true;
+        return false;
     } 
 
     Stack() 
     { 
-        //Initialize your constructor 
+        top = -1;
     } 
   
     boolean push(int x) 
     { 
         //Check for stack Overflow
-        //Write your code here
+        if(top == 999)
+            return true;
+        top++;
+        a[top]=x;
+        return true;
     } 
   
     int pop() 
     { 
         //If empty return 0 and print " Stack Underflow"
-        //Write your code here
+        if(top==-1)
+        {
+            System.out.println("Stack Underflow");
+            return 0;
+        }
+        int n = a[top];
+        top--;
+        return n;
     } 
   
     int peek() 
     { 
-        //Write your code here
+        if(top==-1)
+        {
+            System.out.println("Stack Underflow");
+            return 0;
+        }
+        return a[top];
     } 
 } 
   
