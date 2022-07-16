@@ -1,14 +1,15 @@
+// Time Complexity : O(n)
+// Space Complexity : O(1)
+// Did this code successfully run on Leetcode : yes
+// Any problem you faced while coding this : Faced issues while compiling since the class name didn't mactch with filename
+//                                           got error: "Exercise_3.java:5: error: class LinkedList is public, should be declared in a file named LinkedList.java"
+
 import java.io.*; 
-  
 // Java program to implement 
 // a Singly Linked List 
 public class LinkedList { 
   
     Node head; // head of list 
-  
-    // Linked list Node. 
-    // This inner class is made static 
-    // so that main() can access it 
     static class Node { 
   
         int data; 
@@ -17,34 +18,38 @@ public class LinkedList {
         // Constructor 
         Node(int d) 
         { 
-            //Write your code here 
+            data=d;
+            next=null;
         } 
     } 
   
     // Method to insert a new node 
     public static LinkedList insert(LinkedList list, int data) 
     { 
-        // Create a new node with given data 
-   
-        // If the Linked List is empty, 
-        // then make the new node as head 
-        
-            // Else traverse till the last node 
-            // and insert the new_node there 
+        Node newNode= new Node(data);
+        newNode.next=null;
 
-            // Insert the new_node at last node 
-        // Return the list by head 
-        
+        if(list.head==null){
+            list.head=newNode;
+        }
+        else{
+            Node cur=list.head;
+            while(cur.next!=null){
+                cur=cur.next;
+            }
+            cur.next=newNode;
+        }
+        return list;
     } 
   
     // Method to print the LinkedList. 
     public static void printList(LinkedList list) 
     {  
-        // Traverse through the LinkedList 
-   
-            // Print the data at current node 
-       
-            // Go to next node 
+        Node cur=list.head;
+        while(cur!=null){
+            System.out.println(cur.data);
+            cur=cur.next;
+        }
     } 
    
     // Driver code 
