@@ -6,11 +6,34 @@ class Node:
  
 class Stack:
     def __init__(self):
-        
+        self.head = None
+
+
+    # Traverse through the linked list to insert a element at the end of list
     def push(self, data):
-        
+        if self.head == None:
+            return None
+
+        traverse = self.head
+        while(traverse.next):
+            traverse = traverse.next
+            traverse.next = Node(data)
+
+    # Traverse through the linked list to delete a element at the end of list
     def pop(self):
-        
+        if self.head == None:
+            return None
+
+        else:
+            # popNode = self.head
+
+            while (self.head.next):
+                self.head = self.head.next
+            self.head.next = None
+            return self.head.data
+
+
+
 a_stack = Stack()
 while True:
     #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
