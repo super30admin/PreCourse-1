@@ -2,7 +2,7 @@ class myStack:
     '''
     Time Complexity:
     isEmpty() - O(1) as it is just checking the length and returning a boolean
-    push() - O(1) as we are just appendind the item at the end
+    push() - O(1) as we are just appending the item at the end
     pop() - O(1) as we are removing the last item
     peek() - O(1) as we are just returning the last item from the stack
     size() - O(1) as we are just checking the length

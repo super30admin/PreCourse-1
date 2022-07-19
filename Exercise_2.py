@@ -1,3 +1,12 @@
+'''Time Complexity:
+    push() - O(1) as we are just appending the item at the end in stack 
+    pop() - O(1) as we are removing the last item in the stack
+    show() - O(1) as we are just displaying the stack
+
+    Space Complexity:
+    O(n) as there are n elements in the stack
+'''
+
 
 class Node:
     def __init__(self, data):

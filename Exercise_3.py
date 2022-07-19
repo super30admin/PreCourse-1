@@ -1,5 +1,18 @@
 from tempfile import tempdir
 
+'''
+    Time Complexity:
+    append() - O(n) as we are traversing the whole linked list to get the last element
+    remove() - O(1) if the element is at the last then we have to traverse the whole linked list to remove the element.
+    find() - O(1) as we have to traverse the whole linked list to find the element, if the element is last.
+    show() - O(n) as we have to traverse the whole linked list.
+
+    Space Complexity:
+    O(n) as there are n elements in the linked list
+
+
+    '''
+
 
 class ListNode:
     """
