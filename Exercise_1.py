@@ -1,30 +1,58 @@
 class myStack:
-  #Please read sample.java file before starting.
-  #Kindly include Time and Space complexity at top of each file
     def __init__(self):
-        self.stack = []
+        self.stack =[]
+        self.size = 0
     def isEmpty(self):
-        return len(self.stack) == 0     
-    def push(self, item):
-        self.stack.append(item)
-    def pop(self):
-        if(self.isEmpty()):
-            print("stack underflow")
-            return 0
-        return self.stack.pop()  
+        return(self.size == 0)
+    def push(self, data):
+        self.stack.append(data)
+        self.size += 1
     def peek(self):
-        if (self.isEmpty()):
-            return 0
-        return self.stack[len(self.stack) - 1]
-    def size(self):
-         return len(self.stack)
-    def show(self):     
-        while(self.isEmpty() != True):
-            print(self.stack.pop())
-
-s = myStack()
-s.push('1')
-s.push('2')
-print(s.pop())
-print(s.show())
-
+        if self.isEmpty():
+            return None
+        else:
+            return self.stack[-1]
+    def show(self):
+        return self.stack
+    def pop(self):
+        if self.isEmpty():
+            return None
+        else:
+            self.size -= 1
+            return self.stack.pop(-1)
+    
+            
+        
+a_stack = myStack()
+while True:
+    #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
+    print('push <value>')
+    print('pop')
+    print('peek')
+    print('isEmpty')
+    print('show')
+    print('quit')
+    print('size')
+    do = input('What would you like to do? ').split()
+    #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
+    operation = do[0].strip().lower()
+    if operation == 'push':
+        a_stack.push(int(do[1]))
+    elif operation == 'pop':
+        popped = a_stack.pop()
+        if popped is None:
+            print('Stack is empty.')
+        else:
+            print('Popped value: ', int(popped))
+    elif operation == 'peek':
+        print(a_stack.peek())
+    elif operation == 'show':
+        print(a_stack.show()) 
+    elif operation == 'isempty':
+        print(a_stack.isEmpty())        
+    elif operation == 'quit':
+        break
+    elif operation == 'size':
+        print(a_stack.size)
+    else:
+        print('please enter a valid input')    
