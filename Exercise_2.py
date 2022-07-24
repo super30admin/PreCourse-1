@@ -24,6 +24,8 @@ class Stack():
         
     def pop(self):
         # we use prev's next reference here to delete (pop) the last added node
+        if not self.prev.next:
+            return None
         val=self.prev.next.data
         self.prev.next=None
         return val
