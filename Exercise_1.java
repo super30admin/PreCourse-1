@@ -1,14 +1,19 @@
+// Time Complexity : Push = O(1); Pop = O(1); Peek = O(1)
+// Space Complexity : O(n) 
+
+// Did this code successfully run on Leetcode : Link not available
+
+// Any problem you faced while coding this : Brushing up Stack concept & Java syntax + familiarizing with usage of git.
+
 class Stack { 
-    //Please read sample.java file before starting.
-  //Kindly include Time and Space complexity at top of each file
+
     static final int MAX = 1000; 
     int top; 
     int a[] = new int[MAX]; // Maximum size of Stack 
   
     boolean isEmpty() 
     { 
-        //Write your code here 
-        if (top < 0)
+        if (top < 0) // top = 0 will 1st element. top < 0 means no element in stack.
             return true;
         return false;
     } 
@@ -16,14 +21,15 @@ class Stack {
     Stack() 
     { 
         //Initialize your constructor 
-        top = -1;
+        top = -1; // begining with empty stack. top points to top of stack. 
     } 
   
     boolean push(int x) 
     { 
         //Check for stack Overflow
-        if (++top < MAX) {
-            a[top] = x;
+         //incrementing top to see if the inserting postion is not overflowing
+        if (++top < MAX) { 
+            a[top] = x; 
             return true;
         }
         System.out.println("Stack Overflow");
@@ -32,17 +38,19 @@ class Stack {
   
     int pop() 
     { 
-        //If empty return 0 and print " Stack Underflow"
-        if((top-1) >= 0) {
+        // if stack not empty then pop the top element then decrement top
+        if(!isEmpty()) {
             return a[top--];
         }
+        //If empty return 0 and print " Stack Underflow"
         System.out.println("Stack Underflow");
         return 0;
     } 
   
     int peek() 
     { 
-        if (top < 0){
+        //returning the top element without adjusting top pointer.
+        if (isEmpty()){
             System.out.println("Stack Empty");
             return 0;
         } else {
@@ -59,7 +67,13 @@ class Main {
         s.push(10); 
         s.push(20); 
         s.push(30); 
-        System.out.println(s.pop() + " Popped from stack"); 
-        System.out.println(s.peek() + " top element from stack"); 
+        
+        // for testing the stack operations
+        for (int i = 0; i < 4; ++i) {
+            if (!s.isEmpty()) {
+                System.out.println(s.peek());
+            }
+            System.out.println(s.pop());
+        }
     } 
 }
