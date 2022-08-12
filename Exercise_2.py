@@ -1,3 +1,7 @@
+# Time Complexity : O(1) The time complexity for all push(), pop(), and peek() operations is O(1)
+#Space Complexity : O(n) where n is the size of the stack
+#Did this code successfully run on Leetcode : not present on leetcode
+#Any problem you faced while coding this : No
 
 class Node:
     def __init__(self, data):
@@ -6,10 +10,24 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.head = None
         
-    def push(self, data):
+    def push(self, data):             # push the node at the starting of the stack
+        if (self.head == None) :
+            self.head = Node(data)
+        else:
+            newnode = Node(data)
+            newnode.next = self.head
+            self.head = newnode
         
-    def pop(self):
+    def pop(self):                     # returns the node at the top
+        if (self.head == None):
+            return None
+        else:
+            popnode = self.head
+            self.head = self.head.next
+            popnode.next = None
+            return popnode.data
         
 a_stack = Stack()
 while True:
