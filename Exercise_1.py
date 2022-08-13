@@ -6,29 +6,29 @@
 # Any problem you faced while coding this : No
 class myStack:
   def __init__(self):
-    self.items = []
+    self.items = []  #Initialize empty array - items
       
   def isEmpty(self):
-    return len(self.items) == 0
+    return len(self.items) == 0 #return True if length of item is zero False otherwise
       
   def push(self, item):
-    self.items.append(item)
+    self.items.append(item) #append to the array
         
   def pop(self):
     if len(self.items) == 0:
       print("Cannot Pop from an empty array")
-    return self.items.pop()
+    return self.items.pop() #Pop from the array
     
   def peek(self):
     if len(self.items) == 0:
           print("Stack is Empty")
-    return self.items[len(self.items)-1]
+    return self.items[len(self.items)-1] #return the element at the last index
     
   def size(self):
-    return len(self.items)
+    return len(self.items) # return length (size)
     
   def show(self):
-    return self.items 
+    return self.items # return the array(stack)
          
 
 s = myStack()

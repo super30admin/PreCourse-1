@@ -1,18 +1,19 @@
-class ListNode:
-    """
-    A node in a singly-linked list.
-    """
-    def __init__(self, data=None, next_node=None):
+# Time Complexity : o(n) for append, find and remove operations. Constructor  takes o(1) time
+# Space Complexity : o(n) where n is the length of the list
+# Did this code successfully run on Leetcode : Yes
+# Any problem you faced while coding this : No
+class ListNode: # initialize Class ListNode
+    def __init__(self, data=None, next_node=None): # initialize data
         self.data = data
         self.next_node = next_node
     
-    def get_data(self):
+    def get_data(self): # this method returns the data
         return self.data
 
-    def get_next(self):
+    def get_next(self): # points to the next node in the list
         return self.next_node
 
-    def set_next(self, new_next):
+    def set_next(self, new_next): # sets the next node 
         self.next_node = new_next
     
 class SinglyLinkedList:
