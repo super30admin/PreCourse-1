@@ -1,15 +1,36 @@
-
 class Node:
     def __init__(self, data):
        self.data = data
        self.next = None
  
+class Node:
+      
+    # Class to create nodes of linked list
+    # constructor initializes node automatically
+    def __init__(self,data):
+        self.data = data
+        self.next = None
+
 class Stack:
     def __init__(self):
-        
+        self.head = None
+
     def push(self, data):
+        if self.head is not None:
+          nn = Node(data)
+          nn.next = self.head
+          self.head = nn
+        else:
+          self.head = None
+          nn = Node(data)
+          nn.next = self.head
+          self.head = nn
         
     def pop(self):
+      if self.head is not None:
+        val = self.head.data
+        self.head = self.head.next
+        return val
         
 a_stack = Stack()
 while True:
