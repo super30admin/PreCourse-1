@@ -1,16 +1,37 @@
+# Implement Stack using Linked List.
 
 class Node:
-    def __init__(self, data):
+    def __init__(self, data ):
        self.data = data
        self.next = None
  
 class Stack:
     def __init__(self):
-        
+        self.head = None
+
     def push(self, data):
-        
+        if self.head==None:
+            self.head= Node(data)
+        else:
+            m= Node(data)
+            m.next= self.head
+            self.head= m
+        print("data pushed")
+
+    def isempty(self):
+        if self.head == None:
+            return True
+        else:
+            return False
     def pop(self):
-        
+        if self.isempty():
+            return None
+        else:
+            temp= self.head
+            self.head=self.head.next
+            temp.next = None
+            return temp.data
+
 a_stack = Stack()
 while True:
     #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
