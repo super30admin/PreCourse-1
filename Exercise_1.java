@@ -1,6 +1,7 @@
-class Stack { 
-    //Please read sample.java file before starting.
-  //Kindly include Time and Space complexity at top of each file
+class Stack {
+
+    // Time Complexity : O(1)
+// Space Complexity :O(n)
     static final int MAX = 1000; 
     int top; 
     int a[] = new int[MAX]; // Maximum size of Stack 
