@@ -1,0 +1,8 @@
+/LinkedList$Node.class
+/LinkedList.class
+/Main.class
+/Stack.class
+/StackAsLinkedList$StackNode.class
+/StackAsLinkedList.class
+*.classpath
+.project
