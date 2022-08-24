@@ -1,3 +1,5 @@
+//Timecomplexity O(n)
+//space complexity O(n)
 import java.io.*; 
   
 // Java program to implement 
@@ -27,7 +29,7 @@ public class LinkedList {
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data 
-    ListNode new_node = new Node();
+    Node new_node = new Node(data);
      
         // If the Linked List is empty, 
         // then make the new node as head 
@@ -36,7 +38,7 @@ public class LinkedList {
       }else{  
         // Else traverse till the last node 
             // and insert the new_node there 
-        ListNode last = new node(); 
+        Node last = list.head; 
         last = list.head;
         while(last.next != null){
           last = last.next;
@@ -46,16 +48,18 @@ public class LinkedList {
         last.next = new_node;
         
            // Return the list by head 
-        return list;
+        
     } 
-  
+    return list;
+    }
     // Method to print the LinkedList. 
     public static void printList(LinkedList list) 
     {  
+        Node currNode = list.head;
         // Traverse through the LinkedList 
-      while(list != null){
-        System.out.println(list.data + " ");
-        list = list.next;
+      while(currNode != null){
+        System.out.println(currNode.data + " ");
+        currNode = currNode.next;
       }
    
             // Print the data at current node 
