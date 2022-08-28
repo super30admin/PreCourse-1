@@ -1,3 +1,12 @@
+"""
+Time Complexity : O(1)
+Space Complexity : O(1)
+Did this code successfully run on Leetcode :
+Any problem you faced while coding this : None
+
+// Your code here along with comments explaining your approach
+"""
+
 class Node:
     def __init__(self, data):
         self.data = data
