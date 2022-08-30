@@ -1,4 +1,4 @@
-// Time Complexity : O(1)
+// Time Complexity : O(n)
 // Space Complexity : O(1)
 // Did this code successfully run on Leetcode : Yes
 // Any problem you faced while coding this : Nothing as such
@@ -28,7 +28,7 @@ public class LinkedList {
     }
 
     // Method to insert a new node
-    public static LinkedList insert(LinkedList list, int data) {
+    public static LinkedList insert(LinkedList list, int data) { // TC= O(n)
         // Create a new node with given data
 
         // If the Linked List is empty,
@@ -63,7 +63,7 @@ public class LinkedList {
     }
 
     // Method to print the LinkedList.
-    public static void printList(LinkedList list) {
+    public static void printList(LinkedList list) { // TC = O(n)
         // Traverse through the LinkedList
 
         // Print the data at current node

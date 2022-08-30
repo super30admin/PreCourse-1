@@ -10,8 +10,9 @@ class Stack {
     int top;
     int a[] = new int[MAX]; // Maximum size of Stack
 
-    boolean isEmpty() {
+    boolean isEmpty() { // O(1)
         // Write your code here
+        // Returning true, if our top is negative, which means Stack is empty
         return (top < 0);
     }
 
@@ -20,38 +21,40 @@ class Stack {
         top = -1;
     }
 
-    boolean push(int x) {
+    boolean push(int x) { // O(1)
         // Check for stack Overflow
         // Write your code here
-        if (top >= (MAX - 1)) {
+        if (top >= (MAX - 1)) { // If top is larger than Length-1, Implies out stack has overflow
             System.out.println("Out of range!!");
             return false;
         } else {
-            a[++top] = x;
+            top++; // Increasing the value of top, to insert element at top
+            a[top] = x; // Adding new element at top
             System.out.println(x + " pushed into stack");
             return true;
         }
     }
 
-    int pop() {
+    int pop() { // O(1)
         // If empty return 0 and print " Stack Underflow"
         // Write your code here
         if (top < 0) {
             System.out.println("Stack Underflow");
             return 0;
         } else {
-            int x = a[top--];
+            int x = a[top]; // Returning top element
+            top--; // Decreasing the value of top, after popping the element from top
             return x;
         }
     }
 
-    int peek() {
+    int peek() { // O(1)
         // Write your code here
         if (top < 0) {
             System.out.println("Stack Underflow");
             return 0;
         } else {
-            int x = a[top];
+            int x = a[top]; // Returning the top most element
             return x;
         }
     }
