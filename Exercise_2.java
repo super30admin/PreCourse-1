@@ -1,5 +1,5 @@
 // Time Complexity : O(1)
-// Space Complexity : O(1)
+// Space Complexity : O(n)
 // Did this code successfully run on Leetcode : Yes
 // Any problem you faced while coding this : Nothing as such
 
@@ -20,10 +20,10 @@ public class StackAsLinkedList {
 
     public boolean isEmpty() { // TC= O(1)
         // Write your code here for the condition if stack is empty.
-        if (root == null) {
+        if (root == null) { // If root is null, no node is present
             return true;
         } else
-            return false;
+            return false; // If root is not equal to null, node is present
     }
 
     public void push(int data) { // TC= O(1)
@@ -31,7 +31,7 @@ public class StackAsLinkedList {
         StackNode newNode = new StackNode(data);
 
         if (root == null) {
-            root = newNode;
+            root = newNode; // If root is NULL, inserting new node at root
         } else {
             StackNode temp = root;
             root = newNode;
