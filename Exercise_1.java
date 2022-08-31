@@ -1,35 +1,68 @@
+// Time Complexity : Worst case : O(MAX) 
+// Space Complexity :Worst case : O(MAX)
+// Did this code successfully run on Leetcode : It runs successfully on Eclipse
+// Any problem you faced while coding this : push() method was confusing to implement.
+//											But eventually, did it.
+
+
+// Your code here along with comments explaining your approach
+
+import java.util.*;
+
 class Stack { 
     //Please read sample.java file before starting.
   //Kindly include Time and Space complexity at top of each file
     static final int MAX = 1000; 
     int top; 
-    int a[] = new int[MAX]; // Maximum size of Stack 
+    int a[]; // Maximum size of Stack 
   
     boolean isEmpty() 
     { 
         //Write your code here 
+    	if(top == 0)
+    		return true;
+    	else
+    		return false;			
     } 
 
-    Stack() 
+    public Stack() 
     { 
-        //Initialize your constructor 
+        //Initialize your constructor
+    	top = 0;
+    	a = new int[MAX];
     } 
   
     boolean push(int x) 
     { 
         //Check for stack Overflow
-        //Write your code here
+   
+    	if(this.top == MAX)
+    	{
+    		throw new StackOverflowError("Stack is full");
+    	}
+    	//If no overflow, then push
+    	a[top] = x;
+    	top++;
+    	return true;
     } 
   
     int pop() 
     { 
         //If empty return 0 and print " Stack Underflow"
-        //Write your code here
+     
+    	if(isEmpty())
+    	{
+    		throw new EmptyStackException();
+    	}
+    	// pop operation only when stack is not empty
+    	return a[--top];
     } 
   
     int peek() 
     { 
-        //Write your code here
+        //returning an element
+    	return this.top;
+    	
     } 
 } 
   
