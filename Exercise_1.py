@@ -1,21 +1,36 @@
+#Time Complexity: O(n)
+#Space Complexity: O(n) 
+
 class myStack:
-  #Please read sample.java file before starting.
-  #Kindly include Time and Space complexity at top of each file
      def __init__(self):
-         
-     def isEmpty(self):
-         
-     def push(self, item):
-         
-     def pop(self):
-        
-        
+          self.data = []
+          self.limit = 100
+
+     def push(self, item):     
+          if len(self.data)>=self.limit:   
+             print("Stack Overflow!")   
+          else:
+             self.data.append(item)   
+
+     def pop(self):       
+          if len(self.data)<=0: 
+             print("Stack Underflow!")    
+          else:
+             element = self.data[-1]  
+             self.data=self.data[:-1]   
+             return "Element popped! "
+
      def peek(self):
+          if len(self.data)<=0:    
+             print("IndexError")
+          else:
+             return self.data[-1]   
         
      def size(self):
-         
-     def show(self):
-         
+          return len(self.data)   
+
+     def show(self):       
+          return self.data  
 
 s = myStack()
 s.push('1')
