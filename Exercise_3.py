@@ -21,7 +21,7 @@ class SinglyLinkedList:
         Takes O(n) time.
         """
         insertData = ListNode(self, data)
-        self.head = insertData
+        self.append(insertData)
         self.size = +1
         return True
 
