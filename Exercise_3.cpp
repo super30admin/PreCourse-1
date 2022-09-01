@@ -2,6 +2,11 @@
 using namespace std;
 
 // A linked list node (changes) 
+
+// Time complexity O(1)
+//Time complexity for PrintList O(n)
+//Space complexity for PrintList O(1)
+
 class Node
 {
 public:
