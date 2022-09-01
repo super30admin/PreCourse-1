@@ -1,3 +1,9 @@
+//Push - O(n)
+//pop - O(n)
+//isEmpty - O(n)
+//Peek - O(n)
+
+
 var LL2Stack = {};
 LL2Stack.StackNode = function(){
 	this.item = null;

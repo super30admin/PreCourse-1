@@ -1,3 +1,7 @@
+//Push - O(n)
+//pop - O(n)
+//isEmpty - O(n)
+//Peek - O(n)
 var Stack = function (maxSize) {
     this.arr = [];
     this.length = 0;
