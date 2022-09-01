@@ -1,24 +1,26 @@
 class myStack:
-  #Please read sample.java file before starting.
-  #Kindly include Time and Space complexity at top of each file
-     def __init__(self):
-         
-     def isEmpty(self):
-         
-     def push(self, item):
-         
-     def pop(self):
-        
-        
-     def peek(self):
-        
-     def size(self):
-         
-     def show(self):
-         
+    def __init__(self):
+        self.container = []
 
-s = myStack()
-s.push('1')
-s.push('2')
-print(s.pop())
-print(s.show())
+    def push(self, item):
+        self.container.append(item)
+
+    def pop(self):
+        return self.container.pop()
+
+    def peek(self):
+        return self.container[-1]
+
+    def size(self):
+        return len(self.container)
+
+    def show(self):
+        return self.container
+
+
+if __name__ == '__main__':
+    s = myStack()
+    s.push('1')
+    s.push('2')
+    print(s.pop())
+    print(s.show())
