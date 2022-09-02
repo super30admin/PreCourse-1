@@ -1,8 +1,8 @@
 // Time Complexity :
 /*  isEmpty() : O(1)
- *  push(int x): O(n)
- *  pop(): O(n)
- *  peek(): O(n)
+ *  push(int x): O(1)
+ *  pop(): O(1)
+ *  peek(): O(1)
  */
 // Space Complexity : O(n)
 
