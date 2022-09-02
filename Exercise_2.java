@@ -10,18 +10,22 @@
 // Any problem you faced while coding this : Was stuck on pop function for some time, even after writing the logic, output was incorrect.
 
  class StackAsLinkedList { 
-  
+    // root shows first node
     StackNode root; 
+    // head is the last element
+    StackNode head;
   
     static class StackNode { 
         int data; 
-        StackNode next; 
+        StackNode next;
+        StackNode previous; 
   
         StackNode(int data) 
         { 
             //Constructor here 
             this.data=data;
             this.next=null;
+            this.previous=null;
             
            
 
@@ -49,21 +53,25 @@
         StackNode pointer=root;
         //Write code to push data to the stack.
         // Check if root has data, if it doesn't, then it means that stack is empty and try will fail
-        // If stack is not empty, iterate through linked list and point last node to a new node.
+        // If stack is not empty, head will point to a new node  and head will be updated, also new element will point to previous head
         try{
             int check= root.data;
-          //System.out.println("Root data: "+ check);
-            while(pointer.next!=null){
-                pointer= pointer.next;
-            }
-            pointer.next= new StackNode(data);
+         
+          // Adding a new node at the end  
+          head.next= new StackNode(data);
+          // Pointing the new node to previous node
+          head.next.previous= head;
+          // updating head
+          head= head.next;
 
             //System.out.println("try");
 
         }catch(Exception e){
             // The stack is empty, so creating root node
+            // Pointing head to root
             root= new StackNode(data);
-            //System.out.println("catch");
+            head= root;
+           
             
            
         }
@@ -80,37 +88,30 @@
         if (root==null){
             System.out.println("Stack underflow");
             return 0;
-        
-        }else{
-            // Initialize counter to keep track if stack is empty
-            int count=0;
-            // Initialize a pointer, pointing to root node
-            StackNode pointer=root;
-            // Initialize a output Node, pointing to root node
-            StackNode outNode=root;
-            // Iterate over stack to get last node and increment counter
-            while(pointer.next!=null){
-                outNode= pointer;
-                pointer= pointer.next;
-                count++;
+        // If only one element is remaining, empty the list
+        }else if (head==root){
+            int tmp= head.data;
+            root= null;
+            head= null;
+            return tmp;
+        }
+        // if more than one element is present
+        else{
+            // get data to return from head
+            int tmp= head.data;
+            // update head to previous element
+            head= head.previous;
+            // detaching the last element
+            head.next= null;
+            return tmp;
             }
            // save last node's data 
-            int out= pointer.data;
+            
             // If count is 0 then stack has one element. Change root to null
-            if (count==0){
-                root=null;
-            }else{
-                // Point next to null for last element
-                outNode.next=null;
-
-            }
 
             
-            
-            
-            return out;
         }
-    } 
+     
   
     public int peek() 
     { 
@@ -119,22 +120,31 @@
             System.out.println("Stack underflow");
             return 0;
         }else{
-            StackNode pointer=root;
-            StackNode lastNode=pointer;
-            while(pointer.next!=null){
-                lastNode=pointer;
-                pointer= pointer.next;
+            // returning head
+            return head.data;
             }
             // StackNode out= pointer.next;
-            return pointer.data;
+           
         }
-    } 
+
   
 	//Driver code
     public static void main(String[] args) 
     { 
   
         StackAsLinkedList sll = new StackAsLinkedList(); 
+        System.out.println("Is stack empty: "+ sll.isEmpty());
+        sll.push(10); 
+        sll.push(20); 
+        sll.push(30); 
+        System.out.println("Is stack empty: "+ sll.isEmpty());
+        System.out.println("Top element is " + sll.peek()); 
+        System.out.println(sll.pop() + " popped from stack"); 
+        System.out.println("Top element is " + sll.peek()); 
+        System.out.println(sll.pop() + " popped from stack"); 
+        System.out.println("Top element is " + sll.peek()); 
+        System.out.println(sll.pop() + " popped from stack");
+        System.out.println("Top element is " + sll.peek()); 
         System.out.println("Is stack empty: "+ sll.isEmpty());
         sll.push(10); 
         sll.push(20); 
