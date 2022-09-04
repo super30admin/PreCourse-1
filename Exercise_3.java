@@ -17,13 +17,25 @@ public class LinkedList {
         // Constructor 
         Node(int d) 
         { 
+            this.data = d;
+            this.next = null;
             //Write your code here 
         } 
     } 
   
     // Method to insert a new node 
     public static LinkedList insert(LinkedList list, int data) 
-    { 
+    {
+        Node tmp = new Node(data);
+        if (list.head == null) {
+            list.head = tmp;
+        }
+        Node dummy = list.head;
+        while(dummy.next != null) {
+            dummy = dummy.next;
+        }
+        dummy.next = tmp;
+        return list;
         // Create a new node with given data 
    
         // If the Linked List is empty, 
@@ -39,7 +51,12 @@ public class LinkedList {
   
     // Method to print the LinkedList. 
     public static void printList(LinkedList list) 
-    {  
+    {
+        Node dummy = list.head;
+        while (dummy != null) {
+            System.out.print(dummy.data + "-> ");
+            dummy = dummy.next;
+        }
         // Traverse through the LinkedList 
    
             // Print the data at current node 
