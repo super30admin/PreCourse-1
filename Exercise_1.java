@@ -36,6 +36,7 @@ class Stack {
 
     int pop() {
         if (top < 0) {
+            System.out.print("stack Underflow");
             return 0;
         } else {
             int poppedNumber = a[top];
