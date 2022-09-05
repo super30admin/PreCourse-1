@@ -1,3 +1,4 @@
+# Any problem you faced while coding this : Couldn't solve SinglyLinkedList; not clear about the concept
 class ListNode:
     """
     A node in a singly-linked list.
@@ -17,6 +18,10 @@ class SinglyLinkedList:
         Insert a new element at the end of the list.
         Takes O(n) time.
         """
+        x = ListNode(data)
+        if self.head == None:
+            self.head = x
+        
         
     def find(self, key):
         """
