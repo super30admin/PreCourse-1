@@ -5,17 +5,14 @@
 // IsEmpty: O(1)
 
 // Space Complexity :
-// Push: O(1)
-// Pop: O(1)
-// Peek: O(1)
-// IsEmpty: O(1)
+// O(N), where N is the number of elements in the stack
 
 // Did this code successfully run on Leetcode : Ran successfully locally. Did not find on leetcode
 // Any problem you faced while coding this : 
 
 
 // Your code here along with comments explaining your approach
-// Exercise_1 : Implement Stack using Array.
+// Exercise_1 : Implement Stack using Linked List.
 
 var Stack = function() {
     this.MAX = 10;
