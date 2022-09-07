@@ -1,8 +1,9 @@
 // Time Complexity :
 // Insert: O(N), where N is linked list length
+// printList: O(N), where N is linked list length
 
 // Space Complexity :
-// Insert: O(N), where N is linked list length
+// O(N), where N is linked list length
 
 // Did this code successfully run on Leetcode : Ran successfully locally. Did not find on leetcode
 // Any problem you faced while coding this : No
