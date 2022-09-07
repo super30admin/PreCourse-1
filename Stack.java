@@ -1,4 +1,4 @@
-// Time Complexity :
+// Time Complexity : O(N)
 // Space Complexity :
 // Did this code successfully run on Leetcode : No
 // Any problem you faced while coding this : No
