@@ -1,5 +1,8 @@
 import java.io.*; 
-  
+  // Time Complexity: O(n) for insert and printList operation
+// Space Complexity: O(n)
+// Did this code successfully run on Leetcode :
+// Any problem you faced while coding this :  no
 // Java program to implement 
 // a Singly Linked List 
 public class LinkedList { 
