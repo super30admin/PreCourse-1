@@ -1,3 +1,11 @@
+// Time Complexity :
+//push() 	O(1)
+//pop()   	O(1)
+//isEmpty() 	O(1)
+//size()	O(1)
+// Space Complexity :
+// Did this code successfully run on Leetcode :
+// Any problem you faced while coding this :
 public class StackAsLinkedList { 
   
     StackNode root; 
