@@ -67,9 +67,6 @@ class Main {
 		s.push(20); 
 		s.push(30); 
 
-		// Stack Overflow error
-		s.push(40); 
-
 		// 30 is popped expected
 		System.out.println(s.pop() + " Popped from stack");
 
