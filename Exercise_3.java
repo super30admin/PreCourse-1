@@ -1,8 +1,10 @@
-import java.io.*; 
+// The time and the space complexity is O(n)
+
+import java.io.*;
   
 // Java program to implement 
 // a Singly Linked List 
-public class LinkedList { 
+ class LinkedList {
   
     Node head; // head of list 
   
@@ -17,7 +19,9 @@ public class LinkedList {
         // Constructor 
         Node(int d) 
         { 
-            //Write your code here 
+            //Write your code here
+            this.data = d;
+            this.next = null;
         } 
     } 
   
@@ -25,26 +29,42 @@ public class LinkedList {
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data 
-   
-        // If the Linked List is empty, 
-        // then make the new node as head 
-        
-            // Else traverse till the last node 
-            // and insert the new_node there 
+        Node node = new Node(data);
 
-            // Insert the new_node at last node 
-        // Return the list by head 
-        
-    } 
+        // If the Linked List is empty,
+        if (list.head == null){
+
+            // then make the new node as head
+            list.head = node;
+        }
+        else{
+
+                // Else traverse till the last node
+                // and insert the new_node there
+                Node temp = list.head;
+                while (temp.next != null) {
+                    temp = temp.next;
+                }
+                // Insert the new_node at last node
+                temp.next = node;
+            }
+                // Return the list by head
+                return list;
+
+        }
   
     // Method to print the LinkedList. 
     public static void printList(LinkedList list) 
-    {  
+    {
+        Node temp = list.head;
         // Traverse through the LinkedList 
-   
-            // Print the data at current node 
-       
-            // Go to next node 
+        while(temp != null) {
+            // Print the data at current node
+            System.out.println(temp.data);
+
+            // Go to next node
+            temp = temp.next;
+        }
     } 
    
     // Driver code 
