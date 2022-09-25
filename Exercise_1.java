@@ -12,7 +12,7 @@
  * Peek: Only fetch the element at the current top.
  */
 class Stack { 
-	static final int MAX = 3; 
+	static final int MAX = 1000;
 	int top; 
 	int a[] = new int[MAX]; // Maximum size of Stack 
 
