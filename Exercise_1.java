@@ -39,7 +39,7 @@ class Stack {
 
 	int pop() 
 	{ 
-		if(top < 0) {
+		if(isEmpty()) {
 			System.out.println("Stack Underflow");
 			return 0;
 		}
@@ -49,7 +49,7 @@ class Stack {
 
 	int peek() 
 	{ 
-		if(top < 0) {
+		if(isEmpty()) {
 			System.out.println("Stack is Empty");
 			return -1;
 		}
@@ -80,6 +80,9 @@ class Main {
 		System.out.println(s.pop() + " Popped from stack");
 		// 10 is popped expected
 		System.out.println(s.pop() + " Popped from stack");
+
+		// Stack is empty
+		System.out.println("Is stack empty? " + s.isEmpty());
 
 		// Stack underflow error
 		s.pop();
