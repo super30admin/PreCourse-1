@@ -1,5 +1,5 @@
-// Time Complexity : O(1)
-// Space Complexity : O(n)
+// Time Complexity : O(1) for push, pop and peek
+// Space Complexity : O(n) for size of the stack
 // Any problem you faced while coding this : No
 
 

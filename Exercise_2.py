@@ -1,3 +1,7 @@
+// Time Complexity : O(1) for Push and Pop operation
+// Space Complexity : O(n) for the size of the stack
+// Any problem you faced while coding this : No
+
 
 class Node:
     def __init__(self, data):
@@ -6,10 +10,24 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.head = None
         
     def push(self, data):
+        if self.head is None:
+            self.head = Node(data)
+
+        else:
+            newdata = Node(data)
+            newdata.next = self.head
+            self.head = newdata
         
     def pop(self):
+        if self.head is None:
+            return None
+        else:
+            poppednode = self.head
+            self.head = self.head.next
+            poppednode.next = None
         
 a_stack = Stack()
 while True:
