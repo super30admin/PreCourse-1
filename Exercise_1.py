@@ -16,14 +16,17 @@ class myStack:
       self.stack.append(item)
          
      def pop(self):
-      self.stack.pop()
-        
-        
+      if(not self.isEmpty()):
+          last_Element = self.stack[-1]
+          del self.stack[-1]
+          return last_Element
+
+          
      def peek(self):
-      if self.stack is None:
-        return None
-      else:
-        return self.stack[-1]
+      if(not self.isEmpty()):
+          lastElement = self.stack[-1]
+          return lastElement
+      
         
      def size(self):
       return len(self.stack)
