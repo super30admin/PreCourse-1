@@ -13,7 +13,6 @@ class Stack {
         }
         return false;
     }
-
     Stack()
     {
         top = -1;
