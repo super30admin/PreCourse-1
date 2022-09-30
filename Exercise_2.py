@@ -1,3 +1,11 @@
+# Implementing a Stack using a Linked List.
+
+# Time complexity:
+# push function - O(1)
+# pop function - O(1)
+# Space complexity: O(n)
+# Any problem you faced while coding this: No.
+
 # This class creates the node of the linked list.
 class Node():
     def __init__(self, data):
