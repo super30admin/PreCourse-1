@@ -1,6 +1,12 @@
 # Implementing Stack using an array. 
 
 # Time complexity:
+# isEmpty function - O(1)
+# push function - O(1)
+# pop function - O(1)
+# peek function - O(1)
+# size function - O(n)
+# show function - O(n)
 # Space complexity:
 # Any problem you faced while coding this: 
 
@@ -13,10 +19,10 @@ class myStack:
     # This isEmpty function will check whether or not the stack is empty and returns a boolean value.
     # This is same as checking the length of the list.
     def isEmpty(self):
-        if len(self.array)==0:
-            return True
-        else:
+        if self.array!= []:
             return False
+        else:
+            return True
 
     # This push function pushes the given element on to the top of the stack.
     # It is sames as appending the given element to the end of the list.
@@ -53,6 +59,8 @@ class myStack:
 s = myStack()
 s.push('1')
 s.push('2')
-s.push(3)
 print(s.pop())
 s.show()
+s.pop()
+s.push(3)
+print(s.isEmpty())
