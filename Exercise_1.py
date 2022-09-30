@@ -7,8 +7,8 @@
 # peek function - O(1)
 # size function - O(n)
 # show function - O(n)
-# Space complexity:
-# Any problem you faced while coding this: 
+# Space complexity: O(n)
+# Any problem you faced while coding this: I faced an issue in writing the isEmpty function with the time complexity of o(1).
 
 class myStack:
 
