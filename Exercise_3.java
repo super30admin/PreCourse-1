@@ -1,8 +1,9 @@
 import java.io.*; 
-  
+  //Time Comlpexity: O(n)
+  //Space Complexity: O(n) *n is the number of elements in the LinkedList
 // Java program to implement 
 // a Singly Linked List 
-public class LinkedList { 
+class LinkedList { 
   
     Node head; // head of list 
   
@@ -18,6 +19,8 @@ public class LinkedList {
         Node(int d) 
         { 
             //Write your code here 
+            data = d;
+            next = null;
         } 
     } 
   
@@ -25,15 +28,27 @@ public class LinkedList {
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data 
+        Node newNode = new Node(data);
    
         // If the Linked List is empty, 
         // then make the new node as head 
+        if(list.head == null){
+            list.head = newNode;
+        }
         
             // Else traverse till the last node 
             // and insert the new_node there 
+        else{
+            Node current = list.head;
+            while(current.next != null){
+                current = current.next;
+            }
+            current.next = node;
+        }
 
             // Insert the new_node at last node 
         // Return the list by head 
+        return list;
         
     } 
   
@@ -41,10 +56,16 @@ public class LinkedList {
     public static void printList(LinkedList list) 
     {  
         // Traverse through the LinkedList 
+        Node current = list.head;
    
             // Print the data at current node 
+        while(current.next != null){
+            System.out.println(current.data);
+        }
+        System.out.println(current.data);
        
             // Go to next node 
+        current = current.next;
     } 
    
     // Driver code 
