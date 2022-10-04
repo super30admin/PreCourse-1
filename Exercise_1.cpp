@@ -1,3 +1,4 @@
+TC - O(n) for all the operations involving push,pop...rest of them is O(1)
 #include <bits/stdc++.h> 
   
 using namespace std; 
@@ -5,14 +6,12 @@ using namespace std;
 #define MAX 1000 
   
 class Stack {
-  //Please read sample.java file before starting.
-  //Kindly include Time and Space complexity at top of each file
     int top; 
   
 public: 
     int a[MAX]; // Maximum size of Stack 
   
-    Stack() { //Constructor here } 
+    Stack() { top = -1; } 
     bool push(int x); 
     int pop(); 
     int peek(); 
@@ -21,24 +20,31 @@ public:
   
 bool Stack::push(int x) 
 { 
-    //Your code here
-    //Check Stack overflow as well
+    if (top >= MAX) {
+        return false;
+    }
+    top++
+    a[top] = x;
 } 
   
 int Stack::pop() 
 { 
-    //Your code here
-    //Check Stack Underflow as well 
+    if (top < 0) { return -1; }
+    int tmp = a[top];
+    top--;
+    return tmp;
 } 
+
 int Stack::peek() 
 { 
-    //Your code here
-    //Check empty condition too
+    if (top == -1) return -1;
+    else return a[top];
 } 
   
 bool Stack::isEmpty() 
 { 
-    //Your code here 
+    if (top == -1) return true;
+    else return false;
 } 
   
 // Driver program to test above functions 
