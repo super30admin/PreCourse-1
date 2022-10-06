@@ -1,0 +1,80 @@
+Implement Stack using Array.
+stack = []
+ 
+#TimeComplexity:O(n)
+#SpaceComplexity:O(n)
+stack.append('a')
+stack.append('b')
+stack.append('c')
+ 
+print('Initial stack')
+print(stack)
+ 
+
+print('Elements popped from stack:')
+print(stack.pop())
+print(stack.pop())
+print(stack.pop())
+ 
+print('Stack after elements are popped:')
+print(stack)
+
+Implement Stack using Linked List.
+
+#TimeComplexity:O(n)
+#SpaceComplexity:O(n)
+class Stack:
+	def push(self, data):
+
+		if self.head == None:
+			self.head = Node(data)
+
+		else:
+			newnode = Node(data)
+			newnode.next = self.head
+			self.head = newnode
+	def pop(self):
+
+		if self.isempty():
+			return None
+
+		else:
+			# Removes the head node and makes
+			# the preceding one the new head
+			poppednode = self.head
+			self.head = self.head.next
+			poppednode.next = None
+			return poppednode.data
+
+	def peek(self):
+
+		if self.isempty():
+			return None
+
+		else:
+			return self.head.data
+      
+  Implement Singly Linked List.
+  
+#TimeComplexity:O(n)
+#SpaceComplexity:O(n)
+
+class LinkedList:
+  def __init__(self):  
+    self.head = None
+  
+  def insert(self, data):
+    newNode = Node(data)
+    if(self.head):
+      current = self.head
+      while(current.next):
+        current = current.next
+      current.next = newNode
+    else:
+      self.head = newNode
+  def printLL(self):
+    current = self.head
+    while(current):
+      print(current.data)
+      current = current.next
+
