@@ -67,6 +67,6 @@ public class StackClient {
 	            System.out.printf(" %d", stack.pop());
 	        }
 	 
-	        System.out.println("\nSize of stack after pop operations : " + stack.size());
+	        System.out.println("Size of stack after pop operations : " + stack.size());
 	    }
 	}
