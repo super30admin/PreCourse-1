@@ -1,70 +1,81 @@
-import java.io.*; 
-  
-// Java program to implement 
-// a Singly Linked List 
-public class LinkedList { 
-  
-    Node head; // head of list 
-  
-    // Linked list Node. 
-    // This inner class is made static 
-    // so that main() can access it 
-    static class Node { 
-  
-        int data; 
-        Node next; 
-  
-        // Constructor 
-        Node(int d) 
-        { 
-            //Write your code here 
-        } 
-    } 
-  
-    // Method to insert a new node 
-    public static LinkedList insert(LinkedList list, int data) 
-    { 
-        // Create a new node with given data 
-   
-        // If the Linked List is empty, 
-        // then make the new node as head 
-        
-            // Else traverse till the last node 
-            // and insert the new_node there 
+package StackUsingSinglyLL;
 
-            // Insert the new_node at last node 
-        // Return the list by head 
-        
-    } 
-  
-    // Method to print the LinkedList. 
-    public static void printList(LinkedList list) 
-    {  
-        // Traverse through the LinkedList 
-   
-            // Print the data at current node 
-       
-            // Go to next node 
-    } 
-   
-    // Driver code 
-    public static void main(String[] args) 
-    { 
-        /* Start with the empty list. */
-        LinkedList list = new LinkedList(); 
-  
-        // 
-        // ******INSERTION****** 
-        // 
-  
-        // Insert the values 
-        list = insert(list, 1); 
-        list = insert(list, 2); 
-        list = insert(list, 3); 
-        list = insert(list, 4); 
-        list = insert(list, 5); 
-  
-        // Print the LinkedList 
-        printList(list); 
-    } 
+public class LinkedListMain {
+
+	public static void main(String[] args) {
+		{
+	        SinglyLinkedList myLinkedlist = new SinglyLinkedList();
+	        myLinkedlist.insertFirst(5);
+	        myLinkedlist.insertFirst(6);
+	        myLinkedlist.insertFirst(7);
+	        myLinkedlist.insertFirst(1);
+	        myLinkedlist.insertLast(2);
+	        
+	        Node node=new Node();
+	        node.data=1;
+	        myLinkedlist.deleteAfter(node);
+	       
+	        myLinkedlist.printLinkedList();
+	    }
+	}
+}
+package StackUsingSinglyLL;
+
+class Node {
+
+	public int data;
+    public Node next;
+ 
+    public void displayNodeData() {
+        System.out.println("{ " + data + " } ");
+    }
+}
+ 
+public class SinglyLinkedList {
+    private Node head;
+ 
+    public boolean isEmpty() {
+        return (head == null);
+    }
+ 
+    public void insertFirst(int data) {
+        Node newNode = new Node();
+        newNode.data = data;
+        newNode.next = head;
+        head = newNode;
+    }
+ 
+    public Node deleteFirst() {
+        Node temp = head;
+        head = head.next;
+        return temp;
+    }
+ 
+    public void deleteAfter(Node after) {
+        Node temp = head;
+        while (temp.next != null && temp.data != after.data) {
+            temp = temp.next;
+        }
+        if (temp.next != null)
+            temp.next = temp.next.next;
+    }
+ 
+    public void insertLast(int data) {
+        Node current = head;
+        while (current.next != null) {
+            current = current.next;  }
+        Node newNode = new Node();
+        newNode.data = data;
+        current.next = newNode;
+    }
+ 
+    public void printLinkedList() {
+        System.out.println("Printing LinkedList (head --> last) ");
+        Node current = head;
+        while (current != null) {
+            current.displayNodeData();
+            current = current.next;
+        }
+        System.out.println();
+    }
 }
