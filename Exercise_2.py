@@ -1,3 +1,5 @@
+# Space Complexity - O(n) (Linked List to store n values)
+# Time Complexity - O(1)
 class Node:
     def __init__(self, data):
        self.data = data
