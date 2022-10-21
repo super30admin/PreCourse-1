@@ -1,7 +1,7 @@
 import java.io.*; 
   
-// Java program to implement 
-// a Singly Linked List 
+//time complexity - O(N)
+//space complexity - O(N)
 public class LinkedList { 
   
     Node head; // head of list 
@@ -17,34 +17,37 @@ public class LinkedList {
         // Constructor 
         Node(int d) 
         { 
-            //Write your code here 
+            this.data = d;
+            this.next = null;
         } 
     } 
   
     // Method to insert a new node 
     public static LinkedList insert(LinkedList list, int data) 
     { 
-        // Create a new node with given data 
-   
-        // If the Linked List is empty, 
-        // then make the new node as head 
-        
-            // Else traverse till the last node 
-            // and insert the new_node there 
-
-            // Insert the new_node at last node 
-        // Return the list by head 
-        
+        Node temp = new Node(data);
+        if(list.head==null)
+        {
+            list.head= temp;
+        }
+        else{
+            Node last = list.head;
+            while(last.next!=null){
+                last= last.next;
+            }
+            last.next = temp;
+        }
+        return list;
     } 
   
     // Method to print the LinkedList. 
     public static void printList(LinkedList list) 
     {  
-        // Traverse through the LinkedList 
-   
-            // Print the data at current node 
-       
-            // Go to next node 
+        Node dummy = list.head;
+        while (dummy != null) {
+            System.out.print(dummy.data + "-> ");
+            dummy = dummy.next;
+        }
     } 
    
     // Driver code 
