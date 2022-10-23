@@ -62,6 +62,8 @@ class SinglyLinkedList:
                 if prev:
                     prev.next = current.next
                     return current.data
-                self.head = current.next
+                else:
+                    self.head = current.next
+                    return current.data
             prev = current
             current = current.next
