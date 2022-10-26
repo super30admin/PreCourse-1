@@ -1,4 +1,5 @@
 #include <bits/stdc++.h> 
+#include <iostream>
 using namespace std; 
   
 // A structure to represent a stack 
@@ -18,22 +19,33 @@ StackNode* newNode(int data)
   
 int isEmpty(StackNode* root) 
 { 
-    //Your code here 
+    return (root == NULL);
 } 
   
 void push(StackNode** root, int data) 
 { 
-    //Your code here 
+    auto newStackNode = newNode(data);
+    if(root == NULL)    *root = newNode(data);
+    else    {
+        newStackNode->next = *root;
+        *root = newStackNode;
+    }
 } 
   
 int pop(StackNode** root) 
 { 
-    //Your code here 
+    if(*root == NULL)    return -1;
+    int curTop = (*root)->data;
+    auto prevRoot = *root;
+    *root = (*root)->next;
+    delete(prevRoot);
+    return curTop;
 } 
   
 int peek(StackNode* root) 
 { 
-    //Your code here 
+      if(root == NULL)    return -1;
+      return (root)->data;
 } 
   
 int main() 
