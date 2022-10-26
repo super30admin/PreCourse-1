@@ -1,4 +1,8 @@
+/*
+    Time Complexity = O(1) {for isEmpty, push, pop, peek methods}
+    Space Complexity = O(1) {for isEmpty, push, pop, peek methods}
 
+ */
 
 //public class StackAsLinkedList {
 class StackAsLinkedList {

@@ -1,6 +1,6 @@
 /*
-    Time Complexity = O(1)
-    Space Complexity =
+    Time Complexity = O(1) {for isEmpty, push, pop, peek methods}
+    Space Complexity = O(1) {for isEmpty, push, pop, peek methods}
 
  */
 
