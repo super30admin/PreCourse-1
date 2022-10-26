@@ -4,15 +4,21 @@ class Stack {
   }
 
   peek() {
-    return this.array[this.array.length - 1];
+    const top = this.array[this.array.length - 1];
+    console.log(top);
+    return top;
   }
 
   push(value) {
-    return this.array.push(value);
+    this.array.push(value);
+    console.log(value);
+    return value;
   }
 
   pop() {
-    return this.array.pop();
+    const itemToRemove = this.array.pop();
+    console.log(itemToRemove);
+    return itemToRemove;
   }
 }
 
