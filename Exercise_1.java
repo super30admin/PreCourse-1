@@ -21,7 +21,7 @@ class Stack {
     boolean push(int x) 
     { 
        if(!isFull()){
-           a[++top] = num;
+           a[++top] = x;
            System.out.println("push element " + x);
        }
        else {
