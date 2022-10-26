@@ -1,12 +1,14 @@
-public class StackAsLinkedList { 
+class StackAsLinkedList {
   
     StackNode root; 
   
     static class StackNode { 
         int data; 
         StackNode next; 
+  
         StackNode(int data) 
         { 
+            //Constructor here
             this.data = data;
             this.next = null;
         } 
@@ -15,56 +17,53 @@ public class StackAsLinkedList {
 	
     public boolean isEmpty() 
     { 
+        //Write your code here for the condition if stack is empty.
         if(root == null){
-            return 0;
+            return true;
+
         }
-         
+        
+        else{
+            return false;
+        }
     } 
   
     public void push(int data) 
     { 
-        StackNode n = new StackNode(data);
-		n.data = data;
-		n.next = root;
-		root = n;
+        //Write code to push data to the stack.
+        StackNode node = new StackNode(data);
+        if(this.isEmpty()){
+            root = node;
+        }else{
+            node.next = root;
+            root = node;
+        }
     } 
   
     public int pop() 
     { 	
-	//If Stack Empty Return 0 and print "Stack Underflow"
-        //Write code to pop the topmost element of stack.
-	//Also return the popped element 
-    if(root == null){
-        return 0;
-        System.out.println("Stack Underflow");
-    }
-    else {
-
-        int ret = root.data;
-        return ret;
-        
-    
-    }
-
-
-    
+	
+        if(this.isEmpty()){
+            System.out.println("Stack Underflow");
+            return 0;
+        }else{
+            int top_element = root.data;
+            root = root.next;
+            
+            return top_element;
+        }
     } 
   
     public int peek() 
     { 
         //Write code to just return the topmost element without removing it.
-        if (root == null)
-		{	
-			return 0;
-		}
-		else
-		{
-			int ret = root.data;
-			return ret;
-		}
-    
+        if(this.isEmpty()){
+            System.out.println("Stack Underflow");
+            return 0;
+        }else{
+            return root.data;
+        }
     } 
-
   
 	//Driver code
     public static void main(String[] args) 
