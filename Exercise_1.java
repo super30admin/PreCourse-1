@@ -52,7 +52,7 @@ class Stack {
 
     int peek() {
         // same logic as pop operation except we will not decrement top pointer as we
-        // are not removing the element
+        // are not removing the element.
         if (top == -1) {
             System.out.println("Stack Underflow");
             return 0;
