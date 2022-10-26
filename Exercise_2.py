@@ -1,4 +1,7 @@
 
+from email import header
+
+
 class Node:
     def __init__(self, data):
        self.data = data
@@ -6,10 +9,26 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.head=None
         
     def push(self, data):
+        node=Node(data)
+        if(self.head==None):
+            self.head=node
+        else:
+            node.next=self.head
+            self.head=node
         
     def pop(self):
+        if(self.head==None):
+            return self.head
+        else:
+            temp=self.head
+            ans=self.head.data
+            self.head=self.head.next
+            del(temp)
+            return ans
+        
         
 a_stack = Stack()
 while True:
