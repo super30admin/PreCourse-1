@@ -3,6 +3,9 @@ class myStack:
 
   #Please read sample.java file before starting.
   #Kindly include Time and Space complexity at top of each file
+  #time complexity: except for show(), all are O(1). show() is O(n)
+  #space complexity: O(n)
+
   def __init__(self):
     self.MAX=1000
     self.L=[None]*self.MAX
@@ -45,7 +48,27 @@ class myStack:
          
 
 s = myStack()
-s.push('1')
-s.push('2')
-print(s.pop())
-print(s.show())
+#s.push('1')
+#s.push('2')
+#print(s.pop())
+#print(s.show())
+while True:
+    #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
+    do = input('What would you like to do? ').split()
+    #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
+    operation = do[0].strip().lower()
+    if operation == 'push':
+      s.push(int(do[1]))
+    elif operation == 'pop':
+      popped = s.pop()
+      if popped ==0 :
+          print('Stack is empty.')
+      else:
+          print('Popped value: ', int(popped))
+    elif operation=='show':
+      ans=s.show()
+      for i in ans:
+        print(i,end=" ")
+        
+    elif operation == 'quit':
+      break

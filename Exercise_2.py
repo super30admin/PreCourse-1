@@ -1,6 +1,9 @@
 
 from email import header
-
+#time complexity: push-O(1), pop-O(1)
+#space complexity: O(n)
+#run on leetcode successfully:yes
+#No difficulties faced
 
 class Node:
     def __init__(self, data):
