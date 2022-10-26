@@ -1,6 +1,7 @@
 /*
     Time Complexity = O(1) {for isEmpty, push, pop, peek methods}
     Space Complexity = O(1) {for isEmpty, push, pop, peek methods}
+    Did this code successfully run on Leetcode : yes
 
  */
 
@@ -73,7 +74,7 @@ class Main {
         Stack s = new Stack(); 
         s.push(10); 
         s.push(20); 
-        s.push(30); 
+        s.push(30);
         System.out.println(s.pop() + " Popped from stack");
     } 
 }
