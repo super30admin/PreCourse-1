@@ -5,6 +5,9 @@ class myStack:
   #Kindly include Time and Space complexity at top of each file
   #time complexity: except for show(), all are O(1). show() is O(n)
   #space complexity: O(n)
+  
+  #run on leetcode successfully:yes
+  #No difficulties faced
 
   def __init__(self):
     self.MAX=1000
