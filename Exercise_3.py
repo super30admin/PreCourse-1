@@ -65,13 +65,6 @@ class SinglyLinkedList:
         else:
             n.next = n.next.next
                 
-    def traverse(self):
-        if self.head is None:
-            print('Linked list is empty')
-        else:
-            n = self.head
-            while n is not None:
-                print(n.data)
-                n = n.next
+    
 
 
