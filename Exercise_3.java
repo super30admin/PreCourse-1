@@ -1,6 +1,12 @@
 import java.io.*;
 import java.util.Objects;
-
+/**
+ * Space complexity - o(n) where n is size of array
+ * Time complexity -
+ *  isEmpty - o(1)
+ *  insert - o(n) - where n is number of elements in linkedlist
+ *  printList - o(n) - where n is number of elements in linkedlist
+ */
 // Java program to implement
 // a Singly Linked List
 public class LinkedList {

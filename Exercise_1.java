@@ -1,3 +1,12 @@
+/**
+ * Space complexity - o(n) where n is size of array
+ * Time complexity -
+ *  isEmpty - o(1)
+ *  push - o(1)
+ *  pop - o(1)
+ *  pop - o(1)
+ */
+
 class Stack {
     //Please read sample.java file before starting.
     //Kindly include Time and Space complexity at top of each file

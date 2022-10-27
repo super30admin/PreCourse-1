@@ -1,3 +1,11 @@
+/**
+ * Space complexity - o(n) where n number of max elements
+ * Time complexity -
+ *  isEmpty - o(1)
+ *  push - o(1)
+ *  pop - o(1)
+ *  pop - o(n) - where n is number of elements in the stack
+ */
 public class StackAsLinkedList {
 
     StackNode root;
