@@ -1,3 +1,10 @@
+// Time Complexity : 
+//      push, pop, isEmpty, peek: O(1)
+// Space Complexity : 
+//      push, pop, isEmpty, peek: O(1)
+
+// Did this code successfully run on Leetcode : Yes
+
 #include <bits/stdc++.h> 
   
 using namespace std; 
@@ -12,7 +19,9 @@ class Stack {
 public: 
     int a[MAX]; // Maximum size of Stack 
   
-    Stack() { //Constructor here } 
+    Stack() { 
+        top = -1; //contructor
+    } 
     bool push(int x); 
     int pop(); 
     int peek(); 
@@ -21,24 +30,38 @@ public:
   
 bool Stack::push(int x) 
 { 
-    //Your code here
-    //Check Stack overflow as well
+    top++;
+    //checking for stack overflow 
+    if (top==MAX){
+        return(false);
+    }
+    //adding element
+    a[top] = x;
+    return(true);
 } 
   
 int Stack::pop() 
 { 
-    //Your code here
-    //Check Stack Underflow as well 
+    //checking for Stack Underflow 
+    if (top == -1){
+        return (-1);
+    }
+    //removing top element and decrementing top
+    return(a[top--]);
+    
 } 
 int Stack::peek() 
 { 
-    //Your code here
-    //Check empty condition too
+    //Checking for empty stack 
+    if(top==-1)
+        return (-1);
+    return(a[top]);
 } 
   
 bool Stack::isEmpty() 
 { 
-    //Your code here 
+    //returning true if top == -1 when empty
+    return (top == -1);
 } 
   
 // Driver program to test above functions 

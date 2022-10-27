@@ -1,3 +1,11 @@
+// Time Complexity : 
+//      push, pop, isEmpty, peek: O(1)
+// Space Complexity : 
+//      push, pop, isEmpty, peek: O(1)
+
+// Did this code successfully run on Leetcode : Yes
+
+
 #include <bits/stdc++.h> 
 using namespace std; 
   
@@ -18,22 +26,38 @@ StackNode* newNode(int data)
   
 int isEmpty(StackNode* root) 
 { 
-    //Your code here 
+    return (root == NULL);
 } 
   
 void push(StackNode** root, int data) 
 { 
     //Your code here 
+    StackNode* temp = newNode(data);
+    if (root == NULL)
+        *root = temp;
+    else
+    {
+        temp->next = *root;
+        *root = temp;
+    }
+        
 } 
   
 int pop(StackNode** root) 
 { 
-    //Your code here 
+    if(*root == NULL)
+        return(-1);
+    
+    int top = (*root)->data;
+    (*root) = (*root)->next;
+    return top;
 } 
   
 int peek(StackNode* root) 
 { 
-    //Your code here 
+    if(root == NULL)
+        return (-1);
+    return(root->data);
 } 
   
 int main() 
@@ -46,7 +70,7 @@ int main()
   
     cout << pop(&root) << " popped from stack\n"; 
   
-    cout << "Top element is " << peek(root) << endl; 
+    cout << "Top element is " << peek(root) << endl;
   
     return 0; 
 } 
