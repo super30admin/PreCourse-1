@@ -1,3 +1,8 @@
+/*
+Time Complexities:
+push, pop, peek, isEmpty : O(1)
+*/
+
 #include <iostream>
 #include <bits/stdc++.h> 
   

@@ -1,3 +1,9 @@
+/*
+Time Complexities:
+push, insertAfter : O(1)
+append, printList : O(n)
+*/
+
 #include <iostream>
 #include <bits/stdc++.h> 
 using namespace std; 
