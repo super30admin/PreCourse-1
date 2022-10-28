@@ -51,3 +51,4 @@ while True:
             print('Popped value: ', int(popped))
     elif operation == 'quit':
         break
+x
