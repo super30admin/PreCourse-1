@@ -6,11 +6,43 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.head = None
         
+
     def push(self, data):
-        
+        '''This takes Time Complexity of O(1), Space Complexity of O(1)'''
+        temp=Node(data)
+        if(self.head==None):
+            #Here we have an empty linked list
+            self.head=temp
+        else:
+            #Here we dont have an empty linked list
+            temp.next=self.head
+            self.head=temp
+                
     def pop(self):
-        
+        '''This takes Time Complexity of O(1), Space Complexity of O(1)'''
+        if(self.head==None):
+            #Here we have an empty linked list
+            return None
+        else:
+            #Here we don't have an empty linked list
+            temp=self.head
+            val=temp.data
+            self.head=self.head.next
+            del temp
+            return val
+    
+    #This is just additional method
+    def display(self):
+        print("--top--")
+        temp=self.head
+        while(temp!=None):
+            print(temp.data)
+            temp=temp.next
+        print("--bottom--")
+
+            
 a_stack = Stack()
 while True:
     #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
