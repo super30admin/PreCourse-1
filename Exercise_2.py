@@ -1,3 +1,11 @@
+#Exercise_2 : Implement Stack using Linked List.
+
+#Time Complexity : O(1)
+#Space Complexity : O(1)
+#Did this code successfully run on Leetcode : Didn't find question on leetcode
+#Any problem you faced while coding this : No
+
+#Your code here along with comments explaining your approach
 
 class Node:
     def __init__(self, data):
@@ -6,10 +14,22 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.head = None      #as head would be NULL
         
     def push(self, data):
+        if self.head == None:           #check is stack is empty, if yes add element
+            self.head = Node(data)
+        newNode = Node(data)            #if stack not empty, create a new node
+        newNode.next  = self.head       #assign new node as next node to head node
+        self.head = newNode             #make new node as your head node
         
     def pop(self):
+        if self.head == None:           #check is stack is empty, is yes, return none
+            return None
+        remNode = self.head             #pop the topmost node which is head node
+        self.head = self.head.next      #set te next node as head node
+        remNode.next = None            
+        return remNode.data
         
 a_stack = Stack()
 while True:
