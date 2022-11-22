@@ -1,52 +1,70 @@
-public class StackAsLinkedList { 
-  
-    StackNode root; 
-  
-    static class StackNode { 
-        int data; 
-        StackNode next; 
-  
-        StackNode(int data) 
-        { 
-            //Constructor here 
-        } 
-    } 
-    
-	
-    public boolean isEmpty() 
-    { 
-        //Write your code here for the condition if stack is empty. 
-    } 
-  
-    public void push(int data) 
-    { 
-        //Write code to push data to the stack. 
-    } 
-  
-    public int pop() 
-    { 	
-	//If Stack Empty Return 0 and print "Stack Underflow"
-        //Write code to pop the topmost element of stack.
-	//Also return the popped element 
-    } 
-  
-    public int peek() 
-    { 
-        //Write code to just return the topmost element without removing it.
-    } 
-  
-	//Driver code
-    public static void main(String[] args) 
-    { 
-  
-        StackAsLinkedList sll = new StackAsLinkedList(); 
-  
-        sll.push(10); 
-        sll.push(20); 
-        sll.push(30); 
-  
-        System.out.println(sll.pop() + " popped from stack"); 
-  
-        System.out.println("Top element is " + sll.peek()); 
-    } 
-} 
+class StackAsLinkedList {
+
+    StackNode top;
+
+    static class StackNode {
+        int data;
+        StackNode next;
+
+        StackNode(int data) {
+            this.data = data;
+        }
+    }
+
+    StackAsLinkedList() {
+        this.top = null;
+    }
+
+    public boolean isEmpty()
+    {
+        return top == null;
+    }
+
+    public void push(int data)
+    {
+        StackNode tmp = new StackNode(data);
+
+        if (tmp == null) {
+            System.out.println("Heap Overflow");
+            return;
+        }
+
+        tmp.next = top;
+        top = tmp;
+    }
+
+    public int pop()
+    {
+        if (!isEmpty()) {
+            StackNode tmp = top;
+            top = top.next;
+            return tmp.data;
+        }
+        else {
+            System.out.println("Stack Underflow");
+            return 0;
+        }
+    }
+
+    public int peek()
+    {
+        return top.data;
+    }
+
+}
+
+//Driver code
+class Main_2 {
+    public static void main(String[] args) {
+
+        StackAsLinkedList sll = new StackAsLinkedList();
+
+        sll.push(10);
+        sll.push(20);
+        sll.push(30);
+
+        System.out.println(sll.pop() + " popped from stack");
+
+        System.out.println("Top element is " + sll.peek());
+    }
+}
