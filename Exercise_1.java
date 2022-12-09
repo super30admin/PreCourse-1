@@ -1,3 +1,6 @@
+//Time complexity for each poeration (push/pop/peek) - O(1) 
+//Space complexity for each operations - O(1)
+
 class Stack { 
     //Please read sample.java file before starting.
   //Kindly include Time and Space complexity at top of each file
