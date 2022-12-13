@@ -1,7 +1,7 @@
 # Exercise_1 : Implement Stack using Array.
 # Time Complexity: O(1)
 # Space Complexity: O(N), N = length of the stack 
-# Successful Run on Leetcode: Question not in Leetcode
+# Successful Run on Leetcode: N/A
 # Challenges: None
 
 class myStack:
