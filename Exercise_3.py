@@ -24,13 +24,14 @@ class SinglyLinkedList:
         Takes O(n) time.
         """
         # if the head is None, set the data node as the head
+        curr = ListNode(data)
         if not self.head:
-            self.head = ListNode(data)
+            self.head = curr
             return
         # else iterate through the end of the linked list and add the new data node 
         while self.head.next:
             self.head = self.head.next
-        self.head.next = ListNode(data)
+        self.head.next = curr
             
         
     def find(self, key):
