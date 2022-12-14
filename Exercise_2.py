@@ -6,10 +6,33 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.head = None
         
     def push(self, data):
+        newNode = Node(data)
+        if self.head:
+            cur = self.head
+            while cur.next!= None:
+                cur = cur.next
+            cur.next = newNode
+        else:
+            self.head = newNode
         
     def pop(self):
+        temp = self.head
+        #head node case check
+
+        while(temp.next!=None):
+            prev = temp
+            temp = temp.next
+
+        prev.next = None
+        temp = None
+    def print(self):
+        current = self.head
+        while(current):
+            print(current.data)
+            current = current.next
         
 a_stack = Stack()
 while True:
@@ -29,4 +52,5 @@ while True:
         else:
             print('Popped value: ', int(popped))
     elif operation == 'quit':
+        a_stack.print()
         break
