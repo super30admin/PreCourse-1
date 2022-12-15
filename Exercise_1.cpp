@@ -1,3 +1,9 @@
+// Time Complexity : O(1)
+// Space Complexity :O(n)
+// Did this code successfully run on Leetcode : Couldn't find a leetcode problem
+// Any problem you faced while coding this :N/A
+
+
 #include <bits/stdc++.h> 
   
 using namespace std; 
@@ -23,22 +29,37 @@ bool Stack::push(int x)
 { 
     //Your code here
     //Check Stack overflow as well
+    if(top < MAX){
+      a[top] = x;
+      top = top+1;
+    }
 } 
   
 int Stack::pop() 
 { 
     //Your code here
-    //Check Stack Underflow as well 
-} 
+    //Check Stack Underflow as well
+    if(top > 0) {
+      top = top-1;
+      return a[top];
+    }
+    return -1;
+}
+ 
 int Stack::peek() 
 { 
     //Your code here
     //Check empty condition too
-} 
+    if(!isEmpty()){
+      return a[top];
+    }
+    return -1;
+}
   
 bool Stack::isEmpty() 
 { 
-    //Your code here 
+    //Your code here
+    return (top == 0);
 } 
   
 // Driver program to test above functions 
