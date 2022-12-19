@@ -1,8 +1,19 @@
+// Time Complexity : O(1)
+// Space Complexity : O(n)
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : No
+
+
+// Your code here along with comments explaining your approach
+
+//Approach: First I initialised the constructor by initializing data and next pointer of the node. For insert created a new node and if the LL was empty then added the new node at head.
+//else traversed all the nodes till last node and inserted the new node there. Printed all the nodes by traversing through all the nodes of the LL.
+
 import java.io.*; 
   
 // Java program to implement 
 // a Singly Linked List 
-public class LinkedList { 
+class LinkedList { 
   
     Node head; // head of list 
   
@@ -18,6 +29,8 @@ public class LinkedList {
         Node(int d) 
         { 
             //Write your code here 
+            data = d;
+            next = null;
         } 
     } 
   
@@ -25,9 +38,22 @@ public class LinkedList {
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data 
+        Node newNode = new Node(data);
+        newNode.next = null;
    
         // If the Linked List is empty, 
         // then make the new node as head 
+        if (list.head == null) {
+            list.head = newNode;
+            
+        } else {
+            Node last = list.head;
+            while (last.next != null){
+                last = last.next;
+            };
+            last.next = newNode;
+        }
+        return list;
         
             // Else traverse till the last node 
             // and insert the new_node there 
@@ -41,7 +67,11 @@ public class LinkedList {
     public static void printList(LinkedList list) 
     {  
         // Traverse through the LinkedList 
-   
+        Node last = list.head;
+        while (last != null){
+            System.out.println(last.data);
+            last = last.next;
+        };
             // Print the data at current node 
        
             // Go to next node 
