@@ -7,33 +7,59 @@ class Stack {
   
     boolean isEmpty() 
     { 
-        //Write your code here 
+        	//check whether the top is at index 0
+        if(top==0){
+            return true;
+        }else{
+            return false;
+        }
+       
     } 
 
+    //initialize top with zero
     Stack() 
     { 
-        //Initialize your constructor 
+        top=0;
     } 
   
+    
     boolean push(int x) 
     { 
-        //Check for stack Overflow
-        //Write your code here
+    	//check if the array size is within the max capacity
+        if(top<a.length-1){
+        	//assign the new element to array value at index "top" and increment top
+            a[top]=x;
+            top++;
+            return true;
+        }else{
+            return false;
+        }
     } 
+  
   
     int pop() 
     { 
-        //If empty return 0 and print " Stack Underflow"
-        //Write your code here
+    	//check if array is empty
+        if(isEmpty()){
+        	//print appropriate message if array is empty
+            System.out.println("Stack Underflow");
+            return 0;
+        }else{
+        	//assign array value at index "top-1" to a temp variable and then remove the element by making it to 0 and decrement top
+            int result= a[top-1];
+            a[top-1]=0;
+            top--;
+            return result;
+        }
     } 
   
+    //return the element present at the top index in the array
     int peek() 
     { 
-        //Write your code here
+        return a[top];
     } 
 } 
   
-// Driver code 
 class Main { 
     public static void main(String args[]) 
     { 
@@ -44,3 +70,4 @@ class Main {
         System.out.println(s.pop() + " Popped from stack"); 
     } 
 }
+
