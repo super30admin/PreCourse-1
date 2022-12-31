@@ -1,8 +1,3 @@
-// Time Complexity : All operations are O(1)
-// Space Complexity : O(1)
-
-// Implemented as a linkedlist. Push and pop operations are done at the beginning of the list.
-
 public class StackAsLinkedList { 
   
     StackNode root; 
@@ -13,45 +8,31 @@ public class StackAsLinkedList {
   
         StackNode(int data) 
         { 
-            this.data = data;
-            this.next = null;
+            //Constructor here 
         } 
     } 
     
-    StackAsLinkedList()
-    {
-        this.root = null;
-    }
-    
+	
     public boolean isEmpty() 
     { 
-        return root == null;
+        //Write your code here for the condition if stack is empty. 
     } 
   
     public void push(int data) 
     { 
-        StackNode newNode = new StackNode(data);
-        newNode.next = root;
-        root = newNode;
+        //Write code to push data to the stack. 
     } 
   
     public int pop() 
     { 	
-        if(root==null) //Stack Underflow
-        {
-            System.out.println("Stack Underflow"); 
-            return -1;
-        }
-        int temp = root.data;
-        root = root.next;
-        return temp; 
+	//If Stack Empty Return 0 and print "Stack Underflow"
+        //Write code to pop the topmost element of stack.
+	//Also return the popped element 
     } 
   
     public int peek() 
     { 
-        if(root==null)
-            return -1;
-        return root.data;
+        //Write code to just return the topmost element without removing it.
     } 
   
 	//Driver code
@@ -65,6 +46,7 @@ public class StackAsLinkedList {
         sll.push(30); 
   
         System.out.println(sll.pop() + " popped from stack"); 
+  
         System.out.println("Top element is " + sll.peek()); 
     } 
 } 
