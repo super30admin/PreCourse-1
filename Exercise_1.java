@@ -1,7 +1,11 @@
-// Time Complexity : O(n)
+// Time Complexity : O(1)
 // Space Complexity : O(n)
 // Did this code successfully run on Leetcode : yes
 // Any problem you faced while coding this : no
+
+/* The top variable is used as a pointer to check if array is full (overflow) or if array is empty (underflow) The top pointer
+ * is updated whenever an element is added (pushed) or removed (popped) from array (stack)
+ */
 
 class Stack { 
     //Please read sample.java file before starting.
@@ -42,8 +46,10 @@ class Stack {
         //If empty return 0 and print " Stack Underflow"
         //Write your code here
 
-        if(isEmpty())
+        if(isEmpty()) {
+            System.out.println("Stack Underflow");
             return 0;
+        }
         
         return a[top--];
     } 
