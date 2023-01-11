@@ -1,8 +1,15 @@
-import java.io.*; 
+// Time Complexity : O(n)
+// Space Complexity : O(n)
+// Did this code successfully run on Leetcode : yes
+// Any problem you faced while coding this : no
+
+/* If list is empty, new node is made head and list is returned. Else node is added at end of list and head of list is returned.
+   To print the list it is iterated from head till end and elements printed in order.
+*/
   
 // Java program to implement 
 // a Singly Linked List 
-public class LinkedList { 
+class LinkedList { 
   
     Node head; // head of list 
   
@@ -18,6 +25,8 @@ public class LinkedList {
         Node(int d) 
         { 
             //Write your code here 
+            this.data = d;
+            this.next = null;
         } 
     } 
   
@@ -34,7 +43,21 @@ public class LinkedList {
 
             // Insert the new_node at last node 
         // Return the list by head 
-        
+
+        Node node = new Node(data);
+
+        if(list.head == null) {
+            list.head = node;
+        }
+        else {
+            Node temp = list.head;
+            while(temp.next != null) {
+                temp = temp.next;
+            }
+            temp.next = node;
+        } 
+
+        return list;
     } 
   
     // Method to print the LinkedList. 
@@ -45,6 +68,13 @@ public class LinkedList {
             // Print the data at current node 
        
             // Go to next node 
+
+        Node temp = list.head;
+        while(temp != null) {
+            System.out.print(temp.data + "->");
+            temp = temp.next;
+        }
+        System.out.println("null");
     } 
    
     // Driver code 
