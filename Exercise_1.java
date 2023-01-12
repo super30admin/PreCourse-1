@@ -1,4 +1,4 @@
-// Time Complexity : TC is specified on top of each method
+// Time Complexity : O(1)
 // Space Complexity : O(MAX) where MAX is the size of the array
 // Did this code successfully run on Leetcode : No, I am getting the following error:
 /*
@@ -20,7 +20,9 @@ class Stack {
     int top; 
     int a[] = new int[MAX]; // Maximum size of Stack 
   
-    /** checks for the size of the stack. If top is -1, then the stack is empty. */ 
+    /** checks for the size of the stack. If top is -1, then the stack is empty. 
+     * TC: O(1)
+     */ 
     boolean isEmpty() 
     { 
         //Write your code here 
@@ -28,7 +30,8 @@ class Stack {
     } 
 
     /** Since array is already initialized globally, we are setting top to -1, which
-     * is used to put the elements on top of the stack. Top represents the top element of the stack. */
+     * is used to put the elements on top of the stack. Top represents the top element of the stack. 
+     * TC: O(1)*/
     Stack() 
     { 
         //Initialize your constructor 
@@ -37,7 +40,8 @@ class Stack {
   
     /** Pushes the elements to the top of the stack. since top starts from -1,
      * we increment the top and then insert the element. If the max limit is reached,
-     * we return false and print stack overflow. (Even an exception can be thrown) */
+     * we return false and print stack overflow. (Even an exception can be thrown) 
+     * TC: O(1)*/
     boolean push(int x) 
     { 
         //Check for stack Overflow
@@ -52,7 +56,8 @@ class Stack {
     } 
   
     /** Checks if the stack is empty and then removes top element and then decrements
-     * top. If stack is empty, returns 0 with Stack underflow statement. */
+     * top. If stack is empty, returns 0 with Stack underflow statement. 
+     * TC: O(1)*/
     int pop() 
     { 
         //If empty return 0 and print " Stack Underflow"
@@ -66,7 +71,8 @@ class Stack {
     } 
   
     /** Returns top element of the stack. if the stack is either empty or full, it returns MAX_VALUE
-     * or instead we can throw an error. */
+     * or instead we can throw an error. 
+     * TC: O(1)*/
     int peek() 
     { 
         //Write your code here
