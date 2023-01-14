@@ -1,4 +1,4 @@
-// Time Complexity : TC is specified on top of each method
+// Time Complexity : O(1)
 // Space Complexity : O(N) where N is the number of elements pushed to the stack.
 // Did this code successfully run on Leetcode : Yes
 // Any problem you faced while coding this : None
@@ -12,7 +12,6 @@
 class StackAsLinkedList { 
   
     StackNode root; 
-    StackNode curr;
   
     static class StackNode { 
         int data; 
@@ -39,34 +38,22 @@ class StackAsLinkedList {
     
     /**
      * @param data
-     * Pushes the given data to the StackAsLinkedList. Checks if root is empty.
-     * If empty, then sets root as given data and assign another variable pointing to root.
-     * If root is not empty, then we just add the given data to the next of curr variable.
-     * curr variable points to the top of the list every time. After adding the node to the list,
-     * we update curr to the latest node.
-     * TC: O(1)
+     * Pushes the given data to the StackAsLinkedList. create a node and make it root.
+     * 
      */
     public void push(int data) 
     { 
         //Write code to push data to the stack. 
-    	if(root == null) {
-    		root = new StackNode(data);
-    		curr = root;
-    	} else {
-    		StackNode node = new StackNode(data);
-    		curr.next = node;
-    		curr = curr.next;
-    	}
+    	StackNode node = new StackNode(data);
+    	node.next = root;
+    	root = node;
     	
     } 
   
     /**
      * @return
-     * Checks if root is empty, then prints Stack underflow and returns 0. Else, we iterate through
-     * the list to reach the end of the list. Also, we store the previous element of each iteration
-     * so that once we reach the end, we just update previous node's next as null, thus deleting the
-     * top element. Then previous element will be updated to the curr variable to make it the top element.
-     * TC: O(N) where N is the number of elements in the list.
+     * Checks if root is empty, then prints Stack underflow and returns 0. 
+     * Else, remove the root and update root as root.next.
      */
     public int pop() 
     { 	
@@ -77,15 +64,9 @@ class StackAsLinkedList {
     		System.out.println("Stack Underflow");
     		return 0;
     	}
-    	StackNode temp = root;
-    	StackNode prev = null;
-    	while(temp.next != null) {
-    		prev = temp;
-    		temp = temp.next;
-    	}
-    	int x = temp.data;
-    	prev.next = null;
-    	curr = prev;
+    	
+    	int x = root.data;
+    	root = root.next;
     	return x;
     } 
   
@@ -102,7 +83,7 @@ class StackAsLinkedList {
     		System.out.println("Stack is Empty");
     		return Integer.MAX_VALUE;
     	}
-    	return curr.data;
+    	return root.data;
     }   
 } 
 
@@ -123,6 +104,10 @@ class Exercise_2 {
         System.out.println("Top element is " + sll.peek()); 
         sll.push(40);
         System.out.println("Top element is " + sll.peek()); 
+        System.out.println(sll.pop() + " popped from stack"); 
+        System.out.println(sll.pop() + " popped from stack"); 
+        System.out.println(sll.pop() + " popped from stack"); 
+        System.out.println(sll.pop() + " popped from stack"); // prints underflow and returns 0.
     } 
 
 }
