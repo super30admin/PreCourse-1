@@ -1,3 +1,9 @@
+//Time complexity : O(n)
+    //Space complexity : O(n)
+    // PRoblem : Complexity analysis
+
+
+
 public class StackAsLinkedList { 
   
     StackNode root; 
