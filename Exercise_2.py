@@ -1,4 +1,7 @@
-
+# Time Complexity : O(1)
+# Space Complexity : O(1)
+# Did this code successfully run on Leetcode : I did not find the exact question on Leetcode
+# Any problem you faced while coding this : Have a doubt about space and time complexity
 class Node:
     def __init__(self, data):
        self.data = data
@@ -6,10 +9,22 @@ class Node:
  
 class Stack:
     def __init__(self):
-        
+        self.head = None
     def push(self, data):
-        
+        if self.head is None:
+            self.head = data
+        else:
+            new = data
+            new.next = self.head
+            self.head = new
     def pop(self):
+        if self.head is None:
+            return None
+        else:
+            delete = self.head.data
+            self.head = self.head.next
+            return delete
+
         
 a_stack = Stack()
 while True:
