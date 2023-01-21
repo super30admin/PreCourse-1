@@ -1,8 +1,11 @@
+# Time complexity of Push, pop, peek and show : o(1)
+# Space somplexity : o(n) for n push operations
+
+
 class myStack:
-  #Please read sample.java file before starting.
-  #Kindly include Time and Space complexity at top of each file
      def __init__(self,limit=100):
         self.stack=[]
+        self.limit=limit
         
      def isEmpty(self):
         return len(self.stack) <=0
