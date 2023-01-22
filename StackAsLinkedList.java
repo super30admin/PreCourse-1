@@ -1,4 +1,6 @@
-public class Exercise_2 { 
+// Time Complexity : push - O(n), pop - O(n), peek - O(n)
+// Space Complexity : O(1)
+public class StackAsLinkedList { 
   
     StackNode root; 
   
@@ -9,28 +11,30 @@ public class Exercise_2 {
         StackNode(int data) 
         {
             this.data = data;
-            //Constructor here 
         } 
     } 
     
 	
     public boolean isEmpty() 
     { 
+        //If root points to no element, then the stack is empty
         if (root == null){
             return true;
         }else{
             return false;
         }
-        //Write your code here for the condition if stack is empty. 
+        
     } 
   
     public void push(int data) 
     { 
-        if(root.next==null){
+        //if the stack is empty, then the new element becomes the root
+        if(root==null){
             StackNode node = new StackNode(data);
-            root.next = node;
             node.next = null;
+            root = node;
         }else{
+            //else we traverse till the end of the stack, until the next element is null and push the new element to the end of the stack
             StackNode temp = root;
             while(temp.next!=null){
                 temp = temp.next;
@@ -39,7 +43,6 @@ public class Exercise_2 {
             temp.next = node;
             node.next = null;
         }
-        //Write code to push data to the stack. 
     } 
   
     public int pop() 
@@ -47,22 +50,25 @@ public class Exercise_2 {
 	//If Stack Empty Return 0 and print "Stack Underflow"
         //Write code to pop the topmost element of stack.
 	//Also return the popped element 
-        if(root.next==null){
+        if(root==null){
+            //If the root elememt is null, then stack is empty hence can't pop
             System.out.println("Stack Underflow! Can't pop item");
             return 0;
         }else{
+            //else from the root element we travel to the next element, until the next of next element is null. If so, then we make the next element point to null thereby popping the element
             StackNode temp = root;
             while(temp.next.next!=null){
                 temp = temp.next;
             }
             int popped = temp.next.data;
             temp.next = null;
+            return popped;
         }
     } 
   
     public int peek() 
     { 
-        //Write code to just return the topmost element without removing it.
+        //We traverse till the end of the stack until the next element is null and return the value of that element.
         StackNode temp = root;
         while(temp.next!=null){
             temp = temp.next;
