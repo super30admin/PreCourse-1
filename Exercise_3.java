@@ -1,3 +1,7 @@
+//Time Complexity : O(N) -- inserting node at the end and printing all node requires traversal of entire list
+//Space Complexity :O(1)
+// code ran successfully : Yes 
+
 import java.io.*; 
   
 // Java program to implement 
@@ -18,6 +22,9 @@ public class LinkedList {
         Node(int d) 
         { 
             //Write your code here 
+            
+            this.data =d ;
+            this.next=null;
         } 
     } 
   
@@ -25,15 +32,35 @@ public class LinkedList {
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data 
+        
+            Node new_node = new Node(data);
+
    
         // If the Linked List is empty, 
         // then make the new node as head 
         
+        if (list.head == null)
+     {
+        list.head = new Node(data);
+        return list;
+     }
+     
+     
+        
             // Else traverse till the last node 
             // and insert the new_node there 
+            
+            new_node.next = null;
+            
+            Node last = list.head; 
+    while (last.next != null)
+        last = last.next;
+        last.next = new_node;
 
             // Insert the new_node at last node 
         // Return the list by head 
+        
+        return list;
         
     } 
   
@@ -45,6 +72,20 @@ public class LinkedList {
             // Print the data at current node 
        
             // Go to next node 
+            
+            Node current = list.head;    
+            
+        if(list.head == null) {    
+            System.out.println("List is empty");    
+            return;    
+        }    
+        System.out.println("Nodes of singly linked list: ");    
+        while(current != null) {    
+            //Prints each node by incrementing pointer    
+            System.out.print(current.data + " ");    
+            current = current.next;    
+        }    
+        System.out.println();    
     } 
    
     // Driver code 
