@@ -1,6 +1,6 @@
-// Time Complexity :
-// Space Complexity :
-// Did this code successfully run on Leetcode :
+// Time Complexity : O(n)
+// Space Complexity : O(n)
+// Did this code successfully run on Leetcode : no, couldn't find the problem
 // Any problem you faced while coding this :
 
 
