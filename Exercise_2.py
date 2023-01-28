@@ -5,11 +5,19 @@ class Node:
        self.next = None
  
 class Stack:
+    n = None
     def __init__(self):
+        self.n = Node(None)
         
     def push(self, data):
         
+        self.n.next = self.n
+        self.n.data = data
+        # print(self.n.data) 
     def pop(self):
+        print(self.n.data)
+        self.n = self.n.next
+        
         
 a_stack = Stack()
 while True:
@@ -17,7 +25,9 @@ while True:
     print('push <value>')
     print('pop')
     print('quit')
-    do = input('What would you like to do? ').split()
+    do = input().split(sep=' ')
+    print(do)
+    
     #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
     operation = do[0].strip().lower()
     if operation == 'push':
