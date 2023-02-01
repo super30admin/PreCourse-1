@@ -25,13 +25,14 @@ class SinglyLinkedList:
         Insert a new element at the end of the list.
         Takes O(n) time.
         """
+        new_node = ListNode(data)
         if self.head is None:
-            self.head = data
+            self.head = new_node
         else:
             node = self.head
             while node is not None:
                 node = node.next
-            node.next = data
+            node.next = new_node
 
     def find(self, key):
         """
@@ -67,4 +68,7 @@ class SinglyLinkedList:
             print('Key not found')
         else:
             node.next = node.next.next
+
+
+
 
