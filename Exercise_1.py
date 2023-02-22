@@ -1,4 +1,3 @@
-
 # Tirthaj Rikame
 class myStack:
     def __init__(self):

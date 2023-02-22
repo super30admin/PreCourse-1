@@ -1,4 +1,3 @@
-
 #Tirthaj Rikame
 class ListNode:
     """

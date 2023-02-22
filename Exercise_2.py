@@ -1,4 +1,3 @@
-
 # Tirthaj Rikame
 class Node:
     def __init__(self,data):
