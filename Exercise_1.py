@@ -1,45 +1,47 @@
+# Tirthaj Rikame
 class myStack:
-    def __init__(self, top = -1):
-        self.data = []
-        self.top = top
+    def __init__(self):
+        self.stack = []
+        self.top = -1
 
     def isempty(self):
-        if len(self.data) == 0:
-
-            return 0
-
+        if self.top == -1:
+            return True
+        return False
     def push(self, e):
         if self.top < 4:
-            self.data.append(e)
-            self.top +=1
-            print('Push operation Successful')
+            self.stack.append(e)
+            print("Pushed element", e)
+            self.top += 1
             return
         else:
-            print('Stack Overflow')
+            print("Stack Overflow")
             return
 
     def pop(self):
-        if self.isempty() == 0:
-            return print("Stack Underflow")
+        if self.isempty():
+            print("Stack Underflow")
+            return
         else:
-            pop = self.data.pop()
-            self.top -=1
-            print('Pop Operation Successful')
-        return pop
-
+            tempele = self.stack.pop()
+            print("popped element is", tempele)
+            self.top -= 1
+            return
 
     def peek(self):
-        if self.isempty() ==0:
-            return print("Stack is Empty")
-        else:
-            return self.data[-1]
+        if self.isempty():
+            print("Stack is empty")
+            return
+        return self.stack[-1]
 
     def size(self):
-         return len(self.data)
-
+        return self.top
     def show(self):
-         return self.data
-         
+        if self.isempty():
+            print("Stack is empty")
+            return
+        else:
+            print(self.stack)
 
 s = myStack()
 s.push('1')

@@ -1,8 +1,8 @@
+# Tirthaj Rikame
 class Node:
     def __init__(self,data):
         self.data = data
         self.next = None
-
 class Stack:
     def __init__(self):
         self.head = None
@@ -11,19 +11,18 @@ class Stack:
         if self.head == None:
             self.head = Node(data)
         else:
-            new_node = Node(data)
-            new_node.next = self.head
-            self.head = new_node
+            new_data = Node(data)
+            new_data.next = self.head
+            self.head = new_data
 
     def pop(self):
         if self.head == None:
-            return print('Stack is Empty')
+            print("Stack is empty")
         else:
-            pop_node = self.head
+            pop_data = self.head
             self.head = self.head.next
-            pop_node.next = None
-            return pop_node.data
-        
+            return pop_data.data
+
 a_stack = Stack()
 while True:
     print('push <value>')
