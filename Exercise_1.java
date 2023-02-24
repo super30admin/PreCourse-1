@@ -1,3 +1,8 @@
+// Time Complexity : O(1)
+// Space Complexity : O(N)
+// Did this code successfully run on Leetcode : Didnt found
+// Any problem you faced while coding this : -
+
 class Stack { 
     //Please read sample.java file before starting.
   //Kindly include Time and Space complexity at top of each file
@@ -7,29 +12,48 @@ class Stack {
   
     boolean isEmpty() 
     { 
-        //Write your code here 
+        //Write your code here
+        if(top<0){
+            return true;
+        } 
+        return false;
     } 
 
     Stack() 
     { 
+        top = 0;
         //Initialize your constructor 
     } 
   
     boolean push(int x) 
     { 
         //Check for stack Overflow
+        if(top<MAX){
+            a[++top] = x;
+            return true;
+        }
+        return false;
         //Write your code here
     } 
   
     int pop() 
     { 
         //If empty return 0 and print " Stack Underflow"
-        //Write your code here
+        if(top>0){
+            
+
+            return a[--top];
+        }
+        System.out.println(" Stack Underflow ");
+        return 0;
     } 
   
     int peek() 
     { 
-        //Write your code here
+        if(top>=0){
+            return a[top];
+        }
+        return 0;
     } 
 } 
   
