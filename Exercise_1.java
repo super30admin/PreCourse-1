@@ -1,4 +1,4 @@
-// Time Complexity for each method is O(1)
+//Time Complexity for each method is O(1)
 //Space complexity for each is O(n)
 import java.util.Arrays;
 class Stack {

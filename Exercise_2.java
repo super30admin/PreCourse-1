@@ -1,3 +1,5 @@
+//Time Complexity: O(1)
+//Space Complexity: O(n)
 public class Exercise_2 {
 
     StackNode root;
@@ -40,8 +42,8 @@ public class Exercise_2 {
     public int pop()
     {
 	//If Stack Empty Return 0 and print "Stack Underflow"
-        
-	
+
+
 	if (isEmpty()){
 	System.out.println("Stack Underflow");
 	return 0;
