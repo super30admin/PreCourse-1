@@ -9,6 +9,7 @@ public class StackAsLinkedList {
         StackNode(int data) 
         { 
             //Constructor here 
+
         } 
     } 
     
@@ -16,11 +17,13 @@ public class StackAsLinkedList {
     public boolean isEmpty() 
     { 
         //Write your code here for the condition if stack is empty. 
+
     } 
   
     public void push(int data) 
     { 
         //Write code to push data to the stack. 
+
     } 
   
     public int pop() 
