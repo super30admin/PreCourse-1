@@ -37,7 +37,7 @@ class SinglyLinkedList:
         current_node = self.head
         while current_node is not None:
             if current_node.data == key:
-                return current_node
+                return current_node.data
             current_node = current_node.next
         return None
 
@@ -57,3 +57,25 @@ class SinglyLinkedList:
                 return
             previous_node = current_node
             current_node = current_node.next
+a_linkedlist = SinglyLinkedList()            
+while True:
+    #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
+    print('append <value>')
+    print('find <value>')
+    print('remove <value>')
+    do = input('What would you like to do? ').split()
+    #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
+    operation = do[0].strip().lower()
+    if operation == 'append':
+        a_linkedlist.append(int(do[1]))
+    elif operation == 'find':
+        found = a_linkedlist.find(int(do[1]))
+        if found is None:
+            print('element not found')
+        else:
+            print('found value: ', int(found))
+    elif operation == 'remove':
+        removed = a_linkedlist.remove(int(do[1]))
+       
+    elif operation == 'quit':
+        break    
