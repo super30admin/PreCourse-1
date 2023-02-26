@@ -20,9 +20,7 @@ class Node {
     
     push(data) {
       let incomingNode = new Node(data)
-      let existingNode
-      
-      existingNode = this.head
+      let existingNode = this.head
       incomingNode.nextElement = existingNode
       this.head = incomingNode
       
