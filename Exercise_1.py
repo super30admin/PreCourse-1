@@ -1,6 +1,6 @@
 class myStack:
   #Time complexity: For all methods it is O(1)
-  #space complexity: O(n  )
+  #space complexity: O(n)
      def __init__(self):
          self.stack = []
 
