@@ -81,12 +81,11 @@ public class StackAsLinkedList {
   
         StackAsLinkedList sll = new StackAsLinkedList(); 
   
-        sll.pop();
         sll.push(10); 
         sll.push(20); 
         sll.push(30);
         System.out.println(sll.pop() + " popped from stack"); 
-        sll.push(40);
+
         System.out.println("Top element is " + sll.peek()); 
     } 
 } 
