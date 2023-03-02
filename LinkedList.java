@@ -17,7 +17,9 @@ public class LinkedList {
         // Constructor 
         Node(int d) 
         { 
-            //Write your code here 
+            //Write your code here
+            
+            data = d;
         } 
     } 
   
@@ -25,15 +27,26 @@ public class LinkedList {
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data 
+        Node newNode = new Node(data);
+        if(newNode.next == null)
+        {
+            head = newNode;
+        }
    
         // If the Linked List is empty, 
         // then make the new node as head 
         
+        else{
+
+
+        }
             // Else traverse till the last node 
             // and insert the new_node there 
 
             // Insert the new_node at last node 
         // Return the list by head 
+
+        return head;
         
     } 
   
