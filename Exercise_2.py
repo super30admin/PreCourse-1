@@ -1,3 +1,11 @@
+# Time Complexity: push, pop- O(1)
+# Space Complexity : O(n)
+# Did this code successfully run on Leetcode : -
+# Any problem you faced while coding this : No
+
+
+# Your code here along with comments explaining your approach
+"""Implmented a stack using Linkedlist"""
 
 class Node:
     def __init__(self, data):
@@ -6,11 +14,26 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.head = Node(None)
+        self.current = None
+        self.next = None
         
     def push(self, data):
+        temp = self.head
+        self.head = Node(data)
+        self.head.next = temp
         
     def pop(self):
+        temp = self.head.data
         
+        if temp != None:
+            self.head= self.head.next
+        
+        return temp
+
+        
+
+
 a_stack = Stack()
 while True:
     #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
