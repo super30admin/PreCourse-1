@@ -1,10 +1,15 @@
-import java.io.*; 
+//import java.io.*; 
   
 // Java program to implement 
 // a Singly Linked List 
-public class LinkedList { 
+//TC: O(N)
+//SC: O(1)
+class LinkedList { 
   
     Node head; // head of list 
+    LinkedList(){
+        this.head = null;
+    }
   
     // Linked list Node. 
     // This inner class is made static 
@@ -18,6 +23,8 @@ public class LinkedList {
         Node(int d) 
         { 
             //Write your code here 
+            this.data = d;
+            this.next = null;  
         } 
     } 
   
@@ -25,6 +32,20 @@ public class LinkedList {
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data 
+        Node nn = new Node(data);
+        if(list.head==null){
+            list.head = nn;
+            return list;
+        }
+        Node temp = list.head;
+        while(temp.next!=null)
+        {
+            temp=temp.next;
+        }
+        temp.next = nn;
+        return list;
+        
+
    
         // If the Linked List is empty, 
         // then make the new node as head 
@@ -45,6 +66,14 @@ public class LinkedList {
             // Print the data at current node 
        
             // Go to next node 
+            if(list.head==null) return;
+            Node temp = list.head;
+            while(temp.next!=null)
+            {
+                System.out.println(temp.data);
+                temp = temp.next;
+            }
+            System.out.println(temp.data);
     } 
    
     // Driver code 
