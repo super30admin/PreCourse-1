@@ -1,3 +1,12 @@
+# Time complexity - 
+# creating node - O(1)
+# creating singlylinklist - O(1)
+# append - O(n)
+# find - O(n)
+# remove - O(n)
+
+# Space complexity - O(n)
+
 class ListNode:
     """
     A node in a singly-linked list.
@@ -54,7 +63,7 @@ class SinglyLinkedList:
         """
 
 
-
+# creating two pointers in order to point the previous pointer to element next to key after key is removed
         cur=self.head
         nxt=self.head.next
         if key==cur.data:
