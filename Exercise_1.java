@@ -1,3 +1,8 @@
+// Time Complextity: Push/Pop/Peek - O(1)
+// Space Complexity: O(n)
+// Ran successfully on leetcode: Question is not on leetcode
+// Any problems: No
+
 class Stack {
     // Please read sample.java file before starting.
     // Kindly include Time and Space complexity at top of each file

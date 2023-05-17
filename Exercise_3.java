@@ -1,3 +1,8 @@
+// Time Complextity: Insert/Print - O(n)
+// Space Complexity: O(n)
+// Ran successfully on leetcode: Question is not on leetcode
+// Any problems: No
+
 // Java program to implement 
 // a Singly Linked List 
 public class Exercise_3 {

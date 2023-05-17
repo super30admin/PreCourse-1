@@ -1,3 +1,8 @@
+// Time Complextity: Push/Pop/Peek - O(1)
+// Space Complexity: O(n)
+// Ran successfully on leetcode: Question is not on leetcode
+// Any problems: No
+
 public class Exercise_2 {
 
     StackNode root;
