@@ -40,7 +40,7 @@ class Stack {
         }
     } 
   
-    int peek() 
+    int peek()  
     { 
         if (top < 0) {
             System.out.println("Stack is empty");
