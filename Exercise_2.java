@@ -1,7 +1,8 @@
 public class StackAsLinkedList { 
   
     StackNode root; 
-  
+  //Time Complexity: O(1)
+// Space Complexity : O(n)	
     static class StackNode { 
         int data; 
         StackNode next; 
