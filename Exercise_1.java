@@ -55,7 +55,7 @@ class Stack {
        // pop method will return the last emement and also remove it
         int removedElement = a[top];
         top=top-1;
-        return removedElement;
+        return removedElement;}
     
     } 
   
@@ -72,7 +72,7 @@ class Stack {
         return removedElement;
     
     } 
-} 
+} }
   
 // Driver code 
 class Main { 
