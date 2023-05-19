@@ -1,3 +1,11 @@
+// Time Complexity : O(n)
+// Space Complexity :O(1)
+// Did this code successfully run on Leetcode : N/a
+// Any problem you faced while coding this : no
+
+
+// Your code here along with comments explaining your approach
+
 import java.io.*;
 
 // Java program to implement
