@@ -7,7 +7,8 @@ class Stack {
   
     boolean isEmpty() 
     { 
-        //Write your code here 
+        //Write your code here
+        return top == 0; 
     } 
 
     Stack() 
@@ -18,18 +19,30 @@ class Stack {
     boolean push(int x) 
     { 
         //Check for stack Overflow
+        if (top == MAX) return false;
         //Write your code here
+        a[top] = x;
+        top++;
+        return true;
+
     } 
   
     int pop() 
     { 
         //If empty return 0 and print " Stack Underflow"
+        if (top == 0) {
+            System.out.println("Stack Underflow");
+            return 0;
+        }
         //Write your code here
+        top--;
+        return a[top];
     } 
   
     int peek() 
     { 
         //Write your code here
+        return a[top-1];
     } 
 } 
   
