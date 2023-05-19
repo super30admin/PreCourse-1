@@ -1,3 +1,4 @@
+#I don't know the concept behind this
 class ListNode:
     """
     A node in a singly-linked list.
@@ -17,6 +18,7 @@ class SinglyLinkedList:
         Insert a new element at the end of the list.
         Takes O(n) time.
         """
+        self.append(data)
         
     def find(self, key):
         """
@@ -30,3 +32,5 @@ class SinglyLinkedList:
         Remove the first occurrence of `key` in the list.
         Takes O(n) time.
         """
+l= SinglyLinkedList()
+
