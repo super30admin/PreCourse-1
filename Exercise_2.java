@@ -1,6 +1,7 @@
-public class StackAsLinkedList { 
-  
-    StackNode root; 
+/* Time complexity of each operation is : O(1)
+   Space complexity is : O(1) */
+
+public class StackAsLinkedList {  
   
     static class StackNode { 
         int data; 
@@ -8,32 +9,70 @@ public class StackAsLinkedList {
   
         StackNode(int data) 
         { 
-            //Constructor here 
+            this.data = data;
+            this.next = null;
         } 
     } 
+
+    static class Stack{
+        StackNode root;     
+        Stack()
+        {
+            root = null;
+        }
+    }
     
 	
     public boolean isEmpty() 
     { 
-        //Write your code here for the condition if stack is empty. 
+        return root == null; 
     } 
   
     public void push(int data) 
     { 
-        //Write code to push data to the stack. 
+        StackNode temp = new StackNode(data);
+           
+             
+              if(root != null){
+                root = temp;
+                  System.out.println(data + " is pushed into the stack successfully !!");
+                  return;
+            }
+               
+              temp.next = root;
+              root = temp;
+              System.out.println(data + " is pushed into the stack successfully !!");
     } 
+     
   
     public int pop() 
     { 	
-	//If Stack Empty Return 0 and print "Stack Underflow"
-        //Write code to pop the topmost element of stack.
-	//Also return the popped element 
+        StackNode temp;
+           
+            if (root == null) 
+                System.out.println("Stack Underflow !");
+            
+           
+            else {
+                
+                temp = root;
+                System.out.println("Element that popped out from the stack is: " + temp.data);
+                root = root.next;
+            }
     } 
   
     public int peek() 
     { 
-        //Write code to just return the topmost element without removing it.
+        if (!isEmpty()) 
+            return root.data;
+        
+        else {
+            System.out.println("Stack is Empty !");
+            System.exit(1);
+        }
+        return 0;
     } 
+}
   
 	//Driver code
     public static void main(String[] args) 
@@ -49,4 +88,4 @@ public class StackAsLinkedList {
   
         System.out.println("Top element is " + sll.peek()); 
     } 
-} 
+ 
