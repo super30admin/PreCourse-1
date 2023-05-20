@@ -1,6 +1,9 @@
 /*              Time Complexity | Space Complexity
- * isEmpty() :     O(1)         |   O(1)
- * 
+ * isEmpty() :      O(1)         |   O(1)
+ * Stack():         O(1)         |   O(MAX)
+ * push():          O(1)         |   O(1)
+ * pop():           O(1)         |   O(1) 
+ * peek():          O(1)         |   O(1)
  */
 class Stack { 
     //Please read sample.java file before starting.
@@ -61,10 +64,6 @@ class Main {
         s.push(10); 
         s.push(20); 
         s.push(30); 
-        System.out.println(s.pop() + " Popped from stack"); 
-        System.out.println(s.pop() + " Popped from stack"); 
-        System.out.println(s.pop() + " Popped from stack"); 
-        System.out.println(s.pop() + " Popped from stack"); 
         System.out.println(s.pop() + " Popped from stack"); 
     } 
 }
