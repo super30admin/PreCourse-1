@@ -1,3 +1,11 @@
+/*              Time Complexity | Space Complexity
+ * isEmpty() :      O(1)         |   O(1)
+ * Stack():         O(1)         |   O(1)
+ * push():          O(1)         |   O(1)
+ * pop():           O(N)         |   O(1) 
+ * peek():          O(1)         |   O(1)
+ */
+
 class StackAsLinkedList { 
   
     StackNode root;
