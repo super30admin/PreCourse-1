@@ -1,4 +1,4 @@
-#include <bits/stdc++.h> 
+#include <iostream> 
 using namespace std; 
   
 // A linked list node (changes) 
@@ -6,14 +6,31 @@ class Node
 {  
     public: 
     int data;  
-    Node *next;  
+    Node *next; 
+
+     Node(int val){
+         data=val;
+         next=NULL;
+
+    }  
 };  
   
 /* Given a reference (pointer to pointer) 
 to the head of a list and an int, inserts 
 a new node on the front of the list. */
 void push(Node** head_ref, int new_data)  
-{  
+
+{ 
+
+     Node* n  = new Node(new_data);
+
+    n->next= (*head_ref);
+    
+    (*head_ref) = n;
+
+
+
+
     /* 1. allocate node */ 
   
     /* 2. put in the data */  
@@ -28,6 +45,16 @@ prev_node */
 void insertAfter(Node* prev_node, int new_data)  
 {  
     /*1. check if the given prev_node is NULL */ 
+
+      Node* n = new Node(new_data);
+
+    if(prev_node == NULL){
+        return;
+    }
+  
+  n->next = prev_node->next;
+  prev_node->next = n;
+   
   
     /* 2. allocate new node */ 
   
@@ -49,7 +76,19 @@ void append(Node** head_ref, int new_data)
     /* 3. This new node is going to be  
     the last node, so make next of  
     it as NULL*/  
+     Node* n= new Node(new_data);
   
+     if((*head_ref)== NULL){
+            (*head_ref) = n;
+            return;
+        }
+
+        Node* temp = (*head_ref);
+        while(temp->next!= NULL){
+            temp = temp->next;
+        }
+
+        temp->next = n;
     /* 4. If the Linked List is empty, 
     then make the new node as head */
   
@@ -63,6 +102,13 @@ void append(Node** head_ref, int new_data)
 void printList(Node *node)  
 {  
     //Your code here
+     Node* temp = node;
+            while(temp!= NULL){
+                cout<<temp->data<<"->";
+                temp = temp->next;
+            }
+            cout<<"NULL";
+            cout<<endl;
 }  
   
 /* Driver code*/
