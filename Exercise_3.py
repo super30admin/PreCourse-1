@@ -1,3 +1,11 @@
+# Time Complexity : O(n) for all operations
+# Space Complexity : O(n) where n is the size of linked list itself.
+# Did this code successfully run on Leetcode : -
+# Any problem you faced while coding this : append() could have been O(1) however the comment left there said "O(n)" so I coded that instead
+
+# Used a sentinel node at the beginning to avoid base-case null checks and keep code uniform.
+
+
 class ListNode:
     """
     A node in a singly-linked list.

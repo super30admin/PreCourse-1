@@ -1,4 +1,12 @@
 
+# Time Complexity : O(1) for push and O(n) for pop where n is the size of the linked list
+# Space Complexity : O(n) where n is the size of linked list itself.
+# Did this code successfully run on Leetcode : -
+# Any problem you faced while coding this : Could not really find the exact problem on leetcode.
+
+# Used a sentinel node at the beginning to avoid base-case null checks and keep code uniform.
+
+
 class Node:
     def __init__(self, data):
        self.data = data
