@@ -1,16 +1,31 @@
-
 class Node:
     def __init__(self, data):
-       self.data = data
-       self.next = None
- 
+        self.data = data
+        self.next = None
+
+
 class Stack:
     def __init__(self):
-        
+        self.head = None
+
     def push(self, data):
-        
+        #This function Appends the element to top of the stack
+        element = Node(data)
+        if self.head == None:
+            self.head = element
+        else:
+            element.next = self.head
+            self.head = element
+
     def pop(self):
-        
+        #This function removes the top most element in the stac
+        if self.head is None:
+            return None
+        else:
+            popping_element = self.head.data
+            self.head = self.head.next
+
+
 a_stack = Stack()
 while True:
     #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
