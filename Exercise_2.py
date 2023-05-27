@@ -6,14 +6,27 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.top=None
+        self.size=0
         
-    def push(self, data):
+    def push(self, item):
+        new_node=Node(item)
+        new_node.next=self.top
+        self.top=new_node
+        self.size +=1
         
     def pop(self):
+        if self.is_empty():
+            return "stack is underflow"
+        popped_item=self.top.data
+        self.top=self.top.next
+        self.size -=1
+        return popped_item
         
 a_stack = Stack()
 while True:
-    #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
+    user_input= input("enter command (push<item>, pop):")
+    #Give input as string if getting an EOF error. Give input like "push 10" or "pop"  
     print('push <value>')
     print('pop')
     print('quit')
