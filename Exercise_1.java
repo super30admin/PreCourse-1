@@ -1,5 +1,9 @@
 class Stack { 
     //Please read sample.java file before starting.
+
+    //Time Complexity :- O(1) Becuase we are not traversing through any kind of data we using "top" for all the operation needed. 
+    //Space Complexity :- O(1) Becuase the memory is not increasing based on the input, it is fixed.
+
   //Kindly include Time and Space complexity at top of each file
     static final int MAX = 1000; 
     int top; 
