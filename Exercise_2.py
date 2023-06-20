@@ -1,32 +1,41 @@
-
-class Node:
+class StackNode:
     def __init__(self, data):
-       self.data = data
-       self.next = None
- 
+        self.data = data
+        self.next = None
+
 class Stack:
+    # Constructor to initialize the root of linked list
     def __init__(self):
-        
+        self.root = None
+  
+    def isEmpty(self):
+        return True if self.root is None else False
+  
     def push(self, data):
-        
+        newNode = StackNode(data)
+        newNode.next = self.root
+        self.root = newNode
+        print ("% d pushed to stack" % (data))
+  
     def pop(self):
-        
-a_stack = Stack()
-while True:
-    #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
-    print('push <value>')
-    print('pop')
-    print('quit')
-    do = input('What would you like to do? ').split()
-    #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
-    operation = do[0].strip().lower()
-    if operation == 'push':
-        a_stack.push(int(do[1]))
-    elif operation == 'pop':
-        popped = a_stack.pop()
-        if popped is None:
-            print('Stack is empty.')
-        else:
-            print('Popped value: ', int(popped))
-    elif operation == 'quit':
-        break
+        if (self.isEmpty()):
+            return float("-inf")
+        temp = self.root
+        self.root = self.root.next
+        popped = temp.data
+        return popped
+  
+    def peek(self):
+        if self.isEmpty():
+            return float("-inf")
+        return self.root.data
+  
+  
+# Driver code
+stack = Stack()
+stack.push(10)
+stack.push(20)
+stack.push(30)
+  
+print ("% d popped from stack" % (stack.pop()))
+print ("Top element is % d " % (stack.peek()))
