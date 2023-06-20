@@ -12,7 +12,8 @@ class Stack {
 
     Stack() 
     { 
-        //Initialize your constructor 
+        //Initialize your constructor
+        //just writing code.
     } 
   
     boolean push(int x) 
