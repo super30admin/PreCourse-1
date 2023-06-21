@@ -1,4 +1,5 @@
-#include <bits/stdc++.h> 
+#include <iostream>
+
 using namespace std; 
   
 // A structure to represent a stack 
@@ -18,22 +19,56 @@ StackNode* newNode(int data)
   
 int isEmpty(StackNode* root) 
 { 
-    //Your code here 
+    if(root == nullptr){
+        return 1;
+
+    }
+    else{
+        return 0;
+    }
+
+
+
+
+    
 } 
   
 void push(StackNode** root, int data) 
 { 
-    //Your code here 
+    StackNode* n1 = newNode(data); //creating a new node with data using the newNode function.
+    n1->next= (*root);    //using the next pointer to point to the previous node(current root)
+    (*root) =n1;          // making the new node the current root.
+
+
+    
+    
 } 
   
 int pop(StackNode** root) 
 { 
-    //Your code here 
+    if(isEmpty(*root)){
+        cout << "Stack underflow" << endl;
+        return 0;
+    }
+    else{
+        StackNode* temp = (*root);
+        (*root)=(*root)->next;
+        return temp->data;
+
+        
+        
+
+
+
+    }
+
+    
+    
 } 
   
 int peek(StackNode* root) 
 { 
-    //Your code here 
+    return root->data;    
 } 
   
 int main() 
