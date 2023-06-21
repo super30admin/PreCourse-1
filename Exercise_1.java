@@ -13,23 +13,43 @@ class Stack {
     Stack() 
     { 
         //Initialize your constructor 
+    	this.top = -1; //initialising top with -1
     } 
   
     boolean push(int x) 
     { 
         //Check for stack Overflow
         //Write your code here
+    	if(this.top == this.MAX - 1) {
+    		System.out.println("Stack Overflow");
+    		return false;
+    	}else {
+    		this.top++; //incrementing top
+    		this.a[top] = x;
+    		return true;
+    	}
+    	
     } 
   
     int pop() 
     { 
         //If empty return 0 and print " Stack Underflow"
         //Write your code here
+    	int val ;
+    	if(this.top == -1) {
+    		System.out.println("Stack Underflow");
+    	}else {
+    		val = this.arr[this.top];
+    		this.top--;
+    		
+    	}
+    	return val;
     } 
   
     int peek() 
     { 
         //Write your code here
+    	return this.a[this.top];
     } 
 } 
   
