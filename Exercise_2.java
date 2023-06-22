@@ -2,36 +2,31 @@
 Exercise_2 : Implement Stack using Linked List.
 // Time Complexity: O(1) for push, pop, peek, and isEmpty operations
 // Space Complexity: O(n)
- */
+*/
 
-class StackAsLinkedList {
+class StackUsingLinkedList {
     StackNode root;
 
     static class StackNode {
         int data;
         StackNode next;
-
         StackNode(int data) {
             this.data = data;
             next = null;
         }
     }
 
-
     public boolean isEmpty() {
-        //Write your code here for the condition if stack is empty.
         return root == null;
     }
 
     public void push(int data) {
         //Write code to push data to the stack.
         StackNode newNode = new StackNode(data);
-        if (root == null) {
-            root = newNode;
-        } else {
+        if (root != null) {
             newNode.next = root;
-            root = newNode;
         }
+        root = newNode;
         System.out.println(data + " pushed to stack");
     }
 
@@ -61,7 +56,7 @@ class StackAsLinkedList {
 
     //Driver code
     public static void main(String[] args) {
-        StackAsLinkedList sll = new StackAsLinkedList();
+        StackUsingLinkedList sll = new StackUsingLinkedList();
         sll.push(10);
         sll.push(20);
         sll.push(30);

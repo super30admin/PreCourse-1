@@ -5,8 +5,6 @@ Exercise_1 : Implement Stack using Array.
  */
 
 class Stack {
-    //Please read sample.java file before starting.
-    //Kindly include Time and Space complexity at top of each file
     static final int MAX = 1000;
     int top;
     int[] a = new int[MAX]; // Maximum size of Stack
@@ -17,7 +15,7 @@ class Stack {
     }
 
     boolean isEmpty() {
-        //Write your code here
+        // if top is -ve means its empty
         return (top == -1);
     }
 
@@ -34,8 +32,8 @@ class Stack {
 
     int pop() {
         //If empty return 0 and print " Stack Underflow"
-        if (top < 0) {
-            System.out.println("Stack Underflow");
+        if (isEmpty()) {
+            System.out.println("Stack Underflow/Empty");
             return 0;
         } else {
             return a[top--];
@@ -43,7 +41,6 @@ class Stack {
     }
 
     int peek() {
-        //Write your code here
         if (top < 0) {
             System.out.println("Stack is empty");
             return 0;
