@@ -15,10 +15,7 @@ class StackAsLinkedList {
 
     public boolean isEmpty() {
         //Write your code here for the condition if stack is empty.
-        if(root == null) {
-            return true;
-        } else
-            return false;
+        return root == null;
     }
 
     public void push(int data) {
@@ -38,7 +35,7 @@ class StackAsLinkedList {
         if (root == null) {
             return 0;
         }
-        StackNode temp = null;
+        StackNode temp;
         StackNode temp1 = new StackNode(root.data);
         root.data = temp1.data;
         temp = root.next;
