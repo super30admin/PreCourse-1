@@ -1,3 +1,10 @@
+// Time Complexity : push()- O(1), insertAfter()- O(1), append()- O(n), printList() - O(n)
+// Space Complexity : O(n)
+// Did this code successfully run on Leetcode :
+// Any problem you faced while coding this :
+
+
+// Your code here along with comments explaining your approach
 #include <iostream>
 using namespace std; 
   
@@ -65,7 +72,7 @@ void append(Node** head_ref, int new_data)
         *head_ref = node;
     }
     else{
-        
+
         Node* temp = *head_ref;
         while(temp->next!=NULL){
             temp=temp->next;

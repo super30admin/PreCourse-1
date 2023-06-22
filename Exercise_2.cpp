@@ -1,3 +1,10 @@
+// Time Complexity : O(1)
+// Space Complexity : O(n)
+// Did this code successfully run on Leetcode :
+// Any problem you faced while coding this :
+
+
+// Your code here along with comments explaining your approach
 #include <iostream>
 
 using namespace std; 
@@ -19,7 +26,7 @@ StackNode* newNode(int data)
   
 int isEmpty(StackNode* root) 
 { 
-    if(root == nullptr){
+    if(root == nullptr){ //checking if the head of the stack is empty
         return 1;
 
     }
@@ -51,8 +58,8 @@ int pop(StackNode** root)
         return 0;
     }
     else{
-        StackNode* temp = (*root);
-        (*root)=(*root)->next;
+        StackNode* temp = (*root); //making a temp pointer to point to the head of the stack.
+        (*root)=(*root)->next;  
         return temp->data;
 
         
