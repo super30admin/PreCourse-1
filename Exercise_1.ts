@@ -18,7 +18,8 @@ export class Stack{
         //Write your code here 
         return this.top==-1?  true: false;
     } 
-  
+    
+    //time complexity: o(1)
      push( x:number): boolean { 
         //Check for stack Overflow
         //Write your code here
@@ -30,7 +31,7 @@ export class Stack{
             return true;
         }
     } 
-  
+    //time complexity: o(1)
      pop():number { 
         //If empty return 0 and print " Stack Underflow"
         //Write your code here
@@ -49,6 +50,7 @@ export class Stack{
         return this.popped;        
     } 
   
+    //time complexity: o(1)
      peek(): number{ 
         //Write your code here
          return this.a[this.top];

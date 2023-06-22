@@ -37,6 +37,7 @@ export class StackAsLinkedList {
         return this._root===null?  true: false;
     } 
   
+    //time complexity: o(1)
     public push(data: number) : void
     { 
         let newStackNode= new StackNode(data);
@@ -50,6 +51,7 @@ export class StackAsLinkedList {
         //Write code to push data to the stack. 
     } 
   
+    //time complexity o(1)
     pop(): number 
     { 	
 	//If Stack Empty Return 0 and print "Stack Underflow"
@@ -65,6 +67,7 @@ export class StackAsLinkedList {
         }
     } 
   
+    //time complexity: o(1)
      peek() : number{ 
         //Write code to just return the topmost element without removing it.
         return this._root.data;

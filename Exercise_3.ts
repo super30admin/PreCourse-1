@@ -19,6 +19,7 @@ export class LinkedList {
     constructor(){};
 
     //return new LinkedList();
+    //time Complexity: o(n)
     public static  insert( list: LinkedList, data: number):LinkedList 
     { 
         // Create a new node with given data 
@@ -45,6 +46,7 @@ export class LinkedList {
     } 
   
     // Method to print the LinkedList. 
+    //time complexity: o(n)
     public static  printList( list:LinkedList):void
     {  
         // Traverse through the LinkedList 
