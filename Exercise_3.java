@@ -2,7 +2,7 @@ import java.io.*;
   
 // Java program to implement 
 // a Singly Linked List 
-class LinkedList { 
+public class LinkedList { 
   
     Node head; // head of list 
   
@@ -35,13 +35,13 @@ class LinkedList {
         } 
         else
         {
-            Node lastNode = list.head;
-            while(lastNode.next != null)  // Else traverse till the last node 
+            Node currentNode = list.head;
+            while(currentNode.next != null)  // Else traverse till the last node 
             {
-                lastNode = lastNode.next;
+                currentNode = currentNode.next;
             }
             
-            lastNode.next = newNode;      // and insert the new_node there 
+            currentNode.next = newNode;      // and insert the new_node there 
             
         }
         // Return the list by head 
