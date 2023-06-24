@@ -31,11 +31,15 @@ class Stack {
         return true;
     } 
   
-    int pop() 
-    { 
+    int pop()
+    {
         //If empty return 0 and print " Stack Underflow"
         //Write your code here
-        return isEmpty() ? 0 : a[top--];
+        if(isEmpty()) {
+            System.out.println("Stack Underflow");
+            return 0;
+        }
+        return a[top--];
     } 
   
     int peek() 
