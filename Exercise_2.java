@@ -1,4 +1,8 @@
-public class StackAsLinkedList {
+
+// Time Complexity: O(1) for all the methods
+// Space Complexity: O(1)
+
+class StackAsLinkedList {
 
     StackNode root;
 
@@ -44,13 +48,31 @@ public class StackAsLinkedList {
     public int pop()
     {
 	//If Stack Empty Return 0 and print "Stack Underflow"
+        if(isEmpty())
+        {
+            System.out.println("Stack Underflow");
+            return 0;
+        }
+
         //Write code to pop the topmost element of stack.
+        int topData = root.data;
+
+        root = root.next; // Update the root to be the next node, removing the top element
+
+
 	//Also return the popped element
+        return topData;
     }
 
     public int peek()
     {
         //Write code to just return the topmost element without removing it.
+        if(isEmpty())
+        {
+            System.out.println("Stack Underflow");
+        }
+
+        return root.data; // return the data of the root (top of the stack)
     }
 
 	//Driver code
