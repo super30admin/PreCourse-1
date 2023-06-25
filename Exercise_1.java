@@ -8,7 +8,7 @@ class Stack {
     boolean isEmpty() 
     { 
         //Write your code here
-        if(top == 0 ){
+        if(top == -1 ){
             System.out.println("Yes Empty");
             return true;
         }
