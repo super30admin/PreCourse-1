@@ -52,6 +52,8 @@ class StackAsLinkedList {
     }
 
     //Driver code
+    //Time complexity O(1)
+    //space complexity O(N)
     public static void main(String[] args) {
 
         StackAsLinkedList sll = new StackAsLinkedList();

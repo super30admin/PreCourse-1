@@ -60,7 +60,9 @@ class LinkedList {
         }
     }
 
-    // Driver code 
+    // Driver code
+    //Time complexity O(1)
+    //space complexity O(N)
     public static void main(String[] args) {
         /* Start with the empty list. */
         LinkedList list = new LinkedList();
@@ -76,7 +78,8 @@ class LinkedList {
         list = insert(list, 4);
         list = insert(list, 5);
 
-        // Print the LinkedList 
+        // Print the LinkedList
+
         printList(list);
     }
 }
