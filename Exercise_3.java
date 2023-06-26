@@ -1,3 +1,9 @@
+/*
+Time Complexity : O(N) To add a new element we need to traverse all the elements in the list
+Space Complexity : O(1) No additional space used.
+Did this code successfully run on Leetcode : Didn't find this problem on leet code,Ran on editor and it was successful.
+Any problem you faced while coding this : No
+ */
 import java.io.*; 
   
 // Java program to implement 
@@ -18,6 +24,8 @@ public class LinkedList {
         Node(int d) 
         { 
             //Write your code here 
+            data = d;
+            next = null;
         } 
     } 
   
@@ -25,26 +33,40 @@ public class LinkedList {
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data 
-   
+        Node newNode = new Node(0);
+        newNode.data = data;
+        newNode.next = null;
         // If the Linked List is empty, 
+        if(list.head == null){
         // then make the new node as head 
-        
-            // Else traverse till the last node 
-            // and insert the new_node there 
-
-            // Insert the new_node at last node 
-        // Return the list by head 
-        
-    } 
+        list.head = newNode;
+    } else{
+        // Else traverse till the last node 
+        Node temp = list.head;
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+        // and insert the new_node there 
+        // Insert the new_node at last node 
+        temp.next = newNode;
+    }
+    // Return the list by head 
+    return list;
+} 
   
     // Method to print the LinkedList. 
     public static void printList(LinkedList list) 
     {  
         // Traverse through the LinkedList 
-   
+        Node temp = list.head;
+        while(temp != null){
             // Print the data at current node 
-       
+            System.out.println("Value:" + temp.data);
             // Go to next node 
+            temp = temp.next;
+
+        }
+ 
     } 
    
     // Driver code 
