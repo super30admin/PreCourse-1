@@ -1,5 +1,8 @@
 import java.io.*; 
   
+//spcace complecity= the amount of data stored increases linearly with the number of nodes in the list. Therefore, the space complexity of the linked list is linear:
+o(1)
+//time complexitu: 0(1) fo insertion
 // Java program to implement 
 // a Singly Linked List 
  class LinkedList { 

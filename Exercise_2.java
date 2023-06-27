@@ -1,3 +1,7 @@
+//Complexity Analysis:
+//
+//        Time Complexity: O(1), Only a new node is created and the pointer of the last node is updated. This includes only memory allocation operations. Hence it can be said that insertion is done in constant time.
+//        Auxiliary Space: O(1), No extra space is used.
  class StackAsLinkedList { 
   
     StackNode root; 

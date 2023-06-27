@@ -1,3 +1,5 @@
+//space complexity is o(1)
+//time complexity is o(1)
 class Stack { 
     static final int MAX = 1000; 
     int top; 
