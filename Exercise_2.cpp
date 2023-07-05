@@ -1,3 +1,8 @@
+// Time Complexity :
+// Space Complexity :
+// Did this code successfully run on Leetcode :
+// Any problem you faced while coding this :
+
 #include <bits/stdc++.h> 
 using namespace std; 
   
@@ -19,21 +24,39 @@ StackNode* newNode(int data)
 int isEmpty(StackNode* root) 
 { 
     //Your code here 
+    if(root == NULL) return true;
+    else return false;
 } 
   
 void push(StackNode** root, int data) 
 { 
-    //Your code here 
+    StackNode* new_node = newNode(data);
+    new_node->next = *root;
+    *root = new_node;
+    cout << data << " pushed to stack\n"; 
+
 } 
   
 int pop(StackNode** root) 
 { 
-    //Your code here 
+    if (isEmpty(*root)) {
+        cout << "Stack is empty\n";
+        return INT_MIN;
+    }
+    StackNode* temp = *root;
+    *root = (*root)->next;
+    int popped = temp->data;
+    delete temp;
+    return popped;
 } 
   
 int peek(StackNode* root) 
 { 
-    //Your code here 
+    if (isEmpty(root)) {
+        cout << "Stack is empty\n";
+        return INT_MIN;
+    }
+    return root->data;
 } 
   
 int main() 
