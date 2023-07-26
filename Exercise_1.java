@@ -1,3 +1,7 @@
+// Time complexity : O(1)
+// Space Complexity : O(n)
+//n: number of elements
+
 class Stack { 
     //Please read sample.java file before starting.
   //Kindly include Time and Space complexity at top of each file
@@ -8,28 +12,50 @@ class Stack {
     boolean isEmpty() 
     { 
         //Write your code here 
+        return (top == -1);
     } 
 
     Stack() 
     { 
         //Initialize your constructor 
+        top = -1;
     } 
   
     boolean push(int x) 
     { 
         //Check for stack Overflow
+        if(top == MAX - 1){
+            System.out.println("stack overflow");
+            return false;
+        }
         //Write your code here
+        else{
+            top++;
+            a[top] = x;
+            return true;
+        }
     } 
   
     int pop() 
     { 
         //If empty return 0 and print " Stack Underflow"
+        if(isEmpty()){
+            System.out.println("Stack Underflow");
+            return 0;
+        }
         //Write your code here
+        else {
+            return a[top--];
+        }
     } 
   
     int peek() 
     { 
         //Write your code here
+        if(!isEmpty()){
+            return a[top];
+        }
+       return -1;
     } 
 } 
   
