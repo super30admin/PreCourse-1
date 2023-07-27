@@ -5,6 +5,7 @@ import java.io.*;
   
 // Java program to implement 
 // a Singly Linked List 
+
 public class LinkedList { 
   
     Node head; // head of list 
