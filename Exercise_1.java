@@ -1,3 +1,8 @@
+// Time Complexity : O(1)
+// Space Complexity : O(1) since the array is of constant size(1000)
+// Did this code successfully run on Leetcode : Successfully ran on an IDE
+// Any problem you faced while coding this : No
+
 class Stack { 
     //Please read sample.java file before starting.
   //Kindly include Time and Space complexity at top of each file

@@ -1,3 +1,8 @@
+// Time Complexity : O(n)
+// Space Complexity : O(n)
+// Did this code successfully run on Leetcode : Successfully ran on an IDE
+// Any problem you faced while coding this : No
+
 class StackAsLinkedList { 
   
     StackNode root;

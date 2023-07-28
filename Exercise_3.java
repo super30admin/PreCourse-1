@@ -1,3 +1,8 @@
+// Time Complexity : O(n)
+// Space Complexity : O(n)
+// Did this code successfully run on Leetcode : Ran successfully on an IDE
+// Any problem you faced while coding this : No
+
 import java.io.*; 
   
 // Java program to implement 
