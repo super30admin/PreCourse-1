@@ -29,6 +29,7 @@ class Stack {
   
     int peek() 
     { 
+        int j =100;
         //Write your code here
     } 
 } 
