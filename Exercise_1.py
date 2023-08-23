@@ -2,7 +2,7 @@ class myStack:
   #Please read sample.java file before starting.
   #Kindly include Time and Space complexity at top of each file
      def __init__(self):
-         
+         self.i = 10 
      def isEmpty(self):
          
      def push(self, item):
