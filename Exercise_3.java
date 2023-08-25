@@ -1,10 +1,13 @@
-import java.io.*; 
+
   
 // Java program to implement 
 // a Singly Linked List 
 
 //Time complexity: O(n)
 //space complexity: O(1);
+// Any problem you faced while coding this : 
+// None
+
 class LinkedList { 
   
     Node head; // head of list 

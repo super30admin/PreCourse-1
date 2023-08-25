@@ -1,3 +1,8 @@
+// Time Complexity : O(n)
+// Space Complexity : O(1)
+// Any problem you faced while coding this : 
+//1. Difficulty remembering the concepts of pop and peek.
+ 
  class StackAsLinkedList { 
   
     StackNode root; 
