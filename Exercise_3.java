@@ -1,14 +1,13 @@
-import java.io.*; 
+//Time Complexity : O(n)
+//Space Complexity : O(1)
+//Did this code successfully run on Leetcode : Yes
+//Any problem you faced while coding this : Got confused on how to pass the head.
+
   
-// Java program to implement 
-// a Singly Linked List 
-public class LinkedList { 
+public class LinkedList_1 { 
   
     Node head; // head of list 
   
-    // Linked list Node. 
-    // This inner class is made static 
-    // so that main() can access it 
     static class Node { 
   
         int data; 
@@ -18,40 +17,44 @@ public class LinkedList {
         Node(int d) 
         { 
             //Write your code here 
+            data = d;
+            next = null;
         } 
     } 
   
     // Method to insert a new node 
-    public static LinkedList insert(LinkedList list, int data) 
+    public static LinkedList_1 insert(LinkedList_1 list, int data) 
     { 
-        // Create a new node with given data 
-   
-        // If the Linked List is empty, 
-        // then make the new node as head 
-        
-            // Else traverse till the last node 
-            // and insert the new_node there 
-
-            // Insert the new_node at last node 
-        // Return the list by head 
+        Node n = new Node(data);
+        if(list.head == null){
+            list.head = n;
+        }
+        else{
+            Node curr_head = list.head;
+            while(curr_head.next != null){
+                curr_head = curr_head.next;
+            }
+            curr_head.next = n;
+        }
+        return list;
         
     } 
   
     // Method to print the LinkedList. 
-    public static void printList(LinkedList list) 
+    public static void printList(LinkedList_1 list) 
     {  
-        // Traverse through the LinkedList 
-   
-            // Print the data at current node 
-       
-            // Go to next node 
+        Node curr_node = list.head;
+        while(curr_node != null){
+            System.out.println(curr_node.data);
+            curr_node = curr_node.next;
+        }
     } 
    
     // Driver code 
     public static void main(String[] args) 
     { 
         /* Start with the empty list. */
-        LinkedList list = new LinkedList(); 
+        LinkedList_1 list = new LinkedList_1(); 
   
         // 
         // ******INSERTION****** 

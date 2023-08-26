@@ -1,35 +1,56 @@
-class Stack { 
-    //Please read sample.java file before starting.
-  //Kindly include Time and Space complexity at top of each file
+//Time Complexity : O(1)
+//Space Complexity : O(1)
+//Did this code successfully run on Leetcode : Yes
+//Any problem you faced while coding this : Had to change class name as IDE already had stack imported
+
+
+class Stack_1{ 
+
     static final int MAX = 1000; 
     int top; 
     int a[] = new int[MAX]; // Maximum size of Stack 
   
     boolean isEmpty() 
     { 
-        //Write your code here 
+        if(top == -1){
+            return true;   // using top value assigned to check if array/stack is empty.
+        }
+        return false;
     } 
 
-    Stack() 
+    Stack_1() 
     { 
-        //Initialize your constructor 
+        top = -1;  // -1 to indicate array is empty.
     } 
   
     boolean push(int x) 
     { 
-        //Check for stack Overflow
-        //Write your code here
+        if(top < MAX){
+            top++;
+            a[top] = x;    // if space is there, increment top to know the last input and push value into stack
+            return true;
+        }
+        return false;
     } 
   
     int pop() 
     { 
-        //If empty return 0 and print " Stack Underflow"
-        //Write your code here
+        if(isEmpty()){
+            System.out.println(" Stack Underflow ");   //using isEmpty() to check underflow
+            return 0;
+        }
+        int result = a[top];    //if not empty popping the last element using top index
+        top--;
+        return result;
     } 
   
     int peek() 
     { 
-        //Write your code here
+        if(!isEmpty()){
+           return a[top]; //checking for isEmpty() stack before peek and showing peek object
+        }
+        System.out.println(" Stack Underflow ");   
+        return 0;
     } 
 } 
   
@@ -37,7 +58,7 @@ class Stack {
 class Main { 
     public static void main(String args[]) 
     { 
-        Stack s = new Stack(); 
+        Stack_1 s = new Stack_1(); 
         s.push(10); 
         s.push(20); 
         s.push(30); 
