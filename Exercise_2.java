@@ -48,7 +48,6 @@ public class StackAsLinkedList {
         System.out.println(sll.pop() + " popped from stack"); 
   
         System.out.println("Top element is " + sll.peek()); 
-        //check
         
     } 
 } 
