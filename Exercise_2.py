@@ -1,4 +1,5 @@
-
+#Time Complexity:- O(1)
+#Space Complexity:- O(n)
 class Node:
     def __init__(self, data):
        self.data = data
@@ -6,10 +7,26 @@ class Node:
  
 class Stack:
     def __init__(self):
+        #Initiality No element is assigned to head
+        self.head=None
         
     def push(self, data):
-        
+        #This will check if head is empty or not
+        # If the head is empty newly created node will point to head Node
+        if self.head is empty:
+            self.head=Node(data)
+        else:
+            new_node=Node(data)                      
+            new_node.next=self.head  #Here, address of the new node will be head Nodes address
+            self.head=new_node #Here, new_node will now become head element
+                   
     def pop(self):
+        if self.head is None: #Check if head is None then return None
+           return None
+        else:
+            temp=self.head.data  #Store head.data to temp
+            self.head=self.temp.next #Address of temp.next will point to head
+            return temp #Thus, the temp Node will be deleted by returning it
         
 a_stack = Stack()
 while True:
