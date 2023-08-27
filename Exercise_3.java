@@ -2,6 +2,10 @@ import java.io.*;
   
 // Java program to implement 
 // a Singly Linked List 
+//  Time Complexity : O(n)
+//  Space Complexity :O(1) 
+//  Did this code successfully run on Leetcode : Yes
+//  Any problem you faced while coding this : No
 class LinkedList { 
   
     Node head; // head of list 

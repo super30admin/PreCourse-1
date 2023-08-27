@@ -1,8 +1,10 @@
 class Stack { 
     //Please read sample.java file before starting.
   //Kindly include Time and Space complexity at top of each file
-    // Time Complexity -- O(n)
-    // Space Complexity -- O(n)
+//    Time Complexity : O(1) Push and Pop operations take O(1) when a new block of memory is created
+//    Space Complexity :O(1) As a new list is created and used
+//    Did this code successfully run on Leetcode : Yes
+//    Any problem you faced while coding this : No
     static final int MAX = 1000; 
     int top; 
     int a[] = new int[MAX]; // Maximum size of Stack 
@@ -67,7 +69,8 @@ class Main {
         Stack s = new Stack(); 
         s.push(10); 
         s.push(20); 
-        s.push(30); 
+        s.push(30);
+        s.push(40); 
         System.out.println(s.peek() + " Peek from stack"); 
         System.out.println(s.pop() + " Popped from stack"); 
         
