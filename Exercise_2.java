@@ -1,6 +1,8 @@
-public class StackAsLinkedList { 
+ class StackAsLinkedList { 
   
     StackNode root; 
+    StackNode lastNode;
+    // StackNode secondLastNode;
   
     static class StackNode { 
         int data; 
@@ -9,6 +11,8 @@ public class StackAsLinkedList {
         StackNode(int data) 
         { 
             //Constructor here 
+            this.data = data;
+            this.next = null;
         } 
     } 
     
@@ -16,23 +20,74 @@ public class StackAsLinkedList {
     public boolean isEmpty() 
     { 
         //Write your code here for the condition if stack is empty. 
+        if (root == null)
+        {
+            return true;
+        }
+        return false;
+
+
     } 
   
     public void push(int data) 
     { 
         //Write code to push data to the stack. 
+        if (root == null)
+        {
+            root = new StackNode(data);
+            root.next = null;
+            lastNode = root;
+        }
+        else {
+
+            StackNode newNode = new StackNode(data);
+            lastNode.next = newNode;
+            //secondLastNode = lastNode;
+            lastNode = newNode;
+            
+            
+        }
     } 
   
     public int pop() 
     { 	
+        if (root == null)
+        {
+            System.out.println("Stack Underflow");
+            return 0;
+        }
+        else if (root.next==null)
+        {
+            int dataNew = root.data;
+            root = null;  
+            return dataNew;
+             
+        }
+        else {
+          StackNode temp = root;
+
+          while (temp.next.next!=null)
+          {
+            temp = temp.next;
+          }
+          int dataNew = temp.next.data;
+          temp.next = null;
+          lastNode = temp;
+          return dataNew;
+        }
 	//If Stack Empty Return 0 and print "Stack Underflow"
         //Write code to pop the topmost element of stack.
-	//Also return the popped element 
+	//Also return the popped element
     } 
   
     public int peek() 
     { 
+        if (root==null)
+        {
+            return 0;
+        }
         //Write code to just return the topmost element without removing it.
+        return lastNode.data;
     } 
   
 	//Driver code
@@ -46,8 +101,12 @@ public class StackAsLinkedList {
         sll.push(30); 
   
         System.out.println(sll.pop() + " popped from stack"); 
+        System.out.println(sll.pop() + " popped from stack"); 
+        System.out.println(sll.pop() + " popped from stack"); 
   
         System.out.println("Top element is " + sll.peek()); 
+        System.out.println(sll.pop() + " popped from stack"); 
+
         
     } 
 } 
