@@ -90,6 +90,5 @@ if __name__ == '__main__':
     ll.append(98)
     ll.print()
     print(ll.find(11))
-
     ll.remove(11)
     ll.print()
