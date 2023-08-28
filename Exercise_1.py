@@ -5,7 +5,8 @@ class myStack:
      def __init__(self):
           self.input = []
           #top = -1
-         
+     
+     
      def isEmpty(self):
           return self.input.isEmpty()
          

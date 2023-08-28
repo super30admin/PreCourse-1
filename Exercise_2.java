@@ -16,7 +16,7 @@
         } 
     } 
     
-	
+	// Time Complexity: O(1)
     public boolean isEmpty() 
     { 
         //Write your code here for the condition if stack is empty. 
@@ -25,10 +25,9 @@
             return true;
         }
         return false;
-
-
     } 
   
+    // Time Complexity: O(1)
     public void push(int data) 
     { 
         //Write code to push data to the stack. 
@@ -39,16 +38,14 @@
             lastNode = root;
         }
         else {
-
             StackNode newNode = new StackNode(data);
             lastNode.next = newNode;
             //secondLastNode = lastNode;
-            lastNode = newNode;
-            
-            
+            lastNode = newNode;  
         }
     } 
   
+    // Time Complexity: O(n) where n is number of elements in the Linked List
     public int pop() 
     { 	
         if (root == null)
@@ -61,7 +58,6 @@
             int dataNew = root.data;
             root = null;  
             return dataNew;
-             
         }
         else {
           StackNode temp = root;
@@ -80,6 +76,7 @@
 	//Also return the popped element
     } 
   
+    // Time Complexity: O(1)
     public int peek() 
     { 
         if (root==null)

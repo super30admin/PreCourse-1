@@ -6,6 +6,7 @@ class Stack {
     int top; 
     int a[] = new int[MAX]; // Maximum size of Stack 
   
+    // Time Complexity: O(1)
     boolean isEmpty() 
     { 
         //Write your code here 
@@ -24,6 +25,7 @@ class Stack {
         top = -1;
     } 
   
+    // Time Complexity: O(1)
     boolean push(int x) 
     { 
         //Check for stack Overflow
@@ -36,7 +38,8 @@ class Stack {
         a[top] = x;
         return true;
     } 
-  
+
+  // Time Complexity: O(1)
     int pop() 
     { 
         //If empty return 0 and print " Stack Underflow"
@@ -55,6 +58,7 @@ class Stack {
         }
     } 
   
+    // Time Complexity: O(1)
     int peek() 
     { 
         //Write your code here

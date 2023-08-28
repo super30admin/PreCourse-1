@@ -23,6 +23,7 @@ import java.io.*;
     } 
   
     // Method to insert a new node 
+    // Time Complexity: O(n) where n is number of elements in the list
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data 
@@ -52,6 +53,7 @@ import java.io.*;
 
     } 
   
+    // Time Complexity: O(n) where n is number of elements in the Linked List
     // Method to print the LinkedList. 
     public static void printList(LinkedList list) 
     {  
