@@ -2,10 +2,12 @@ class Stack {
     //Please read sample.java file before starting.
   //Kindly include Time and Space complexity at top of each file
   
-    static final int MAX = 1000; 
-    int top; 
+    static final int MAX = 1000;  // Random size given to the array
+    int top; // Variable to store the last index until which elements are added to the array
     int a[] = new int[MAX]; // Maximum size of Stack 
   
+    // Method to evaluate whether the array a[] is empty or not
+    // Returns true if empty else false
     // Time Complexity: O(1)
     boolean isEmpty() 
     { 
@@ -19,17 +21,20 @@ class Stack {
         }
     } 
 
+    // Constructor for class Stack
     Stack() 
     { 
         //Initialize your constructor 
         top = -1;
     } 
   
+    // Method to push/add data into the array a[] at the next available index of the array.
+    // top variable comes to rescue here as we do neet to traverse to the end of array as we know where exactly
+    // the element needs to be added.
     // Time Complexity: O(1)
     boolean push(int x) 
     { 
         //Check for stack Overflow
-        //Write your code here
         top +=1;
         if (top>=MAX)
         {
@@ -39,6 +44,9 @@ class Stack {
         return true;
     } 
 
+    // Method to remove the last element of the array (which was pushed) 
+    // top variable comes to rescue here as we do neet to traverse to the end of array as we know where exactly
+    // the element needs to be removed.
   // Time Complexity: O(1)
     int pop() 
     { 
@@ -59,9 +67,11 @@ class Stack {
     } 
   
     // Time Complexity: O(1)
+    // Method to get the last eements of the array(which was pushed)
+    //top variable comes to rescue here as we do neet to traverse to the end of array as we know where exactly
+    // which is the last elemet.
     int peek() 
     { 
-        //Write your code here
         if (top ==-1)
         {
             return 0;

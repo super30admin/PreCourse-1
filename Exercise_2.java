@@ -4,10 +4,12 @@
     StackNode lastNode;
     // StackNode secondLastNode;
   
+    // Static class which creates a node with data to be stored along with the address of next element
     static class StackNode { 
         int data; 
         StackNode next; 
   
+        // Constructor of StackNode class
         StackNode(int data) 
         { 
             //Constructor here 
@@ -16,6 +18,8 @@
         } 
     } 
     
+    // Method which checks whether the Linked List is empty or not
+    // returns true if its empty else false
 	// Time Complexity: O(1)
     public boolean isEmpty() 
     { 
@@ -28,6 +32,8 @@
     } 
   
     // Time Complexity: O(1)
+    // Method to insert element in the end of the Linked List
+    //lastNode points to last element of the linked list thus we can reach the last element in O(1) time
     public void push(int data) 
     { 
         //Write code to push data to the stack. 
@@ -46,6 +52,9 @@
     } 
   
     // Time Complexity: O(n) where n is number of elements in the Linked List
+    // Method to remove/pop last element of the Linked List
+    // In this we cannot use lastNode variable as we dont have the address of the
+    // second last node thus we need to traverse the entire linked list
     public int pop() 
     { 	
         if (root == null)
@@ -77,6 +86,8 @@
     } 
   
     // Time Complexity: O(1)
+    // Method to give last element of the Linked List
+    // lastNode variable as it points to lasNode thus we can get the value in O(1) time.
     public int peek() 
     { 
         if (root==null)

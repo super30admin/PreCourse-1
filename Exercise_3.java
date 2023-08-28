@@ -9,12 +9,14 @@ import java.io.*;
     // Linked list Node. 
     // This inner class is made static 
     // so that main() can access it 
+    // Class Node used to create a Node whenever new element is added.
+    // Node consists of data and address of next element of the Linked List
     static class Node { 
   
         int data; 
         Node next; 
   
-        // Constructor 
+        // Constructor for Node class
         Node(int d) 
         { 
             //Write your code here 
@@ -24,6 +26,7 @@ import java.io.*;
   
     // Method to insert a new node 
     // Time Complexity: O(n) where n is number of elements in the list
+    // Here lastNode is not helful because in every method list is being passed from the driver code.
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data 
@@ -50,7 +53,6 @@ import java.io.*;
         }
         temp.next = newNode;
         return list;
-
     } 
   
     // Time Complexity: O(n) where n is number of elements in the Linked List
