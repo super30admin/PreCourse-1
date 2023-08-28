@@ -1,3 +1,7 @@
+# Time Complexity: O(n)
+# Space Complexity: O(1) 
+
+
 class ListNode:
     """
     A node in a singly-linked list.
@@ -26,10 +30,9 @@ class SinglyLinkedList:
             temp=ListNode(data=int(data),next=None)
             travnode=self.head
             # prevnode=travnode
-            print("Prinitng")
-            print(self.head.data)
+            
             while(travnode.next is not None):
-                print("Inside the loop")
+                
                 # prevnode=travnode
                 travnode=travnode.next
             travnode.next=temp
@@ -44,7 +47,7 @@ class SinglyLinkedList:
         Takes O(n) time.
         """
         if(self.head is None):
-            print("No element loop")
+           
             return None
             
         
@@ -52,15 +55,15 @@ class SinglyLinkedList:
             travnode=self.head
             while(travnode.next is not None):
                 if(travnode.data == key):
-                    print("in between loop")
+                    
                     return key    
                 travnode=travnode.next
             if(travnode.data == key):
-                    print("last element")
+                    
                     return key
                     
             
-            print("No element found loop")
+            
             return None 
         
     def remove(self, key):
@@ -83,7 +86,7 @@ class SinglyLinkedList:
                 while(travnode.next is not None):
                     
                     if(travnode.data == key):
-                        print("match")
+                        
                         if(prevnode is None):
                             
                             self.head=travnode.next
@@ -129,6 +132,7 @@ while True:
     print('append <value>')
     print('find <value>')
     print('remove <value>')
+    print('traverse')
     print('quit')
     do = input('What would you like to do? ').split()
     #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
