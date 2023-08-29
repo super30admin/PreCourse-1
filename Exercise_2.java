@@ -1,3 +1,9 @@
+//Time Complexity : O(1)
+//Space Complexity : O(1)
+//Did this code successfully run on Leetcode : Yes
+//Any problem you faced while coding this : Had to change parameter name in StackNode as it was matching the data object in StackNode
+
+
 public class StackAsLinkedList { 
   
     StackNode root; 
@@ -6,47 +12,61 @@ public class StackAsLinkedList {
         int data; 
         StackNode next; 
   
-        StackNode(int data) 
+        StackNode(int data_num) 
         { 
-            //Constructor here 
+            data = data_num;   //assigning data number
         } 
     } 
     
 	
     public boolean isEmpty() 
     { 
-        //Write your code here for the condition if stack is empty. 
+        if(root == null){
+            return true;      //checking if root is null to verify empty stack
+        }
+        return false;
     } 
   
     public void push(int data) 
     { 
-        //Write code to push data to the stack. 
+        StackNode s = new StackNode(data);
+        s.next = root;         //assigning initail root value to new node
+        root = s;              //updating root with the new head
     } 
   
     public int pop() 
     { 	
-	//If Stack Empty Return 0 and print "Stack Underflow"
-        //Write code to pop the topmost element of stack.
-	//Also return the popped element 
+
+        if(isEmpty()){
+            System.out.println("Stack Underflow");   //verify if root is null for empty stack
+            return 0;
+        }
+        int result = root.data;
+        root = root.next;       //assigning the next in stack address to root so now root points to the next value
+        return result;
     } 
   
     public int peek() 
     { 
-        //Write code to just return the topmost element without removing it.
+        if(isEmpty()){
+            System.out.println("Stack Underflow");  //verify if root is null for empty stack
+            return 0;
+        }
+        return root.data;
     } 
   
 	//Driver code
     public static void main(String[] args) 
     { 
   
-        StackAsLinkedList sll = new StackAsLinkedList(); 
-  
+        StackAsLinkedList sll = new StackAsLinkedList();  
+               
         sll.push(10); 
         sll.push(20); 
         sll.push(30); 
   
         System.out.println(sll.pop() + " popped from stack"); 
-  
+
         System.out.println("Top element is " + sll.peek()); 
     } 
 } 
