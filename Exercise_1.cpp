@@ -1,11 +1,14 @@
 #include <iostream>  
 using namespace std; 
-  
+  //ARRAY as a STACK
+  //Time complexity : All operations such as push(), pop(), isEmpty() perform O(1)
+  //Space complexity : it is also O(1) but if we consider initial array that is under the hood
+  // that holds stack elements then it can be O(n) where
+  // n is maximum numner of elementspushed on to the stack at any given point
 #define MAX 1000 
   
 class Stack {
-  //Please read sample.java file before starting.
-  //Kindly include Time and Space complexity at top of each file
+
     int top; 
   
 public: 
