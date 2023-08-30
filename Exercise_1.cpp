@@ -12,7 +12,8 @@ class Stack {
 public: 
     int a[MAX]; // Maximum size of Stack 
   
-    Stack() { //Constructor here } 
+    Stack() { 
+        top = -1; } 
     bool push(int x); 
     int pop(); 
     int peek(); 
