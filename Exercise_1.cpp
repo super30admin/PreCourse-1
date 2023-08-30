@@ -1,18 +1,20 @@
-#include <bits/stdc++.h> 
-  
+#include <iostream>  
 using namespace std; 
-  
+  //ARRAY as a STACK
+  //Time complexity : All operations such as push(), pop(), isEmpty() perform O(1)
+  //Space complexity : it is also O(1) but if we consider initial array that is under the hood
+  // that holds stack elements then it can be O(n) where
+  // n is maximum numner of elementspushed on to the stack at any given point
 #define MAX 1000 
   
 class Stack {
-  //Please read sample.java file before starting.
-  //Kindly include Time and Space complexity at top of each file
+
     int top; 
   
 public: 
     int a[MAX]; // Maximum size of Stack 
   
-    Stack() { //Constructor here } 
+    Stack() { } 
     bool push(int x); 
     int pop(); 
     int peek(); 
@@ -21,24 +23,50 @@ public:
   
 bool Stack::push(int x) 
 { 
-    //Your code here
-    //Check Stack overflow as well
+	if(top>=MAX-1)
+	{
+		cout<<"overflow"<<endl;
+		return false;	
+	}
+	else
+	{
+		a[top]=x;
+		top++;
+		cout<<x<<" pushed successfully"<<endl;
+		return true;
+	}
 } 
   
 int Stack::pop() 
-{ 
-    //Your code here
-    //Check Stack Underflow as well 
+{ 	
+	// checking underflow
+    if(top>0)
+	{
+		top--;
+		return a[top];
+	}
+		else
+		{
+			return -1;
+		}
 } 
+
 int Stack::peek() 
 { 
-    //Your code here
-    //Check empty condition too
+	if(top<0)
+	{
+		cout<<"empty"<<endl;
+		return 0;
+	}
+	else
+	{
+	return a[top];
+	}
 } 
   
 bool Stack::isEmpty() 
 { 
-    //Your code here 
+    return (top<0);
 } 
   
 // Driver program to test above functions 
