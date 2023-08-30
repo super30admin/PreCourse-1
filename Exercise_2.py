@@ -6,10 +6,53 @@ class Node:
  
 class Stack:
     def __init__(self):
-        
+        self.start=None
+        self.current=None
+    
+    
+
     def push(self, data):
+        if(self.start==None):
+            self.start=Node(data)
+            self.current=Node(data)
+        else:
+            temp=Node(data)
+            if(self.start.next== None): self.start.next=temp
+            self.current.next=temp
+            self.current=self.current.next
+       
+
         
     def pop(self):
+        if(self.start==None):
+            return None
+        else:
+            travnode=self.start
+            if travnode.next== None:
+                self.start=None
+                return travnode.data
+            else:
+                while travnode.next is not None:
+                    prevnode=travnode
+                    travnode=travnode.next
+                    
+                prevnode.next=None
+                return(travnode.data)
+            
+        
+    # def show(self):
+    #     travnode=self.start
+    #     while travnode.next is not None:
+    #         print(travnode.data)
+    #         travnode=travnode.next
+
+
+        
+
+
+
+
+        
         
 a_stack = Stack()
 while True:
