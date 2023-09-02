@@ -6,10 +6,25 @@ class Node:
  
 class Stack:
     def __init__(self):
-        
+        self.head = None
+
     def push(self, data):
+        if self.head is None:
+            self.head = Node(data)
+        else:
+            newnode = Node(data)
+            newnode.next = self.head
+            self.head = newnode
         
     def pop(self):
+        if self.head is None:
+            return None
+        else:
+            poppednode = self.head
+            self.head = self.head.next
+            poppednode.next = None
+            return poppednode.data
+
         
 a_stack = Stack()
 while True:
@@ -25,7 +40,7 @@ while True:
     elif operation == 'pop':
         popped = a_stack.pop()
         if popped is None:
-            print('Stack is empty.')
+            print('Stack ispush 1 empty.')
         else:
             print('Popped value: ', int(popped))
     elif operation == 'quit':
