@@ -8,6 +8,7 @@ class Stack {
   //Please read sample.java file before starting.
   //Kindly include Time and Space complexity at top of each file
     int top; 
+    int bottom;
   
 public: 
     int a[MAX]; // Maximum size of Stack 
