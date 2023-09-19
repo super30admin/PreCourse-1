@@ -1,3 +1,8 @@
+## Exercise_2 : Implement Stack using Linked List.
+# Time Complexity : O(1) for all functions
+# Space Complexity : O(n) where n is length of linked list.
+# Did this code successfully run on Leetcode : NA
+# Any problem you faced while coding this : NA
 
 class Node:
     def __init__(self, data):
@@ -6,11 +11,25 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.head = None
         
+
     def push(self, data):
-        
+        if self.head is empty:
+            n = Node(data)
+            self.head = n
+            self.temp = self.head
+        n = Node(data)
+        self.head = n
+
     def pop(self):
+        if self.head is None:
+            return None
+        poppedData = self.head.data
+        self.head = self.temp.next
+        return poppedData
         
+
 a_stack = Stack()
 while True:
     #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
