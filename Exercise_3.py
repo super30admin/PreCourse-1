@@ -1,5 +1,5 @@
 ##Exercise_3 : Implement Singly Linked List.
-# Time Complexity : O(n) for all functions except __init__
+# Time Complexity : O(1) for append, O(n) for find, remove.
 # Space Complexity : O(n) where n is length of linked list.
 # Did this code successfully run on Leetcode : NA
 # Any problem you faced while coding this : NA
@@ -25,7 +25,7 @@ class SinglyLinkedList:
     def append(self, data):
         """
         Insert a new element at the end of the list.
-        Takes O(n) time.
+        Takes O(1) time.
         """
         # when list is empty
         # head point to first node
