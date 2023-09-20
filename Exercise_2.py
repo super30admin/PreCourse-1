@@ -12,21 +12,36 @@ class Node:
 class Stack:
     def __init__(self):
         self.head = None
+        self.prev = None
         
-
     def push(self, data):
-        if self.head is empty:
+
+        # if list is empty
+        # head point to new node
+        if self.head is None:
             n = Node(data)
             self.head = n
-            self.temp = self.head
+        
+        # create new node and append it
+        # head always point to last node
+        # prev pointing to a node before head
         n = Node(data)
-        self.head = n
+        self.head.next = n
+        self.prev = self.head
+        self.head = self.head.next
 
     def pop(self):
+
+        # check if list is empty, return None
         if self.head is None:
             return None
+        
+        # get the data from last node
         poppedData = self.head.data
-        self.head = self.temp.next
+
+        # if there is one and only node and its popped, head point back to None
+        # else, head again point to last node held in prev
+        self.head = self.prev
         return poppedData
         
 

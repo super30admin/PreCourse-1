@@ -10,7 +10,7 @@ class myStack:
          self.top = 0
 
      def isEmpty(self):
-         return True ? self.top < 0 : False
+         return self.top < 0 ? True : False
 
      def push(self, item):
         self.arr[self.top] = item

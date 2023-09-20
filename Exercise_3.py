@@ -20,20 +20,26 @@ class SinglyLinkedList:
         """
         self.head = None
         self.prev = None
+        self.temp = None
 
     def append(self, data):
         """
         Insert a new element at the end of the list.
         Takes O(n) time.
         """
+        # when list is empty
+        # head point to first node
+        # temp point to first node
         if self.head is None:
             n = ListNode(data)
             self.head = n
-            temp = self.head
-        while self.head.next is not None:
-            self.head = self.head.next
+            self.temp = self.head
+
+        # create new node and append it
+        # temp always to last node in list
         n = ListNode(data)
-        self.head = temp
+        self.temp.next = n
+        self.temp = self.temp.next
 
     def find(self, key):
         """
@@ -41,12 +47,21 @@ class SinglyLinkedList:
         `key`. Return the element or `None` if not found.
         Takes O(n) time.
         """
+        #start finding from first node
+        self.findK = self.head
+
+        # check non empty list
+        # iterate to the last node in list
         if self.head is not None:
-            while(self.head.next is not None):
-                if self.head.data == key:
-                    return self.head
-                self.prev = self.head
-                self.head = self.head.next
+            while(self.findK.next is not None):    
+                if self.findK.data == key:
+                    #findK holds the foundKeyNode
+                    return self.findK        
+                # prev point to a node before findK
+                self.prev = self.findK
+                self.findK = self.findK.next
+
+        # return None if not found
         return None
         
     def remove(self, key):
@@ -56,5 +71,11 @@ class SinglyLinkedList:
         """
 
         if self.find(key) is not None:
-            foundElement = self.find(key)
-            self.prev.next = foundElement.next
+            foundKeyNode = self.find(key)
+            # if first node removed, prev point to next node after foundKeyNode
+            if foundKeyNode == self.head:
+                self.head = foundKeyNode.next
+
+            # if middle node or last node removed, prev point to next node after foundKeyNode
+            else:
+                self.prev.next = foundKeyNode.next
