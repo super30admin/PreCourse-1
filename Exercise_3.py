@@ -37,9 +37,10 @@ class SinglyLinkedList:
 
         # create new node and append it
         # temp always to last node in list
-        n = ListNode(data)
-        self.temp.next = n
-        self.temp = self.temp.next
+        else:
+            n = ListNode(data)
+            self.temp.next = n
+            self.temp = self.temp.next
 
     def find(self, key):
         """

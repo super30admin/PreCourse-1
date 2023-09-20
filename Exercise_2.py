@@ -25,10 +25,11 @@ class Stack:
         # create new node and append it
         # head always point to last node
         # prev pointing to a node before head
-        n = Node(data)
-        self.head.next = n
-        self.prev = self.head
-        self.head = self.head.next
+        else:
+            n = Node(data)
+            self.head.next = n
+            self.prev = self.head
+            self.head = self.head.next
 
     def pop(self):
 
