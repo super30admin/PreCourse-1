@@ -1,8 +1,12 @@
+//Time complexity - O(n)
+//Space complexity - O(1)
+//code sucessfully run on the local
+//I didnt face any problem while coding this
 import java.io.*; 
   
 // Java program to implement 
 // a Singly Linked List 
-public class LinkedList { 
+class LinkedList { 
   
     Node head; // head of list 
   
@@ -17,29 +21,46 @@ public class LinkedList {
         // Constructor 
         Node(int d) 
         { 
-            //Write your code here 
+            //Write your code here
+            data = d;
+            next = null;
         } 
     } 
   
     // Method to insert a new node 
     public static LinkedList insert(LinkedList list, int data) 
     { 
-        // Create a new node with given data 
-   
+        // Create a new node with given data
+        Node temp = new Node(data);
+        temp.next = null;
         // If the Linked List is empty, 
         // then make the new node as head 
-        
+        if(list.head == null){
+            list.head = temp;
+        }else{
+            Node lastNode = list.head;
+            while(lastNode.next!=null){
+                lastNode = lastNode.next;
+            }
+            lastNode.next = temp;
+        }
+
+        return list;
             // Else traverse till the last node 
             // and insert the new_node there 
 
             // Insert the new_node at last node 
         // Return the list by head 
-        
     } 
   
     // Method to print the LinkedList. 
     public static void printList(LinkedList list) 
-    {  
+    {
+        Node currentNode = list.head;
+        while(currentNode != null){
+            System.out.println("Current Node in the Singly Linked List " + currentNode.data);
+            currentNode = currentNode.next;
+        }
         // Traverse through the LinkedList 
    
             // Print the data at current node 
