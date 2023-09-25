@@ -1,4 +1,9 @@
-class Stack { 
+// Time Complexity : O(1)
+// Space Complexity : O(1)
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : No
+
+class Stack {
     //Please read sample.java file before starting.
   //Kindly include Time and Space complexity at top of each file
     static final int MAX = 1000; 
@@ -7,7 +12,11 @@ class Stack {
   
     boolean isEmpty() 
     { 
-        //Write your code here 
+        //Write your code here
+        if(top == -1){
+            return true;
+        }
+        return false;
     } 
 
     Stack() 
@@ -19,17 +28,35 @@ class Stack {
     { 
         //Check for stack Overflow
         //Write your code here
+        if(top == a.length-1){
+            return false;
+        } else {
+            top++;
+            a[top] = x;
+            return true;
+        }
     } 
   
     int pop() 
     { 
         //If empty return 0 and print " Stack Underflow"
         //Write your code here
+        if(top == -1){
+            return 0;
+        } else {
+            int popValue = a[top];
+            top--;
+            return  popValue;
+        }
     } 
   
     int peek() 
     { 
-        //Write your code here
+        if(top == -1){
+            return 0;
+        } else {
+            return a[top];
+        }
     } 
 } 
   
