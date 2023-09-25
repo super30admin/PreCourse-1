@@ -1,4 +1,6 @@
-#include <bits/stdc++.h> 
+#include <iostream>
+#include <stdio.h>
+#include <vector>
 using namespace std; 
   
 // A structure to represent a stack 
@@ -18,22 +20,45 @@ StackNode* newNode(int data)
   
 int isEmpty(StackNode* root) 
 { 
-    //Your code here 
+   if(root == NULL) {
+       return 1;
+   }
+   else {
+       return 0;
+   }
 } 
   
 void push(StackNode** root, int data) 
 { 
-    //Your code here 
+    if(*root == NULL) {
+        *root = newNode(data);
+    }
+    else {
+        StackNode* temp = newNode(data);
+        temp->next = *root;
+        *root = temp;
+    }
 } 
   
 int pop(StackNode** root) 
 { 
-    //Your code here 
+    if(*root == NULL) {
+        cout << "Stack Underflow" << endl;
+        return 0;
+    }
+    int value = (*root)->data;
+    *root = (*root)->next;
+    return value;
 } 
-  
+
 int peek(StackNode* root) 
 { 
-    //Your code here 
+    if(root == NULL) {
+        cout << "Stack is Empty" << endl;
+        return 0;
+    }
+    int value = root->data;
+    return value;
 } 
   
 int main() 
@@ -47,6 +72,12 @@ int main()
     cout << pop(&root) << " popped from stack\n"; 
   
     cout << "Top element is " << peek(root) << endl; 
+    if(isEmpty(root)) {
+        cout << "Stack is Empty" << endl;
+    }
+    else {
+        cout << "Stack is not Empty" << endl;
+    }
   
     return 0; 
 } 
