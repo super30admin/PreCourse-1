@@ -1,35 +1,62 @@
+// Time Complexity : For each operation, O(1)
+// Space Complexity : Constant space complexity O(1) although space is wasted because of the fixed size of array
+/* Did this code successfully run on Leetcode : Ran on sample test cases including 
+ 
+1. Checking if stack is empty
+2. Popping from empty stack
+3. Push elements into stack and then popping elements
+
+*/
+// Any problem you faced while coding this : None
+
+
+
 class Stack { 
-    //Please read sample.java file before starting.
-  //Kindly include Time and Space complexity at top of each file
+   
     static final int MAX = 1000; 
     int top; 
     int a[] = new int[MAX]; // Maximum size of Stack 
   
     boolean isEmpty() 
     { 
-        //Write your code here 
+        return top == -1;
     } 
 
-    Stack() 
-    { 
-        //Initialize your constructor 
+    Stack()
+   
+    {
+        a[top] = 10;
+        a = new int[MAX];
+        top = -1;
+        
     } 
   
     boolean push(int x) 
     { 
-        //Check for stack Overflow
-        //Write your code here
+        if(top < MAX) {
+            top++;
+            a[top] = (int)x;
+            
+            return true;
+        }
+        return false;
     } 
   
     int pop() 
     { 
-        //If empty return 0 and print " Stack Underflow"
-        //Write your code here
+        if(isEmpty()) {
+            return 0;
+        }
+        int poppedInt = a[top];
+        top--;
+        return poppedInt;
     } 
   
     int peek() 
     { 
-        //Write your code here
+        if(top >=0 && top < a.length)
+            return a[top];
+        return 0;
     } 
 } 
   
@@ -41,6 +68,6 @@ class Main {
         s.push(10); 
         s.push(20); 
         s.push(30); 
-        System.out.println(s.pop() + " Popped from stack"); 
+        s.push(40);
     } 
 }
