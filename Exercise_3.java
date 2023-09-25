@@ -2,6 +2,8 @@ import java.io.*;
   
 // Java program to implement 
 // a Singly Linked List 
+  // Time Complexity = O(n)
+  //Space Complexity =  O(n)
 public class LinkedList { 
   
     Node head; // head of list 
@@ -17,6 +19,8 @@ public class LinkedList {
         // Constructor 
         Node(int d) 
         { 
+            data = d;
+            next = null;
             //Write your code here 
         } 
     } 
@@ -25,7 +29,15 @@ public class LinkedList {
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data 
-   
+        Node head;
+        if(list.node == null){
+            head = data;
+        }else{
+            while(list.next != null){
+                list.next = next;
+            }
+            return head;
+        }
         // If the Linked List is empty, 
         // then make the new node as head 
         
@@ -40,6 +52,11 @@ public class LinkedList {
     // Method to print the LinkedList. 
     public static void printList(LinkedList list) 
     {  
+        Node head = list.data;
+        while(head.next != null){
+            System.out.println(head.data);
+            head = head.next;
+        }
         // Traverse through the LinkedList 
    
             // Print the data at current node 
