@@ -1,4 +1,4 @@
-// inserting an element at the end of the linked list is a constant time operation.
+// inserting an element at the end of the linked list is a linear time operation. - O(N)
 // print method is a linear time operation as we need to traverse the length of the linked list o(n)
 // both the methods of the class have constant o(1) space complexity
 import java.io.*; 
