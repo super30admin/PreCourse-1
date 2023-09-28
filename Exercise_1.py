@@ -40,4 +40,5 @@ s.push('1')
 s.push('2')
 print(s.pop())  # Outputs: '2'
 print(s.show())  # Outputs: ['1']
+#
 
