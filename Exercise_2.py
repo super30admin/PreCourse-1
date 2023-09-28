@@ -6,10 +6,11 @@ class Node:
 
 class Stack:
     def __init__(self):
-        self.head = None  # Initialize an empty stack with no head
+        self.head = None  
+        
         
     def push(self, data):
-        new_node = Node(data)  # Create a new node with the given data
+        new_node = Node(data)  
         new_node.next = self.head  # The next node after the new node will be the current head
         self.head = new_node  # The new node becomes the new head
         #Time complexity : O(1)
