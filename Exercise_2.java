@@ -1,4 +1,6 @@
-public class Exercise_2 { 
+// Time complexity : Constant for push, pop, peek
+// Space complexity : Constant for push, pop, peek
+class StackAsLinkedList { 
   
     static StackNode root; 
   
@@ -6,11 +8,12 @@ public class Exercise_2 {
         int data; 
         StackNode next; 
   
-        StackNode() 
+        StackNode(int data) 
         { 
             //Constructor here 
-            
-            root = null;
+           this.data = data;
+           this.next = null; 
+           
         } 
     } 
     
@@ -24,10 +27,10 @@ public class Exercise_2 {
     public void push(int data) 
     { 
         //Write code to push data to the stack. 
-        StackNode newRoot = root;
-        root = new StackNode();
-        root.data = data;
-        root.next = newRoot;
+        StackNode newRoot = new StackNode(data);
+        newRoot.next = root;
+        root = newRoot;
+        
         System.out.println("Pushed to stack :" + root.data);
 
 
@@ -53,6 +56,8 @@ public class Exercise_2 {
     public int peek() 
     { 
         //Write code to just return the topmost element without removing it.
+        if(isEmpty())
+        return 0;
         return root.data;
     } 
   
@@ -60,7 +65,7 @@ public class Exercise_2 {
     public static void main(String[] args) 
     { 
   
-        Exercise_2 sll = new Exercise_2(); 
+        StackAsLinkedList sll = new StackAsLinkedList(); 
   
         sll.push(10); 
         sll.push(20); 

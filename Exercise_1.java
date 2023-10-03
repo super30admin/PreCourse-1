@@ -1,3 +1,5 @@
+// Time complexity : Constant for push, pop, peek
+// Space complexity : Constant for push, pop, peek
 class Stack { 
     //Please read sample.java file before starting.
   //Kindly include Time and Space complexity at top of each file
@@ -7,7 +9,7 @@ class Stack {
   
     boolean isEmpty() 
     { 
-        //Write your code here 
+        //true if the stack is empty else returns false
         return (top==-1);
 
         
@@ -50,9 +52,9 @@ class Stack {
             return 0;
         }
         else{
-            int temp = top;
+            int temp = a[top];
             top--;
-            return a[temp];
+            return temp;
         }
     } 
   
