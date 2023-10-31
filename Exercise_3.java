@@ -1,5 +1,5 @@
  // Time Complexity : O(n) -> insert and printList methods
-// Space Complexity : constant ->  insert and printList methods
+// Space Complexity : O(1) ->  insert and printList methods
 import java.io.*; 
   
 // Java program to implement 

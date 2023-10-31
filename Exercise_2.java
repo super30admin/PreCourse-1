@@ -1,5 +1,5 @@
- // Time Complexity : constant ->  push,pop,peek and isEmpty methods
-// Space Complexity : constant ->  push,pop,peek and isEmpty methods
+ // Time Complexity : O(1)->  push,pop,peek and isEmpty methods
+// Space Complexity : O(1)->  push,pop,peek and isEmpty methods
  class StackAsLinkedList { 
   
     StackNode root; 
