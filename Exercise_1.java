@@ -1,5 +1,9 @@
-//Time complexity : O(1)
-//Space Complexity : O(n)
+//Time complexity for push: O(1)
+//Time complexity for pop: O(1)
+//Time complexity for peek: O(1)
+//Space complexity for push: O(1)
+//Space complexity for pop: O(1)
+//Space complexity for peek: O(1)
 class Stack {
     //Please read sample.java file before starting.
   //Kindly include Time and Space complexity at top of each file

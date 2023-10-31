@@ -1,4 +1,9 @@
-import java.io.*; 
+//Time complexity for insert: O(n)
+//Time complexity for print: O(n)
+//Space Complexity for insert : O(1)
+//Space Complexity for print : O(1)
+
+import java.io.*;
   
 // Java program to implement 
 // a Singly Linked List 
