@@ -8,27 +8,35 @@ class Stack {
     boolean isEmpty() 
     { 
         //Write your code here 
+        return top == -1;
     } 
 
     Stack() 
     { 
         //Initialize your constructor 
+        top = -1;
     } 
   
     boolean push(int x) 
     { 
+        a[++top] = x;
+        return true;
         //Check for stack Overflow
         //Write your code here
     } 
   
     int pop() 
     { 
+        int x = a[top--];
+        return x;
         //If empty return 0 and print " Stack Underflow"
         //Write your code here
     } 
   
     int peek() 
     { 
+        int x = a[top];
+        return x;
         //Write your code here
     } 
 } 
