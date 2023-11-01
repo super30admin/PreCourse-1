@@ -1,4 +1,7 @@
+#Time complexity: O(n)
+#Space complexity: O(1)
 class ListNode:
+    
     """
     A node in a singly-linked list.
     """
