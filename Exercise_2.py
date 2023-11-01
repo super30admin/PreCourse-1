@@ -1,4 +1,10 @@
-
+# 1):- For push Method:
+#Time Complexity: O(1)
+#Space complexity: O(1)
+########################
+# 2):- For pop Method:
+#Time Complexity: O(1)
+#Space complexity: O(1)
 class Node:
     def __init__(self, data):
        self.data = data
@@ -6,10 +12,20 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.top = None
         
     def push(self, data):
+        newnode = Node(data)
+        newnode.next = self.top
+        self.top = newnode
         
     def pop(self):
+        if self.top is not None:
+            poppeditem = self.top.data
+            self.top = self.top.next
+            return poppeditem
+        else:
+            return None
         
 a_stack = Stack()
 while True:
@@ -22,6 +38,7 @@ while True:
     operation = do[0].strip().lower()
     if operation == 'push':
         a_stack.push(int(do[1]))
+        print('Pushed value: ', int(do[1]))
     elif operation == 'pop':
         popped = a_stack.pop()
         if popped is None:
