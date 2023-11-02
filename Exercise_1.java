@@ -21,20 +21,20 @@ class Stack {
   
     boolean push(int x) {
         if (top >= MAX - 1) {
-            System.out.println("Stack Full");
+            System.out.println("Stack Overflow");
             return false;
         } else {
             a[++top] = x;
             return true;
         }
-            //Check for stack Overflow
+            //Check for stack
             //Write your code here
         }
 
         int pop ()
         {
             if(top < 0) {
-                System.out.println("Stack is Empty");
+                System.out.println("Stack Underflow");
                 return 0;
             }else {
                 int x = a[top--];
