@@ -2,6 +2,8 @@ import java.io.*;
   
 // Java program to implement 
 // a Singly Linked List 
+//Space Complexity =O(n)
+//Time Complexity = O(n)
 public class LinkedList { 
   
     Node head; // head of list 
@@ -18,6 +20,8 @@ public class LinkedList {
         Node(int d) 
         { 
             //Write your code here 
+            data=d;
+            next=null;
         } 
     } 
   
@@ -34,6 +38,20 @@ public class LinkedList {
 
             // Insert the new_node at last node 
         // Return the list by head 
+
+        Node newNode= new Node(data);
+        if(list.head==null)
+        list.head=newNode;
+
+        else{
+            Node node=list.head;
+            while(node.next!=null)
+            node=node.next;
+
+            node.next=newNode;
+        }
+        return list;
+
         
     } 
   
@@ -45,6 +63,12 @@ public class LinkedList {
             // Print the data at current node 
        
             // Go to next node 
+            Node node= list.head;
+            while(node!=null)
+            {
+                System.out.println(node.data);
+                node=node.next;
+            }
     } 
    
     // Driver code 
