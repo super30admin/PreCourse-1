@@ -1,4 +1,12 @@
 
+# Time Complexity : O(1) for push and O(n) for pop where n is the size of the linked list
+# Space Complexity : O(n) where n is the size of linked list itself.
+# Did this code successfully run on Leetcode : -
+# Any problem you faced while coding this : Could not really find the exact problem on leetcode.
+
+# Used a sentinel node at the beginning to avoid base-case null checks and keep code uniform.
+
+
 class Node:
     def __init__(self, data):
        self.data = data
@@ -6,10 +14,31 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.dummy = Node(None)
+        self.head = self.dummy
         
     def push(self, data):
+        nxt = Node(data)
+        self.head.next = nxt
+        self.head = self.head.next
         
     def pop(self):
+        if self.dummy == self.head:
+            raise Exception('Cannot pop from an empty Stack')
+        curr = self.dummy
+        popped = None
+        while curr.next != None:
+            if curr.next.next == None:
+                popped = curr.next
+                curr.next = None
+                self.head = curr
+                break
+            curr = curr.next
+        return popped.data
+                    
+
+
+
         
 a_stack = Stack()
 while True:
