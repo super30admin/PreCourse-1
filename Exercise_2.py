@@ -3,14 +3,32 @@ class Node:
     def __init__(self, data):
        self.data = data
        self.next = None
- 
+    
 class Stack:
     def __init__(self):
+        self.top = None   
         
     def push(self, data):
         
+        #if stack is empty
+        if self.top == None:
+            self.top = Node(data)
+        #if stack is not empty
+        else:            
+            new_node = Node(data)
+            new_node.next = self.top
+            self.top = new_node
+                
+    
     def pop(self):
-        
+        #pop if stack not empty
+        if self.top != None:
+            popped = self.top.data
+            self.top = self.top.next
+            return popped
+        else:
+            return None
+    
 a_stack = Stack()
 while True:
     #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
