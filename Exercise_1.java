@@ -1,3 +1,5 @@
+//  TC : - O(1)
+//  SC : - O(1)
 class Stack { 
     //Please read sample.java file before starting.
   //Kindly include Time and Space complexity at top of each file
@@ -7,29 +9,54 @@ class Stack {
   
     boolean isEmpty() 
     { 
-        //Write your code here 
+        if(top==-1){
+            System.out.println("Stack is empty");
+            return true;
+        }
+        return false;
     } 
 
     Stack() 
-    { 
-        //Initialize your constructor 
+    {  
+        top = -1;
     } 
   
     boolean push(int x) 
     { 
-        //Check for stack Overflow
-        //Write your code here
+        if(top>=a.length-1) {
+            System.out.println("Stack Overflow");
+            return true;
+        }
+        else{
+            top++;
+        }
+        a[top]=x;
+        return false;
     } 
   
     int pop() 
     { 
-        //If empty return 0 and print " Stack Underflow"
-        //Write your code here
+        if(top==-1) {
+            System.out.println("Stack Underflow");
+            return -1;
+        }
+        else{
+        int num = a[top];
+        top--;
+        return num;
+    }
     } 
   
     int peek() 
-    { 
-        //Write your code here
+    {
+        if(top==-1) {
+            System.out.println("Stack Underflow");
+            return -1;
+        }
+        else{
+        int num = a[top];
+        return num;
+    }
     } 
 } 
   

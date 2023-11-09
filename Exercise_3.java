@@ -1,10 +1,14 @@
+// TC : - O(n)
+// SC : - O(1)
+
+
 import java.io.*; 
   
 // Java program to implement 
 // a Singly Linked List 
 public class LinkedList { 
   
-    Node head; // head of list 
+   Node head; // head of list 
   
     // Linked list Node. 
     // This inner class is made static 
@@ -18,6 +22,9 @@ public class LinkedList {
         Node(int d) 
         { 
             //Write your code here 
+            data = d;
+            next = null;
+            
         } 
     } 
   
@@ -25,6 +32,18 @@ public class LinkedList {
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data 
+      Node newNode = new Node(data);
+    
+      if(list.head==null){
+       list.head = newNode;
+      }
+      else{
+        Node current = list.head;
+        while(current.next!=null){
+          current = current.next;
+        }
+        current.next = newNode;
+      }
    
         // If the Linked List is empty, 
         // then make the new node as head 
@@ -34,6 +53,7 @@ public class LinkedList {
 
             // Insert the new_node at last node 
         // Return the list by head 
+      return list;
         
     } 
   
@@ -41,6 +61,12 @@ public class LinkedList {
     public static void printList(LinkedList list) 
     {  
         // Traverse through the LinkedList 
+      Node curr = list.head;
+      while(curr!=null){
+        System.out.println(curr.data);
+        curr = curr.next;
+      }
+      
    
             // Print the data at current node 
        
