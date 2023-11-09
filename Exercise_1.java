@@ -1,40 +1,63 @@
+//Time complexity- 0(n)
+//space complexity- As we are using a array of constant size 0(1)
 class Stack { 
-    //Please read sample.java file before starting.
-  //Kindly include Time and Space complexity at top of each file
     static final int MAX = 1000; 
     int top; 
-    int a[] = new int[MAX]; // Maximum size of Stack 
-  
-    boolean isEmpty() 
-    { 
-        //Write your code here 
-    } 
-
+    int a[];
+    int index=0; 
+    
+    //constructor
     Stack() 
     { 
-        //Initialize your constructor 
+        this.top=top;
+        a=new int[MAX];
     } 
-  
+    
+    boolean isEmpty()
+    {
+        if(index==0)
+        {
+            return true;
+        }
+        return false;
+    }
+    
+    boolean isFull()
+    {
+        if(index==MAX)
+        {
+            return true;
+        }
+        return false;
+    }
     boolean push(int x) 
-    { 
-        //Check for stack Overflow
-        //Write your code here
+    {
+        if(isFull())
+        {
+            return false;
+        }
+        a[index]=x;
+        index++;
+        return true;
     } 
   
     int pop() 
     { 
-        //If empty return 0 and print " Stack Underflow"
-        //Write your code here
+        if(isEmpty())
+        {
+           return 0;
+        }
+        return a[--index];
     } 
   
     int peek() 
     { 
-        //Write your code here
+        return a[index];
     } 
 } 
   
 // Driver code 
-class Main { 
+public class Main { 
     public static void main(String args[]) 
     { 
         Stack s = new Stack(); 
