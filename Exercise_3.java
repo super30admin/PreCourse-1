@@ -1,49 +1,68 @@
+// Time Complexity :O(n)
+// Space Complexity :O(n)
+// Did this code successfully run on Leetcode : n 
+// Any problem you faced while coding this : Changed name of class as was facing errors
+
+
+// Your code here along with comments explaining your approach
 import java.io.*; 
-  
+import java.util.LinkedList;
 // Java program to implement 
 // a Singly Linked List 
-public class LinkedList { 
+public class LinkedListl { 
   
     Node head; // head of list 
   
     // Linked list Node. 
     // This inner class is made static 
     // so that main() can access it 
-    static class Node { 
-  
-        int data; 
-        Node next; 
+    static class Node {   
+         
   
         // Constructor 
         Node(int d) 
         { 
-            //Write your code here 
+           int data; 
+           Node next;//Write your code here 
         } 
     } 
   
     // Method to insert a new node 
-    public static LinkedList insert(LinkedList list, int data) 
+    public static LinkedListl insert(LinkedListl list, int data) 
     { 
         // Create a new node with given data 
-   
+        Node n = new Node(data);
         // If the Linked List is empty, 
         // then make the new node as head 
-        
+        if (list.head == null){
+            list.head = n;}
             // Else traverse till the last node 
             // and insert the new_node there 
-
-            // Insert the new_node at last node 
+        else{
+            Node.last = list.head;
+            while(list.next!=null){
+                last=last.next;
+            }
+            last.next = n;  // Insert the new_node at last node 
+        }
+            
         // Return the list by head 
-        
+        return list;
     } 
   
     // Method to print the LinkedList. 
-    public static void printList(LinkedList list) 
+    public static void printList(LinkedListl list) 
     {  
         // Traverse through the LinkedList 
-   
+          Node current = list.head;
+        System.out.prinln("Linked List : ");
+        // Traverse through the LinkedList
+        while (current != null) {
             // Print the data at current node 
-       
+       System.out.println(current.data + " ");
+            // Go to next node
+            current = current.next;
+        } 
             // Go to next node 
     } 
    
@@ -51,7 +70,7 @@ public class LinkedList {
     public static void main(String[] args) 
     { 
         /* Start with the empty list. */
-        LinkedList list = new LinkedList(); 
+        LinkedListl list = new LinkedListl(); 
   
         // 
         // ******INSERTION****** 
