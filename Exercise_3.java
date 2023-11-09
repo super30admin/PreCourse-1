@@ -2,8 +2,18 @@ import java.io.*;
   
 // Java program to implement 
 // a Singly Linked List 
-public class LinkedList { 
+class LinkedList { 
   
+    /*
+     * Time Complexity:: insert() = O(N), printList() = O(N) where N is the number of nodes in the 
+     * linked list.
+     * Space Complexity:: O(N) where N is the number of nodes in the linked list.
+     * 
+     * Approach:: insert() traverses to the last node in the linked list and adds the new node to the 
+     * next pointer of last node. 
+     * printList() traverses the linked list and prints each element of the list until the last node is 
+     * reached.
+     */
     Node head; // head of list 
   
     // Linked list Node. 
@@ -17,6 +27,8 @@ public class LinkedList {
         // Constructor 
         Node(int d) 
         { 
+            this.data = d;
+            this.next = null;
             //Write your code here 
         } 
     } 
@@ -24,27 +36,27 @@ public class LinkedList {
     // Method to insert a new node 
     public static LinkedList insert(LinkedList list, int data) 
     { 
-        // Create a new node with given data 
-   
-        // If the Linked List is empty, 
-        // then make the new node as head 
-        
-            // Else traverse till the last node 
-            // and insert the new_node there 
-
-            // Insert the new_node at last node 
-        // Return the list by head 
-        
+        if (list.head == null) {
+            list.head = new Node(data);
+        } else {
+            Node node = new Node(data);
+            Node last = list.head;
+            while (last.next != null) {
+                last = last.next;
+            }
+            last.next = node;
+        }
+        return list;
     } 
   
     // Method to print the LinkedList. 
     public static void printList(LinkedList list) 
     {  
-        // Traverse through the LinkedList 
-   
-            // Print the data at current node 
-       
-            // Go to next node 
+        Node curr = list.head;
+        while (curr != null) {
+            System.out.println(curr.data);
+            curr = curr.next;
+        }
     } 
    
     // Driver code 
@@ -52,10 +64,6 @@ public class LinkedList {
     { 
         /* Start with the empty list. */
         LinkedList list = new LinkedList(); 
-  
-        // 
-        // ******INSERTION****** 
-        // 
   
         // Insert the values 
         list = insert(list, 1); 
