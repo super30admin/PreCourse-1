@@ -1,3 +1,5 @@
+// Time Complexity :O(n)
+// Space Complexity :O(1)
 import java.io.*; 
   
 // Java program to implement 
@@ -18,6 +20,8 @@ public class LinkedList {
         Node(int d) 
         { 
             //Write your code here 
+            data = d;
+            next = null;
         } 
     } 
   
@@ -28,12 +32,25 @@ public class LinkedList {
    
         // If the Linked List is empty, 
         // then make the new node as head 
+        Node node = new Node(data);
+        node.next = null;
+        // Else traverse till the last node 
+        // and insert the new_node there 
         
-            // Else traverse till the last node 
-            // and insert the new_node there 
-
-            // Insert the new_node at last node 
-        // Return the list by head 
+        if (list.head == null) {
+            list.head = node;
+            return list;
+        }
+        // Else traverse till the last node
+        // and insert the new_node there
+        Node last = list.head;
+        while (last.next != null) {
+            last = last.next;
+        }
+        // Insert the new_node at last node
+        // Return the list by head
+        last.next = node;
+        return list;
         
     } 
   
@@ -41,10 +58,18 @@ public class LinkedList {
     public static void printList(LinkedList list) 
     {  
         // Traverse through the LinkedList 
-   
+        if (list.head == null) {
+            System.out.println("List is empty");
+            return;
+        }
+        Node last = list.head;
+        while (last.next != null) {
             // Print the data at current node 
-       
-            // Go to next node 
+            // Go to next node
+            System.out.println(last.data);
+            last = last.next;
+        }
+             
     } 
    
     // Driver code 
@@ -52,7 +77,7 @@ public class LinkedList {
     { 
         /* Start with the empty list. */
         LinkedList list = new LinkedList(); 
-  
+        printList(list);
         // 
         // ******INSERTION****** 
         // 
