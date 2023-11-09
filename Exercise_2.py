@@ -1,4 +1,8 @@
+# Time Complexity - push - O(n)
+# pop - O(n)
+# Stack creation - O(1)
 
+# Space Complexity - O(n)
 class Node:
     def __init__(self, data):
        self.data = data
@@ -6,10 +10,40 @@ class Node:
  
 class Stack:
     def __init__(self):
-        
+        self.headval=None
     def push(self, data):
+#         pointer to head/root node
+        head=self.headval
+        newnode=Node(data)
+#         base case when the stack is empty so pushing the data as 1st element
+        if head==None:
+            self.headval=newnode
+        else:
+            while head.next:
+                head=head.next
+            head.next=newnode
         
     def pop(self):
+        head=self.headval
+#         base case if there is nothing to remove
+        if head is None:
+            return None
+        else:
+#             if there is just root node present, then popping the root and updating the head value
+            if head.next is None:
+                popped=head.data
+                self.headval=None
+                return popped
+            else:
+                cur=self.headval
+                nxt=self.headval.next
+                while nxt.next:
+                    cur=cur.next
+                    nxt=nxt.next
+                popped=nxt.data
+                cur.next=None
+                return popped
+            
         
 a_stack = Stack()
 while True:
