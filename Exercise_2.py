@@ -1,4 +1,3 @@
-
 class Node:
     def __init__(self, data):
        self.data = data
@@ -6,10 +5,36 @@ class Node:
  
 class Stack:
     def __init__(self):
-        
+        self.root = None
+
+    #Time Complexity: O(1)
+    def isEmpty(self):
+        return self.root is None
+
+    #Time Complexity: O(1)
     def push(self, data):
-        
+        #Create the new node
+        newNode = Node(data)
+
+        #Make the newNode our new root node
+        newNode.next = self.root
+        self.root = newNode
+
+    #Time Complexity: O(1)
     def pop(self):
+        # Nothing to pop on an empty linked list
+        if self.isEmpty():
+            return None
+        
+        #Save the root node to a temporary node
+        #in order ot return it's value
+        tmp = self.root
+
+        #Move root to next node in linked list
+        self.root = self.root.next
+
+        return tmp.data
+
         
 a_stack = Stack()
 while True:
