@@ -2,34 +2,69 @@ class Stack {
     //Please read sample.java file before starting.
   //Kindly include Time and Space complexity at top of each file
     static final int MAX = 1000; 
-    int top; 
+    int top;
+    int capacity;
     int a[] = new int[MAX]; // Maximum size of Stack 
   
     boolean isEmpty() 
     { 
-        //Write your code here 
-    } 
+        //Write your code here
+        if(top == -1)
+            return true;
+        else
+            return false;
+    }
+
+    boolean isFull(){
+        if(top == capacity - 1){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 
     Stack() 
     { 
-        //Initialize your constructor 
+        //Initialize your constructor
+        top = -1;
+        capacity = MAX;
     } 
   
     boolean push(int x) 
     { 
         //Check for stack Overflow
-        //Write your code here
+        if(isFull()){
+            System.out.println("The stack seems to be FULL");
+            return false;
+        }
+        else{
+            System.out.println("Inserting the number "+x);
+            a[++top] = x;
+            return true;
+        }
     } 
   
     int pop() 
     { 
         //If empty return 0 and print " Stack Underflow"
-        //Write your code here
+        if (isEmpty()) {
+            System.out.println("Stack Underflow");
+            return 0;
+        }
+        System.out.println("Removing the number " + peek());
+        return a[top--];
     } 
   
     int peek() 
     { 
         //Write your code here
+        if (!isEmpty()) {
+            return a[top];
+        } else {
+            System.exit(1); // ERROR
+        }
+        return -1;
     } 
 } 
   
