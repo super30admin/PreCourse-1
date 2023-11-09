@@ -1,4 +1,4 @@
-#include <bits/stdc++.h> 
+#include <iostream> 
 using namespace std; 
   
 // A structure to represent a stack 
@@ -19,21 +19,41 @@ StackNode* newNode(int data)
 int isEmpty(StackNode* root) 
 { 
     //Your code here 
+    return root->data;
 } 
   
 void push(StackNode** root, int data) 
 { 
     //Your code here 
+     StackNode *n = newNode(data);
+    n->next = (*root);
+    (*root)=n;
 } 
   
 int pop(StackNode** root) 
 { 
     //Your code here 
+      if((*root) == NULL){
+        cout<<"Stack is underflow";
+    }
+    else
+    {
+        int x = (*root)->data;
+        (*root) = (*root)->next;
+        return x; 
+    }
 } 
   
 int peek(StackNode* root) 
 { 
     //Your code here 
+     if((root->next) == NULL){
+        cout<<"Stack is underflow";
+    }
+    else
+    {
+        return root->data;
+    }
 } 
   
 int main() 

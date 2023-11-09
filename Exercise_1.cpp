@@ -1,4 +1,4 @@
-#include <bits/stdc++.h> 
+#include <iostream> 
   
 using namespace std; 
   
@@ -12,7 +12,7 @@ class Stack {
 public: 
     int a[MAX]; // Maximum size of Stack 
   
-    Stack() { //Constructor here } 
+    Stack() { top = -1; } 
     bool push(int x); 
     int pop(); 
     int peek(); 
@@ -22,23 +22,54 @@ public:
 bool Stack::push(int x) 
 { 
     //Your code here
+
+      if(top == MAX-1){
+        cout<< "Stack Overflow";
+        return false;
+    }
+    else {
+
+        top++;
+        a[top] = x;
+        return true;
+
+}
     //Check Stack overflow as well
 } 
   
 int Stack::pop() 
 { 
     //Your code here
+     if(top == -1){
+        cout<<"underflow";
+        return 0;
+    }
+    else{
+        int y = a[top];
+        top--;
+        return y;
+
+    }
     //Check Stack Underflow as well 
 } 
 int Stack::peek() 
 { 
     //Your code here
+     if(top == -1){
+        cout<<"underflow";
+    }
+    else
+    {
+        int z = a[top];
+        return z;
+    }
     //Check empty condition too
 } 
   
 bool Stack::isEmpty() 
 { 
     //Your code here 
+    return (top<0);
 } 
   
 // Driver program to test above functions 
