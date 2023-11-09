@@ -1,4 +1,4 @@
-
+#Time Complexity O(1) and Spave O(n)
 class Node:
     def __init__(self, data):
        self.data = data
@@ -6,10 +6,22 @@ class Node:
  
 class Stack:
     def __init__(self):
-        
+        self.head = None
+    #O(1)    
     def push(self, data):
-        
+        if self.head == None:
+            self.head = Node(data)
+        else:
+            new_node = Node(data)
+            new_node.next = self.head
+            self.head = new_node
+    #O(1)    
     def pop(self):
+        pop_node = self.head
+        self.head = self.head.next
+        pop_node.next = None
+        return pop_node.data
+
         
 a_stack = Stack()
 while True:
