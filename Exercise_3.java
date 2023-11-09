@@ -1,3 +1,7 @@
+// Time Complexity :O(N) as it is gonna traverse through all the elements
+// Space Complexity : O(1)
+// Did this code successfully run on Leetcode : I didn't find this on Leetcode so successfully run it on eclipse.
+// Any problem you faced while coding this : NO
 import java.io.*; 
   
 // Java program to implement 
@@ -18,6 +22,8 @@ public class LinkedList {
         Node(int d) 
         { 
             //Write your code here 
+            data=d;
+            next=null;
         } 
     } 
   
@@ -25,11 +31,28 @@ public class LinkedList {
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data 
+        Node newNode = new Node(data);
    
         // If the Linked List is empty, 
+        if(list.head==null){
+            list.head=newNode;
+        }
         // then make the new node as head 
-        
-            // Else traverse till the last node 
+        // Else traverse till the last node 
+        else{
+            Node temp= list.head;
+            while(temp.next!=null){
+
+                temp=temp.next;
+
+            }
+            temp.next=newNode;
+
+            
+
+
+        }
+        return list;
             // and insert the new_node there 
 
             // Insert the new_node at last node 
@@ -41,6 +64,11 @@ public class LinkedList {
     public static void printList(LinkedList list) 
     {  
         // Traverse through the LinkedList 
+        Node temp= list.head;
+        while(temp!=null){
+            System.out.println(temp.data);
+            temp=temp.next;
+        }
    
             // Print the data at current node 
        
