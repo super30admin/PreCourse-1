@@ -1,3 +1,8 @@
+//Time complexity : O(n)
+//Space Complexity : O(n)
+// Did this code successfully run on Leetcode : yes
+// Any problem you faced while coding this : no
+
 import java.io.*; 
   
 // Java program to implement 
@@ -17,6 +22,8 @@ public class LinkedList {
         // Constructor 
         Node(int d) 
         { 
+            this.data = d;
+            this.next = null;
             //Write your code here 
         } 
     } 
@@ -24,27 +31,48 @@ public class LinkedList {
     // Method to insert a new node 
     public static LinkedList insert(LinkedList list, int data) 
     { 
-        // Create a new node with given data 
-   
-        // If the Linked List is empty, 
-        // then make the new node as head 
+        // Create a new node with given data
+        Node node = new Node(data);
         
-            // Else traverse till the last node 
-            // and insert the new_node there 
-
+        // If the Linked List is empty, 
+        // then make the new node as head
+        if (list.head == null)
+        {
+            list.head = node;
+        }
+        // Else traverse till the last node 
+        // and insert the new_node there 
+        else
+        {
+            Node trav = list.head;
+            while (trav.next != null) 
+            {
+                trav = trav.next;
+            }
             // Insert the new_node at last node 
-        // Return the list by head 
+            trav.next = node;
+        }
+        // Return the list by head
+        return list; 
         
     } 
   
     // Method to print the LinkedList. 
     public static void printList(LinkedList list) 
     {  
-        // Traverse through the LinkedList 
-   
-            // Print the data at current node 
-       
+        if(list.head == null)
+        {
+            System.out.println("Empty List");
+        }
+        // Traverse through the LinkedList  
+        Node trav = list.head;
+        while (trav != null)
+        {
+            // Print the data at current node
+            System.out.println(trav.data);
             // Go to next node 
+            trav = trav.next;
+        }
     } 
    
     // Driver code 
