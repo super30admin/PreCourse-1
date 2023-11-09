@@ -18,6 +18,8 @@ public class LinkedList {
         Node(int d) 
         { 
             //Write your code here 
+            data=d;
+            next=null;
         } 
     } 
   
@@ -25,6 +27,19 @@ public class LinkedList {
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data 
+
+        Node node=new Node(data);
+        if(list.head==null) {
+            list.head=node;
+        }
+        else{
+            Node temp=list.head;
+            while(temp.next!=null)
+                temp=temp.next;
+            temp.next=node;
+        }
+
+        return list;
    
         // If the Linked List is empty, 
         // then make the new node as head 
@@ -45,7 +60,22 @@ public class LinkedList {
             // Print the data at current node 
        
             // Go to next node 
-    } 
+
+        Node temp=list.head;
+        if(temp==null) {
+            System.out.println(" Stack underflow"); 
+            return;
+            
+        }
+        System.out.println(temp.data);
+        while(temp.next!=null){
+            temp=temp.next;
+            System.out.println(temp.data);
+            
+        }
+                
+            
+    }  
    
     // Driver code 
     public static void main(String[] args) 
