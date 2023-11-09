@@ -1,4 +1,5 @@
-
+# Time Complexity : O[1]
+# Space Complexity : O[1]
 class Node:
     def __init__(self, data):
        self.data = data
@@ -6,10 +7,28 @@ class Node:
  
 class Stack:
     def __init__(self):
-        
+        # Initialize head of the linked list
+        self.head = None
+
     def push(self, data):
+        if self.head is None:
+            # Instantiate the head with a new node
+            self.head = Node(data)
+        else:
+            # set next of new node as head 
+            # set head as the new node
+            node = Node(data)
+            node.next = self.head
+            self.head = node
         
     def pop(self):
+        if self.head is None:
+            # if LL is empty return none
+            return self.head
+        else:
+            node = self.head
+            self.head = self.head.next
+            return node.data
         
 a_stack = Stack()
 while True:
