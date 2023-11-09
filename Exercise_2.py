@@ -1,3 +1,9 @@
+# Implement Stack using Linked List
+# Time Complexity : O(1)
+# Space Complexity : O(N)
+# Did this code successfully run on Leetcode : Yes. I'm not understanding the tests here
+# Any problem you faced while coding this : 
+
 
 class Node:
     def __init__(self, data):
@@ -6,10 +12,24 @@ class Node:
  
 class Stack:
     def __init__(self):
-        
+        self.head = None
     def push(self, data):
-        
+        if self.head == None:
+            self.head=Node(data)
+             
+        else:
+            newnode = Node(data)
+            newnode.next = self.head
+            self.head = newnode
+
     def pop(self):
+        if self.head == None:
+            return None
+        else: 
+            poppedNode = self.head
+            self.head = self.head.next
+            poppedNode.next = None
+            return poppedNode.data
         
 a_stack = Stack()
 while True:
