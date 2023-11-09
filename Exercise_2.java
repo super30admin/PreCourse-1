@@ -1,3 +1,7 @@
+import org.omg.PortableInterceptor.NON_EXISTENT;
+
+import javafx.scene.Node;
+
 public class StackAsLinkedList { 
   
     StackNode root; 
@@ -5,22 +9,25 @@ public class StackAsLinkedList {
     static class StackNode { 
         int data; 
         StackNode next; 
-  
+
+        StackNode top;
         StackNode(int data) 
         { 
-            //Constructor here 
+            this.data=data;
+            
         } 
     } 
     
 	
     public boolean isEmpty() 
     { 
-        //Write your code here for the condition if stack is empty. 
+         return root == null;
     } 
   
     public void push(int data) 
     { 
-        //Write code to push data to the stack. 
+        Node temp = new Node();
+        return; 
     } 
   
     public int pop() 
