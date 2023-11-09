@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+/Users/prabhatsrivastava/Desktop/s30/pre_course/PreCourse-1/.metadata/.plugins/org.eclipse.jdt.core
+1865797976.index
+3468314333.index
