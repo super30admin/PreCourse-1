@@ -1,15 +1,49 @@
 
 class Node:
     def __init__(self, data):
+    #Time Complexity - O(1)
+    #Space Complexity - O(1)
        self.data = data
        self.next = None
  
 class Stack:
     def __init__(self):
-        
+    #Time Complexity - O(1)
+    #Space Complexity - O(1)
+        self.top = None
+
     def push(self, data):
-        
+    #Time Complexity - O(1)
+    #Space Complexity - O(1)
+        if self.top is None:
+            self.top = Node(data)
+        else:
+            a = Node(data)
+            a.next = self.top
+            self.top = a
+
     def pop(self):
+    #Time Complexity - O(1)
+    #Space Complexity - O(1)
+        if self.top is None:
+            print("LL is empty")
+        else:
+            temp = self.top.data
+            self.top = self.top.next
+            return temp
+
+
+
+    
+    def printll(self):
+        if self.top is None:
+            print("LL is empty")
+        else:
+            itr = self.top
+            while itr:
+                print(itr.data)
+                itr = itr.next
+
         
 a_stack = Stack()
 while True:
@@ -30,3 +64,5 @@ while True:
             print('Popped value: ', int(popped))
     elif operation == 'quit':
         break
+    elif operation == 'print':
+        a_stack.printll()
