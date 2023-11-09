@@ -1,6 +1,11 @@
-public class StackAsLinkedList { 
+// Time Complexity : O(n)
+// Space Complexity : O(n)
+// Did this code successfully run on Leetcode : I didn't find this in leetcode
+// Any problem you faced while coding this : No
+
+class StackAsLinkedList { 
   
-    StackNode root; 
+    StackNode root;
   
     static class StackNode { 
         int data; 
@@ -8,31 +13,42 @@ public class StackAsLinkedList {
   
         StackNode(int data) 
         { 
-            //Constructor here 
+            this.data = data;
         } 
     } 
     
 	
     public boolean isEmpty() 
     { 
-        //Write your code here for the condition if stack is empty. 
+        return root == null;
     } 
   
     public void push(int data) 
     { 
-        //Write code to push data to the stack. 
+        StackNode temp = new  StackNode(data);
+
+        temp.next = root;
+        root = temp;
+
     } 
   
     public int pop() 
     { 	
-	//If Stack Empty Return 0 and print "Stack Underflow"
-        //Write code to pop the topmost element of stack.
-	//Also return the popped element 
+
+        if(isEmpty()) {
+            System.out.println("Stack Underflow");
+            return 0;
+        }
+
+        int poppedElement = root.data;
+        root = root.next;
+        return poppedElement;
+	
     } 
   
     public int peek() 
     { 
-        //Write code to just return the topmost element without removing it.
+        return root.data;
     } 
   
 	//Driver code
