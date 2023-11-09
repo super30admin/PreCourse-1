@@ -3,7 +3,9 @@ class ListNode:
     A node in a singly-linked list.
     """
     def __init__(self, data=None, next=None):
-    
+        self.data = initdata
+        self.next = None
+
 class SinglyLinkedList:
     def __init__(self):
         """
@@ -11,12 +13,16 @@ class SinglyLinkedList:
         Takes O(1) time.
         """
         self.head = None
+        self.tail = self.head
 
     def append(self, data):
         """
         Insert a new element at the end of the list.
         Takes O(n) time.
         """
+        appendkey = Node(key)
+        self.tail.next = appendkey
+        self.tail = appendkey
         
     def find(self, key):
         """
