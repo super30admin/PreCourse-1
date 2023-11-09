@@ -1,9 +1,3 @@
-
-// Time Complexity : O(1)
-// Space Complexity : O(n)
-// Did this code successfully run on Leetcode : Didn't Check
-// Any problem you faced while coding this : The file wouldn't be running with "Exercise_2.java", So Created another file with the name "StackAsLinkedList.java". It is also being checked in here.
-//Please do find and grade "StackAsLinkedList.java"
 public class StackAsLinkedList {
 
     StackNode root;
