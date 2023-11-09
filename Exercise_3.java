@@ -1,10 +1,13 @@
 import java.io.*; 
   
 // Java program to implement 
-// a Singly Linked List 
-public class LinkedList { 
+// a Singly Linked List
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this :No
+// Your code here along with comments explaining your approach
+ class LinkedList { 
   
-    Node head; // head of list 
+    static Node head; // head of list 
   
     // Linked list Node. 
     // This inner class is made static 
@@ -18,9 +21,13 @@ public class LinkedList {
         Node(int d) 
         { 
             //Write your code here 
+            this.data=d;
+            this.next=null;
         } 
     } 
   
+// Time Complexity : O(N)
+// Space Complexity :O(N)
     // Method to insert a new node 
     public static LinkedList insert(LinkedList list, int data) 
     { 
@@ -33,10 +40,24 @@ public class LinkedList {
             // and insert the new_node there 
 
             // Insert the new_node at last node 
-        // Return the list by head 
-        
+        // Return the list by head
+        Node newnode=new Node(data);
+        if(head==null){
+            head=newnode;
+        }
+        else{
+            Node dummy=head;
+            while(dummy.next!=null){
+                dummy=dummy.next;
+            }
+            dummy.next=newnode;
+        }
+
+        return list;
     } 
   
+// Time Complexity : O(N)
+// Space Complexity :O(N)
     // Method to print the LinkedList. 
     public static void printList(LinkedList list) 
     {  
@@ -44,7 +65,18 @@ public class LinkedList {
    
             // Print the data at current node 
        
-            // Go to next node 
+            // Go to next node
+            if(head==null){
+                System.out.println("List is empty");
+            }
+            else{
+                Node dummy=head;
+                while(dummy!=null){
+                    System.out.println(dummy.data);
+                    dummy=dummy.next;
+                }
+            }
+       
     } 
    
     // Driver code 
