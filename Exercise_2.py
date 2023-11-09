@@ -1,4 +1,5 @@
-
+# Space Complexity - O(n) (Linked List to store n values)
+# Time Complexity - O(1)
 class Node:
     def __init__(self, data):
        self.data = data
@@ -6,11 +7,23 @@ class Node:
  
 class Stack:
     def __init__(self):
-        
+        self.head = None
+
     def push(self, data):
-        
+        if self.head == None:
+            self.head = Node(data)
+        else:
+            temp = Node(data)
+            temp.next = self.head
+            self.head = temp
+
     def pop(self):
-        
+        if self.head == None:
+            return None
+        temp = self.head
+        self.head = self.head.next
+        return temp.data
+
 a_stack = Stack()
 while True:
     #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
