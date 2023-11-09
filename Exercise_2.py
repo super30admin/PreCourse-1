@@ -1,4 +1,8 @@
 
+
+# tc -> o(1)
+# sc -> o(1)
+
 class Node:
     def __init__(self, data):
        self.data = data
@@ -6,10 +10,26 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.head=None
         
     def push(self, data):
+        temp=Node(data)
+        if self.head == None:
+            self.head= temp
+        else:
+                temp.next =self.head
+                self.head=temp
         
     def pop(self):
+        if self.head==None:
+            return None
+        else:
+            current=self.head
+            data=current.data
+            self.head=current.next
+            return data
+        
+            
         
 a_stack = Stack()
 while True:
