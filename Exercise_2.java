@@ -1,3 +1,7 @@
+// Time Complexity : O(1)
+// Space Complexity : O(n)
+// n is total number of nodes in the linkedlist
+
 public class StackAsLinkedList { 
   
     StackNode root; 
@@ -9,6 +13,7 @@ public class StackAsLinkedList {
         StackNode(int data) 
         { 
             //Constructor here 
+            this.data = data;
         } 
     } 
     
@@ -16,23 +21,47 @@ public class StackAsLinkedList {
     public boolean isEmpty() 
     { 
         //Write your code here for the condition if stack is empty. 
+        return (root==null);
     } 
   
     public void push(int data) 
     { 
         //Write code to push data to the stack. 
+        StackNode topNode = new StackNode(data);
+        topNode.next = root;
+        root = topNode;
     } 
   
     public int pop() 
     { 	
-	//If Stack Empty Return 0 and print "Stack Underflow"
+        //If Stack Empty Return 0 and print "Stack Underflow"
         //Write code to pop the topmost element of stack.
-	//Also return the popped element 
+        //Also return the popped element 
+        if (root==null)
+        {
+            System.out.println("Stack Underflow");
+            return 0;
+        }
+        else
+        {
+            int topValue = root.data;
+            root = root.next;
+            return topValue;
+        }
     } 
   
     public int peek() 
     { 
         //Write code to just return the topmost element without removing it.
+        if (root==null)
+        {
+            System.out.println("Stack is empty");
+            return 0;
+        }
+        else
+        {
+            return root.data;
+        }
     } 
   
 	//Driver code
