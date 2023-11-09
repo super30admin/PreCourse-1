@@ -1,8 +1,16 @@
+/**
+ * Space complexity is O(n). n is the number of elements.
+ * 
+ * Time complexity
+ * O(n) for insertion as the entire list needs to be traversed to reach the tail and insert the new element at the tail.
+ * O(n) for printing the list as the entire list needs to be traversed to print each element inthe list.
+ */
+
 import java.io.*; 
   
 // Java program to implement 
 // a Singly Linked List 
-public class LinkedList { 
+class LinkedList { 
   
     Node head; // head of list 
   
@@ -18,9 +26,12 @@ public class LinkedList {
         Node(int d) 
         { 
             //Write your code here 
+            this.data = d;
         } 
     } 
-  
+    LinkedList() {
+        head = new Node(-1);
+    }
     // Method to insert a new node 
     public static LinkedList insert(LinkedList list, int data) 
     { 
@@ -34,6 +45,12 @@ public class LinkedList {
 
             // Insert the new_node at last node 
         // Return the list by head 
+        Node iter = list.head;
+        while(iter.next != null) {
+            iter = iter.next;
+        }
+        iter.next = new Node(data);
+        return list;
         
     } 
   
@@ -45,6 +62,11 @@ public class LinkedList {
             // Print the data at current node 
        
             // Go to next node 
+            Node iter = list.head.next;
+            while(iter != null) {
+                System.out.println(iter.data);
+                iter = iter.next;
+            }
     } 
    
     // Driver code 
