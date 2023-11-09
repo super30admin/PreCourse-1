@@ -1,3 +1,8 @@
+// Time Complexity :  O(1) for each operation
+// Space Complexity :   O(n) stack occupied memory
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this :
+// Your code here along with comments explaining your approach
 class Stack { 
     //Please read sample.java file before starting.
   //Kindly include Time and Space complexity at top of each file
@@ -8,28 +13,53 @@ class Stack {
     boolean isEmpty() 
     { 
         //Write your code here 
+        return (top<0);
     } 
 
     Stack() 
     { 
         //Initialize your constructor 
+        top = -1;
     } 
   
     boolean push(int x) 
     { 
         //Check for stack Overflow
         //Write your code here
+        if(top==MAX-1)
+        {System.out.println("Stack Overflow");
+            return false;}
+        
+            if(top<MAX){
+                top++;
+                a[top]=x;
+                return true;
+            }
+        return false;
     } 
   
     int pop() 
     { 
         //If empty return 0 and print " Stack Underflow"
         //Write your code here
+        if(top == -1)
+        {
+            System.out.println(" Stack Underflow");
+        return 0;
+    }
+        else if(top>0)
+        {   int res = a[top];
+            System.out.println("removed element is"+ a[top]);
+            top--;
+            return res;
+        }
+        return -1;
     } 
   
     int peek() 
     { 
         //Write your code here
+        return top;
     } 
 } 
   
