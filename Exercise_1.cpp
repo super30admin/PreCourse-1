@@ -21,24 +21,40 @@ public:
   
 bool Stack::push(int x) 
 { 
-    //Your code here
-    //Check Stack overflow as well
+    if(top==MAX-1){
+    return false;;
+  }else{
+    top++;
+    a[top]=x;
+    return true;
+  } 
 } 
   
 int Stack::pop() 
 { 
-    //Your code here
-    //Check Stack Underflow as well 
+  if(top==-1){
+    cout << "Stack is Empty" << endl;
+  }else{
+    return a[top];
+    cout << a[top];
+  }
 } 
 int Stack::peek() 
 { 
-    //Your code here
-    //Check empty condition too
+   if(top==-1){
+        return true;
+    }else{
+        return false;
+    }
 } 
   
 bool Stack::isEmpty() 
 { 
-    //Your code here 
+     if(top==-1){
+      return true;
+    }else{
+      return false;
+    }
 } 
   
 // Driver program to test above functions 
