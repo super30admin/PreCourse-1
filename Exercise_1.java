@@ -6,30 +6,52 @@ class Stack {
     int a[] = new int[MAX]; // Maximum size of Stack 
   
     boolean isEmpty() 
-    { 
-        //Write your code here 
+    {
+        if(top<0)
+            return false;
+        else
+            return true;
     } 
 
     Stack() 
     { 
-        //Initialize your constructor 
+        //Initialize your constructor
+        top = -1;
     } 
   
     boolean push(int x) 
     { 
         //Check for stack Overflow
         //Write your code here
+        if(top>=MAX-1){
+            return false;
+        }
+        else{
+            a[top+1]=x;
+            top++;
+            return true;
+        }
     } 
   
     int pop() 
     { 
         //If empty return 0 and print " Stack Underflow"
         //Write your code here
+        if(top<0)
+            return 0;
+        else {
+            int ele = a[top];
+            top--;
+            return ele;
+        }
     } 
   
     int peek() 
-    { 
+    {
+        if(top<0)
+            return 0;
         //Write your code here
+        return a[top];
     } 
 } 
   
