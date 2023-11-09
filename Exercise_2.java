@@ -1,6 +1,17 @@
-public class StackAsLinkedList { 
+// Time Complexity :
+    //Push: O(1)
+    //Pop: O(1)
+    //peek: O(1)
+// Space Complexity : O(n)
+// Did this code successfully run on Leetcode : No
+// Any problem you faced while coding this : No
+
+
+// Your code here along with comments explaining your approach :  used root as dummy node and root.next as top of stack
+
+class StackAsLinkedList {
   
-    StackNode root; 
+    StackNode root = new StackNode(0);
   
     static class StackNode { 
         int data; 
@@ -8,31 +19,42 @@ public class StackAsLinkedList {
   
         StackNode(int data) 
         { 
-            //Constructor here 
+            //Constructor here
+            this.data = data;
         } 
     } 
     
 	
     public boolean isEmpty() 
     { 
-        //Write your code here for the condition if stack is empty. 
+        //Write your code here for the condition if stack is empty.
+        return current == root;
     } 
   
     public void push(int data) 
     { 
-        //Write code to push data to the stack. 
-    } 
+        //Write code to push data to the stack.
+        StackNode node =  new StackNode(data);
+        node.next = root.next
+        root.next = node;
+    }
   
     public int pop() 
     { 	
 	//If Stack Empty Return 0 and print "Stack Underflow"
+        if (root.next == null) return 0;
         //Write code to pop the topmost element of stack.
-	//Also return the popped element 
+        int result = root.next.data;
+        root.next = root.next.next;
+	//Also return the popped element
+        return result;
     } 
   
     public int peek() 
     { 
         //Write code to just return the topmost element without removing it.
+        if (!isEmpty()) return root.next.data;
+        return 0;
     } 
   
 	//Driver code
