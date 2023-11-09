@@ -5,6 +5,7 @@ import java.io.*;
 public class LinkedList { 
   
     Node head; // head of list 
+    Node tail;
   
     // Linked list Node. 
     // This inner class is made static 
@@ -17,7 +18,8 @@ public class LinkedList {
         // Constructor 
         Node(int d) 
         { 
-            //Write your code here 
+            this.data = d;
+            this.next = null;
         } 
     } 
   
@@ -25,6 +27,24 @@ public class LinkedList {
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data 
+        Node temp = new Node(data);
+
+        if(list.head == null)
+        {
+            list.head = temp;
+            list.tail = temp;
+
+            return list;
+        }
+        else
+        {
+            list.tail.next = temp;
+            list.tail = temp;
+
+            return list;
+        }
+
+
    
         // If the Linked List is empty, 
         // then make the new node as head 
@@ -45,6 +65,13 @@ public class LinkedList {
             // Print the data at current node 
        
             // Go to next node 
+        Node temp = list.head;
+        
+        while(temp != null)
+        {
+            System.out.println(temp.data + " ");
+            temp = temp.next;
+        }
     } 
    
     // Driver code 
