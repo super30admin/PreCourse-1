@@ -5,10 +5,13 @@ public class StackAsLinkedList {
     static class StackNode { 
         int data; 
         StackNode next; 
-  
+        Node top;
         StackNode(int data) 
         { 
             //Constructor here 
+            
+
+
         } 
     } 
     
@@ -16,11 +19,13 @@ public class StackAsLinkedList {
     public boolean isEmpty() 
     { 
         //Write your code here for the condition if stack is empty. 
+        return root == null;
     } 
   
     public void push(int data) 
     { 
         //Write code to push data to the stack. 
+        root.addFirst( data);
     } 
   
     public int pop() 
