@@ -5,6 +5,10 @@ import java.io.*;
 public class LinkedList { 
   
     Node head; // head of list 
+
+    LinkedList() {
+      this.head = null;
+    }
   
     // Linked list Node. 
     // This inner class is made static 
@@ -15,13 +19,16 @@ public class LinkedList {
         Node next; 
   
         // Constructor 
-        Node(int d) 
-        { 
-            //Write your code here 
+        Node(int d) { 
+          this.data = d;
+          this.next = null;
         } 
     } 
   
-    // Method to insert a new node 
+    /*
+    Time Complexity: O(n), since we have to iterate over all elements to reach the last element in the List.
+    Space Complexity: O(1)
+    */
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data 
@@ -34,10 +41,27 @@ public class LinkedList {
 
             // Insert the new_node at last node 
         // Return the list by head 
+      ListNode newNode = new ListNode(data);
+
+      if(list.head == null){
+        list.head = newNode;
         
+      } else {
+        ListNode current = list.head;
+        while(current.next != null){
+          current = current.next;
+        }
+
+        current.next = newNode;
+        
+      }
+      return list;
     } 
   
-    // Method to print the LinkedList. 
+    /*
+    Time Complexity: O(n), since we have to iterate over all elements to reach the last element in the List.
+    Space Complexity: O(1)
+    */
     public static void printList(LinkedList list) 
     {  
         // Traverse through the LinkedList 
@@ -45,6 +69,13 @@ public class LinkedList {
             // Print the data at current node 
        
             // Go to next node 
+      
+      ListNode current = list.head;
+
+      while(current != null){
+        System.out.println(current.data);
+        current = current.next;
+      }
     } 
    
     // Driver code 
