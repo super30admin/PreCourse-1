@@ -1,3 +1,7 @@
+# Time Complexity : O(1) for push, pop
+# Space Complexity : O(N) where N is the number of element
+from curses.panel import top_panel
+
 
 class Node:
     def __init__(self, data):
@@ -6,11 +10,25 @@ class Node:
  
 class Stack:
     def __init__(self):
-        
+        self.top = None
+
+   
     def push(self, data):
-        
+        n1 = Node(data)
+        if self.top == None:
+            self.top = n1
+        else:
+            n1.next = self.top
+            self.top=n1
+
     def pop(self):
-        
+        if self.top==None :
+            return None
+        else:
+            temp=self.top
+            self.top=self.top.next
+            return temp.data
+
 a_stack = Stack()
 while True:
     #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
