@@ -1,6 +1,11 @@
+// Time Complexity: For push/Pop/peek/isEmpty operations , TC is O(1) as only a seek at position is required.
+//Space Complexity: O (MAX) as maximum of MAX elements can be stored at a time in  array.
+// Couldnt find qn on Leetcode
+//No issue for this question
 class Stack { 
     //Please read sample.java file before starting.
-  //Kindly include Time and Space complexity at top of each file
+    //Kindly include Time and Space complexity at top of each file
+
     static final int MAX = 1000; 
     int top; 
     int a[] = new int[MAX]; // Maximum size of Stack 
@@ -8,28 +13,45 @@ class Stack {
     boolean isEmpty() 
     { 
         //Write your code here 
+        if(top==-1)
+            return true;
+        return false;
     } 
 
     Stack() 
     { 
         //Initialize your constructor 
+        top=-1;
     } 
   
     boolean push(int x) 
     { 
         //Check for stack Overflow
         //Write your code here
+        if(top+1>=MAX)
+            return false;
+        top++;
+        a[top]=x;
+        return true;
     } 
   
     int pop() 
     { 
         //If empty return 0 and print " Stack Underflow"
         //Write your code here
+        if(top==-1)
+        return 0;
+
+        int value=a[top];
+        top--;
+        return value;
+
     } 
   
     int peek() 
     { 
         //Write your code here
+        return a[top];
     } 
 } 
   
