@@ -1,3 +1,7 @@
+# Time Complexity: O(1) for push and pop.
+# Space Complexity: O(1) for push and pop.
+# Yes, runs successfully on LeetCode.
+# No issues faced.
 
 class Node:
     def __init__(self, data):
@@ -6,10 +10,23 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.stack = None
         
     def push(self, data):
+        new_node = Node(data)
+        if self.stack is None:
+            self.stack = new_node
+        else:
+            new_node.next = self.stack
+            self.stack = new_node
         
     def pop(self):
+        if self.stack is None:
+            return None
+        else:
+            popped = self.stack.data
+            self.stack = self.stack.next
+            return popped
         
 a_stack = Stack()
 while True:
@@ -17,7 +34,7 @@ while True:
     print('push <value>')
     print('pop')
     print('quit')
-    do = input('What would you like to do? ').split()
+    do = input('What would you like to do?').split()
     #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
     operation = do[0].strip().lower()
     if operation == 'push':
