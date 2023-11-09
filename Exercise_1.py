@@ -1,20 +1,31 @@
 class myStack:
   #Please read sample.java file before starting.
   #Kindly include Time and Space complexity at top of each file
+# Time Complexity : O(1) for all operation and O(n) for show, as whole list is traversed
+# Space Complexity : O(n)
+# Did this code successfully run on Leetcode : Ran in terminal successfully
+# Any problem you faced while coding this :
+
      def __init__(self):
+       self.arr = [ ]
          
      def isEmpty(self):
+       return self.arr == [ ]
          
      def push(self, item):
+       self.arr.append(item)
          
      def pop(self):
-        
-        
+       return self.arr.pop()
+
      def peek(self):
+       return self.arr[len(self.arr) - 1]
         
      def size(self):
+       return len(self.arr)
          
      def show(self):
+       return self.arr
          
 
 s = myStack()
