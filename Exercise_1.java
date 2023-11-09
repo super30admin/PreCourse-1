@@ -1,15 +1,19 @@
 class Stack { 
     //Please read sample.java file before starting.
   //Kindly include Time and Space complexity at top of each file
+//Time complexity of Peek is O(1). push is O(1),Pop is O(1) 
+//Space complexity is O(N)
     static final int MAX = 1000; 
     int top; 
     int a[] = new int[MAX]; // Maximum size of Stack 
   
     boolean isEmpty() 
     { 
-        //Write your code here 
-    } 
-
+      if (top == -1){
+         return true; 
+    } else {
+          return false;
+    }
     Stack() 
     { 
         //Initialize your constructor 
@@ -17,20 +21,33 @@ class Stack {
   
     boolean push(int x) 
     { 
-        //Check for stack Overflow
-        //Write your code here
+        if ( top == MAX){
+         System.out.println("Stack is full");
     } 
+     else{
+      top++;
+      a[top] = x;
+    }
   
     int pop() 
     { 
-        //If empty return 0 and print " Stack Underflow"
-        //Write your code here
+      if (isEmpty()){
+      System.out.println("Stack is empty");
+        
     } 
+   else {
+        top--;
+       }
   
     int peek() 
     { 
-        //Write your code here
+        if (top == isEmpty()) {
+        System.out.println("stack is underflow"):
     } 
+     else {
+      return a[top];
+ }
+     
 } 
   
 // Driver code 
