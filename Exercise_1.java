@@ -7,30 +7,55 @@ class Stack {
   
     boolean isEmpty() 
     { 
-        //Write your code here 
+        Return ( top < ) ; 
     } 
 
     Stack() 
     { 
-        //Initialize your constructor 
+        top = - ;  
     } 
   
     boolean push(int x) 
     { 
-        //Check for stack Overflow
-        //Write your code here
+        if(top == max-1)  
+        {  
+            System.out.println("Overflow !!");  
+            return false;  
+        }  
+        else   
+        {  
+            System.out.println("Enter Value");  
+            int val = x.nextInt();  
+            top++;  
+            arr[top]=val;  
+            System.out.println("Item pushed");  
+            return true;  
+        }  
     } 
   
     int pop() 
     { 
-        //If empty return 0 and print " Stack Underflow"
-        //Write your code here
+        if (top == -1)  
+        {  
+            System.out.println("Underflow !!");  
+            return false;  
+        }  
+        else   
+        {  
+            top --;   
+            System.out.println("Item popped");  
+            return true;  
+        }  
     } 
   
     int peek() 
-    { 
-        //Write your code here
-    } 
+       {  
+        System.out.println("Printing stack elements .....");  
+        for(int i = top; i>=0;i--)  
+        {  
+            System.out.println(arr[i]);  
+        }  
+    }   
 } 
   
 // Driver code 
