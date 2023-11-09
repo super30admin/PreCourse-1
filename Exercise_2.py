@@ -1,4 +1,7 @@
 
+#space complexity: O(n)
+#time complexity: O(1) for both push and pop
+#difficulty faced: deciding which element is tos while pushing, returning root in pop
 class Node:
     def __init__(self, data):
        self.data = data
@@ -6,10 +9,26 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.root = None
         
     def push(self, data):
+        #root is tos so that both push and pop can be O(1)
+        newnode = Node(data)
+        newnode.next = self.root
+        self.root = newnode
+
+    def isEmpty(self):
+        if self.root == None:
+            return True
+        else:
+            return False
         
     def pop(self):
+        if(self.isEmpty()):
+            return -1
+        temp = self.root
+        self.root = self.root.next
+        return temp.data
         
 a_stack = Stack()
 while True:

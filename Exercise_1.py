@@ -1,20 +1,37 @@
 class myStack:
-  #Please read sample.java file before starting.
-  #Kindly include Time and Space complexity at top of each file
-     def __init__(self):
+  
+  #this is implementing stack using an array
+  #space complexity: is O(n) where n is number of elements pushed
+  #time complexity: for push(),show() is O(n) and for pop(),peek(),size() is O(1)
+  #passed all test cases: yes
+  #difficulty faced: using append function, calling another function of same class
+    def __init__(self):
+        self.stack = []
+
+
+    def isEmpty(self):
+        return len(self.stack) == 0
          
-     def isEmpty(self):
-         
-     def push(self, item):
-         
-     def pop(self):
+    def push(self, item):
+        self.stack.append(item)
+
+
+    def pop(self):
+        if self.isEmpty():
+            return (-1)
+        return self.stack.pop()
+                
+    def peek(self):
+        if self.isEmpty():
+            return (-1)
+        return self.stack[len(self.stack) - 1]
         
-        
-     def peek(self):
-        
-     def size(self):
+    def size(self):
+        return(len(self.stack))
+
          
-     def show(self):
+    def show(self):
+        return self.stack
          
 
 s = myStack()
