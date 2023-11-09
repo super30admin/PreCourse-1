@@ -1,70 +1,68 @@
-import java.io.*; 
+// Time Complexity : O(n)
+// Space Complexity : O(n)
+// Did this code successfully run on Leetcode : I didn't find this in leetcode
+// Any problem you faced while coding this : No
+
+class StackAsLinkedList { 
   
-// Java program to implement 
-// a Singly Linked List 
-public class LinkedList { 
+    StackNode root;
   
-    Node head; // head of list 
-  
-    // Linked list Node. 
-    // This inner class is made static 
-    // so that main() can access it 
-    static class Node { 
-  
+    static class StackNode { 
         int data; 
-        Node next; 
+        StackNode next; 
   
-        // Constructor 
-        Node(int d) 
+        StackNode(int data) 
         { 
-            //Write your code here 
+            this.data = data;
         } 
     } 
-  
-    // Method to insert a new node 
-    public static LinkedList insert(LinkedList list, int data) 
+    
+	
+    public boolean isEmpty() 
     { 
-        // Create a new node with given data 
-   
-        // If the Linked List is empty, 
-        // then make the new node as head 
-        
-            // Else traverse till the last node 
-            // and insert the new_node there 
-
-            // Insert the new_node at last node 
-        // Return the list by head 
-        
+        return root == null;
     } 
   
-    // Method to print the LinkedList. 
-    public static void printList(LinkedList list) 
-    {  
-        // Traverse through the LinkedList 
-   
-            // Print the data at current node 
-       
-            // Go to next node 
+    public void push(int data) 
+    { 
+        StackNode temp = new  StackNode(data);
+
+        temp.next = root;
+        root = temp;
+
     } 
-   
-    // Driver code 
+  
+    public int pop() 
+    { 	
+
+        if(isEmpty()) {
+            System.out.println("Stack Underflow");
+            return 0;
+        }
+
+        int poppedElement = root.data;
+        root = root.next;
+        return poppedElement;
+	
+    } 
+  
+    public int peek() 
+    { 
+        return root.data;
+    } 
+  
+	//Driver code
     public static void main(String[] args) 
     { 
-        /* Start with the empty list. */
-        LinkedList list = new LinkedList(); 
   
-        // 
-        // ******INSERTION****** 
-        // 
+        StackAsLinkedList sll = new StackAsLinkedList(); 
   
-        // Insert the values 
-        list = insert(list, 1); 
-        list = insert(list, 2); 
-        list = insert(list, 3); 
-        list = insert(list, 4); 
-        list = insert(list, 5); 
+        sll.push(10); 
+        sll.push(20); 
+        sll.push(30); 
   
-        // Print the LinkedList 
-        printList(list); 
+        System.out.println(sll.pop() + " popped from stack"); 
+  
+        System.out.println("Top element is " + sll.peek()); 
     } 
-}
+} 
