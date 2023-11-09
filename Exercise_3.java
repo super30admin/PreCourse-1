@@ -1,8 +1,11 @@
+//Time Complexity: O(N)
+//Space Complexity: O(1)
+
+
 import java.io.*; 
   
-// Java program to implement 
-// a Singly Linked List 
-public class LinkedList { 
+// Java program to implement a Singly Linked List 
+class LinkedList { 
   
     Node head; // head of list 
   
@@ -17,7 +20,8 @@ public class LinkedList {
         // Constructor 
         Node(int d) 
         { 
-            //Write your code here 
+            data = d;
+            next = null;
         } 
     } 
   
@@ -25,15 +29,27 @@ public class LinkedList {
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data 
+        Node newNode = new Node(data);
    
-        // If the Linked List is empty, 
-        // then make the new node as head 
+        // If the Linked List is empty, then make the new node as head
+        if(list.head == null)
+        {
+            list.head = newNode;
+        } 
         
-            // Else traverse till the last node 
-            // and insert the new_node there 
+        // Else traverse till the last node and insert the new_node there 
+        else
+        {
+            Node temp =list.head;
+            while(temp.next != null)
+            {
+                temp = temp.next;
+            }
+            temp.next = newNode;
+        }
 
-            // Insert the new_node at last node 
-        // Return the list by head 
+        // Insert the new_node at last node and Return the list by head 
+        return list;
         
     } 
   
@@ -41,10 +57,14 @@ public class LinkedList {
     public static void printList(LinkedList list) 
     {  
         // Traverse through the LinkedList 
-   
-            // Print the data at current node 
-       
-            // Go to next node 
+        // Print the data at current node 
+        Node temp = list.head;
+        while(temp.next != null)
+        {
+            System.out.println(temp.data); 
+            temp = temp.next;
+        }
+            System.out.println(temp.data);
     } 
    
     // Driver code 
@@ -58,6 +78,7 @@ public class LinkedList {
         // 
   
         // Insert the values 
+        System.out.println("\n");
         list = insert(list, 1); 
         list = insert(list, 2); 
         list = insert(list, 3); 
@@ -66,5 +87,6 @@ public class LinkedList {
   
         // Print the LinkedList 
         printList(list); 
+        System.out.println("\n");
     } 
 }
