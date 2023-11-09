@@ -1,35 +1,82 @@
+// Time Complexity : O(1)
+// Space Complexity : O(1)
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : No
+// Code along with comments explaining my approach:
+
 class Stack { 
-    //Please read sample.java file before starting.
-  //Kindly include Time and Space complexity at top of each file
+
     static final int MAX = 1000; 
     int top; 
     int a[] = new int[MAX]; // Maximum size of Stack 
   
     boolean isEmpty() 
     { 
-        //Write your code here 
+        if(top <= 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     } 
 
     Stack() 
     { 
-        //Initialize your constructor 
+        //Initializing your constructor 
+        top = -1;
     } 
   
     boolean push(int x) 
-    { 
-        //Check for stack Overflow
-        //Write your code here
+    {   
+        //Checking for Stack overflow
+        if (top == MAX-1)
+        {
+            System.out.println("Stack overflow Alert!!");
+            return false;
+        }
+        else
+        {
+            //Pushing new item to the top
+            top++;
+            a[top] = x;
+            System.out.println("Item pushed successfully!!");
+            return true;
+        }
     } 
   
     int pop() 
-    { 
-        //If empty return 0 and print " Stack Underflow"
-        //Write your code here
+    {
+        //Checking for Stack overflow 
+        if(top < 0)
+        {
+        System.out.println("Stack overflow Alert!!");
+        return 0; 
+    }
+        else
+        {
+            //Popping the top item and returning it
+            int x = a[top];
+            top--;
+            System.out.println("Item popped successfully!!");
+            return x;
+        }
     } 
   
     int peek() 
     { 
-        //Write your code here
+        //Checking for Stack overflow 
+        if(top < 0)
+        {
+            System.out.println("Stack overflow Alert!!");
+            return 0; 
+        }    
+        else
+        {
+            //Returning the top item 
+            return a[top];
+        }
     } 
 } 
   

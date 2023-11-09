@@ -40,7 +40,7 @@ bool Stack::isEmpty()
 { 
     //Your code here 
 } 
-  
+
 // Driver program to test above functions 
 int main() 
 { 
