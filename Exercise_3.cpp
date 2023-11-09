@@ -1,5 +1,11 @@
-#include <bits/stdc++.h> 
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <cmath>
+
 using namespace std; 
+//TC: O(N)
+//SC: O(1)
   
 // A linked list node (changes) 
 class Node  
@@ -8,6 +14,12 @@ class Node
     int data;  
     Node *next;  
 };  
+Node* newNode(int data){
+    Node* nn = new Node();
+    nn->data = data;
+    nn->next = NULL;
+    return nn;
+}
   
 /* Given a reference (pointer to pointer) 
 to the head of a list and an int, inserts 
@@ -15,6 +27,9 @@ a new node on the front of the list. */
 void push(Node** head_ref, int new_data)  
 {  
     /* 1. allocate node */ 
+    Node* nn = newNode(new_data);
+    nn->next = *head_ref;
+    *head_ref = nn;
   
     /* 2. put in the data */  
   
@@ -28,6 +43,14 @@ prev_node */
 void insertAfter(Node* prev_node, int new_data)  
 {  
     /*1. check if the given prev_node is NULL */ 
+
+    if(prev_node==NULL) 
+    {
+        return;
+    }
+    Node* nn = newNode(new_data);
+    nn->next = prev_node->next;
+    prev_node->next = nn;
   
     /* 2. allocate new node */ 
   
@@ -43,6 +66,21 @@ of a list and an int, appends a new node at the end */
 void append(Node** head_ref, int new_data)  
 {  
     /* 1. allocate node */ 
+    Node* nn = newNode(new_data);
+    if(*head_ref == NULL) {
+        *head_ref = nn;
+        return;
+    }
+    Node* temp = *head_ref;
+    Node* prev = *head_ref;
+    while (temp!=NULL)
+    {
+        /* code */
+        prev = temp;
+        temp = temp->next;
+    }
+    prev->next = nn;
+    
   
     /* 2. put in the data */ 
   
@@ -63,6 +101,12 @@ void append(Node** head_ref, int new_data)
 void printList(Node *node)  
 {  
     //Your code here
+    Node* temp = node;
+    while(temp!=NULL)
+    {
+        cout<< temp->data << "  ";
+        temp = temp->next;
+    }
 }  
   
 /* Driver code*/
