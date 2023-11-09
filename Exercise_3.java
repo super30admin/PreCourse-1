@@ -1,8 +1,13 @@
-import java.io.*; 
+// Time Complexity : O(n) to insert and to printList
+    // Space Complexity : n is the number of nodes in linked list
+    // Any problem you faced while coding this : The code gave an error on the class name, so I
+    // remove the public parameter 
+
+
   
 // Java program to implement 
 // a Singly Linked List 
-public class LinkedList { 
+class LinkedList { 
   
     Node head; // head of list 
   
@@ -18,6 +23,8 @@ public class LinkedList {
         Node(int d) 
         { 
             //Write your code here 
+            this.data = d;
+            this.next = null;
         } 
     } 
   
@@ -25,15 +32,30 @@ public class LinkedList {
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data 
+        Node n = new Node(data);
+        n.next = null;
+
+        LinkedList l = new LinkedList();
    
         // If the Linked List is empty, 
         // then make the new node as head 
+        if(list.head == null)
+              l.head = n;
+        else {
+             Node temp = list.head;
+             while(temp.next != null){
+                 temp = temp.next;
+             }
+             temp.next = n;
+             l.head = list.head;
+        }
         
             // Else traverse till the last node 
             // and insert the new_node there 
 
             // Insert the new_node at last node 
         // Return the list by head 
+        return l;
         
     } 
   
@@ -41,8 +63,13 @@ public class LinkedList {
     public static void printList(LinkedList list) 
     {  
         // Traverse through the LinkedList 
+        Node temp = list.head;
    
             // Print the data at current node 
+        while(temp != null){
+                System.out.println(temp.data+ " ");
+                temp = temp.next;
+            }
        
             // Go to next node 
     } 
