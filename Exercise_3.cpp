@@ -1,4 +1,4 @@
-#include <bits/stdc++.h> 
+#include <iostream> 
 using namespace std; 
   
 // A linked list node (changes) 
@@ -21,6 +21,11 @@ void push(Node** head_ref, int new_data)
     /* 3. Make next of new node as head */ 
   
     /* 4. move the head to point to the new node */
+
+    Node* newNode=new Node();
+    newNode->data=new_data;
+    newNode->next=*head_ref;
+    *head_ref=newNode;
 }  
   
 /* Given a node prev_node, insert a new node after the given  
@@ -36,6 +41,18 @@ void insertAfter(Node* prev_node, int new_data)
     /* 4. Make next of new node as next of prev_node */
   
     /* 5. move the next of prev_node as new_node */ 
+
+    if(prev_node==NULL)
+    {
+        push(&prev_node,new_data);
+    }
+    else
+    {
+        Node* newNode=new Node();
+        newNode->data=new_data;
+        newNode->next=prev_node->next;
+        prev_node->next=newNode;
+    }
 }  
   
 /* Given a reference (pointer to pointer) to the head  
@@ -56,6 +73,22 @@ void append(Node** head_ref, int new_data)
     /* 5. Else traverse till the last node */
   
     /* 6. Change the next of last node */ 
+    if(*head_ref==NULL)
+    {
+        push(head_ref,new_data);
+    }
+    else
+    {
+        Node *temp=*head_ref;
+        while(temp->next!=NULL)
+        {
+            temp=temp->next;
+        }
+        Node* newNode=new Node();
+        newNode->data=new_data;
+        newNode->next=NULL;
+        temp->next=newNode;
+    }
 }  
   
 // This function prints contents of 
@@ -63,6 +96,11 @@ void append(Node** head_ref, int new_data)
 void printList(Node *node)  
 {  
     //Your code here
+    while(node !=NULL)
+    {
+        cout<<node->data;
+        node=node->next;
+    }
 }  
   
 /* Driver code*/

@@ -1,4 +1,5 @@
-#include <bits/stdc++.h> 
+#include <iostream> 
+
 using namespace std; 
   
 // A structure to represent a stack 
@@ -18,22 +19,40 @@ StackNode* newNode(int data)
   
 int isEmpty(StackNode* root) 
 { 
+    if(root==NULL)
+    {
+        return true;
+    }
+    return false;
     //Your code here 
 } 
   
 void push(StackNode** root, int data) 
 { 
     //Your code here 
+    StackNode* temp= new StackNode();
+    temp->data=data;
+    temp->next=*root;
+    *root=temp;
 } 
   
 int pop(StackNode** root) 
 { 
-    //Your code here 
+    //Your code here
+    StackNode* temp;
+    if(*root==NULL)
+        return false;
+    temp=*root;
+    *root=(*root)->next;
+    int data=temp->data;
+    free(temp);
+    return data;
 } 
   
 int peek(StackNode* root) 
 { 
-    //Your code here 
+    //Your code here
+    return root->data;
 } 
   
 int main() 
@@ -45,6 +64,8 @@ int main()
     push(&root, 30); 
   
     cout << pop(&root) << " popped from stack\n"; 
+    cout << pop(&root) << " popped from stack\n"; 
+
   
     cout << "Top element is " << peek(root) << endl; 
   
