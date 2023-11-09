@@ -1,4 +1,11 @@
-#include <bits/stdc++.h> 
+// Time Complexity : push()- O(1), insertAfter()- O(1), append()- O(n), printList() - O(n)
+// Space Complexity : O(n)
+// Did this code successfully run on Leetcode :
+// Any problem you faced while coding this :
+
+
+// Your code here along with comments explaining your approach
+#include <iostream>
 using namespace std; 
   
 // A linked list node (changes) 
@@ -15,6 +22,11 @@ a new node on the front of the list. */
 void push(Node** head_ref, int new_data)  
 {  
     /* 1. allocate node */ 
+    Node * n1 = new Node();
+    n1->data = new_data;
+    n1->next = (*head_ref);
+    (*head_ref) = n1; 
+    
   
     /* 2. put in the data */  
   
@@ -27,6 +39,16 @@ void push(Node** head_ref, int new_data)
 prev_node */
 void insertAfter(Node* prev_node, int new_data)  
 {  
+    if(prev_node==NULL){
+        cout << "Linked List is empty" << endl;
+
+    }
+    else{
+        Node* node = new Node();
+        node->data=new_data;
+        node->next = prev_node->next;
+        prev_node->next = node;
+    }
     /*1. check if the given prev_node is NULL */ 
   
     /* 2. allocate new node */ 
@@ -42,6 +64,24 @@ void insertAfter(Node* prev_node, int new_data)
 of a list and an int, appends a new node at the end */
 void append(Node** head_ref, int new_data)  
 {  
+    Node* node = new Node();
+    node->data = new_data;
+    node->next = NULL;
+
+    if(*head_ref==NULL){
+        *head_ref = node;
+    }
+    else{
+
+        Node* temp = *head_ref;
+        while(temp->next!=NULL){
+            temp=temp->next;
+        }
+        temp->next = node;
+        
+    }
+
+
     /* 1. allocate node */ 
   
     /* 2. put in the data */ 
@@ -63,6 +103,11 @@ void append(Node** head_ref, int new_data)
 void printList(Node *node)  
 {  
     //Your code here
+    while(node != nullptr){
+        cout << node->data << endl;
+        node = node->next;
+
+    }
 }  
   
 /* Driver code*/
