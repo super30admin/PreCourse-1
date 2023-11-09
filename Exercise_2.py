@@ -1,4 +1,7 @@
-
+#Time Complexity:O(1)
+#Space Complexity:O(1)
+#Did this code successfully run on Leetcode : Question not avaliable in Leetcode
+#Any problem you faced while coding this : None
 class Node:
     def __init__(self, data):
        self.data = data
@@ -6,10 +9,26 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.stackListHead=Node(data=None)
         
-    def push(self, data):
+    def push(self, data):                   #time---O(1)  space--O(1)
+        newNode=Node(data)                  #push-Insert at first in the linked list
+        if self.stackListHead:
+            newNode.next=self.stackListHead
+        self.stackListHead=newNode
         
-    def pop(self):
+    def pop(self):                          #time---O(1)  space--O(1)
+        if self.stackListHead:              #pop-Delete at first in the linked list 
+            x=self.stackListHead.data
+            if self.stackListHead.next==None:
+                self.stackListHead=None
+            else:
+                self.stackListHead=self.stackListHead.next
+            return x
+        else:
+            return None
+
+
         
 a_stack = Stack()
 while True:
