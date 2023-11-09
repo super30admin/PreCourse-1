@@ -1,15 +1,23 @@
-
 class Node:
     def __init__(self, data):
-       self.data = data
-       self.next = None
+        self.data = data
+        self.next = None
  
 class Stack:
     def __init__(self):
+        self.root = None
         
     def push(self, data):
+        new = Node(data)
+        new.next = self.root
+        self.root = new
+        return data
         
     def pop(self):
+        temp = self.root
+        self.root = self.root.next
+        pop = temp.data
+        return pop
         
 a_stack = Stack()
 while True:
@@ -30,3 +38,11 @@ while True:
             print('Popped value: ', int(popped))
     elif operation == 'quit':
         break
+
+#Time Complexity
+# is Empty()  --> O(1)
+# pop()  --> O(1)
+# push()  --> O(1)
+# peek()  --> O(1)
+# size()  --> O(1)
+# show()  --> O(1)
