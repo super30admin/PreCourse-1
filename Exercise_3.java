@@ -18,6 +18,8 @@ public class LinkedList {
         Node(int d) 
         { 
             //Write your code here 
+            data=d;
+            next=null;
         } 
     } 
   
@@ -26,25 +28,45 @@ public class LinkedList {
     { 
         // Create a new node with given data 
    
+        Node newNode = new Node(data);
+        newNode.next =null; 
         // If the Linked List is empty, 
         // then make the new node as head 
         
-            // Else traverse till the last node 
+        if(list.head==null)
+        {
+            list.head =newNode;
+        }else{
+             // Else traverse till the last node 
             // and insert the new_node there 
-
+            Node last = list.head;
+            while(last.next!=null)
+            {
+                
+                last=last.next;
+            }
             // Insert the new_node at last node 
+            last.next=newNode;
+        }
+           
+
         // Return the list by head 
+        return list;
         
     } 
   
     // Method to print the LinkedList. 
     public static void printList(LinkedList list) 
     {  
-        // Traverse through the LinkedList 
-   
-            // Print the data at current node 
-       
-            // Go to next node 
+            
+        Node curr = list.head;
+        // Traverse through the LinkedList
+        while (curr!= null) {
+            // Print the data at current node
+            System.out.print(curr.data + " ");
+            // Go to next node
+            curr = curr.next;
+        }
     } 
    
     // Driver code 
@@ -67,4 +89,7 @@ public class LinkedList {
         // Print the LinkedList 
         printList(list); 
     } 
-}
+}              
+
+//timecomplexity : O(n)
+//space complexity : O(n)
