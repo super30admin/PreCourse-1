@@ -7,28 +7,46 @@ class Stack {
   
     boolean isEmpty() 
     { 
-        //Write your code here 
-    } 
+       if (top==-1) return true;
+       return false;//Write your code here
+    }
 
-    Stack() 
-    { 
-        //Initialize your constructor 
-    } 
-  
+    public Stack() {
+        this.top = top;
+        this.a = a;
+    }
+
+//    Stack()
+//    {
+//        //Initialize your constructor
+//    }
+//
     boolean push(int x) 
-    { 
+    {
+        if (top==MAX-1) return false;
+        top=top+1;
+        a[top]=x;
+        return true;
         //Check for stack Overflow
         //Write your code here
     } 
   
     int pop() 
-    { 
-        //If empty return 0 and print " Stack Underflow"
+    {
+        if(top==-1) {
+            System.out.println("Stack Underflow");
+            return 0;
+        }
+        top=top-1;
+        return a[top+1];
+
+        //If empty return 0 and print "Stack Underflow"
         //Write your code here
     } 
   
     int peek() 
-    { 
+    {
+        return a[top];
         //Write your code here
     } 
 } 
