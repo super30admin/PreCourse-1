@@ -16,8 +16,9 @@ public class LinkedList {
   
         // Constructor 
         Node(int d) 
-        { 
-            //Write your code here 
+        {
+            this.data = data;
+            next = null;
         } 
     } 
   
@@ -33,8 +34,22 @@ public class LinkedList {
             // and insert the new_node there 
 
             // Insert the new_node at last node 
-        // Return the list by head 
-        
+        // Return the list by head
+
+        Node node = new Node(data);
+        node.next = null;
+
+        if(list.head == null){
+            list.head = node;
+        } else {
+            Node temp = list.head;
+            while(temp.next != null)
+            {
+                temp = temp.next;
+            }
+            temp.next = node;
+        }
+        return list;
     } 
   
     // Method to print the LinkedList. 
@@ -44,7 +59,17 @@ public class LinkedList {
    
             // Print the data at current node 
        
-            // Go to next node 
+            // Go to next node
+        if(list.head == null) {
+            System.out.println("List is empty");
+        }
+
+        Node current = list.head;
+
+        while(current != null) {
+            System.out.print(current.data+" ");
+            current = current.next;
+        }
     } 
    
     // Driver code 
