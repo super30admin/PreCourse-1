@@ -1,8 +1,9 @@
 import java.io.*; 
   
-// Java program to implement 
-// a Singly Linked List 
-public class LinkedList { 
+// Java program to implement a Singly Linked List 
+// Time = O(n)
+// Space = O(n)
+class LinkedList { 
   
     Node head; // head of list 
   
@@ -17,7 +18,8 @@ public class LinkedList {
         // Constructor 
         Node(int d) 
         { 
-            //Write your code here 
+            data = d;
+            next = null;
         } 
     } 
   
@@ -28,12 +30,23 @@ public class LinkedList {
    
         // If the Linked List is empty, 
         // then make the new node as head 
-        
+        Node temp = new  Node(data);
+        if(list.head == null){
+            list.head = temp;
+        } else {
             // Else traverse till the last node 
+            Node next = list.head;
+            while(next.next != null){
+                next = next.next;
+            }
             // and insert the new_node there 
-
             // Insert the new_node at last node 
+            next.next = temp;
+        }
+        
+
         // Return the list by head 
+        return list;
         
     } 
   
@@ -41,10 +54,13 @@ public class LinkedList {
     public static void printList(LinkedList list) 
     {  
         // Traverse through the LinkedList 
-   
+        Node next = list.head;
+        while(next != null){
             // Print the data at current node 
-       
+            System.out.println(next.data);
             // Go to next node 
+            next = next.next;
+        }
     } 
    
     // Driver code 

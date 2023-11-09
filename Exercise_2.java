@@ -1,52 +1,74 @@
-public class StackAsLinkedList { 
-  
-    StackNode root; 
-  
-    static class StackNode { 
-        int data; 
-        StackNode next; 
-  
-        StackNode(int data) 
-        { 
-            //Constructor here 
-        } 
-    } 
-    
-	
-    public boolean isEmpty() 
-    { 
-        //Write your code here for the condition if stack is empty. 
-    } 
-  
-    public void push(int data) 
-    { 
-        //Write code to push data to the stack. 
-    } 
-  
-    public int pop() 
-    { 	
-	//If Stack Empty Return 0 and print "Stack Underflow"
-        //Write code to pop the topmost element of stack.
-	//Also return the popped element 
-    } 
-  
-    public int peek() 
-    { 
-        //Write code to just return the topmost element without removing it.
-    } 
-  
-	//Driver code
-    public static void main(String[] args) 
-    { 
-  
-        StackAsLinkedList sll = new StackAsLinkedList(); 
-  
-        sll.push(10); 
-        sll.push(20); 
-        sll.push(30); 
-  
-        System.out.println(sll.pop() + " popped from stack"); 
-  
-        System.out.println("Top element is " + sll.peek()); 
-    } 
-} 
+// Time = O(1)
+// Space = O(n)
+class StackAsLinkedList {
+
+    private StackNode root;
+    private StackNode top;
+
+    static class StackNode {
+        private int data;
+        private StackNode next;
+
+        StackNode(int data) {
+            this.data = data;
+            this.next = null;
+        }
+    }
+
+    public boolean isEmpty() {
+        return root == null;
+    }
+
+    public void push(int data) {
+        if (top == null) {
+            root = new StackNode(data);
+            top = root;
+        } else {
+            StackNode temp = new StackNode(data);
+            temp.next = top;
+            top = temp;
+        }
+    }
+
+    public int pop() {
+        if (root == null) {
+            System.out.println("Stack Underflow");
+            return 0;
+        } else {
+            int data = top.data;
+            top = top.next;
+            if (top == null) {
+                root = null;
+            }
+            return data;
+        }
+    }
+
+    public int peek() {
+        if (!isEmpty()) {
+            return top.data;
+        } else {
+            System.out.println("Stack Underflow");
+            return 0;
+        }
+    }
+
+    // Driver code
+    public static void main(String[] args) {
+
+        StackAsLinkedList sll = new StackAsLinkedList();
+
+        sll.push(10);
+        sll.push(20);
+        sll.push(30);
+
+        System.out.println(sll.pop() + " popped from stack");
+
+        System.out.println("Top element is " + sll.peek());
+        System.out.println(sll.pop() + " popped from stack");
+
+        System.out.println(sll.pop() + " popped from stack");
+        System.out.println(sll.pop() + " popped from stack");
+
+    }
+}
