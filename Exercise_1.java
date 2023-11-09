@@ -1,3 +1,8 @@
+// Time complexity: O(1)
+// Space complexity: O(n) as array could change dynamically
+// Any problem you faced while coding this : Visualizing stack as an array
+// but after drawing it out, it was clear
+
 class Stack { 
     //Please read sample.java file before starting.
   //Kindly include Time and Space complexity at top of each file
@@ -7,29 +12,61 @@ class Stack {
   
     boolean isEmpty() 
     { 
-        //Write your code here 
+        if (top < 0) {
+            return true;
+        }
+        return false;
     } 
 
     Stack() 
     { 
-        //Initialize your constructor 
+        //Initialize your constructor
+
+        //Initiliazing our pointer from -1 as this indicates position
+        //at head - 1 of array
+        top = -1;
     } 
   
     boolean push(int x) 
     { 
         //Check for stack Overflow
-        //Write your code here
+        if (top >= (MAX - 1)) {
+            System.out.println("Stack Overflow");
+            return false;
+        }
+        else {
+            top = top + 1;
+            a[top] = x;
+            return true;
+        }
     } 
   
     int pop() 
     { 
         //If empty return 0 and print " Stack Underflow"
-        //Write your code here
+        if (top < 0) {
+            System.out.println("Stack Underflow");
+            return 0;
+        }
+        else {
+            int x = a[top];
+            top = top - 1;
+            return x;
+        }
     } 
   
     int peek() 
     { 
         //Write your code here
+        if (top < 0) {
+            System.out.println("Stack Underflow");
+            return 0;
+        }
+        else {
+            int x = a[top];
+            return x;
+        }
+
     } 
 } 
   
@@ -44,3 +81,4 @@ class Main {
         System.out.println(s.pop() + " Popped from stack"); 
     } 
 }
+
