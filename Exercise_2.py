@@ -1,16 +1,38 @@
 
+#Time Complexity : o(1)
+#Space Complexity : o(1)
+#Did this code successfully run on Leetcode : yes
+#Any problem you faced while coding this :
+
+
+#Your code here along with comments explaining your approach
+
+from hashlib import new
+
+#Create Class Node with varible data & next
 class Node:
     def __init__(self, data):
        self.data = data
        self.next = None
- 
+ #create stack with head variable
 class Stack:
     def __init__(self):
+        self.head = None
         
     def push(self, data):
-        
+        if self.head is None:
+            self.head = Node(data)
+            return
+        self.head = Node(data, self.head)
+            
+      #pop returns data & returns None if no nodes  
     def pop(self):
-        
+        if self.head is None:
+            return None
+        else:
+            popped = self.head.data
+            self.head = self.head.next
+            return popped
 a_stack = Stack()
 while True:
     #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
