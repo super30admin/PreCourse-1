@@ -1,35 +1,50 @@
+//time complexity : push,pop,peek -> O(1)
+//space complexity : O(n), n is max size of array
+//Approach : I will take an array of size n and a top variable pointing to the top of a stack.
+//          For push op, I'll increment top and add element at that position. For pop op, i'll remove element pointing at top index,
+//          for peek op,i'll show element pointing at top index
+
 class Stack { 
-    //Please read sample.java file before starting.
-  //Kindly include Time and Space complexity at top of each file
+
     static final int MAX = 1000; 
     int top; 
-    int a[] = new int[MAX]; // Maximum size of Stack 
+    int a[]; 
   
     boolean isEmpty() 
     { 
-        //Write your code here 
+        return (top == -1);
     } 
 
     Stack() 
     { 
-        //Initialize your constructor 
+        top = -1; 
+        a = new int[MAX]; // Maximum size of Stack 
     } 
   
     boolean push(int x) 
     { 
-        //Check for stack Overflow
-        //Write your code here
+        
+        if(MAX == (++top))
+            return false;
+        a[top] = x;
+            return true;
     } 
   
     int pop() 
     { 
-        //If empty return 0 and print " Stack Underflow"
-        //Write your code here
+        if(top == -1){
+            System.out.println("Stack Underflow");
+            return 0;
+        }
+            
+        else
+            return a[top--];
     } 
   
     int peek() 
     { 
-        //Write your code here
+        if(top != -1)
+            return a[top];
     } 
 } 
   
