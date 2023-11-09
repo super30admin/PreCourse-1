@@ -68,3 +68,45 @@ public class LinkedList {
         printList(list); 
     } 
 }
+
+
+
+
+// public class LinkedList {
+//     private final Node head;
+//     public LinkedList() {
+//         head = new Node();
+//     }
+
+//     // 1. Insert data.
+
+//     public void add(int data) {
+//         Node address = head;
+//         while(address.next != null) {
+//             address = address.next;
+//         }
+//         Node newNode = new Node();
+//         address.next = newNode;
+//         newNode.data = data;
+//     }
+
+//     // 2. Traversal
+//     public void print() {
+//         Node address = head;
+//         if(address.next == null) {
+//             System.out.println("Empty");
+//             return;
+//         }
+//         while(address.next != null) {
+//             System.out.println(address.next.data);
+//             address = address.next;
+//         }
+//     }
+
+
+//     private static class Node {
+
+//         private int data;
+//         private Node next;
+//     }
+// }
