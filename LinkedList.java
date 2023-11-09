@@ -2,9 +2,9 @@ import java.io.*;
   
 // Java program to implement 
 // a Singly Linked List 
-public class LinkedList { 
-  
-    Node head; // head of list 
+public class LinkedList {
+
+    static Node head; // head of list
   
     // Linked list Node. 
     // This inner class is made static 
@@ -17,7 +17,9 @@ public class LinkedList {
         // Constructor 
         Node(int d) 
         { 
-            //Write your code here 
+            //Write your code here
+            this.data = d;
+            this.next = null;
         } 
     } 
   
@@ -25,10 +27,23 @@ public class LinkedList {
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data 
-   
+        Node newN = new Node(data);
+        newN.next = head;
         // If the Linked List is empty, 
-        // then make the new node as head 
-        
+        // then make the new node as head
+        if(list==null){
+            list.head = newN;
+        }
+        else {
+            Node previousNode = list.head;
+            while(previousNode.next!=null){
+                previousNode = previousNode.next;
+            }
+            previousNode.next = newN;
+        }
+        return list;
+
+
             // Else traverse till the last node 
             // and insert the new_node there 
 
@@ -41,9 +56,15 @@ public class LinkedList {
     public static void printList(LinkedList list) 
     {  
         // Traverse through the LinkedList 
-   
+        if(list == null ){
+            System.out.println("List is Empty");
+        }
             // Print the data at current node 
-       
+        Node presentNode = list.head;
+        while(presentNode != null){
+            System.out.println(presentNode.data);
+            presentNode = presentNode.next;
+        }
             // Go to next node 
     } 
    
@@ -58,7 +79,7 @@ public class LinkedList {
         // 
   
         // Insert the values 
-        list = insert(list, 1); 
+        list = insert(list,1);
         list = insert(list, 2); 
         list = insert(list, 3); 
         list = insert(list, 4); 
