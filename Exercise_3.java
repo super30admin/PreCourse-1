@@ -1,10 +1,13 @@
-import java.io.*; 
+// Time Complexity : O(N) where N is size of the list
+// Space Complexity : O(N) where N is size of the list
+// Did this code successfully run on Leetcode : yes
+// Any problem you faced while coding this : No
+
+
+// Your code here along with comments explaining your approach
+class LinkedList { 
   
-// Java program to implement 
-// a Singly Linked List 
-public class LinkedList { 
-  
-    Node head; // head of list 
+     Node head; // head of list 
   
     // Linked list Node. 
     // This inner class is made static 
@@ -14,10 +17,10 @@ public class LinkedList {
         int data; 
         Node next; 
   
-        // Constructor 
+        //initialize node with data 
         Node(int d) 
         { 
-            //Write your code here 
+        	this.data=d;
         } 
     } 
   
@@ -25,26 +28,35 @@ public class LinkedList {
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data 
-   
-        // If the Linked List is empty, 
-        // then make the new node as head 
-        
-            // Else traverse till the last node 
-            // and insert the new_node there 
-
-            // Insert the new_node at last node 
-        // Return the list by head 
-        
+    		Node node=new Node(data);
+    		// If the Linked List is empty then make the new node as head 
+    		if(list.head==null) {
+    			list.head=node;
+    			list.head.next=null;
+    			return list;
+    		}else {
+    			//traverse till the last node and insert the new_node at the end 
+    			Node curr=list.head;
+    			while(curr.next!=null) {
+    				curr=curr.next;
+    			}
+    			curr.next=node;
+    			node.next=null;
+    			return list;
+    		}
     } 
   
     // Method to print the LinkedList. 
     public static void printList(LinkedList list) 
     {  
+      	Node curr=list.head;
         // Traverse through the LinkedList 
-   
-            // Print the data at current node 
-       
-            // Go to next node 
+		while(curr!=null) {
+			// Print the data at current node 
+			System.out.print(curr.data+" ");
+		    // move to next node 
+			curr=curr.next;
+		}    
     } 
    
     // Driver code 
