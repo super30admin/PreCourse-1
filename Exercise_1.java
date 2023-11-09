@@ -1,6 +1,10 @@
 class Stack { 
     //Please read sample.java file before starting.
-  //Kindly include Time and Space complexity at top of each file
+  // Time : O(1)
+  // Space complexity : O(1) 
+  // Did this code successfully run on Leetcode : yes
+
+
     static final int MAX = 1000; 
     int top; 
     int a[] = new int[MAX]; // Maximum size of Stack 
@@ -8,28 +12,66 @@ class Stack {
     boolean isEmpty() 
     { 
         //Write your code here 
+        if (top == -1)
+        {
+            return true;
+        }
+        else
+        return false;
     } 
 
     Stack() 
     { 
         //Initialize your constructor 
+        top = -1; 
     } 
   
     boolean push(int x) 
     { 
         //Check for stack Overflow
+        if (top + 1 == MAX) {
+ 
+            System.out.println("Stack Overflow");
+        }
+        else {
+ 
+            // Increment top to go to next position
+            top = top + 1;
+
+            a[top]= x;  
+            System.out.println("Item pushed");  
+            return true;  
+
+        }
+        
         //Write your code here
     } 
   
     int pop() 
     { 
         //If empty return 0 and print " Stack Underflow"
-        //Write your code here
+        if (top == -1)  
+        {  
+            System.out.println("Stack Underflow");  
+            return 0;  
+        }  
+        else   
+        {      
+            return a[top--];  
+        } 
     } 
   
     int peek() 
     { 
         //Write your code here
+        if(isEmpty())
+        {
+            System.out.println("Empty Stack");
+            return 0;
+        }
+        else{
+            return a[top];
+        }
     } 
 } 
   
