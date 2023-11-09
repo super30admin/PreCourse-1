@@ -3,13 +3,43 @@ class Node:
     def __init__(self, data):
        self.data = data
        self.next = None
- 
+
+
 class Stack:
     def __init__(self):
+        """
+        Time Complexity : O(1)
+        Space Complexity : O(1)
+        """
+        self.head = None
         
     def push(self, data):
+        """
+        Time Complexity : O(1)
+        Space Complexity : O(1)
+        check if head exists, if not than add head else change head to new node
+        """
+        new_node = Node(data)
+        if not self.head:
+            self.head = new_node
+        else:
+            new_node.next = self.head
+            self.head = new_node
         
     def pop(self):
+        """
+        Time Complexity : O(1)
+        Space Complexity : O(1)
+        check if head exists, if not return null else make head.next as new head & remove head node.
+        """
+        if not self.head:
+            return None
+        else:
+            pop_node = self.head
+            self.head = self.head.next
+            pop_node.next = None
+            return pop_node.data
+
         
 a_stack = Stack()
 while True:
