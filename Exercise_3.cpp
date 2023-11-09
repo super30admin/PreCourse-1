@@ -7,6 +7,13 @@ class Node
     public: 
     int data;  
     Node *next;  
+    
+
+    Node(int val) 
+    {
+        this->data = val;
+        this->next = NULL:
+    }
 };  
   
 /* Given a reference (pointer to pointer) 
@@ -21,6 +28,10 @@ void push(Node** head_ref, int new_data)
     /* 3. Make next of new node as head */ 
   
     /* 4. move the head to point to the new node */
+    
+     Node *new_node = new Node(new_data);
+     new_node->next = &head->next;
+     &head->next = new_node;
 }  
   
 /* Given a node prev_node, insert a new node after the given  
@@ -36,6 +47,11 @@ void insertAfter(Node* prev_node, int new_data)
     /* 4. Make next of new node as next of prev_node */
   
     /* 5. move the next of prev_node as new_node */ 
+
+    if (!prev_node) return;
+    Node *new_node = new Node(new_data);
+    new_node->next = prev_node->next;
+    prev_node->next = new_node;
 }  
   
 /* Given a reference (pointer to pointer) to the head  
@@ -56,13 +72,29 @@ void append(Node** head_ref, int new_data)
     /* 5. Else traverse till the last node */
   
     /* 6. Change the next of last node */ 
-}  
+     
+    Node *new_node = new Node(new_data);
+    new_node->next = NULL;
+    if (&head_ref->next == NULL) &head_ref->next = new_node;
+    else {
+        Node *tmp = head;
+        while(tmp != NULL) {
+            tmp = tmp->next;
+        }
+    //now tmp points to old last node
+    tmp->next = new_node; 
+}
   
 // This function prints contents of 
 // linked list starting from head  
 void printList(Node *node)  
 {  
-    //Your code here
+    Node *tmp = node;
+    while (tmp != NULL) {
+        cout << tmp->data <<" ";
+    }
+    cout << endl;
+}
 }  
   
 /* Driver code*/
