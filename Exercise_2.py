@@ -1,4 +1,6 @@
-
+# time complexity: O(1) for both the operations
+# space complexity : O(N)
+# was able to run the code no errors
 class Node:
     def __init__(self, data):
        self.data = data
@@ -6,10 +8,21 @@ class Node:
  
 class Stack:
     def __init__(self):
-        
+        self.head = None
+
     def push(self, data):
+        newNode = Node(data)
+        newNode.next = self.head
+        self.head = newNode
         
     def pop(self):
+        if self.head is None:
+            return None
+        else:
+            popped_node = self.head
+            self.head = self.head.next
+            return popped_node.data
+
         
 a_stack = Stack()
 while True:
