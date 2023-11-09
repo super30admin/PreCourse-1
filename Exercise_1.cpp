@@ -14,31 +14,51 @@ public:
   
     Stack() { //Constructor here } 
     bool push(int x); 
-    int pop(); 
+    void pop(); 
     int peek(); 
     bool isEmpty(); 
 }; 
-  
+  int top=-1;
+//   tc:O(1)
+//   sc:SIZE OF STACK
 bool Stack::push(int x) 
 { 
-    //Your code here
-    //Check Stack overflow as well
+     if(top == MAX)
+      cout<<("OVERFLOW");
+   else{
+      top++;
+      a[top] = x;
+      cout<<"\nInsertion success!!!";
 } 
-  
-int Stack::pop() 
+  //   tc:O(1)
+//   sc:SIZE OF STACK
+void Stack::pop() 
 { 
-    //Your code here
-    //Check Stack Underflow as well 
+     if(top == -1){
+      cout<<"stack empty";
+     }
+   else{
+      
+      top--;
+   } 
+     
 } 
+//   tc:O(1)
+//   sc:SIZE OF STACK
 int Stack::peek() 
 { 
     //Your code here
     //Check empty condition too
+    if(top=-1)cout<<"stack empty";
+    else cout<<a[top];
 } 
-  
+  //   tc:O(1)
+
 bool Stack::isEmpty() 
 { 
-    //Your code here 
+    //Your code here
+    if(top==-1)return true;
+    return false; 
 } 
   
 // Driver program to test above functions 
