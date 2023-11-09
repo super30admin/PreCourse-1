@@ -1,4 +1,18 @@
-public class StackAsLinkedList { 
+ /*
+ Time Complexity:
+    isEmpty(), peek(), pop(),push() - O(1) constant time
+ Space Complexity: O(n) to store all n elements in n StackNodes.
+*/
+
+ /*
+Stack is a LIFO data structure. So push() and pop() operations should happen on the same end.
+As elements in linked list can be accessed only by traversing from head. If elements are added at the end of linkedlist,
+it would take O(n) operations to push and pop. In order to do these operations in O(1) constant time, pushing elements to
+start of linkedlist & making the new added element as head .Also popping elements from start and readjusting root/head node 
+to the next element.
+Peek - Head/root node gives the most last inputted element.
+*/
+ class StackAsLinkedList { 
   
     StackNode root; 
   
@@ -8,19 +22,21 @@ public class StackAsLinkedList {
   
         StackNode(int data) 
         { 
-            //Constructor here 
+            this.data = data; 
         } 
     } 
     
 	
     public boolean isEmpty() 
     { 
-        //Write your code here for the condition if stack is empty. 
+        return root == null;
     } 
   
     public void push(int data) 
     { 
-        //Write code to push data to the stack. 
+       var newElement = new StackNode(data); 
+       newElement.next = root;
+       root = newElement;
     } 
   
     public int pop() 
@@ -28,11 +44,21 @@ public class StackAsLinkedList {
 	//If Stack Empty Return 0 and print "Stack Underflow"
         //Write code to pop the topmost element of stack.
 	//Also return the popped element 
+        if(isEmpty()){
+            System.out.println("Stack Underflow");
+            return 0;
+        }
+        else{
+            StackNode poppedElement = root;
+            root = root.next;
+            return poppedElement.data;
+        }
     } 
   
     public int peek() 
     { 
-        //Write code to just return the topmost element without removing it.
+        if(!isEmpty()) return root.data;
+        else return 0;
     } 
   
 	//Driver code
