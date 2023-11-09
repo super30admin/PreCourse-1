@@ -1,4 +1,9 @@
-public class StackAsLinkedList { 
+// TIme Complexity: O(1)
+// Space Complexity: O(n) for n push operations
+// Did this code successfully run on Leetcode : Yes.
+// Any problem you faced while coding this : No.
+
+class StackAsLinkedList { 
   
     StackNode root; 
   
@@ -9,6 +14,8 @@ public class StackAsLinkedList {
         StackNode(int data) 
         { 
             //Constructor here 
+            this.data = data;
+            this.next = null;
         } 
     } 
     
@@ -16,23 +23,42 @@ public class StackAsLinkedList {
     public boolean isEmpty() 
     { 
         //Write your code here for the condition if stack is empty. 
+        if(root == null){
+            return true;
+        }
+        return false;
     } 
   
     public void push(int data) 
     { 
-        //Write code to push data to the stack. 
+        //Write code to push data to the stack.
+        StackNode newNode = new StackNode(data);
+        newNode.next = root;
+        root = newNode;
     } 
   
     public int pop() 
     { 	
 	//If Stack Empty Return 0 and print "Stack Underflow"
-        //Write code to pop the topmost element of stack.
+    if (isEmpty() == true){
+        System.out.println("Stack Underflow");
+        return 0;
+    }
+    //Write code to pop the topmost element of stack.
+    int val = root.data;
+    root = root.next;
 	//Also return the popped element 
+    return val;
     } 
   
     public int peek() 
     { 
         //Write code to just return the topmost element without removing it.
+        if(isEmpty() == true){
+            return 0;
+        }
+
+        return root.data;
     } 
   
 	//Driver code
