@@ -1,3 +1,8 @@
+# Time Complexity O(1)
+# - overall time complexity of the while loop: O(n), where n is the number of operations performed
+
+# Space Complexity:
+# - The space complexity of the stack depends on the number of elements stored in it.
 
 class Node:
     def __init__(self, data):
@@ -5,11 +10,14 @@ class Node:
        self.next = None
  
 class Stack:
-    def __init__(self):
+     def __init__(self):
+        self.items = []
         
-    def push(self, data):
+     def push(self, item):
+        self.items.append(item)
         
-    def pop(self):
+     def pop(self):
+        return self.items.pop()
         
 a_stack = Stack()
 while True:
