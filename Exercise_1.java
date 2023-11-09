@@ -7,7 +7,7 @@ class Stack {
   
     boolean isEmpty() 
     { 
-        //Write your code here 
+        return top == 0; 
     } 
 
     Stack() 
@@ -17,30 +17,49 @@ class Stack {
   
     boolean push(int x) 
     { 
-        //Check for stack Overflow
-        //Write your code here
-    } 
+        if(top <= MAX){
+            a[top++] = x;
+            return true;
+        }else{
+            System.out.println("Stack Overflow");
+            return false;
+        }
+      
+    }
   
     int pop() 
     { 
-        //If empty return 0 and print " Stack Underflow"
-        //Write your code here
+        int topOfStack = 0;
+        if(top < 0){
+            System.out.println("Stack underflow");
+        }else{
+           topOfStack = a[--top];
+        }
+         
+        return topOfStack;
     } 
   
     int peek() 
     { 
-        //Write your code here
+        return top > 0 ?  a[top-1] : 0;
     } 
 } 
   
 // Driver code 
-class Main { 
+class Example_1 { 
     public static void main(String args[]) 
     { 
         Stack s = new Stack(); 
+        System.out.println(s.peek() + "Peek from Stack");
         s.push(10); 
         s.push(20); 
+        System.out.println(s.peek() + "Peek from Stack");
         s.push(30); 
+        System.out.println(s.peek() + "Peek from Stack");
+        System.out.println(s.pop() + " Popped from stack");
+        System.out.println(s.peek());
         System.out.println(s.pop() + " Popped from stack"); 
+        System.out.println(s.pop() + " Popped from stack");  
+        System.out.println(s.peek() + "Peek from Stack");
     } 
 }
