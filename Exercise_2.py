@@ -1,32 +1,57 @@
+"""
+Time Complexity : O(1) for all methods(push, pop)
+o(n) for display function
+Space Complexity : O(n)
+"""
 
 class Node:
-    def __init__(self, data):
-       self.data = data
-       self.next = None
- 
+    def __init__(self, key, node=None):
+        self.key = key
+        self.node = node
+
+
 class Stack:
     def __init__(self):
-        
-    def push(self, data):
-        
+        self.top = None
+        self.ncount = 0
+
+    def push(self, x):
+        node = Node(x)
+        if node is None:
+            print('stack overflow')
+            return
+        node.data = x
+        node.next = self.top
+        self.top = node
+        self.ncount = 1
+
+    def isEmpty(self):
+        return self.top is None
+
     def pop(self):
-        
-a_stack = Stack()
-while True:
-    #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
-    print('push <value>')
-    print('pop')
-    print('quit')
-    do = input('What would you like to do? ').split()
-    #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
-    operation = do[0].strip().lower()
-    if operation == 'push':
-        a_stack.push(int(do[1]))
-    elif operation == 'pop':
-        popped = a_stack.pop()
-        if popped is None:
-            print('Stack is empty.')
+        if self.top is None:
+            print('Stack underflow')
+            exit(-1)
+        top = self.top.data
+        self.top = self.top.next
+        self.ncount -= 1
+        return top
+
+    def printStack(self):
+        iterators = self.top
+        if self.isEmpty():
+            print('Stack underflow')
         else:
-            print('Popped value: ', int(popped))
-    elif operation == 'quit':
-        break
+            while (iterators != None):
+                print(iterators.data)
+                iterators = iterators.next
+            return
+
+
+if __name__ == "__main__":
+    s = Stack()
+    s.push(1)
+    s.push(3)
+    s.push(4)
+    s.pop()
+    s.printStack()
