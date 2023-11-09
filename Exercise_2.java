@@ -1,3 +1,7 @@
+// Time Complexity : O(1) for all stack operations
+//Space complexity : O(N)
+//Code executed successfully : Yes 
+
 public class StackAsLinkedList { 
   
     StackNode root; 
@@ -9,18 +13,35 @@ public class StackAsLinkedList {
         StackNode(int data) 
         { 
             //Constructor here 
+            
+            this.data =data;
+            this.next = null;
         } 
     } 
     
 	
     public boolean isEmpty() 
     { 
-        //Write your code here for the condition if stack is empty. 
+        //Write your code here for the condition if stack is empty.
+        
+        return root == null;
     } 
   
     public void push(int data) 
     { 
-        //Write code to push data to the stack. 
+        //Write code to push data to the stack.
+        
+         StackNode temp = new StackNode(data);
+  
+       
+        if (temp == null) {
+            System.out.print("\nHeap Overflow");
+            return;
+        }
+  
+        temp.data = data;
+        temp.next = root;
+        root = temp;
     } 
   
     public int pop() 
@@ -28,11 +49,31 @@ public class StackAsLinkedList {
 	//If Stack Empty Return 0 and print "Stack Underflow"
         //Write code to pop the topmost element of stack.
 	//Also return the popped element 
+    	if (root == null) {
+            System.out.print("\nStack Underflow");
+            return 0;
+        }
+  
+        // update the top pointer to point to the next node
+        int item;
+        item = root.data;
+        root = (root).next;
+        return item;
+        
+	
     } 
   
     public int peek() 
     { 
         //Write code to just return the topmost element without removing it.
+        
+        if (!isEmpty()) {
+            return root.data;
+        }
+        else {
+            System.out.println("Stack is empty");
+            return -1;
+        }
     } 
   
 	//Driver code
@@ -45,7 +86,7 @@ public class StackAsLinkedList {
         sll.push(20); 
         sll.push(30); 
   
-        System.out.println(sll.pop() + " popped from stack"); 
+       System.out.println(sll.pop() + " popped from stack"); 
   
         System.out.println("Top element is " + sll.peek()); 
     } 
