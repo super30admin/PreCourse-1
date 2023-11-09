@@ -21,19 +21,16 @@ class SinglyLinkedList:
         Insert a new element at the end of the list.
         Takes O(n) time.
         """
+        # node = ListNode(data)
         if self.head is None:
             self.head = ListNode(data)
             return
 
-        def traverse(head):
-            if head.next is None:
-                head.next = ListNode(data)
-                return head
-            else:
-                head.next = traverse(head.next)
-                return head
+        temp = self.head
+        while temp.next!=None:
+            temp = temp.next
 
-        self.head = traverse(self.head)
+        temp.next = ListNode(data)
 
     def find(self, key):
         """
@@ -42,32 +39,31 @@ class SinglyLinkedList:
         Takes O(n) time.
         """
 
-        def traverse(head):
-            if head is None:
-                return None
-            elif head.data is key:
+        temp = self.head
+        while temp != None:
+            if temp.data == key:
                 return key
             else:
-                return traverse(head.next)
+                temp = temp.next
 
-        return traverse(self.head)
+        return None
+
 
     def remove(self, key):
         """
         Remove the first occurrence of `key` in the list.
         Takes O(n) time.
         """
-        def traverse(head):
-            if head is None:
-                return head
-            elif head.data is key:
-                head = head.next
-                return head
-            else:
-                head.next = traverse(head.next)
-                return head
+        if self.head == None or (self.head.data==key and self.head.next == None):
+            self.head = None
+            return
 
-        self.head = traverse(self.head)
+        temp = self.head
+        while temp.next != None:
+            if temp.next.data == key:
+                temp.next = temp.next.next
+            else:
+                temp = temp.next
 
 
     def show(self):
@@ -76,15 +72,11 @@ class SinglyLinkedList:
         :return: an array of elements from head to tail
         """
         elements = []
+        temp = self.head
+        while temp != None:
+            elements.append(temp.data)
+            temp = temp.next
 
-        def traverse(head):
-            if head is None:
-                return None
-            else:
-                elements.append(head.data)
-                return traverse(head.next)
-
-        traverse(self.head)
         print(elements)
 
 
