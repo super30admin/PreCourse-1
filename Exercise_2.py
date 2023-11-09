@@ -1,4 +1,9 @@
 
+# // Time Complexity :O(n)
+# // Space Complexity : O(n)
+# // Did this code successfully run on Leetcode : Yes
+# // Any problem you faced while coding this :
+#      Concepts of linked list
 class Node:
     def __init__(self, data):
        self.data = data
@@ -6,10 +11,30 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.head = None
+
+    def isEmpty(self):
+        if self.head == None:
+            return True
         
     def push(self, data):
+
+        if self.isEmpty() == None:
+            self.head = Node(data)
+
+        else:
+            newItem = Node(data)
+            newItem.next = self.head
+            self.head = newItem
         
     def pop(self):
+        if self.isEmpty():
+             return None    
+        else:
+            poppedItem = self.head
+            self.head = self.head.next
+            poppedItem.next = None
+            return poppedItem.data
         
 a_stack = Stack()
 while True:
