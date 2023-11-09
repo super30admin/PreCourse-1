@@ -1,4 +1,8 @@
-public class StackAsLinkedList { 
+// Time Complexity : O(n) for both push and pop operations
+// Space Complexity :   O(1) space complexity, only variables are used
+// Did this code successfully run on Leetcode : yes
+// Any problem you faced while coding this : No
+class StackAsLinkedList { 
   
     StackNode root; 
   
@@ -9,6 +13,8 @@ public class StackAsLinkedList {
         StackNode(int data) 
         { 
             //Constructor here 
+            this.data=data;
+            this.next = null;
         } 
     } 
     
@@ -16,11 +22,26 @@ public class StackAsLinkedList {
     public boolean isEmpty() 
     { 
         //Write your code here for the condition if stack is empty. 
+        if(root==null){
+            System.out.println("Stack is empty");
+            return true;
+        }
+        return false;
     } 
   
     public void push(int data) 
     { 
         //Write code to push data to the stack. 
+        if(root == null)
+            root = new StackNode(data);
+        else{
+            StackNode nextNode = root;
+            StackNode newNode = new StackNode(data);
+            while(nextNode.next!=null){
+                nextNode = nextNode.next;
+            }
+            nextNode.next = newNode;
+        }
     } 
   
     public int pop() 
@@ -28,11 +49,33 @@ public class StackAsLinkedList {
 	//If Stack Empty Return 0 and print "Stack Underflow"
         //Write code to pop the topmost element of stack.
 	//Also return the popped element 
+     if(root==null){
+            System.out.println("Stack Underflow");
+            return 0;
+        }
+    StackNode popedNode = root;
+    StackNode preNode = root;
+
+    if(root.next == null){
+        root = null;
+    }else{
+        while(popedNode.next!=null){
+            preNode = popedNode;
+            popedNode = popedNode.next;
+        }
+        preNode.next = null;
+    }
+    return popedNode.data;
     } 
   
     public int peek() 
     { 
         //Write code to just return the topmost element without removing it.
+        StackNode popedNode = root;
+         while(popedNode.next!=null){
+        popedNode = popedNode.next;
+    }
+    return popedNode.data;
     } 
   
 	//Driver code
@@ -48,5 +91,12 @@ public class StackAsLinkedList {
         System.out.println(sll.pop() + " popped from stack"); 
   
         System.out.println("Top element is " + sll.peek()); 
+        sll.push(40);
+        System.out.println("Top element is " + sll.peek());
+        System.out.println(sll.pop() + " popped from stack");
+        System.out.println(sll.pop() + " popped from stack");
+        System.out.println(sll.pop() + " popped from stack");
+        System.out.println(sll.pop() + " popped from stack");
+        System.out.println(sll.pop() + " popped from stack");
     } 
 } 
