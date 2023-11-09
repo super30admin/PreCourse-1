@@ -1,11 +1,19 @@
-import java.io.*; 
   
 // Java program to implement 
 // a Singly Linked List 
-public class LinkedList { 
+
+//	
+//	Time Complexity: O(1) for all operations
+//	Space Complexity: O(n)
+//	Did this code successfully run on Leetcode : N/A
+//	Any problem you faced while coding this : No
+
+
+public class Exercise_3 { 
   
-    Node head; // head of list 
-  
+    static Node head; // head of list 
+    static Node current;
+    
     // Linked list Node. 
     // This inner class is made static 
     // so that main() can access it 
@@ -17,29 +25,48 @@ public class LinkedList {
         // Constructor 
         Node(int d) 
         { 
+        	this.data = d;
+        	this.next = null; 
             //Write your code here 
         } 
     } 
   
     // Method to insert a new node 
-    public static LinkedList insert(LinkedList list, int data) 
+    public static Exercise_3 insert(Exercise_3 list, int data) 
     { 
         // Create a new node with given data 
-   
-        // If the Linked List is empty, 
+    	Node temp = new Node (data);
+    	// If the Linked List is empty, 
         // then make the new node as head 
-        
+    	if (head == null) {
+    		head = temp;
+    		current = head;
+    	}
+    	else {
+    		while(current.next!=null) {
+    			current = current.next;
+    		}
+    		current.next = temp;
+    		current = current.next;
+    	}
             // Else traverse till the last node 
             // and insert the new_node there 
 
             // Insert the new_node at last node 
         // Return the list by head 
         
+    	return list;
     } 
   
     // Method to print the LinkedList. 
-    public static void printList(LinkedList list) 
+    public static void printList(Exercise_3 list) 
     {  
+    	Node temp = head;
+    	while (temp!=null) {
+    		System.out.println(temp.data);
+    		temp = temp.next;
+    	}
+    	
         // Traverse through the LinkedList 
    
             // Print the data at current node 
@@ -51,7 +78,7 @@ public class LinkedList {
     public static void main(String[] args) 
     { 
         /* Start with the empty list. */
-        LinkedList list = new LinkedList(); 
+        Exercise_3 list = new Exercise_3(); 
   
         // 
         // ******INSERTION****** 
