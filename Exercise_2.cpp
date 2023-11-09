@@ -1,5 +1,8 @@
 #include <bits/stdc++.h> 
 using namespace std; 
+
+//Time complexity O(1)
+//space complexity O(1)
   
 // A structure to represent a stack 
 class StackNode { 
@@ -18,22 +21,36 @@ StackNode* newNode(int data)
   
 int isEmpty(StackNode* root) 
 { 
-    //Your code here 
+    if (root == NULL) {
+        cout << "Stack is Empty";
+        return -1;
+    }
 } 
   
 void push(StackNode** root, int data) 
 { 
-    //Your code here 
+    StackNode* node = newNode(data);
+    node->next = root;
+    root = node;
+
 } 
   
 int pop(StackNode** root) 
 { 
-    //Your code here 
+    cout << "Element popped is " << root->data;
+    root = root->next;
+    return root->data;
 } 
   
 int peek(StackNode* root) 
 { 
-    //Your code here 
+    if (!isEmpty()) {
+        cout << "Top element is " << root->data;
+        return root->data;
+    }
+
+    else
+        return -1;
 } 
   
 int main() 
