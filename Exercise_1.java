@@ -1,35 +1,62 @@
+// Time Complexity : O(1)
+// Space Complexity : O(1)
+// Did this code successfully run on Leetcode :
+// Any problem you faced while coding this : NO
+
 class Stack { 
-    //Please read sample.java file before starting.
-  //Kindly include Time and Space complexity at top of each file
     static final int MAX = 1000; 
     int top; 
     int a[] = new int[MAX]; // Maximum size of Stack 
   
     boolean isEmpty() 
     { 
-        //Write your code here 
+        //Checking top position, if it is equal to -1 then there is no elements in Stack
+        if(top == -1)
+            return true;
+        return false;
     } 
 
     Stack() 
     { 
-        //Initialize your constructor 
+        // Initializing top with -1
+        top = -1;
     } 
   
     boolean push(int x) 
     { 
-        //Check for stack Overflow
-        //Write your code here
+        //If top is equal to MAX-1, then it means Stack reached its max capacity
+        if(top == MAX - 1){
+            System.out.println("Stack Overflow");
+            return false;
+        }
+        //Increment top by 1 and store current element at index top
+        top++;
+        a[top] = x;
+        return true;
     } 
   
     int pop() 
     { 
-        //If empty return 0 and print " Stack Underflow"
-        //Write your code here
+        if(isEmpty()){
+            System.out.println("Stack Underflow");
+            return 0;
+        }
+        //If Stack is not underflow
+        //First store the top index value
+        int val = a[top];
+        //Decrement top index by 1 to delete top element
+        a[top] = 0;
+        top--;
+        return val;   
     } 
   
     int peek() 
     { 
-        //Write your code here
+
+        if(isEmpty())
+            return 0;
+        //Returning top index value, if stack is not empty
+        return a[top];
     } 
 } 
   
