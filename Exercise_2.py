@@ -1,3 +1,5 @@
+#Time Complexity: Push - O(1), Pop - O(1), Peek - O(1)
+#Space Complexity: Push - O(1), Pop - O(1), Peek - O(1)
 
 class Node:
     def __init__(self, data):
@@ -6,10 +8,21 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.top = None #root of the LL -> top of the stack
         
     def push(self, data):
+        newNode = Node(data)
+        newNode.next = self.top
+        self.top = newNode
+
         
     def pop(self):
+        poppedNode = self.top
+        self.top = self.top.next if self.top else None
+        return poppedNode.data if poppedNode else None
+
+    def peek(self):
+        return self.top.data if self.top else None
         
 a_stack = Stack()
 while True:
