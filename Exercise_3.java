@@ -1,5 +1,9 @@
-import java.io.*; 
-  
+ // Time Complexity : O(n) for each operation
+// Space Complexity : O(n)
+// Did this code successfully run on Leetcode : N/A
+// Any problem you faced while coding this : No
+
+
 // Java program to implement 
 // a Singly Linked List 
 public class LinkedList { 
@@ -18,6 +22,8 @@ public class LinkedList {
         Node(int d) 
         { 
             //Write your code here 
+          data = d;
+          next = null;
         } 
     } 
   
@@ -25,15 +31,28 @@ public class LinkedList {
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data 
+      Node newNode = new Node(data)
    
         // If the Linked List is empty, 
         // then make the new node as head 
+        if (list.head == null) 
+        {
+          list.head = newNode;
+        }
+      // Else traverse till the last node 
+            // and insert the new_node there
+      else {
+        while(list.head.next != null)
+        {
+          list.head =  list.head.next;
+        }
+         // Insert the new_node at last node 
+       
+         list.head.next = newNode;
         
-            // Else traverse till the last node 
-            // and insert the new_node there 
-
-            // Insert the new_node at last node 
-        // Return the list by head 
+      }
+         // Return the list by head 
+      return list;
         
     } 
   
