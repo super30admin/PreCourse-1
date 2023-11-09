@@ -1,35 +1,68 @@
+// Time Complexity : O(n)
+// Space Complexity : O(n)
+// Did this code successfully run on Leetcode : Not attempted on Leet Code
+// Any problem you faced while coding this : None. Need to review time complexity. My TC and SC analysis was based on the number of elements pushed and popped from the stack. I took worst case.
+
+
 class Stack { 
-    //Please read sample.java file before starting.
-  //Kindly include Time and Space complexity at top of each file
+
     static final int MAX = 1000; 
     int top; 
     int a[] = new int[MAX]; // Maximum size of Stack 
   
+    // Checks if top element is empty
     boolean isEmpty() 
     { 
-        //Write your code here 
+        return (top < 0);
     } 
 
     Stack() 
     { 
-        //Initialize your constructor 
+        //Sentinal value
+        top = -1; 
     } 
   
     boolean push(int x) 
     { 
-        //Check for stack Overflow
-        //Write your code here
+        //Checks if the accessing out of bounds (above max size); overflow
+        if (top >= (MAX - 1)) { 
+            return false;
+        }
+
+        else {
+            //adding elements from the top
+            a[++top] = x;
+            //System.out.println(x + " Pushed");
+            return true;
+        }
     } 
   
     int pop() 
     { 
         //If empty return 0 and print " Stack Underflow"
-        //Write your code here
+        if (top < 0) {
+            System.out.println("Stack Underflow");
+            return 0;
+        }
+
+        else {
+            int x = a[top--];
+            return x;
+        }
     } 
   
     int peek() 
     { 
-        //Write your code here
+        //Check for underflow/empty stack
+        if (top < 0) {
+            System.out.println("Stack Underflow");
+            return 0;
+        }
+
+        else {
+            int x = a[top];
+            return x;
+        }
     } 
 } 
   
