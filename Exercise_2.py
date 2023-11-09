@@ -1,4 +1,14 @@
+## Time Complexity : O(1)
+# Space Complexity : O(n)
+# Did this code successfully run on Leetcode :
 
+# Any problem you faced while coding this :
+
+
+# Your code here along with comments explaining your approach 
+
+
+#Node already defined
 class Node:
     def __init__(self, data):
        self.data = data
@@ -6,10 +16,35 @@ class Node:
  
 class Stack:
     def __init__(self):
-        
+        self.head = None
+    #this fucntion to be used in pop fucntion    
+    def isempty(self):
+        #if list is empty
+        if self.head == None:
+            return True
+        else:
+            return False    
     def push(self, data):
-        
+        #if list is empty
+        if self.head ==None:
+            self.head = Node(data)
+        else:
+            #Start the head from new node which will be the top of the stack
+            newnode = Node(data)
+            newnode.next = self.head
+            self.head = newnode
+
     def pop(self):
+        #if list is empty
+        if self.isempty():
+            return None
+        else:
+            #Remove head and then move head to the next element
+            popnode = self.head
+            self.head = self.head.next
+            popnode.next = None
+            return popnode.data
+
         
 a_stack = Stack()
 while True:
