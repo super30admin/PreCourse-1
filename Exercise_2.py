@@ -1,4 +1,7 @@
 
+from platform import node
+
+
 class Node:
     def __init__(self, data):
        self.data = data
@@ -6,10 +9,21 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.head=None
+        self.tail=self.head
         
     def push(self, data):
+        node=Node(data)
+        if self.head==None:
+            self.head=node
+            self.tail=self.head
+        self.tail.next=node
+        self.tail=node
         
     def pop(self):
+        value=self.tail.data
+        self.tail=None
+        return value
         
 a_stack = Stack()
 while True:
