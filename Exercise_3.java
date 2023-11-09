@@ -1,8 +1,5 @@
-import java.io.*; 
-  
-// Java program to implement 
-// a Singly Linked List 
-public class LinkedList { 
+
+class LinkedList { 
   
     Node head; // head of list 
   
@@ -17,34 +14,43 @@ public class LinkedList {
         // Constructor 
         Node(int d) 
         { 
-            //Write your code here 
+            data=d;
+            next = null;
         } 
     } 
   
     // Method to insert a new node 
     public static LinkedList insert(LinkedList list, int data) 
     { 
-        // Create a new node with given data 
+        Node temp = new Node(data);
+        if(head==null){
+            head=temp;
+            return head;
+            
+        }
+        temp.next=null;
+        Node curr = head;
+        while(curr.next!=null)
+        {
+            curr=curr.next;
+        }
+        curr.next=temp;
+        return head;
+            
+    }
+       
    
-        // If the Linked List is empty, 
-        // then make the new node as head 
-        
-            // Else traverse till the last node 
-            // and insert the new_node there 
-
-            // Insert the new_node at last node 
-        // Return the list by head 
-        
-    } 
   
     // Method to print the LinkedList. 
     public static void printList(LinkedList list) 
     {  
-        // Traverse through the LinkedList 
-   
-            // Print the data at current node 
-       
-            // Go to next node 
+        Node curr = head;
+        while(curr.next!=null)
+        {
+            System.out.println(cur.data);
+            curr=curr.next;
+        }
+        
     } 
    
     // Driver code 
@@ -53,11 +59,6 @@ public class LinkedList {
         /* Start with the empty list. */
         LinkedList list = new LinkedList(); 
   
-        // 
-        // ******INSERTION****** 
-        // 
-  
-        // Insert the values 
         list = insert(list, 1); 
         list = insert(list, 2); 
         list = insert(list, 3); 
@@ -67,4 +68,5 @@ public class LinkedList {
         // Print the LinkedList 
         printList(list); 
     } 
-}
+}/* package codechef; // don't place package name! */
+
