@@ -6,10 +6,20 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.top = None
         
     def push(self, data):
+        NN = Node(data)
+        NN.next = self.top
+        self.top = NN
         
     def pop(self):
+        if self.top() != None:
+            pop_data = self.top.data
+            self.top = self.top.next
+            return pop_data
+        else:
+            print("Empty Stack")
         
 a_stack = Stack()
 while True:
