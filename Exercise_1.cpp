@@ -12,7 +12,7 @@ class Stack {
 public: 
     int a[MAX]; // Maximum size of Stack 
   
-    Stack() { //Constructor here } 
+    Stack() { top = 0; } 
     bool push(int x); 
     int pop(); 
     int peek(); 
@@ -21,24 +21,40 @@ public:
   
 bool Stack::push(int x) 
 { 
-    //Your code here
-    //Check Stack overflow as well
+    if (top >= MAX) {
+        cout << "Stack Overflow";
+        return false;
+    } else {
+        a[++top] = x;
+        cout << x << " pushed into stack\n";
+        return true;
+    }
 } 
   
 int Stack::pop() 
 { 
-    //Your code here
-    //Check Stack Underflow as well 
+    if (top <= 0) {
+        cout << "Stack Underflow";
+        return 0;
+    } else {
+        int firstElement = a[top--];
+        return firstElement;
+    }
 } 
 int Stack::peek() 
 { 
-    //Your code here
-    //Check empty condition too
+    if (top <= 0) {
+        cout << "Stack is Empty";
+        return 0;
+    } else {
+        int topElement = a[top];
+        return topElement;
+    }
 } 
   
 bool Stack::isEmpty() 
 { 
-    //Your code here 
+    return (top <= 0); 
 } 
   
 // Driver program to test above functions 
