@@ -1,3 +1,7 @@
+# // Time Complexity : O(1) for push,pop,peek,size and show
+# // Space Complexity : O(n) since we are using an array to store elements
+# // Did this code successfully run on Leetcode : NA
+# // Any problem you faced while coding this : None
 class myStack:
   #Please read sample.java file before starting.
   #Kindly include Time and Space complexity at top of each file

@@ -1,4 +1,8 @@
-
+# // Time Complexity : O(1) for both push and pop
+# // Space Complexity : O(n) since we are creating a node for each element
+# // Did this code successfully run on Leetcode : NA
+# // Any problem you faced while coding this : Was thinking about adding new nodes to current next node
+# later understood that adding existing nodes to next node of new code will help with better time complexity
 class Node:
     def __init__(self, data):
        self.data = data

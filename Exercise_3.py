@@ -1,3 +1,7 @@
+# // Time Complexity : O(n) for append,find and remove
+# // Space Complexity : O(n) since we are creating nodes for all elements
+# // Did this code successfully run on Leetcode : NA
+# // Any problem you faced while coding this : None
 class ListNode:
     """
     A node in a singly-linked list.
@@ -56,7 +60,9 @@ class SinglyLinkedList:
             if navigateNode.data == key:
                 if prev == None:
                     navigateNode = navigateNode.next
+                    return
                 else:
                     prev.next = navigateNode.next
+                    return
             prev = navigateNode
             navigateNode = navigateNode.next
