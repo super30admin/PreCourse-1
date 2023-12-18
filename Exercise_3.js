@@ -1,13 +1,18 @@
+//Time Complexity O(n)
+//Space Complexity O(1)
+//Yes
+//No
+
 // Java program to implement
 // a Singly Linked List
 class LinkedList {
     constructor() {
-        this.head = null;
+        this.head = null; //Initializing Empty linkedList with head as null value
     }
 
     // Node class representing a node in the linked list
     static Node = class {
-        constructor(d) {
+        constructor(d) {   //Initializing constructor with data and poiner
             this.data = d;
             this.next = null;
         }
