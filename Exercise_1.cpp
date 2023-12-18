@@ -1,18 +1,23 @@
-#include <bits/stdc++.h> 
+// Time Complexity : O(1)
+// Space Complexity : O(1)
+// Any problem you faced while coding this : no
+
+#include <iostream> 
   
 using namespace std; 
   
 #define MAX 1000 
   
 class Stack {
-  //Please read sample.java file before starting.
-  //Kindly include Time and Space complexity at top of each file
     int top; 
   
 public: 
     int a[MAX]; // Maximum size of Stack 
   
-    Stack() { //Constructor here } 
+    Stack() { 
+        //Constructor
+        top = -1; 
+    } 
     bool push(int x); 
     int pop(); 
     int peek(); 
@@ -22,23 +27,43 @@ public:
 bool Stack::push(int x) 
 { 
     //Your code here
-    //Check Stack overflow as well
+    if ( top < MAX-1 )
+    {
+        top++;
+        a[top] = x;
+        return true;
+    }
+    return false;
 } 
   
 int Stack::pop() 
 { 
     //Your code here
-    //Check Stack Underflow as well 
+    if(isEmpty())
+    {
+        return -1;
+    }
+    top = top - 1;
+    return top;
 } 
 int Stack::peek() 
 { 
     //Your code here
-    //Check empty condition too
+    if (isEmpty())
+    {
+        return -1;
+    }
+    return a[top];
 } 
   
 bool Stack::isEmpty() 
 { 
     //Your code here 
+    if(top == -1)
+    {
+        return true;
+    }
+    return false;
 } 
   
 // Driver program to test above functions 
