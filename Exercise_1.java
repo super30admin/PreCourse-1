@@ -6,30 +6,46 @@ class Stack {
     int a[] = new int[MAX]; // Maximum size of Stack 
   
     boolean isEmpty() 
-    { 
+    {
+        return(top==-1);
         //Write your code here 
     } 
 
-    Stack() 
-    { 
-        //Initialize your constructor 
+    Stack()
+    {
+        top=-1;
     } 
   
     boolean push(int x) 
-    { 
-        //Check for stack Overflow
-        //Write your code here
+    {
+        if(top>=MAX-1){
+            System.out.println("Stack is full can't add value: "+ x);
+            return false;
+        }
+        else {
+            top += 1;
+            a[top] = x;
+            System.out.println("stack pushed by value: "+ x);
+            return true;
+        }
     } 
   
     int pop() 
-    { 
-        //If empty return 0 and print " Stack Underflow"
-        //Write your code here
+    {
+        if(isEmpty()){
+            return 0;
+        }
+        else{
+            int value= a[top];
+            top-=1;
+            return value;
+        }
     } 
   
     int peek() 
-    { 
-        //Write your code here
+    {
+        int peakval=a[top];
+        return peakval;
     } 
 } 
   
@@ -37,10 +53,12 @@ class Stack {
 class Main { 
     public static void main(String args[]) 
     { 
-        Stack s = new Stack(); 
+        Stack s = new Stack();
         s.push(10); 
         s.push(20); 
-        s.push(30); 
-        System.out.println(s.pop() + " Popped from stack"); 
+        s.push(30);
+        System.out.println(s.pop() + " Popped from stack");
+        System.out.println(s.peek() + " peak of stack");
+
     } 
 }
