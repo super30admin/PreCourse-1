@@ -16,7 +16,7 @@ class myStack:
          
      def show(self):
          
-
+#hello 
 s = myStack()
 s.push('1')
 s.push('2')
