@@ -1,4 +1,7 @@
-
+# Time Complexity : all operations  have a time complexity of O(1)
+# Space Complexity : O(N)
+# Did this code successfully run on Leetcode : Ran Locally 
+# Any problem you faced while coding this : No
 class Node:
     def __init__(self, data):
        self.data = data
@@ -6,10 +9,18 @@ class Node:
  
 class Stack:
     def __init__(self):
-        
+        self.top = None
+        #initialize our stack, we set a pointer to the top of the stack with the value of none
     def push(self, data):
-        
+        node = Node(data) # we create a node wth the input data
+        node.next = self.top # we set the node to point to the current top node
+        self.top = node # updating the top pointer to point to our new node
     def pop(self):
+        if self.top is None:
+            return self.top  # if the stack is empty we will return the top pointer which will be none
+        data_pop = self.top.data # identifying the value of our top node
+        self.top = self.top.next # top pointer will now point to the next node in the stack
+        return data_pop
         
 a_stack = Stack()
 while True:
