@@ -1,4 +1,4 @@
-# Time Complexity: O(1) for all the methods 
+# Time Complexity: O(1) for all the methods as they take constant ti 
 # Space Complexity: O(n) where n is the number of elements in the stack
 
 class myStack:
