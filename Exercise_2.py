@@ -1,4 +1,13 @@
+""" 
+// Time Complexity : O(1)
+// Space Complexity : Worst case O(n), Best case O(1)
+// Did this code successfully run on Leetcode : Didn't try, runs on machine
+// Any problem you faced while coding this : Remembering class concepts while doing it.
 
+
+// Your code here along with comments explaining your approach
+Most of the functions are straight forward. Followed same approach as exercise_1.py
+"""
 class Node:
     def __init__(self, data):
        self.data = data
@@ -6,10 +15,16 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.items = []
         
     def push(self, data):
+        self.items.append(data)
         
     def pop(self):
+        if not (len(self.items) == 0):
+            return self.items.pop()
+        else:
+            print("Can not remove from empty list")
         
 a_stack = Stack()
 while True:
