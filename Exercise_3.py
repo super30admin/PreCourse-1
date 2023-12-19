@@ -1,3 +1,13 @@
+""" 
+// Time Complexity : O(1)
+// Space Complexity : Worst case O(n), Best case O(1)
+// Did this code successfully run on Leetcode : Didn't try, runs on machine
+// Any problem you faced while coding this : Got confused between two classes.
+
+
+// Your code here along with comments explaining your approach
+Most of the functions are straight forward. Followed same approach as exercise_1.py
+"""
 class ListNode:
     """
     A node in a singly-linked list.
@@ -44,17 +54,16 @@ class SinglyLinkedList:
         Remove the first occurrence of `key` in the list.
         Takes O(n) time.
         """
-        def remove_elem():
 
         elem = self.find(key)
         if not elem:
             return
         if node.prev:
-                node.prev.next = node.next
-            if node.next:
-                node.next.prev = node.prev
-            if node is self.head:
-                self.head = node.next
+            node.prev.next = node.next
+        if node.next:
+            node.next.prev = node.prev
+        if node is self.head:
+            self.head = node.next
 
-            node.prev = None
-            node.next = None
+        node.prev = None
+        node.next = None
