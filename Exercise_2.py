@@ -6,10 +6,16 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.items = []
         
     def push(self, data):
+        self.items.append(data)
         
     def pop(self):
+        if not (len(self.items) == 0):
+            return self.items.pop()
+        else:
+            print("Can not remove from empty list")
         
 a_stack = Stack()
 while True:
