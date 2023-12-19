@@ -58,5 +58,3 @@ class SinglyLinkedList:
 
             node.prev = None
             node.next = None
-        
-
