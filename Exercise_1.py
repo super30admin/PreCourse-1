@@ -3,7 +3,7 @@ class myStack:
   #Kindly include Time and Space complexity at top of each file
      def __init__(self):
       self.items = []
-      
+
      def isEmpty(self):
       return len(self.items) == 0
 
