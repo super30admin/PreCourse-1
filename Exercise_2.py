@@ -1,4 +1,5 @@
-
+# Time Complexity: O(1) for all
+# Space Complexity: O(1)
 class Node:
     def __init__(self, data):
        self.data = data
@@ -6,11 +7,24 @@ class Node:
  
 class Stack:
     def __init__(self):
-        
+        self.head = None
     def push(self, data):
-        
+        node = Node(data)
+        if not self.head:
+            self.head = node
+            return
+
+        self.head.next = node
+        self.head = node
+
     def pop(self):
-        
+        if not self.head:
+            return None
+
+        res = self.head.data
+        self.head = self.head.next
+        return res
+
 a_stack = Stack()
 while True:
     #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
