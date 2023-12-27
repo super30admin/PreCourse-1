@@ -1,33 +1,51 @@
 class Stack {
-  //Please read sample.java file before starting.
-  //Kindly include Time and Space complexity at top of each file
-​
+    //Please read sample.java file before starting.
+    //Kindly include Time and Space complexity at top of each file
+
     constructor() {
         //Initialize your constructor
         this.MAX = 1000;
         this.top = -1;
         this.a = new Array(this.MAX);
     }
-​
-    function isEmpty() {
-        //Write your code here
+
+    isEmpty() {
+        return this.top < 0
     }
-​
-    function push(x) {
-        //Check for stack Overflow
-        //Write your code here
+
+    push(x) {
+        if (this.top >= this.MAX - 1) {
+            return false
+            // stack overflow
+
+        }
+        this.top = this.top + 1
+        this.a[this.top] = x
+        console.log(this.a)
     }
-​
-    function pop() {
-        //If empty return 0 and print " Stack Underflow"
-        //Write your code here
+
+    pop() {
+        const empty = this.isEmpty()
+        if (empty) {
+            console.log("Stack Underflow")
+            return 0
+        }
+        const x = this.a[this.top]
+        this.top = this.top - 1
+        return x
     }
-​
-    function peek() {
-       //Write your code here
+
+    peek() {
+        const empty = this.isEmpty()
+        if (empty) {
+            console.log("Stack Underflow")
+            return 0
+        }
+        const x = this.a[this.top]
+        return x
     }
 }
-​
+
 let s = new Stack();
 s.push(10);
 s.push(20);
