@@ -6,7 +6,8 @@ class Stack {
     int a[] = new int[MAX]; // Maximum size of Stack 
   
     boolean isEmpty() 
-    { 
+    {
+		return false; 
         //Write your code here 
     } 
 
