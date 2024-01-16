@@ -1,4 +1,6 @@
-public class StackAsLinkedList { 
+// Time Complexity : O(1)
+// Space Complexity : O(n)
+class StackAsLinkedList {
   
     StackNode root; 
   
@@ -8,31 +10,62 @@ public class StackAsLinkedList {
   
         StackNode(int data) 
         { 
-            //Constructor here 
+            this.data = data;
+            this.next = null;
         } 
     } 
     
 	
     public boolean isEmpty() 
     { 
-        //Write your code here for the condition if stack is empty. 
+        return root == null;
     } 
   
     public void push(int data) 
     { 
-        //Write code to push data to the stack. 
+        StackNode node = new StackNode(data);
+
+        if(root == null) {
+            root = node;
+        } else {
+            StackNode tempNode = root;
+            while(tempNode != null && tempNode.next != null) {
+                tempNode = tempNode.next;
+            }
+            tempNode.next = node;
+        }
     } 
   
     public int pop() 
-    { 	
-	//If Stack Empty Return 0 and print "Stack Underflow"
-        //Write code to pop the topmost element of stack.
-	//Also return the popped element 
-    } 
+    {
+        if(root == null) {
+            System.out.print("Stack Underflow");
+            return 0;
+        } else {
+            StackNode stackNode = root;
+            while(stackNode != null && stackNode.next != null && stackNode.next.next != null) {
+                stackNode = stackNode.next;
+            }
+            if(stackNode.next != null) {
+                int currentNode = stackNode.next.data;
+                stackNode.next = null;
+                return  currentNode;
+
+            }
+        }
+        return 0;
+    }
   
     public int peek() 
     { 
-        //Write code to just return the topmost element without removing it.
+        StackNode stackNode = root;
+
+        int currentdata = 0;
+        while(stackNode != null ) {
+            currentdata = stackNode.data;
+            stackNode = stackNode.next;
+        }
+        return currentdata;
     } 
   
 	//Driver code
