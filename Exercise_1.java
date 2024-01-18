@@ -1,3 +1,13 @@
+// Time Complexity: O(1) for all operations
+// Space Complexity: O(MAX)
+// Did this code successfully run on Leetcode : N/A
+// Any problem you faced while coding this : No
+
+
+// Your code here along with comments explaining your approach:
+// Used the variable "top" to store imitate top of stack. Manipulating
+// it in all the operations
+
 class Stack { 
     // Time Complexity: O(1) for all operations
     // Space Complexity: O(MAX)
