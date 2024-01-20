@@ -1,4 +1,7 @@
 
+// Time Complexity : O(N)
+// Space Complexity : O(N) - Size of stack
+
 // Java program to implement 
 // a Singly Linked List 
 class LinkedList {

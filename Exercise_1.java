@@ -1,4 +1,7 @@
 
+// Time Complexity : O(1) for each operation
+// Space Complexity : O(N) - Size of stack
+
 class Stack {
     // Please read sample.java file before starting.
     // Kindly include Time and Space complexity at top of each file

@@ -1,3 +1,7 @@
+
+// Time Complexity : O(1) for each operation
+// Space Complexity : O(N) - Size of stack
+
 class StackAsLinkedList {
 
     StackNode root;
