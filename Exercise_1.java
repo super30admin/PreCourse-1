@@ -1,3 +1,15 @@
+/** 
+ 
+Time Complexity :
+Best Case : O(1)
+Worst case : O(1)
+
+Space Complexity :
+Best Case : O(n)
+Worst case : O(n)
+
+*/
+
 class Stack {
 	// Please read sample.java file before starting.
 	// Kindly include Time and Space complexity at top of each file
