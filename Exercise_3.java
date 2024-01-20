@@ -1,6 +1,6 @@
 import java.io.*;
 /**
- Time Complexity
+ * Time Complexity
  * insert - O(n)
  * print - O(n)
  */
