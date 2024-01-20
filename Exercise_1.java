@@ -1,5 +1,4 @@
 /** 
- 
 Time Complexity :
 Best Case : O(1)
 Worst case : O(1)
@@ -7,7 +6,6 @@ Worst case : O(1)
 Space Complexity :
 Best Case : O(n)
 Worst case : O(n)
-
 */
 
 class Stack {
