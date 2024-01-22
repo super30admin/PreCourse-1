@@ -1,4 +1,16 @@
-public class StackAsLinkedList { 
+/* Time Complexity
+    push - O(n)
+    Pop - O(n)
+    Peek - O(n)
+
+    Since we have to traverse till the end of the LinkedList
+*/
+
+/* Space Complexity
+    O(n) -> Number of elements in the LinkedList
+*/
+
+class StackAsLinkedList {
   
     StackNode root; 
   
@@ -8,31 +20,75 @@ public class StackAsLinkedList {
   
         StackNode(int data) 
         { 
-            //Constructor here 
+            this.data = data;
+            this.next = null;
         } 
     } 
     
 	
     public boolean isEmpty() 
-    { 
-        //Write your code here for the condition if stack is empty. 
+    {
+        return root == null;
     } 
   
     public void push(int data) 
-    { 
-        //Write code to push data to the stack. 
+    {
+        StackNode newNode = new StackNode(data);
+
+        if(root == null) {
+            root = newNode;
+        } else {
+            StackNode tempStackNode = root;
+
+            while(tempStackNode.next != null) {
+                tempStackNode = tempStackNode.next;
+            }
+
+            tempStackNode.next = newNode;
+        }
     } 
   
     public int pop() 
     { 	
-	//If Stack Empty Return 0 and print "Stack Underflow"
-        //Write code to pop the topmost element of stack.
-	//Also return the popped element 
+
+        if(root == null) {
+            System.err.println("Stack Underflow Error: Stack is empty");
+            return 0;
+        }
+
+        int data;
+        StackNode tempStackNode;
+        StackNode prevNode = null;
+
+        tempStackNode = root;
+
+        while(tempStackNode.next != null) {
+            prevNode = tempStackNode;
+            tempStackNode = tempStackNode.next;
+        }
+
+        data = tempStackNode.data;
+
+        if (prevNode != null)
+            prevNode.next = null;
+
+        return data;
     } 
   
     public int peek() 
-    { 
-        //Write code to just return the topmost element without removing it.
+    {
+        if(root == null) {
+            System.err.println("Stack Underflow Error: Stack is empty");
+            return 0;
+        }
+
+        StackNode tempStackNode = root;
+
+        while(tempStackNode.next != null) {
+            tempStackNode = tempStackNode.next;
+        }
+
+        return tempStackNode.data;
     } 
   
 	//Driver code
