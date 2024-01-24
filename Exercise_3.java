@@ -1,3 +1,5 @@
+// Time Complexity for all operations : O(n)
+
 import java.io.*; 
 
 public class LinkedList { 
