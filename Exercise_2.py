@@ -1,3 +1,7 @@
+# Time Complexity : O(1)
+# Space Complexity : O(n)
+# Did this code successfully run on Leetcode : NA
+# Any problem you faced while coding this : NA
 
 class Node:
     def __init__(self, data):
@@ -6,10 +10,18 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.hd = Node(None)
         
     def push(self, data):
-        
+        tmp = Node(data)
+        tmp.next = self.hd
+        self.hd = tmp
+
     def pop(self):
+        data = self.hd.data
+        if data:
+            self.hd = self.hd.next
+        return data   
         
 a_stack = Stack()
 while True:
