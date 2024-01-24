@@ -1,3 +1,4 @@
+// Time Complexity for all operations : O(n)
 public class StackAsLinkedList { 
   
     StackNode root; 
@@ -8,31 +9,70 @@ public class StackAsLinkedList {
   
         StackNode(int data) 
         { 
-            //Constructor here 
+            this.data = data;
         } 
     } 
     
 	
     public boolean isEmpty() 
     { 
-        //Write your code here for the condition if stack is empty. 
+        if (null == this.root) {
+            return true;
+        }
+        
+        return false; 
     } 
   
     public void push(int data) 
     { 
-        //Write code to push data to the stack. 
+        if (this.isEmpty()) {
+            root = new StackNode(data);
+        } else {
+            StackNode temp = root;
+            while(temp.next != null) {
+                temp = temp.next;
+            }
+            temp.next = new StackNode(data);
+        } 
     } 
   
     public int pop() 
     { 	
-	//If Stack Empty Return 0 and print "Stack Underflow"
-        //Write code to pop the topmost element of stack.
-	//Also return the popped element 
+        if (this.isEmpty()) {
+    	    System.out.println("Stack Underflow");
+            return 0;
+        } else if (root.next == null) {
+            int value = root.data;
+            root = null;
+            return value;
+        } else {
+            StackNode temp = root;
+            StackNode previous = temp;
+            int value = 0;
+            while (temp.next != null) {
+                previous = temp;
+                temp = temp.next;
+            }
+            value = temp.data;
+            previous.next = null;
+            return value;
+        }
     } 
   
     public int peek() 
     { 
-        //Write code to just return the topmost element without removing it.
+        if (this.isEmpty()) {
+            System.out.println("Stack is empty nothing to peek");
+            return 0;
+        }
+        
+        StackNode temp = this.root;
+        int top = 0;
+        while (temp != null) {
+            top = temp.data;
+            temp = temp.next;
+        }
+        return top;
     } 
   
 	//Driver code
