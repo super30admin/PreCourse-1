@@ -1,15 +1,33 @@
-
+# Time complexity is O(1) and space complexity is O(N)
 class Node:
     def __init__(self, data):
        self.data = data
        self.next = None
- 
+class LinkedList:
+    def __init__(self):
+        self.head = None
 class Stack:
     def __init__(self):
+        self.LinkedList = LinkedList()
+    
+    def isEmpty(self):
+        if self.LinkedList.head == None:
+            return True
+        else:
+            return False
         
     def push(self, data):
-        
+        node = Node(data)
+        node.next = self.LinkedList.head
+        self.LinkedList.head = node
+            
     def pop(self):
+        if self.isEmpty():
+            return "The Linked list stack is empty"
+        else:
+            node = self.LinkedList.head.data
+            self.LinkedList.head = self.LinkedList.head.next
+            return node
         
 a_stack = Stack()
 while True:
