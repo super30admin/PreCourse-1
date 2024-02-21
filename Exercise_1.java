@@ -1,6 +1,10 @@
 class Stack { 
     //Please read sample.java file before starting.
   //Kindly include Time and Space complexity at top of each file
+    // Time Complexity: O(1) for push, pop, peek, isEmpty function.
+    // Space Complexity: O(1) since we are not using any extra memory.
+    // Did this code successfully run on Leetcode : No corresposnding leetcode problem.
+    // Any problem you faced while coding this : No
     static final int MAX = 1000; 
     int top; 
     int a[] = new int[MAX]; // Maximum size of Stack 
