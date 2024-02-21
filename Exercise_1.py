@@ -1,6 +1,6 @@
 class myStack:
-  #Kindly include Time and Space complexity at top of each file
-  # Time and space complexity is O(N)
+  # Kindly include Time and Space complexity at top of each file
+  # Time complexity is O(1) and space complexity is O(N)
   def __init__(self):
     self.list = []
     self.maxsize = 1000
