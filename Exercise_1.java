@@ -7,6 +7,10 @@ class Stack {
   
     boolean isEmpty() 
     { 
+        if top==-1;
+        return true
+        else 
+        return false;
         //Write your code here 
     } 
 
@@ -17,12 +21,16 @@ class Stack {
   
     boolean push(int x) 
     { 
+
+        if 
         //Check for stack Overflow
         //Write your code here
     } 
   
     int pop() 
     { 
+        if top==1;
+
         //If empty return 0 and print " Stack Underflow"
         //Write your code here
     } 
