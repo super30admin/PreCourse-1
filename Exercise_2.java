@@ -36,7 +36,6 @@ class StackAsLinkedList {
             root = new StackNode(data);
             root.next = temp;
         }
-
     } 
   
     public int pop() {
@@ -63,6 +62,8 @@ class StackAsLinkedList {
   
 	//Driver code
     public static void main(String[] args) {
+
+        // Assumption: number >= 0
   
         StackAsLinkedList sll = new StackAsLinkedList(); 
   

@@ -44,12 +44,12 @@ import java.io.*;
                 tempNode = tempNode.next;
             } else {
                 // tempNode == null
+                // Insert the new_node at last node
                 tempNode.next = n;
+                // Return the list by head
                 return list;
             }
         }
-        // Insert the new_node at last node
-        // Return the list by head
         return list;
     } 
   
