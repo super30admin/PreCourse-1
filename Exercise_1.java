@@ -17,10 +17,10 @@ class Stack {
     {
         //Initialize your constructor
         //Initialize array
-        stackUsingArray = new int[MAX];
-        EMPTY_STACK_INDEX = -1;
+        this.stackUsingArray = new int[MAX];
+        this.EMPTY_STACK_INDEX = -1;
         //Initialize top pointer
-        top = EMPTY_STACK_INDEX; //This indicates that the stack is initially empty.
+        this.top = EMPTY_STACK_INDEX; //This indicates that the stack is initially empty.
     }
 
     boolean isEmpty()
