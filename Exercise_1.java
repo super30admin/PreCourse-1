@@ -8,7 +8,7 @@ O(1) -> For each method push, pop, peek. Since it is happeing on the top of the 
 
 /* Space Complexity : 
 
-O(N) where N is constant and equal to 1000. So can we call it O(1) ?
+O(1) constant, since no extra space needed anywhere
 
 */ 
 
