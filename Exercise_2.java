@@ -1,4 +1,21 @@
-public class StackAsLinkedList { 
+// Implement Stack using Linked List.
+
+/* Time Complexity : 
+
+O(1) -> For each method push, pop, peek. Since it is happeing on the top of the stack
+
+*/
+
+/* Space Complexity : 
+
+O(1) constant, since no extra space needed anywhere
+
+*/ 
+
+// Did this code successfully run on Leetcode :
+// Any problem you faced while coding this : No
+
+class StackAsLinkedList {
   
     StackNode root; 
   
@@ -9,6 +26,7 @@ public class StackAsLinkedList {
         StackNode(int data) 
         { 
             //Constructor here 
+            this.data = data;
         } 
     } 
     
@@ -16,23 +34,49 @@ public class StackAsLinkedList {
     public boolean isEmpty() 
     { 
         //Write your code here for the condition if stack is empty. 
+        if(this.root == null)
+            return true;
+        return false;
     } 
   
     public void push(int data) 
     { 
         //Write code to push data to the stack. 
+        if(isEmpty())
+            this.root = new StackNode(data);
+        else{
+            StackNode newNode = new StackNode(data);
+            StackNode temp = this.root;
+            this.root = newNode;
+            this.root.next = temp;
+        }
     } 
   
     public int pop() 
     { 	
-	//If Stack Empty Return 0 and print "Stack Underflow"
+	    //If Stack Empty Return 0 and print "Stack Underflow"
+        if(isEmpty())
+        {
+            System.out.println("Stack Underflow");
+            return 0;
+        }
         //Write code to pop the topmost element of stack.
-	//Also return the popped element 
+	    //Also return the popped element 
+        StackNode temp = this.root;
+        this.root = root.next;
+        return temp.data;
     } 
   
     public int peek() 
     { 
         //Write code to just return the topmost element without removing it.
+        if(isEmpty())
+        {
+            System.out.println("Stack Underflow");
+            return 0;
+        }
+
+        return this.root.data;
     } 
   
 	//Driver code
@@ -40,7 +84,7 @@ public class StackAsLinkedList {
     { 
   
         StackAsLinkedList sll = new StackAsLinkedList(); 
-  
+        sll.peek();
         sll.push(10); 
         sll.push(20); 
         sll.push(30); 
