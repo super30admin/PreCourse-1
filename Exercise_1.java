@@ -43,7 +43,7 @@ class Stack {
     int pop() 
     { 
         if (top==-1){
-            return false;
+            return 0;
 
         }
         else{
@@ -61,7 +61,7 @@ class Stack {
     int peek() 
     { 
         if(top<0){
-            Ststem.out.println("Stack Underflow");
+            System.out.println("Stack Underflow");
             return 0;
         }
         else{
