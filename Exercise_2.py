@@ -1,4 +1,7 @@
-
+# Time Complexity : O(1)
+# Space Complexity : O(n)
+# Did this code successfully run on Leetcode :
+# Any problem you faced while coding this :
 class Node:
     def __init__(self, data):
        self.data = data
@@ -6,10 +9,13 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.stack = []
         
     def push(self, data):
+        self.stack.append(data)
         
     def pop(self):
+        return self.stack.pop()
         
 a_stack = Stack()
 while True:
@@ -24,9 +30,11 @@ while True:
         a_stack.push(int(do[1]))
     elif operation == 'pop':
         popped = a_stack.pop()
+        print(popped)
         if popped is None:
             print('Stack is empty.')
         else:
             print('Popped value: ', int(popped))
     elif operation == 'quit':
         break
+    
