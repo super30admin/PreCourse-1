@@ -7,7 +7,7 @@ class Stack {
 		// using index -1 to determine if the stack is empty or not seemed a little "Hack-y".
 		// wanted to use null instead, since I'm new to Java, not sure how to use integer type with null. 
 
-	// Your code here along with comments explaining your approach
+	// Code along with comments explaining approach
     static final int MAX = 1000; 
     int top; 
     int a[] = new int[MAX]; // Maximum size of Stack 
