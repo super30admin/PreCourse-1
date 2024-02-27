@@ -1,35 +1,64 @@
 class Stack { 
-    //Please read sample.java file before starting.
-  //Kindly include Time and Space complexity at top of each file
+	// Time Complexity :   All methods O(1)
+	// Space Complexity : Individual Methods does not take up any space, however, array used to maintain the stack has O(1000)
+	//                    At any given time there exists the array of size 1000.   
+	// Did this code successfully run on LeetCode : No
+	// Any problem you faced while coding this :
+		// using index -1 to determine if the stack is empty or not seemed a little "Hack-y".
+		// wanted to use null instead, since I'm new to Java, not sure how to use integer type with null. 
+
+	// Code along with comments explaining approach
     static final int MAX = 1000; 
     int top; 
     int a[] = new int[MAX]; // Maximum size of Stack 
   
     boolean isEmpty() 
     { 
-        //Write your code here 
+    	return top == -1; // Use -1 to indicate that the stack is empty since 
     } 
 
     Stack() 
     { 
-        //Initialize your constructor 
+        //Initialize your constructor
+    	top = -1; // Initialize -1 to indicate that the stack is empty. 
     } 
   
     boolean push(int x) 
     { 
         //Check for stack Overflow
-        //Write your code here
+    	if(top == MAX) {
+    		System.out.println("Size Exceeded: Element cannot be pushed");
+    		return false;
+    	}
+    	else {
+        	// Top Maintains the current top, we will need to push to the next index
+            // works even for empty stacks since the empty stacks are denoted by -1.
+    		a[++top] = x;
+    		return true;
+    	}
     } 
   
     int pop() 
-    { 
+    {
         //If empty return 0 and print " Stack Underflow"
-        //Write your code here
+    	if(top == -1) {
+    		System.out.println("Stack is Empty: Element cannot be poped");
+    		return 0;
+    	}
+    	else {
+    		return a[top--];
+    	}
     } 
   
     int peek() 
     { 
-        //Write your code here
+    	if(top == -1) {
+    		System.out.println("Stack is Empty");
+    		return 0;
+    	}
+    	else {
+    		return a[top];
+    	}
     } 
 } 
   
