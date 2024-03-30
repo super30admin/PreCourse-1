@@ -1,4 +1,9 @@
 
+# Exercise_2 : Implement Stack using Linked List.
+  # push : O(1)
+  # pop : O(1)
+
+  
 class Node:
     def __init__(self, data):
        self.data = data
@@ -6,11 +11,28 @@ class Node:
  
 class Stack:
     def __init__(self):
-        
+        self.head = None
+
     def push(self, data):
-        
+        # create a node 
+        new_node = Node(data)
+        # update the pointer and head always tracks top element
+        new_node.next = self.head
+        # update the head variable that tracks top element
+        self.head = new_node
+        print(self.head)
     def pop(self):
+        if self.head is None:
+            return IndexError("Cannot perform pop on Empty List")
+        else:
+            # catch head value
+            popped_val = self.head.data
+            # update the point to next element 
+            self.head = self.head.next
+            # return value 
+            return popped_val
         
+
 a_stack = Stack()
 while True:
     #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
