@@ -1,4 +1,5 @@
-
+# Did this code successfully run on Leetcode : Yes
+# Any problem you faced while coding this : No
 class Node:
     def __init__(self, data):
        self.data = data
@@ -6,10 +7,29 @@ class Node:
  
 class Stack:
     def __init__(self):
-        
+        # Starting with empty linked list
+        self.head = None
+    
+    # Time Complexity: O(1) (constant time)
+    # Space Complexity: O(1) (constant space)
     def push(self, data):
-        
+        if self.head is None: # If linked list is empty
+            self.head = Node(data)
+        else: # Add to top of list
+            newNode = Node(data)
+            newNode.next = self.head
+            self.head = newNode
+    
+    # Time Complexity: O(1) (constant time)
+    # Space Complexity: O(1) (constant space)
     def pop(self):
+        if self.head is None: # Empty list. Nothing to pop
+            return None
+        else: # Pop from top
+            delNode = self.head
+            self.head = self.head.next
+            delNode.next = None
+            return delNode.data
         
 a_stack = Stack()
 while True:
