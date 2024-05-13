@@ -1,4 +1,6 @@
-
+#Time Complexity: O(1)
+#space Complexity: O(1)
+#did not do on leetcode
 class Node:
     def __init__(self, data):
        self.data = data
@@ -6,10 +8,26 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.head=None
         
     def push(self, data):
+        # Create a new node and point its next node to the current head then update the head to the new node
+        new_node=Node(data)
+        new_node.next=self.head
+        self.head=new_node
+
         
     def pop(self):
+        #check if node is empty
+        if self.head is None:
+            return None 
+        else:
+            #take the data node of head and change head tode to the next one
+            pop_node=self.head.data
+            self.head=self.head.next
+            return pop_node
+
+
         
 a_stack = Stack()
 while True:
@@ -30,3 +48,5 @@ while True:
             print('Popped value: ', int(popped))
     elif operation == 'quit':
         break
+
+#pop operation was not working correctly because I did not check if it is empty
