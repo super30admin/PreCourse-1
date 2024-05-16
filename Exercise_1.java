@@ -6,30 +6,38 @@ class Stack {
     int a[] = new int[MAX]; // Maximum size of Stack 
   
     boolean isEmpty() 
-    { 
-        //Write your code here 
+    {
+        return (top == -1);
     } 
 
     Stack() 
     { 
-        //Initialize your constructor 
+        //Initialize your constructor
+        top = -1;
     } 
   
     boolean push(int x) 
     { 
-        //Check for stack Overflow
-        //Write your code here
+        //Check for stack Overflow and add the element to the top of the stack
+        if (top == a.length-1) {
+            return false;
+        } else {
+            a[++top] = x;
+            return true;
+        }
     } 
   
     int pop() 
     { 
-        //If empty return 0 and print " Stack Underflow"
-        //Write your code here
+        //If empty return 0 and print " Stack Underflow" and remove the element from the top
+        if(top == -1) return 0; else return a[top--];
     } 
   
     int peek() 
     { 
         //Write your code here
+        if(top == -1) return 0; else return a[top];
+        
     } 
 } 
   
@@ -44,3 +52,9 @@ class Main {
         System.out.println(s.pop() + " Popped from stack"); 
     } 
 }
+
+/* Time complexity is constant time 
+-- O(1) since we are incrementing, removing, checking single (top) element in an array
+
+Space Complexity is O(1)
+*/ 
