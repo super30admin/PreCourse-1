@@ -1,52 +1,72 @@
-public class StackAsLinkedList { 
-  
-    StackNode root; 
-  
-    static class StackNode { 
-        int data; 
-        StackNode next; 
-  
-        StackNode(int data) 
-        { 
-            //Constructor here 
-        } 
-    } 
-    
-	
-    public boolean isEmpty() 
-    { 
-        //Write your code here for the condition if stack is empty. 
-    } 
-  
-    public void push(int data) 
-    { 
-        //Write code to push data to the stack. 
-    } 
-  
-    public int pop() 
-    { 	
-	//If Stack Empty Return 0 and print "Stack Underflow"
-        //Write code to pop the topmost element of stack.
-	//Also return the popped element 
-    } 
-  
-    public int peek() 
-    { 
-        //Write code to just return the topmost element without removing it.
-    } 
-  
-	//Driver code
-    public static void main(String[] args) 
-    { 
-  
-        StackAsLinkedList sll = new StackAsLinkedList(); 
-  
-        sll.push(10); 
-        sll.push(20); 
-        sll.push(30); 
-  
-        System.out.println(sll.pop() + " popped from stack"); 
-  
-        System.out.println("Top element is " + sll.peek()); 
-    } 
-} 
+// Time Complexity : O(1)
+// Space Complexity : O(1)
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : No
+
+public class Exercise_2 {
+
+    StackNode root;
+
+    static class StackNode {
+        int data;
+        StackNode next;
+
+        StackNode(int data) {
+            this.data = data;
+            this.next = null;
+        }
+    }
+
+    public boolean isEmpty() {
+        if (root == null) {
+            return true; // Empty
+        }
+        return false;
+    }
+
+    public void push(int data) {
+        // Will not check for overflow
+        // Check for if there is a stack created
+        if (root == null) {
+            // if not createdm then start by creating a node.
+            root = new StackNode(data);
+        } else {
+            StackNode next_node = new StackNode(data);
+            next_node.next = root;
+            root = next_node;
+        }
+    }
+
+    public int pop() {
+        if (root == null) {
+            System.out.println("Stack Underflow Occured");
+            return -1;
+        }
+        int top = root.data;
+        StackNode node = root.next;
+        root.next = null;
+        root = node;
+        return top;
+    }
+
+    public int peek() {
+        if (root == null) {
+            return -1;
+        }
+        return root.data;
+    }
+
+    // Driver code
+    public static void main(String[] args) {
+
+        Exercise_2 sll = new Exercise_2();
+
+        sll.push(10);
+        sll.push(20);
+        sll.push(30);
+
+        System.out.println(sll.pop() + " popped from stack");
+
+        System.out.println("Top element is " + sll.peek());
+    }
+}
