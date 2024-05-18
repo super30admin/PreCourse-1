@@ -1,3 +1,8 @@
+// Time Complexity : O(n)
+// Space Complexity : O(1)
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : No
+
 import java.io.*; 
   
 // Java program to implement 
@@ -18,6 +23,8 @@ public class LinkedList {
         Node(int d) 
         { 
             //Write your code here 
+            this.data = d;
+            this.next = null;
         } 
     } 
   
@@ -34,7 +41,20 @@ public class LinkedList {
 
             // Insert the new_node at last node 
         // Return the list by head 
-        
+
+        Node curr = list.head;
+        if( list.head == null){
+            list.head = new Node(data);
+        }
+        else{
+           
+            while(curr.next != null){
+            curr = curr.next;
+            }
+            curr.next = new Node(data);
+        }
+        return list;
+
     } 
   
     // Method to print the LinkedList. 
@@ -45,6 +65,11 @@ public class LinkedList {
             // Print the data at current node 
        
             // Go to next node 
+            Node curr = list.head;
+            while(curr != null){
+                System.out.println(curr.data);
+                curr = curr.next;
+            }
     } 
    
     // Driver code 
