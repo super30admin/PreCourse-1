@@ -1,3 +1,8 @@
+// Time Complexity : O(n)
+// Space Complexity : O(n)
+// Did this code successfully run on Leetcode :
+// Any problem you faced while coding this : Confused about the purpose of having list being passed as the parameter to the insert method
+
 import java.io.*; 
   
 // Java program to implement 
@@ -18,6 +23,8 @@ public class LinkedList {
         Node(int d) 
         { 
             //Write your code here 
+            this.data = d;
+            this.next = null;
         } 
     } 
   
@@ -25,26 +32,38 @@ public class LinkedList {
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data 
-   
+        Node newNode = new Node(data);
         // If the Linked List is empty, 
         // then make the new node as head 
-        
-            // Else traverse till the last node 
-            // and insert the new_node there 
-
-            // Insert the new_node at last node 
+        if(head == null){
+          head = newNode;
+        }
+        // Else traverse till the last node 
+        // and insert the new_node there 
+        else {
+          Node current = head;
+          while(current.next != null){
+            current = current.next;
+          }
+          // Insert the new_node at last node 
+          current.next = newNode;
+        }
         // Return the list by head 
-        
+        return list;
     } 
   
     // Method to print the LinkedList. 
     public static void printList(LinkedList list) 
     {  
         // Traverse through the LinkedList 
-   
-            // Print the data at current node 
-       
-            // Go to next node 
+        Node current = head;
+        while(current.next != null){
+          // Print the data at current node 
+          System.out.println(current.data);
+          current = current.next;
+        }
+      // To print the data of the last element, as the while loop would exit before it prints the last elemet's data
+      System.out.println(current.data);
     } 
    
     // Driver code 
