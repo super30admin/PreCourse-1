@@ -6,11 +6,24 @@ class Node:
  
 class Stack:
     def __init__(self):
-        
+       self.head = None #Initialize the head pointer to None
     def push(self, data):
-        
+        if self.head == None:
+            self.head = Node(self,data) #If head pointer is not pointing to any other node then create a New Node
+        else:
+            newNode = Node(self,data)
+            newNode.next = self.head
+            self.head = newNode
+
     def pop(self):
-        
+       if self.head == None:
+            return None
+       else:
+           node = self.head
+           self.head = self.head.next
+           node.next = None
+           return node.data
+
 a_stack = Stack()
 while True:
     #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
