@@ -1,4 +1,4 @@
-public class StackAsLinkedList { 
+class StackAsLinkedList {
   
     StackNode root; 
   
@@ -8,31 +8,65 @@ public class StackAsLinkedList {
   
         StackNode(int data) 
         { 
-            //Constructor here 
+            //Constructor here
+            this.data = data;
+            this.next = null;
         } 
     } 
     
 	
     public boolean isEmpty() 
     { 
-        //Write your code here for the condition if stack is empty. 
+        //Write your code here for the condition if stack is empty.
+        return this.root == null;
     } 
   
     public void push(int data) 
     { 
-        //Write code to push data to the stack. 
+        //Write code to push data to the stack.
+        if(this.root == null) {
+            this.root = new StackNode(data);
+        } else {
+            StackNode temp = this.root;
+            while(temp.next != null) {
+                temp = temp.next;
+            }
+            StackNode newItemNode = new StackNode(data);
+            temp.next = newItemNode;
+        }
     } 
   
     public int pop() 
     { 	
 	//If Stack Empty Return 0 and print "Stack Underflow"
         //Write code to pop the topmost element of stack.
-	//Also return the popped element 
+	//Also return the popped element
+        if(this.root == null) {
+            System.out.println("Stack Underflow");
+            return 0;
+        } else {
+            StackNode temp = this.root;
+            while(temp.next != null && temp.next.next != null) {
+                temp = temp.next;
+            }
+            StackNode lastItemNode = temp.next;
+            temp.next = null;
+            return lastItemNode.data;
+        }
     } 
   
     public int peek() 
     { 
         //Write code to just return the topmost element without removing it.
+        if(this.root == null) {
+            return 0;
+        } else {
+            StackNode temp = this.root;
+            while(temp.next != null) {
+                temp = temp.next;
+            }
+            return temp.data;
+        }
     } 
   
 	//Driver code

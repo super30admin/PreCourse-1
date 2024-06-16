@@ -7,29 +7,52 @@ class Stack {
   
     boolean isEmpty() 
     { 
-        //Write your code here 
+        //Write your code here
+        return a.length == 0;
     } 
 
     Stack() 
     { 
-        //Initialize your constructor 
+        //Initialize your constructor
+        this.top = -1;
+        this.a = new int[MAX];
     } 
   
     boolean push(int x) 
     { 
         //Check for stack Overflow
         //Write your code here
+        if(this.top == MAX-1) {
+            return false;
+        } else {
+            this.top = this.top +1;
+            this.a[this.top] = x;
+            return true;
+        }
     } 
   
     int pop() 
     { 
         //If empty return 0 and print " Stack Underflow"
         //Write your code here
+        if(this.top == -1) {
+            System.out.println(" Stack Underflow");
+            return 0;
+        } else {
+            int value = this.a[this.top];
+            this.top = this.top -1;
+            return value;
+        }
     } 
   
     int peek() 
     { 
         //Write your code here
+        if(this.top < 0) {
+            return 0;
+        } else {
+            return this.a[this.top];
+        }
     } 
 } 
   
