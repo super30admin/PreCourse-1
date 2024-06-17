@@ -1,30 +1,57 @@
+// Time Complexity : O(1)
+// Space Complexity : O(n)
+// Did this code successfully run on Leetcode : N/A
+// Any problem you faced while coding this : No
 class StackAsLinkedList {
-​
+
     static stackNode = class {
-​
+
         constructor(d) {
             //Constructor here
             this.data = d;
             this.next = null;
+            this.top = null;
         }
     }
-​
-    function isEmpty() {
+
+    isEmpty() {
         //Write your code here for the condition if stack is empty.
+        if(this.top == null){
+            console.log("Stack is empty");
+            return;
+        }
     }
-​
-    function push(data) {
+
+    push(data) {
        //Write code to push data to the stack.
+
+       // Create new temp node
+       // insert the data to this node data and assign it's next to this.top
+       // now this tempNode will become top
+       let tempNode = new StackAsLinkedList.stackNode();
+       tempNode.data = data;
+       tempNode.next = this.top;
+       this.top = tempNode;
     }
-​
-    function pop() {
+
+    pop() {
        //If Stack Empty Return 0 and print "Stack Underflow"
+       if(this.top == null){
+        console.log("Stack Overflow");
+        return 0;
+       }
        //Write code to pop the topmost element of stack.
        //Also return the popped element
+
+       // Just move the top element to next element
+       let poppedElement = this.top.data;
+       this.top = this.top.next;
+       return poppedElement;
     }
-​
-    function peek() {
+
+    peek() {
        //Write code to just return the topmost element without removing it.
+       return this.top.data;
     }
 }
 //Driver code
