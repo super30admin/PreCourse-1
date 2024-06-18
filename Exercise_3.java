@@ -1,10 +1,23 @@
-import java.io.*; 
+/*
+Time Complexity -->
+
+push --> O(1)
+print --> O(n)
+
+Space Complexity -->
+
+Node class for creating new nodes will occupy
+
+O(n) space
+ */
+ import java.io.*; 
   
 // Java program to implement 
 // a Singly Linked List 
 public class LinkedList { 
   
-    Node head; // head of list 
+    Node head=null; // head of list 
+    Node tail = null;
   
     // Linked list Node. 
     // This inner class is made static 
@@ -18,6 +31,8 @@ public class LinkedList {
         Node(int d) 
         { 
             //Write your code here 
+            this.data = d;
+            this.next = null;
         } 
     } 
   
@@ -28,6 +43,20 @@ public class LinkedList {
    
         // If the Linked List is empty, 
         // then make the new node as head 
+        Node newNode = new Node(data);
+        if(list.head==null){
+            list.head = newNode;
+            list.tail = newNode;
+            
+        }
+        else{
+            list.tail.next = newNode;
+            list.tail = newNode;
+
+        }
+
+        return list;
+        
         
             // Else traverse till the last node 
             // and insert the new_node there 
@@ -45,6 +74,12 @@ public class LinkedList {
             // Print the data at current node 
        
             // Go to next node 
+        
+        Node curr = list.head;
+        while(curr!=null){
+            System.out.print(curr.data+" ");
+            curr = curr.next;
+        }
     } 
    
     // Driver code 
@@ -52,7 +87,8 @@ public class LinkedList {
     { 
         /* Start with the empty list. */
         LinkedList list = new LinkedList(); 
-  
+
+
         // 
         // ******INSERTION****** 
         // 
