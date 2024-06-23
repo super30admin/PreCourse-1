@@ -2,7 +2,7 @@ import java.io.*;
   
 // Java program to implement 
 // a Singly Linked List 
-public class LinkedList { 
+class LinkedList { 
   
     Node head; // head of list 
   
@@ -18,6 +18,8 @@ public class LinkedList {
         Node(int d) 
         { 
             //Write your code here 
+            this.data = d;
+            this.next = null;
         } 
     } 
   
@@ -25,24 +27,41 @@ public class LinkedList {
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data 
+        Node newNode = new Node(data);
    
         // If the Linked List is empty, 
         // then make the new node as head 
+        if (list.head == null) {
+            list.head = newNode;
+        }
         
             // Else traverse till the last node 
             // and insert the new_node there 
 
             // Insert the new_node at last node 
+        else {
+            Node latest = list.head;
+            while(latest.next != null) {
+                latest = latest.next;
+            }
+            latest.next = newNode;
+        }
         // Return the list by head 
+        return list;
         
     } 
   
     // Method to print the LinkedList. 
     public static void printList(LinkedList list) 
     {  
+        Node curr = list.head;
         // Traverse through the LinkedList 
-   
+        while(curr.next != null)
             // Print the data at current node 
+        {
+            System.out.println(curr.data);
+            curr = curr.next;
+        }
        
             // Go to next node 
     } 
@@ -59,10 +78,14 @@ public class LinkedList {
   
         // Insert the values 
         list = insert(list, 1); 
+        // printList(list); 
         list = insert(list, 2); 
+        // printList(list); 
         list = insert(list, 3); 
+        // printList(list); 
         list = insert(list, 4); 
-        list = insert(list, 5); 
+        // printList(list); s
+        list = insert(list, 5);
   
         // Print the LinkedList 
         printList(list); 
