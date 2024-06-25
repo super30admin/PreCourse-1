@@ -1,3 +1,17 @@
+/*
+Time Complexity
+Push Operation: O(1) - Inserting a node at the beginning of the linked list takes constant time.
+Pop Operation: O(1) - Removing the top node takes constant time.
+Peek Operation: O(1) - Accessing the top node takes constant time.
+isEmpty Operation: O(1) - Checking if the stack is empty takes constant time.
+Space Complexity
+Push Operation: O(1) - Each push operation allocates a fixed amount of space for a new node.
+Pop Operation: O(1) - The space complexity is constant as it only involves removing a node.
+Peek Operation: O(1) - The space complexity is constant as it does not involve any space allocation.
+isEmpty Operation: O(1) - The space complexity is constant as it only involves checking a condition.
+*/
+
+
 public class StackAsLinkedList { 
   
     StackNode root; 
@@ -8,31 +22,43 @@ public class StackAsLinkedList {
   
         StackNode(int data) 
         { 
-            //Constructor here 
+            this.data = data; 
+            this.next = null;
         } 
     } 
     
 	
     public boolean isEmpty() 
     { 
-        //Write your code here for the condition if stack is empty. 
+        // Stack is empty if root is null
+        return root == null;  
     } 
   
     public void push(int data) 
     { 
-        //Write code to push data to the stack. 
+        StackNode newNode = new StackNode(data); 
+        newNode.next = root; 
+        root = newNode;
     } 
   
     public int pop() 
     { 	
-	//If Stack Empty Return 0 and print "Stack Underflow"
-        //Write code to pop the topmost element of stack.
-	//Also return the popped element 
+        if (isEmpty()) { 
+            System.out.println("Stack Underflow"); 
+            return 0; 
+        } 
+        int popped = root.data; 
+        root = root.next; 
+        return popped; 
+	
     } 
   
     public int peek() 
     { 
-        //Write code to just return the topmost element without removing it.
+        if (isEmpty()) { 
+            return 0; 
+        } 
+        return root.data; 
     } 
   
 	//Driver code
