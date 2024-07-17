@@ -1,50 +1,50 @@
-import java.io.*; 
-  
-// Java program to implement 
-// a Singly Linked List 
+import java.io.*;
+
+// Time Complexity : O(n) for insert() and printList() - n is the number of nodes in the list.
+// Space Complexity : O(1) - Both insertion and printing use constant additional space.
+// Did this code successfully run on Leetcode : Local environment ( IntelliJ)
+// Any problem you faced while coding this : None
+
+// Your code here along with comments explaining your approach
 public class LinkedList { 
   
-    Node head; // head of list 
-  
-    // Linked list Node. 
-    // This inner class is made static 
-    // so that main() can access it 
-    static class Node { 
-  
+    Node head;
+    static class Node {
         int data; 
-        Node next; 
-  
-        // Constructor 
+        Node next;
+
         Node(int d) 
         { 
-            //Write your code here 
+            this.data = d;
+            this.next = null;
         } 
     } 
   
     // Method to insert a new node 
     public static LinkedList insert(LinkedList list, int data) 
-    { 
-        // Create a new node with given data 
-   
-        // If the Linked List is empty, 
-        // then make the new node as head 
-        
-            // Else traverse till the last node 
-            // and insert the new_node there 
-
-            // Insert the new_node at last node 
-        // Return the list by head 
-        
+    {
+        Node insertNode = new Node(data);
+        if(list.head == null){
+            list.head = insertNode;
+            return list;
+        }
+        Node current = list.head;
+        while (current.next != null){
+            current = current.next;
+        }
+        current.next = insertNode;
+        return list;
     } 
   
     // Method to print the LinkedList. 
     public static void printList(LinkedList list) 
     {  
-        // Traverse through the LinkedList 
-   
-            // Print the data at current node 
-       
-            // Go to next node 
+        Node current = list.head;
+        while (current.next != null){
+            System.out.print(current.data + " -> ");
+            current = current.next;
+        }
+        System.out.println("null");
     } 
    
     // Driver code 
