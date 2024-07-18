@@ -1,4 +1,9 @@
+# Time Complexity : O(1)
+# Space Complexity : O(1)
+# Did this code successfully run on Leetcode :
+# Any problem you faced while coding this : Nothing
 
+# Your code here along with comments explaining your approach
 class Node:
     def __init__(self, data):
        self.data = data
@@ -6,11 +11,29 @@ class Node:
  
 class Stack:
     def __init__(self):
-        
+        self.top = None
+
     def push(self, data):
-        
+        """
+        Add a new element to the top of the stack.
+        Takes O(1) time.
+        """
+        new_node = Node(data)
+        new_node.next = self.top
+        self.top = new_node
+
     def pop(self):
-        
+        """
+        Remove and return the top element of the stack.
+        Takes O(1) time.
+        """
+        if self.top is None:
+            return None
+        popped_node = self.top
+        self.top = self.top.next
+        return popped_node.data
+
+# Main block to handle user input and perform stack operations
 a_stack = Stack()
 while True:
     #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
