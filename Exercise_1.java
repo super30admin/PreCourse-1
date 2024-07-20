@@ -1,46 +1,60 @@
-class Stack { 
-    //Please read sample.java file before starting.
-  //Kindly include Time and Space complexity at top of each file
-    static final int MAX = 1000; 
-    int top; 
-    int a[] = new int[MAX]; // Maximum size of Stack 
-  
-    boolean isEmpty() 
-    { 
-        //Write your code here 
-    } 
+//time - O(1), space - O(n)
+class Stack {
+    static final int MAX = 1000;
+    int[] nums;
+    int index;
 
-    Stack() 
-    { 
-        //Initialize your constructor 
-    } 
-  
-    boolean push(int x) 
-    { 
-        //Check for stack Overflow
-        //Write your code here
-    } 
-  
-    int pop() 
-    { 
-        //If empty return 0 and print " Stack Underflow"
-        //Write your code here
-    } 
-  
-    int peek() 
-    { 
-        //Write your code here
-    } 
-} 
+    public Stack() {
+        nums = new int[MAX];
+        index = -1;
+    }
+
+    public int pop() {
+        if(index < 0) {
+            System.out.println("Stack Underflow");
+            return -1;
+        }
+        int topElement = nums[index];
+        nums[index] = 0;
+        index--;
+        return topElement;
+    }
+
+    public boolean push(int x) {
+        if(index >= MAX-1) {
+            System.out.println("Stack Overflow");
+            return false;
+        }
+        index++;
+        nums[index] = x;
+        return true;
+    }
+
+    public int peek() {
+        return nums[index];
+    }
+
+    public boolean isEmpty() {
+        if(index < 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
   
 // Driver code 
 class Main { 
     public static void main(String args[]) 
-    { 
-        Stack s = new Stack(); 
-        s.push(10); 
-        s.push(20); 
-        s.push(30); 
-        System.out.println(s.pop() + " Popped from stack"); 
+    {
+        Stack stack = new Stack();
+        stack.push(5);
+        stack.push(6);
+        stack.push(10);
+        while(!stack.isEmpty()) {
+            System.out.println("peek = "+stack.peek());
+            System.out.println("pop = "+stack.pop());
+            System.out.println("isEmpty() = "+stack.isEmpty());
+        }
     } 
 }
