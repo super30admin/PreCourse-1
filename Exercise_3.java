@@ -1,6 +1,13 @@
-import java.io.*; 
-  
-// Java program to implement 
+// Time Complexity : O(n)
+// Space Complexity : O(n)
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : No issues.
+
+/**
+Implemented Linked List using Node.
+Just followed the directions.
+*/
+
 // a Singly Linked List 
 public class LinkedList { 
   
@@ -17,7 +24,8 @@ public class LinkedList {
         // Constructor 
         Node(int d) 
         { 
-            //Write your code here 
+            data = d;
+            next = null;
         } 
     } 
   
@@ -34,6 +42,18 @@ public class LinkedList {
 
             // Insert the new_node at last node 
         // Return the list by head 
+        //Node node = new Node(data);
+        if(list.head == null){
+            list.head = new Node(data);
+        } else {
+            Node curr = list.head;
+            while(curr.next != null) {
+                curr = curr.next;
+            }
+            curr.next = new Node(data); // inserted new_node
+        }
+        
+        return list;
         
     } 
   
@@ -45,6 +65,11 @@ public class LinkedList {
             // Print the data at current node 
        
             // Go to next node 
+        Node curr = list.head;
+        while(curr != null) {
+            System.out.println(curr.data);
+            curr= curr.next;
+        }
     } 
    
     // Driver code 
