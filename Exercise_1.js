@@ -1,7 +1,8 @@
 class Stack {
   //Please read sample.java file before starting.
   //Kindly include Time and Space complexity at top of each file
-​
+// ​Time Complexity: O(1)
+// Space Complexity: O(1)
     constructor() {
         //Initialize your constructor
         this.MAX = 1000;
@@ -9,22 +10,45 @@ class Stack {
         this.a = new Array(this.MAX);
     }
 ​
-    function isEmpty() {
+// ​Time Complexity: O(1)
+// Space Complexity: O(1)
+     isEmpty() {
         //Write your code here
+        if (this.a.length === 0) {
+            return true
+        } else return false
     }
 ​
-    function push(x) {
+// ​Time Complexity: O(1)
+// Space Complexity: O(1)
+     push(x) {
         //Check for stack Overflow
         //Write your code here
+        if(this.a.length >= 1000) {
+            console.log(this.a.length)
+            console.log(this.a)
+            console.log("Stack Overflow")
+        } else this.a.push(x)
     }
-​
-    function pop() {
+
+​// ​Time Complexity: O(1)
+// Space Complexity: O(1)
+     pop() {
         //If empty return 0 and print " Stack Underflow"
         //Write your code here
+        if(this.a.length === 0){
+            console.log("Stack Underflow")
+            return 0
+        } else {
+            return this.a.pop()    
+        }
     }
 ​
-    function peek() {
+// ​Time Complexity: O(1)
+// Space Complexity: O(1)
+     peek() {
        //Write your code here
+       return this.a[this.a.length + this.top]
     }
 }
 ​
