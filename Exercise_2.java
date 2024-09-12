@@ -8,19 +8,26 @@ public class StackAsLinkedList {
   
         StackNode(int data) 
         { 
-            //Constructor here 
+            //Constructor here
+            struct Node* temp;
+            temp = new Node();
         } 
     } 
     
 	
     public boolean isEmpty() 
     { 
-        //Write your code here for the condition if stack is empty. 
+        //Write your code here for the condition if stack is empty.
+        return top == NULL;
     } 
   
     public void push(int data) 
     { 
-        //Write code to push data to the stack. 
+        //Write code to push data to the stack.
+        if(!isEmpty())
+            return top->data;
+        else
+            exit(1);
     } 
   
     public int pop() 
