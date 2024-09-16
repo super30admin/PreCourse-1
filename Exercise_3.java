@@ -1,3 +1,6 @@
+// Time complexity o(n) as we are traversing thru list for both insert and print operations
+// Space complexity o(n) for storing n items in list.
+
 import java.io.*; 
   
 // Java program to implement 
@@ -18,6 +21,8 @@ public class LinkedList {
         Node(int d) 
         { 
             //Write your code here 
+          this.data = d;
+          this.next = null;
         } 
     } 
   
@@ -25,16 +30,26 @@ public class LinkedList {
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data 
+      Node n = new Node(data);
    
         // If the Linked List is empty, 
         // then make the new node as head 
-        
-            // Else traverse till the last node 
+      // Else traverse till the last node 
             // and insert the new_node there 
 
             // Insert the new_node at last node 
         // Return the list by head 
-        
+      if(list.head == null) {
+        list.head = n;
+      } else {
+        Node pointer = list.head;
+        while(pointer.next !=null) {
+          pointer = pointer.next;
+        }
+        pointer.next = n;
+      } 
+      
+      return list;
     } 
   
     // Method to print the LinkedList. 
@@ -45,6 +60,12 @@ public class LinkedList {
             // Print the data at current node 
        
             // Go to next node 
+      Node pointer = list.head;
+      System.out.print("Data in list is: ");
+        while(pointer !=null) {
+          System.out.print(" " + pointer.data);
+          pointer = pointer.next;
+        }
     } 
    
     // Driver code 
