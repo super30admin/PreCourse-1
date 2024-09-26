@@ -1,52 +1,74 @@
-#include <bits/stdc++.h> 
-using namespace std; 
-  
+#include <iostream>
+using namespace std;
+
 // A structure to represent a stack 
-class StackNode { 
-public: 
-    int data; 
-    StackNode* next; 
-}; 
+struct StackNode
+{
+int data;
+
+StackNode *next;
+};
+
+// top pointer to keep track of the top of the stack
+StackNode *top = NULL;
+
+
+bool isempty()
+{
+ if(top == NULL)
+ return true; else
+ return false;
+}
+
+
+void push (int value)
+{
+  StackNode *ptr = new StackNode();
+  ptr->data = value;
+  ptr->next = top;
+  top = ptr;
+}
+
+
+int pop ( )
+{ int x;
+ if ( isempty() )
+  {cout<<"Stack is Empty";
+  return -1;}
+ else
+ {
+  StackNode *ptr = top;
+   x=top->data;
+  top = top -> next;
+ 
+  delete(ptr);
+ }
+ return x;
+}
+
+
+void peek()
+{
+ if ( isempty() )
+  cout<<"Stack is Empty";
+ else
+  cout<<"Element at top is : "<< top->data;
+}
+
+
+
+
+int main()
+{
+	 push(10);
+	 push(20);
+	 push(30);
+	 cout << pop() << " popped from stack\n"; 
   
-StackNode* newNode(int data) 
-{ 
-    StackNode* stackNode = new StackNode(); 
-    stackNode->data = data; 
-    stackNode->next = NULL; 
-    return stackNode; 
-} 
-  
-int isEmpty(StackNode* root) 
-{ 
-    //Your code here 
-} 
-  
-void push(StackNode** root, int data) 
-{ 
-    //Your code here 
-} 
-  
-int pop(StackNode** root) 
-{ 
-    //Your code here 
-} 
-  
-int peek(StackNode* root) 
-{ 
-    //Your code here 
-} 
-  
-int main() 
-{ 
-    StackNode* root = NULL; 
-  
-    push(&root, 10); 
-    push(&root, 20); 
-    push(&root, 30); 
-  
-    cout << pop(&root) << " popped from stack\n"; 
-  
-    cout << "Top element is " << peek(root) << endl; 
-  
-    return 0; 
-} 
+    cout << "Top element is ";
+    peek();
+ 
+
+
+return 0;
+}
