@@ -1,5 +1,8 @@
-import java.io.*; 
-  
+// Time Complexity : O(n)
+// Space Complexity : O(n)
+// Did this code successfully run on Leetcode :  I did not find this question on leetcode
+// Any problem you faced while coding this : none
+
 // Java program to implement 
 // a Singly Linked List 
 public class LinkedList { 
@@ -18,6 +21,8 @@ public class LinkedList {
         Node(int d) 
         { 
             //Write your code here 
+            this.data = d;
+            this.next = null;
         } 
     } 
   
@@ -25,12 +30,25 @@ public class LinkedList {
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data 
+        Node newNode = new Node(data);
    
         // If the Linked List is empty, 
         // then make the new node as head 
+
+        if(list.head == null){
+            list.head = newNode;
+        }
+        else{         // Else traverse till the last node  // and insert the new_node there 
+            Node last = list.head;
+            while(last.next!=null){
+                last = last.next;
+            }
+            last.next = newNode;
+        }
+
+      return list;
         
-            // Else traverse till the last node 
-            // and insert the new_node there 
+         
 
             // Insert the new_node at last node 
         // Return the list by head 
@@ -45,6 +63,13 @@ public class LinkedList {
             // Print the data at current node 
        
             // Go to next node 
+
+            Node current  = list.head;
+            while(current!=null){
+               System.out.println(current.data);
+               current = current.next;
+
+            }
     } 
    
     // Driver code 
