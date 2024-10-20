@@ -1,4 +1,12 @@
-class Stack { 
+class Stack {
+    // Time Complexity :
+    // Space Complexity :
+    //Push - TC - O(1) SC - O(1)
+    //Peek - TC - O(1) SC - O(1)
+    //Pop - TC - O(1) SC - O(1)
+    // Did this code successfully run on Leetcode : not found on leetcode
+    // Any problem you faced while coding this : I set the top incorrectly first, but fixed it later
+    
     //Please read sample.java file before starting.
   //Kindly include Time and Space complexity at top of each file
     static final int MAX = 1000; 
@@ -6,31 +14,54 @@ class Stack {
     int a[] = new int[MAX]; // Maximum size of Stack 
   
     boolean isEmpty() 
-    { 
-        //Write your code here 
+    {
+        //Write your code here
+        return top == 0;
     } 
 
     Stack() 
-    { 
-        //Initialize your constructor 
+    {
+        //Initialize your constructor
+        top = 0;
     } 
   
     boolean push(int x) 
-    { 
+    {
+        if(top == MAX-1){
+            System.out.println("Stack overflow");
+            return false;
+        }
+        a[top] = x;
+        top++;
+        return true;
         //Check for stack Overflow
         //Write your code here
+        
     } 
   
-    int pop() 
-    { 
+    int pop()
+    {
         //If empty return 0 and print " Stack Underflow"
         //Write your code here
+        if(top == 0){
+            System.out.println("Stack underflow");
+            return 0;
+        }
+        int tmp = a[top-1];
+        return tmp;
     } 
   
     int peek() 
-    { 
+    {
+        if(top == 0){
+            System.out.println("Stack underflow");
+            return 0;
+        }
+        int tmp = a[top-1];
+        return tmp;
         //Write your code here
-    } 
+    }
+    
 } 
   
 // Driver code 

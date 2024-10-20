@@ -1,10 +1,19 @@
-import java.io.*; 
+// Time Complexity :
+// Space Complexity :
+//N is the length of the linkedList at the point
+//Insert - TC - O(N) SC - O(N)
+//Print - TC - O(N) SC - O(N)
+// Did this code successfully run on Leetcode : didnt find the problem on leetcode
+// Any problem you faced while coding this : -
+
+
+import java.io.*;
   
 // Java program to implement 
 // a Singly Linked List 
-public class LinkedList { 
+class LinkedList {
   
-    Node head; // head of list 
+    static Node head; // head of list
   
     // Linked list Node. 
     // This inner class is made static 
@@ -16,14 +25,16 @@ public class LinkedList {
   
         // Constructor 
         Node(int d) 
-        { 
+        {
+            this.data = d;
+            this.next = null;
             //Write your code here 
         } 
     } 
   
     // Method to insert a new node 
     public static LinkedList insert(LinkedList list, int data) 
-    { 
+    {
         // Create a new node with given data 
    
         // If the Linked List is empty, 
@@ -33,8 +44,19 @@ public class LinkedList {
             // and insert the new_node there 
 
             // Insert the new_node at last node 
-        // Return the list by head 
+        // Return the list by head
         
+        Node newNode = new Node(data);
+        if(list.head == null){
+           list.head = newNode;
+        }else{
+            Node curr = list.head;
+            while(curr.next !=null ){
+                curr = curr.next;
+            }
+            curr.next = newNode;
+        }
+        return list;
     } 
   
     // Method to print the LinkedList. 
@@ -44,7 +66,12 @@ public class LinkedList {
    
             // Print the data at current node 
        
-            // Go to next node 
+            // Go to next node
+        Node curr = head;
+        while(curr != null){
+            System.out.print(curr.data+" ");
+            curr = curr.next;
+        }
     } 
    
     // Driver code 

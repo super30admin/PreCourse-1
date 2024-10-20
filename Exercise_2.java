@@ -1,4 +1,13 @@
-public class StackAsLinkedList { 
+// Time Complexity :
+// Space Complexity :
+//Push - TC - O(1) SC - O(1)
+//Peek - TC - O(1) SC - O(1)
+//Pop - TC - O(1) SC - O(1)
+// Did this code successfully run on Leetcode : not found on leetcode
+// Any problem you faced while coding this : Yes, figuring out the part on how to handle the root scenario. Also - adding to the start of the LL not the end
+
+
+class StackAsLinkedList {
   
     StackNode root; 
   
@@ -7,31 +16,49 @@ public class StackAsLinkedList {
         StackNode next; 
   
         StackNode(int data) 
-        { 
+        {
+            this.data = data;
+            this.next = null;
             //Constructor here 
         } 
-    } 
+    }
     
 	
     public boolean isEmpty() 
     { 
-        //Write your code here for the condition if stack is empty. 
+        //Write your code here for the condition if stack is empty.
+        return root == null;
     } 
   
     public void push(int data) 
-    { 
-        //Write code to push data to the stack. 
+    {
+        //Write code to push data to the stack.
+        StackNode newNode = new StackNode(data);
+        newNode.next = root;
+        root = newNode;
     } 
   
     public int pop() 
     { 	
 	//If Stack Empty Return 0 and print "Stack Underflow"
         //Write code to pop the topmost element of stack.
-	//Also return the popped element 
+	//Also return the popped element
+        if(root == null){
+            System.out.println("Stack Underflow");
+            return 0;
+        }
+        int tmp = root.data;
+        root = root.next;
+        return tmp;
     } 
   
     public int peek() 
-    { 
+    {
+        if(root == null){
+            System.out.println("Stack Underflow");
+            return 0;
+        }
+        return root.data;
         //Write code to just return the topmost element without removing it.
     } 
   
