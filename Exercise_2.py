@@ -1,4 +1,5 @@
-
+#TC: O(1) for push and pop
+#SC: O(n) where n is the number of elements in the stack
 class Node:
     def __init__(self, data):
        self.data = data
@@ -6,10 +7,18 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.top = None
         
     def push(self, data):
-        
+        new_node = Node(data)
+        new_node.next = self.top
+        self.top = new_node
     def pop(self):
+        if self.top is None:
+            return None
+        popped_node = self.top
+        self.top = self.top.next
+        return popped_node.data
         
 a_stack = Stack()
 while True:
