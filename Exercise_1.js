@@ -1,33 +1,41 @@
+// Time Complexity : O(1)
+// Space Complexity : O(n)
+
 class Stack {
-  //Please read sample.java file before starting.
-  //Kindly include Time and Space complexity at top of each file
-​
-    constructor() {
-        //Initialize your constructor
-        this.MAX = 1000;
-        this.top = -1;
-        this.a = new Array(this.MAX);
+  constructor() {
+    // Initializing the array size and top pointer
+    this.MAX = 1000;
+    this.top = -1;
+    this.a = new Array(this.MAX);
+  }
+
+  isEmpty() {
+    return this.top == -1;
+  }
+
+  push(x) {
+    // Checking for stack Overflow
+    if (this.top >= this.MAX - 1) {
+      console.log("Stack Overflow");
+      return;
     }
-​
-    function isEmpty() {
-        //Write your code here
+    this.a[++this.top] = x;
+  }
+
+  pop() {
+    // If empty return 0 and print "Stack Underflow"
+    if (this.isEmpty()) {
+      console.log("Stack Underflow");
+      return 0;
     }
-​
-    function push(x) {
-        //Check for stack Overflow
-        //Write your code here
-    }
-​
-    function pop() {
-        //If empty return 0 and print " Stack Underflow"
-        //Write your code here
-    }
-​
-    function peek() {
-       //Write your code here
-    }
+    return this.a[this.top--];
+  }
+
+  peek() {
+    return this.a[this.top];
+  }
 }
-​
+
 let s = new Stack();
 s.push(10);
 s.push(20);
