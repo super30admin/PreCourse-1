@@ -1,15 +1,29 @@
+# O(1)
+# O(n)
 
 class Node:
     def __init__(self, data):
        self.data = data
        self.next = None
- 
+
+
 class Stack:
     def __init__(self):
+        self.head = None
         
     def push(self, data):
-        
+
+        new_node = Node(data)
+        new_node.next = self.head
+        self.head = new_node
+
     def pop(self):
+        if self.head is None:
+            return None
+        cur = self.head
+        self.head = self.head.next
+        return cur.data
+
         
 a_stack = Stack()
 while True:
