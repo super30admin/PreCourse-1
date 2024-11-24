@@ -6,11 +6,30 @@ class Node:
  
 class Stack:
     def __init__(self):
-        
+        self.top = None
+
+    # Create a new Node
+    # Set its next pointer to head
+    # Update the Head to the New Node
+    # T: O(1), S: O(n)
     def push(self, data):
-        
+        newNode = Node(data)
+        newNode.next = self.top
+        self.top = newNode
+        print(f"Pushed: {data}")
+
+    # T: O(1), S: O(n)
+    # Check if the Head is null
+    # If not, update the Head to Head.next
     def pop(self):
-        
+        if not self.top:
+            print("Stack Underflow: Cannot pop from an empty stack.")
+            return None
+        poppedData = self.top.data
+        self.top = self.top.next
+        print(f"Popped: {poppedData}")
+        return poppedData
+
 a_stack = Stack()
 while True:
     #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
