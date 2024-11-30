@@ -18,6 +18,9 @@ public class LinkedList {
         Node(int d) 
         { 
             //Write your code here 
+            this.data =d;
+           
+
         } 
     } 
   
@@ -25,9 +28,24 @@ public class LinkedList {
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data 
+        Node newNode =new Node(data);
    
         // If the Linked List is empty, 
-        // then make the new node as head 
+        // then make the new node as head
+        if(list.head==null)
+        {
+            list.head=newNode;
+        }
+        else
+        {
+            Node temp =list.head;
+            while(temp.next!= null)
+            {
+                temp=temp.next;
+            }
+            temp.next=newNode;
+        } 
+        return list;
         
             // Else traverse till the last node 
             // and insert the new_node there 
@@ -41,7 +59,12 @@ public class LinkedList {
     public static void printList(LinkedList list) 
     {  
         // Traverse through the LinkedList 
-   
+        Node temp=list.head;
+        while(temp !=null)
+        {
+            System.out.println(temp.data+ " ");
+            temp=temp.next;
+        }
             // Print the data at current node 
        
             // Go to next node 
