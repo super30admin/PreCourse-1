@@ -6,10 +6,28 @@ class Node:
  
 class Stack:
     def __init__(self):
+        # Initialising the head of linked list
+        self.head =None
         
     def push(self, data):
+        # Adding new element to linkedlist and updating the head of linkedlist
+        newNode = Node(data)
+        newNode.next = self.head
+        self.head = newNode
         
+    def isEmpty(self):
+        # Checks if head of linkedlist is None or not
+        return self.head == None
+    
     def pop(self):
+        # Removes and returns top element of linked list and updates the head
+        if self.isEmpty():
+            print("empty list")
+            return None
+        else:
+            temp = self.head
+            self.head = self.head.next
+            return temp.data
         
 a_stack = Stack()
 while True:
@@ -30,3 +48,6 @@ while True:
             print('Popped value: ', int(popped))
     elif operation == 'quit':
         break
+
+# Time Complexity: O(1) for all the operations
+# Space Complexity : O(n), where n is size of stack
