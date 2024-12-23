@@ -23,6 +23,13 @@ class Stack {
     {
         //Check for stack Overflow
         //Write your code here
+        if (this.top == MAX) {
+            System.out.println("Stack Overflow");
+            return false;
+        }
+
+        this.a[++this.top] = x;
+        return true;
     }
 
     int pop()
