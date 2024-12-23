@@ -23,7 +23,7 @@ class Stack {
     {
         //Check for stack Overflow
         //Write your code here
-        if (this.top == MAX) {
+        if (this.top == MAX - 1) {
             System.out.println("Stack Overflow");
             return false;
         }
