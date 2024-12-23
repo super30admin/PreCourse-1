@@ -18,7 +18,7 @@ public class StackAsLinkedList {
     public boolean isEmpty() 
     { 
         //Write your code here for the condition if stack is empty.
-        return root == null;
+        return this.root == null;
     } 
   
     public void push(int data) 

@@ -17,34 +17,56 @@ public class LinkedList {
         // Constructor 
         Node(int d) 
         { 
-            //Write your code here 
+            //Write your code here
+            this.data = d;
+            this.next = null;
         } 
-    } 
-  
+    }
+
+    public boolean isEmpty() {
+        return this.head == null;
+    }
+
     // Method to insert a new node 
     public static LinkedList insert(LinkedList list, int data) 
     { 
-        // Create a new node with given data 
+        // Create a new node with given data
+        Node newNode = new Node(data);
    
-        // If the Linked List is empty, 
-        // then make the new node as head 
-        
-            // Else traverse till the last node 
-            // and insert the new_node there 
+        // If the Linked List is empty,
+        // then make the new node as head
+        if (list.isEmpty()) {
+            list.head = newNode;
+        } else {
+            // Else traverse till the last node
+            // and insert the new_node there
+            Node temp = list.head;
+            while(temp.next != null) {
+                temp = temp.next;
+            }
 
-            // Insert the new_node at last node 
+            // Insert the new_node at last node
+            temp.next = newNode;
+        }
         // Return the list by head 
-        
+        return list;
     } 
   
     // Method to print the LinkedList. 
     public static void printList(LinkedList list) 
-    {  
-        // Traverse through the LinkedList 
-   
-            // Print the data at current node 
-       
-            // Go to next node 
+    {
+        if (list.isEmpty()) {
+            System.out.println("List is empty!");
+            return;
+        }
+
+        // Traverse through the LinkedList
+        Node temp = list.head;
+        while(temp.next != null) {
+            // Print the data at current node
+            System.out.println(temp.data);
+            temp = temp.next;
+        }
     } 
    
     // Driver code 
