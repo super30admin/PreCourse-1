@@ -1,5 +1,8 @@
-import java.io.*; 
-  
+import java.io.*;
+
+// Time complexity: O(1) insert when list is empty, otherwise O(N), O(1) isEmpty
+// Space complexity: O(1) only one node is added at a time
+
 // Java program to implement 
 // a Singly Linked List 
 public class LinkedList { 

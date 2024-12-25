@@ -1,4 +1,7 @@
-class Stack { 
+// Time complexity: O(1) push, pop, peek, isEmpty
+// Space complexity: O(1) only one item in array is added at a time
+
+class Stack {
     //Please read sample.java file before starting.
   //Kindly include Time and Space complexity at top of each file
     static final int MAX = 1000; 
