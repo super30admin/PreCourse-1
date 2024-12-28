@@ -1,4 +1,11 @@
 
+# Time complexity : push -> O(1), pop -> O(1)
+# Space complexity: O(n)
+
+# Add the elements to the head of the linked list and keep updating the head
+# When performing a pop operation remove the element at head and update the head.
+
+
 class Node:
     def __init__(self, data):
        self.data = data
@@ -6,10 +13,21 @@ class Node:
  
 class Stack:
     def __init__(self):
-        
-    def push(self, data):
+        self.head = None
+         
+    def push(self, data):        
+        new_node = Node(data)
+        new_node.next = self.head
+        self.head = new_node
         
     def pop(self):
+        if not self.head:
+            print("Error")
+            return None
+        temp = self.head
+        self.head = self.head.next
+        temp.next = None
+        return temp.data
         
 a_stack = Stack()
 while True:
