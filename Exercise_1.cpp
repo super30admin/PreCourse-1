@@ -1,5 +1,5 @@
-#include <bits/stdc++.h> 
-  
+#include <iostream> 
+#include<bits/stdc++.h>
 using namespace std; 
   
 #define MAX 1000 
@@ -12,7 +12,9 @@ class Stack {
 public: 
     int a[MAX]; // Maximum size of Stack 
   
-    Stack() { //Constructor here } 
+    Stack() { 
+        top = -1;
+    } 
     bool push(int x); 
     int pop(); 
     int peek(); 
@@ -21,24 +23,36 @@ public:
   
 bool Stack::push(int x) 
 { 
-    //Your code here
-    //Check Stack overflow as well
+    top++;
+    a[top]=x;
+    return true;
 } 
   
 int Stack::pop() 
 { 
-    //Your code here
-    //Check Stack Underflow as well 
+    if(top==-1){
+        std::cout<<"Stack Underflow";
+        return 0;
+    }
+    int topElement=a[top];
+    top--;
+    return topElement;
 } 
 int Stack::peek() 
 { 
     //Your code here
     //Check empty condition too
+    if(top==-1){
+        cout<<"Stack is empty";
+        return 0;
+    }
+    return a[top];
 } 
   
 bool Stack::isEmpty() 
 { 
     //Your code here 
+    return top==-1;
 } 
   
 // Driver program to test above functions 
