@@ -8,11 +8,11 @@ push(int data) O(1)
 pop()       O(1)
 peek()      O(1)
 */
-public class StackAsLinkedList {
+public class Exercise_2 {
 
     StackNode root;
 
-    StackAsLinkedList(){
+    Exercise_2(){
         root=null;
     }
 
@@ -78,7 +78,7 @@ public class StackAsLinkedList {
     public static void main(String[] args)
     {
 
-        StackAsLinkedList sll = new StackAsLinkedList();
+        Exercise_2 sll = new Exercise_2();
 
         sll.push(10);
         sll.push(20);
