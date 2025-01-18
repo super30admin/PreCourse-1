@@ -1,4 +1,3 @@
-
 class Node:
     def __init__(self, data):
        self.data = data
@@ -6,11 +5,18 @@ class Node:
  
 class Stack:
     def __init__(self):
-        
+        self.top = None  # Initialize the top of the stack as None
     def push(self, data):
-        
+        new_node = Node(data)  # Create a new node with the given data
+        new_node.next = self.top  # Link the new node to the current top
+        self.top = new_node  # Update the top to the new node
     def pop(self):
-        
+        if self.top is None:    # Handle underflow condition
+            return None
+        popped_data = self.top.data
+        self.top = self.top.next  # Update the top to the next node
+        return popped_data
+
 a_stack = Stack()
 while True:
     #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
