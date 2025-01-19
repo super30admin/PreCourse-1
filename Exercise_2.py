@@ -6,10 +6,18 @@ class Node:
  
 class Stack:
     def __init__(self):
-        
+        self.pointer = None
     def push(self, data):
-        
+        node = Node(data)
+        node.next = self.pointer
+        self.pointer = node
     def pop(self):
+        if self.pointer is None:
+            print("Stack Empty")
+        else:
+            data = self.pointer.data
+            self.pointer = self.pointer.next
+            return data
         
 a_stack = Stack()
 while True:
