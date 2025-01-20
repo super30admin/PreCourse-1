@@ -1,4 +1,11 @@
+# Implement Stack using Linked List.
+# Time Complexity : O(n) for all operations
+# Space Complexity : O(n) since we're using a list
+# Did this code successfully run on Leetcode :
+# Any problem you faced while coding this :
 
+
+# Your code here along with comments explaining your approach
 class Node:
     def __init__(self, data):
        self.data = data
@@ -6,10 +13,24 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.head= None
         
     def push(self, data):
-        
+        tmp = self.head
+        while tmp.next != None:
+            tmp = tmp.next
+        tmp.next = Node(data)
+
     def pop(self):
+        tmp = self.head
+        if tmp is None:
+            return None
+        while tmp.next.next != None:
+            tmp = tmp.next
+        popped = tmp.next.data
+        tmp.next = None
+        return popped
+
         
 a_stack = Stack()
 while True:
