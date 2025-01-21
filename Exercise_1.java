@@ -8,28 +8,46 @@ class Stack {
     boolean isEmpty() 
     { 
         //Write your code here 
+        return top == -1;
     } 
 
     Stack() 
     { 
         //Initialize your constructor 
+        top = -1;
     } 
   
     boolean push(int x) 
     { 
         //Check for stack Overflow
         //Write your code here
+        if(top < MAX){
+            a[++top] = x;
+            return true;
+        }
+        return false;
     } 
   
     int pop() 
     { 
         //If empty return 0 and print " Stack Underflow"
         //Write your code here
+        if(isEmpty()){
+            System.out.println(" Stack underflow " );
+            return 0;
+        }
+
+        return a[top--];
+
     } 
   
     int peek() 
     { 
         //Write your code here
+        if(top>=0 && top< MAX){
+            return a[top];
+        }
+        return -1;
     } 
 } 
   
@@ -41,6 +59,7 @@ class Main {
         s.push(10); 
         s.push(20); 
         s.push(30); 
-        System.out.println(s.pop() + " Popped from stack"); 
+        System.out.println(s.pop() + " Popped from stack");
+        System.out.println(s.peek() + " top from stack"); 
     } 
 }
