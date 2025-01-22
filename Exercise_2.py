@@ -1,3 +1,13 @@
+'''
+Time Complexity :
+push : O(1)
+pop : O(1)
+
+// Space Complexity : O(n)
+// Did this code successfully run on Leetcode : I dont know
+// Any problem you faced while coding this : No
+
+'''
 
 class Node:
     def __init__(self, data):
@@ -6,10 +16,25 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.stack = None
         
     def push(self, data):
-        
+        if self.stack is None:
+            self.stack = Node(data)
+        else:
+            new_node = Node(data)
+            new_node.next = self.stack
+            self.stack = new_node
+
     def pop(self):
+        if self.stack.data is None:
+            return None
+        else:
+            popped = self.stack.data
+            self.stack = self.stack.next
+            return popped
+
+
         
 a_stack = Stack()
 while True:
