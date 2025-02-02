@@ -1,0 +1,41 @@
+Exercise_1 : Implement Stack using Array.
+
+Time Complexity is O(1) 
+Space complexity is O(n) // created the array of that size - n 
+
+class Stack(){
+    constructor(){
+        this.MAX = 1000; 
+        this.top = -1;
+        this.a = new Array(this.MAX);
+    }
+
+    isEmpty(){
+        return if this.top === -1;
+    }
+
+    push(x){
+        if (this.top[x]>= this.MAX -1){
+            return false;
+        }
+        this.top = this.top+1
+        this.a[this.top] =x
+        return true
+    }
+
+    pop(){
+        if isEmpty(){
+            return false
+        }
+        this.top = this.top -1
+        return[this.top]
+    }
+
+    peek(){
+        if(this.isEmpty()){
+        console.log("Stack is Empty");
+        return 0;
+        }
+        return this.a[this.top]
+    }
+}
