@@ -1,8 +1,11 @@
+// Space complexity is O(n)
+// Time complexity O(1) best case and worst case or avergae O(N)
+
 import java.io.*; 
   
 // Java program to implement 
 // a Singly Linked List 
-public class LinkedList { 
+class LinkedList {
   
     Node head; // head of list 
   
@@ -17,7 +20,9 @@ public class LinkedList {
         // Constructor 
         Node(int d) 
         { 
-            //Write your code here 
+            //Write your code here
+            this.data = d;
+            this.next = null;
         } 
     } 
   
@@ -34,7 +39,26 @@ public class LinkedList {
 
             // Insert the new_node at last node 
         // Return the list by head 
-        
+
+        Node newNode = new Node(data);
+
+//        if the LL is empty
+        if (list.head == null) {
+            list.head = newNode;
+
+            return list;
+        }
+
+        Node last = list.head;
+
+//        traverse to the last
+        while (last.next != null) {
+            last = last.next;
+        }
+
+        last.next = newNode;
+
+        return list;
     } 
   
     // Method to print the LinkedList. 
@@ -44,7 +68,14 @@ public class LinkedList {
    
             // Print the data at current node 
        
-            // Go to next node 
+            // Go to next node
+
+        Node current = list.head;
+
+        while (current != null) {
+            System.out.print(current.data + " ");
+            current = current.next;
+        }
     } 
    
     // Driver code 
@@ -65,6 +96,11 @@ public class LinkedList {
         list = insert(list, 5); 
   
         // Print the LinkedList 
-        printList(list); 
+        printList(list);
+
+        list = insert(list, 10);
+        System.out.println("\n");
+        printList(list);
+
     } 
 }
