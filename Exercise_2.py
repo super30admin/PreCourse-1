@@ -1,15 +1,30 @@
-
+# Time Complexity:
+# -push: O(1)
+# -pop: O(1)
+# Space Complexity: O(n) (for storing elements in the list)
 class Node:
     def __init__(self, data):
-       self.data = data
-       self.next = None
- 
+        self.data = data
+        self.next = None
+
 class Stack:
     def __init__(self):
-        
+        self.top = None
+
     def push(self, data):
-        
+        #Create a new node and push it to the top of the stack
+        new_node = Node(data)
+        new_node.next = self.top
+        self.top = new_node
+
     def pop(self):
+
+        # If the stack is empty, return None else pop the top element and return the data of the popped node
+        if self.top is None:
+            return None
+        popped_node = self.top
+        self.top = self.top.next
+        return popped_node.data
         
 a_stack = Stack()
 while True:
@@ -30,3 +45,5 @@ while True:
             print('Popped value: ', int(popped))
     elif operation == 'quit':
         break
+
+    
