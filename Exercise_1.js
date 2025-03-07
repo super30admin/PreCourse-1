@@ -1,6 +1,11 @@
 class Stack {
   //Please read sample.java file before starting.
   //Kindly include Time and Space complexity at top of each file
+
+  // Time Complexity : O(1)
+// Space Complexity : O(N)
+// Did this code successfully run on Leetcode : Did not try
+// Any problem you faced while coding this :
 ​
     constructor() {
         //Initialize your constructor
@@ -9,22 +14,44 @@ class Stack {
         this.a = new Array(this.MAX);
     }
 ​
-    function isEmpty() {
+    isEmpty() {
         //Write your code here
+        return this.top === -1;
     }
 ​
-    function push(x) {
+    push(x) {
         //Check for stack Overflow
         //Write your code here
+
+        if(this.a.length >= this.MAX) {
+            console.log('Stack Overflow');
+            return false;
+        }
+        this.a.push(x);
+        return true;
     }
 ​
-    function pop() {
+    pop() {
         //If empty return 0 and print " Stack Underflow"
         //Write your code here
+        if(this.a.length<=0) {
+            console.log("Stack Underflow")
+            return 0;
+        }
+        else {
+            return this.a.pop();
+        }      
     }
 ​
-    function peek() {
+    peek() {
        //Write your code here
+       if(this.a.length<=0) {
+        return 0;
+       }
+       else {
+       return this.a[this.a.length - 1];
+       }
+
     }
 }
 ​

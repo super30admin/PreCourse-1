@@ -1,5 +1,10 @@
 // Java program to implement
 // a Singly Linked List
+
+// Time Complexity : O(n)
+// Space Complexity : O(n)
+// Did this code successfully run on Leetcode :
+// Any problem you faced while coding this :
 class LinkedList {
     constructor() {
         this.head = null;
@@ -12,27 +17,46 @@ class LinkedList {
         }
     }
 ​
-     // Method to insert a new node
-    function insert(list, data) {
+     //  Method to insert a new node
+    insert(list, data) {
         // Create a new node with given data
+       const newNode = new LinkedList.Node(data);
 ​
         // If the Linked List is empty,
         // then make the new node as head
-​
+        if(this.head === null) {
+            this.head = newNode;
+            return;
+        }
+        else{
         // Else traverse till the last node
         // and insert the new_node there
-​
+        let tempNode = this.head;
+        while(tempNode.next!==null) {
+            tempNode = tempNode.next;
+        }
         // Insert the new_node at last node
         // Return the list by head
+         tempNode.next = newNode;
+         return this.head;
+        }
+        
     }
 ​
      // Method to print the LinkedList.
-    function printList(list) {
+    printList(list) {
         // Traverse through the LinkedList
-​
-        // Print the data at current node
-​
-        // Go to next node
+        if(this.head) {
+            let tempNode = this.head;
+            let output = "";
+            while(tempNode != null) {
+                // Print the data at current node
+                output += tempNode.data +  "=>"
+                 // Go to next node
+                tempNode = tempNode.next;
+            }
+            console.log(output + "null")
+        }
     }
 }
        // Driver code
