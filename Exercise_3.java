@@ -1,3 +1,7 @@
+// Time Complexity: O(n) for insertion and printing (due to traversal)
+// Space Complexity: O(n) for the linked list where n is the number of elements
+// Did this code successfully run on Leetcode: N/A
+// Any problem you faced while coding this: No
 import java.io.*; 
   
 // Java program to implement 
@@ -18,6 +22,8 @@ public class LinkedList {
         Node(int d) 
         { 
             //Write your code here 
+            this.data = d;
+            this.next = null;
         } 
     } 
   
@@ -34,7 +40,20 @@ public class LinkedList {
 
             // Insert the new_node at last node 
         // Return the list by head 
-        
+        Node n = new Node(data);
+        if(list.head == null)
+        {
+            list.head = n;
+            return list;
+        }
+        Node dummy = list.head;
+        while(dummy.next!=null)
+        {
+            dummy = dummy.next;
+        }
+        //System.out.println(n.data);
+        dummy.next = n;
+        return list;
     } 
   
     // Method to print the LinkedList. 
@@ -45,6 +64,12 @@ public class LinkedList {
             // Print the data at current node 
        
             // Go to next node 
+        Node dummy = list.head;
+        while(dummy!=null)
+        {
+            System.out.println(dummy.data);
+            dummy = dummy.next;
+        }
     } 
    
     // Driver code 
