@@ -1,4 +1,7 @@
-
+# Time Complexity:
+# push(): O(1) - Adding a new node at the beginning of the linked list takes constant time
+# pop(): O(1) - Removing the first node of the linked list takes constant time
+# Space Complexity: O(n) - where n is the maximum number of elements in the stack
 class Node:
     def __init__(self, data):
        self.data = data
@@ -6,10 +9,32 @@ class Node:
  
 class Stack:
     def __init__(self):
+        # Initialize an empty stack
+        self.top = None
         
-    def push(self, data):
+    def push(self, data): 
+        # Create a new node with the given data
+        new_node = Node(data)
+
+        # Make the new node point to the cuurrent top 
+        new_node.next = self.top
+
+        # Update the top to be the new node 
+        self.top = new_node 
         
-    def pop(self):
+    def pop(self): 
+        # Check if stack is empty
+        if self.top is None:
+            return None
+
+        # Save the data from the top node
+        popped_data = self.top.data
+
+        # Update the top to be the next node
+        self.top = self.top.next
+
+        # Return the popped data
+        return popped_data
         
 a_stack = Stack()
 while True:
