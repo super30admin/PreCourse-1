@@ -1,3 +1,10 @@
+# Time Complexity : O(1) for push as well as pop
+# Space Complexity : O(n) where n is no of elements in the stack.
+# Did this code successfully run on Leetcode : On Online GDB yes
+# Any problem you faced while coding this : 
+
+# Your code here along with comments explaining your approach
+
 
 class Node:
     def __init__(self, data):
@@ -6,10 +13,23 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.top=None  #top variable points to the top of the node
+        self._size=0   # _size is created to keep track of how many numbers are added. 
         
     def push(self, data):
+        new_node = Node(data) # new node is created
+        new_node.next = self.top # the next pointer is set to the current top 
+        self.top = new_node # top is updated to point to this new node
+        self._size += 1 # _size variable is incremented by one to keep count
+
         
     def pop(self):
+        if self.top is None:
+            return None
+        popped = self.top.data
+        self.top = self.top.next
+        self._size -= 1
+        return popped
         
 a_stack = Stack()
 while True:
