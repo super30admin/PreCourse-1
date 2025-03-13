@@ -1,4 +1,7 @@
-
+'''
+// Time Complexity : O(1)
+// Space Complexity : O(n)
+'''
 class Node:
     def __init__(self, data):
        self.data = data
@@ -6,10 +9,23 @@ class Node:
  
 class Stack:
     def __init__(self):
+    self.top = None
+        self._size = 0 
         
     def push(self, data):
+        new_node = Node(data)
+        new_node.next = self.top
+        self.top = new_node 
+        self._size += 1
+
         
     def pop(self):
+        if self.top is None:
+            return None
+        popped = self.top.data
+        self.top = self.top.next
+        self._size -= 1
+        return popped
         
 a_stack = Stack()
 while True:
