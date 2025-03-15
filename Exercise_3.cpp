@@ -6,7 +6,11 @@ class Node
 {  
     public: 
     int data;  
-    Node *next;  
+    Node *next;
+    Node(int ndata){
+        this->data=ndata;
+        this->next=NULL;
+    }
 };  
   
 /* Given a reference (pointer to pointer) 
@@ -15,6 +19,13 @@ a new node on the front of the list. */
 void push(Node** head_ref, int new_data)  
 {  
     /* 1. allocate node */ 
+    Node* t=new Node(new_data);
+    Node* te= *head_ref;
+    if(te==NULL){
+        *head_ref=t;return;
+    }
+    *head_ref = t;
+    t->next = te;
   
     /* 2. put in the data */  
   
@@ -28,7 +39,13 @@ prev_node */
 void insertAfter(Node* prev_node, int new_data)  
 {  
     /*1. check if the given prev_node is NULL */ 
-  
+    Node* t=new Node(new_data);
+    Node* te= prev_node;
+    if(te==NULL){
+         prev_node=t;return;
+    }
+    t->next = prev_node->next;
+    prev_node->next = t;
     /* 2. allocate new node */ 
   
     /* 3. put in the data */ 
@@ -43,7 +60,15 @@ of a list and an int, appends a new node at the end */
 void append(Node** head_ref, int new_data)  
 {  
     /* 1. allocate node */ 
-  
+    Node* t=new Node(new_data);
+    Node* te= *head_ref;
+    if(te==NULL){
+        *head_ref=t;return;
+    }
+    while(te->next!=NULL){
+        te=te->next;
+    }
+    te->next = t;
     /* 2. put in the data */ 
   
     /* 3. This new node is going to be  
@@ -63,6 +88,15 @@ void append(Node** head_ref, int new_data)
 void printList(Node *node)  
 {  
     //Your code here
+    Node* te= node;
+    if(te==NULL){
+        return;
+    }
+    while(te!=NULL){
+        cout<<te->data<<' ';
+        te=te->next;
+    }
+    cout<<'\n';
 }  
   
 /* Driver code*/
