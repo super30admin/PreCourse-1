@@ -1,3 +1,17 @@
+// Time Complexity : 
+// - push() → O(1) → Inserting at the top is constant time.
+// - pop() → O(1) → Removing the top element is constant time.
+// - peek() → O(1) → Viewing the top element is constant time.
+
+// Space Complexity : 
+// - O(MAX) → The stack size is fixed to a maximum of `MAX` elements.
+
+// Did this code successfully run on Leetcode : Yes
+
+// Any problem you faced while coding this : 
+// - Initially missed checking for overflow and underflow cases correctly.
+// - Fixed it by adding proper checks for `top` bounds.
+
 class Stack { 
     //Please read sample.java file before starting.
   //Kindly include Time and Space complexity at top of each file
@@ -8,28 +22,51 @@ class Stack {
     boolean isEmpty() 
     { 
         //Write your code here 
+        return top<0;
     } 
 
     Stack() 
     { 
         //Initialize your constructor 
+        top = -1;
     } 
   
     boolean push(int x) 
     { 
         //Check for stack Overflow
         //Write your code here
+        if (top>=(MAX-1)){
+            System.out.println("Stack Overflow");
+            return false;
+        } else{
+            a[++top]=x;
+            System.out.println(x+"pushed into stack");
+            return true;
+        }
+
     } 
   
     int pop() 
     { 
         //If empty return 0 and print " Stack Underflow"
         //Write your code here
+        if(isEmpty()){
+            System.out.println("Stack Underflow");
+            return 0;
+        } else{
+            return a[top--];
+        }
     } 
   
     int peek() 
     { 
         //Write your code here
+        if (isEmpty()){
+            System.out.println("Stack is empty");
+            return 0;
+        }else{
+            return a[top];
+        }
     } 
 } 
   
