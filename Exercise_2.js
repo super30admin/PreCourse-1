@@ -1,33 +1,42 @@
 class StackAsLinkedList {
-​
+
     static stackNode = class {
-​
         constructor(d) {
-            //Constructor here
             this.data = d;
             this.next = null;
         }
+    };
+
+    constructor() {
+        this.top = null;
     }
-​
-    function isEmpty() {
-        //Write your code here for the condition if stack is empty.
+
+    isEmpty() {
+        return this.top === null;
     }
-​
-    function push(data) {
-       //Write code to push data to the stack.
+
+    push(data) {
+        const newNode = new StackAsLinkedList.stackNode(data);
+        newNode.next = this.top;
+        this.top = newNode;
     }
-​
-    function pop() {
-       //If Stack Empty Return 0 and print "Stack Underflow"
-       //Write code to pop the topmost element of stack.
-       //Also return the popped element
+
+    pop() {
+        if (this.isEmpty()) {
+            console.log("Stack Underflow");
+            return 0;
+        }
+        const poppedValue = this.top.data;
+        this.top = this.top.next;
+        return poppedValue;
     }
-​
-    function peek() {
-       //Write code to just return the topmost element without removing it.
+
+    peek() {
+        return this.isEmpty() ? null : this.top.data;
     }
 }
-//Driver code
+
+// Driver code
 const sll = new StackAsLinkedList();
 sll.push(10);
 sll.push(20);
