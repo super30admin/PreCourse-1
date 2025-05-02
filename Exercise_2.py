@@ -1,4 +1,10 @@
+"""
+Time Complexity:
+Push Operation : O(1)
+Pop Operation : O(1)
 
+Space Complexity : O(n) — n is the number of elements in the stack
+"""
 class Node:
     def __init__(self, data):
        self.data = data
@@ -6,10 +12,20 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.top = None
         
     def push(self, data):
+        new_node = Node(data)
+        new_node.next = self.top
+        self.top = new_node
         
     def pop(self):
+        if self.top is None:
+            return None
+        else:
+            pop_element = self.top.data
+            self.top = self.top.next
+            return pop_element
         
 a_stack = Stack()
 while True:
