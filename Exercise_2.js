@@ -1,36 +1,41 @@
+//Please read sample.java file before starting.
+//Kindly include Time and Space complexity at top of each file​
+// Time Complexity: Add time complexity of each method here
+// Space Complexity: Add space complexity of each method here
+
 class StackAsLinkedList {
-​
-    static stackNode = class {
-​
-        constructor(d) {
-            //Constructor here
-            this.data = d;
+    constructor() {
+        this.top = null;
+    }
+
+    static StackNode = class {
+        constructor(data) {
+            this.data = data;
             this.next = null;
         }
     }
-​
-    function isEmpty() {
-        //Write your code here for the condition if stack is empty.
+
+    isEmpty() {
+        // Write your code here
     }
-​
-    function push(data) {
-       //Write code to push data to the stack.
+
+    push(data) {
+        // Write your code here to add a new node
     }
-​
-    function pop() {
-       //If Stack Empty Return 0 and print "Stack Underflow"
-       //Write code to pop the topmost element of stack.
-       //Also return the popped element
+
+    pop() {
+        // If empty return 0 and print "Stack Underflow"
+        // Write your code here
     }
-​
-    function peek() {
-       //Write code to just return the topmost element without removing it.
+
+    peek() {
+        // Write your code here
     }
 }
-//Driver code
-const sll = new StackAsLinkedList();
-sll.push(10);
-sll.push(20);
-sll.push(30);
-console.log(sll.pop() + " popped from stack");
-console.log("Top element is " + sll.peek());
+
+// Driver code
+const stack = new StackAsLinkedList();
+stack.push(10);
+stack.push(20);
+stack.push(30);
+console.log(stack.pop() + " popped from stack");
