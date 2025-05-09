@@ -1,3 +1,7 @@
+#Time Complexity :
+#pop: O(1)
+#Push: O(1)
+#Space Complexity: O(n) to store n nodes 
 
 class Node:
     def __init__(self, data):
@@ -6,10 +10,20 @@ class Node:
  
 class Stack:
     def __init__(self):
+      self.top = None #This is because initially the stack is empty
         
     def push(self, data):
+      new_node = Node(data)
+      new_node.next = self.top  # New node points to current top
+      self.top = new_node       # New node becomes the new top
         
     def pop(self):
+      if self.top is None:
+            return "Stack is empty cannot pop."
+      popped_value = self.top.data
+      self.top = self.top.next  # Move top to the next node
+      return popped_value
+
         
 a_stack = Stack()
 while True:
