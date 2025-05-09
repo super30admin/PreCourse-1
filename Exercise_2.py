@@ -1,3 +1,7 @@
+"""
+T.C. = push is O(1). Pop is O(n)
+S.C. = O(n)
+"""
 
 class Node:
     def __init__(self, data):
@@ -6,10 +10,30 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.size = 0
+        self.head = Node(-1)
+        self.headRef = self.head
         
     def push(self, data):
+        self.head.next = Node(data)
+        self.head = self.head.next
+        self.size += 1
         
     def pop(self):
+        tempHead = self.headRef
+        prePopNode = None
+        print(tempHead.data, self.head.data)
+        while tempHead.next:
+            prePopNode = tempHead
+            tempHead = tempHead.next
+        if prePopNode:
+            self.head = prePopNode
+            prePopNode.next = None
+            self.size -= 1
+        else:
+            return None
+        return tempHead.data
+        
         
 a_stack = Stack()
 while True:
