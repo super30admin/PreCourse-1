@@ -1,4 +1,7 @@
-
+# // Time Complexity : O(n)
+# // Space Complexity : O(1)
+# // Did this code successfully run on Leetcode : Yes
+# // Any problem you faced while coding this : No
 class Node:
     def __init__(self, data):
        self.data = data
@@ -6,10 +9,27 @@ class Node:
  
 class Stack:
     def __init__(self):
+        # Intialising empty stack with no top element
+        self.top = None
         
     def push(self, data):
-        
+        # Creating new node with the data
+        new_node = Node(data)
+        # Pointing new node to the current top
+        new_node.next = self.top
+        # Update the top pointer to the new node
+        self.top = new_node
+
     def pop(self):
+        # Check if stack is empty
+        if self.top is None:
+            return None
+        # Store current top's data temporarily
+        current_top = self.top.data
+        # Update top to the next node after removing the current top
+        self.top = self.top.next
+        # return removed element
+        return current_top
         
 a_stack = Stack()
 while True:
