@@ -1,3 +1,13 @@
+# Time Complexity :
+# push - O(1)
+# pop - O(1)
+
+# Space Complexity : O(n)
+
+# Did this code successfully run on Leetcode : Did not find corresponding problem on LeetCode
+# 
+# Any problem you faced while coding this :
+# No instructions for handling empty stack for peel operation, chose to return -1
 
 class Node:
     def __init__(self, data):
@@ -6,10 +16,21 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.head = None
+        self.size = 0
+
+    def is_empty(self):
+        return self.size == 0
         
     def push(self, data):
+        self.head = Node(data)
         
     def pop(self):
+        if self.is_empty:
+            print("stack underflow")
+        item = self.head.data
+        self.head = self.head.next
+        return item
         
 a_stack = Stack()
 while True:
