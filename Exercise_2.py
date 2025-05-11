@@ -5,11 +5,33 @@ class Node:
        self.next = None
  
 class Stack:
+    __slots__ = '_top'
     def __init__(self):
+        self._top = None
         
     def push(self, data):
+        #Time complexity - o(1)
+        #Space complexity - o(1)
+
+        if self._top is None:
+            self._top = Node(data)
+        else:
+            node = Node(data)
+            node.next = self._top
+            self._top = node
+
+
         
     def pop(self):
+        # Time complexity - o(1)
+        # Space complexity - o(1)
+
+        if self._top is None:
+            return None
+        else:
+            value = self._top.data
+            self._top = self._top.next
+            return value
         
 a_stack = Stack()
 while True:
