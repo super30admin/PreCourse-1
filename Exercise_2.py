@@ -1,3 +1,12 @@
+'''
+Time Complexity: 
+Push: O(1)
+Pop: O(1)
+
+Space Complexity:
+O(n)
+'''
+
 
 class Node:
     def __init__(self, data):
@@ -6,10 +15,23 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.head = None
         
     def push(self, data):
+        item = Node(data)
+        item.next = self.head
+        self.head = item
+        
+
         
     def pop(self):
+        if self.head is None:
+            print("Attempting to pop from empty stack")
+            return
+        item = self.head
+        self.head = self.head.next
+        item.next = None
+        return item.data
         
 a_stack = Stack()
 while True:
