@@ -1,4 +1,12 @@
+# Author : Akaash Trivedi
+# Time Complexity : 
+# Push operation: O(1)
+# Pop operation: O(1)
+# Space Complexity : O(n) - length of the list
+# Did this code successfully run on Leetcode : Not available. Runs locally
+# Any problem you faced while coding this : No
 
+# Implement Stack using Linked List.
 class Node:
     def __init__(self, data):
        self.data = data
@@ -6,10 +14,20 @@ class Node:
  
 class Stack:
     def __init__(self):
-        
+        self.top = None
+
     def push(self, data):
-        
+        newNode = Node(data)
+        newNode.next = self.top
+        self.top = newNode
+
     def pop(self):
+        if self.top is None:
+            return None
+        popped = self.top
+        self.top = self.top.next
+        return popped.data
+
         
 a_stack = Stack()
 while True:
