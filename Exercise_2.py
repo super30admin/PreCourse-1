@@ -1,4 +1,7 @@
-
+# Time Complexity : O(1) for both push and pop 
+# Space Complexity : O(n)
+# Did this code successfully run on Leetcode : Yes
+# Any problem you faced while coding this : None
 class Node:
     def __init__(self, data):
        self.data = data
@@ -6,11 +9,19 @@ class Node:
  
 class Stack:
     def __init__(self):
-        
+        self.top=None
     def push(self, data):
-        
+        nn=Node(data)
+        nn.next=self.top
+        self.top=nn
+
     def pop(self):
-        
+        if self.top is None:
+            return None
+        pd=self.top.data
+        self.top=self.top.next
+        return pd
+    
 a_stack = Stack()
 while True:
     #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
