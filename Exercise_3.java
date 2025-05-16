@@ -1,8 +1,11 @@
-import java.io.*; 
+// Time Complexity : insert() and printList() functions will have O(n) time complexity.
+// Space Complexity : O(1) - In insert() we do not count the space of input list and we only create 1 additional node.
+// Did this code successfully run on Leetcode : N/A
+// Any problem you faced while coding this : No
+
   
-// Java program to implement 
-// a Singly Linked List 
-public class LinkedList { 
+// Java program to implement a Singly Linked List 
+class LinkedList { 
   
     Node head; // head of list 
   
@@ -17,7 +20,8 @@ public class LinkedList {
         // Constructor 
         Node(int d) 
         { 
-            //Write your code here 
+            data = d;
+            next = null;
         } 
     } 
   
@@ -25,26 +29,39 @@ public class LinkedList {
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data 
-   
+        Node newNode = new Node(data);
+
         // If the Linked List is empty, 
         // then make the new node as head 
-        
-            // Else traverse till the last node 
-            // and insert the new_node there 
+        if (list.head == null) {
+            list.head = newNode;
+        } else {
+            Node lastNode = list.head;
+            while (lastNode.next != null) {
+                lastNode = lastNode.next;
+            }
+            lastNode.next = newNode;
+        }
 
-            // Insert the new_node at last node 
         // Return the list by head 
-        
+        return list;
     } 
   
     // Method to print the LinkedList. 
     public static void printList(LinkedList list) 
     {  
-        // Traverse through the LinkedList 
-   
+        Node currentNode = list.head;
+
+        System.out.println("LinkedList data: ");
+        // Traverse through the LinkedList
+        while (currentNode != null) {
+
             // Print the data at current node 
-       
+            System.out.print(currentNode.data + " ");
+         
             // Go to next node 
+            currentNode = currentNode.next;
+        }
     } 
    
     // Driver code 
