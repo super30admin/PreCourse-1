@@ -1,4 +1,6 @@
-
+#time complexity:
+#push(), pop() - O(1)
+# Space complexity :O(n)
 class Node:
     def __init__(self, data):
        self.data = data
@@ -6,11 +8,18 @@ class Node:
  
 class Stack:
     def __init__(self):
-        
+       self.top=None #intializes the empty stack 
     def push(self, data):
-        
+        new_node=Node(data) #creates a new node 
+        new_node.next=self.top # links to the current top node 
+        self.top=new_node # new node is the new top of the stack
+        print(f"Pushed value: {data}")
     def pop(self):
-        
+        if self.top is None: 
+            return None
+        popped=self.top.data  
+        self.top=self.top.next #moves the top pointer to the next node
+        return popped
 a_stack = Stack()
 while True:
     #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
