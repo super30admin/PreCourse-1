@@ -1,3 +1,10 @@
+# Time Complexity : O(1)
+# Space Complexity :  O(n)
+# Did this code successfully run on Leetcode : I did not run it on Leetcode
+# Any problem you faced while coding this : No
+
+
+# Your code here along with comments explaining your approach
 
 class Node:
     def __init__(self, data):
@@ -5,12 +12,32 @@ class Node:
        self.next = None
  
 class Stack:
+    #Defined a stack pointer and size
     def __init__(self):
-        
+        self.top = None
+        self.max= 1000
+        self.size = 0
+
+    #Check stack overflow
     def push(self, data):
-        
+        new_node = Node(data)
+        if self.size >= self.max:
+            return 'stack is full'
+        else:
+            new_node.next=self.top
+            self.top=new_node
+            self.size += 1
+
+    #Check stack underflow
     def pop(self):
-        
+        if self.size == 0:
+            return None
+        else:
+            popped = self.top.data
+            self.top = self.top.next
+            self.size -= 1
+            return popped
+
 a_stack = Stack()
 while True:
     #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
