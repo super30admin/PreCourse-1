@@ -6,11 +6,23 @@ class Node:
  
 class Stack:
     def __init__(self):
-        
+        self.top = None  # Top node of the stack
+        self.length = 0
+
     def push(self, data):
-        
+        new_node = Node(data)
+        new_node.next = self.top # Point new node to current top
+        self.top = new_node # Set new node as top
+        self.length += 1
+
     def pop(self):
-        
+        if self.top is None:
+            return None
+        popped_node = self.top
+        self.top = self.top.next # Move top pointer down
+        self.length -= 1
+        return popped_node.data
+
 a_stack = Stack()
 while True:
     #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
