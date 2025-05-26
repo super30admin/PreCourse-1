@@ -1,4 +1,13 @@
 
+"""
+Time Complexity :
+Space Complexity :
+
+Any problem you faced while coding this :
+
+
+Exercise_2 : Implement Stack using Linked List.
+"""
 class Node:
     def __init__(self, data):
        self.data = data
