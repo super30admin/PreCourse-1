@@ -1,3 +1,19 @@
+"""
+#Time Complexity :
+Push/Pop: O(1)
+
+#Space Complexity :
+O(n), where n is the size of the stack
+
+#Did this code successfully run on Leetcode :
+
+N/A
+
+
+#Any problem you faced while coding this :
+
+  added a dummy node to avoid Null-related errors
+"""
 
 class Node:
     def __init__(self, data):
@@ -6,10 +22,22 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.dummyHead = Node(None)
+        self.head = self.dummyHead
         
     def push(self, data):
+        newNode = Node(data)
+        newNode.next = self.head
+        self.head = newNode
         
     def pop(self):
+        if self.head == self.dummyHead:
+            # print("stack underflow")
+            return None
+        popped_data = self.head.data
+        self.head = self.head.next
+        return popped_data
+        
         
 a_stack = Stack()
 while True:
