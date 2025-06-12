@@ -1,24 +1,29 @@
-
+# Time Complexity: O(1)
+# Space Complexity: O(n)
 class Node:
     def __init__(self, data):
-       self.data = data
-       self.next = None
- 
+        self.data = data
+        self.next = None
 class Stack:
     def __init__(self):
-        
+        self.head=Node(None)
     def push(self, data):
-        
+        newnode=Node(data)
+        newnode.next=self.head
+        self.head=newnode
     def pop(self):
-        
+        popval=self.head.data
+        self.head=self.head.next
+        return popval
+
 a_stack = Stack()
 while True:
-    #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
+    # Give input as string if getting an EOF error. Give input like "push 10" or "pop"
     print('push <value>')
     print('pop')
     print('quit')
     do = input('What would you like to do? ').split()
-    #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
+    # Give input as string if getting an EOF error. Give input like "push 10" or "pop"
     operation = do[0].strip().lower()
     if operation == 'push':
         a_stack.push(int(do[1]))
