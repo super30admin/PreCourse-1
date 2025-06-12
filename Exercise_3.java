@@ -1,3 +1,7 @@
+// Time Complexity:
+// - insert (end): O(n)
+// - print: O(n)
+// Space Complexity: O(n)
 import java.io.*; 
   
 // Java program to implement 
@@ -17,7 +21,8 @@ public class LinkedList {
         // Constructor 
         Node(int d) 
         { 
-            //Write your code here 
+            data =d;
+            next=null;//Write your code here 
         } 
     } 
   
@@ -25,15 +30,28 @@ public class LinkedList {
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data 
+        Node new_node=new Node(data);
+        new_node.next=null;
    
         // If the Linked List is empty, 
+        if(list.head==null){
+            list.head=new_node;
+        } 
         // then make the new node as head 
+        else{
+            Node last=list.head;
+            while (last.next!=null){
+                last=last.next;
+            }
+            last.next=new_node;
+        }
         
             // Else traverse till the last node 
             // and insert the new_node there 
 
             // Insert the new_node at last node 
         // Return the list by head 
+        return list;
         
     } 
   
