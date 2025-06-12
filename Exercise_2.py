@@ -3,13 +3,31 @@ class Node:
     def __init__(self, data):
        self.data = data
        self.next = None
+ # Time Complexity 
+  
+  #   push    -> O(1)
+  #   pop     -> O(1)
  
+  #  Space Complexity 
+  #  O(n) where n is the total no of elements in  myStack
+
 class Stack:
     def __init__(self):
-        
+        self.top = None
+
     def push(self, data):
-        
+        new_node = Node(data)
+        new_node.next = self.top
+        self.top = new_node
+
     def pop(self):
+        # del the last element from the a_stack
+        if self.top is None:
+            return None
+        else:
+            popped = self.top.data
+            self.top = self.top.next
+            return popped
         
 a_stack = Stack()
 while True:
