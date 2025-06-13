@@ -1,3 +1,22 @@
+"""
+Time and Space complexity for the following methods: 
+
+1) __init__()
+Time complexity: O(1)
+Space complexity: O(1)
+
+2) push()
+Time complexity: O(1)
+Space complexity: O(1)
+
+2) pop()
+Time complexity: O(1)
+Space complexity: O(1)
+
+3) peek()
+Time complexity: O(1)
+Space complexity: O(1)
+"""
 
 class Node:
     def __init__(self, data):
@@ -9,19 +28,11 @@ class Stack:
         self.top = None
         
     def push(self, data):
-        """
-        Time complexity: O(1)
-        Space complexity: O(1)
-        """
         newNode = Node(data)
         newNode.next = self.top
         self.top = newNode
         
     def pop(self):
-        """
-        Time complexity: O(1)
-        Space complexity: O(1)
-        """
         if self.top is not None:
            value = self.top.data
            self.top = self.top.next
@@ -31,10 +42,6 @@ class Stack:
             return 0
 
     def peek(self):
-        """
-        Time complexity: O(1)
-        Space complexity: O(1)
-        """
         if self.top is not None:
             return self.top.data
         else:
