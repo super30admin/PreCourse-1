@@ -1,3 +1,22 @@
+"""
+Time and Space complexity for the following methods: 
+
+1) __init__()
+Time complexity: O(1)
+Space complexity: O(1)
+
+2) push()
+Time complexity: O(1)
+Space complexity: O(1)
+
+2) pop()
+Time complexity: O(1)
+Space complexity: O(1)
+
+3) peek()
+Time complexity: O(1)
+Space complexity: O(1)
+"""
 
 class Node:
     def __init__(self, data):
@@ -6,10 +25,30 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.top = None
         
     def push(self, data):
+        newNode = Node(data)
+        newNode.next = self.top
+        self.top = newNode
         
     def pop(self):
+        if self.top is not None:
+           value = self.top.data
+           self.top = self.top.next
+           return value
+        else:
+            print('Stack Underflow')
+            return 0
+
+    def peek(self):
+        if self.top is not None:
+            return self.top.data
+        else:
+            print('Stack is empty!')
+            return 0 
+
+            
         
 a_stack = Stack()
 while True:
