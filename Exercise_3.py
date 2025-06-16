@@ -1,4 +1,4 @@
-#Time Complexity : O(n) except for __init__) - O(1)
+#Time Complexity : O(n) except for __init__() - O(1)
 #Space Complexity : O(n)
 
 class ListNode:
