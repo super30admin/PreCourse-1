@@ -1,8 +1,13 @@
+#Time Complexity : O(n) except for __init__() - O(1)
+#Space Complexity : O(n)
+
 class ListNode:
     """
     A node in a singly-linked list.
     """
     def __init__(self, data=None, next=None):
+        self.data = data
+        self.next = next
     
 class SinglyLinkedList:
     def __init__(self):
@@ -17,6 +22,14 @@ class SinglyLinkedList:
         Insert a new element at the end of the list.
         Takes O(n) time.
         """
+        new_node = ListNode(data)
+        if not self.head:
+            self.head = new_node
+            return
+        temp = self.head
+        while temp.next:
+            temp = temp.next
+        temp.next = new_node
         
     def find(self, key):
         """
@@ -24,9 +37,29 @@ class SinglyLinkedList:
         `key`. Return the element or `None` if not found.
         Takes O(n) time.
         """
+        curr = self.head
+        while curr:
+            if curr.data == key:
+                return curr
+            else:
+                curr = curr.next
+        return None
         
     def remove(self, key):
         """
         Remove the first occurrence of `key` in the list.
         Takes O(n) time.
         """
+        if self.head == None:
+            return
+        if self.head.data == key:
+            self.head = self.head.next
+            return
+        prev = None
+        curr = self.head
+        while curr:
+            if curr.data == key:
+                prev.next = curr.next
+                return
+            prev = curr
+            curr = curr.next
