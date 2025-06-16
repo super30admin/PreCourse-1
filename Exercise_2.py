@@ -1,16 +1,51 @@
+#               Time        Space
+# push():       O(N)        O(1)
+# pop():        O(N)        O(1)
 
 class Node:
     def __init__(self, data):
        self.data = data
        self.next = None
- 
-class Stack:
+
+class Stack: # LIFO data struct
     def __init__(self):
-        
+        self.head = None # top of stack
+        self.length = 0
+
     def push(self, data):
-        
+        new = Node(data)
+        # insert at the top of stack (end of linked list)
+        if not self.head:
+            self.head = new
+        else:
+            curr_node = self.head
+            # traverse to the last node
+            while curr_node.next:
+                curr_node = curr_node.next
+            curr_node.next = new
+        self.length += 1
+        print(f"added {data} to the top of stack")
+
     def pop(self):
-        
+        # remove from the top of stack (end of linked list)
+        if not self.head:
+            print(f"Empty stack, nothing to pop")
+            return None
+        else:
+            prev_node = None
+            curr_node = self.head
+            # remove last node
+            while curr_node.next:
+                prev_node = curr_node
+                curr_node = curr_node.next
+            data = curr_node.data
+            self.length -= 1
+            if self.length > 0:
+                prev_node.next = None
+            else:
+                self.head = None
+            return data
+
 a_stack = Stack()
 while True:
     #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
