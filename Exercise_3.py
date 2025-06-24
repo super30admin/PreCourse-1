@@ -47,7 +47,7 @@ class SinglyLinkedList:
     def remove(self, key):
         """
         Remove the first occurrence of `key` in the list.
-        Takes O(n) time.
+       
         """
         curr = self.head
         prev = None

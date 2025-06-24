@@ -31,7 +31,6 @@ while True:
     print('pop')
     print('quit')
     do = input('What would you like to do? ').split()
-    #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
     operation = do[0].strip().lower()
     if operation == 'push':
         a_stack.push(int(do[1]))

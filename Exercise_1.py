@@ -5,13 +5,12 @@ class myStack:
   #Please read sample.java file before starting.
   #Kindly include Time and Space complexity at top of each file
     def __init__(self):
-        self.items = []     #initializing list
-
+        self.items = []     
     def isEmpty(self):
         return  True if len(self.items) == 0 else False
 
     def push(self, item):
-        self.items.append(item)                    #add item in the stack
+        self.items.append(item)                    
 
     def pop(self):
         if self.isEmpty():
