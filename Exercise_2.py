@@ -1,4 +1,7 @@
 
+# // Time Complexity :O(1)
+# // Space Complexity : O(n)
+
 class Node:
     def __init__(self, data):
        self.data = data
@@ -6,10 +9,20 @@ class Node:
  
 class Stack:
     def __init__(self):
-        
+        self.top = None  
+
     def push(self, data):
-        
+        new_node = Node(data)
+        #append new node a a head of linked list so that when we want to pop, just have to remove first node instead of traversing till last node.
+        new_node.next = self.top    
+        self.top = new_node       
+
     def pop(self):
+        if self.top is None:
+            return None
+        pop_node = self.top.data
+        self.top = self.top.next 
+        return pop_node
         
 a_stack = Stack()
 while True:
