@@ -7,7 +7,7 @@ class Stack {
   
     boolean isEmpty() 
     { 
-        //Write your code here 
+        int myvar,
     } 
 
     Stack() 
