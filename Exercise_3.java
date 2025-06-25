@@ -1,5 +1,9 @@
 import java.io.*; 
   
+// Time Complexity: O(1)
+// Space Complexity: O(n)
+// Approach: Store it in a reversed linked list, and keep adding elements to the front of the linkedlist
+  
 // Java program to implement 
 // a Singly Linked List 
 public class LinkedList { 
@@ -17,7 +21,8 @@ public class LinkedList {
         // Constructor 
         Node(int d) 
         { 
-            //Write your code here 
+            this.data = d;
+            this.next = null;
         } 
     } 
   
@@ -25,15 +30,30 @@ public class LinkedList {
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data 
+        
+        Node newNode = new Node(data);
    
         // If the Linked List is empty, 
         // then make the new node as head 
+        // Else traverse till the last node 
+        // and insert the new_node there 
         
-            // Else traverse till the last node 
-            // and insert the new_node there 
+        
+        if (list == null || list.head==null) {
+            list.head = newNode;
+        } else {
+            Node temp = list.head;
+            while (temp.next!=null) {
+                temp = temp.next;
+            }
+            temp.next = newNode;
+        }
+        
+        
 
-            // Insert the new_node at last node 
+        // Insert the new_node at last node 
         // Return the list by head 
+        return list;
         
     } 
   
@@ -45,6 +65,12 @@ public class LinkedList {
             // Print the data at current node 
        
             // Go to next node 
+        
+        Node temp = list.head;
+        while(temp != null) {
+            System.out.println(temp.data);
+            temp = temp.next;
+        }
     } 
    
     // Driver code 
