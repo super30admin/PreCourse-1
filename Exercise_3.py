@@ -1,8 +1,18 @@
+# Time complexity:
+# append: O(n)
+# find: O(n)
+# remove: O(n)
+# Space complexity: O(n)
+# Did this code successfully run on Leetcode : NA
+# Any problem you faced while coding this : None
+
 class ListNode:
     """
     A node in a singly-linked list.
     """
     def __init__(self, data=None, next=None):
+        self.data = data
+        self.next = next
     
 class SinglyLinkedList:
     def __init__(self):
@@ -17,6 +27,14 @@ class SinglyLinkedList:
         Insert a new element at the end of the list.
         Takes O(n) time.
         """
+        new_node= ListNode(data)
+        if not self.head:
+            self.head = new_node
+            return
+        current = self.head
+        while current.next:
+            current = current.next
+        current.next = new_node
         
     def find(self, key):
         """
@@ -24,9 +42,29 @@ class SinglyLinkedList:
         `key`. Return the element or `None` if not found.
         Takes O(n) time.
         """
+        current = self.head
+        while current:
+            if current.data == key:
+                return current.data
+            current = current.next
+        return None
         
     def remove(self, key):
         """
         Remove the first occurrence of `key` in the list.
         Takes O(n) time.
         """
+        current = self.head
+        prev = None
+        if not current:
+            return
+        while current:
+            if current.data == key:
+                if prev:
+                    prev.next = current.next
+                else:
+                    self.head = current.next
+                return
+            prev = current
+            current = current.next
+        
