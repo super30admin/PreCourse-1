@@ -1,4 +1,7 @@
-
+#Time Complexity :O(1)
+#Space Complexity : O(1)
+#Did this code successfully run on Leetcode : did not find this on leetcode
+#Any problem you faced while coding this : syntax issues
 class Node:
     def __init__(self, data):
        self.data = data
@@ -6,10 +9,19 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.top=None  # top of the list is still not pointing to anything
         
     def push(self, data):
+        created_node=Node(data)  #create a new node 
+        created_node.next=self.top  #link the new node created to the top of the exisiting list
+        self.top=created_node  #top is pointing to the newly created node 
         
     def pop(self):
+        if self.top is None: # if the list is empty pop nothing
+            return None
+        val=self.top.data # extract the value
+        self.top=self.top.next #point top to the next value
+        return val #  return this value
         
 a_stack = Stack()
 while True:
