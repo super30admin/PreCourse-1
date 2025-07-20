@@ -1,3 +1,9 @@
+// Time Complexity : inset O(N), print O(N)
+// Space Complexity : O(N)
+// Did this code successfully run on Leetcode : No
+// Any problem you faced while coding this : No
+
+
 // Java program to implement
 // a Singly Linked List
 class LinkedList {
@@ -11,34 +17,44 @@ class LinkedList {
             this.next = null;
         }
     }
-​
+
+    isEmpty(list) {
+        return list.head === null
+    }
+
      // Method to insert a new node
-    function insert(list, data) {
+    insert(list, data) {
         // Create a new node with given data
-​
+        const newNode = new LinkedList.Node(data);
         // If the Linked List is empty,
         // then make the new node as head
-​
-        // Else traverse till the last node
-        // and insert the new_node there
-​
-        // Insert the new_node at last node
-        // Return the list by head
+        if(this.isEmpty(list)) {
+            list.head = newNode;
+        }else {
+            let tail = list.head;
+            while(tail.next != null) {
+                tail = tail.next;
+            }
+            tail.next = newNode;
+        }
+
+        return list.head;
     }
-​
+
      // Method to print the LinkedList.
-    function printList(list) {
+     printList(list) {
         // Traverse through the LinkedList
-​
-        // Print the data at current node
-​
-        // Go to next node
+        let temp = list.head;
+        while(temp != null) {
+            console.log(temp.data + " ");
+            temp = temp.next; 
+        }
     }
 }
        // Driver code
        /* Start with the empty list. */
        let list = new LinkedList();
-​
+
         // ******INSERTION******
         // Insert the values
         list.insert(list, 1);
