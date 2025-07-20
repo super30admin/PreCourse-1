@@ -2,6 +2,7 @@
 // Space Complexity : O(n)
 // Did this code successfully run on Leetcode : This is not a Leetcode problem
 // Any problem you faced while coding this : No
+//Trying to understand how git works
 
 
 
@@ -11,7 +12,7 @@ class Stack {
     static final int MAX = 1000; // Maximum size of Stack i.e., in this case the length of the array
     int top; 
     int a[] = new int[MAX];  // Initializing an array of size 1000
-  
+    int size;
     
     boolean isEmpty() 
     { 
