@@ -1,3 +1,5 @@
+//time complexity : O(1) for all operations 
+// space complexity : O(n) for n elements
 #include <bits/stdc++.h> 
 using namespace std; 
   
@@ -18,22 +20,41 @@ StackNode* newNode(int data)
   
 int isEmpty(StackNode* root) 
 { 
-    //Your code here 
+    if (root == NULL)
+      return true;
+  else
+      return false;
 } 
   
 void push(StackNode** root, int data) 
 { 
-    //Your code here 
+  StackNode* stackNode = newNode(data);
+  stackNode ->next = *root;
+  *root = stackNode;
+  cout << data << "pushed to stack\n";
 } 
   
 int pop(StackNode** root) 
 { 
-    //Your code here 
+    if(*root == NULL){
+      cout << "stack uunderflow\n";
+        return -1;
+        }
+  StackNode* temp = *root;
+  *root = (*root)->next;
+  int popped = temp->data;
+  delete temp;
+  return popped;
 } 
   
 int peek(StackNode* root) 
 { 
-    //Your code here 
+     
+    if(root == NULL){
+      cout << "stack uunderflow\n";
+        return -1;
+        }
+       return root->data;
 } 
   
 int main() 
