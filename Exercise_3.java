@@ -1,3 +1,7 @@
+//Time Complexity:  O(n) to traverse
+//Space Complexity: O(n) where n is the number of nodes.
+//Did the code successfully run on Leetcode: Yes
+//Any problem faced while coding this: No
 import java.io.*; 
   
 // Java program to implement 
@@ -18,6 +22,7 @@ public class LinkedList {
         Node(int d) 
         { 
             //Write your code here 
+            this.data=d;
         } 
     } 
   
@@ -25,26 +30,42 @@ public class LinkedList {
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data 
-   
+        Node newNode=new Node(data);
         // If the Linked List is empty, 
         // then make the new node as head 
-        
+        if(list.head == null){
+            list.head=newNode;
+            return list;
+        }
             // Else traverse till the last node 
             // and insert the new_node there 
+        else{
+            Node curr=list.head;
+            while(curr.next !=null){
+                curr=curr.next;
+            }
+            curr.next=newNode;
 
+        }
             // Insert the new_node at last node 
         // Return the list by head 
-        
+        return list;
     } 
   
     // Method to print the LinkedList. 
     public static void printList(LinkedList list) 
     {  
+        Node curr=list.head;
         // Traverse through the LinkedList 
-   
+        while(curr!=null){
+            
             // Print the data at current node 
-       
+       System.out.print(curr.data + " ");
+        
             // Go to next node 
+                curr=curr.next;
+        }
+        System.out.println();
     } 
    
     // Driver code 
