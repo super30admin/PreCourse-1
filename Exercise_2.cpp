@@ -1,39 +1,59 @@
-#include <bits/stdc++.h> 
+/**************************
+ all operation are O(1) time complexity
+ *************************/
+ #include <iostream> 
 using namespace std; 
-  
+
 // A structure to represent a stack 
 class StackNode { 
 public: 
     int data; 
-    StackNode* next; 
+    StackNode* next;
+
+     StackNode(int val)
+    {
+        data =val;
+        next = nullptr;
+    } 
 }; 
   
-StackNode* newNode(int data) 
-{ 
-    StackNode* stackNode = new StackNode(); 
-    stackNode->data = data; 
-    stackNode->next = NULL; 
-    return stackNode; 
-} 
+
   
 int isEmpty(StackNode* root) 
 { 
-    //Your code here 
+    return (root == nullptr);
 } 
   
 void push(StackNode** root, int data) 
 { 
-    //Your code here 
+    StackNode* temp = new StackNode(data); 
+    temp->next = *root;
+    *root = temp;
+    
 } 
   
 int pop(StackNode** root) 
 { 
-    //Your code here 
+    if(*root == nullptr)
+    {
+    cout<< "stack underflow\n";
+    return -1;
+    }
+    int res = (*root)->data;
+    StackNode* temp = *root;
+    *root = (*root)->next;
+    delete temp;
+    return res;
 } 
   
 int peek(StackNode* root) 
 { 
-    //Your code here 
+    if(root == nullptr)
+    {
+        cout<< "stack is empty\n";
+        return -1;
+    }
+   return root->data;
 } 
   
 int main() 

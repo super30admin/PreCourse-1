@@ -1,6 +1,14 @@
-#include <bits/stdc++.h> 
+/***********************************************
+ time complexity 
+ push()= O(1);
+ pop() = O(1);
+ peek() = O(1);
+ isEmpty() =O(1);
+ **********************************************/
+ #include <iostream> 
+ using namespace std;
   
-using namespace std; 
+
   
 #define MAX 1000 
   
@@ -12,7 +20,7 @@ class Stack {
 public: 
     int a[MAX]; // Maximum size of Stack 
   
-    Stack() { //Constructor here } 
+    Stack() { top = -1;} 
     bool push(int x); 
     int pop(); 
     int peek(); 
@@ -21,25 +29,44 @@ public:
   
 bool Stack::push(int x) 
 { 
-    //Your code here
-    //Check Stack overflow as well
+    if(top+1 == MAX)
+    {
+    cout<< "stack ovreflow\n";
+     return false;
+    }
+   
+        top++;
+        a[top]=x;
+        return true;
+    
+
 } 
   
 int Stack::pop() 
 { 
-    //Your code here
-    //Check Stack Underflow as well 
-} 
+   if(top == -1)
+   {
+    cout<< "stack underflow\n";
+    return -1;
+   }
+   int val = a[top];
+    top--;
+    return val;
+}
 int Stack::peek() 
 { 
-    //Your code here
-    //Check empty condition too
+   if(top == -1)
+   {
+    cout<< "stack is empty\n";
+    return -1;
+   }
+    return a[top];
 } 
   
 bool Stack::isEmpty() 
 { 
-    //Your code here 
-} 
+    return(top == -1);
+}
   
 // Driver program to test above functions 
 int main() 
