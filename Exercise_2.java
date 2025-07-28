@@ -1,4 +1,14 @@
-public class StackAsLinkedList { 
+// Time Complexity : O(1) for all operations
+// Space Complexity : O(N) where N is the number of elements in the stack
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : No
+
+
+// while adding an element we insert at beginning so that to pop or peek we can do it in constant time
+
+
+
+public class Exercise_2 { 
   
     StackNode root; 
   
@@ -8,38 +18,49 @@ public class StackAsLinkedList {
   
         StackNode(int data) 
         { 
-            //Constructor here 
+            this.data=data;
+            this.next=null;
         } 
     } 
     
 	
     public boolean isEmpty() 
     { 
-        //Write your code here for the condition if stack is empty. 
+        if(root==null)
+            return true;
+        else
+            return false; 
     } 
   
     public void push(int data) 
     { 
-        //Write code to push data to the stack. 
+        StackNode nn=new StackNode(data);
+        StackNode temp=root;
+        root=nn;
+        nn.next=temp; 
     } 
   
     public int pop() 
     { 	
-	//If Stack Empty Return 0 and print "Stack Underflow"
-        //Write code to pop the topmost element of stack.
-	//Also return the popped element 
+        if(root==null){
+            System.out.println("Stack Underflow");
+            return 0;
+        }
+        int ans=root.data;
+        root=root.next;
+        return ans;
     } 
   
     public int peek() 
     { 
-        //Write code to just return the topmost element without removing it.
+        return root.data;
     } 
   
 	//Driver code
     public static void main(String[] args) 
     { 
   
-        StackAsLinkedList sll = new StackAsLinkedList(); 
+        Exercise_2 sll = new Exercise_2(); 
   
         sll.push(10); 
         sll.push(20); 
