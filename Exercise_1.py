@@ -1,6 +1,5 @@
 # Time Complexity: Push - O(1), Pop - O(1), Peek - O(1), isEmpty - O(1)
 # Space Complexity: O(n), where n is the capacity of the stack
-
 class myStack:
 
     def __init__(self, capacity):  # __init__ is a constructor
