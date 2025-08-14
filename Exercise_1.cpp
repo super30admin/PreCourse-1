@@ -1,3 +1,7 @@
+// Time Complexity : 0(1)
+// Space Complexity : O(1)
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : No problem, just making sure edge cases are handled
 #include <bits/stdc++.h> 
   
 using namespace std; 
@@ -12,7 +16,9 @@ class Stack {
 public: 
     int a[MAX]; // Maximum size of Stack 
   
-    Stack() { //Constructor here } 
+    Stack() {
+        top = -1;
+    } 
     bool push(int x); 
     int pop(); 
     int peek(); 
@@ -23,22 +29,36 @@ bool Stack::push(int x)
 { 
     //Your code here
     //Check Stack overflow as well
+    if(top >= MAX) return false;
+    top++;
+    a[top] = x;
+    return true;
 } 
   
 int Stack::pop() 
 { 
     //Your code here
     //Check Stack Underflow as well 
+    if(top < 0) return -1;
+    top--;
+    //since top is decreased, 
+    //in order to access the popped element, +1 since it was the element at the top earlier
+    return a[top+1];
 } 
+
 int Stack::peek() 
 { 
     //Your code here
     //Check empty condition too
+    if(top == -1) return -1;
+    return a[top];
 } 
   
 bool Stack::isEmpty() 
 { 
     //Your code here 
+    if(top < 0) return true;
+    return false;
 } 
   
 // Driver program to test above functions 
