@@ -1,4 +1,8 @@
-
+# TC:
+#  - Push: O(1)
+#  - Pop: O(1)
+# SC:
+#  - O(N) where N is the length of linked list after adding N elements linked with each other
 class Node:
     def __init__(self, data):
        self.data = data
@@ -6,12 +10,22 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.curr_node = None
         
     def push(self, data):
+        new_node = Node(data)
+        new_node.next = self.curr_node
+        self.curr_node = new_node
         
     def pop(self):
+        temp_node = self.curr_node
+        if temp_node:
+            self.curr_node = self.curr_node.next
+            return temp_node.data
+        return None
         
 a_stack = Stack()
+
 while True:
     #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
     print('push <value>')
