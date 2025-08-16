@@ -1,8 +1,9 @@
-import java.io.*; 
-  
-// Java program to implement 
-// a Singly Linked List 
-public class LinkedList { 
+// Time Complexity : O(n)
+// Space Complexity : O(1)
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : None
+
+public class LinkedList {
   
     Node head; // head of list 
   
@@ -17,10 +18,10 @@ public class LinkedList {
         // Constructor 
         Node(int d) 
         { 
-            //Write your code here 
+            //Write your code here
+            this.data = d;
         } 
-    } 
-  
+    }
     // Method to insert a new node 
     public static LinkedList insert(LinkedList list, int data) 
     { 
@@ -33,7 +34,17 @@ public class LinkedList {
             // and insert the new_node there 
 
             // Insert the new_node at last node 
-        // Return the list by head 
+        // Return the list by head
+        if (list.head == null) {
+            list.head = new Node(data);
+        } else {
+            Node curr = list.head;
+            while (curr.next != null) {
+                curr = curr.next;
+            }
+            curr.next = new Node(data);
+        }
+        return list;
         
     } 
   
@@ -44,7 +55,13 @@ public class LinkedList {
    
             // Print the data at current node 
        
-            // Go to next node 
+            // Go to next node
+        Node curr = list.head;
+        while (curr.next != null) {
+            System.out.println(curr.data);
+            curr = curr.next;
+        }
+        System.out.println(curr.data);
     } 
    
     // Driver code 
