@@ -1,31 +1,53 @@
+// All operations - Time complexity: O(1)
+// Space complexity: O(N) - N size of growing StackedLinkedlist (stored elements)
 class StackAsLinkedList {
-​
-    static stackNode = class {
-​
-        constructor(d) {
-            //Constructor here
-            this.data = d;
-            this.next = null;
-        }
-    }
-​
-    function isEmpty() {
-        //Write your code here for the condition if stack is empty.
-    }
-​
-    function push(data) {
-       //Write code to push data to the stack.
-    }
-​
-    function pop() {
-       //If Stack Empty Return 0 and print "Stack Underflow"
-       //Write code to pop the topmost element of stack.
-       //Also return the popped element
-    }
-​
-    function peek() {
-       //Write code to just return the topmost element without removing it.
-    }
+	static stackNode = class {
+		constructor(d) {
+			//Constructor here
+			this.data = d;
+			this.next = null;
+		}
+	};
+
+	constructor() {
+		this.root = null;
+	}
+
+	isEmpty() {
+		//Write your code here for the condition if stack is empty.
+		return this.root === null;
+	}
+
+	push(data) {
+		//Write code to push data to the stack.
+		const newNode = new StackAsLinkedList.stackNode(data);
+		if (this.isEmpty()) {
+			this.root = newNode;
+		} else {
+			const temp = this.root;
+			this.root = newNode;
+			newNode.next = temp;
+		}
+	}
+
+	pop() {
+		//If Stack Empty Return 0 and print "Stack Underflow"
+		if (this.isEmpty()) {
+			console.log("Stack Underflow");
+			return 0;
+		}
+		//Write code to pop the topmost element of stack.
+		//Also return the popped element
+		const popedElement = this.root.data;
+		this.root = this.root.next;
+		return popedElement;
+	}
+
+	peek() {
+		//Write code to just return the topmost element without removing it.
+		if (this.isEmpty()) return 0;
+		return this.root.data;
+	}
 }
 //Driver code
 const sll = new StackAsLinkedList();
