@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Exercise_3",
+            "request": "launch",
+            "mainClass": "Exercise_3",
+            "projectName": "PreCourse-1_d608f7f4"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Excercise_3",
+            "request": "launch",
+            "mainClass": "Excercise_3",
+            "projectName": "PreCourse-1_d608f7f4"
+        }
+    ]
+}
