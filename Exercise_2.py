@@ -1,15 +1,34 @@
+"""
+Time Complexity: O(1) Constant for all operations, as we access and move pointers. 
+Space Complexity: Each element consumes a node, hence for N elements, the complexity is linear i.e O(N) 
+
+Notes: 
+It is interesting to have a pointer before, which just keeps track of the top of the list all the time, which can be used to push elements in a stack fashion. 
+"""
 
 class Node:
     def __init__(self, data):
-       self.data = data
-       self.next = None
+        self.data = data
+        self.next = None
  
 class Stack:
     def __init__(self):
+        self.point = None
         
     def push(self, data):
+        new_node = Node(data)
+        new_node.next = self.point
+        self.point = new_node
+        
+        
         
     def pop(self):
+        if self.point == None: 
+            return None
+        val = self.point.data
+        self.point = self.point.next 
+        return val
+        
         
 a_stack = Stack()
 while True:
