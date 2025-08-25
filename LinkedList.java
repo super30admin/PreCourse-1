@@ -4,12 +4,12 @@ import java.io.*;
 // a Singly Linked List 
 public class LinkedList { 
   
-    Node head; // head of list 
+     Node head; // head of list 
   
     // Linked list Node. 
     // This inner class is made static 
     // so that main() can access it 
-    static class Node { 
+    class Node { 
   
         int data; 
         Node next; 
@@ -17,17 +17,28 @@ public class LinkedList {
         // Constructor 
         Node(int d) 
         { 
-            //Write your code here 
+            this.data=d;
         } 
     } 
   
     // Method to insert a new node 
-    public static LinkedList insert(LinkedList list, int data) 
+    //Time Complexity- O(n)
+    public  LinkedList insert(LinkedList list, int data) 
     { 
-        // Create a new node with given data 
+        Node newNode= new Node(data);
    
-        // If the Linked List is empty, 
-        // then make the new node as head 
+        if(list.head== null) {
+         list.head=newNode;
+        }
+        else {
+        Node curr=list.head;
+        while(curr.next!=null) {
+        	curr=curr.next;
+        }
+        curr.next= newNode;
+        }
+        return list;
+        
         
             // Else traverse till the last node 
             // and insert the new_node there 
@@ -37,9 +48,17 @@ public class LinkedList {
         
     } 
   
-    // Method to print the LinkedList. 
-    public static void printList(LinkedList list) 
+    // Method to print the LinkedList.
+    //Time Complexity- O(n)
+    public  void printList(LinkedList list) 
     {  
+    	Node curr=list.head;
+    	while(curr.next!=null) {
+    		System.out.println(curr.data + ",");
+    		curr=curr.next;
+    	}
+    	System.out.println(curr.data);
+    	
         // Traverse through the LinkedList 
    
             // Print the data at current node 
@@ -58,13 +77,13 @@ public class LinkedList {
         // 
   
         // Insert the values 
-        list = insert(list, 1); 
-        list = insert(list, 2); 
-        list = insert(list, 3); 
-        list = insert(list, 4); 
-        list = insert(list, 5); 
+        list = list.insert(list, 1); 
+        list = list.insert(list, 2); 
+        list = list.insert(list, 3); 
+        list = list.insert(list, 4); 
+        list = list.insert(list, 5); 
   
         // Print the LinkedList 
-        printList(list); 
+        list.printList(list); 
     } 
 }
