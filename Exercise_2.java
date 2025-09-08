@@ -1,5 +1,6 @@
+
 public class StackAsLinkedList { 
-  
+	  
     StackNode root; 
   
     static class StackNode { 
@@ -9,6 +10,9 @@ public class StackAsLinkedList {
         StackNode(int data) 
         { 
             //Constructor here 
+        	this.data=data;
+        	this.next=null;
+        	
         } 
     } 
     
@@ -16,23 +20,47 @@ public class StackAsLinkedList {
     public boolean isEmpty() 
     { 
         //Write your code here for the condition if stack is empty. 
+    	if(root==null) {
+    		System.out.println("stack empty");
+    		return true;
+    	}
+    	return false;
     } 
   
     public void push(int data) 
     { 
-        //Write code to push data to the stack. 
+    	StackNode newNode = new StackNode(data);
+    	newNode.next=root; // use root as pointer to stack top
+    	root = newNode;
+    	
+    	System.out.println(data + " pushed to stack");
     } 
   
     public int pop() 
     { 	
-	//If Stack Empty Return 0 and print "Stack Underflow"
+    	//If Stack Empty Return 0 and print "Stack Underflow"
         //Write code to pop the topmost element of stack.
-	//Also return the popped element 
+    	//Also return the popped element 
+    	if(root == null) {
+    		System.out.println("Stack Underflow");
+    		return 0;
+    	}
+    	int popEl = root.data;
+    	root=root.next; // update the top pointer
+    	return popEl;
+
     } 
   
     public int peek() 
+    //Write code to just return the topmost element without removing it.
     { 
-        //Write code to just return the topmost element without removing it.
+    	if(root == null) {
+    		System.out.println("Stack is empty");
+    	}
+    	return root.data;
+   
+    	
+    	
     } 
   
 	//Driver code
@@ -46,7 +74,11 @@ public class StackAsLinkedList {
         sll.push(30); 
   
         System.out.println(sll.pop() + " popped from stack"); 
+        //System.out.println(sll.peek() + " peek from stack"); 
   
         System.out.println("Top element is " + sll.peek()); 
+        //added line for stack empty check
+        System.out.println(" stack empty " + sll.isEmpty());
     } 
 } 
+
