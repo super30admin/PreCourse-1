@@ -3,9 +3,13 @@ import java.io.*;
 import com.practise.s30.LinkedList;
 import com.practise.s30.LinkedList.Node; 
   
+
+
+//time complexity insert operation: O(n) / space O(1)
+
 public class LinkedList { 
 	  
-    static Node head; // head of list 
+    Node head; // head of list 
   
     // Linked list Node. 
     // This inner class is made static 
@@ -17,15 +21,16 @@ public class LinkedList {
        
   
         // Constructor 
-        Node(int d) 
+        Node(int data) 
         { 
             //Write your code here 
-        	this.data=d;
+        	this.data=data;
         	this.next=null;
         } 
     } 
   
-    // Method to insert a new node 
+    // new node added if list not empty, O(n) operation
+    //space O(1) as no new list is created and its the same list
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data 
@@ -53,7 +58,7 @@ public class LinkedList {
 				
 			}
 			
-			curr.next= newNode;
+			curr.next = newNode;
 			
 			return list;	
 			
@@ -63,7 +68,7 @@ public class LinkedList {
    
    
   
-    // Method to print the LinkedList. 
+    // O(n) operation in worst case to traverse linkedlist
     public static void printList(LinkedList list) 
     {  
         // Traverse through the LinkedList 

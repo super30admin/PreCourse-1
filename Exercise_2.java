@@ -1,4 +1,9 @@
 
+
+//time complexity push operation: O(1) / space O(1)
+//time complexity pop operation: O(1) / space O(1)
+//time complexity peek operation: O(1) / space O(1)
+//time complexity isEmpty operation: O(1) / space O(1)
 public class StackAsLinkedList { 
 	  
     StackNode root; 
@@ -6,7 +11,7 @@ public class StackAsLinkedList {
     static class StackNode { 
         int data; 
         StackNode next; 
-  
+  //constructor initalized with data
         StackNode(int data) 
         { 
             //Constructor here 
@@ -16,17 +21,17 @@ public class StackAsLinkedList {
         } 
     } 
     
-	
+	//if node root is null, stack empty true else false
     public boolean isEmpty() 
     { 
         //Write your code here for the condition if stack is empty. 
     	if(root==null) {
-    		System.out.println("stack empty");
     		return true;
     	}
     	return false;
     } 
   
+    //at the root, adding new node pointing newNode.next as root element 
     public void push(int data) 
     { 
     	StackNode newNode = new StackNode(data);
@@ -36,6 +41,7 @@ public class StackAsLinkedList {
     	System.out.println(data + " pushed to stack");
     } 
   
+    //check if stack empty and then return 0 else get root.data and update root -> root.next and return it
     public int pop() 
     { 	
     	//If Stack Empty Return 0 and print "Stack Underflow"
@@ -51,15 +57,15 @@ public class StackAsLinkedList {
 
     } 
   
+    //check stack empty using root null chek else return root.data
     public int peek() 
     //Write code to just return the topmost element without removing it.
     { 
     	if(root == null) {
     		System.out.println("Stack is empty");
+    		return 0;
     	}
     	return root.data;
-   
-    	
     	
     } 
   
