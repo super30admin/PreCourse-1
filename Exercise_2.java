@@ -62,7 +62,7 @@ public class StackAsLinkedList {
     //Write code to just return the topmost element without removing it.
     { 
     	if(root == null) {
-    		System.out.println("Stack is empty");
+    		System.out.println("Stack Underflow");
     		return 0;
     	}
     	return root.data;
