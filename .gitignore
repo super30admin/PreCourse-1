@@ -1,0 +1,41 @@
+# Compiled class files
+*.class
+
+# Jar files
+*.jar
+*.war
+*.ear
+
+# Maven build artifacts
+/target/
+
+# Gradle build artifacts
+.gradle/
+/build/
+
+# IDE-specific files (e.g., IntelliJ IDEA, Eclipse)
+.idea/
+*.iml
+*.iws
+*.ipr
+.project
+.classpath
+.settings/
+
+# Log files
+*.log
+logs/
+
+# Temporary files
+*~
+*.bak
+*.swp
+*.tmp
+
+# Operating system specific files
+.DS_Store
+Thumbs.db
+
+# Any other files that should not be committed
+# For example, if you have a specific database file:
+# database.sqlite

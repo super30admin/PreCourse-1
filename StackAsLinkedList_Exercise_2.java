@@ -1,6 +1,8 @@
+// Time Complexity : O(1) for push, O(1) for pop, O(1) for peek
+// Space Complexity : O(n) as we occupy a memory worth n elements pushed/added to linked list
+
 public class StackAsLinkedList { 
-  
-    StackNode root; 
+    StackNode head; 
   
     static class StackNode { 
         int data; 
@@ -8,37 +10,42 @@ public class StackAsLinkedList {
   
         StackNode(int data) 
         { 
-            //Constructor here 
+            this.data = data;
         } 
     } 
-    
 	
     public boolean isEmpty() 
     { 
-        //Write your code here for the condition if stack is empty. 
+        return head == null;
     } 
   
     public void push(int data) 
     { 
-        //Write code to push data to the stack. 
+        StackNode newNode = new StackNode(data);
+        newNode.next = head;
+        head = newNode;
     } 
   
     public int pop() 
     { 	
-	//If Stack Empty Return 0 and print "Stack Underflow"
-        //Write code to pop the topmost element of stack.
-	//Also return the popped element 
+        if (isEmpty()) {
+            System.out.println("Stack Underflow");
+            return 0;
+        }
+
+        int value = head.data;
+        head = head.next;
+        return value;
     } 
   
     public int peek() 
     { 
-        //Write code to just return the topmost element without removing it.
+        return this.head.data;
     } 
   
 	//Driver code
     public static void main(String[] args) 
     { 
-  
         StackAsLinkedList sll = new StackAsLinkedList(); 
   
         sll.push(10); 
