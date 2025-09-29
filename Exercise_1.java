@@ -1,3 +1,7 @@
+/**
+ * Time complexity = O(1)
+ * Space complexity = O(n)
+ */
 class Stack {
     //Please read sample.java file before starting.
     //Kindly include Time and Space complexity at top of each file
