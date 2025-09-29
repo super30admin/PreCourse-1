@@ -1,3 +1,7 @@
+# Time Complexity : push: O(1), pop: O(1)
+# Space Complexity : O(n)
+# Did this code successfully run on Leetcode : yes
+# Any problem you faced while coding this : understanding it's better to push new nodes at the head instead of tail of LL.
 
 class Node:
     def __init__(self, data):
@@ -6,10 +10,22 @@ class Node:
  
 class Stack:
     def __init__(self):
-        
+        self.head = None
+        self.count = 0
+
     def push(self, data):
+        pushNode = Node(data)
+        pushNode.next = self.head
+        self.head = pushNode
+        self.count += 1
         
     def pop(self):
+        if self.count == 0:
+            return None
+        popped = self.head.data
+        self.head = self.head.next
+        self.count -= 1
+        return popped
         
 a_stack = Stack()
 while True:
