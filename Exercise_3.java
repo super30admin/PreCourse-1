@@ -1,7 +1,8 @@
 import java.io.*;
   
-// Java program to implement 
-// a Singly Linked List 
+// Java program to implement a Singly Linked List
+// Time Complexity : O(n) for insert and printList
+// Space Complexity : O(n) where n is the number of elements in the linked list
 class LinkedList {
   
     Node head; // head of list 
@@ -15,8 +16,7 @@ class LinkedList {
         Node next; 
   
         // Constructor 
-        Node(int d) 
-        {
+        Node(int d) {
             data = d;
             next = null;
         } 
@@ -58,11 +58,6 @@ class LinkedList {
             last = last.next;
         }
         System.out.println(last.data);
-
-   
-            // Print the data at current node 
-       
-            // Go to next node 
     } 
    
     // Driver code 
@@ -72,12 +67,7 @@ class LinkedList {
         //Start with the empty list.
         LinkedList list = new LinkedList();
   
-        // 
-        // ******INSERTION****** 
-        // 
-  
-        // Insert the values 
-        list = insert(list, 1); 
+        list = insert(list, 1);
         list = insert(list, 2); 
         list = insert(list, 3); 
         list = insert(list, 4); 

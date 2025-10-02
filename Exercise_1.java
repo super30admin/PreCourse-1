@@ -1,6 +1,8 @@
 
   
-// Driver code 
+// Time Complexity : O(1) for push, pop, peek, isEmpty, isFull
+// Space Complexity : O(1) as the size of the stack is fixed
+
 class Stack {
         //Please read sample.java file before starting.
         //Kindly include Time and Space complexity at top of each file
@@ -8,14 +10,16 @@ class Stack {
         int top = 0;
         int stackArray[] = new int[MAX]; // Maximum size of Stack
 
+    // method to check if stack is empty
         boolean isEmpty() {
             //Write your code here
-            if (stackArray.length == 0) {
+            if (top == 0) {
                 return true;
             }
             return false;
         }
 
+        // method to check if stack is full
         boolean isFull() {
             if (top == stackArray.length) {
                 return true;
@@ -23,10 +27,7 @@ class Stack {
             return false;
         }
 
-        Stack() {
-            //Initialize your constructor
-        }
-
+        // method to add an item to stack. It increases top by 1
         boolean push(int value) {
             //Check for stack Overflow
             if (isFull()) {
@@ -40,6 +41,7 @@ class Stack {
             return true;
         }
 
+        // method to remove an item from stack. It decreases top by 1
         int pop() {
             //If empty return 0 and print " Stack Underflow"
             if (isEmpty()) {
@@ -53,6 +55,7 @@ class Stack {
             return peekValue;
         }
 
+        // method to return top element in stack
         int peek() {
             //Write your code here
             if (isEmpty()) {
@@ -65,7 +68,7 @@ class Stack {
 
 
  class Main {
-    public static void main(String args[]) 
+    public static void main(String args[])
     { 
         Stack s = new Stack(); 
         s.push(10); 
