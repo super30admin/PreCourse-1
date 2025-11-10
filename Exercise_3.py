@@ -3,6 +3,8 @@ class ListNode:
     A node in a singly-linked list.
     """
     def __init__(self, data=None, next=None):
+        self.data = data
+        self.next = next
     
 class SinglyLinkedList:
     def __init__(self):
@@ -17,6 +19,12 @@ class SinglyLinkedList:
         Insert a new element at the end of the list.
         Takes O(n) time.
         """
+        newNode = ListNode(data)
+        curr = self.head
+        while curr.next:
+            curr = curr.next
+        curr.next = newNode
+
         
     def find(self, key):
         """
@@ -24,9 +32,24 @@ class SinglyLinkedList:
         `key`. Return the element or `None` if not found.
         Takes O(n) time.
         """
+        curr = self.head
+        while curr:
+            if curr.data == key:
+                return curr
+            curr = curr.next #check further elements
+            return None #if not found yet
+
         
     def remove(self, key):
         """
         Remove the first occurrence of `key` in the list.
         Takes O(n) time.
         """
+        prev = None
+        curr = self.head
+        while curr:
+            if curr.data == key:
+                prev.next = curr.next #bypass the current one
+                return
+            prev = curr
+            curr = curr.next
