@@ -9,22 +9,39 @@ class Stack {
         this.a = new Array(this.MAX);
     }
 ​
-    function isEmpty() {
-        //Write your code here
+    isEmpty() {
+        // this is the first I thought of computing the array length and making the decision
+        if(this.a.length === 0){
+            return true;
+        }else{
+            return false;
+        }
+
     }
 ​
-    function push(x) {
-        //Check for stack Overflow
-        //Write your code here
+    push(x) {
+        this.a.push(x);
     }
 ​
-    function pop() {
+    pop() {
         //If empty return 0 and print " Stack Underflow"
         //Write your code here
+
+        if(this.isEmpty()){
+            console.log(" Stack Underflow");
+            return 0;
+        }else{
+            return this.a.pop()
+        }
     }
 ​
-    function peek() {
-       //Write your code here
+     peek() {
+       if(!this.isEmpty()){
+           return this.a[this.a.length -1];
+       }else{
+           console.log(" Stack is empty");
+           return;
+       }
     }
 }
 ​

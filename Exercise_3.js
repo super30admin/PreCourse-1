@@ -13,22 +13,49 @@ class LinkedList {
     }
 ​
      // Method to insert a new node
-    function insert(list, data) {
+    insert(list, data) {
         // Create a new node with given data
+
+        const node = new LinkedList.Node(data);
 ​
         // If the Linked List is empty,
         // then make the new node as head
+
+        if(!list.head){
+            list.head = node;
+            return;
+        }
 ​
         // Else traverse till the last node
         // and insert the new_node there
+
+        let head = list.head;
+        while(head && head.next){
+            head = head.next;
+        }
+        head.next = node;
 ​
         // Insert the new_node at last node
         // Return the list by head
+
+        let dummy = list.head;
+        let currHead = list.head;
+        while(currHead && currHead.next){
+            currHead = currHead.next;
+        }
+        head.next = node;
+        return dummy;
     }
 ​
      // Method to print the LinkedList.
-    function printList(list) {
+    printList(list) {
         // Traverse through the LinkedList
+
+        let currNode = list.head;
+        while(currNode){
+            console.log(currNode.data);
+            currNode = currNode.next;
+        }
 ​
         // Print the data at current node
 ​
