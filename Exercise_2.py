@@ -1,4 +1,7 @@
-
+# Time Complexity : O(1)
+# Space Complexity : O(n)
+# Did this code successfully run on Leetcode : Yes on Geeksforgeeks
+# Any problem you faced while coding this : Faced difficulty while writing a logic for pop
 class Node:
     def __init__(self, data):
        self.data = data
@@ -6,12 +9,30 @@ class Node:
  
 class Stack:
     def __init__(self):
-        
+        self.top = None
+
     def push(self, data):
-        
+        new_node = Node(data)
+        # if there is something in the stack 
+        if self.top:
+        # new_node's pointer will point to that top
+            new_node.next = self.top
+        # if there is nothing already then new node become top
+        self.top = new_node
+
     def pop(self):
+        # if top is present
+        if self.top:
+            # popped the top and store into the popped variable
+            popped = self.top
+            # link the top to the next pointer of the popped 
+            self.top = popped.next
+            return popped.data
+        return None
+
         
 a_stack = Stack()
+
 while True:
     #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
     print('push <value>')
