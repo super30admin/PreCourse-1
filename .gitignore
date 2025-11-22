@@ -1,0 +1,13 @@
+
+# Ignore compiled Java files
+*.class
+
+# Ignore C++ executables
+a.out
+*.out
+*.exe
+Exercise_2
+
+# Ignore temp files
+*.o
+
