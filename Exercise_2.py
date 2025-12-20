@@ -1,4 +1,9 @@
+# Time Complexity : O(1) ; All stack operation perform in constant time
+# Space Complexity : O(n); n = number of elements in the stack
+# Did this code successfully run on Leetcode : - 
+# Any problem you faced while coding this : No
 
+# Your code here along with comments explaining your approach
 class Node:
     def __init__(self, data):
        self.data = data
@@ -6,11 +11,20 @@ class Node:
  
 class Stack:
     def __init__(self):
-        
+        self.head = None
+      
     def push(self, data):
-        
+        newnode = Node(data)
+        newnode.next = self.head
+        self.head = newnode
+     
     def pop(self):
-        
+        if self.head:
+            x = self.head.data
+            self.head = self.head.next
+            return x
+      
+
 a_stack = Stack()
 while True:
     #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
