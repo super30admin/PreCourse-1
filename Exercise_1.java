@@ -42,7 +42,7 @@ class Stack {
             return 0;
         }
         int topMost = a[top - 1];
-        a[top--] = 0;
+        top--;
         return topMost;
     }
 
@@ -61,6 +61,6 @@ class Main {
         s.push(10); 
         s.push(20); 
         s.push(30); 
-        System.out.println(s.pop() + " Popped from stack"); 
-    } 
+        System.out.println(s.pop() + " Popped from stack");
+    }
 }

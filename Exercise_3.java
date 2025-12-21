@@ -14,7 +14,7 @@ import java.io.*;
 class LinkedList {
 
     Node head; // head of list 
-
+    Node tail;
     // Linked list Node. 
     // This inner class is made static 
     // so that main() can access it 
@@ -41,15 +41,13 @@ class LinkedList {
         // then make the new node as head
         if(pointer == null){
             list.head = newNode;
+            list.tail = newNode;
             return list;
         }
-        // Else traverse till the last node
-        // and insert the new_node there
-        while(pointer.next != null){
-            pointer = pointer.next;
-        }
-        // Insert the new_node at last node
+        // Else insert the new node at the tail end of linked list
+        pointer = list.tail;
         pointer.next = newNode;
+        list.tail = newNode;
         return list;
     }
 
@@ -81,7 +79,7 @@ class LinkedList {
         list = insert(list, 3); 
         list = insert(list, 4); 
         list = insert(list, 5); 
-  
+
         // Print the LinkedList 
         printList(list); 
     } 
