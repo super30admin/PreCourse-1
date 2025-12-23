@@ -1,4 +1,5 @@
-
+/time 0(1)
+/space 0(n)
 class Node:
     def __init__(self, data):
        self.data = data
@@ -6,10 +7,17 @@ class Node:
  
 class Stack:
     def __init__(self):
-        
+        self.top = None
     def push(self, data):
-        
+        new_node = Node(data)
+        new_node.next = self.top
+        self.top = new_node
     def pop(self):
+        if self.top is None:
+            return None
+        popped_value = self.top.data
+        self.top = self.top.next
+        return popped_val
         
 a_stack = Stack()
 while True:
