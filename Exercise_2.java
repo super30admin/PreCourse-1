@@ -15,6 +15,9 @@ class StackAsLinkedList {
 
 
     public boolean isEmpty() {
+        // Time Complexity : O(1)
+        // Space Complexity : O(1)
+
         if (root == null) {
             return true;
         } else {
@@ -24,6 +27,9 @@ class StackAsLinkedList {
     }
 
     public void push(int data) {
+        // Time Complexity : O(1)
+        // Space Complexity : O(1)
+
         //Write code to push data to the stack.
         if (root == null) {
             root = new StackNode(data);
@@ -39,6 +45,10 @@ class StackAsLinkedList {
         //If Stack Empty Return 0 and print "Stack Underflow"
         //Write code to pop the topmost element of stack.
         //Also return the popped element
+
+        // Time Complexity : O(1)
+        // Space Complexity : O(1)
+
         if (root == null) {
             System.out.print("***** Stack Underflow : ");
             return 0;

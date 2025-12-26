@@ -22,6 +22,9 @@ class LinkedList {
     // Method to insert a new node
     public static LinkedList insert(LinkedList list, int data)
     {
+        // Time complexity: O(n)
+        // Space complexity: O(1)
+
         // Create a new node with given data
         Node node = new Node(data);
 
@@ -48,6 +51,9 @@ class LinkedList {
 
     // Method to print the LinkedList.
     public static void printList(LinkedList list) {
+        // Time Complexity : O(n)
+        // Space Complexity : O(1)
+
         // Traverse through the LinkedList
         if(list.head == null){
             System.out.println("***** List is empty  *****");

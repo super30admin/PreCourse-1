@@ -7,6 +7,9 @@ class Stack {
 
     boolean isEmpty()
     {
+        // Time Complexity : O(1)
+        // Space Complexity : O(1)
+
         //Write your code here
         if(a.length == 0 || a == null){
             return true;
@@ -24,6 +27,9 @@ class Stack {
 
     boolean push(int x)
     {
+        // Time Complexity : O(1)
+        // Space Complexity : O(1)
+
         //Check for stack Overflow
         if(top < MAX - 1){
             top += 1;
@@ -38,6 +44,9 @@ class Stack {
 
     int pop()
     {
+        // Time Complexity : O(1)
+        // Space Complexity : O(1)
+
         //If empty return 0 and print " Stack Underflow"
         if(top < 0){
             System.out.print("***** Stack Underflow : ");
@@ -51,6 +60,9 @@ class Stack {
 
     int peek()
     {
+        // Time Complexity : O(1)
+        // Space Complexity : O(1)
+
         //Write your code here
         if(top == -1){
             return 0;
