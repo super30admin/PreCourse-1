@@ -3,38 +3,59 @@ class Stack {
   //Kindly include Time and Space complexity at top of each file
     static final int MAX = 1000; 
     int top; 
-    int a[] = new int[MAX]; // Maximum size of Stack 
+    int a[] = new int[MAX]; // Maximum size of Stack
+    int numElements=0;
   
     boolean isEmpty() 
     { 
-        //Write your code here 
+        //Write your code here
+    	return numElements==0;
     } 
 
     Stack() 
     { 
         //Initialize your constructor 
+    	this.top=0;
     } 
   
     boolean push(int x) 
     { 
         //Check for stack Overflow
+    	if (this.top >= this.a.length) {
+    		return false;
+    	}
         //Write your code here
+    	this.a[this.top++]=x;
+    	this.numElements++;
+    	System.out.println("Pushed " + x + " with top "+ this.top);
+    	return true;
     } 
   
     int pop() 
     { 
         //If empty return 0 and print " Stack Underflow"
+    	if (this.numElements==0) {
+    		System.out.println("Stack Underflow");
+    		return 0;
+    	}
         //Write your code here
+    	this.top--;
+    	int pop= this.a[this.top];
+    	this.a[this.top]=Integer.MIN_VALUE;
+    	this.numElements--;
+    	return pop;
+    	
     } 
   
     int peek() 
     { 
         //Write your code here
+    	return this.a[this.top];
     } 
 } 
   
 // Driver code 
-class Main { 
+class Exercise_1 { 
     public static void main(String args[]) 
     { 
         Stack s = new Stack(); 
