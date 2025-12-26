@@ -5,7 +5,7 @@ class ListNode:
     
     def __init__(self, data, next=None):
         self.data = data
-        self.next = None
+        self.next = next
 
 
     
@@ -18,14 +18,17 @@ class SinglyLinkedList:
         self.head = None
 
     def append(self, data):
-        if self.head == None:
-                self.head =  ListNode(data)
 
-        else:
-            temp = self.head
-            while(temp.next) != None:
-                temp = temp.next
-            temp.next = ListNode(data)
+        if self.head == None: 
+            self.head = ListNode(data)
+            return
+           
+        curr = self.head
+        while curr.next:
+                curr = curr.next
+        curr.next = ListNode(data)    
+            
+
 
 
         """
@@ -35,14 +38,13 @@ class SinglyLinkedList:
         
     def find(self, key):
 
-        temp = self.head
-        while (temp.next != None):
-            if (temp.data == key):
-                return key
-            else:
-                temp = temp.next
-
-        return temp.next
+        curr = self.head
+        while (curr):
+            if (curr.data == key):
+                return curr
+            
+            curr = curr.next
+        return None
         """
         Search for the first element with `data` matching
         `key`. Return the element or `None` if not found.
@@ -50,25 +52,34 @@ class SinglyLinkedList:
         """
         
     def remove(self, key):
-
+        if self.head and self.head.data == key:
+            temp = self.head
+            self.head = self.head.next
+            temp.next = None
+            return
+        
+        curr = self.head
+        while curr and curr.next:
+            if (curr.next.data == key):
+                temp = curr.next 
+                curr.next = curr.next.next
+                temp.next = None 
+                return
+            curr = curr.next
+        return None 
         """
         Remove the first occurrence of `key` in the list.
         Takes O(n) time.
         """
-        temp = self.head
-        if temp is not None:
-            if temp.data == key:
-                self.head = temp.next
-                temp = None
-                return
-        while (temp is not None):
-            if temp.data == key:
-                break
-            prev = temp
-            temp = temp.next
-        if temp == None:
-            return None
-        prev.next = temp.next
+    def print_list(self):
+        curr = self.head
 
-        temp = None
+        if curr is None:
+            print("List is empty")
+            return
+
+        while curr:
+            print(curr.data, end=" -> ")
+            curr = curr.next
+        print("None")
 
