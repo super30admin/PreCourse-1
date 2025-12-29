@@ -1,3 +1,10 @@
+/**
+ * Insert: Time Complexity: O(n) because we must traverse the entire list to find the end.
+ * Space Complexity: O(1) 
+ * 
+ * Print:Time Complexity: O(n) where n is the number of nodes.
+ * Space Complexity: O(1).
+ */
 import java.io.*; 
   
 // Java program to implement 
@@ -17,7 +24,8 @@ public class LinkedList {
         // Constructor 
         Node(int d) 
         { 
-            //Write your code here 
+            this.data = d;
+            this.next = null;
         } 
     } 
   
@@ -34,7 +42,17 @@ public class LinkedList {
 
             // Insert the new_node at last node 
         // Return the list by head 
-        
+        Node node = new Node(data);
+        if(list.head==null){
+            list.head = node;
+        }else{
+            Node last = list.head;
+            while(last.next!=null){
+                last = last.next;
+            }
+            last.next = node;
+        }
+       return list;
     } 
   
     // Method to print the LinkedList. 
@@ -45,6 +63,14 @@ public class LinkedList {
             // Print the data at current node 
        
             // Go to next node 
+       Node currNode = list.head;     
+       while(currNode!=null){
+          Node curr = list.head;
+       
+              System.out.println(head.data);
+              head = head.next;
+          
+       }
     } 
    
     // Driver code 
