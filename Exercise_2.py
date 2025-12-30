@@ -1,4 +1,10 @@
-
+"""
+Init class with head with null 
+Push will add the node to the top of the list
+Pop will point the pointer to the next node
+Time complexity O(1)
+Space O(n)
+"""
 class Node:
     def __init__(self, data):
        self.data = data
@@ -6,10 +12,27 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.head = None
         
     def push(self, data):
+        temp = Node(data)
+        temp.next = self.head
+        self.head = temp
         
     def pop(self):
+        if self.head == None:
+            return None
+
+        temp = self.head
+        self.head = temp.next
+        return temp.data
+    
+    def show(self):
+        temp = self.head
+        while temp:
+            print(temp.data, end=" -> ")
+            temp = temp.next
+        print("None")
         
 a_stack = Stack()
 while True:
@@ -17,6 +40,7 @@ while True:
     print('push <value>')
     print('pop')
     print('quit')
+    print('print')
     do = input('What would you like to do? ').split()
     #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
     operation = do[0].strip().lower()
@@ -28,5 +52,7 @@ while True:
             print('Stack is empty.')
         else:
             print('Popped value: ', int(popped))
+    elif operation == 'print':
+        print(a_stack.show())
     elif operation == 'quit':
         break
