@@ -31,9 +31,7 @@ class LinkedList<T> {
         return head == nil
     }
     
-    init() {
-        
-    }
+    init() { }
 }
 
 //append - insert at the end of the LinkedList

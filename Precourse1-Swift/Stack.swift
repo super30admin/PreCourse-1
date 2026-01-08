@@ -5,8 +5,6 @@
 //  Created by Paridhi Malviya on 12/16/25.
 //
 
-//Implement Stack
-
 struct Stack<T> {
     private var storage: [T] = []
     
@@ -42,7 +40,6 @@ struct Stack<T> {
 }
 
 struct StringStack {
-    // create a stack which contains strings
     private var stringStack = Stack<String>()
 
     init() {
@@ -70,6 +67,4 @@ struct StringStack {
         intStack.push(element: 2)
         print("stack count \(intStack.count)")
     }
-
-    
 }
