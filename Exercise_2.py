@@ -1,4 +1,6 @@
+#  Time Complexity : push: O(1)
 
+#  Space Complexity : pop: O(1)
 class Node:
     def __init__(self, data):
        self.data = data
@@ -6,10 +8,13 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.arr = []
         
     def push(self, data):
+        self.arr.append(data)
         
     def pop(self):
+        return self.arr.pop()
         
 a_stack = Stack()
 while True:
