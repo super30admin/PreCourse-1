@@ -6,10 +6,12 @@ class Node:
  
 class Stack:
     def __init__(self):
-        
+        self.stack = []
+
     def push(self, data):
-        
+        self.append(data)
     def pop(self):
+        return self.pop()
         
 a_stack = Stack()
 while True:
