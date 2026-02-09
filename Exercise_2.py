@@ -8,13 +8,18 @@ class Node:
  
 class Stack:
     def __init__(self):
-        self.arr = []
+        self.head = Node(-1)
         
     def push(self, data):
-        self.arr.append(data)
+        node = Node(data)
+        node.next = self.head.next
+        self.head.next = node
         
     def pop(self):
-        return self.arr.pop()
+        curr = self.head.next
+        if curr:
+            self.head.next = curr.next
+        return curr.data if curr else None
         
 a_stack = Stack()
 while True:
