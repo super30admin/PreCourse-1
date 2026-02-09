@@ -4,6 +4,14 @@
 Created on Sun Feb  8 16:20:59 2026
 
 @author: rishigoswamy
+
+# Time Complexity:
+# push : O(1)  (insert at head)
+# pop  : O(1)  (remove from head)
+#
+# Space Complexity:
+# O(n), where n is the number of elements currently in the stack.
+
 """
 
 class Node:

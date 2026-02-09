@@ -4,6 +4,18 @@
 Created on Sun Feb  8 16:20:59 2026
 
 @author: rishigoswamy
+
+# Time Complexity:
+# isEmpty : O(1)
+# push    : O(1)
+# pop     : O(1)
+# peek    : O(1)
+# size    : O(1)
+# show    : O(n)   # iterates through stack
+
+# Space Complexity:
+# O(n), where n is the number of elements in the stack (max 1000)
+
 """
 
 class myStack:
