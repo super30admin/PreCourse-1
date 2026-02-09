@@ -3,6 +3,14 @@ Created on Sun Feb  8 16:20:59 2026
 
 @author: rishigoswamy
 
+# Time Complexity:
+# append : O(n)  (traverses to the end of the list)
+# find   : O(n)  (linear search)
+# remove : O(n)  (linear traversal to find the key)
+#
+# Space Complexity:
+# O(n), where n is the number of nodes in the linked list.
+
 """
 
 class ListNode:
