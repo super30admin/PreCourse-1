@@ -1,3 +1,18 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Feb  8 16:20:59 2026
+
+@author: rishigoswamy
+
+# Time Complexity:
+# push : O(1)  (insert at head)
+# pop  : O(1)  (remove from head)
+#
+# Space Complexity:
+# O(n), where n is the number of elements currently in the stack.
+
+"""
 
 class Node:
     def __init__(self, data):
@@ -6,10 +21,23 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.head = Node(None)
         
     def push(self, data):
+        newNode = Node(data)
+        if self.head.next:
+            newNode.next = self.head.next
+        self.head.next = newNode
+            
         
     def pop(self):
+        if self.head.next:
+            val = self.head.next.data
+            self.head.next = self.head.next.next
+            return val
+        else:
+            return None
+        
         
 a_stack = Stack()
 while True:
