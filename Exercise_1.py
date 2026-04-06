@@ -10,7 +10,7 @@ class myStack:
        return len(self.q) == 0  #returns true when stack is empty
          
      def push(self, item):
-        self.q.append(item) #adds a value to the end which is the top of the stack
+       self.q.append(item) #adds a value to the end which is the top of the stack
          
      def pop(self):
        return self.q.pop()  #removes last value that is inserted      
