@@ -1,49 +1,58 @@
-// Java program to implement
 // a Singly Linked List
 class LinkedList {
-    constructor() {
-        this.head = null;
+  constructor() {
+    this.startPos = null;
+  }
+  // Linked list Node.
+  static Node = class {
+    constructor(d) {
+      this.data = d;
+      this.next = null;
     }
-     // Linked list Node.
-     static Node = class {
-        constructor(d) {
-            this.data = d;
-            this.next = null;
-        }
+  };
+
+  // Method to insert a new node
+  insert(list, data) {
+    let newNode = new LinkedList.Node(data);
+
+    if (list.startPos === null) {
+      list.startPos = newNode;
+    } else {
+      let lastPos = list.startPos;
+      while (lastPos.next !== null) {
+        lastPos = lastPos.next;
+      }
+      lastPos.next = newNode;
     }
-​
-     // Method to insert a new node
-    function insert(list, data) {
-        // Create a new node with given data
-​
-        // If the Linked List is empty,
-        // then make the new node as head
-​
-        // Else traverse till the last node
-        // and insert the new_node there
-​
-        // Insert the new_node at last node
-        // Return the list by head
+
+    return list;
+  }
+
+  // Method to print the LinkedList.
+  printList(list) {
+    let currNode = list.startPos;
+
+    let output = "";
+    while (currNode !== null) {
+      output += currNode.data + " ";
+      currNode = currNode.next;
     }
-​
-     // Method to print the LinkedList.
-    function printList(list) {
-        // Traverse through the LinkedList
-​
-        // Print the data at current node
-​
-        // Go to next node
-    }
+    console.log(output.trim());
+
+    // Traverse through the LinkedList
+    // Print the data at current node
+    // Go to next node
+  }
 }
-       // Driver code
-       /* Start with the empty list. */
-       let list = new LinkedList();
-​
-        // ******INSERTION******
-        // Insert the values
-        list.insert(list, 1);
-        list.insert(list, 2);
-        list.insert(list, 3);
-        list.insert(list, 4);
-        // Print the LinkedList
-        list.printList(list);
+// Driver code
+/* Start with the empty list. */
+let list = new LinkedList();
+
+// ******INSERTION******
+// Insert the values
+list.insert(list, 1);
+list.insert(list, 2);
+list.insert(list, 3);
+list.insert(list, 4);
+// Print the LinkedList
+list.printList(list);
