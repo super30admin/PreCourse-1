@@ -1,35 +1,52 @@
+    // Time Complexity : push, pop and peek operations --> O(1)
+    // Space Complexity : O(n)
+    // Did this code successfully run on Leetcode :
+    // Any problem you faced while coding this :
+
 class Stack { 
-    //Please read sample.java file before starting.
-  //Kindly include Time and Space complexity at top of each file
+
+
     static final int MAX = 1000; 
     int top; 
     int a[] = new int[MAX]; // Maximum size of Stack 
   
     boolean isEmpty() 
     { 
-        //Write your code here 
+        return top == -1; //return true if stack is empty
     } 
 
     Stack() 
     { 
-        //Initialize your constructor 
+        top = -1;//Initialize your constructor 
     } 
   
-    boolean push(int x) 
+    boolean push(int x) //time: O(1), space: O(1)
     { 
-        //Check for stack Overflow
-        //Write your code here
+        if(top == MAX-1) //top reached last index indicating stack overflow
+            return false; 
+        a[++top] = x; //increment the top and then store x
+        return true;
     } 
   
-    int pop() 
+    int pop() //time: O(1), space: O(1)
     { 
         //If empty return 0 and print " Stack Underflow"
         //Write your code here
+        if(top == -1)
+            {
+            System.out.println("Stack Underflow"); //if stack empty, returns 0
+            return 0;
+            }
+
+        return a[top--]; //returns the top of the stack then decrements top
     } 
   
-    int peek() 
+    int peek() //time: O(1), space: O(1)
     { 
         //Write your code here
+        if(top == -1)
+            return -1;
+        return a[top]; //same as pop but top isn't decremented
     } 
 } 
   
