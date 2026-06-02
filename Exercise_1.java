@@ -5,31 +5,55 @@ class Stack {
     int top; 
     int a[] = new int[MAX]; // Maximum size of Stack 
   
+    //Time complexxity : O(1) for push, pop and peek operations
+    //Space complexity : O(n) where n is the number of elements in the stack
+
     boolean isEmpty() 
     { 
-        //Write your code here 
+        return top < 0; 
     } 
 
     Stack() 
     { 
-        //Initialize your constructor 
-    } 
+       top=-1; //Initialize your constructor 
+    }
   
     boolean push(int x) 
     { 
         //Check for stack Overflow
-        //Write your code here
+        if (top >= MAX - 1) {
+            System.out.println("Stack Overflow");
+            return false;
+        }
+        else {
+            a[++top] = x;
+            return true;
+        }
     } 
   
     int pop() 
     { 
         //If empty return 0 and print " Stack Underflow"
         //Write your code here
+        if(isEmpty()) {
+            System.out.println("Stack Underflow");
+            return 0;
+        }
+        else {
+            return a[top--];
+        }
     } 
   
     int peek() 
     { 
         //Write your code here
+        if(isEmpty()) {
+            System.out.println("Stack Underflow");
+            return 0;
+        }
+        else {
+            return a[top];
+        }
     } 
 } 
   

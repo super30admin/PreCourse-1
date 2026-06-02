@@ -1,3 +1,5 @@
+//Time Complexity : O(n) 
+//Space Complexity : O(1)
 import java.io.*; 
   
 // Java program to implement 
@@ -5,7 +7,7 @@ import java.io.*;
 public class LinkedList { 
   
     Node head; // head of list 
-  
+    
     // Linked list Node. 
     // This inner class is made static 
     // so that main() can access it 
@@ -18,6 +20,8 @@ public class LinkedList {
         Node(int d) 
         { 
             //Write your code here 
+            this.data = d;
+            this.next = null;
         } 
     } 
   
@@ -25,27 +29,41 @@ public class LinkedList {
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data 
+        Node newNode = new Node(data);
    
         // If the Linked List is empty, 
         // then make the new node as head 
-        
+        if (list.head == null) {
+            list.head = newNode;
+        } else {
             // Else traverse till the last node 
             // and insert the new_node there 
-
+            Node current = list.head;
+            while (current.next != null) {
+                current = current.next;
+            }
             // Insert the new_node at last node 
+                 current.next = newNode;
+
+        }
         // Return the list by head 
-        
+        return list;
     } 
   
     // Method to print the LinkedList. 
     public static void printList(LinkedList list) 
     {  
         // Traverse through the LinkedList 
-   
+        Node current = list.head;
+        while (current != null) {
+
             // Print the data at current node 
-       
+       System.out.println(current.data);
             // Go to next node 
+            current = current.next;
     } 
+    System.out.println();
+    }
    
     // Driver code 
     public static void main(String[] args) 
