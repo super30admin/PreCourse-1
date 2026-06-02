@@ -1,4 +1,8 @@
-
+# Time and Space Complexity
+# Overall Space Complexity is O(N) where N is the number of elements in stack
+# __init__ function has time and space complexity of O(1)
+# push function has time and space complexity of O(1)
+# pop function has time and space complexity of O(1)
 class Node:
     def __init__(self, data):
        self.data = data
@@ -6,10 +10,20 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.top=None
         
     def push(self, data):
+        newNode=Node(data)
+        newNode.next=self.top
+        self.top=newNode
         
     def pop(self):
+        if self.top==None:
+            return None
+        else:
+            value=self.top.data
+            self.top=self.top.next
+            return value
         
 a_stack = Stack()
 while True:
