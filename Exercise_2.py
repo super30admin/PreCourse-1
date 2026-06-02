@@ -1,15 +1,44 @@
+# Time Complexity : all O(1) 
+# Space Complexity : all O(1) data structire itself O(n)
+# Did this code successfully run on Leetcode : na
+# Any problem you faced while coding this : na
 
 class Node:
     def __init__(self, data):
-       self.data = data
-       self.next = None
- 
+        self.data = data
+        self.next = None
+
 class Stack:
     def __init__(self):
+        self.head = None
+
         
     def push(self, data):
+        newNode = Node(data)
+        if not self.head:
+            self.head=newNode
+            self.head.next= None
+        else:
+            newNode.next=self.head
+            self.head = newNode
+
         
     def pop(self):
+        if not self.head:
+            print("Stack Underflow")
+            return 0
+        newHead = self.head.next
+        self.head.next = None
+        retVal = self.head.data
+        self.head = newHead
+        return retVal
+        
+        
+
+
+
+
+
         
 a_stack = Stack()
 while True:
