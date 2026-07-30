@@ -8,18 +8,14 @@ public class StackAsLinkedList {
   
         StackNode(int data) 
         { 
-            this data = data;
+            this.data = data;
             
 
         } 
     } 
     
 	
-    public boolean isEmpty() 
-    { 
-        return root == null;
-
-    } 
+ 
   
     public void push(int data) 
     { 
@@ -54,6 +50,8 @@ public class StackAsLinkedList {
 
         if(root != null){
             return root.data;
+        }
+        return -1;
     } 
   
 	//Driver code
