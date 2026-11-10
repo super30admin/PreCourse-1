@@ -24,7 +24,7 @@ class Stack {
     { 
         //Check for stack Overflow
         //Write your code here
-        if(top>MAX -1){
+        if(top>=MAX -1){
             System.out.println("Stack Overflow");
             return false;
         }else{
@@ -37,18 +37,18 @@ class Stack {
     { 
         //If empty return 0 and print " Stack Underflow"
         if(isEmpty()){
-            System.out.println("Stack underflow");
+            System.out.println("Stack Underflow");
             return 0;
         }
         else{
-            return a[--top];
+            return a[top--];
         }
     } 
   
     int peek() 
     { 
         if(isEmpty()){
-            System.out.println("Stack underflow");
+            System.out.println("Stack Underflow");
             return 0;
         }
         return a[top];
