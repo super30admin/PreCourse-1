@@ -1,3 +1,5 @@
+# Time Complexity: O(1) for push and pop operations
+# Space Complexity: O(N) where N is the number of elements in the stack
 
 class Node:
     def __init__(self, data):
