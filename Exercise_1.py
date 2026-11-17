@@ -1,8 +1,8 @@
 class myStack:
   #Please read sample.java file before starting.
   #Kindly include Time and Space complexity at top of each file
-  #Time complexity: O(1)
-  #space compelxity: O(N)
+ # Time Complexity: O(1) for push, pop, peek, isEmpty, size; O(N) for show
+# Space Complexity: O(N) where N is the number of elements in the stack
      def __init__(self):
       self.stack=[]
          
