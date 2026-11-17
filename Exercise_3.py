@@ -1,3 +1,5 @@
+# Time Complexity: O(N) for append, find, remove, and print_list
+# Space Complexity: O(N) where N is the number of nodes in the linked list
 class ListNode:
     """
     A node in a singly-linked list.
