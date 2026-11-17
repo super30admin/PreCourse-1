@@ -1,24 +1,39 @@
 
+# Time Complexity: O(1) for push and pop
+# Space Complexity: O(n) for storing n elements in the stack
+
 class Node:
     def __init__(self, data):
-       self.data = data
-       self.next = None
- 
+        self.data = data
+        self.next = None
+
+
 class Stack:
     def __init__(self):
-        
+        self.root = None
+
     def push(self, data):
-        
+        new_node = Node(data)
+        new_node.next = self.root
+        self.root = new_node
+
     def pop(self):
-        
+        if self.root is None:
+            print('Stack Underflow')
+            return None
+        popped = self.root.data
+        self.root = self.root.next
+        return popped
+
+
 a_stack = Stack()
 while True:
-    #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
+    # Give input as string if getting an EOF error. Give input like "push 10" or "pop"
     print('push <value>')
     print('pop')
     print('quit')
     do = input('What would you like to do? ').split()
-    #Give input as string if getting an EOF error. Give input like "push 10" or "pop"
+    # Give input as string if getting an EOF error. Give input like "push 10" or "pop"
     operation = do[0].strip().lower()
     if operation == 'push':
         a_stack.push(int(do[1]))
