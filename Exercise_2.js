@@ -1,33 +1,48 @@
+// Time Complexity: O(1) for push, pop, peek, and isEmpty
+// Space Complexity: O(n) for storing n elements in the stack
+
 class StackAsLinkedList {
-​
     static stackNode = class {
-​
         constructor(d) {
-            //Constructor here
             this.data = d;
             this.next = null;
         }
+    };
+
+    constructor() {
+        this.root = null;
     }
-​
-    function isEmpty() {
-        //Write your code here for the condition if stack is empty.
+
+    isEmpty() {
+        return this.root === null;
     }
-​
-    function push(data) {
-       //Write code to push data to the stack.
+
+    push(data) {
+        const newNode = new StackAsLinkedList.stackNode(data);
+        newNode.next = this.root;
+        this.root = newNode;
     }
-​
-    function pop() {
-       //If Stack Empty Return 0 and print "Stack Underflow"
-       //Write code to pop the topmost element of stack.
-       //Also return the popped element
+
+    pop() {
+        if (this.isEmpty()) {
+            console.log("Stack Underflow");
+            return 0;
+        }
+        const poppedData = this.root.data;
+        this.root = this.root.next;
+        return poppedData;
     }
-​
-    function peek() {
-       //Write code to just return the topmost element without removing it.
+
+    peek() {
+        if (this.isEmpty()) {
+            console.log("Stack Underflow");
+            return 0;
+        }
+        return this.root.data;
     }
 }
-//Driver code
+
+// Driver code
 const sll = new StackAsLinkedList();
 sll.push(10);
 sll.push(20);
