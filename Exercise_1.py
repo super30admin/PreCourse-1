@@ -1,3 +1,8 @@
+# Time Complexity : O(1) for push, pop, peek, isEmpty and size; O(n) for show
+# Space Complexity : O(n), where n is the number of elements in the stack
+# Did this code successfully run on Leetcode : N/A (not a LeetCode problem); ran locally
+# Any problem you faced while coding this : Got an IndentationError from an empty __init__, fixed it
+
 class myStack:
   #Please read sample.java file before starting.
   #Kindly include Time and Space complexity at top of each file
