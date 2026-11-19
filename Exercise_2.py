@@ -1,3 +1,7 @@
+# Time Complexity : O(1) for push and pop
+# Space Complexity : O(n), where n is the number of elements in the stack
+# Did this code successfully run on Leetcode : N/A (not a LeetCode problem); ran locally
+# Any problem you faced while coding this : Got an IndexError when pressing Enter without typing a command; it was in the test loop, not the stack
 
 class Node:
     def __init__(self, data):
@@ -6,10 +10,19 @@ class Node:
  
 class Stack:
     def __init__(self):
+        self.head = None
         
     def push(self, data):
+        new_node = Node(data)
+        new_node.next = self.head
+        self.head = new_node
         
     def pop(self):
+        if self.head is None:
+            return None 
+        popped = self.head.data
+        self.head= self.head.next
+        return popped
         
 a_stack = Stack()
 while True:

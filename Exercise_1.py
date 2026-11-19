@@ -1,20 +1,49 @@
+# Time Complexity : O(1) for push, pop, peek, isEmpty and size; O(n) for show
+# Space Complexity : O(n), where n is the number of elements in the stack
+# Did this code successfully run on Leetcode : N/A (not a LeetCode problem); ran locally
+# Any problem you faced while coding this : Got an IndentationError from an empty __init__, fixed it
+
 class myStack:
   #Please read sample.java file before starting.
   #Kindly include Time and Space complexity at top of each file
      def __init__(self):
+      #Empty list to store the stack items
+        self.stack =[]
+
          
      def isEmpty(self):
+      # True if the stack has no items
+        return len(self.stack) == 0 
          
      def push(self, item):
+      # Add item to the top (end of the list)
+
+        self.stack.append(item)
          
      def pop(self):
-        
-        
+    # Can't remove from an empty stack
+        if self.isEmpty():
+            print("stack underflow")
+            return None
+   # Remove and return the top item
+
+        return self.stack.pop()
+
      def peek(self):
-        
+      # Return the top item without removing it
+        if self.isEmpty():
+           return None
+        return self.stack[-1]
+   
      def size(self):
+      # Number of items in the stack
+
+        return len(self.myStack)
          
      def show(self):
+      # Return all items, bottom to top
+
+        return self.stack
          
 
 s = myStack()
